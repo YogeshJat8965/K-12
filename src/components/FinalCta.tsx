@@ -64,105 +64,198 @@ function CountdownTimer() {
         { val: time.s, label: 'Sec' },
       ].map((item, i) => (
         <div key={i} className="text-center">
-          <div className="glass rounded-xl px-3 py-2 min-w-[48px] border border-white/20 count-pulse">
-            <div className="text-white font-black text-xl tabular-nums">{pad(item.val)}</div>
+          <div className="glass rounded-xl px-3 py-2 min-w-[48px] border border-white/20 count-pulse shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+            <div className="text-white font-black text-2xl tabular-nums drop-shadow-md">{pad(item.val)}</div>
           </div>
-          <div className="text-white/50 text-[10px] font-bold mt-1">{item.label}</div>
+          <div className="text-white/80 text-[11px] font-bold mt-2 tracking-wider uppercase">{item.label}</div>
         </div>
       ))}
     </div>
   );
 }
 
+/* ── Interactive Particle Background ── */
+function ParticleBackground() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let particles: { x: number, y: number, r: number, dx: number, dy: number, op: number }[] = [];
+    let animationFrameId: number;
+    let mouse = { x: -1000, y: -1000 };
+
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = canvas.parentElement?.clientHeight || 800;
+      initParticles();
+    };
+
+    const initParticles = () => {
+      particles = [];
+      const particleCount = window.innerWidth < 768 ? 30 : 80;
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 2 + 0.5,
+          dx: (Math.random() - 0.5) * 0.5,
+          dy: (Math.random() - 0.5) * 0.5,
+          op: Math.random() * 0.5 + 0.1
+        });
+      }
+    };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    };
+
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      particles.forEach(p => {
+        // Move
+        p.x += p.dx;
+        p.y += p.dy;
+        
+        // Bounce
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+
+        // Interaction
+        const dx = mouse.x - p.x;
+        const dy = mouse.y - p.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        
+        if (dist < 100) {
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(255, 255, 255, ${0.2 - dist/500})`;
+          ctx.lineWidth = 0.5;
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
+        }
+
+        // Draw particle
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r + (dist < 100 ? 1 : 0), 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${p.op + (dist < 100 ? 0.3 : 0)})`;
+        ctx.fill();
+      });
+
+      animationFrameId = requestAnimationFrame(draw);
+    };
+
+    window.addEventListener('resize', resize);
+    window.addEventListener('mousemove', handleMouseMove);
+    resize();
+    draw();
+
+    return () => {
+      window.removeEventListener('resize', resize);
+      window.removeEventListener('mousemove', handleMouseMove);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+
+  return <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none z-0" />;
+}
+
 export default function FinalCta() {
   return (
-    <section className="py-24 bg-gradient-to-br from-sky-500 via-blue-600 to-blue-700 overflow-hidden relative">
-      <div className="absolute top-10 left-10 w-72 h-72 rounded-full bg-sky-300/20 blur-3xl blob" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-blue-400/15 blur-3xl blob blob-delay-2" />
+    <div className="p-4 lg:p-8 bg-slate-950">
+      <section className="relative rounded-[3rem] overflow-hidden animated-gradient-border shadow-2xl p-[3px]">
+        {/* The actual background container */}
+        <div className="relative bg-gradient-to-br from-blue-700 via-indigo-600 to-purple-700 rounded-[calc(3rem-3px)] overflow-hidden">
+          <ParticleBackground />
 
-      <div className="absolute inset-0 opacity-[0.04]" style={{
-        backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
-        backgroundSize: '30px 30px',
-      }} />
+          <div className="absolute top-10 left-10 w-72 h-72 rounded-full bg-sky-300/20 blur-[100px] blob pointer-events-none" />
+          <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-pink-400/15 blur-[100px] blob blob-delay-2 pointer-events-none" />
 
-      <Star className="absolute top-20 left-1/4 w-5 h-5 text-yellow-300/50 sparkle" />
-      <Star className="absolute top-1/3 right-1/4 w-4 h-4 text-yellow-200/50 sparkle-2" />
-      <Star className="absolute bottom-1/4 left-1/3 w-6 h-6 text-yellow-300/40 sparkle-3" />
+          <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{
+            backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)',
+            backgroundSize: '40px 40px',
+          }} />
 
-      <div className="max-w-5xl mx-auto px-6 text-center relative z-10">
-        <div className="flex items-center justify-center gap-4 mb-6">
-          <MascotWithEyes />
-          <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-2xl flex items-center justify-center float shadow-xl">
-            <Rocket className="w-8 h-8 text-white" />
+          <Star className="absolute top-20 left-1/4 w-5 h-5 text-yellow-300/60 sparkle pointer-events-none" />
+          <Star className="absolute top-1/3 right-1/4 w-4 h-4 text-yellow-200/60 sparkle-2 pointer-events-none" />
+          <Star className="absolute bottom-1/4 left-1/3 w-6 h-6 text-yellow-300/50 sparkle-3 pointer-events-none" />
+
+          <div className="max-w-4xl mx-auto px-6 py-24 text-center relative z-10">
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <MascotWithEyes />
+              <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-2xl flex items-center justify-center float shadow-2xl border border-white/20">
+                <Rocket className="w-8 h-8 text-white" />
+              </div>
+            </div>
+
+            <div className="reveal inline-flex items-center gap-2 glass text-white font-black text-xs uppercase tracking-widest px-5 py-2.5 rounded-full mb-8 border border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+              <Zap className="w-4 h-4 text-yellow-300" />
+              Limited Time Offer
+            </div>
+
+            <h2 className="reveal font-display text-4xl md:text-6xl text-white mb-6 leading-tight drop-shadow-lg">
+              {finalCta.headline}
+            </h2>
+            <p className="reveal text-white/90 text-xl md:text-2xl mb-10 max-w-2xl mx-auto leading-relaxed">
+              {finalCta.subline}
+            </p>
+
+            {/* Countdown */}
+            <div className="reveal mb-6 bg-black/20 backdrop-blur-sm border border-white/10 rounded-3xl p-6 inline-block shadow-2xl">
+              <p className="text-white/80 text-sm font-bold mb-4 uppercase tracking-widest">Early bird enrollment closes in</p>
+              <CountdownTimer />
+            </div>
+
+            {/* Quiz note card */}
+            <div className="reveal glass rounded-2xl px-6 py-4 inline-flex items-center justify-center mx-auto mb-12 border border-white/20 shadow-xl">
+              <p className="text-white font-bold text-base flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-yellow-300 animate-pulse" />
+                {finalCta.quizNote}
+              </p>
+            </div>
+
+            {/* CTAs with magnetic effect */}
+            <div className="reveal flex flex-wrap gap-5 justify-center mb-16">
+              <MagneticButton
+                href="#quiz"
+                className="pulse-ring bg-gradient-to-r from-orange-400 to-yellow-400 text-slate-900 font-black text-xl px-10 py-5 rounded-2xl shadow-[0_0_30px_rgba(251,146,60,0.4)] flex items-center gap-3 border border-yellow-300/50"
+              >
+                <Sparkles className="w-6 h-6" />
+                Take the Free Quiz
+              </MagneticButton>
+              <MagneticButton
+                href="#tracks"
+                className="glass border-2 border-white/50 text-white font-bold text-xl px-10 py-5 rounded-2xl flex items-center gap-3 hover:bg-white hover:text-blue-600 transition-colors"
+              >
+                <Rocket className="w-6 h-6" />
+                Explore Internships
+              </MagneticButton>
+            </div>
+
+            {/* Contact */}
+            <div className="reveal flex flex-wrap justify-center gap-8 bg-black/10 inline-flex mx-auto px-8 py-4 rounded-full border border-white/5">
+              <a
+                href={`mailto:${finalCta.email}`}
+                className="flex items-center gap-2 text-white/80 font-bold hover:text-white transition-colors"
+              >
+                <Mail className="w-5 h-5" />
+                {finalCta.email}
+              </a>
+              <span className="text-white/20">|</span>
+              <span className="flex items-center gap-2 text-white/80 font-bold hover:text-white transition-colors cursor-pointer">
+                <Globe className="w-5 h-5" />
+                {finalCta.website}
+              </span>
+            </div>
           </div>
         </div>
-
-        <div className="reveal inline-flex items-center gap-2 glass text-white font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-6 border border-white/30">
-          <Zap className="w-3.5 h-3.5" />
-          Limited Time Offer
-        </div>
-
-        <h2 className="reveal font-display text-4xl md:text-6xl text-white mb-4 leading-tight">
-          {finalCta.headline}
-        </h2>
-        <p className="reveal text-white/80 text-xl mb-6 max-w-2xl mx-auto leading-relaxed">
-          {finalCta.subline}
-        </p>
-
-        {/* Countdown */}
-        <div className="reveal mb-4">
-          <p className="text-white/60 text-sm font-bold mb-3">Early bird enrollment closes in:</p>
-          <CountdownTimer />
-        </div>
-
-        {/* Quiz note card */}
-        <div className="reveal glass rounded-2xl px-6 py-4 inline-block mb-10 border border-white/20">
-          <p className="text-white font-bold text-base flex items-center gap-2">
-            <Sparkles className="w-5 h-5 text-yellow-300" />
-            {finalCta.quizNote}
-          </p>
-        </div>
-
-        {/* CTAs with magnetic effect */}
-        <div className="reveal flex flex-wrap gap-4 justify-center mb-14">
-          <MagneticButton
-            href="#quiz"
-            className="pulse-ring bg-gradient-to-r from-orange-400 to-yellow-400 text-white font-black text-lg px-10 py-4 rounded-2xl shadow-xl shadow-orange-500/25 flex items-center gap-2"
-          >
-            <Sparkles className="w-5 h-5" />
-            Take the Free Quiz
-          </MagneticButton>
-          <MagneticButton
-            href="#tracks"
-            className="glass border-2 border-white/50 text-white font-bold text-lg px-10 py-4 rounded-2xl flex items-center gap-2"
-          >
-            <Rocket className="w-5 h-5" />
-            Explore Internships
-          </MagneticButton>
-          <MagneticButton
-            href="#for-parents"
-            className="bg-white text-sky-700 font-bold text-lg px-10 py-4 rounded-2xl flex items-center gap-2"
-          >
-            Book Consultation
-          </MagneticButton>
-        </div>
-
-        {/* Contact */}
-        <div className="reveal flex flex-wrap justify-center gap-6">
-          <a
-            href={`mailto:${finalCta.email}`}
-            className="flex items-center gap-2 text-white/80 font-bold hover:text-white transition-colors"
-          >
-            <Mail className="w-4 h-4" />
-            {finalCta.email}
-          </a>
-          <span className="text-white/40">|</span>
-          <span className="flex items-center gap-2 text-white/80 font-bold">
-            <Globe className="w-4 h-4" />
-            {finalCta.website}
-          </span>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }

@@ -871,3 +871,34 @@ body {
 .compare-row:hover .compare-glow::before {
   opacity: 1;
 }
+
+/* ═══════════════════════════════════════════ */
+/* ── PHASE 4: Global Polish & Final CTA    ── */
+/* ═══════════════════════════════════════════ */
+
+@keyframes rotateGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-gradient-border {
+  position: relative;
+  background: linear-gradient(
+    60deg, 
+    #3b82f6, #8b5cf6, #ec4899, #f59e0b, #3b82f6, #8b5cf6
+  );
+  background-size: 300% 300%;
+  animation: rotateGradient 4s ease infinite;
+}
+
+/* ── Section variety transitions ── */
+.reveal-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.reveal-fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
