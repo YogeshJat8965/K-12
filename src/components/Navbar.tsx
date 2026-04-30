@@ -20,23 +20,12 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg shadow-sky-100/50 py-3'
-          : 'bg-transparent py-5'
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white/95 backdrop-blur-md shadow-lg shadow-sky-100/50 py-3"
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-            <Rocket className="w-5 h-5 text-white" />
-          </div>
-          <span
-            className={`font-display text-2xl transition-colors duration-300 ${
-              scrolled ? 'text-sky-600' : 'text-white'
-            }`}
-          >
+        {/* Logo removed, only text remains */}
+        <a href="#" className="flex items-center group">
+          <span className="font-display text-2xl font-extrabold bg-gradient-to-r from-sky-500 via-blue-500 to-cyan-400 bg-clip-text text-transparent transition-colors duration-300">
             Skillzza Nova
           </span>
         </a>
@@ -47,9 +36,7 @@ export default function Navbar() {
             <a
               key={l.label}
               href={l.href}
-              className={`font-bold text-sm hover:text-orange-500 transition-colors duration-200 ${
-                scrolled ? 'text-slate-700' : 'text-white/90'
-              }`}
+              className="font-bold text-sm hover:text-orange-500 transition-colors duration-200 text-slate-700"
             >
               {l.label}
             </a>
@@ -68,9 +55,7 @@ export default function Navbar() {
 
         {/* Mobile menu button */}
         <button
-          className={`md:hidden p-2 rounded-xl transition-colors ${
-            scrolled ? 'text-slate-700' : 'text-white'
-          }`}
+          className="md:hidden p-2 rounded-xl transition-colors text-slate-700"
           onClick={() => setOpen(!open)}
         >
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

@@ -82,7 +82,7 @@ function AppContent() {
       <div id="why-skillzza"><WhySkillzza /></div>
       <div id="final-cta"><FinalCta /></div>
       <Footer />
-      <GamificationBar />
+      {/* <GamificationBar /> */}
     </div>
   );
 }
