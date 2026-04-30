@@ -190,9 +190,9 @@ export default function Hero() {
                 </span>
               </div>
 
-              <p className="text-blue-100/90 text-lg leading-relaxed mb-8 max-w-lg">
+              {/* <p className="text-blue-100/90 text-lg leading-relaxed mb-8 max-w-lg">
                 Skillzza Virtual Internships are structured, mentor-led, project-based experiences — giving students a real edge before college even begins.
-              </p>
+              </p> */}
 
               <div className="flex flex-wrap gap-2.5 mb-10">
                 {hero.badges.map((b, i) => (

@@ -1,103 +1,320 @@
+import { useEffect, useRef, useState, useCallback } from 'react';
 import { howItWorks } from '../virtualInternship';
-import { Clock, Calendar, Monitor, Search, GraduationCap, BookOpen, Hammer, Trophy } from 'lucide-react';
-import { RocketMascot } from './KidElements';
+import { Clock, Calendar, Monitor, Search, GraduationCap, BookOpen, Hammer, Trophy, Rocket, Sparkles } from 'lucide-react';
 
+/* ── Step images (generated illustrations) ── */
+const stepImages = [
+  '/images/step1-discover.png',
+  '/images/step2-enroll.png',
+  '/images/step3-learn.png',
+  '/images/step4-build.png',
+  '/images/step5-earn.png',
+];
+
+/* ── Step icons (Lucide) ── */
 const stepIcons = [
-  <Search className="w-7 h-7 text-white" />,
-  <GraduationCap className="w-7 h-7 text-white" />,
-  <BookOpen className="w-7 h-7 text-white" />,
-  <Hammer className="w-7 h-7 text-white" />,
-  <Trophy className="w-7 h-7 text-white" />,
+  <Search className="w-6 h-6 lg:w-7 lg:h-7 text-white" />,
+  <GraduationCap className="w-6 h-6 lg:w-7 lg:h-7 text-white" />,
+  <BookOpen className="w-6 h-6 lg:w-7 lg:h-7 text-white" />,
+  <Hammer className="w-6 h-6 lg:w-7 lg:h-7 text-white" />,
+  <Trophy className="w-6 h-6 lg:w-7 lg:h-7 text-white" />,
 ];
 
-const stepColors = [
-  { bg: 'bg-sky-500', light: 'bg-sky-50 border-sky-200', text: 'text-sky-600' },
-  { bg: 'bg-green-500', light: 'bg-green-50 border-green-200', text: 'text-green-600' },
-  { bg: 'bg-orange-500', light: 'bg-orange-50 border-orange-200', text: 'text-orange-600' },
-  { bg: 'bg-yellow-500', light: 'bg-yellow-50 border-yellow-200', text: 'text-yellow-600' },
-  { bg: 'bg-pink-500', light: 'bg-pink-50 border-pink-200', text: 'text-pink-600' },
+/* ── Color themes per step ── */
+const stepThemes = [
+  {
+    bg: 'bg-sky-500',
+    gradient: 'from-sky-500 to-blue-600',
+    light: 'bg-sky-50',
+    border: 'border-sky-200',
+    text: 'text-sky-600',
+    shadow: 'shadow-sky-200/50',
+    ring: 'ring-sky-200',
+  },
+  {
+    bg: 'bg-emerald-500',
+    gradient: 'from-emerald-500 to-green-600',
+    light: 'bg-emerald-50',
+    border: 'border-emerald-200',
+    text: 'text-emerald-600',
+    shadow: 'shadow-emerald-200/50',
+    ring: 'ring-emerald-200',
+  },
+  {
+    bg: 'bg-orange-500',
+    gradient: 'from-orange-500 to-amber-600',
+    light: 'bg-orange-50',
+    border: 'border-orange-200',
+    text: 'text-orange-600',
+    shadow: 'shadow-orange-200/50',
+    ring: 'ring-orange-200',
+  },
+  {
+    bg: 'bg-yellow-500',
+    gradient: 'from-yellow-500 to-amber-500',
+    light: 'bg-yellow-50',
+    border: 'border-yellow-200',
+    text: 'text-yellow-600',
+    shadow: 'shadow-yellow-200/50',
+    ring: 'ring-yellow-200',
+  },
+  {
+    bg: 'bg-pink-500',
+    gradient: 'from-pink-500 to-rose-600',
+    light: 'bg-pink-50',
+    border: 'border-pink-200',
+    text: 'text-pink-600',
+    shadow: 'shadow-pink-200/50',
+    ring: 'ring-pink-200',
+  },
 ];
+
+/* ── Floating decorative elements between steps ── */
+const floatingEmojis = ['✨', '🌟', '⭐', '💫'];
 
 export default function HowItWorks() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const spineRef = useRef<HTMLDivElement>(null);
+  const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [visibleSteps, setVisibleSteps] = useState<Set<number>>(new Set());
+  const [activeStep, setActiveStep] = useState<number>(-1);
+
+  /* ── Scroll-linked spine fill + step reveals ── */
+  const handleScroll = useCallback(() => {
+    const section = sectionRef.current;
+    const spine = spineRef.current;
+    if (!section || !spine) return;
+
+    const sectionRect = section.getBoundingClientRect();
+    const sectionTop = sectionRect.top;
+    const sectionHeight = sectionRect.height;
+    const viewportHeight = window.innerHeight;
+
+    // Calculate spine fill based on scroll position within section
+    const scrolledInto = viewportHeight - sectionTop;
+    const fillPercent = Math.min(Math.max((scrolledInto / sectionHeight) * 100, 0), 100);
+    spine.style.setProperty('--spine-fill', `${fillPercent}%`);
+
+    // Check visibility of each step
+    const newVisible = new Set<number>();
+    let latestActive = -1;
+
+    stepRefs.current.forEach((ref, i) => {
+      if (!ref) return;
+      const rect = ref.getBoundingClientRect();
+      const stepCenter = rect.top + rect.height / 2;
+
+      if (stepCenter < viewportHeight * 0.85) {
+        newVisible.add(i);
+        ref.classList.add('visible');
+        if (stepCenter < viewportHeight * 0.6 && stepCenter > 0) {
+          latestActive = i;
+        }
+      }
+    });
+
+    setVisibleSteps(newVisible);
+    setActiveStep(latestActive);
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => requestAnimationFrame(handleScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    // Initial check
+    setTimeout(handleScroll, 200);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [handleScroll]);
+
+  /* ── Parallax on images ── */
+  useEffect(() => {
+    const handleParallax = () => {
+      const imgs = sectionRef.current?.querySelectorAll('.parallax-img img');
+      if (!imgs) return;
+      imgs.forEach((img) => {
+        const rect = (img as HTMLElement).parentElement!.getBoundingClientRect();
+        const viewH = window.innerHeight;
+        const inView = rect.top < viewH && rect.bottom > 0;
+        if (inView) {
+          const progress = (viewH - rect.top) / (viewH + rect.height);
+          const offset = (progress - 0.5) * 30; // subtle parallax
+          (img as HTMLElement).style.transform = `translateY(${offset}px) scale(1.05)`;
+        }
+      });
+    };
+    window.addEventListener('scroll', handleParallax, { passive: true });
+    return () => window.removeEventListener('scroll', handleParallax);
+  }, []);
+
   return (
-    <section id="how-it-works" className="py-24 bg-gradient-to-b from-sky-50 to-white overflow-hidden">
+    <section
+      id="how-it-works"
+      ref={sectionRef}
+      className="py-20 lg:py-32 bg-gradient-to-b from-sky-50 via-white to-sky-50 overflow-hidden relative"
+    >
+      {/* Background deco */}
+      <div className="absolute top-20 right-0 w-72 h-72 rounded-full bg-sky-100/50 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-20 left-0 w-96 h-96 rounded-full bg-orange-100/30 blur-[120px] pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <div className="text-center mb-16">
+        {/* ── Header ── */}
+        <div className="text-center mb-16 lg:mb-20">
           <div className="reveal inline-flex items-center gap-2 bg-sky-100 text-sky-700 font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-4">
-            <Search className="w-3.5 h-3.5" />
+            <Rocket className="w-3.5 h-3.5" />
             The Journey
           </div>
-          <h2 className="reveal font-display text-4xl md:text-5xl text-slate-800 mb-4 flex items-center gap-3 justify-center flex-wrap">
+          <h2 className="reveal font-display text-4xl md:text-5xl lg:text-6xl text-slate-800 mb-4">
             {howItWorks.title}
           </h2>
-          <p className="reveal text-slate-500 text-lg max-w-xl mx-auto mb-8">
+          <p className="reveal text-slate-500 text-lg max-w-xl mx-auto mb-10">
             {howItWorks.subtitle}
           </p>
 
           {/* Quick facts */}
           <div className="reveal flex flex-wrap justify-center gap-4">
-            <div className="flex items-center gap-2 bg-white rounded-full px-5 py-2.5 shadow-md border border-slate-100">
+            <div className="fact-pill flex items-center gap-2 bg-white/80 rounded-full px-6 py-3 shadow-lg">
               <Calendar className="w-4 h-4 text-sky-500" />
               <span className="font-bold text-slate-700 text-sm">{howItWorks.duration}</span>
             </div>
-            <div className="flex items-center gap-2 bg-white rounded-full px-5 py-2.5 shadow-md border border-slate-100">
+            <div className="fact-pill flex items-center gap-2 bg-white/80 rounded-full px-6 py-3 shadow-lg">
               <Clock className="w-4 h-4 text-orange-500" />
               <span className="font-bold text-slate-700 text-sm">{howItWorks.weeklyEffort} / week</span>
             </div>
-            <div className="flex items-center gap-2 bg-white rounded-full px-5 py-2.5 shadow-md border border-slate-100">
+            <div className="fact-pill flex items-center gap-2 bg-white/80 rounded-full px-6 py-3 shadow-lg">
               <Monitor className="w-4 h-4 text-green-500" />
               <span className="font-bold text-slate-700 text-sm">{howItWorks.format}</span>
             </div>
           </div>
         </div>
 
-        {/* Steps */}
+        {/* ── Vertical Timeline ── */}
         <div className="relative">
-          {/* Connector line */}
-          <div className="hidden lg:block absolute top-12 left-[10%] right-[10%] h-1 bg-gradient-to-r from-sky-300 via-green-300 via-orange-300 to-pink-300 rounded-full z-0" />
+          {/* Spine */}
+          <div ref={spineRef} className="timeline-spine hidden lg:block" />
 
-          <div className="grid lg:grid-cols-5 gap-6 relative z-10">
-            {howItWorks.steps.map((step, i) => (
-              <div key={i} className={`reveal delay-${(i + 1) * 100} flex flex-col items-center text-center`}>
-                <div className={`w-16 h-16 ${stepColors[i].bg} rounded-2xl flex items-center justify-center shadow-lg mb-5 wiggle-hover cursor-default`}>
-                  {stepIcons[i]}
-                </div>
+          {/* Traveling rocket */}
+          <div className="timeline-rocket hidden lg:block">🚀</div>
 
-                <div className={`${stepColors[i].light} border-2 rounded-2xl p-5 w-full card-hover`}>
-                  <div className={`font-black text-xs uppercase tracking-wider mb-2 ${stepColors[i].text}`}>
-                    Step {step.num}
+          {/* Steps */}
+          <div className="space-y-8 lg:space-y-4">
+            {howItWorks.steps.map((step, i) => {
+              const isLeft = i % 2 === 0;
+              const theme = stepThemes[i];
+              const isActive = activeStep === i;
+
+              return (
+                <div
+                  key={i}
+                  ref={(el) => { stepRefs.current[i] = el; }}
+                  className={`timeline-step ${isLeft ? 'step-left' : 'step-right'}`}
+                >
+                  {/* Content side */}
+                  <div className="timeline-step-content">
+                    <div className={`step-card ${theme.light} border-2 ${theme.border} ${theme.shadow} shadow-lg relative overflow-hidden`}>
+                      {/* Decorative dot pattern */}
+                      <div className="absolute top-0 right-0 w-32 h-32 opacity-[0.04]" style={{
+                        backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)',
+                        backgroundSize: '12px 12px',
+                      }} />
+
+                      {/* Step badge */}
+                      <div className={`inline-flex items-center gap-2 ${theme.text} font-black text-xs uppercase tracking-widest mb-4`}>
+                        <span className={`w-6 h-6 rounded-lg bg-gradient-to-br ${theme.gradient} text-white text-[10px] font-black flex items-center justify-center`}>
+                          {step.num}
+                        </span>
+                        Step {step.num}
+                      </div>
+
+                      <h3 className="font-display text-2xl lg:text-3xl text-slate-800 mb-3 leading-snug">
+                        {step.title}
+                      </h3>
+                      <p className="text-slate-500 text-base leading-relaxed relative z-10">
+                        {step.desc}
+                      </p>
+
+                      {/* Fun tag */}
+                      <div className="mt-4 flex items-center gap-2">
+                        <Sparkles className={`w-4 h-4 ${theme.text}`} />
+                        <span className={`text-xs font-bold ${theme.text}`}>
+                          {['Find your path!', 'Choose your adventure!', 'Knowledge unlocked!', 'Create something amazing!', 'You did it!'][i]}
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="font-display text-lg text-slate-800 mb-2">{step.title}</h3>
-                  <p className="text-slate-500 text-xs leading-relaxed">{step.desc}</p>
+
+                  {/* Center node */}
+                  <div className={`timeline-node bg-gradient-to-br ${theme.gradient} shadow-xl ${isActive ? 'active ring-4 ' + theme.ring : ''}`}>
+                    {stepIcons[i]}
+                  </div>
+
+                  {/* Image side */}
+                  <div className="timeline-step-image">
+                    <div className="parallax-img h-56 lg:h-64 relative group">
+                      <img
+                        src={stepImages[i]}
+                        alt={`Step ${step.num}: ${step.title}`}
+                        className="rounded-3xl"
+                        loading="lazy"
+                      />
+                      {/* Hover overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl flex items-end p-5">
+                        <span className="text-white font-bold text-sm flex items-center gap-2">
+                          {stepIcons[i]}
+                          {step.title}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
+
+          {/* Floating decorative emojis */}
+          {floatingEmojis.map((emoji, i) => (
+            <div
+              key={i}
+              className={`absolute hidden lg:block text-2xl pointer-events-none ${
+                i % 2 === 0 ? 'float' : 'float-rotate'
+              }`}
+              style={{
+                top: `${15 + i * 22}%`,
+                left: i % 2 === 0 ? '2%' : 'auto',
+                right: i % 2 === 1 ? '2%' : 'auto',
+                opacity: 0.5,
+              }}
+            >
+              {emoji}
+            </div>
+          ))}
         </div>
 
-        {/* Bottom CTA strip */}
-        <div className="reveal mt-20 rounded-3xl overflow-hidden shadow-2xl relative">
+        {/* ── Bottom CTA Banner ── */}
+        <div className="reveal mt-20 rounded-3xl overflow-hidden shadow-2xl relative group">
           <img
             src="https://images.pexels.com/photos/8566328/pexels-photo-8566328.jpeg?auto=compress&cs=tinysrgb&w=1200"
             alt="Students working together"
-            className="w-full h-56 object-cover object-center"
+            className="w-full h-56 object-cover object-center group-hover:scale-105 transition-transform duration-700"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-sky-900/80 to-blue-600/50 flex items-center px-10">
-            <div className="flex items-center gap-6">
-              <div className="hidden md:block">
-                <RocketMascot />
+          <div className="absolute inset-0 bg-gradient-to-r from-sky-900/85 to-blue-600/60 flex items-center px-8 lg:px-12">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 w-full">
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center float">
+                    <Rocket className="w-5 h-5 text-white" />
+                  </div>
+                  <span className="text-white/60 text-xs font-bold uppercase tracking-widest">Ready to begin?</span>
+                </div>
+                <h3 className="font-display text-2xl lg:text-3xl text-white leading-snug">
+                  Your child's journey starts with one click.
+                </h3>
               </div>
-              <div>
-                <h3 className="font-display text-3xl text-white mb-2">Your child's journey starts with one click.</h3>
-                <a
-                  href="#quiz"
-                  className="inline-flex items-center gap-2 mt-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-slate-800 font-black px-8 py-3 rounded-2xl hover:scale-105 transition-transform duration-300 shadow-lg"
-                >
-                  <Search className="w-4 h-4" />
-                  Discover Their Track
-                </a>
-              </div>
+              <a
+                href="#quiz"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-slate-800 font-black px-8 py-3.5 rounded-2xl hover:scale-105 transition-transform duration-300 shadow-lg whitespace-nowrap"
+              >
+                <Search className="w-4 h-4" />
+                Discover Their Track
+              </a>
             </div>
           </div>
         </div>
