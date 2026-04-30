@@ -1,6 +1,6 @@
 import { whatGain } from '../virtualInternship';
 import { Target, FolderOpen, Wrench, Award, MessageSquare, Sparkles } from 'lucide-react';
-import { MascotWithEyes, MiniEyes } from './KidElements';
+import { MascotWithEyes } from './KidElements';
 
 const gainIcons = [
   <Target className="w-8 h-8 text-sky-600" />,
@@ -29,7 +29,6 @@ export default function WhatGain() {
           </div>
           <h2 className="reveal font-display text-4xl md:text-5xl text-slate-800 mb-4 flex items-center gap-3 justify-center flex-wrap">
             5 Life-Changing Outcomes
-            <MiniEyes size={50} className="hidden sm:inline-flex" />
           </h2>
           <p className="reveal text-slate-500 text-lg max-w-xl mx-auto">
             Every internship is built to deliver real, tangible value for your child's future.

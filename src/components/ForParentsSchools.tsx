@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { forParents, forSchools, designedFor } from '../virtualInternship';
 import { Check, Shield, Users, GraduationCap, Clock, Eye, Heart } from 'lucide-react';
-import { MiniEyes, MascotWithEyes } from './KidElements';
+import { MascotWithEyes } from './KidElements';
 
 const designedIcons = [
   <GraduationCap className="w-5 h-5 text-white" />,
@@ -31,7 +31,6 @@ export default function ForParentsSchools() {
             </div>
             <h2 className="reveal font-display text-4xl md:text-5xl text-slate-800 flex items-center gap-3 justify-center flex-wrap">
               Built Around Your Child
-              <MiniEyes size={50} className="hidden sm:inline-flex" />
             </h2>
           </div>
 

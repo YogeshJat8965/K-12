@@ -1,7 +1,6 @@
 import { useState, useRef } from 'react';
 import { whatIs } from '../virtualInternship';
 import { Target, Pin, Clock, Users } from 'lucide-react';
-import { MiniEyes } from './KidElements';
 
 const pillarIcons = [
   <Target className="w-7 h-7 text-sky-600" />,
@@ -103,7 +102,6 @@ export default function WhatIs() {
             </div>
             <h2 className="font-display text-4xl md:text-5xl text-slate-800 mb-6 leading-tight flex items-center gap-3 flex-wrap">
               {whatIs.title}
-              <MiniEyes size={50} className="hidden sm:inline-flex" />
             </h2>
             <p className="text-slate-600 text-lg leading-relaxed mb-4">
               {whatIs.description}

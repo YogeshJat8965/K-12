@@ -1,7 +1,6 @@
 import { useState, useRef, useCallback } from 'react';
 import { tracks } from '../virtualInternship';
 import { Cpu, Briefcase, Palette, Rocket, Leaf, Heart, Megaphone, Shield, ChevronDown } from 'lucide-react';
-import { MiniEyes } from './KidElements';
 
 const trackIcons = [
   <Cpu className="w-8 h-8 text-white" />,
@@ -99,7 +98,6 @@ export default function Tracks() {
           </div>
           <h2 className="reveal font-display text-4xl md:text-5xl text-slate-800 mb-4 flex items-center gap-3 justify-center flex-wrap">
             8 Exciting Career Worlds
-            <MiniEyes size={50} className="hidden sm:inline-flex" />
           </h2>
           <p className="reveal text-slate-500 text-lg max-w-xl mx-auto">
             Hover to tilt, click to explore. Each track is a portal into a real career domain.

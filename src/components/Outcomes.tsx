@@ -1,6 +1,5 @@
 import { outcomes } from '../virtualInternship';
 import { Award, FolderOpen, CreditCard, Star, MessageSquare, BarChart3 } from 'lucide-react';
-import { MiniEyes } from './KidElements';
 
 const outcomeIcons = [
   <Award className="w-6 h-6 text-yellow-600" />,
@@ -29,7 +28,6 @@ export default function Outcomes() {
             </div>
             <h2 className="reveal font-display text-4xl md:text-5xl text-slate-800 mb-6 flex items-center gap-3 flex-wrap">
               Real Outcomes,
-              <MiniEyes size={50} className="hidden sm:inline-flex" />
             </h2>
             <p className="reveal text-slate-500 text-lg mb-10 leading-relaxed font-display text-2xl">
               <span className="gradient-text-sky">Not Just Certificates</span>

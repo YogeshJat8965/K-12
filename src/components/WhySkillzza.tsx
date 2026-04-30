@@ -1,7 +1,6 @@
 import { useState, useCallback, useRef } from 'react';
 import { whySkillzza } from '../virtualInternship';
 import { School, Target, Factory, Users, Briefcase, Lock, Star } from 'lucide-react';
-import { MiniEyes } from './KidElements';
 
 const wsIcons = [
   <School className="w-7 h-7 text-sky-600" />,
@@ -89,7 +88,6 @@ export default function WhySkillzza() {
           </div>
           <h2 className="reveal font-display text-4xl md:text-5xl text-white mb-4 flex items-center gap-3 justify-center flex-wrap">
             What Makes Us Different
-            <MiniEyes size={50} className="hidden sm:inline-flex" />
           </h2>
           <p className="reveal text-white/75 text-lg max-w-xl mx-auto">
             Not just another ed-tech platform — a purposefully designed experience for school students.

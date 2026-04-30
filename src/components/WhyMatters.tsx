@@ -1,6 +1,5 @@
 import { whyMatters } from '../virtualInternship';
 import { X, Check, ArrowRight, AlertTriangle, TrendingUp, Link2 } from 'lucide-react';
-import { MiniEyes } from './KidElements';
 
 export default function WhyMatters() {
   return (
@@ -13,7 +12,6 @@ export default function WhyMatters() {
           </div>
           <h2 className="reveal font-display text-4xl md:text-5xl text-slate-800 mb-4 flex items-center gap-3 justify-center flex-wrap">
             {whyMatters.title}
-            <MiniEyes size={50} className="hidden sm:inline-flex" />
           </h2>
           <p className="reveal text-slate-500 text-lg max-w-2xl mx-auto">
             {whyMatters.subtitle}

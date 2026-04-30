@@ -4,7 +4,7 @@ import { Star, Sparkles, Rocket, ChevronDown } from 'lucide-react';
 
 const words = ['Doctors', 'Engineers', 'Scientists', 'Designers', 'Entrepreneurs', 'Leaders'];
 
-/* ── Mouse-following eyes ── */
+/* ── Mouse-following kid astronaut ── */
 function FollowingEyes() {
   const leftRef = useRef<HTMLDivElement>(null);
   const rightRef = useRef<HTMLDivElement>(null);
@@ -18,13 +18,16 @@ function FollowingEyes() {
       const dx = e.clientX - cx;
       const dy = e.clientY - cy;
       const angle = Math.atan2(dy, dx);
-      const maxMove = rect.width * 0.22;
-      const dist = Math.min(Math.sqrt(dx * dx + dy * dy), maxMove * 4);
+      const maxMoveX = rect.width * 0.25;
+      const maxMoveY = rect.height * 0.25;
+      const dist = Math.min(Math.sqrt(dx * dx + dy * dy), Math.max(maxMoveX, maxMoveY) * 4);
       const ratio = Math.min(dist / 300, 1);
-      const px = Math.cos(angle) * maxMove * ratio;
-      const py = Math.sin(angle) * maxMove * ratio;
+      const px = Math.cos(angle) * maxMoveX * ratio;
+      const py = Math.sin(angle) * maxMoveY * ratio;
       const pupil = ref.querySelector('.pupil') as HTMLElement;
-      if (pupil) pupil.style.transform = `translate(${px}px, ${py}px)`;
+      if (pupil) {
+        pupil.style.transform = `translate(calc(-50% + ${px}px), calc(-50% + ${py}px))`;
+      }
     };
     move(leftRef.current);
     move(rightRef.current);
@@ -36,32 +39,53 @@ function FollowingEyes() {
   }, [handleMouseMove]);
 
   return (
-    <div className="relative flex items-center justify-center w-full h-full">
-      <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full bg-gradient-to-br from-yellow-300 via-yellow-200 to-orange-200 shadow-2xl border-4 border-yellow-400/50">
-        <div className="absolute bottom-16 left-8 w-16 h-10 bg-pink-300/40 rounded-full blur-md" />
-        <div className="absolute bottom-16 right-8 w-16 h-10 bg-pink-300/40 rounded-full blur-md" />
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 w-24 h-12 border-b-[6px] border-orange-400 rounded-b-full" />
-
-        <div ref={leftRef} className="absolute top-16 left-[22%] w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-full shadow-inner border-2 border-slate-200 overflow-hidden">
-          <div className="pupil absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-slate-800 rounded-full transition-transform duration-100 ease-out">
-            <div className="absolute top-2 left-2 w-3 h-3 bg-white rounded-full" />
-            <div className="absolute bottom-2 right-2 w-1.5 h-1.5 bg-white/60 rounded-full" />
-          </div>
+    <div className="relative flex items-center justify-center w-full h-full mt-10 md:mt-0">
+      {/* Cute Astronaut / Explorer Helmet */}
+      <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 bg-white rounded-[3rem] sm:rounded-[4rem] shadow-[0_20px_50px_rgba(0,0,0,0.3)] border-[8px] sm:border-[12px] border-sky-100 flex items-center justify-center hover:-translate-y-2 transition-transform duration-500 will-change-transform">
+        
+        {/* Little antenna thing on top */}
+        <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-3 h-10 bg-slate-300 rounded-full flex justify-center">
+          <div className="absolute -top-4 w-6 h-6 bg-yellow-400 rounded-full animate-pulse shadow-[0_0_15px_rgba(250,204,21,0.6)]" />
         </div>
 
-        <div ref={rightRef} className="absolute top-16 right-[22%] w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-full shadow-inner border-2 border-slate-200 overflow-hidden">
-          <div className="pupil absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-slate-800 rounded-full transition-transform duration-100 ease-out">
-            <div className="absolute top-2 left-2 w-3 h-3 bg-white rounded-full" />
-            <div className="absolute bottom-2 right-2 w-1.5 h-1.5 bg-white/60 rounded-full" />
+        {/* Ear com pieces */}
+        <div className="absolute -left-6 sm:-left-8 top-1/2 -translate-y-1/2 w-4 sm:w-6 h-16 sm:h-20 bg-sky-200 rounded-l-2xl border-4 border-r-0 border-sky-300" />
+        <div className="absolute -right-6 sm:-right-8 top-1/2 -translate-y-1/2 w-4 sm:w-6 h-16 sm:h-20 bg-sky-200 rounded-r-2xl border-4 border-l-0 border-sky-300" />
+
+        {/* Face Shield Visor */}
+        <div className="relative w-[85%] h-[82%] bg-gradient-to-b from-slate-800 to-slate-900 rounded-[2.5rem] sm:rounded-[3rem] shadow-inner border-4 sm:border-8 border-slate-700 overflow-hidden flex flex-col items-center">
+          
+          {/* Glass reflection arc */}
+          <div className="absolute top-2 sm:top-4 left-4 right-4 h-1/3 bg-white/5 rounded-t-[2rem] rounded-b-[4rem] blur-[2px] transform -rotate-12 scale-110" />
+
+          {/* Eyes row container */}
+          <div className="absolute top-[30%] sm:top-1/3 w-full flex justify-center gap-6 sm:gap-10">
+            {/* Left Eye */}
+            <div ref={leftRef} className="w-14 h-16 sm:w-16 sm:h-20 bg-white rounded-[2rem] shadow-[0_0_20px_rgba(255,255,255,0.4)] overflow-hidden relative">
+              <div className="pupil absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-slate-900 rounded-full transition-transform duration-[50ms] ease-out flex items-center justify-center">
+                <div className="absolute top-1.5 left-1.5 sm:top-2 sm:left-2 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full shadow-[0_0_5px_white]" />
+                <div className="absolute bottom-1.5 right-1.5 sm:bottom-2 sm:right-2 w-1.5 h-1.5 bg-white/60 rounded-full" />
+              </div>
+            </div>
+
+            {/* Right Eye */}
+            <div ref={rightRef} className="w-14 h-16 sm:w-16 sm:h-20 bg-white rounded-[2rem] shadow-[0_0_20px_rgba(255,255,255,0.4)] overflow-hidden relative">
+              <div className="pupil absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 bg-slate-900 rounded-full transition-transform duration-[50ms] ease-out flex items-center justify-center">
+                <div className="absolute top-1.5 left-1.5 sm:top-2 sm:left-2 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-white rounded-full shadow-[0_0_5px_white]" />
+                <div className="absolute bottom-1.5 right-1.5 sm:bottom-2 sm:right-2 w-1.5 h-1.5 bg-white/60 rounded-full" />
+              </div>
+            </div>
           </div>
+
+          {/* Cute digital smile */}
+          <div className="absolute bottom-10 sm:bottom-14 w-12 h-6 sm:w-16 sm:h-8 border-b-[5px] sm:border-b-[6px] border-sky-400 rounded-b-full shadow-[0_0_15px_rgba(56,189,248,0.4)]" />
         </div>
 
-        <div className="absolute top-8 left-[22%] w-20 sm:w-24 h-2 bg-orange-500/60 rounded-full -rotate-6" />
-        <div className="absolute top-8 right-[22%] w-20 sm:w-24 h-2 bg-orange-500/60 rounded-full rotate-6" />
-
-        <Sparkles className="absolute -top-4 -right-4 w-8 h-8 text-yellow-400 sparkle" />
-        <Star className="absolute -bottom-2 -left-4 w-6 h-6 text-orange-400 sparkle-2" />
-        <Star className="absolute top-1/2 -right-6 w-5 h-5 text-yellow-500 sparkle-3" />
+        {/* Orbiting elements to make it fun */}
+        <Sparkles className="absolute -top-6 -right-6 w-8 sm:w-10 h-8 sm:h-10 text-yellow-300 sparkle z-10 drop-shadow-lg" />
+        <Star className="absolute -bottom-4 -left-6 w-6 sm:w-8 h-6 sm:h-8 text-orange-400 sparkle-2 z-10 drop-shadow-lg flex-shrink-0" fill="currentColor" />
+        <Star className="absolute top-[60%] -right-8 w-5 sm:w-6 h-5 sm:h-6 text-sky-300 sparkle-3 z-10 drop-shadow-lg" fill="currentColor" />
+        
       </div>
     </div>
   );

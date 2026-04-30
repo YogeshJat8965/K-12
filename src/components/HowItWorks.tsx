@@ -1,6 +1,6 @@
 import { howItWorks } from '../virtualInternship';
 import { Clock, Calendar, Monitor, Search, GraduationCap, BookOpen, Hammer, Trophy } from 'lucide-react';
-import { RocketMascot, MiniEyes } from './KidElements';
+import { RocketMascot } from './KidElements';
 
 const stepIcons = [
   <Search className="w-7 h-7 text-white" />,
@@ -30,7 +30,6 @@ export default function HowItWorks() {
           </div>
           <h2 className="reveal font-display text-4xl md:text-5xl text-slate-800 mb-4 flex items-center gap-3 justify-center flex-wrap">
             {howItWorks.title}
-            <MiniEyes size={50} className="hidden sm:inline-flex" />
           </h2>
           <p className="reveal text-slate-500 text-lg max-w-xl mx-auto mb-8">
             {howItWorks.subtitle}

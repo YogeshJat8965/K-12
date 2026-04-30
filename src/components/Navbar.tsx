@@ -37,7 +37,7 @@ export default function Navbar() {
               scrolled ? 'text-sky-600' : 'text-white'
             }`}
           >
-            Skillzza
+            Skillzza Nova
           </span>
         </a>
 

@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
 import { finalCta } from '../virtualInternship';
 import { Mail, Globe, Sparkles, Rocket, Star, Zap } from 'lucide-react';
-import { MascotWithEyes, MiniEyes } from './KidElements';
+import { MascotWithEyes } from './KidElements';
 
 /* ── Magnetic button ── */
 function MagneticButton({ children, className, href }: { children: React.ReactNode; className?: string; href: string }) {
@@ -95,7 +95,6 @@ export default function FinalCta() {
           <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-2xl flex items-center justify-center float shadow-xl">
             <Rocket className="w-8 h-8 text-white" />
           </div>
-          <MiniEyes size={60} />
         </div>
 
         <div className="reveal inline-flex items-center gap-2 glass text-white font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-6 border border-white/30">
