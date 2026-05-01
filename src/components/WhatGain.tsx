@@ -4,11 +4,11 @@ import { Target, FolderOpen, Wrench, Award, MessageSquare, Sparkles } from 'luci
 
 /* ── Icons per benefit ── */
 const gainIcons = [
-  <Target className="w-7 h-7" />,
-  <FolderOpen className="w-7 h-7" />,
-  <Wrench className="w-7 h-7" />,
-  <Award className="w-7 h-7" />,
-  <MessageSquare className="w-7 h-7" />,
+  <Target className="w-5 h-5" />,
+  <FolderOpen className="w-5 h-5" />,
+  <Wrench className="w-5 h-5" />,
+  <Award className="w-5 h-5" />,
+  <MessageSquare className="w-5 h-5" />,
 ];
 
 /* ── Color theme per benefit ── */
@@ -55,7 +55,7 @@ export default function WhatGain() {
           <h2 className="reveal font-display text-4xl md:text-5xl lg:text-6xl text-slate-800 mb-4">
             5 Life-Changing Outcomes
           </h2>
-          <p className="reveal text-slate-500 text-lg max-w-xl mx-auto">
+          <p className="reveal text-slate-500 text-base md:text-lg max-w-3xl mx-auto md:whitespace-nowrap">
             Every internship is built to deliver real, tangible value for your child's future.
           </p>
         </div>
@@ -117,7 +117,7 @@ export default function WhatGain() {
           </div>
 
           {/* RIGHT: Benefit rows */}
-          <div className="lg:col-span-3 space-y-4">
+          <div className="lg:col-span-3 space-y-2">
             {whatGain.map((item, i) => {
               const theme = benefitThemes[i];
               return (
@@ -128,25 +128,25 @@ export default function WhatGain() {
                   onMouseEnter={() => setHoveredIdx(i)}
                   onMouseLeave={() => setHoveredIdx(null)}
                 >
-                  <div className={`flex items-start gap-5 p-5 lg:p-6 rounded-2xl border-2 border-transparent ${theme.hover} transition-all duration-300 cursor-default ${
+                  <div className={`flex items-start gap-3 p-3 lg:p-4 rounded-2xl border-2 border-transparent ${theme.hover} transition-all duration-300 cursor-default ${
                     hoveredIdx === i ? `ring-2 ${theme.ring} bg-white shadow-lg` : 'bg-white/50'
                   }`}>
                     {/* Number */}
-                    <div className={`font-display text-3xl lg:text-4xl font-bold ${theme.num} opacity-30 group-hover:opacity-100 transition-opacity duration-300 leading-none mt-1 select-none flex-shrink-0 w-12 text-right`}>
+                    <div className={`font-display text-xl lg:text-2xl font-bold ${theme.num} opacity-30 group-hover:opacity-100 transition-opacity duration-300 leading-none mt-1 select-none flex-shrink-0 w-8 text-right`}>
                       {item.num}
                     </div>
 
                     {/* Icon */}
-                    <div className={`benefit-icon w-14 h-14 ${theme.icon} rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}>
+                    <div className={`benefit-icon w-10 h-10 ${theme.icon} rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}>
                       {gainIcons[i]}
                     </div>
 
                     {/* Content */}
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-display text-lg lg:text-xl text-slate-800 mb-1.5 leading-snug group-hover:text-slate-900 transition-colors">
+                      <h3 className="font-display text-base lg:text-lg text-slate-800 mb-1 leading-snug group-hover:text-slate-900 transition-colors">
                         {item.title}
                       </h3>
-                      <p className="text-slate-500 text-sm leading-relaxed">
+                      <p className="text-slate-500 text-xs lg:text-sm leading-relaxed">
                         {item.desc}
                       </p>
 

@@ -15,7 +15,7 @@ export function MiniEyes({ size = 80, className = '' }: { size?: number; classNa
       const dy = e.clientY - cy;
       const angle = Math.atan2(dy, dx);
       const maxMove = rect.width * 0.2;
-      const dist = Math.min(Math.sqrt(dx * dx + dy * dy), maxMove * 4);
+      const dist = Math.sqrt(dx * dx + dy * dy);
       const ratio = Math.min(dist / 250, 1);
       const px = Math.cos(angle) * maxMove * ratio;
       const py = Math.sin(angle) * maxMove * ratio;
@@ -104,7 +104,7 @@ export function MascotWithEyes({ className = '' }: { className?: string }) {
       const dy = e.clientY - cy;
       const angle = Math.atan2(dy, dx);
       const maxMove = 4;
-      const dist = Math.min(Math.sqrt(dx * dx + dy * dy), 200);
+      const dist = Math.sqrt(dx * dx + dy * dy);
       const ratio = Math.min(dist / 200, 1);
       const px = Math.cos(angle) * maxMove * ratio;
       const py = Math.sin(angle) * maxMove * ratio;

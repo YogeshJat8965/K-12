@@ -53,7 +53,7 @@ export default function Tracks() {
   const activeTrack = tracks[activeIdx];
 
   return (
-    <section id="tracks" className="py-20 lg:py-28 overflow-hidden bg-slate-900 relative">
+    <section id="tracks" className="py-12 lg:py-16 overflow-hidden bg-slate-900 relative">
       {/* Background gradients */}
       <div className="absolute inset-0 opacity-40 mix-blend-color-dodge pointer-events-none" style={{
         background: `radial-gradient(circle at 30% 50%, var(--tw-gradient-from) 0%, transparent 50%)`,
@@ -63,7 +63,7 @@ export default function Tracks() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <div className="reveal inline-flex items-center gap-2 glass text-white font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-4 border border-white/20">
             <Compass className="w-3.5 h-3.5 text-blue-400" />
             Explore the Universe of Careers
@@ -77,7 +77,7 @@ export default function Tracks() {
         </div>
 
         {/* ── Main Carousel Layout ── */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch h-[800px] lg:h-[600px]">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch h-[700px] lg:h-[540px]">
 
           {/* LEFT: Active Track Hero (60%) */}
           <div 
@@ -135,7 +135,7 @@ export default function Tracks() {
 
           {/* RIGHT: Thumbnail Selector (40%) */}
           <div 
-            className="lg:w-2/5 h-1/2 lg:h-full flex flex-col gap-3 overflow-y-auto pr-2 custom-scrollbar"
+            className="lg:w-2/5 h-1/2 lg:h-full flex flex-col gap-1.5 overflow-y-hidden pr-2"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
@@ -145,20 +145,20 @@ export default function Tracks() {
                 <button
                   key={idx}
                   onClick={() => handleSelect(idx)}
-                  className={`track-thumb text-left w-full p-4 rounded-2xl flex items-center gap-4 transition-all duration-300 border ${
+                  className={`track-thumb text-left w-full p-2 lg:p-2.5 rounded-2xl flex items-center gap-3 transition-all duration-300 border ${
                     isActive 
-                      ? 'bg-white/10 border-white/20 backdrop-blur-md' 
+                      ? 'bg-white/10 border-white/20 backdrop-blur-md shadow-sm' 
                       : 'bg-transparent border-transparent hover:bg-white/5'
                   }`}
                 >
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 transition-all ${
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0 transition-all ${
                     isActive ? `bg-gradient-to-br ${track.color} shadow-lg` : 'bg-white/5 grayscale opacity-50'
                   }`}>
                     {track.icon}
                   </div>
                   
                   <div className="flex-1 min-w-0">
-                    <h4 className={`font-bold truncate transition-colors ${isActive ? 'text-white' : 'text-white/60'}`}>
+                    <h4 className={`font-bold text-sm lg:text-base truncate transition-colors ${isActive ? 'text-white' : 'text-white/60'}`}>
                       {track.title}
                     </h4>
                     {isActive && (
@@ -174,19 +174,6 @@ export default function Tracks() {
                 </button>
               );
             })}
-          </div>
-
-        </div>
-
-        {/* Bottom Marquee Strip (kept from original but restyled to match dark theme) */}
-        <div className="mt-16 reveal border-y border-white/10 py-6 overflow-hidden flex whitespace-nowrap opacity-60">
-           <div className="animate-marquee flex gap-16 items-center min-w-full">
-            {[...tracks, ...tracks].map((track, i) => (
-              <div key={i} className="flex items-center gap-3 text-white/50">
-                <span className="text-xl grayscale opacity-50">{track.icon}</span>
-                <span className="font-display tracking-wide uppercase text-sm">{track.title}</span>
-              </div>
-            ))}
           </div>
         </div>
       </div>

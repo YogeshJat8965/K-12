@@ -1,6 +1,8 @@
 import { useState, useRef } from 'react';
 import { whatIs } from '../virtualInternship';
 import { Target, Pin, Clock, Users } from 'lucide-react';
+import traditionalLearningImg from '../assets/traditional learning.jpg';
+import skillzzaWayImg from '../assets/skillzza Way.jpg';
 
 const pillarIcons = [
   <Target className="w-7 h-7 text-sky-600" />,
@@ -49,7 +51,7 @@ export default function WhatIs() {
               {/* "Before" side - traditional learning */}
               <div className="absolute inset-0">
                 <img
-                  src="https://images.pexels.com/photos/4145354/pexels-photo-4145354.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  src={traditionalLearningImg}
                   alt="Traditional learning"
                   className="w-full h-full object-cover"
                 />
@@ -65,7 +67,7 @@ export default function WhatIs() {
                 style={{ clipPath: `inset(0 0 0 ${sliderPos}%)` }}
               >
                 <img
-                  src="https://images.pexels.com/photos/8566462/pexels-photo-8566462.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  src={skillzzaWayImg}
                   alt="Skillzza learning"
                   className="w-full h-full object-cover"
                 />

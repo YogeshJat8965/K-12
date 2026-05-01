@@ -8,7 +8,7 @@ export default function Footer() {
           <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center shadow-lg">
             <Rocket className="w-4 h-4 text-white" />
           </div>
-          <span className="font-display text-xl text-white">Skillzza</span>
+          <span className="font-display text-xl text-white">Skillzza Nova</span>
         </div>
         <p className="text-slate-500 text-sm text-center">
           Virtual Internships for Grades 6–12 &mdash; Empowering Future Leaders

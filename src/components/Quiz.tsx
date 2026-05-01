@@ -32,6 +32,40 @@ const q2Icons = [<Rocket className="w-6 h-6 text-sky-600" />, <Megaphone classNa
 const q3Icons = [<Cpu className="w-6 h-6 text-sky-600" />, <BarChart3 className="w-6 h-6 text-orange-600" />, <Trophy className="w-6 h-6 text-green-600" />, <Compass className="w-6 h-6 text-yellow-600" />];
 const questionIcons = [q1Icons, q2Icons, q3Icons];
 
+function SectionBurst() {
+  const particles = Array.from({ length: 120 }, (_, i) => {
+    const angle = (Math.PI * 2 * i) / 120 + (Math.random() * 0.1 - 0.05);
+    const distance = 200 + Math.random() * 800;
+    const duration = 1.5 + Math.random() * 2;
+    const colors = ['#fbbf24', '#3b82f6', '#22c55e', '#f97316', '#ec4899', '#8b5cf6', '#ffffff'];
+    const color = colors[i % colors.length];
+    const tx = Math.cos(angle) * distance;
+    const ty = Math.sin(angle) * distance;
+    const size = Math.random() * 12 + 6;
+    return { id: i, tx, ty, duration, color, size, isCircle: i % 2 === 0 };
+  });
+
+  return (
+    <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-[100]">
+      {particles.map((p) => (
+        <div
+          key={p.id}
+          className="absolute burst-particle shadow-sm"
+          style={{
+            width: p.size,
+            height: p.size,
+            backgroundColor: p.color,
+            borderRadius: p.isCircle ? '50%' : '3px',
+            '--tx': `${p.tx}px`,
+            '--ty': `${p.ty}px`,
+            '--burst-duration': `${p.duration}s`,
+          } as React.CSSProperties}
+        />
+      ))}
+    </div>
+  );
+}
+
 export default function Quiz() {
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answers>([null, null, null]);
@@ -75,8 +109,9 @@ export default function Quiz() {
   const result = done ? getResult(answers) : null;
 
   return (
-    <section id="quiz" className="py-24 bg-gradient-to-b from-sky-50 to-white overflow-hidden">
-      <div className="max-w-3xl mx-auto px-6">
+    <section id="quiz" className="py-24 bg-gradient-to-b from-sky-50 to-white overflow-hidden relative">
+      {showConfetti && <SectionBurst />}
+      <div className="max-w-3xl mx-auto px-6 relative z-10">
         <div className="text-center mb-12">
           <div className="reveal inline-flex items-center gap-2 bg-orange-100 text-orange-700 font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-4">
             <Sparkles className="w-3.5 h-3.5" />
@@ -176,13 +211,6 @@ export default function Quiz() {
           ) : (
             /* Result */
             <div className="p-8 md:p-12 text-center relative overflow-hidden">
-              {showConfetti && (
-                <div className="absolute inset-0 pointer-events-none flex items-start justify-center pt-8 gap-4 flex-wrap">
-                  {['🎉', '🌟', '🎊', '✨', '🚀', '🏆'].map((e, i) => (
-                    <span key={i} className="text-4xl confetti" style={{ animationDelay: `${i * 0.15}s` }}>{e}</span>
-                  ))}
-                </div>
-              )}
 
               <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-500 rounded-3xl flex items-center justify-center mx-auto mb-6 bounce-in shadow-xl">
                 <Trophy className="w-10 h-10 text-white" />

@@ -109,9 +109,7 @@ export default function WhyMatters() {
                     }`}>
                       <X className={`w-4 h-4 transition-colors duration-300 ${struckItems.has(i) ? 'text-white' : 'text-red-400'}`} />
                     </div>
-                    <span className={`strike-animate text-slate-700 font-semibold text-base leading-relaxed transition-all duration-500 ${
-                      struckItems.has(i) ? 'struck' : ''
-                    }`}>
+                    <span className="text-slate-700 font-semibold text-base leading-relaxed transition-all duration-500">
                       {item}
                     </span>
                   </div>
@@ -178,13 +176,17 @@ export default function WhyMatters() {
 
         {/* Bridge Banner */}
         <div className={`transition-all duration-700 ${bridgeVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-            <img
-              src="/images/why-matters-split.png"
-              alt="From traditional to modern learning"
-              className="w-full h-48 lg:h-56 object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-sky-900/90 via-blue-700/85 to-emerald-700/80" />
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl min-h-[200px] lg:min-h-[224px] bg-gradient-to-br from-sky-800 via-blue-700 to-emerald-700 flex flex-col justify-center">
+            {/* Animated Background Elements */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div className="absolute -top-10 left-1/4 w-64 h-64 bg-sky-400/30 rounded-full blur-3xl float" />
+              <div className="absolute -bottom-10 right-1/4 w-64 h-64 bg-emerald-400/30 rounded-full blur-3xl float-slow" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[200px] bg-white/5 rounded-full blur-2xl pulse-ring" />
+              {/* Small floating particles */}
+              <div className="absolute top-10 left-[10%] w-2 h-2 bg-yellow-300 rounded-full sparkle" />
+              <div className="absolute bottom-12 right-[15%] w-3 h-3 bg-sky-300 rounded-full sparkle-2" />
+              <div className="absolute top-1/4 right-[30%] w-1.5 h-1.5 bg-green-300 rounded-full sparkle-3" />
+            </div>
             <div className="absolute inset-0 flex items-center justify-center px-8">
               <div className="text-center max-w-3xl">
                 <div className="flex items-center justify-center gap-4 mb-4">

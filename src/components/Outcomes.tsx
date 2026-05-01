@@ -133,25 +133,7 @@ export default function Outcomes() {
           </p>
         </div>
 
-        {/* Trophy banner image */}
-        <div className="reveal rounded-3xl overflow-hidden shadow-2xl mb-16 relative group">
-          <img
-            src="/images/outcomes-trophy.png"
-            alt="Student achievements showcase"
-            className="w-full h-48 lg:h-64 object-cover object-center group-hover:scale-105 transition-transform duration-700"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-transparent to-transparent" />
-          <div className="absolute bottom-4 left-6 right-6 flex items-center justify-between">
-            <span className="text-white/70 text-sm font-bold flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-yellow-300" />
-              Scroll to unlock achievements
-            </span>
-            <span className="text-yellow-300 text-sm font-black">
-              {unlocked.size}/{outcomes.length} unlocked
-            </span>
-          </div>
-        </div>
+
 
         {/* Achievement badges grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-6">
