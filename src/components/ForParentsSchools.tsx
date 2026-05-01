@@ -6,7 +6,7 @@ export default function ForParentsSchools() {
   const [activeTab, setActiveTab] = useState<'parents' | 'schools'>('parents');
 
   return (
-    <section id="parents" className="py-20 lg:py-32 bg-slate-50 overflow-hidden">
+    <section id="parents" className="py-20 lg:py-32 bg-sky-500/40 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* ── 1. Designed For Students Strip ── */}

@@ -108,22 +108,19 @@ export default function WhatIs() {
             <p className="text-slate-600 text-lg leading-relaxed mb-4">
               {whatIs.description}
             </p>
-            <p className="text-sky-700 font-bold text-base leading-relaxed mb-10 bg-sky-50 rounded-2xl p-5 border-l-4 border-sky-400 flex items-start gap-3">
-              <Pin className="w-5 h-5 flex-shrink-0 mt-0.5 text-sky-500" />
-              <span>{whatIs.note}</span>
+            <p className="text-brand-sky font-bold text-base leading-relaxed mb-10 bg-brand-sky/10 rounded-2xl p-5 border-l-4 border-brand-sky flex items-start gap-3">
+              <Pin className="w-5 h-5 flex-shrink-0 mt-0.5 text-brand-sky" />
+              <span className="text-brand-navy/90">{whatIs.note}</span>
             </p>
 
             <div className="grid grid-cols-2 gap-4">
               {whatIs.pillars.map((p, i) => (
                 <div
                   key={i}
-                  className={`reveal delay-${(i + 1) * 100} card-hover ${pillarColors[i].bg} rounded-2xl p-5 shadow-md border-2 ${pillarColors[i].border} transition-all duration-300 group`}
+                  className={`reveal delay-${(i + 1) * 100} card-hover bg-brand-sky/10 rounded-2xl p-6 shadow-sm border-2 border-brand-sky/30 hover:border-brand-sky transition-all duration-300 group`}
                 >
-                  <div className={`w-12 h-12 ${pillarColors[i].icon} rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300`}>
-                    {pillarIcons[i]}
-                  </div>
-                  <div className="font-black text-slate-800 text-sm mb-1">{p.title}</div>
-                  <div className="text-slate-500 text-xs leading-relaxed">{p.desc}</div>
+                  <div className="font-black text-brand-navy text-lg mb-2">{p.title}</div>
+                  <div className="text-brand-navy/80 text-sm font-medium leading-relaxed">{p.desc}</div>
                 </div>
               ))}
             </div>

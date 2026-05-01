@@ -21,15 +21,15 @@ function getResult(answers: Answers): typeof tracks[0] | null {
 }
 
 const optionColors = [
-  { border: 'border-sky-200 bg-sky-50 hover:border-sky-400 hover:bg-sky-100', selected: 'border-sky-500 bg-sky-100 ring-2 ring-sky-300', correct: 'border-green-500 bg-green-100 ring-2 ring-green-300' },
-  { border: 'border-orange-200 bg-orange-50 hover:border-orange-400 hover:bg-orange-100', selected: 'border-orange-500 bg-orange-100 ring-2 ring-orange-300', correct: 'border-green-500 bg-green-100 ring-2 ring-green-300' },
-  { border: 'border-green-200 bg-green-50 hover:border-green-400 hover:bg-green-100', selected: 'border-green-500 bg-green-100 ring-2 ring-green-300', correct: 'border-green-500 bg-green-100 ring-2 ring-green-300' },
-  { border: 'border-yellow-200 bg-yellow-50 hover:border-yellow-400 hover:bg-yellow-100', selected: 'border-yellow-500 bg-yellow-100 ring-2 ring-yellow-300', correct: 'border-green-500 bg-green-100 ring-2 ring-green-300' },
+  { border: 'border-brand-sky/20 bg-brand-sky/5 hover:border-brand-sky hover:bg-brand-sky/10', selected: 'border-brand-sky bg-brand-sky/10 ring-2 ring-brand-sky/30', correct: 'border-brand-sky bg-brand-sky/10 ring-2 ring-brand-sky/30' },
+  { border: 'border-brand-yellow/30 bg-brand-yellow/10 hover:border-brand-yellow hover:bg-brand-yellow/20', selected: 'border-brand-yellow bg-brand-yellow/20 ring-2 ring-brand-yellow/40', correct: 'border-brand-yellow bg-brand-yellow/20 ring-2 ring-brand-yellow/40' },
+  { border: 'border-brand-navy/10 bg-brand-navy/5 hover:border-brand-navy/50 hover:bg-brand-navy/10', selected: 'border-brand-navy bg-brand-navy/10 ring-2 ring-brand-navy/30', correct: 'border-brand-navy bg-brand-navy/10 ring-2 ring-brand-navy/30' },
+  { border: 'border-brand-brown/20 bg-brand-brown/5 hover:border-brand-brown hover:bg-brand-brown/10', selected: 'border-brand-brown bg-brand-brown/10 ring-2 ring-brand-brown/30', correct: 'border-brand-brown bg-brand-brown/10 ring-2 ring-brand-brown/30' },
 ];
 
-const q1Icons = [<Cpu className="w-6 h-6 text-sky-600" />, <Lightbulb className="w-6 h-6 text-orange-600" />, <Palette className="w-6 h-6 text-green-600" />, <Leaf className="w-6 h-6 text-yellow-600" />];
-const q2Icons = [<Rocket className="w-6 h-6 text-sky-600" />, <Megaphone className="w-6 h-6 text-orange-600" />, <Heart className="w-6 h-6 text-green-600" />, <Shield className="w-6 h-6 text-yellow-600" />];
-const q3Icons = [<Cpu className="w-6 h-6 text-sky-600" />, <BarChart3 className="w-6 h-6 text-orange-600" />, <Trophy className="w-6 h-6 text-green-600" />, <Compass className="w-6 h-6 text-yellow-600" />];
+const q1Icons = [<Cpu className="w-6 h-6 text-brand-sky" />, <Lightbulb className="w-6 h-6 text-brand-yellow" />, <Palette className="w-6 h-6 text-brand-navy" />, <Leaf className="w-6 h-6 text-brand-brown" />];
+const q2Icons = [<Rocket className="w-6 h-6 text-brand-sky" />, <Megaphone className="w-6 h-6 text-brand-yellow" />, <Heart className="w-6 h-6 text-brand-navy" />, <Shield className="w-6 h-6 text-brand-brown" />];
+const q3Icons = [<Cpu className="w-6 h-6 text-brand-sky" />, <BarChart3 className="w-6 h-6 text-brand-yellow" />, <Trophy className="w-6 h-6 text-brand-navy" />, <Compass className="w-6 h-6 text-brand-brown" />];
 const questionIcons = [q1Icons, q2Icons, q3Icons];
 
 function SectionBurst() {
@@ -37,7 +37,7 @@ function SectionBurst() {
     const angle = (Math.PI * 2 * i) / 120 + (Math.random() * 0.1 - 0.05);
     const distance = 200 + Math.random() * 800;
     const duration = 1.5 + Math.random() * 2;
-    const colors = ['#fbbf24', '#3b82f6', '#22c55e', '#f97316', '#ec4899', '#8b5cf6', '#ffffff'];
+    const colors = ['#0B2447', '#56CCF2', '#F2C94C', '#F5E6D3', '#8B4513'];
     const color = colors[i % colors.length];
     const tx = Math.cos(angle) * distance;
     const ty = Math.sin(angle) * distance;
@@ -109,27 +109,27 @@ export default function Quiz() {
   const result = done ? getResult(answers) : null;
 
   return (
-    <section id="quiz" className="py-24 bg-gradient-to-b from-sky-50 to-white overflow-hidden relative">
+    <section id="quiz" className="py-24 bg-slate-50 overflow-hidden relative">
       {showConfetti && <SectionBurst />}
       <div className="max-w-3xl mx-auto px-6 relative z-10">
         <div className="text-center mb-12">
-          <div className="reveal inline-flex items-center gap-2 bg-orange-100 text-orange-700 font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-4">
+          <div className="reveal inline-flex items-center gap-2 bg-brand-yellow/20 text-brand-brown font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-4">
             <Sparkles className="w-3.5 h-3.5" />
             Interactive Quiz
           </div>
-          <h2 className="reveal font-display text-4xl md:text-5xl text-slate-800 mb-4">
+          <h2 className="reveal font-display text-4xl md:text-5xl text-brand-navy mb-4">
             Find Your Perfect Track!
           </h2>
-          <p className="reveal text-slate-500 text-lg">{quiz.subtitle}</p>
+          <p className="reveal text-brand-navy/60 text-lg">{quiz.subtitle}</p>
         </div>
 
-        <div className={`reveal bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 ${shaking ? 'shake' : ''}`}>
+        <div className={`reveal bg-white rounded-3xl shadow-2xl overflow-hidden border border-brand-navy/5 ${shaking ? 'shake' : ''}`}>
           {!done ? (
             <>
               {/* Progress bar */}
-              <div className="h-2 bg-slate-100">
+              <div className="h-2 bg-brand-navy/5">
                 <div
-                  className="h-2 bg-gradient-to-r from-sky-400 to-green-400 rounded-full transition-all duration-500"
+                  className="h-2 bg-gradient-to-r from-brand-sky to-brand-yellow rounded-full transition-all duration-500"
                   style={{ width: `${progress}%` }}
                 />
               </div>
@@ -140,25 +140,25 @@ export default function Quiz() {
                   {quiz.questions.map((_, i) => (
                     <div key={i} className="flex items-center gap-2">
                       <div className={`w-9 h-9 rounded-xl flex items-center justify-center text-sm font-black transition-all duration-300 ${
-                        i < step ? 'bg-green-400 text-white shadow-md' :
-                        i === step ? 'bg-sky-500 text-white ring-4 ring-sky-100 shadow-lg' :
-                        'bg-slate-100 text-slate-400'
+                        i < step ? 'bg-brand-sky text-white shadow-md' :
+                        i === step ? 'bg-brand-navy text-white ring-4 ring-brand-navy/20 shadow-lg' :
+                        'bg-brand-navy/5 text-brand-navy/40'
                       }`}>
                         {i < step ? <CheckCircle2 className="w-4 h-4" /> : i + 1}
                       </div>
                       {i < quiz.questions.length - 1 && (
-                        <div className={`w-8 h-1 rounded-full transition-all duration-300 ${i < step ? 'bg-green-400' : 'bg-slate-100'}`} />
+                        <div className={`w-8 h-1 rounded-full transition-all duration-300 ${i < step ? 'bg-brand-sky' : 'bg-brand-navy/5'}`} />
                       )}
                     </div>
                   ))}
-                  <div className="ml-auto flex items-center gap-1 text-xs font-bold text-yellow-600 bg-yellow-50 px-3 py-1.5 rounded-full">
+                  <div className="ml-auto flex items-center gap-1 text-xs font-bold text-brand-brown bg-brand-yellow/20 px-3 py-1.5 rounded-full">
                     <Zap className="w-3.5 h-3.5" />
                     +100 XP
                   </div>
                 </div>
 
                 {/* Question */}
-                <h3 className="font-display text-2xl md:text-3xl text-slate-800 mb-8">
+                <h3 className="font-display text-2xl md:text-3xl text-brand-navy mb-8">
                   {quiz.questions[step].q}
                 </h3>
 
@@ -183,11 +183,11 @@ export default function Quiz() {
                         }`}>
                           {questionIcons[step]?.[oIdx] || <Sparkles className="w-5 h-5 text-slate-400" />}
                         </div>
-                        <div className="font-bold text-slate-700 text-sm leading-snug">
+                        <div className="font-bold text-brand-navy text-sm leading-snug">
                           {opt.label.replace(/^[^\s]+\s/, '')}
                         </div>
                         {isSelected && (
-                          <div className="mt-2 flex items-center gap-1 text-xs font-bold text-sky-600 pop-in">
+                          <div className="mt-2 flex items-center gap-1 text-xs font-bold text-brand-sky pop-in">
                             <CheckCircle2 className="w-3 h-3" />
                             Selected!
                           </div>
@@ -212,33 +212,33 @@ export default function Quiz() {
             /* Result */
             <div className="p-8 md:p-12 text-center relative overflow-hidden">
 
-              <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-500 rounded-3xl flex items-center justify-center mx-auto mb-6 bounce-in shadow-xl">
+              <div className="w-20 h-20 bg-gradient-to-br from-brand-yellow to-amber-500 rounded-3xl flex items-center justify-center mx-auto mb-6 bounce-in shadow-xl">
                 <Trophy className="w-10 h-10 text-white" />
               </div>
-              <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-4">
+              <div className="inline-flex items-center gap-2 bg-brand-sky/20 text-brand-navy font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-4">
                 <CheckCircle2 className="w-3.5 h-3.5" />
                 Your Perfect Match!
               </div>
-              <h3 className="font-display text-3xl text-slate-800 mb-2">
+              <h3 className="font-display text-3xl text-brand-navy mb-2">
                 {result?.title || 'Multiple Tracks!'}
               </h3>
-              <p className="text-slate-500 font-bold text-sm uppercase tracking-wider mb-4">
+              <p className="text-brand-navy/60 font-bold text-sm uppercase tracking-wider mb-4">
                 {result?.tagline}
               </p>
-              <p className="text-slate-600 text-base leading-relaxed max-w-xl mx-auto mb-8">
+              <p className="text-brand-navy/80 text-base leading-relaxed max-w-xl mx-auto mb-8">
                 {result?.desc}
               </p>
 
               <div className="flex flex-wrap gap-3 justify-center">
                 <a
                   href="#tracks"
-                  className="bg-gradient-to-r from-sky-500 to-blue-600 text-white font-black px-8 py-3 rounded-2xl hover:scale-105 transition-transform duration-300 flex items-center gap-2 shadow-lg"
+                  className="bg-brand-sky text-white font-black px-8 py-3 rounded-2xl hover:scale-105 transition-transform duration-300 flex items-center gap-2 shadow-lg hover:shadow-brand-sky/40"
                 >
                   Explore This Track <ChevronRight className="w-4 h-4" />
                 </a>
                 <button
                   onClick={reset}
-                  className="border-2 border-slate-200 text-slate-600 font-bold px-6 py-3 rounded-2xl hover:border-slate-400 transition-colors flex items-center gap-2"
+                  className="border-2 border-brand-navy/10 text-brand-navy font-bold px-6 py-3 rounded-2xl hover:border-brand-navy/30 transition-colors flex items-center gap-2"
                 >
                   <RotateCcw className="w-4 h-4" />
                   Retake Quiz

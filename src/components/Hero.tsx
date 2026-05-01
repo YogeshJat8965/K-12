@@ -156,51 +156,47 @@ export default function Hero() {
   }, [displayed, deleting, wordIdx]);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-sky-500 via-blue-600 to-blue-800">
-      <div className="absolute top-10 left-10 w-[500px] h-[500px] rounded-full bg-sky-400/20 blur-[100px] blob" />
-      <div className="absolute bottom-10 right-10 w-[600px] h-[600px] rounded-full bg-blue-300/15 blur-[120px] blob blob-delay-2" />
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-sky-50 via-white to-brand-beige">
+      <div className="absolute top-10 left-10 w-[500px] h-[500px] rounded-full bg-brand-sky/20 blur-[100px] blob" />
+      <div className="absolute bottom-10 right-10 w-[600px] h-[600px] rounded-full bg-brand-yellow/15 blur-[120px] blob blob-delay-2" />
       <Particles />
       <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
+        backgroundImage: 'radial-gradient(circle, #0B2447 1px, transparent 1px)',
         backgroundSize: '40px 40px',
       }} />
 
-      <Sparkles className="absolute top-24 left-[30%] w-6 h-6 text-yellow-300/50 sparkle" />
-      <Star className="absolute top-[35%] right-[25%] w-5 h-5 text-yellow-200/40 sparkle-2" />
+      <Sparkles className="absolute top-24 left-[30%] w-6 h-6 text-brand-yellow/80 sparkle" />
+      <Star className="absolute top-[35%] right-[25%] w-5 h-5 text-brand-sky/60 sparkle-2" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-24 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className={`transition-all duration-1000 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <div className="inline-flex items-center gap-2 glass text-white font-bold text-sm px-5 py-2.5 rounded-full mb-8">
+            <div className="inline-flex items-center gap-2 bg-brand-navy/5 border border-brand-navy/10 text-brand-navy font-bold text-sm px-5 py-2.5 rounded-full mb-8">
               <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-sky opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-sky" />
               </span>
               {hero.grades}
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] text-white leading-[1.1] mb-3">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] text-brand-navy leading-[1.1] mb-3">
               Give Your Child a<br />
-              <span className="shimmer-text">Head Start</span><br />
+              <span className="text-brand-sky drop-shadow-sm">Head Start</span><br />
               Beyond Academics
             </h1>
 
-            <div className="font-display text-2xl sm:text-3xl text-white/90 mb-6 mt-3 h-10 flex items-center gap-2">
+            <div className="font-display text-2xl sm:text-3xl text-brand-navy/80 mb-6 mt-3 h-10 flex items-center gap-2">
               <span>Train Future</span>
-              <span className="text-yellow-300 min-w-[180px]">
+              <span className="text-brand-brown min-w-[180px]">
                 {displayed}
-                <span className="cursor text-yellow-300">|</span>
+                <span className="cursor text-brand-brown">|</span>
               </span>
             </div>
 
-            {/* <p className="text-blue-100/90 text-lg leading-relaxed mb-8 max-w-lg">
-                Skillzza Virtual Internships are structured, mentor-led, project-based experiences - giving students a real edge before college even begins.
-              </p> */}
-
             <div className="flex flex-wrap gap-2.5 mb-10">
               {hero.badges.map((b, i) => (
-                <div key={i} className="glass text-white text-sm font-bold px-4 py-2 rounded-full flex items-center gap-2 hover:bg-white/25 transition-colors duration-200">
-                  <div className="w-4 h-4 bg-green-400 rounded-full flex items-center justify-center">
+                <div key={i} className="bg-white/60 backdrop-blur-md border border-brand-navy/5 text-brand-navy text-sm font-bold px-4 py-2 rounded-full flex items-center gap-2 hover:bg-white transition-colors duration-200 shadow-sm">
+                  <div className="w-4 h-4 bg-brand-sky rounded-full flex items-center justify-center">
                     <svg className="w-2.5 h-2.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
@@ -211,17 +207,17 @@ export default function Hero() {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <a href="#quiz" className="group relative bg-gradient-to-r from-orange-400 to-yellow-400 text-white font-black text-base px-8 py-4 rounded-2xl shadow-xl shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-105 transition-all duration-300 flex items-center gap-2.5 overflow-hidden">
-                <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-colors duration-300" />
+              <a href="#quiz" className="group relative bg-brand-yellow text-brand-navy font-black text-base px-8 py-4 rounded-2xl shadow-xl shadow-brand-yellow/25 hover:shadow-brand-yellow/40 hover:scale-105 transition-all duration-300 flex items-center gap-2.5 overflow-hidden">
+                <div className="absolute inset-0 bg-white/0 group-hover:bg-white/20 transition-colors duration-300" />
                 <Sparkles className="w-5 h-5 relative" />
                 <span className="relative">Take the Quiz</span>
-                <span className="relative text-yellow-200 text-xs font-bold ml-1">+100 XP</span>
+                <span className="relative bg-brand-navy/10 text-brand-navy px-2 py-0.5 rounded-full text-xs font-bold ml-1">+100 XP</span>
               </a>
-              <a href="#tracks" className="glass text-white font-bold text-base px-8 py-4 rounded-2xl hover:bg-white/25 transition-all duration-300 flex items-center gap-2.5">
-                <Rocket className="w-5 h-5" />
+              <a href="#tracks" className="bg-white/80 backdrop-blur-md text-brand-navy border border-brand-navy/10 font-bold text-base px-8 py-4 rounded-2xl hover:bg-white transition-all duration-300 flex items-center gap-2.5 shadow-sm">
+                <Rocket className="w-5 h-5 text-brand-sky" />
                 Explore Internships
               </a>
-              <a href="#for-parents" className="text-white/70 font-bold text-base px-6 py-4 rounded-2xl hover:text-white transition-colors duration-200 flex items-center gap-2">
+              <a href="#for-parents" className="text-brand-navy/70 font-bold text-base px-6 py-4 rounded-2xl hover:text-brand-navy transition-colors duration-200 flex items-center gap-2">
                 Book Consultation
               </a>
             </div>
@@ -232,10 +228,10 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+        {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
           <span className="text-white/50 text-xs font-bold">Scroll to explore</span>
           <ChevronDown className="w-5 h-5 text-white/50" />
-        </div>
+        </div> */}
       </div>
 
       <div className="absolute bottom-0 left-0 right-0">

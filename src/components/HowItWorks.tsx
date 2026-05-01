@@ -149,7 +149,7 @@ export default function HowItWorks() {
     <section
       id="how-it-works"
       ref={sectionRef}
-      className="py-20 lg:py-32 bg-gradient-to-b from-sky-50 via-white to-sky-50 overflow-hidden relative"
+      className="py-20 lg:py-32 bg-sky-50 overflow-hidden relative"
     >
       {/* Background deco */}
       <div className="absolute top-20 right-0 w-72 h-72 rounded-full bg-sky-100/50 blur-[100px] pointer-events-none" />
@@ -162,10 +162,10 @@ export default function HowItWorks() {
             <Rocket className="w-3.5 h-3.5" />
             The Journey
           </div>
-          <h2 className="reveal font-display text-4xl md:text-5xl lg:text-6xl text-slate-800 mb-4">
+          <h2 className="reveal font-display text-4xl md:text-5xl lg:text-6xl text-brand-navy mb-4">
             {howItWorks.title}
           </h2>
-          <p className="reveal text-slate-500 text-lg max-w-xl mx-auto mb-10">
+          <p className="reveal text-brand-navy/60 text-lg max-w-xl mx-auto mb-10">
             {howItWorks.subtitle}
           </p>
 
@@ -209,7 +209,7 @@ export default function HowItWorks() {
                 >
                   {/* Content side */}
                   <div className="timeline-step-content">
-                    <div className={`step-card ${theme.light} border-2 ${theme.border} ${theme.shadow} shadow-lg relative overflow-hidden`}>
+                    <div className="step-card bg-white border border-slate-100 shadow-xl relative overflow-hidden">
                       {/* Decorative dot pattern */}
                       <div className="absolute top-0 right-0 w-32 h-32 opacity-[0.04]" style={{
                         backgroundImage: 'radial-gradient(circle, currentColor 1px, transparent 1px)',
@@ -224,10 +224,10 @@ export default function HowItWorks() {
                         Step {step.num}
                       </div>
 
-                      <h3 className="font-display text-2xl lg:text-3xl text-slate-800 mb-3 leading-snug">
+                      <h3 className="font-display text-2xl lg:text-3xl text-brand-navy mb-3 leading-snug">
                         {step.title}
                       </h3>
-                      <p className="text-slate-500 text-base leading-relaxed relative z-10">
+                      <p className="text-brand-navy/70 text-base leading-relaxed relative z-10 font-medium">
                         {step.desc}
                       </p>
 
@@ -288,35 +288,26 @@ export default function HowItWorks() {
           ))}
         </div>
 
-        {/* ── Bottom CTA Banner ── */}
-        <div className="reveal mt-20 rounded-3xl overflow-hidden shadow-2xl relative group">
-          <img
-            src="https://images.pexels.com/photos/8566328/pexels-photo-8566328.jpeg?auto=compress&cs=tinysrgb&w=1200"
-            alt="Students working together"
-            className="w-full h-56 object-cover object-center group-hover:scale-105 transition-transform duration-700"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-sky-900/85 to-blue-600/60 flex items-center px-8 lg:px-12">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 w-full">
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center float">
-                    <Rocket className="w-5 h-5 text-white" />
-                  </div>
-                  <span className="text-white/60 text-xs font-bold uppercase tracking-widest">Ready to begin?</span>
-                </div>
-                <h3 className="font-display text-2xl lg:text-3xl text-white leading-snug">
-                  Your child's journey starts with one click.
-                </h3>
-              </div>
-              <a
-                href="#quiz"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-slate-800 font-black px-8 py-3.5 rounded-2xl hover:scale-105 transition-transform duration-300 shadow-lg whitespace-nowrap"
-              >
-                <Search className="w-4 h-4" />
-                Discover Their Track
-              </a>
+        {/* ── Bottom CTA Simplified ── */}
+        <div className="reveal mt-16 pt-12 border-t border-brand-sky/20 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="flex items-center gap-5">
+            <div className="w-14 h-14 bg-brand-sky/10 rounded-2xl flex items-center justify-center text-brand-sky flex-shrink-0">
+              <Rocket className="w-7 h-7" />
+            </div>
+            <div>
+              <span className="text-brand-sky font-black text-[10px] uppercase tracking-[0.2em] mb-1 block">Ready to begin?</span>
+              <h3 className="font-display text-2xl lg:text-3xl text-brand-navy leading-tight">
+                Your child's journey starts with one click.
+              </h3>
             </div>
           </div>
+          <a
+            href="#quiz"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-brand-sky to-blue-500 text-white font-black px-10 py-4.5 rounded-2xl hover:scale-105 transition-all duration-300 shadow-xl shadow-brand-sky/25 whitespace-nowrap"
+          >
+            <Search className="w-7 h-7" />
+            Discover Their Track
+          </a>
         </div>
       </div>
     </section>

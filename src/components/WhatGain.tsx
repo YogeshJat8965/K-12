@@ -12,13 +12,13 @@ const gainIcons = [
 ];
 
 /* ── Color theme per benefit ── */
-const benefitThemes = [
-  { icon: 'bg-sky-500 text-white', bar: 'bg-gradient-to-r from-sky-400 to-blue-500', num: 'text-sky-500', ring: 'ring-sky-100', hover: 'hover:bg-sky-50' },
-  { icon: 'bg-orange-500 text-white', bar: 'bg-gradient-to-r from-orange-400 to-amber-500', num: 'text-orange-500', ring: 'ring-orange-100', hover: 'hover:bg-orange-50' },
-  { icon: 'bg-emerald-500 text-white', bar: 'bg-gradient-to-r from-emerald-400 to-green-500', num: 'text-emerald-500', ring: 'ring-emerald-100', hover: 'hover:bg-emerald-50' },
-  { icon: 'bg-yellow-500 text-white', bar: 'bg-gradient-to-r from-yellow-400 to-amber-500', num: 'text-yellow-600', ring: 'ring-yellow-100', hover: 'hover:bg-yellow-50' },
-  { icon: 'bg-pink-500 text-white', bar: 'bg-gradient-to-r from-pink-400 to-rose-500', num: 'text-pink-500', ring: 'ring-pink-100', hover: 'hover:bg-pink-50' },
-];
+const benefitThemes = Array(5).fill({
+  icon: 'bg-brand-sky text-white',
+  bar: 'bg-brand-sky',
+  num: 'text-brand-sky',
+  ring: 'ring-brand-sky/20',
+  hover: 'hover:bg-brand-sky/5'
+});
 
 export default function WhatGain() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -48,14 +48,14 @@ export default function WhatGain() {
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="reveal inline-flex items-center gap-2 bg-green-100 text-green-700 font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-4">
+          <div className="reveal inline-flex items-center gap-2 bg-brand-sky/20 text-brand-navy font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-4">
             <Award className="w-3.5 h-3.5" />
             What Students Gain
           </div>
-          <h2 className="reveal font-display text-4xl md:text-5xl lg:text-6xl text-slate-800 mb-4">
+          <h2 className="reveal font-display text-4xl md:text-5xl lg:text-6xl text-brand-navy mb-4">
             5 Life-Changing Outcomes
           </h2>
-          <p className="reveal text-slate-500 text-base md:text-lg max-w-3xl mx-auto md:whitespace-nowrap">
+          <p className="reveal text-brand-navy/60 text-base md:text-lg max-w-3xl mx-auto md:whitespace-nowrap">
             Every internship is built to deliver real, tangible value for your child's future.
           </p>
         </div>
@@ -132,13 +132,8 @@ export default function WhatGain() {
                     hoveredIdx === i ? `ring-2 ${theme.ring} bg-white shadow-lg` : 'bg-white/50'
                   }`}>
                     {/* Number */}
-                    <div className={`font-display text-xl lg:text-2xl font-bold ${theme.num} opacity-30 group-hover:opacity-100 transition-opacity duration-300 leading-none mt-1 select-none flex-shrink-0 w-8 text-right`}>
+                    <div className={`font-display text-xl lg:text-2xl font-bold ${theme.num} opacity-40 group-hover:opacity-100 transition-opacity duration-300 leading-none mt-1 select-none flex-shrink-0 w-8 text-right`}>
                       {item.num}
-                    </div>
-
-                    {/* Icon */}
-                    <div className={`benefit-icon w-10 h-10 ${theme.icon} rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}>
-                      {gainIcons[i]}
                     </div>
 
                     {/* Content */}

@@ -53,49 +53,46 @@ export default function Tracks() {
   const activeTrack = tracks[activeIdx];
 
   return (
-    <section id="tracks" className="py-12 lg:py-16 overflow-hidden bg-slate-900 relative">
+    <section id="tracks" className="py-12 lg:py-16 overflow-hidden bg-brand-beige relative">
       {/* Background gradients */}
-      <div className="absolute inset-0 opacity-40 mix-blend-color-dodge pointer-events-none" style={{
-        background: `radial-gradient(circle at 30% 50%, var(--tw-gradient-from) 0%, transparent 50%)`,
-        // We pick up the color from the active track class indirectly, but for simple BG we can just use a static soft glow
-      }} />
-      <div className={`absolute top-0 right-0 w-1/2 h-full bg-gradient-to-br ${activeTrack.color} opacity-10 transition-colors duration-1000 blur-3xl`} />
+      <div className="absolute inset-0 opacity-40 pointer-events-none bg-white/50" />
+      <div className={`absolute top-0 right-0 w-1/2 h-full bg-gradient-to-br ${activeTrack.color} opacity-20 transition-colors duration-1000 blur-3xl`} />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-10">
-          <div className="reveal inline-flex items-center gap-2 glass text-white font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-4 border border-white/20">
-            <Compass className="w-3.5 h-3.5 text-blue-400" />
+          <div className="reveal inline-flex items-center gap-2 bg-white/60 text-brand-navy font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-4 border border-brand-navy/10">
+            <Compass className="w-3.5 h-3.5 text-brand-sky" />
             Explore the Universe of Careers
           </div>
-          <h2 className="reveal font-display text-4xl md:text-5xl lg:text-6xl text-white mb-4">
+          <h2 className="reveal font-display text-4xl md:text-5xl lg:text-6xl text-brand-navy mb-4">
             8 Future-Ready Domains
           </h2>
-          <p className="reveal text-white/60 text-lg max-w-2xl mx-auto">
+          <p className="reveal text-brand-navy/70 text-lg max-w-2xl mx-auto">
             Choose a world to explore. Each track is designed to give students a taste of real-world problem solving.
           </p>
         </div>
 
         {/* ── Main Carousel Layout ── */}
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch h-[700px] lg:h-[540px]">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch h-[750px] lg:h-[540px]">
 
           {/* LEFT: Active Track Hero (60%) */}
-          <div 
+          <div
             className="lg:w-3/5 h-1/2 lg:h-full relative rounded-[2rem] overflow-hidden shadow-2xl group"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
             {/* The Image */}
-            <img 
+            <img
               key={activeIdx} // key forces re-render for animation
-              src={trackImages[activeIdx]} 
+              src={trackImages[activeIdx]}
               alt={activeTrack.title}
               className="w-full h-full object-cover transition-transform duration-10000 group-hover:scale-105"
             />
-            
+
             {/* Gradient Overlay */}
-            <div className={`absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent transition-colors duration-500`} />
-            
+            <div className={`absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/60 to-transparent transition-colors duration-500`} />
+
             {/* Content overlay */}
             <div key={`content-${activeIdx}`} className="absolute inset-0 p-8 lg:p-12 flex flex-col justify-end track-hero-enter-active">
               <div className="flex items-center gap-3 mb-4">
@@ -104,18 +101,18 @@ export default function Tracks() {
                   {activeTrack.tagline}
                 </span>
               </div>
-              
+
               <h3 className="font-display text-3xl lg:text-5xl text-white mb-4 leading-tight">
                 {activeTrack.title}
               </h3>
-              
+
               <p className="text-white/70 text-base lg:text-lg max-w-xl mb-8 leading-relaxed">
                 {activeTrack.desc}
               </p>
-              
+
               <div className="flex flex-wrap gap-4">
-                <a 
-                  href="#quiz" 
+                <a
+                  href="#quiz"
                   className={`inline-flex items-center gap-2 bg-gradient-to-r ${activeTrack.color} text-white font-bold px-6 py-3 rounded-xl hover:scale-105 transition-transform shadow-lg`}
                 >
                   <Search className="w-4 h-4" />
@@ -126,16 +123,16 @@ export default function Tracks() {
 
             {/* Auto-rotate progress bar */}
             <div className="track-progress">
-              <div 
-                className="track-progress-fill" 
-                style={{ width: `${progress}%` }} 
+              <div
+                className="track-progress-fill"
+                style={{ width: `${progress}%` }}
               />
             </div>
           </div>
 
           {/* RIGHT: Thumbnail Selector (40%) */}
-          <div 
-            className="lg:w-2/5 h-1/2 lg:h-full flex flex-col gap-1.5 overflow-y-hidden pr-2"
+          <div
+            className="lg:w-2/5 h-1/2 lg:h-full flex flex-col gap-1 overflow-y-hidden pr-2"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
@@ -145,31 +142,29 @@ export default function Tracks() {
                 <button
                   key={idx}
                   onClick={() => handleSelect(idx)}
-                  className={`track-thumb text-left w-full p-2 lg:p-2.5 rounded-2xl flex items-center gap-3 transition-all duration-300 border ${
-                    isActive 
-                      ? 'bg-white/10 border-white/20 backdrop-blur-md shadow-sm' 
-                      : 'bg-transparent border-transparent hover:bg-white/5'
-                  }`}
+                  className={`track-thumb text-left w-full p-2 lg:p-2.5 rounded-2xl flex items-center gap-3 transition-all duration-300 border ${isActive
+                    ? 'bg-white border-brand-navy/10 shadow-md scale-[1.02]'
+                    : 'bg-white/30 border-white/20 hover:bg-white/60 hover:scale-[1.01]'
+                    }`}
                 >
-                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0 transition-all ${
-                    isActive ? `bg-gradient-to-br ${track.color} shadow-lg` : 'bg-white/5 grayscale opacity-50'
-                  }`}>
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0 transition-all ${isActive ? `bg-gradient-to-br ${track.color} shadow-lg text-white` : 'bg-white/80 opacity-90 text-brand-navy shadow-sm'
+                    }`}>
                     {track.icon}
                   </div>
-                  
+
                   <div className="flex-1 min-w-0">
-                    <h4 className={`font-bold text-sm lg:text-base truncate transition-colors ${isActive ? 'text-white' : 'text-white/60'}`}>
+                    <h4 className={`font-bold text-[15px] lg:text-[17px] truncate transition-colors ${isActive ? 'text-brand-navy' : 'text-brand-navy/90'}`}>
                       {track.title}
                     </h4>
                     {isActive && (
-                      <p className="text-white/40 text-xs font-medium uppercase tracking-wider mt-1 truncate">
+                      <p className="text-brand-navy/60 text-[11px] lg:text-xs font-bold uppercase tracking-wider mt-1 truncate">
                         {track.tagline}
                       </p>
                     )}
                   </div>
-                  
+
                   {isActive && (
-                    <ChevronRight className="w-5 h-5 text-white/50 flex-shrink-0" />
+                    <ChevronRight className="w-5 h-5 text-brand-navy/50 flex-shrink-0" />
                   )}
                 </button>
               );

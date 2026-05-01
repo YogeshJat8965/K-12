@@ -30,12 +30,12 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
   return <span ref={ref} className="tabular-nums">{count}{suffix}</span>;
 }
 
-const colors = [
-  { gradient: 'from-sky-400 to-blue-600', icon: 'bg-white/20', ring: 'ring-sky-300/30', back: 'from-sky-500 to-blue-700' },
-  { gradient: 'from-orange-400 to-amber-500', icon: 'bg-white/20', ring: 'ring-orange-300/30', back: 'from-orange-500 to-amber-600' },
-  { gradient: 'from-green-400 to-emerald-600', icon: 'bg-white/20', ring: 'ring-green-300/30', back: 'from-green-500 to-emerald-700' },
-  { gradient: 'from-pink-400 to-rose-600', icon: 'bg-white/20', ring: 'ring-pink-300/30', back: 'from-pink-500 to-rose-700' },
-];
+const colors = Array(4).fill({
+  gradient: 'from-sky-400 to-blue-500', 
+  icon: 'bg-white/20', 
+  ring: 'ring-sky-300/30', 
+  back: 'from-sky-500 to-blue-600'
+});
 
 const icons = [
   <Rocket className="w-7 h-7 text-white" />,
@@ -53,13 +53,13 @@ const funFacts = [
 
 export default function Stats() {
   return (
-    <section className="py-16 bg-white relative -mt-1">
+    <section className="py-20 bg-white relative -mt-1 pt-24">
       <div className="max-w-6xl mx-auto px-6 relative">
-        <div className="absolute -top-10 right-4 z-10 hidden md:block">
+        <div className="absolute -top-20 left-1/2 -translate-x-1/2 z-10 hidden md:block">
           <MascotWithEyes />
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 relative z-20">
           {stats.map((s, i) => (
             <div
               key={i}

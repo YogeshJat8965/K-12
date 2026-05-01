@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { whyMatters } from '../virtualInternship';
-import { X, Check, AlertTriangle, TrendingUp, ArrowRight, Zap } from 'lucide-react';
+import { X, Check, AlertTriangle, TrendingUp } from 'lucide-react';
 
 export default function WhyMatters() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -92,9 +92,9 @@ export default function WhyMatters() {
               <div className="absolute top-0 right-0 w-40 h-40 bg-red-100/30 rounded-full blur-[60px] pointer-events-none" />
 
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 bg-red-100 rounded-2xl flex items-center justify-center">
+                {/* <div className="w-12 h-12 bg-red-100 rounded-2xl flex items-center justify-center">
                   <X className="w-6 h-6 text-red-500" />
-                </div>
+                </div> */}
                 <div>
                   <h3 className="font-display text-2xl text-slate-800">The Current Gap</h3>
                   <p className="text-red-400 text-xs font-bold uppercase tracking-wider">What's broken today</p>
@@ -135,9 +135,9 @@ export default function WhyMatters() {
               <div className="absolute bottom-0 left-0 w-40 h-40 bg-green-100/30 rounded-full blur-[60px] pointer-events-none" />
 
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center">
+                {/* <div className="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center">
                   <TrendingUp className="w-6 h-6 text-green-500" />
-                </div>
+                </div> */}
                 <div>
                   <h3 className="font-display text-2xl text-slate-800">The Shift in Education</h3>
                   <p className="text-green-500 text-xs font-bold uppercase tracking-wider">What's changing now</p>
@@ -176,42 +176,10 @@ export default function WhyMatters() {
 
         {/* Bridge Banner */}
         <div className={`transition-all duration-700 ${bridgeVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl min-h-[200px] lg:min-h-[224px] bg-gradient-to-br from-sky-800 via-blue-700 to-emerald-700 flex flex-col justify-center">
-            {/* Animated Background Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <div className="absolute -top-10 left-1/4 w-64 h-64 bg-sky-400/30 rounded-full blur-3xl float" />
-              <div className="absolute -bottom-10 right-1/4 w-64 h-64 bg-emerald-400/30 rounded-full blur-3xl float-slow" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[200px] bg-white/5 rounded-full blur-2xl pulse-ring" />
-              {/* Small floating particles */}
-              <div className="absolute top-10 left-[10%] w-2 h-2 bg-yellow-300 rounded-full sparkle" />
-              <div className="absolute bottom-12 right-[15%] w-3 h-3 bg-sky-300 rounded-full sparkle-2" />
-              <div className="absolute top-1/4 right-[30%] w-1.5 h-1.5 bg-green-300 rounded-full sparkle-3" />
-            </div>
-            <div className="absolute inset-0 flex items-center justify-center px-8">
-              <div className="text-center max-w-3xl">
-                <div className="flex items-center justify-center gap-4 mb-4">
-                  <div className="w-10 h-10 bg-red-400/30 rounded-xl flex items-center justify-center">
-                    <X className="w-5 h-5 text-red-300" />
-                  </div>
-                  <ArrowRight className="w-6 h-6 text-white/50" />
-                  <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center float">
-                    <Zap className="w-6 h-6 text-yellow-300" />
-                  </div>
-                  <ArrowRight className="w-6 h-6 text-white/50" />
-                  <div className="w-10 h-10 bg-green-400/30 rounded-xl flex items-center justify-center">
-                    <Check className="w-5 h-5 text-green-300" />
-                  </div>
-                </div>
-                <p className="text-white font-display text-xl lg:text-2xl leading-relaxed">
-                  {whyMatters.bridge}
-                </p>
-                <div className="flex gap-3 flex-wrap justify-center mt-5">
-                  <span className="glass text-white text-xs font-bold px-4 py-2 rounded-full border border-white/20">⚡ Practical</span>
-                  <span className="glass text-white text-xs font-bold px-4 py-2 rounded-full border border-white/20">🎯 Structured</span>
-                  <span className="glass text-white text-xs font-bold px-4 py-2 rounded-full border border-white/20">🏆 Outcome-Driven</span>
-                </div>
-              </div>
-            </div>
+          <div className="bg-brand-sky/10 border-2 border-brand-sky/20 rounded-3xl p-6 lg:p-4 text-center max-w-4xl mx-auto shadow-sm">
+            <p className="text-xl md:text-2xl text-brand-navy font-semibold leading-relaxed max-w-2xl mx-auto">
+              {whyMatters.bridge}
+            </p>
           </div>
         </div>
       </div>

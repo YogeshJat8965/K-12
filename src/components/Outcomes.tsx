@@ -103,32 +103,32 @@ export default function Outcomes() {
   }, [handleScroll]);
 
   return (
-    <section ref={sectionRef} className="py-20 lg:py-28 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 overflow-hidden relative">
+    <section ref={sectionRef} className="py-20 lg:py-28 bg-white overflow-hidden relative">
       {/* Confetti */}
       {allUnlocked && <ConfettiParticles />}
 
       {/* Background decorations */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-yellow-500/5 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-72 h-72 rounded-full bg-blue-500/5 blur-[100px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-brand-sky/5 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-72 h-72 rounded-full bg-brand-yellow/5 blur-[100px] pointer-events-none" />
       <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
+        backgroundImage: 'radial-gradient(circle, #0B2447 1px, transparent 1px)',
         backgroundSize: '40px 40px',
       }} />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-6">
-          <div className="reveal inline-flex items-center gap-2 glass text-white font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-4 border border-white/20">
-            <Trophy className="w-3.5 h-3.5 text-yellow-300" />
+        <div className="text-center mb-10 lg:mb-16">
+          <div className="reveal inline-flex items-center gap-2 bg-brand-sky/20 text-brand-navy font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-4 border border-brand-sky/10">
+            <Trophy className="w-3.5 h-3.5 text-brand-sky" />
             Achievement Wall
           </div>
-          <h2 className="reveal font-display text-4xl md:text-5xl lg:text-6xl text-white mb-4">
+          <h2 className="reveal font-display text-4xl md:text-5xl lg:text-6xl text-brand-navy mb-4">
             Real Outcomes,
           </h2>
           <p className="reveal font-display text-2xl lg:text-3xl mb-6">
             <span className="gradient-text-warm">Not Just Certificates</span>
           </p>
-          <p className="reveal text-white/60 text-lg max-w-xl mx-auto">
+          <p className="reveal text-brand-navy/60 text-lg max-w-xl mx-auto">
             At the end of every internship, students walk away with tangible proof of their work and growth.
           </p>
         </div>
@@ -162,7 +162,7 @@ export default function Outcomes() {
                 {/* Lock / unlock indicator */}
                 {!unlocked.has(i) && (
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-8 h-8 bg-slate-700/80 rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-brand-navy/20 backdrop-blur-sm rounded-full flex items-center justify-center">
                       <span className="text-sm">🔒</span>
                     </div>
                   </div>
@@ -170,15 +170,15 @@ export default function Outcomes() {
               </div>
 
               {/* Title */}
-              <h3 className={`font-display text-sm lg:text-base leading-snug transition-all duration-500 ${
-                unlocked.has(i) ? 'text-white' : 'text-white/30'
+              <h3 className={`font-display text-sm lg:text-base font-bold leading-snug transition-all duration-500 ${
+                unlocked.has(i) ? 'text-brand-navy' : 'text-brand-navy/30'
               }`}>
                 {o.title}
               </h3>
 
               {/* Mini description on mobile */}
               <p className={`text-xs leading-relaxed mt-1 lg:hidden transition-all duration-500 ${
-                unlocked.has(i) ? 'text-white/50' : 'text-white/20'
+                unlocked.has(i) ? 'text-brand-navy/60' : 'text-brand-navy/20'
               }`}>
                 {o.desc}
               </p>
@@ -188,24 +188,24 @@ export default function Outcomes() {
 
         {/* Unlock progress bar */}
         <div className="mt-12 max-w-md mx-auto">
-          <div className="flex items-center justify-between text-sm font-bold mb-2">
+          {/* <div className="flex items-center justify-between text-sm font-bold mb-2">
             <span className="text-white/50">Achievement Progress</span>
             <span className="text-yellow-300">{Math.round((unlocked.size / outcomes.length) * 100)}%</span>
-          </div>
-          <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+          </div> */}
+          {/* <div className="h-2 bg-white/10 rounded-full overflow-hidden">
             <div
               className="h-full bg-gradient-to-r from-yellow-400 via-orange-400 to-pink-400 rounded-full transition-all duration-700"
               style={{ width: `${(unlocked.size / outcomes.length) * 100}%` }}
             />
-          </div>
-          {allUnlocked && (
+          </div> */}
+          {/* {allUnlocked && (
             <div className="text-center mt-4 pop-in">
               <span className="text-yellow-300 font-black text-sm flex items-center justify-center gap-2">
                 <Trophy className="w-4 h-4" />
                 🎉 All achievements unlocked!
               </span>
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </section>

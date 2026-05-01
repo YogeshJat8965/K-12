@@ -25,7 +25,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo removed, only text remains */}
         <a href="#" className="flex items-center group">
-          <span className="font-display text-2xl font-extrabold bg-gradient-to-r from-sky-500 via-blue-500 to-cyan-400 bg-clip-text text-transparent transition-colors duration-300">
+          <span className="font-logo text-3xl text-nova-gradient">
             Skillzza Nova
           </span>
         </a>

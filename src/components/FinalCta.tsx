@@ -168,88 +168,91 @@ function ParticleBackground() {
 
 export default function FinalCta() {
   return (
-    <div className="p-4 lg:p-8 bg-slate-950">
-      <section className="relative rounded-[3rem] overflow-hidden animated-gradient-border shadow-2xl p-[3px]">
+    <div className="p-4 lg:p-12 bg-white">
+      <section className="relative rounded-[3rem] overflow-hidden border-2 border-brand-sky/20 shadow-2xl">
         {/* The actual background container */}
-        <div className="relative bg-gradient-to-br from-blue-700 via-indigo-600 to-purple-700 rounded-[calc(3rem-3px)] overflow-hidden">
-          <ParticleBackground />
+        <div className="relative bg-gradient-to-br from-brand-sky/10 via-white to-brand-yellow/5 rounded-[3rem] overflow-hidden">
+          {/* ParticleBackground hidden or updated for light theme */}
+          {/* <ParticleBackground /> */}
 
-          <div className="absolute top-10 left-10 w-72 h-72 rounded-full bg-sky-300/20 blur-[100px] blob pointer-events-none" />
-          <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-pink-400/15 blur-[100px] blob blob-delay-2 pointer-events-none" />
+          <div className="absolute top-10 left-10 w-72 h-72 rounded-full bg-brand-sky/20 blur-[100px] pointer-events-none" />
+          <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-brand-yellow/10 blur-[100px] pointer-events-none" />
 
           <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{
-            backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)',
+            backgroundImage: 'radial-gradient(circle, #0B2447 2px, transparent 2px)',
             backgroundSize: '40px 40px',
           }} />
 
-          <Star className="absolute top-20 left-1/4 w-5 h-5 text-yellow-300/60 sparkle pointer-events-none" />
-          <Star className="absolute top-1/3 right-1/4 w-4 h-4 text-yellow-200/60 sparkle-2 pointer-events-none" />
-          <Star className="absolute bottom-1/4 left-1/3 w-6 h-6 text-yellow-300/50 sparkle-3 pointer-events-none" />
-
-          <div className="max-w-4xl mx-auto px-6 py-24 text-center relative z-10">
-            <div className="flex items-center justify-center gap-4 mb-8">
+          <div className="max-w-4xl mx-auto px-6 py-20 lg:py-28 text-center relative z-10">
+            <div className="flex items-center justify-center gap-4 mb-10">
               <MascotWithEyes />
-              <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-400 rounded-2xl flex items-center justify-center float shadow-2xl border border-white/20">
+              <div className="w-16 h-16 bg-gradient-to-br from-brand-sky to-blue-500 rounded-2xl flex items-center justify-center float shadow-xl">
                 <Rocket className="w-8 h-8 text-white" />
               </div>
             </div>
 
-            <div className="reveal inline-flex items-center gap-2 glass text-white font-black text-xs uppercase tracking-widest px-5 py-2.5 rounded-full mb-8 border border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)]">
-              <Zap className="w-4 h-4 text-yellow-300" />
+            <div className="reveal inline-flex items-center gap-2 bg-brand-sky/20 text-brand-navy font-black text-xs uppercase tracking-widest px-5 py-2.5 rounded-full mb-8 border border-brand-sky/10 shadow-sm">
+              <Zap className="w-4 h-4 text-brand-sky" />
               Limited Time Offer
             </div>
 
-            <h2 className="reveal font-display text-4xl md:text-6xl text-white mb-6 leading-tight drop-shadow-lg">
+            <h2 className="reveal font-display text-4xl md:text-6xl text-brand-navy mb-6 leading-tight">
               {finalCta.headline}
             </h2>
-            <p className="reveal text-white/90 text-xl md:text-2xl mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p className="reveal text-brand-navy/80 text-xl md:text-2xl mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
               {finalCta.subline}
             </p>
 
             {/* Countdown */}
-            <div className="reveal mb-6 bg-black/20 backdrop-blur-sm border border-white/10 rounded-3xl p-6 inline-block shadow-2xl">
-              <p className="text-white/80 text-sm font-bold mb-4 uppercase tracking-widest">Early bird enrollment closes in</p>
-              <CountdownTimer />
+            <div className="reveal mb-10 bg-white shadow-xl border border-brand-sky/10 rounded-3xl p-8 inline-block">
+              <p className="text-brand-navy/60 text-sm font-bold mb-6 uppercase tracking-widest">Early bird enrollment closes in</p>
+              <div className="flex items-center justify-center gap-3">
+                {[
+                  { val: 3, label: 'Days' },
+                  { val: 14, label: 'Hrs' },
+                  { val: 27, label: 'Min' },
+                  { val: 53, label: 'Sec' },
+                ].map((item, i) => (
+                  <div key={i} className="text-center">
+                    <div className="bg-brand-sky/5 rounded-xl px-3 py-2 min-w-[56px] border border-brand-sky/10">
+                      <div className="text-brand-navy font-black text-3xl tabular-nums">{String(item.val).padStart(2, '0')}</div>
+                    </div>
+                    <div className="text-brand-navy/40 text-[10px] font-black mt-2 tracking-widest uppercase">{item.label}</div>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Quiz note card */}
-            <div className="reveal glass rounded-2xl px-6 py-4 inline-flex items-center justify-center mx-auto mb-12 border border-white/20 shadow-xl">
-              <p className="text-white font-bold text-base flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-yellow-300 animate-pulse" />
-                {finalCta.quizNote}
-              </p>
-            </div>
-
-            {/* CTAs with magnetic effect */}
+            {/* CTAs */}
             <div className="reveal flex flex-wrap gap-5 justify-center mb-16">
-              <MagneticButton
+              <a
                 href="#quiz"
-                className="pulse-ring bg-gradient-to-r from-orange-400 to-yellow-400 text-slate-900 font-black text-xl px-10 py-5 rounded-2xl shadow-[0_0_30px_rgba(251,146,60,0.4)] flex items-center gap-3 border border-yellow-300/50"
+                className="bg-gradient-to-r from-brand-sky to-blue-500 text-white font-black text-xl px-12 py-5 rounded-2xl shadow-xl shadow-brand-sky/20 flex items-center gap-3 hover:scale-105 transition-transform"
               >
                 <Sparkles className="w-6 h-6" />
                 Take the Free Quiz
-              </MagneticButton>
-              <MagneticButton
+              </a>
+              <a
                 href="#tracks"
-                className="glass border-2 border-white/50 text-white font-bold text-xl px-10 py-5 rounded-2xl flex items-center gap-3 hover:bg-white hover:text-blue-600 transition-colors"
+                className="bg-white border-2 border-brand-sky/20 text-brand-navy font-bold text-xl px-12 py-5 rounded-2xl flex items-center gap-3 hover:bg-brand-sky/5 transition-colors"
               >
                 <Rocket className="w-6 h-6" />
                 Explore Internships
-              </MagneticButton>
+              </a>
             </div>
 
             {/* Contact */}
-            <div className="reveal flex flex-wrap justify-center gap-8 bg-black/10 inline-flex mx-auto px-8 py-4 rounded-full border border-white/5">
+            <div className="reveal flex flex-wrap justify-center gap-8 bg-brand-sky/5 inline-flex mx-auto px-10 py-5 rounded-full border border-brand-sky/10">
               <a
                 href={`mailto:${finalCta.email}`}
-                className="flex items-center gap-2 text-white/80 font-bold hover:text-white transition-colors"
+                className="flex items-center gap-2 text-brand-navy/70 font-bold hover:text-brand-navy transition-colors"
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="w-5 h-5 text-brand-sky" />
                 {finalCta.email}
               </a>
-              <span className="text-white/20">|</span>
-              <span className="flex items-center gap-2 text-white/80 font-bold hover:text-white transition-colors cursor-pointer">
-                <Globe className="w-5 h-5" />
+              <span className="text-brand-navy/10">|</span>
+              <span className="flex items-center gap-2 text-brand-navy/70 font-bold hover:text-brand-navy transition-colors cursor-pointer">
+                <Globe className="w-5 h-5 text-brand-sky" />
                 {finalCta.website}
               </span>
             </div>
