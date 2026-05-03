@@ -305,7 +305,7 @@ export default function HowItWorks() {
             href="#quiz"
             className="inline-flex items-center gap-3 bg-gradient-to-r from-brand-sky to-blue-500 text-white font-black px-10 py-4.5 rounded-2xl hover:scale-105 transition-all duration-300 shadow-xl shadow-brand-sky/25 whitespace-nowrap"
           >
-            <Search className="w-7 h-7" />
+            <Search className="w-7 h-10" />
             Discover Their Track
           </a>
         </div>

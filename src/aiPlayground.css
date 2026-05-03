@@ -1,0 +1,435 @@
+/* ═══════════════════════════════════════════════════ */
+/* ── AI PLAYGROUND — Custom Animations & Styles     */
+/* ═══════════════════════════════════════════════════ */
+
+/* ── Gradient Text Utilities ── */
+.gradient-text-purple {
+  background: linear-gradient(135deg, #7C3AED, #D946EF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-pink {
+  background: linear-gradient(135deg, #EC4899, #D946EF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-cyan {
+  background: linear-gradient(135deg, #06B6D4, #3B82F6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-rainbow-ai {
+  background: linear-gradient(135deg, #7C3AED, #EC4899, #3B82F6, #06B6D4);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmerAI 4s linear infinite;
+}
+
+@keyframes shimmerAI {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ── Holographic Shimmer Border ── */
+@keyframes holoShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.holo-border {
+  position: relative;
+  background: white;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+
+.holo-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(60deg,
+    #7C3AED, #EC4899, #3B82F6, #06B6D4,
+    #D946EF, #7C3AED);
+  background-size: 300% 300%;
+  animation: holoShimmer 4s ease infinite;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+/* ── Neural Pulse Ring ── */
+@keyframes neuralPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 20px rgba(124, 58, 237, 0);
+  }
+}
+
+.neural-pulse {
+  animation: neuralPulse 2s ease-in-out infinite;
+}
+
+/* ── AI Glow Effect ── */
+@keyframes aiGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.3), 0 0 30px rgba(236, 72, 153, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(124, 58, 237, 0.5), 0 0 60px rgba(236, 72, 153, 0.3);
+  }
+}
+
+.ai-glow {
+  animation: aiGlow 3s ease-in-out infinite;
+}
+
+/* ── Antenna Pulse (Bot Mascot) ── */
+@keyframes antennaPulse {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(6, 182, 212, 0.6);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 1), 0 0 40px rgba(6, 182, 212, 0.3);
+    transform: scale(1.2);
+  }
+}
+
+.antenna-pulse {
+  animation: antennaPulse 1.5s ease-in-out infinite;
+}
+
+/* ── Bot Eye Glow ── */
+@keyframes eyeGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(6, 182, 212, 0.5), inset 0 0 5px rgba(6, 182, 212, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.8), inset 0 0 10px rgba(6, 182, 212, 0.4);
+  }
+}
+
+.eye-glow {
+  animation: eyeGlow 2s ease-in-out infinite;
+}
+
+/* ── Chat Bubble Appear ── */
+@keyframes chatBubbleIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.85);
+  }
+  60% {
+    transform: translateY(-3px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.chat-bubble-in {
+  animation: chatBubbleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.chat-bubble-delay-1 { animation-delay: 0.8s; opacity: 0; }
+.chat-bubble-delay-2 { animation-delay: 2s; opacity: 0; }
+.chat-bubble-delay-3 { animation-delay: 3.5s; opacity: 0; }
+.chat-bubble-delay-4 { animation-delay: 5s; opacity: 0; }
+
+/* ── Typing Indicator (AI) ── */
+@keyframes aiTypingDot {
+  0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-5px); }
+}
+
+.ai-typing-dot { animation: aiTypingDot 1.4s ease-in-out infinite; }
+.ai-typing-dot-2 { animation: aiTypingDot 1.4s ease-in-out infinite 0.2s; }
+.ai-typing-dot-3 { animation: aiTypingDot 1.4s ease-in-out infinite 0.4s; }
+
+/* ── Timeline Progress Fill ── */
+.timeline-h-spine {
+  position: relative;
+  height: 4px;
+  background: #E9D5FF;
+  border-radius: 999px;
+}
+
+.timeline-h-spine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: var(--timeline-fill, 0%);
+  background: linear-gradient(90deg, #7C3AED, #EC4899, #3B82F6);
+  border-radius: 999px;
+  transition: width 0.3s ease-out;
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.4);
+}
+
+/* ── Step Activation ── */
+.step-node {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  z-index: 5;
+}
+
+.step-node.active {
+  transform: scale(1.15);
+  animation: neuralPulse 2s ease-in-out infinite;
+}
+
+.step-node.completed {
+  background: linear-gradient(135deg, #7C3AED, #D946EF) !important;
+}
+
+/* ── Step Card ── */
+.step-card-ai {
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.step-card-ai.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.step-card-ai:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(124, 58, 237, 0.15);
+}
+
+/* ── Orbit Animation ── */
+@keyframes orbitAI {
+  from { transform: rotate(0deg) translateX(45px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(45px) rotate(-360deg); }
+}
+
+.orbit-ai {
+  animation: orbitAI 8s linear infinite;
+}
+
+.orbit-ai-reverse {
+  animation: orbitAI 12s linear infinite reverse;
+}
+
+/* ── Stat Card Shimmer ── */
+@keyframes statShimmer {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+.stat-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transform: skewX(-20deg);
+  animation: statShimmer 3s linear infinite;
+}
+
+/* ── 3D Tilt Card ── */
+.tilt-card-ai {
+  transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.tilt-card-ai:hover {
+  box-shadow: 0 25px 60px rgba(124, 58, 237, 0.2);
+}
+
+/* ── Circuit Board Pattern ── */
+.circuit-pattern {
+  background-image:
+    linear-gradient(rgba(124, 58, 237, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* ── Mesh Gradient Blobs ── */
+@keyframes meshFloat {
+  0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  25% { transform: translate(40px, -30px) scale(1.1) rotate(5deg); }
+  50% { transform: translate(-20px, 20px) scale(0.95) rotate(-3deg); }
+  75% { transform: translate(30px, 10px) scale(1.05) rotate(3deg); }
+}
+
+.mesh-blob-purple {
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.25) 0%, transparent 70%);
+  animation: meshFloat 10s ease-in-out infinite;
+}
+
+.mesh-blob-pink {
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, transparent 70%);
+  animation: meshFloat 12s ease-in-out infinite 2s;
+}
+
+.mesh-blob-blue {
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+  animation: meshFloat 14s ease-in-out infinite 4s;
+}
+
+/* ── Glitch Text ── */
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+}
+
+.glitch-hover:hover {
+  animation: glitch 0.3s ease;
+}
+
+/* ── Quick Fact Pill ── */
+.fact-pill-ai {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fact-pill-ai:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.15);
+}
+
+/* ── Section Divider Wave ── */
+.wave-divider-purple svg path {
+  fill: currentColor;
+}
+
+/* ── Code Rain Effect ── */
+@keyframes codeRain {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+.code-char {
+  position: absolute;
+  color: rgba(124, 58, 237, 0.15);
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  animation: codeRain var(--rain-duration, 8s) linear infinite;
+  animation-delay: var(--rain-delay, 0s);
+  pointer-events: none;
+}
+
+/* ── Badge Float ── */
+@keyframes badgeFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+.badge-float {
+  animation: badgeFloat 3s ease-in-out infinite;
+}
+
+.badge-float-delay { animation-delay: 0.5s; }
+.badge-float-delay-2 { animation-delay: 1s; }
+.badge-float-delay-3 { animation-delay: 1.5s; }
+
+/* ── Purple Neon Border ── */
+.neon-border-purple {
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.3), inset 0 0 15px rgba(124, 58, 237, 0.05);
+}
+
+.neon-border-pink {
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.3), inset 0 0 15px rgba(236, 72, 153, 0.05);
+}
+
+/* ── Playground Scroll Progress ── */
+.playground-progress {
+  background: linear-gradient(90deg, #7C3AED, #EC4899, #3B82F6);
+}
+
+/* ── Scale In Animation ── */
+@keyframes scaleIn {
+  0% { transform: scale(0); opacity: 0; }
+  70% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+.scale-in {
+  animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* ── Fade In Up Stagger ── */
+.fade-up-stagger > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.fade-up-stagger.visible > *:nth-child(1) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+.fade-up-stagger.visible > *:nth-child(2) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+.fade-up-stagger.visible > *:nth-child(3) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+.fade-up-stagger.visible > *:nth-child(4) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+.fade-up-stagger.visible > *:nth-child(5) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
+.fade-up-stagger.visible > *:nth-child(6) { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
+
+/* ── Chat Window Styles ── */
+.chat-window {
+  background: linear-gradient(135deg, #1E1B4B, #312E81);
+  border-radius: 1.5rem;
+  border: 2px solid rgba(124, 58, 237, 0.3);
+  box-shadow: 0 25px 60px rgba(30, 27, 75, 0.5);
+}
+
+.chat-msg-ai {
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(217, 70, 239, 0.1));
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: 1rem 1rem 1rem 0.25rem;
+}
+
+.chat-msg-user {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(6, 182, 212, 0.1));
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 1rem 1rem 0.25rem 1rem;
+}
+
+/* ── Scan Line Effect ── */
+@keyframes scanLine {
+  0% { top: -10%; }
+  100% { top: 110%; }
+}
+
+.scan-line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.4), transparent);
+  animation: scanLine 4s linear infinite;
+  pointer-events: none;
+}
