@@ -13,6 +13,7 @@ export default function PlaygroundNavbar() {
   }, []);
 
   const links = [
+    { label: 'Virtual Internship', href: '/' },
     { label: 'What Is It', href: '#what-is' },
     { label: 'Agents', href: '#agents' },
     { label: 'How It Works', href: '#how-it-works' },
