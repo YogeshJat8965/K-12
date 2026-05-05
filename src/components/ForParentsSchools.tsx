@@ -6,21 +6,22 @@ export default function ForParentsSchools() {
   const [activeTab, setActiveTab] = useState<'parents' | 'schools'>('parents');
 
   return (
-    <section id="parents" className="py-20 lg:py-32 bg-sky-500/40 overflow-hidden">
+    <section id="parents" className="py-12 lg:py-16 bg-sky-500/40 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* ── 1. Designed For Students Strip ── */}
-        <div className="mb-24">
-          <div className="text-center mb-12">
-            <h3 className="font-display text-3xl lg:text-4xl text-slate-800 mb-4">
-              Designed Exclusively for <span className="text-blue-600">Grades 6–12</span>
-            </h3>
-            <p className="text-slate-500 max-w-2xl mx-auto">
-              Not an adult platform repurposed for kids. Every element is built for young learners.
+        <div className="mb-12">
+          <div className="text-center mb-10">
+            <h2 className="mb-4">
+              Designed Specifically for  <span className="text-blue-600">School Students</span>
+            </h2>
+            <p className="text-slate-500 max-w-2xl mx-auto font-normal">
+              Skillzza Virtual Internships are not adapted from adult programmes - they are purpose-built for school learners, with age-appropriate pacing, safeguards, and support.
+
             </p>
           </div>
 
-          <div className="flex overflow-x-auto pb-8 -mx-6 px-6 lg:mx-0 lg:px-0 lg:grid lg:grid-cols-5 gap-4 lg:gap-6 snap-x custom-scrollbar">
+          <div className="flex overflow-x-auto pt-4 pb-8 -mx-6 px-6 lg:mx-0 lg:px-0 lg:grid lg:grid-cols-5 gap-4 lg:gap-6 snap-x custom-scrollbar">
             {designedFor.map((item, i) => {
               const icons = ['🎯', '🪜', '⏱️', '🛡️', '🧑‍🏫'];
               const colors = ['bg-sky-100 text-sky-600', 'bg-orange-100 text-orange-600', 'bg-green-100 text-green-600', 'bg-purple-100 text-purple-600', 'bg-pink-100 text-pink-600'];
@@ -31,12 +32,9 @@ export default function ForParentsSchools() {
               const desc = parts.length > 1 ? parts[1] : item;
 
               return (
-                <div key={i} className="min-w-[280px] lg:min-w-0 bg-white rounded-3xl p-6 shadow-sm border border-slate-100 snap-center hover:shadow-lg hover:-translate-y-1 transition-all">
-                  <div className={`w-12 h-12 rounded-2xl ${colors[i]} flex items-center justify-center text-2xl mb-4`}>
-                    {icons[i]}
-                  </div>
-                  <h4 className="font-bold text-slate-800 mb-2">{title}</h4>
-                  <p className="text-slate-500 text-sm leading-relaxed">{desc}</p>
+                <div key={i} className="min-w-[280px] lg:min-w-0 bg-white rounded-3xl p-8 shadow-sm border border-slate-100 snap-center hover:shadow-lg hover:-translate-y-1 transition-all">
+                  <h4 className="font-bold text-slate-800 text-lg mb-3">{title}</h4>
+                  <p className="text-slate-500 text-sm leading-relaxed font-normal">{desc}</p>
                 </div>
               );
             })}
@@ -50,7 +48,7 @@ export default function ForParentsSchools() {
           <div className="flex border-b border-slate-100 relative z-10 bg-white">
             <button
               onClick={() => setActiveTab('parents')}
-              className={`flex-1 py-6 flex items-center justify-center gap-3 font-display text-xl lg:text-2xl transition-all ${
+              className={`flex-1 py-6 flex items-center justify-center gap-3 font-bold text-xl lg:text-2xl transition-all ${
                 activeTab === 'parents' 
                   ? 'text-blue-600 bg-blue-50/50' 
                   : 'text-slate-400 hover:text-slate-600 hover:bg-slate-50'
@@ -62,7 +60,7 @@ export default function ForParentsSchools() {
             <div className="w-px bg-slate-100" />
             <button
               onClick={() => setActiveTab('schools')}
-              className={`flex-1 py-6 flex items-center justify-center gap-3 font-display text-xl lg:text-2xl transition-all ${
+              className={`flex-1 py-6 flex items-center justify-center gap-3 font-bold text-xl lg:text-2xl transition-all ${
                 activeTab === 'schools' 
                   ? 'text-emerald-600 bg-emerald-50/50' 
                   : 'text-slate-400 hover:text-slate-600 hover:bg-slate-50'
@@ -87,7 +85,7 @@ export default function ForParentsSchools() {
                   <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 font-bold text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-6">
                     <ShieldCheck className="w-4 h-4" /> Trusted by Families
                   </div>
-                  <h3 className="font-display text-3xl lg:text-4xl text-slate-800 mb-4">
+                  <h3 className="text-3xl lg:text-4xl text-slate-800 mb-4">
                     {forParents.subtitle}
                   </h3>
                   <div className="space-y-4 mt-8">
@@ -96,7 +94,7 @@ export default function ForParentsSchools() {
                         <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:scale-110 group-hover:bg-blue-500 transition-all">
                           <CheckCircle2 className="w-4 h-4 text-blue-500 group-hover:text-white transition-colors" />
                         </div>
-                        <p className="text-slate-600 text-lg leading-relaxed">{point}</p>
+                        <p className="text-slate-600 text-lg leading-relaxed font-normal">{point}</p>
                       </div>
                     ))}
                   </div>
@@ -146,7 +144,7 @@ export default function ForParentsSchools() {
                   <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 font-bold text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-6">
                     <GraduationCap className="w-4 h-4" /> Partner with Us
                   </div>
-                  <h3 className="font-display text-3xl lg:text-4xl text-slate-800 mb-4">
+                  <h3 className="text-3xl lg:text-4xl text-slate-800 mb-4">
                     {forSchools.subtitle}
                   </h3>
                   <div className="space-y-4 mt-8">
@@ -155,7 +153,7 @@ export default function ForParentsSchools() {
                         <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:scale-110 group-hover:bg-emerald-500 transition-all">
                           <CheckCircle2 className="w-4 h-4 text-emerald-500 group-hover:text-white transition-colors" />
                         </div>
-                        <p className="text-slate-600 text-lg leading-relaxed">{point}</p>
+                        <p className="text-slate-600 text-lg leading-relaxed font-normal">{point}</p>
                       </div>
                     ))}
                   </div>

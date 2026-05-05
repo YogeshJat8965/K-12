@@ -1,185 +1,97 @@
-import { useEffect, useRef, useState, useCallback } from 'react';
-import { whyMatters } from '../virtualInternship';
-import { X, Check, AlertTriangle, TrendingUp } from 'lucide-react';
+import { ChevronsRight } from 'lucide-react';
+import womenImg from '../assets/virtual internship/women img.png';
+import ScrollReveal from './ScrollReveal';
 
 export default function WhyMatters() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [struckItems, setStruckItems] = useState<Set<number>>(new Set());
-  const [checkedItems, setCheckedItems] = useState<Set<number>>(new Set());
-  const [panelsVisible, setPanelsVisible] = useState(false);
-  const [bridgeVisible, setBridgeVisible] = useState(false);
-
-  const handleScroll = useCallback(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const rect = section.getBoundingClientRect();
-    const vh = window.innerHeight;
-
-    // Panels slide in
-    if (rect.top < vh * 0.7) {
-      setPanelsVisible(true);
-    }
-
-    // Strike items as user scrolls deeper
-    const progress = Math.max(0, (vh * 0.5 - rect.top) / (rect.height * 0.4));
-    const gapCount = whyMatters.currentGap.length;
-    const newStruck = new Set<number>();
-    for (let i = 0; i < gapCount; i++) {
-      if (progress > (i + 1) / (gapCount + 1)) {
-        newStruck.add(i);
-      }
-    }
-    setStruckItems(newStruck);
-
-    // Check items with slight delay
-    const shiftCount = whyMatters.shiftInEducation.length;
-    const newChecked = new Set<number>();
-    for (let i = 0; i < shiftCount; i++) {
-      if (progress > (i + 1.5) / (shiftCount + 2)) {
-        newChecked.add(i);
-      }
-    }
-    setCheckedItems(newChecked);
-
-    // Bridge appears
-    if (progress > 0.6) {
-      setBridgeVisible(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    const onScroll = () => requestAnimationFrame(handleScroll);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    setTimeout(handleScroll, 300);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, [handleScroll]);
-
   return (
-    <section ref={sectionRef} className="py-20 lg:py-28 overflow-hidden relative">
-      {/* Background: the split illustration */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/images/why-matters-split.png"
-          alt=""
-          className="w-full h-full object-cover opacity-[0.06]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50/95 to-white" />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="reveal inline-flex items-center gap-2 bg-orange-100 text-orange-700 font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-4">
-            <AlertTriangle className="w-3.5 h-3.5" />
-            The Problem We Solve
-          </div>
-          <h2 className="reveal font-display text-4xl md:text-5xl lg:text-6xl text-slate-800 mb-4">
-            {whyMatters.title}
+    <section id="why-matters" className="py-12 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Centered Heading & Intro */}
+        <div className="text-center max-w-5xl mx-auto mb-10">
+          <h2 className="mb-6">
+            Why Virtual Internships Matter Today
           </h2>
-          <p className="reveal text-slate-500 text-lg max-w-2xl mx-auto">
-            {whyMatters.subtitle}
+          <p className="text-lg md:text-xl font-normal max-w-4xl mx-auto">
+            Students today are required to make some of the most important decisions of their lives - choosing streams, careers, and colleges - often without ever experiencing what those paths actually involve.
           </p>
         </div>
 
-        {/* Split screen panels */}
-        <div className="grid lg:grid-cols-2 gap-6 lg:gap-0 mb-12 items-stretch">
-
-          {/* LEFT: The Problem */}
-          <div className={`split-left ${panelsVisible ? 'visible' : ''}`}>
-            <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-3xl lg:rounded-r-none p-8 lg:p-10 border-2 border-red-100 h-full relative overflow-hidden">
-              {/* Decorative */}
-              <div className="absolute top-0 right-0 w-40 h-40 bg-red-100/30 rounded-full blur-[60px] pointer-events-none" />
-
-              <div className="flex items-center gap-3 mb-8">
-                {/* <div className="w-12 h-12 bg-red-100 rounded-2xl flex items-center justify-center">
-                  <X className="w-6 h-6 text-red-500" />
-                </div> */}
-                <div>
-                  <h3 className="font-display text-2xl text-slate-800">The Current Gap</h3>
-                  <p className="text-red-400 text-xs font-bold uppercase tracking-wider">What's broken today</p>
-                </div>
-              </div>
-
-              <div className="space-y-5">
-                {whyMatters.currentGap.map((item, i) => (
-                  <div key={i} className="flex items-start gap-4 group">
-                    <div className={`mt-0.5 w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-500 ${
-                      struckItems.has(i) ? 'bg-red-400 rotate-12 scale-110' : 'bg-red-100'
-                    }`}>
-                      <X className={`w-4 h-4 transition-colors duration-300 ${struckItems.has(i) ? 'text-white' : 'text-red-400'}`} />
-                    </div>
-                    <span className="text-slate-700 font-semibold text-base leading-relaxed transition-all duration-500">
-                      {item}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Visual indicator */}
-              <div className="mt-8 flex items-center gap-2 text-red-300 text-sm font-bold">
-                <div className="w-full h-1 bg-red-100 rounded-full overflow-hidden">
+        <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-stretch">
+          {/* Left Content (Cards + Bridge Text) */}
+          {/* Use translate-y-[-10px] etc here to nudge up/down */}
+          <div className="flex flex-col justify-between h-full py-1 transform transition-transform duration-300">
+            {/* Two Cards with Arrow */}
+            <div className="flex flex-col xl:flex-row xl:items-stretch items-center gap-4 relative mb-12">
+              {/* Card 1: The Current Gap */}
+              <ScrollReveal delay={0.1} rotateY={-15} direction="right">
+                <div className="flex-1 w-full bg-white rounded-[1.2rem] border border-slate-100 shadow-[0_15px_40px_-10px_rgba(0,0,0,0.08)] overflow-hidden flex flex-col h-full">
                   <div
-                    className="h-full bg-gradient-to-r from-red-300 to-red-400 rounded-full transition-all duration-700"
-                    style={{ width: `${(struckItems.size / whyMatters.currentGap.length) * 100}%` }}
-                  />
+                    className="bg-[#023463] px-6 py-4 text-white font-bold text-[11px] tracking-widest uppercase relative"
+                    style={{ clipPath: 'polygon(0 0, 100% 0, 100% 88%, 0 100%)' }}
+                  >
+                    THE CURRENT GAP
+                  </div>
+                  <div className="p-8 space-y-4 flex-grow">
+                    {[
+                      "Textbooks explain concepts, not careers.",
+                      "Schools focus on marks, not exposure.",
+                      "Students lack clarity, direction, and confidence."
+                    ].map((text, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#023463] mt-2 flex-shrink-0" />
+                        <p className="text-slate-700 font-semibold text-[14px] leading-snug">{text}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
+              </ScrollReveal>
+
+              {/* Arrow Circle */}
+              <div className="w-12 h-12 rounded-full bg-[#023463] flex items-center justify-center shadow-lg flex-shrink-0 z-20 hidden xl:flex -mx-4 border-[4px] border-white self-center">
+                <ChevronsRight className="w-5 h-5 text-white" />
               </div>
+
+              {/* Card 2: The Shift in Education */}
+              <ScrollReveal delay={0.3} rotateY={15} direction="left">
+                <div className="flex-1 w-full bg-white rounded-[1.2rem] border border-slate-100 shadow-[0_15px_40px_-10px_rgba(0,0,0,0.08)] overflow-hidden flex flex-col h-full">
+                  <div
+                    className="bg-[#006B5E] px-6 py-4 text-white font-bold text-[11px] tracking-widest uppercase"
+                    style={{ clipPath: 'polygon(0 0, 100% 0, 100% 88%, 0 100%)' }}
+                  >
+                    THE SHIFT IN EDUCATION
+                  </div>
+                  <div className="p-8 space-y-4 flex-grow">
+                    {[
+                      "NEP 2020 emphasises experiential learning from Grade 6.",
+                      "Top global universities value projects, portfolios, and initiative.",
+                      "The future workforce demands skills, not just degrees."
+                    ].map((text, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#006B5E] mt-2 flex-shrink-0" />
+                        <p className="text-slate-700 font-semibold text-[14px] leading-snug">{text}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
+
+            {/* Bottom Text */}
+            <div className="text-left">
+              <p className="text-slate-800 font-extrabold text-xl md:text-2xl leading-tight">
+                Virtual internships bridge this gap - <span className="text-[#023463]">transforming learning from passive to practical.</span>
+              </p>
             </div>
           </div>
 
-          {/* RIGHT: The Solution */}
-          <div className={`split-right ${panelsVisible ? 'visible' : ''}`}>
-            <div className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-3xl lg:rounded-l-none p-8 lg:p-10 border-2 border-green-100 h-full relative overflow-hidden">
-              {/* Decorative */}
-              <div className="absolute bottom-0 left-0 w-40 h-40 bg-green-100/30 rounded-full blur-[60px] pointer-events-none" />
-
-              <div className="flex items-center gap-3 mb-8">
-                {/* <div className="w-12 h-12 bg-green-100 rounded-2xl flex items-center justify-center">
-                  <TrendingUp className="w-6 h-6 text-green-500" />
-                </div> */}
-                <div>
-                  <h3 className="font-display text-2xl text-slate-800">The Shift in Education</h3>
-                  <p className="text-green-500 text-xs font-bold uppercase tracking-wider">What's changing now</p>
-                </div>
-              </div>
-
-              <div className="space-y-5">
-                {whyMatters.shiftInEducation.map((item, i) => (
-                  <div key={i} className="flex items-start gap-4 group">
-                    <div className={`check-appear mt-0.5 w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 ${
-                      checkedItems.has(i) ? 'checked bg-green-500' : 'bg-green-100'
-                    }`}>
-                      <Check className={`w-4 h-4 transition-colors duration-300 ${checkedItems.has(i) ? 'text-white' : 'text-green-400'}`} />
-                    </div>
-                    <span className={`text-slate-700 font-semibold text-base leading-relaxed transition-all duration-500 ${
-                      checkedItems.has(i) ? 'text-slate-800' : 'text-slate-400'
-                    }`}>
-                      {item}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Visual indicator */}
-              <div className="mt-8 flex items-center gap-2 text-green-300 text-sm font-bold">
-                <div className="w-full h-1 bg-green-100 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-gradient-to-r from-green-300 to-emerald-400 rounded-full transition-all duration-700"
-                    style={{ width: `${(checkedItems.size / whyMatters.shiftInEducation.length) * 100}%` }}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bridge Banner */}
-        <div className={`transition-all duration-700 ${bridgeVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="bg-brand-sky/10 border-2 border-brand-sky/20 rounded-3xl p-6 lg:p-4 text-center max-w-4xl mx-auto shadow-sm">
-            <p className="text-xl md:text-2xl text-brand-navy font-semibold leading-relaxed max-w-2xl mx-auto">
-              {whyMatters.bridge}
-            </p>
+          {/* Right Image */}
+          <div className="relative hidden lg:block">
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-100/40 to-transparent rounded-3xl blur-2xl -z-10" />
+            <img
+              src={womenImg}
+              alt="Successful Student"
+              className="w-full h-full object-cover rounded-2xl shadow-sm"
+            />
           </div>
         </div>
       </div>

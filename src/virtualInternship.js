@@ -1,7 +1,7 @@
 export const hero = {
   headline: "Give Your Child a Head Start - Beyond Academics",
   subline: "Skillzza Virtual Internships are structured, mentor-led, project-based...",
-  grades: "VIRTUAL INTERNSHIPS | GRADES 6–12",
+  grades: "VIRTUAL INTERNSHIPS | GRADES 6-12",
   badges: ["✓ Explore careers early", "✓ Build real-world projects",
     "✓ Develop future-ready skills", "✓ Earn verified credentials"],
   ctas: [
@@ -64,8 +64,8 @@ export const howItWorks = {
     { num: 4, icon: "🏗️", title: "Build a Capstone", desc: "Create a final deliverable - a product prototype, business pitch, or analytical report." },
     { num: 5, icon: "🏆", title: "Earn & Showcase", desc: "Receive certification and a portfolio-ready project you can showcase." }
   ],
-  duration: "4–6 Weeks",
-  weeklyEffort: "3–5 Hours",
+  duration: "4-6 Weeks",
+  weeklyEffort: "3-5 Hours",
   format: "100% Online, Self-Paced"
 }
 
@@ -90,7 +90,7 @@ export const outcomes = [
 ]
 
 export const designedFor = [
-  "Age-Appropriate Pathways: Curriculum calibrated for Grades 6–12 across cognitive and skill maturity levels.",
+  "Age-Appropriate Pathways: Curriculum calibrated for Grades 6-12 across cognitive and skill maturity levels.",
   "Step-by-Step Structure: Guided modules with clear milestones so students never feel lost or overwhelmed.",
   "Flexible & Self-Paced: Designed to complement - never disrupt - academic schedules.",
   "Safe, Moderated Platform: Every interaction is monitored; parents have complete visibility into their child's journey.",
@@ -122,7 +122,7 @@ export const forSchools = {
 }
 
 export const whySkillzza = [
-  { icon: "🏫", title: "Built Exclusively for School Students", desc: "Not adapted from adult platforms - every element is designed for Grades 6–12." },
+  { icon: "🏫", title: "Built Exclusively for School Students", desc: "Not adapted from adult platforms - every element is designed for Grades 6-12." },
   { icon: "🎯", title: "Outcomes Over Theory", desc: "Every internship ends with a tangible project, not a passive completion certificate." },
   { icon: "🏭", title: "Industry-Aligned Curriculum", desc: "Curated with inputs from working professionals and industry mentors." },
   { icon: "🧑‍🏫", title: "Mentor-Guided Experience", desc: "Students get real human feedback, not just automated reviews." },

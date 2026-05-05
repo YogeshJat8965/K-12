@@ -46,7 +46,7 @@ const gradients = [
 const funFacts = [
   '12 prebuilt agents covering creativity, academics, science, and more!',
   'Most students build their first agent before they finish one YouTube video.',
-  'From Grade 5 to Grade 12 — every student finds their perfect match.',
+  'From Grade 5 to Grade 12 - every student finds their perfect match.',
   'Prompt thinking, AI literacy, coding logic, creative confidence & more!',
 ];
 

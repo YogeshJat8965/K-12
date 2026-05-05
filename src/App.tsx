@@ -4,6 +4,7 @@ import { GamificationProvider, useGamification } from './context/GamificationCon
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Stats from './components/Stats';
+import StatsBar from './components/StatsBar';
 import WhatIs from './components/WhatIs';
 import WhyMatters from './components/WhyMatters';
 import WhatGain from './components/WhatGain';
@@ -13,6 +14,7 @@ import Outcomes from './components/Outcomes';
 import Quiz from './components/Quiz';
 import ForParentsSchools from './components/ForParentsSchools';
 import WhySkillzza from './components/WhySkillzza';
+import LastBanner from './components/LastBanner';
 import Footer from './components/Footer';
 
 const sections = [
@@ -35,7 +37,7 @@ function AppContent() {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
-    document.title = 'Skillzza - Virtual Internships for Grades 6–12';
+    document.title = 'Skillzza - Virtual Internships for Grades 6-12';
 
     // Scroll progress handler
     const handleScroll = () => {
@@ -75,7 +77,7 @@ function AppContent() {
   }, [visitSection]);
 
   return (
-    <div className="min-h-screen pb-16 relative">
+    <div className="min-h-screen relative">
       {/* Global Scroll Progress Bar */}
       <div className="fixed top-0 left-0 right-0 h-1.5 z-[100] bg-slate-100/20">
         <div
@@ -86,17 +88,18 @@ function AppContent() {
 
       <Navbar />
       <div id="hero"><Hero /></div>
-      <div id="stats"><Stats /></div>
-      <div id="what-is"><WhatIs /></div>
+      {/* <div id="stats"><Stats /></div>
+      <div id="what-is"><WhatIs /></div> */}
       <div id="why-matters"><WhyMatters /></div>
       <div id="what-gain"><WhatGain /></div>
       <div id="how-it-works"><HowItWorks /></div>
       <div id="tracks"><Tracks /></div>
       <div id="outcomes"><Outcomes /></div>
-      <div id="quiz"><Quiz /></div>
+      {/* <div id="quiz"><Quiz /></div> */}
       <div id="for-parents"><ForParentsSchools /></div>
       <div id="why-skillzza"><WhySkillzza /></div>
-      <Footer />
+      <div id="stats-bar"><StatsBar /></div>
+      <LastBanner />
 
       {/* Floating Helper Mascot */}
       <div className="fixed bottom-6 right-6 z-50 animate-bounce cursor-pointer group hidden md:flex items-center gap-2">

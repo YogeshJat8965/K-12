@@ -1,177 +1,120 @@
-import { useState, useEffect, useRef } from 'react';
-import { tracks } from '../virtualInternship';
-import { Search, ChevronRight, Compass, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
+import img1 from '../assets/virtual internship/1st img.png';
+import img2 from '../assets/virtual internship/2nd img.png';
+import img3 from '../assets/virtual internship/3rd img.png';
+import img4 from '../assets/virtual internship/4th img.png';
+import img5 from '../assets/virtual internship/5th img.png';
+import img6 from '../assets/virtual internship/6th img.png';
+import img7 from '../assets/virtual internship/7th img.png';
+import img8 from '../assets/virtual internship/8th img.png';
 
-/* ── Mapping images to tracks based on index ── */
-const trackImages = [
-  '/images/track-ai.png',
-  '/images/track-business.png',
-  '/images/track-creative.png',
-  '/images/track-space.png',
-  '/images/track-climate.png',
-  '/images/track-wellness.png',
-  '/images/track-media.png',
-  '/images/track-leadership.png',
+const careerTracks = [
+  {
+    title: "AI, Data &\nDeep Tech",
+    image: img1,
+    borderColor: "border-[#4A90E2]" // Blue-ish
+  },
+  {
+    title: "Business,\nFinance &\nEntrepreneurship",
+    image: img2,
+    borderColor: "border-[#2ECC71]" // Green-ish
+  },
+  {
+    title: "Creative, Media &\nProduct Design",
+    image: img3,
+    borderColor: "border-[#9B59B6]" // Purple-ish
+  },
+  {
+    title: "Space, Science &\nFrontier Tech",
+    image: img4,
+    borderColor: "border-[#E67E22]" // Orange-ish
+  },
+  {
+    title: "Climate,\nSustainability &\nGreen Innovation",
+    image: img5,
+    borderColor: "border-[#1ABC9C]" // Teal-ish
+  },
+  {
+    title: "Mindfulness,\nWellness &\nInner Growth",
+    image: img6,
+    borderColor: "border-[#D35400]" // Deep Orange
+  },
+  {
+    title: "Public Voice,\nMedia & Global\nAffairs",
+    image: img7,
+    borderColor: "border-[#C0392B]" // Red-ish
+  },
+  {
+    title: "Leadership,\nCivic & Social\nImpact",
+    image: img8,
+    borderColor: "border-[#34495E]" // Navy-ish
+  }
 ];
 
 export default function Tracks() {
-  const [activeIdx, setActiveIdx] = useState(0);
-  const [progress, setProgress] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const ROTATION_TIME = 6000; // 6 seconds per track
-  const progressInterval = useRef<number>();
-
-  // Auto-rotate logic
-  useEffect(() => {
-    if (isPaused) {
-      clearInterval(progressInterval.current);
-      return;
-    }
-
-    const intervalTime = 50; // update progress every 50ms
-    const step = (intervalTime / ROTATION_TIME) * 100;
-
-    progressInterval.current = window.setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          setActiveIdx((current) => (current + 1) % tracks.length);
-          return 0;
-        }
-        return prev + step;
-      });
-    }, intervalTime);
-
-    return () => clearInterval(progressInterval.current);
-  }, [activeIdx, isPaused]);
-
-  // When manually selecting a track, reset progress
-  const handleSelect = (idx: number) => {
-    setActiveIdx(idx);
-    setProgress(0);
-  };
-
-  const activeTrack = tracks[activeIdx];
-
   return (
-    <section id="tracks" className="py-12 lg:py-16 overflow-hidden bg-brand-beige relative">
-      {/* Background gradients */}
-      <div className="absolute inset-0 opacity-40 pointer-events-none bg-white/50" />
-      <div className={`absolute top-0 right-0 w-1/2 h-full bg-gradient-to-br ${activeTrack.color} opacity-20 transition-colors duration-1000 blur-3xl`} />
-
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+    <section id="tracks" className="py-12 bg-[#F1F5F9] text-[#023463] overflow-hidden">
+      <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-10">
-          <div className="reveal inline-flex items-center gap-2 bg-white/60 text-brand-navy font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-4 border border-brand-navy/10">
-            <Compass className="w-3.5 h-3.5 text-brand-sky" />
-            Explore the Universe of Careers
-          </div>
-          <h2 className="reveal font-display text-4xl md:text-5xl lg:text-6xl text-brand-navy mb-4">
-            8 Future-Ready Domains
+          <h2 className="mb-6">
+            Explore <span className="text-[#A855F7]">Career Tracks</span>
           </h2>
-          <p className="reveal text-brand-navy/70 text-lg max-w-2xl mx-auto">
-            Choose a world to explore. Each track is designed to give students a taste of real-world problem solving.
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto font-normal leading-relaxed">
+            Eight future-ready career tracks, mapped across technology, enterprise, creativity, science, and personal growth. Students can explore across tracks before choosing their capstone specialisation.
           </p>
         </div>
 
-        {/* ── Main Carousel Layout ── */}
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch h-[750px] lg:h-[540px]">
-
-          {/* LEFT: Active Track Hero (60%) */}
-          <div
-            className="lg:w-3/5 h-1/2 lg:h-full relative rounded-[2rem] overflow-hidden shadow-2xl group"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-          >
-            {/* The Image */}
-            <img
-              key={activeIdx} // key forces re-render for animation
-              src={trackImages[activeIdx]}
-              alt={activeTrack.title}
-              className="w-full h-full object-cover transition-transform duration-10000 group-hover:scale-105"
-            />
-
-            {/* Gradient Overlay */}
-            <div className={`absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/60 to-transparent transition-colors duration-500`} />
-
-            {/* Content overlay */}
-            <div key={`content-${activeIdx}`} className="absolute inset-0 p-8 lg:p-12 flex flex-col justify-end track-hero-enter-active">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-4xl">{activeTrack.icon}</span>
-                <span className="text-white/80 font-bold text-xs uppercase tracking-[0.2em] bg-white/10 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
-                  {activeTrack.tagline}
-                </span>
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
+          {careerTracks.map((track, i) => (
+            <ScrollReveal 
+              key={i} 
+              delay={i * 0.05} 
+              rotateX={15} 
+              scale={0.9}
+              className="relative"
+            >
+              <div 
+                className={`group relative aspect-[4/5] rounded-[1.2rem] overflow-hidden border-2 bg-white shadow-lg transition-all duration-500 hover:scale-105 cursor-pointer ${track.borderColor}`}
+              >
+                {/* Background Image */}
+                <img 
+                  src={track.image} 
+                  alt={track.title} 
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                
+                {/* Title Overlay */}
+                <div className="absolute inset-x-0 bottom-0 p-5 text-center">
+                  <h3 className="font-extrabold text-base md:text-lg text-white leading-tight whitespace-pre-line group-hover:text-blue-400 transition-colors">
+                    {track.title}
+                  </h3>
+                </div>
               </div>
+            </ScrollReveal>
+          ))}
+        </div>
 
-              <h3 className="font-display text-3xl lg:text-5xl text-white mb-4 leading-tight">
-                {activeTrack.title}
-              </h3>
-
-              <p className="text-white/70 text-base lg:text-lg max-w-xl mb-8 leading-relaxed">
-                {activeTrack.desc}
-              </p>
-
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href="#quiz"
-                  className={`inline-flex items-center gap-2 bg-gradient-to-r ${activeTrack.color} text-white font-bold px-6 py-3 rounded-xl hover:scale-105 transition-transform shadow-lg`}
-                >
-                  <Search className="w-4 h-4" />
-                  Is this track for me?
-                </a>
-              </div>
-            </div>
-
-            {/* Auto-rotate progress bar */}
-            <div className="track-progress">
-              <div
-                className="track-progress-fill"
-                style={{ width: `${progress}%` }}
-              />
-            </div>
-          </div>
-
-          {/* RIGHT: Thumbnail Selector (40%) */}
-          <div
-            className="lg:w-2/5 h-1/2 lg:h-full flex flex-col gap-1 overflow-y-hidden pr-2"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-          >
-            {tracks.map((track, idx) => {
-              const isActive = idx === activeIdx;
-              return (
-                <button
-                  key={idx}
-                  onClick={() => handleSelect(idx)}
-                  className={`track-thumb text-left w-full p-2 lg:p-2.5 rounded-2xl flex items-center gap-3 transition-all duration-300 border ${isActive
-                    ? 'bg-white border-brand-navy/10 shadow-md scale-[1.02]'
-                    : 'bg-white/30 border-white/20 hover:bg-white/60 hover:scale-[1.01]'
-                    }`}
-                >
-                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0 transition-all ${isActive ? `bg-gradient-to-br ${track.color} shadow-lg text-white` : 'bg-white/80 opacity-90 text-brand-navy shadow-sm'
-                    }`}>
-                    {track.icon}
-                  </div>
-
-                  <div className="flex-1 min-w-0">
-                    <h4 className={`font-bold text-[15px] lg:text-[17px] truncate transition-colors ${isActive ? 'text-brand-navy' : 'text-brand-navy/90'}`}>
-                      {track.title}
-                    </h4>
-                    {isActive && (
-                      <p className="text-brand-navy/60 text-[11px] lg:text-xs font-bold uppercase tracking-wider mt-1 truncate">
-                        {track.tagline}
-                      </p>
-                    )}
-                  </div>
-
-                  {isActive && (
-                    <ChevronRight className="w-5 h-5 text-brand-navy/50 flex-shrink-0" />
-                  )}
-                </button>
-              );
-            })}
-          </div>
+        {/* Bottom Callout Card */}
+        {/* Bottom CTA */}
+        <div className="flex justify-center">
+          <button className="flex items-center gap-3 px-10 py-4 mb-8 rounded-full border-2 border-[#023463]/20 text-[#023463] hover:bg-[#023463] hover:text-white transition-all duration-300 font-extrabold text-sm tracking-widest uppercase group">
+            DISCOVER ALL TRACKS
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+          </button>
         </div>
       </div>
+        <div className="max-w-4xl mx-auto bg-violet-50 border border-violet-100 rounded-3xl  p-8 md:p-10 text-center shadow-sm mb-16">
+          <p className="text-[#023463] text-lg md:text-xl font-extrabold leading-relaxed">
+            Every career track is underpinned by Skillzza Skill Studios - giving students a seamless progression from studio-based learning to internship-based application.
+          </p>
+        </div>
+
     </section>
   );
 }

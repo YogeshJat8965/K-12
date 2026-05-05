@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════
-// AI PLAYGROUND — Content Data File
+// AI PLAYGROUND - Content Data File
 // Source: "Skillzza Nova - Google Docs Ai playground.pdf"
 // Pattern: Same as virtualInternship.js
 // ═══════════════════════════════════════════
@@ -29,7 +29,7 @@ export const whatIs = {
   description: "Think of it as a creative workshop for AI - but without the complexity. Students explore a library of ready-made AI agents (mini-assistants designed for specific interests), customise them to their voice and style, and share what they create with friends, classmates, and teachers.",
   note: "No coding. No setup. No overwhelm. Just pick, tweak, build, share - and discover what AI can do when you're the one in charge.",
   quickFacts: [
-    { label: "FOR AGES", value: "Grades 5–12" },
+    { label: "FOR AGES", value: "Grades 5-12" },
     { label: "SKILL LEVEL", value: "Zero to Creative" },
     { label: "TIME TO FIRST AGENT", value: "Under 10 Minutes" }
   ]
@@ -244,7 +244,7 @@ export const journey = {
       tag: "APPLY",
       title: "Virtual Internships",
       desc: "Students use their skills on real-world, industry-inspired projects with verifiable credentials.",
-      time: "4–6 weeks"
+      time: "4-6 weeks"
     },
     {
       tag: "LEAD",

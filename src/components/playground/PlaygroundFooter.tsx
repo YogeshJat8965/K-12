@@ -8,8 +8,9 @@ export default function PlaygroundFooter() {
         {/* Brand */}
         <div className="flex items-center gap-3">
           <MiniBotEyes />
-          <span className="font-logo text-xl gradient-text-purple">
-            Skillzza Nova
+          <span className="font-logo text-xl">
+            <span className="text-[#023463]">Skillzza</span>{' '}
+            <span className="bg-gradient-to-r from-[#8947B3] to-[#B26EE3] bg-clip-text text-transparent">Nova</span>
           </span>
         </div>
 

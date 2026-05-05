@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&family=Chewy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,17 +8,27 @@ html {
   scroll-behavior: smooth;
 }
 
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Global Heading Scale */
+h2 {
+  @apply text-4xl md:text-5xl lg:text-[3.2rem] font-bold text-[#023463] leading-[1.1] tracking-tight;
+}
+
+h3 {
+  @apply text-xl md:text-2xl font-semibold text-[#023463] leading-snug;
+}
+
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Inter', sans-serif;
   overflow-x: hidden;
+  @apply text-slate-600 antialiased font-normal;
 }
 
-.font-display {
-  font-family: 'Fredoka One', cursive;
-}
-
-.font-logo {
-  font-family: 'Chewy', cursive;
+p {
+  @apply leading-relaxed;
 }
 
 

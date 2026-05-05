@@ -4,10 +4,13 @@ export default function Footer() {
     <footer className="bg-white py-12 px-6 border-t border-brand-sky/10">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-2">
-          <span className="font-logo text-2xl text-nova-gradient">Skillzza Nova</span>
+          <span className="font-logo text-2xl">
+            <span className="text-[#023463]">Skillzza</span>{' '}
+            <span className="bg-gradient-to-r from-[#8947B3] to-[#B26EE3] bg-clip-text text-transparent">Nova</span>
+          </span>
         </div>
         <p className="text-brand-navy/60 text-sm text-center font-medium">
-          Virtual Internships for Grades 6–12 &mdash; Empowering Future Leaders
+          Virtual Internships for Grades 6-12 &mdash; Empowering Future Leaders
         </p>
         <p className="text-brand-navy/40 text-xs">
           &copy; {new Date().getFullYear()} Skillzza. All rights reserved.

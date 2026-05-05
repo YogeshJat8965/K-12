@@ -37,7 +37,7 @@ export default function WhySkillzza() {
   ];
 
   return (
-    <section id="why-skillzza" ref={sectionRef} className="py-20 lg:py-32 bg-slate-50 overflow-hidden relative">
+    <section id="why-skillzza" ref={sectionRef} className="py-12 lg:py-16 bg-slate-50 overflow-hidden relative">
       {/* Light theme background glows */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-96 bg-white blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-sky/10 blur-[100px] rounded-full pointer-events-none" />
@@ -45,13 +45,13 @@ export default function WhySkillzza() {
       <div className="max-w-5xl mx-auto px-6 relative z-10">
 
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <div className="reveal inline-flex items-center gap-2 bg-white text-brand-sky font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-4 border border-brand-navy/10">
             <Sparkles className="w-3.5 h-3.5" />
             The Skillzza Difference
           </div>
-          <h2 className="reveal font-display text-4xl md:text-5xl lg:text-6xl text-brand-navy mb-6">
-            Why We Are <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-sky to-blue-500">Different</span>
+          <h2 className="reveal mb-6">
+            Why Skillzza Virtual Internships
           </h2>
         </div>
 
@@ -61,11 +61,14 @@ export default function WhySkillzza() {
           {/* Table Header */}
           <div className="grid grid-cols-2 text-center border-b border-brand-navy/5 bg-brand-navy/5 backdrop-blur-md">
             <div className="py-6 px-4">
-              <span className="font-display text-xl lg:text-2xl text-brand-navy/50">Other Programs</span>
+              <span className="font-bold text-xl lg:text-2xl text-brand-navy/50">Other Programs</span>
             </div>
             <div className="py-6 px-4 relative">
               <div className="absolute inset-0 bg-brand-sky/10" />
-              <span className="font-display text-2xl lg:text-3xl text-brand-navy relative z-10">Skillzza Nova</span>
+              <span className="font-extrabold text-2xl lg:text-3xl relative z-10">
+                <span className="text-[#023463]">Skillzza</span>{' '}
+                <span className="bg-gradient-to-r from-[#8947B3] to-[#B26EE3] bg-clip-text text-transparent">Nova</span>
+              </span>
             </div>
           </div>
 
@@ -80,7 +83,7 @@ export default function WhySkillzza() {
                 {/* OTHERS COLUMN */}
                 <div className="py-6 px-4 lg:px-8 flex items-center gap-4 group-hover:opacity-100 transition-opacity">
                   <XCircle className="w-6 h-6 text-brand-navy/30 flex-shrink-0 hidden sm:block" />
-                  <span className="text-slate-600 font-bold text-sm lg:text-base">
+                  <span className="text-slate-600 font-semibold text-sm lg:text-base">
                     {row.others}
                   </span>
                 </div>
@@ -89,7 +92,7 @@ export default function WhySkillzza() {
                 <div className="compare-glow py-6 px-4 lg:px-8 relative bg-brand-sky/5">
                   <div className="relative z-10 flex items-center gap-4">
                     <CheckCircle2 className="w-6 h-6 text-brand-sky flex-shrink-0" />
-                    <span className="text-brand-navy font-bold text-sm lg:text-lg">
+                    <span className="text-brand-navy font-extrabold text-sm lg:text-lg">
                       {row.skillzza}
                     </span>
                   </div>
@@ -98,40 +101,6 @@ export default function WhySkillzza() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        <div className="mt-16 reveal">
-          <div className="bg-brand-navy rounded-3xl p-8 lg:p-10 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden shadow-2xl">
-            {/* Background pattern */}
-            <div className="absolute inset-0 opacity-10" style={{
-              backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
-              backgroundSize: '24px 24px',
-            }} />
-
-            <div className="relative z-10 max-w-xl text-center md:text-left">
-              <h3 className="font-display text-2xl lg:text-3xl text-white mb-3">
-                "It feels like stepping into the real world."
-              </h3>
-              <p className="text-brand-sky font-medium">
-                - A Grade 9 Student after completing the AI Track
-              </p>
-            </div>
-
-            <div className="relative z-10 flex -space-x-4">
-              {[...Array(4)].map((_, i) => (
-                <div key={i} className="w-14 h-14 rounded-full border-4 border-brand-navy bg-white overflow-hidden shadow-lg">
-                  <img
-                    src={`https://api.dicebear.com/7.x/notionists/svg?seed=${i}&backgroundColor=e2e8f0`}
-                    alt="Student avatar"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
-              <div className="w-14 h-14 rounded-full border-4 border-brand-navy bg-brand-yellow flex items-center justify-center font-bold text-brand-navy shadow-lg text-sm">
-                +2k
-              </div>
-            </div>
           </div>
         </div>
 
