@@ -6,7 +6,7 @@ export default function Footer() {
         <div className="flex items-center gap-2">
           <span className="font-logo text-2xl">
             <span className="text-[#023463]">Skillzza</span>{' '}
-            <span className="bg-gradient-to-r from-[#8947B3] to-[#B26EE3] bg-clip-text text-transparent">Nova</span>
+            <span className="bg-gradient-to-r from-[#8947B3] to-[#B26EE3] bg-clip-text text-transparent">K-12</span>
           </span>
         </div>
         <p className="text-brand-navy/60 text-sm text-center font-medium">

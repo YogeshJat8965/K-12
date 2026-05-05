@@ -55,7 +55,7 @@ export default function WhyMatters() {
               <ScrollReveal delay={0.3} rotateY={15} direction="left">
                 <div className="flex-1 w-full bg-white rounded-[1.2rem] border border-slate-100 shadow-[0_15px_40px_-10px_rgba(0,0,0,0.08)] overflow-hidden flex flex-col h-full">
                   <div
-                    className="bg-[#006B5E] px-6 py-4 text-white font-bold text-[11px] tracking-widest uppercase"
+                    className="bg-[#4114D4] px-6 py-4 text-white font-bold text-[11px] tracking-widest uppercase"
                     style={{ clipPath: 'polygon(0 0, 100% 0, 100% 88%, 0 100%)' }}
                   >
                     THE SHIFT IN EDUCATION
@@ -67,7 +67,7 @@ export default function WhyMatters() {
                       "The future workforce demands skills, not just degrees."
                     ].map((text, i) => (
                       <div key={i} className="flex items-start gap-3">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#006B5E] mt-2 flex-shrink-0" />
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#4114D4] mt-2 flex-shrink-0" />
                         <p className="text-slate-700 font-semibold text-[14px] leading-snug">{text}</p>
                       </div>
                     ))}

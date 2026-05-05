@@ -31,7 +31,7 @@ const careerTracks = [
     borderColor: "border-[#E67E22]" // Orange-ish
   },
   {
-    title: "Climate,\nSustainability &\nGreen Innovation",
+    title: "Climate,\nSustainability &\nGreen InK-12tion",
     image: img5,
     borderColor: "border-[#1ABC9C]" // Teal-ish
   },
@@ -69,26 +69,26 @@ export default function Tracks() {
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
           {careerTracks.map((track, i) => (
-            <ScrollReveal 
-              key={i} 
-              delay={i * 0.05} 
-              rotateX={15} 
+            <ScrollReveal
+              key={i}
+              delay={i * 0.05}
+              rotateX={15}
               scale={0.9}
               className="relative"
             >
-              <div 
+              <div
                 className={`group relative aspect-[4/5] rounded-[1.2rem] overflow-hidden border-2 bg-white shadow-lg transition-all duration-500 hover:scale-105 cursor-pointer ${track.borderColor}`}
               >
                 {/* Background Image */}
-                <img 
-                  src={track.image} 
-                  alt={track.title} 
+                <img
+                  src={track.image}
+                  alt={track.title}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                
+
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-                
+
                 {/* Title Overlay */}
                 <div className="absolute inset-x-0 bottom-0 p-5 text-center">
                   <h3 className="font-extrabold text-base md:text-lg text-white leading-tight whitespace-pre-line group-hover:text-blue-400 transition-colors">
@@ -109,11 +109,11 @@ export default function Tracks() {
           </button>
         </div>
       </div>
-        <div className="max-w-4xl mx-auto bg-violet-50 border border-violet-100 rounded-3xl  p-8 md:p-10 text-center shadow-sm mb-16">
-          <p className="text-[#023463] text-lg md:text-xl font-extrabold leading-relaxed">
-            Every career track is underpinned by Skillzza Skill Studios - giving students a seamless progression from studio-based learning to internship-based application.
-          </p>
-        </div>
+      <div className="max-w-4xl mx-auto text-center mb-16 px-6">
+        <p className="text-[#023463] text-lg md:text-xl font-extrabold leading-relaxed">
+          Every career track is underpinned by Skillzza Skill Studios <br /> giving students a seamless progression from studio-based learning to internship based application.
+        </p>
+      </div>
 
     </section>
   );

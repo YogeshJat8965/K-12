@@ -28,7 +28,7 @@ export default function Navbar() {
         <a href="#" className="flex items-center group">
           <span className="font-logo text-3xl">
             <span className="text-[#023463]">Skillzza</span>{' '}
-            <span className="bg-gradient-to-r from-[#8947B3] to-[#B26EE3] bg-clip-text text-transparent">Nova</span>
+            <span className="bg-gradient-to-r from-[#8947B3] to-[#B26EE3] bg-clip-text text-transparent">K-12</span>
           </span>
         </a>
 
@@ -49,7 +49,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <a
             href="#quiz"
-            className="bg-gradient-to-r from-orange-400 to-yellow-400 text-white font-bold px-5 py-2.5 rounded-full text-sm shadow-lg hover:shadow-orange-200 hover:scale-105 transition-all duration-300"
+            className="bg-gradient-to-r from-purple-400 to-purple-700 text-white font-bold px-5 py-2.5 rounded-full text-sm shadow-lg hover:shadow-orange-200 hover:scale-105 transition-all duration-300"
           >
             Take the Quiz
           </a>

@@ -1,6 +1,6 @@
 // ═══════════════════════════════════════════
 // AI PLAYGROUND - Content Data File
-// Source: "Skillzza Nova - Google Docs Ai playground.pdf"
+// Source: "Skillzza K-12 - Google Docs Ai playground.pdf"
 // Pattern: Same as virtualInternship.js
 // ═══════════════════════════════════════════
 
@@ -226,7 +226,7 @@ export const safety = {
 export const journey = {
   title: "From Play to Mastery",
   subtitle: "The Playground is just the beginning.",
-  description: "What starts as curiosity in the Playground naturally progresses into structured learning through Skillzza Nova's full ecosystem. Every agent a student builds becomes a doorway to deeper skills.",
+  description: "What starts as curiosity in the Playground naturally progresses into structured learning through Skillzza K-12's full ecosystem. Every agent a student builds becomes a doorway to deeper skills.",
   stages: [
     {
       tag: "EXPLORE",

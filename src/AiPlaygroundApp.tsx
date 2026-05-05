@@ -20,7 +20,7 @@ export default function AiPlaygroundApp() {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
-    document.title = 'Skillzza Nova - AI Playground | Build Your First AI Agent';
+    document.title = 'Skillzza K-12 - AI Playground | Build Your First AI Agent';
 
     const handleScroll = () => {
       const winScroll = document.documentElement.scrollTop;

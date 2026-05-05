@@ -71,10 +71,10 @@ export const howItWorks = {
 
 export const tracks = [
   { icon: "🤖", title: "AI, Data & Deep Tech", tagline: "THE BUILDERS OF TOMORROW", color: "from-brand-sky to-blue-400", desc: "Hands-on exposure to artificial intelligence, data analytics, cybersecurity, agentic AI, and emerging technologies shaping the future." },
-  { icon: "💼", title: "Business, Finance & Entrepreneurship", tagline: "THE STRATEGIC THINKERS", color: "from-brand-yellow to-amber-400", desc: "Foundational understanding of business models, financial literacy, startup thinking, market strategy, and innovation." },
+  { icon: "💼", title: "Business, Finance & Entrepreneurship", tagline: "THE STRATEGIC THINKERS", color: "from-brand-yellow to-amber-400", desc: "Foundational understanding of business models, financial literacy, startup thinking, market strategy, and inK-12tion." },
   { icon: "🎨", title: "Creative, Media & Product Design", tagline: "THE STORYTELLERS & DESIGNERS", color: "from-brand-brown to-orange-700", desc: "Training in UX design, storytelling, digital content creation, GenAI creative tools, animation, and modern product thinking." },
   { icon: "🚀", title: "Space, Science & Frontier Tech", tagline: "THE EXPLORERS & SCIENTISTS", color: "from-brand-navy to-blue-900", desc: "Space exploration, astronomy, aerospace fundamentals, satellite missions, and frontier science - inspired by India's space ambitions." },
-  { icon: "🌱", title: "Climate, Sustainability & Green Innovation", tagline: "THE CHANGEMAKERS", color: "from-brand-sky to-cyan-400", desc: "Climate tech, circular economy, UN SDG-linked projects, renewable energy, and green entrepreneurship for a better planet." },
+  { icon: "🌱", title: "Climate, Sustainability & Green InK-12tion", tagline: "THE CHANGEMAKERS", color: "from-brand-sky to-cyan-400", desc: "Climate tech, circular economy, UN SDG-linked projects, renewable energy, and green entrepreneurship for a better planet." },
   { icon: "🧘", title: "Mindfulness, Wellness & Inner Growth", tagline: "THE BALANCED LEADERS", color: "from-brand-beige to-orange-200", desc: "Mental well-being, emotional intelligence, mindfulness practices, youth resilience, and building a strong inner compass." },
   { icon: "📢", title: "Public Voice, Media & Global Affairs", tagline: "THE COMMUNICATORS & DIPLOMATS", color: "from-brand-yellow to-yellow-500", desc: "Journalism, public speaking, debate, world affairs, diplomacy simulations, and building a credible public voice early." },
   { icon: "🌍", title: "Leadership, Civic & Social Impact", tagline: "THE FUTURE LEADERS", color: "from-brand-brown to-amber-800", desc: "Civic leadership, community projects, social entrepreneurship, policy thinking, and building solutions that serve others." }
@@ -154,7 +154,7 @@ export const quiz = {
         { label: "🤖 Building tech & AI tools", tracks: ["AI, Data & Deep Tech"] },
         { label: "💡 Starting a business", tracks: ["Business, Finance & Entrepreneurship"] },
         { label: "🎨 Creating art & stories", tracks: ["Creative, Media & Product Design"] },
-        { label: "🌱 Saving the planet", tracks: ["Climate, Sustainability & Green Innovation"] }
+        { label: "🌱 Saving the planet", tracks: ["Climate, Sustainability & Green InK-12tion"] }
       ]
     },
     {
