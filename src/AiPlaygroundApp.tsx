@@ -6,6 +6,8 @@ import AgentLibrary from './components/playground/AgentLibrary';
 import WhatStudentsLearn from './components/playground/WhatStudentsLearn';
 import SafetySection from './components/playground/SafetySection';
 import MasteryPath from './components/playground/MasteryPath';
+import SchoolsEducators from './components/playground/SchoolsEducators';
+import PlaygroundEndBanner from './components/playground/PlaygroundEndBanner';
 import Navbar from './components/Navbar';
 import { useScrollReveal } from './hooks/useScrollReveal';
 
@@ -53,11 +55,17 @@ export default function AiPlaygroundApp() {
       {/* What Students Learn */}
       <WhatStudentsLearn />
 
+      {/* Safety & Transparency */}
+      <SafetySection />
+
       {/* From Play to Mastery */}
       <MasteryPath />
 
-      {/* Safety & Transparency */}
-      <SafetySection />
+      {/* For Schools & Educators */}
+      <SchoolsEducators />
+
+      {/* End Section */}
+      <PlaygroundEndBanner />
       
       {/* Other sections will be added here */}
     </div>

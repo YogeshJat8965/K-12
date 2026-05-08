@@ -56,7 +56,7 @@ export default function MasteryPath() {
 
         {/* Accordion Cards Container */}
         <div
-          className="flex flex-col lg:flex-row gap-2 h-[450px] lg:h-[480px] w-full"
+          className="flex flex-col lg:flex-row gap-2 h-[360px] lg:h-[380px] w-full"
           onMouseLeave={() => setActiveCard(0)}
         >
           {paths.map((path, i) => (
@@ -85,12 +85,12 @@ export default function MasteryPath() {
                       {path.label}
                     </div>
 
-                    <div className="relative z-10 flex flex-col items-center pt-32">
-                      <h4 className="text-3xl lg:text-5xl font-bold mb-4 lg:mb-6 tracking-tight">{path.title}</h4>
-                      <p className="text-base lg:text-xl text-white/80 max-w-2xl mb-8 lg:mb-10 leading-relaxed font-medium">
+                    <div className="relative z-10 pt-16">
+                      <h4 className="text-3xl lg:text-4xl font-bold mb-4">{path.title}</h4>
+                      <p className="text-base lg:text-lg text-white/80 max-w-xl mb-6 leading-relaxed">
                         {path.desc}
                       </p>
-                      <div className="px-6 py-2.5 bg-white/10 w-fit rounded-full text-[13px] font-bold backdrop-blur-md border border-white/20 uppercase tracking-widest">
+                      <div className="px-4 py-1.5 bg-white/10 w-fit rounded-full text-[12px] font-bold backdrop-blur-md border border-white/20 uppercase tracking-wider">
                         {path.time}
                       </div>
                     </div>
