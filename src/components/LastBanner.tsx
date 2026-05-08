@@ -17,12 +17,12 @@ export default function LastBanner() {
         <div className="max-w-2xl">
           <h2 className="text-white text-3xl md:text-4xl lg:text-[2.8rem] font-bold leading-[1.6] mb-10 tracking-tight">
             Start Your Child's Journey <br />
-            From <span className="text-[#FACC15]">Curiosity</span> to <span className="text-[#8B5CF6]">Capability.</span>
+            From <span className="text-[#8B5CF6]">Curiosity</span> to <span className="text-[#8B5CF6]">Capability.</span>
           </h2>
 
           <div className="flex flex-wrap gap-4">
             {/* Take the Quiz */}
-            <button className="bg-[#FFCC00] hover:bg-[#E6B800] text-slate-900 px-7 py-3.5 rounded-xl font-bold flex items-center gap-3 transition-all transform hover:-translate-y-1 shadow-lg shadow-yellow-500/20 uppercase text-[11px] tracking-wide">
+            <button className="bg-purple-600 hover:bg-purple-700 text-slate-900 px-7 py-3.5 rounded-xl font-bold flex items-center gap-3 transition-all transform hover:-translate-y-1 shadow-lg shadow-yellow-500/20 uppercase text-[11px] tracking-wide">
               <Target className="w-5 h-5" />
               TAKE THE QUIZ
             </button>

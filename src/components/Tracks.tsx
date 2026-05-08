@@ -110,7 +110,7 @@ export default function Tracks() {
         </div>
       </div>
       <div className="max-w-4xl mx-auto text-center mb-16 px-6">
-        <p className="text-[#023463] text-lg md:text-xl font-extrabold leading-relaxed">
+        <p className="text-[#023463] text-lg md:text-xl leading-relaxed">
           Every career track is underpinned by Skillzza Skill Studios <br /> giving students a seamless progression from studio-based learning to internship based application.
         </p>
       </div>

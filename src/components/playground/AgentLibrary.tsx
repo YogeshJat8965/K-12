@@ -1,164 +1,150 @@
-import { useState, useRef, useEffect, useCallback } from 'react';
-import { agents } from '../../aiPlayground';
-import { Sparkles, Wrench, ChevronRight } from 'lucide-react';
+import { useState, useRef, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import ScrollReveal from '../ScrollReveal';
 
-const categories = [
-  { id: 'all', label: 'All Agents' },
-  { id: 'creativity', label: 'Creativity' },
-  { id: 'academics', label: 'Academics' },
-  { id: 'science', label: 'Science' },
-  { id: 'tech', label: 'Tech' },
-  { id: 'wellness', label: 'Wellness' },
-  { id: 'career', label: 'Career' }
-];
+// Image Imports
+import img1 from '../../assets/AI Playground/1 img.png';
+import img2 from '../../assets/AI Playground/2 img.png';
+import img3 from '../../assets/AI Playground/3 img.png';
+import img4 from '../../assets/AI Playground/4 img.png';
+import img5 from '../../assets/AI Playground/5 img.png';
+import img6 from '../../assets/AI Playground/6 img.png';
+import imgMath from '../../assets/AI Playground/Math Mentor.png';
+import imgCode from '../../assets/AI Playground/Code Companion.png';
+import imgClimate from '../../assets/AI Playground/Climate Strategist.png';
+import imgLang from '../../assets/AI Playground/Language Buddy.png';
+import imgSpace from '../../assets/AI Playground/Space Explorer.png';
+import imgHistory from '../../assets/AI Playground/History Time Machine.png';
 
 export default function AgentLibrary() {
-  const [activeTab, setActiveTab] = useState('all');
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const [index, setIndex] = useState(1);
+  const [cardsToShow, setCardsToShow] = useState(4);
+  
+  const agents = [
+    { title: "Story Weaver", desc: "Co-write stories, invent characters, and build fictional worlds with a creative writing companion.", img: img1 },
+    { title: "Homework Helper", desc: "A patient tutor that explains concepts, walks through problems, and answers doubts across subjects.", img: img2 },
+    { title: "Career Coach", desc: "Explore career options, understand different paths, and get guidance tailored to your interests.", img: img3 },
+    { title: "Debate Buddy", desc: "Practise argumentation, prepare for debates, and strengthen critical thinking with a sparring partner.", img: img4 },
+    { title: "Science Explorer", desc: "Ask big questions, design experiments, and understand how the world works through curiosity-led chats.", img: img5 },
+    { title: "Wellness Guide", desc: "Mindfulness prompts, journaling companions, and gentle support for emotional well-being.", img: img6 },
+    { title: "Math Mentor", desc: "Break down tricky problems step by step, practise techniques, and build confidence in numbers.", img: imgMath },
+    { title: "Code Companion", desc: "Learn to code, debug errors, and build your first programmes with a friendly coding buddy.", img: imgCode },
+    { title: "Climate Strategist", desc: "Explore sustainability scenarios, model climate solutions, and design ideas to help the planet.", img: imgClimate },
+    { title: "Language Buddy", desc: "Practise English, Hindi, French, Spanish, or Mandarin through natural conversation.", img: imgLang },
+    { title: "Space Explorer", desc: "Journey through galaxies, understand space missions, and ask anything about the universe.", img: imgSpace },
+    { title: "History Time Machine", desc: "Travel through time, meet historical figures, and explore events through immersive storytelling.", img: imgHistory },
+  ];
 
-  // 3D Tilt Effect on mouse move over cards
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>, index: number) => {
-    const card = cardsRef.current[index];
-    if (!card) return;
+  useEffect(() => {
+    const updateCards = () => {
+      if (window.innerWidth < 768) setCardsToShow(1);
+      else if (window.innerWidth < 1024) setCardsToShow(2);
+      else setCardsToShow(4);
+    };
+    updateCards();
+    window.addEventListener('resize', updateCards);
+    return () => window.removeEventListener('resize', updateCards);
+  }, []);
 
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    // Spotlight glow calculation
-    card.style.setProperty('--mouse-x', `${x}px`);
-    card.style.setProperty('--mouse-y', `${y}px`);
-
-    // 3D Tilt calculation
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const rotateX = ((y - centerY) / centerY) * -10; // Max 10deg rotation
-    const rotateY = ((x - centerX) / centerX) * 10;
-
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+  const next = () => {
+    if (index < agents.length - cardsToShow) {
+      setIndex(prev => prev + 1);
+    }
   };
 
-  const handleMouseLeave = (index: number) => {
-    const card = cardsRef.current[index];
-    if (!card) return;
-    card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+  const prev = () => {
+    if (index > 0) {
+      setIndex(prev => prev - 1);
+    }
   };
-
-  const filteredAgents = activeTab === 'all' 
-    ? agents.list 
-    : agents.list.filter(agent => agent.category === activeTab);
 
   return (
-    <section id="agents" className="py-24 bg-[#1E1B4B] relative overflow-hidden">
-      {/* Background Code Rain & Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#1E1B4B] via-[#2E1065] to-[#1E1B4B] opacity-80" />
-      
-      {/* Code Rain Effect */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
-        {Array.from({ length: 20 }).map((_, i) => (
-          <div 
-            key={i} 
-            className="code-char"
-            style={{ 
-              left: `${i * 5}%`, 
-              '--rain-duration': `${Math.random() * 5 + 5}s`,
-              '--rain-delay': `${Math.random() * 5}s`
-            } as React.CSSProperties}
-          >
-            {'01'.split('').map(() => Math.random() > 0.5 ? '1' : '0').join('')}
-            <br />
-            {'import agent'.split('').map(c => Math.random() > 0.8 ? c.toUpperCase() : c).join('')}
-          </div>
-        ))}
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+    <section className="py-24 bg-white overflow-hidden" id="agents">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Header */}
         <div className="text-center mb-16">
-          <div className="reveal inline-flex items-center gap-2 bg-white/10 text-cyan-300 font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-4 border border-cyan-400/20 backdrop-blur-md">
-            <Sparkles className="w-3.5 h-3.5" />
-            Pick Your AI
-          </div>
-          <h2 className="reveal font-display text-4xl md:text-5xl lg:text-6xl text-white mb-6">
-            {agents.title}
-          </h2>
-          <p className="reveal text-purple-200/80 text-lg max-w-2xl mx-auto">
-            {agents.subtitle}
-          </p>
+          <ScrollReveal>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+              The Prebuilt Agent Library
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <p className="text-slate-600 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
+              Every agent is designed by educators and AI experts, pre-tested for age-appropriate content, and ready for students to customise. Pick one that matches your interest - or remix several to create something entirely new.
+            </p>
+          </ScrollReveal>
         </div>
 
-        {/* Category Tabs */}
-        <div className="reveal flex flex-wrap justify-center gap-3 mb-16">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => setActiveTab(cat.id)}
-              className={`px-5 py-2.5 rounded-full font-bold text-sm transition-all duration-300 ${
-                activeTab === cat.id
-                  ? 'bg-gradient-to-r from-ai-cyan to-ai-blue text-white shadow-[0_0_15px_rgba(6,182,212,0.4)]'
-                  : 'bg-white/5 text-purple-200 hover:bg-white/10 border border-white/10'
-              }`}
+        {/* Carousel Container */}
+        <div className="relative">
+          {/* Navigation Arrows */}
+          <div className="absolute top-1/2 -translate-y-1/2 -left-4 -right-4 flex justify-between items-center z-30 pointer-events-none">
+            <button 
+              onClick={prev}
+              disabled={index === 0}
+              className={`w-12 h-12 rounded-full bg-white shadow-2xl border border-slate-100 flex items-center justify-center transition-all duration-300 pointer-events-auto hover:scale-110 active:scale-95 disabled:opacity-0 disabled:scale-90`}
             >
-              {cat.label}
+              <ChevronLeft className="w-7 h-7 text-purple-600" />
             </button>
-          ))}
-        </div>
-
-        {/* Agent Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredAgents.map((agent, i) => (
-            <div
-              key={agent.title}
-              ref={el => cardsRef.current[i] = el}
-              onMouseMove={(e) => handleMouseMove(e, i)}
-              onMouseLeave={() => handleMouseLeave(i)}
-              onMouseEnter={() => setHoveredCard(i)}
-              className="reveal tilt-card-ai relative rounded-3xl bg-white/5 border border-white/10 p-6 overflow-hidden cursor-pointer group"
-              style={{ transitionDelay: `${i * 50}ms` }}
+            
+            <button 
+              onClick={next}
+              disabled={index >= agents.length - cardsToShow}
+              className={`w-14 h-14 rounded-full bg-white shadow-2xl border border-slate-100 flex items-center justify-center transition-all duration-300 pointer-events-auto hover:scale-110 active:scale-95 disabled:opacity-0 disabled:scale-90`}
             >
-              {/* Spotlight Glow - Uses CSS variables set by JS */}
-              <div 
-                className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                style={{
-                  background: 'radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(124, 58, 237, 0.15), transparent 40%)'
-                }}
-              />
-              
-              <div className="relative z-10">
-                <div className="w-14 h-14 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl flex items-center justify-center text-3xl mb-5 group-hover:scale-110 transition-transform duration-300 shadow-[0_0_15px_rgba(124,58,237,0.2)]">
-                  {agent.icon}
+              <ChevronRight className="w-8 h-8 text-purple-600" />
+            </button>
+          </div>
+
+          {/* CLIPPER CONTAINER - Crucial for hiding extra cards */}
+          <div className="pt-10 pb-12 overflow-hidden">
+            <motion.div 
+              className="flex gap-5"
+              animate={{ x: `calc(-${index * (100 / cardsToShow)}% - ${index * (20 / cardsToShow)}px)` }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            >
+              {agents.map((agent, i) => (
+                <div 
+                  key={i} 
+                  className="min-w-full md:min-w-[calc(50%-10px)] lg:min-w-[calc(25%-15px)]"
+                >
+                  <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden group/card shadow-lg hover:shadow-[0_20px_50px_rgba(107,33,168,0.2)] transition-all duration-500 hover:-translate-y-3">
+                    {/* Image */}
+                    <img 
+                      src={agent.img} 
+                      alt={agent.title} 
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover/card:scale-110"
+                    />
+                    
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-80 group-hover/card:opacity-100 transition-opacity duration-500" />
+                    
+                  {/* Content Overlay */}
+                  <div className="absolute inset-0 p-8 flex flex-col justify-end text-left">
+                    <div className="transform transition-all duration-500 translate-y-24 group-hover/card:translate-y-0">
+                      <h3 className="text-white font-bold text-2xl mb-3">
+                        {agent.title}
+                      </h3>
+                      <p className="text-slate-200 text-sm leading-relaxed opacity-0 group-hover/card:opacity-100 transition-all duration-700 delay-100 transform translate-y-4 group-hover/card:translate-y-0 line-clamp-4">
+                        {agent.desc}
+                      </p>
+                    </div>
+                  </div>
+                  </div>
                 </div>
-                <div className="absolute top-0 right-0 px-3 py-1 bg-white/10 rounded-full text-xs font-bold text-cyan-300 capitalize">
-                  {agent.category}
-                </div>
-                <h3 className="font-display text-xl text-white mb-2 group-hover:text-cyan-300 transition-colors">
-                  {agent.title}
-                </h3>
-                <p className="text-purple-200/70 text-sm leading-relaxed mb-6">
-                  {agent.desc}
-                </p>
-                <div className="flex items-center gap-2 text-ai-cyan font-bold text-sm opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-[-10px] group-hover:translate-x-0">
-                  Select Agent <ChevronRight className="w-4 h-4" />
-                </div>
-              </div>
-            </div>
-          ))}
+              ))}
+            </motion.div>
+          </div>
         </div>
 
-        {/* Builder Note */}
-        <div className="reveal mt-16 bg-gradient-to-r from-ai-purple/20 to-ai-magenta/20 border border-purple-500/30 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 backdrop-blur-sm">
-          <div className="flex items-start gap-4">
-            <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center flex-shrink-0">
-              <Wrench className="w-6 h-6 text-ai-pink" />
-            </div>
-            <div>
-              <h4 className="font-bold text-white text-lg mb-1">Want to build from scratch?</h4>
-              <p className="text-purple-200 text-sm">{agents.builderNote}</p>
-            </div>
-          </div>
-          <button className="bg-white text-ai-purple hover:bg-purple-50 px-6 py-3 rounded-xl font-bold transition-colors whitespace-nowrap">
-            Open Builder
-          </button>
+        {/* Footer Text */}
+        <div className="text-center mt-12">
+          <ScrollReveal>
+            <p className="text-slate-600 text-base md:text-lg max-w-4xl mx-auto">
+              Can't find the agent you want? Students at Grades 8+ can use the <span className="text-purple-600 font-bold cursor-pointer hover:underline">Agent Builder</span> to create entirely original agents from scratch - no coding required.
+            </p>
+          </ScrollReveal>
         </div>
       </div>
     </section>

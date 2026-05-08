@@ -1,123 +1,101 @@
-import { useEffect, useRef } from 'react';
-import { safety } from '../../aiPlayground';
-import { ShieldCheck, CheckCircle2, Lock, Eye, Users, HeartHandshake } from 'lucide-react';
-
-const icons = [
-  <ShieldCheck className="w-6 h-6 text-emerald-500" />,
-  <Eye className="w-6 h-6 text-ai-blue" />,
-  <Lock className="w-6 h-6 text-ai-purple" />,
-  <Users className="w-6 h-6 text-ai-pink" />,
-  <CheckCircle2 className="w-6 h-6 text-emerald-500" />,
-  <HeartHandshake className="w-6 h-6 text-amber-500" />
-];
+import { ShieldCheck, Eye, Lock, Users, GraduationCap, Clock } from 'lucide-react';
+import standingMan from '../../assets/AI Playground/standing man.png';
+import ScrollReveal from '../ScrollReveal';
 
 export default function SafetySection() {
-  const checkmarkRefs = useRef<(SVGSVGElement | null)[]>([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('checked');
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    checkmarkRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => observer.disconnect();
-  }, []);
+  const safetyPoints = [
+    {
+      title: "Content Moderation, Always On",
+      desc: "Every conversation is scanned in real-time against child-safety policies - inappropriate content is blocked before it ever reaches the student.",
+      icon: <ShieldCheck className="w-6 h-6 text-purple-600" />
+    },
+    {
+      title: "Parent Dashboard",
+      desc: "Parents see their child's agents, conversation summaries, and time spent - complete visibility without intrusive monitoring.",
+      icon: <Eye className="w-6 h-6 text-purple-600" />
+    },
+    {
+      title: "No Personal Data Sharing",
+      desc: "Agents never ask for real names, contact details, addresses, or personal information. Full stop.",
+      icon: <Lock className="w-6 h-6 text-purple-600" />
+    },
+    {
+      title: "Teacher-Moderated at School",
+      desc: "When deployed in classrooms, teachers have admin-level visibility into cohort usage and student creations.",
+      icon: <Users className="w-6 h-6 text-purple-600" />
+    },
+    {
+      title: "Educator-Approved Agents",
+      desc: "Every prebuilt agent is designed with curriculum experts and pre-tested with age-appropriate safeguards.",
+      icon: <GraduationCap className="w-6 h-6 text-purple-600" />
+    },
+    {
+      title: "Time & Usage Limits",
+      desc: "Built-in guardrails help families and schools set healthy usage limits - no endless scroll dynamics.",
+      icon: <Clock className="w-6 h-6 text-purple-600" />
+    }
+  ];
 
   return (
-    <section id="safety" className="py-24 bg-white relative overflow-hidden">
-      {/* Decorative background pattern */}
-      <div className="absolute inset-0 opacity-[0.02]" style={{
-        backgroundImage: 'linear-gradient(#7C3AED 2px, transparent 2px), linear-gradient(90deg, #7C3AED 2px, transparent 2px)',
-        backgroundSize: '40px 40px'
-      }} />
-
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-          
-          {/* Left: Content & Image */}
-          <div className="reveal-left">
-            <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-600 font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-6 border border-emerald-200">
-              <ShieldCheck className="w-4 h-4" />
-              100% Kid Safe
-            </div>
-            
-            <h2 className="font-display text-4xl md:text-5xl text-slate-800 mb-6 leading-tight">
-              {safety.title}
+    <section className="py-24 bg-slate-50 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Header */}
+        <div className="text-center mb-20">
+          <ScrollReveal>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+              Safe by Design. <span className="text-purple-600">Transparent by Default.</span>
             </h2>
-            
-            <p className="text-ai-purple font-bold text-xl mb-6">
-              {safety.subtitle}
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <p className="text-slate-600 text-lg md:text-xl max-w-3xl mx-auto italic">
+              "Because 'AI for kids' should mean safety first - not safety eventually."
             </p>
-            
-            <p className="text-slate-600 text-lg leading-relaxed mb-10">
-              {safety.description}
-            </p>
+          </ScrollReveal>
+        </div>
 
-            {/* Parent Image */}
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-              <img 
-                src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=800" 
-                alt="Parent and child using computer safely"
-                className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-5 shadow-lg border-l-4 border-emerald-500">
-                  <p className="font-bold text-slate-800 italic text-sm md:text-base">
-                    "{safety.parentPromise}"
-                  </p>
-                </div>
+        <div className="flex flex-col lg:flex-row items-center gap-16">
+          {/* Left Image */}
+          <div className="w-full lg:w-[45%]">
+            <ScrollReveal>
+              <div className="relative group">
+                <div className="absolute inset-0 bg-purple-200 rounded-[3rem] rotate-3 scale-95 opacity-50 blur-2xl group-hover:rotate-0 transition-all duration-700" />
+                <img 
+                  src={standingMan} 
+                  alt="AI Safety" 
+                  className="relative w-full h-auto rounded-[3rem] shadow-2xl transition-transform duration-700 hover:scale-[1.02]"
+                />
               </div>
-            </div>
+            </ScrollReveal>
           </div>
 
-          {/* Right: Feature Cards */}
-          <div className="reveal-right fade-up-stagger">
-            <div className="grid sm:grid-cols-2 gap-5">
-              {safety.features.map((feature, i) => (
-                <div 
-                  key={i} 
-                  className="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-ai-purple/30 hover:shadow-[0_10px_30px_rgba(124,58,237,0.1)] transition-all duration-300 group"
-                >
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm border border-slate-100 group-hover:scale-110 transition-transform">
-                      {icons[i]}
-                    </div>
-                    
-                    {/* Animated Checkmark */}
-                    <svg 
-                      ref={el => checkmarkRefs.current[i] = el}
-                      className="check-appear w-6 h-6 text-emerald-500" 
-                      fill="none" 
-                      viewBox="0 0 24 24" 
-                      stroke="currentColor" 
-                      strokeWidth={3}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
+          {/* Right Points */}
+          <div className="w-full lg:w-[55%] grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-8">
+            {safetyPoints.map((point, i) => (
+              <ScrollReveal key={i} delay={0.1 * i}>
+                <div className="flex flex-col items-start group">
+                  <div className="mb-4 p-3 bg-white rounded-xl shadow-sm border border-slate-100 transition-all duration-300 group-hover:scale-110 group-hover:shadow-md">
+                    {point.icon}
                   </div>
-                  
-                  <h3 className="font-bold text-slate-800 text-lg mb-2 leading-tight">
-                    {feature.title}
+                  <h3 className="text-slate-900 font-bold text-lg mb-2 group-hover:text-purple-600 transition-colors">
+                    {point.title}
                   </h3>
                   <p className="text-slate-500 text-sm leading-relaxed">
-                    {feature.desc}
+                    {point.desc}
                   </p>
                 </div>
-              ))}
-            </div>
+              </ScrollReveal>
+            ))}
           </div>
+        </div>
 
+        {/* Our Promise Footer */}
+        <div className="mt-24 pt-16 border-t border-slate-200 text-center">
+          <ScrollReveal>
+            <h3 className="text-2xl font-bold text-slate-900 mb-6">Our Promise to Parents</h3>
+            <p className="text-slate-600 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed italic">
+              "If our Playground wouldn't feel right for our own children, it doesn't belong on your child's screen. Every design decision is made with that filter first."
+            </p>
+          </ScrollReveal>
         </div>
       </div>
     </section>
