@@ -142,7 +142,7 @@ export default function AgentLibrary() {
         <div className="text-center mt-12">
           <ScrollReveal>
             <p className="text-slate-600 text-base md:text-lg max-w-4xl mx-auto">
-              Can't find the agent you want? Students at Grades 8+ can use the <span className="text-purple-600 font-bold cursor-pointer hover:underline">Agent Builder</span> to create entirely original agents from scratch - no coding required.
+              <b> Can't find the agent you want? </b> Students at Grades 8+ can use the <span className="text-purple-600 font-bold cursor-pointer hover:underline">Agent Builder</span> to create entirely original agents from scratch - no coding required.
             </p>
           </ScrollReveal>
         </div>
