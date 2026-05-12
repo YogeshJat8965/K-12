@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="477.524" height="100" viewBox="0 0 477.524 100">
+  <defs>
+    <filter id="Rectangle_11155" x="0" y="0" width="477.524" height="100" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-color="#7339e2" flood-opacity="0.231"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_27512" data-name="Group 27512" transform="translate(-738 -12109)">
+    <g transform="matrix(1, 0, 0, 1, 738, 12109)" filter="url(#Rectangle_11155)">
+      <rect id="Rectangle_11155-2" data-name="Rectangle 11155" width="441.524" height="64" rx="16" transform="translate(18 16)" fill="#783bec"/>
+    </g>
+    <text id="Take_the_CCMM_Self-Assessment_" data-name="Take the CCMM Self-Assessment →" transform="translate(977 12162)" fill="#fff" font-size="20" font-family="Poppins-SemiBold, Poppins" font-weight="600"><tspan x="-181" y="0">Take the CCMM Self-Assessment</tspan><tspan y="0" xml:space="preserve" font-family="Arial" font-weight="700"> →</tspan></text>
+  </g>
+</svg>

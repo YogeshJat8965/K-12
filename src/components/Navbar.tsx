@@ -14,6 +14,7 @@ export default function Navbar() {
   const links = [
     { label: 'AI Playground', href: '/ai-playground' },
     { label: 'Skill Studio', href: '/skill-studio' },
+    { label: 'Digital Creativity', href: '/digital-creativity' },
     { label: 'What Is It', href: '#what-is' },
     { label: 'Tracks', href: '#tracks' },
     { label: 'How It Works', href: '#how-it-works' },

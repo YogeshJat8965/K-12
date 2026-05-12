@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="208" height="40" viewBox="0 0 208 40">
+  <g id="Group_27485" data-name="Group 27485" transform="translate(-215 -2158)">
+    <g id="Group_27372" data-name="Group 27372" transform="translate(-653 -67)">
+      <g id="Rectangle_10959" data-name="Rectangle 10959" transform="translate(868 2225)" fill="#e4d3fc" stroke="#cfadff" stroke-width="1">
+        <rect width="208" height="40" rx="20" stroke="none"/>
+        <rect x="0.5" y="0.5" width="207" height="39" rx="19.5" fill="none"/>
+      </g>
+      <text id="Trusted_Globally" data-name="Trusted Globally" transform="translate(913 2251)" fill="#6e25d6" font-size="14" font-family="Poppins-SemiBold, Poppins" font-weight="600"><tspan x="0" y="0">TRUSTED GLOBALLY</tspan></text>
+      <circle id="Ellipse_25" data-name="Ellipse 25" cx="2" cy="2" r="2" transform="translate(893 2244)" fill="#6f25d6"/>
+    </g>
+  </g>
+</svg>

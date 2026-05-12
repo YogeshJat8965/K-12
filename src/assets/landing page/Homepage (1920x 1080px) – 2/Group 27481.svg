@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="141" height="46" viewBox="0 0 141 46">
+  <defs>
+    <filter id="Rectangle_10977" x="0" y="0" width="141" height="46" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-opacity="0.129"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_27481" data-name="Group 27481" transform="translate(-1158 -1812)">
+    <g transform="matrix(1, 0, 0, 1, 1158, 1812)" filter="url(#Rectangle_10977)">
+      <g id="Rectangle_10977-2" data-name="Rectangle 10977" transform="translate(3 2)" fill="#fff" stroke="#eaeaea" stroke-width="1">
+        <rect width="135" height="40" rx="20" stroke="none"/>
+        <rect x="0.5" y="0.5" width="134" height="39" rx="19.5" fill="none"/>
+      </g>
+    </g>
+    <text id="IB_Framework" data-name="IB Framework" transform="translate(1185 1839)" fill="#5c6164" font-size="14" font-family="Poppins-Medium, Poppins" font-weight="500"><tspan x="0" y="0">IB Framework</tspan></text>
+  </g>
+</svg>
