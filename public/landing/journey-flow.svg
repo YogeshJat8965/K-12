@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="367.078" viewBox="0 0 1400 367.078">
+  <g id="Group_27434" data-name="Group 27434" transform="translate(-260 -6341.461)">
+    <g id="Group_27415" data-name="Group 27415" transform="translate(0 -309.539)">
+      <path id="Path_30299" data-name="Path 30299" d="M28,0H1372c15.464,0,28,14.38,28,32.119V334.959c0,17.739-12.536,32.119-28,32.119H28c-15.464,0-28-14.38-28-32.119V32.119C0,14.38,12.536,0,28,0Z" transform="translate(260 6651)" fill="#230569"/>
+      <text id="STUDENT_JOURNEY_FLOW" data-name="STUDENT JOURNEY FLOW" transform="translate(960 6718)" fill="#cfcbff" font-size="16" font-family="Poppins-Bold, Poppins" font-weight="700" letter-spacing="0.188em"><tspan x="-128" y="0">STUDENT JOURNEY FLOW</tspan></text>
+      <line id="Line_72" data-name="Line 72" x2="1040" transform="translate(440 6804)" fill="none" stroke="#707070" stroke-width="4" stroke-dasharray="8 8"/>
+      <g id="Group_27406" data-name="Group 27406" transform="translate(260 6664)">
+        <circle id="Ellipse_29" data-name="Ellipse 29" cx="38" cy="38" r="38" transform="translate(142 102)" fill="#6d4cff"/>
+        <text id="_01" data-name="01" transform="translate(180 148)" fill="#fff" font-size="22" font-family="Arial"><tspan x="-12" y="0">01</tspan></text>
+        <text id="Learn" transform="translate(180 220)" fill="#fff" font-size="20" font-family="Arial"><tspan x="-25" y="0">Learn</tspan></text>
+      </g>
+      <g id="Group_27407" data-name="Group 27407" transform="translate(260 6664)">
+        <circle id="Ellipse_30" data-name="Ellipse 30" cx="38" cy="38" r="38" transform="translate(402 102)" fill="#ff5acd"/>
+        <text id="_02" data-name="02" transform="translate(440 148)" fill="#fff" font-size="22" font-family="Arial"><tspan x="-12" y="0">02</tspan></text>
+        <text id="Practice" transform="translate(440 220)" fill="#fff" font-size="20" font-family="Arial"><tspan x="-36" y="0">Practice</tspan></text>
+      </g>
+      <g id="Group_27408" data-name="Group 27408" transform="translate(260 6664)">
+        <circle id="Ellipse_31" data-name="Ellipse 31" cx="38" cy="38" r="38" transform="translate(662 102)" fill="#4b7cff"/>
+        <text id="_03" data-name="03" transform="translate(700 148)" fill="#fff" font-size="22" font-family="Arial"><tspan x="-12" y="0">03</tspan></text>
+        <text id="Build" transform="translate(700 220)" fill="#fff" font-size="20" font-family="Arial"><tspan x="-22" y="0">Build</tspan></text>
+      </g>
+      <g id="Group_27409" data-name="Group 27409" transform="translate(260 6664)">
+        <circle id="Ellipse_32" data-name="Ellipse 32" cx="38" cy="38" r="38" transform="translate(922 102)" fill="#42c97a"/>
+        <text id="_04" data-name="04" transform="translate(960 148)" fill="#fff" font-size="22" font-family="Arial"><tspan x="-12" y="0">04</tspan></text>
+        <text id="Validate" transform="translate(960 220)" fill="#fff" font-size="20" font-family="Arial"><tspan x="-35" y="0">Validate</tspan></text>
+      </g>
+      <g id="Group_27410" data-name="Group 27410" transform="translate(260 6664)">
+        <circle id="Ellipse_33" data-name="Ellipse 33" cx="38" cy="38" r="38" transform="translate(1182 102)" fill="#ffb020"/>
+        <text id="_05" data-name="05" transform="translate(1220 148)" fill="#fff" font-size="22" font-family="Arial"><tspan x="-12" y="0">05</tspan></text>
+        <text id="Lead" transform="translate(1220 220)" fill="#fff" font-size="20" font-family="Arial"><tspan x="-22" y="0">Lead</tspan></text>
+      </g>
+      <g id="Group_27412" data-name="Group 27412" transform="translate(5 13)">
+        <rect id="Rectangle_11054" data-name="Rectangle 11054" width="40" height="28" rx="3" transform="translate(410 6896)" fill="none" stroke="#bcaeff" stroke-width="3"/>
+        <line id="Line_74" data-name="Line 74" y2="28" transform="translate(443 6896)" fill="none" stroke="#bcaeff" stroke-width="3"/>
+      </g>
+      <rect id="Rectangle_11055" data-name="Rectangle 11055" width="50" height="28" rx="4" transform="translate(678 6909)" fill="none" stroke="#ffb8e7" stroke-width="3"/>
+      <g id="Group_27413" data-name="Group 27413" transform="translate(0 13)">
+        <rect id="Rectangle_11056" data-name="Rectangle 11056" width="50" height="32" rx="3" transform="translate(938 6893)" fill="none" stroke="#9cc0ff" stroke-width="3"/>
+        <line id="Line_75" data-name="Line 75" y2="12" transform="translate(963 6925)" fill="none" stroke="#9cc0ff" stroke-width="3"/>
+        <line id="Line_76" data-name="Line 76" x2="30" transform="translate(948 6937)" fill="none" stroke="#9cc0ff" stroke-width="3"/>
+      </g>
+      <g id="Group_27414" data-name="Group 27414" transform="translate(0 13)">
+        <path id="Path_30300" data-name="Path 30300" d="M960,272l25,10-5,23q-20,15-40,0l-5-23Z" transform="translate(260 6621)" fill="none" stroke="#a7f0c4" stroke-width="3"/>
+        <path id="Path_30301" data-name="Path 30301" d="M950,292l8,8,14-14" transform="translate(260 6621)" fill="none" stroke="#a7f0c4" stroke-width="3"/>
+      </g>
+      <line id="Line_77" data-name="Line 77" y2="43" transform="translate(1463 6906)" fill="none" stroke="#ffd58a" stroke-width="3"/>
+      <path id="Path_30302" data-name="Path 30302" d="M1200,275l35,10-35,10Z" transform="translate(263 6634)" fill="#ffd58a"/>
+      <g id="Group_27411" data-name="Group 27411" transform="translate(-88 -70)">
+        <circle id="Ellipse_43" data-name="Ellipse 43" cx="2" cy="2" r="2" transform="translate(774 6991)" fill="#ffb8e7"/>
+        <circle id="Ellipse_44" data-name="Ellipse 44" cx="2" cy="2" r="2" transform="translate(784 6991)" fill="#ffb8e7"/>
+        <circle id="Ellipse_45" data-name="Ellipse 45" cx="2" cy="2" r="2" transform="translate(794 6991)" fill="#ffb8e7"/>
+        <circle id="Ellipse_46" data-name="Ellipse 46" cx="2" cy="2" r="2" transform="translate(804 6991)" fill="#ffb8e7"/>
+      </g>
+    </g>
+  </g>
+</svg>
