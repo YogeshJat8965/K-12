@@ -11,10 +11,10 @@ const path = window.location.pathname;
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    {path === '/virtual-internship' ? <App /> :
+    {path === '/home' ? <HomeApp /> :
      path === '/ai-playground' ? <AiPlaygroundApp /> :
      path === '/skill-studio' ? <SkillStudioApp /> :
      path === '/digital-creativity' ? <DigitalCreativityApp /> :
-     <HomeApp />}
+     <App />}
   </StrictMode>
 );

@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react';
 const NAV_LINKS = [
   { label: 'Vidya AI',           href: '#' },
   { label: 'Skill Studio',       href: '/skill-studio' },
-  { label: 'Virtual Internship', href: '/virtual-internship' },
+  { label: 'Virtual Internship', href: '/' },
   { label: 'AI Playground',      href: '/ai-playground' },
   { label: 'Learners',           href: '#' },
 ];

@@ -27,7 +27,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo removed, only text remains */}
-        <a href="#" className="flex items-center group">
+        <a href="/" className="flex items-center group">
           <span className="font-logo text-3xl">
             <span className="text-[#023463]">Skillzza</span>{' '}
             <span className="bg-gradient-to-r from-[#8947B3] to-[#B26EE3] bg-clip-text text-transparent">K-12</span>
