@@ -165,7 +165,7 @@ export default function HomeNavbar() {
         <div className="hn-inner">
 
           {/* Logo */}
-          <a href="/" className="hn-logo">
+          <a href="/home" className="hn-logo">
             <span className="hn-logo-skillzza">SKILLZZA</span>
             <span className="hn-logo-k12">K-12</span>
           </a>

@@ -1,4 +1,4 @@
-import HomeNavbar from './home/HomeNavbar';
+import Navbar from './components/Navbar';
 import HomeHero from './home/HomeHero';
 import HomeMission from './home/HomeMission';
 import HomeTrusted from './home/HomeTrusted';
@@ -11,7 +11,7 @@ import HomeAdobe from './home/HomeAdobe';
 export default function HomeApp() {
   return (
     <div style={{ minHeight: '100vh', background: '#fff', fontFamily: "'Poppins', sans-serif" }}>
-      <HomeNavbar />
+      <Navbar />
       <div style={{ paddingTop: '70px' }}>
         <HomeHero />
         <HomeMission />
