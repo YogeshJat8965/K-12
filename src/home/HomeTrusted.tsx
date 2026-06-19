@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 
 const statsData = [
-  { icon: '/landing/stat-icon-1.svg', target: 150000, suffix: '', label: 'Students Impacted',  fmt: true },
-  { icon: '/landing/stat-icon-2.svg', target: 150,    suffix: '+', label: 'Partner School',     fmt: false },
-  { icon: '/landing/stat-icon-3.svg', target: 100,    suffix: '+', label: 'AI Projects',        fmt: false },
-  { icon: '/landing/stat-icon-4.svg', target: 700,    suffix: '+', label: 'Educators Unskilled', fmt: false },
+  { icon: '/landing/stat-icon-1.svg', target: 150000, suffix: '', label: 'Students Impacted', fmt: true },
+  { icon: '/landing/stat-icon-2.svg', target: 150, suffix: '+', label: 'Partner School', fmt: false },
+  { icon: '/landing/stat-icon-3.svg', target: 100, suffix: '+', label: 'AI Projects', fmt: false },
+  { icon: '/landing/stat-icon-4.svg', target: 700, suffix: '+', label: 'Educators Unskilled', fmt: false },
 ];
 
 const regions = ['INDIA', 'UAE', 'USA', 'UK', 'SINGAPORE', 'AFRICA'];
@@ -87,7 +87,7 @@ export default function HomeTrusted() {
         }
         .ht-h2 {
           font-weight: 800;
-          font-size: clamp(26px, 3vw, 48px);
+          font-size: 42px;
           line-height: 1.2;
           color: #1A1A2E;
           margin: 0 0 24px;
@@ -222,7 +222,7 @@ export default function HomeTrusted() {
 
           <p className="ht-partners-title">Trusted Partners and Framework</p>
           <div className="ht-logos">
-            {[1,2,3,4,5].map(i => <div className="ht-logo-box" key={i} />)}
+            {[1, 2, 3, 4, 5].map(i => <div className="ht-logo-box" key={i} />)}
           </div>
         </div>
       </section>

@@ -49,7 +49,7 @@ export default function HomeMission() {
         }
         .hm-left h2 {
           font-weight: 700;
-          font-size: clamp(22px, 2.2vw, 34px);
+          font-size: 26px;
           line-height: 1.35;
           color: #fff;
           margin: 0 0 24px;
@@ -114,7 +114,7 @@ export default function HomeMission() {
         }
         .hm-right h2 {
           font-weight: 700;
-          font-size: clamp(22px, 2.2vw, 34px);
+          font-size: 32px;
           line-height: 1.35;
           color: #1A1A2E;
           margin: 0 0 24px;
@@ -163,7 +163,7 @@ export default function HomeMission() {
           {/* LEFT */}
           <div className="hm-left">
             <div className="hm-badge-l">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
               <span>Our Mission</span>
             </div>
             <h2>We're not just teaching AI. We're shaping the minds that will shape the future.</h2>
@@ -176,13 +176,13 @@ export default function HomeMission() {
           {/* RIGHT */}
           <div className="hm-right">
             <div className="hm-badge-r">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
               <span>Globally Aligned</span>
             </div>
             <h2>Powered by Skillzza. Aligned with global education standards.</h2>
             <p className="hm-right-sub">NEP 2020, International Baccalaureate, Cambridge, and UN SDG frameworks – our learning architecture meets the world where it is headed.</p>
             <div className="hm-tags">
-              {['NEP 2020','IB Framework','Cambridge','UN SDGs'].map(t=>(
+              {['NEP 2020', 'IB Framework', 'Cambridge', 'UN SDGs'].map(t => (
                 <span className="hm-tag" key={t}>{t}</span>
               ))}
             </div>

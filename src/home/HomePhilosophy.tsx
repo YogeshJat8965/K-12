@@ -1,24 +1,25 @@
+import img1 from '../assets/21st century.png';
+import img2 from '../assets/Personalised Learning.png';
+import img3 from '../assets/Global Readiness.png';
+
 const philData = [
   {
     id: '01',
-    title: '21st Century Skills',
-    desc: 'Critical thinking, creativity, collaboration, and communication - built alongside technical AI proficiency in every programme.',
-    bg: '#eff6fe',
-    accent: '#4a7cff'
+    image: img1,
+    title: '21st Century\nSkills',
+    desc: 'Critical thinking, creativity, collaboration, and communication - built alongside technical AI proficiency in every programme'
   },
   {
     id: '02',
-    title: 'Personalised Learning',
-    desc: 'AI-powered tools adapt pace and content to each student\'s unique needs - ensuring comprehension, mastery, and confidence.',
-    bg: '#f5f3fe',
-    accent: '#4d00ff'
+    image: img2,
+    title: 'Personalised\nLearning',
+    desc: 'Critical thinking, creativity, collaboration, and communication - built alongside technical AI proficiency in every programme'
   },
   {
     id: '03',
-    title: 'Global Readiness',
-    desc: 'International curriculum standards and global-perspective projects that prepare students for a borderless future.',
-    bg: '#eafff5',
-    accent: '#009e4f'
+    image: img3,
+    title: 'Global\nReadiness',
+    desc: 'Critical thinking, creativity, collaboration, and communication - built alongside technical AI proficiency in every programme'
   }
 ];
 
@@ -28,101 +29,99 @@ export default function HomePhilosophy() {
       <style>{`
         .hp-section {
           width: 100%;
-          background: #FFFFFF;
-          padding: 100px 0;
+          background: linear-gradient(135deg, #FDFBFF 0%, #FFFFFF 15%);
+          padding: 80px 0 100px;
           font-family: 'Poppins', sans-serif;
         }
 
         .hp-inner {
-          max-width: 1640px;
+          max-width: 1440px;
           margin: 0 auto;
           padding: 0 40px;
         }
 
-        .hp-header {
+        /* Top Quote Section */
+        .hp-quote {
           text-align: center;
           margin-bottom: 80px;
         }
-
-        .hp-badge {
-          display: inline-block;
-          background: #EEF2FF;
-          border-radius: 40px;
-          padding: 8px 24px;
-          margin-bottom: 24px;
+        .hp-quote-text {
+          font-weight: 700;
+          font-size: 32px;
+          color: #1A1A2E;
+          line-height: 1.4;
+          margin: 0;
+        }
+        .hp-quote-highlight {
+          color: #7C3AED;
         }
 
-        .hp-badge span {
-          color: #6C3CF7;
+        /* Header */
+        .hp-header {
+          margin-bottom: 40px;
+        }
+        .hp-badge {
+          color: #4338CA;
           font-weight: 600;
           font-size: 14px;
           text-transform: uppercase;
-          letter-spacing: 1px;
+          letter-spacing: 0.5px;
+          margin-bottom: 8px;
         }
-
         .hp-title {
           font-weight: 700;
-          font-size: 48px;
+          font-size: 42px;
           color: #1A1A2E;
-          margin-bottom: 24px;
+          margin: 0;
         }
 
-        .hp-subtitle {
-          font-weight: 400;
-          font-size: 20px;
-          color: #84888B;
-          max-width: 700px;
-          margin: 0 auto;
-        }
-
+        /* Grid */
         .hp-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 30px;
+          gap: 32px;
         }
 
-        .hp-card {
-          border-radius: 24px;
-          padding: 40px;
-          min-height: 338px;
+        /* Item */
+        .hp-item {
           display: flex;
-          flex-direction: column;
-          position: relative;
+          align-items: flex-start;
+          gap: 16px;
+        }
+
+        /* Image */
+        .hp-img-wrap {
+          width: 140px;
+          height: 140px;
+          border-radius: 16px;
           overflow: hidden;
-          transition: transform 0.3s ease;
+          flex-shrink: 0;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+        .hp-img-wrap img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
 
-        .hp-card:hover {
-          transform: translateY(-10px);
+        /* Text */
+        .hp-text-wrap {
+          flex: 1;
         }
-
-        .hp-card-num {
-          font-weight: 600;
-          font-size: 24px;
-          margin-bottom: 12px;
-        }
-
-        .hp-card-title {
+        .hp-item-title {
           font-weight: 700;
-          font-size: 28px;
-          color: #1A1A2E;
-          margin-bottom: 20px;
+          font-size: 20px;
+          color: #4338CA;
+          margin: 0 0 10px;
+          white-space: pre-line;
+          line-height: 1.3;
         }
-
-        .hp-card-desc {
+        .hp-item-desc {
           font-weight: 400;
-          font-size: 18px;
-          line-height: 1.6;
-          color: #4B5563;
-        }
-
-        .hp-card-border {
-          position: absolute;
-          bottom: 0;
-          left: 10%;
-          width: 80%;
-          height: 6px;
-          border-radius: 6px 6px 0 0;
+          font-size: 13px;
+          line-height: 1.5;
+          color: #6B7280;
+          margin: 0;
         }
 
         @media (max-width: 1200px) {
@@ -130,42 +129,44 @@ export default function HomePhilosophy() {
             grid-template-columns: repeat(2, 1fr);
           }
         }
-
         @media (max-width: 768px) {
           .hp-grid {
             grid-template-columns: 1fr;
           }
+          .hp-quote-text {
+            font-size: 24px;
+          }
           .hp-title {
-            font-size: 32px;
+            font-size: 36px;
           }
         }
       `}</style>
 
       <section className="hp-section">
         <div className="hp-inner">
-          <div className="hp-header">
-            <div className="hp-badge">
-              <span>How We Teach</span>
-            </div>
-            <h2 className="hp-title">Our Learning Philosophy</h2>
-            <p className="hp-subtitle">
-              Three pillars that define how we approach every learning experience.
+          
+          <div className="hp-quote">
+            <p className="hp-quote-text">
+              Students Don't Just Learn Future Skills -<br />
+              They <span className="hp-quote-highlight">Apply</span> Them, <span className="hp-quote-highlight">Prove</span> Them, And <span className="hp-quote-highlight">Grow</span> Through Them.
             </p>
+          </div>
+
+          <div className="hp-header">
+            <div className="hp-badge">HOW WE TEACH</div>
+            <h2 className="hp-title">Our Learning Philosophy</h2>
           </div>
 
           <div className="hp-grid">
             {philData.map((item) => (
-              <div 
-                key={item.id} 
-                className="hp-card" 
-                style={{ background: item.bg }}
-              >
-                <div className="hp-card-num" style={{ color: item.accent }}>
-                  {item.id}
+              <div key={item.id} className="hp-item">
+                <div className="hp-img-wrap">
+                  <img src={item.image} alt={item.title.replace('\n', ' ')} />
                 </div>
-                <h3 className="hp-card-title">{item.title}</h3>
-                <p className="hp-card-desc">{item.desc}</p>
-                <div className="hp-card-border" style={{ background: item.accent }} />
+                <div className="hp-text-wrap">
+                  <h3 className="hp-item-title">{item.title}</h3>
+                  <p className="hp-item-desc">{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>

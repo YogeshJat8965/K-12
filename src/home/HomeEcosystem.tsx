@@ -1,40 +1,52 @@
-const ecoData = [
+import img1 from '../assets/Mask Group 30.png';
+import img2 from '../assets/Mask Group 31.png';
+import img3 from '../assets/Mask Group 32.png';
+
+const ecosystemData = [
   {
-    id: 1,
-    title: 'AI Upskilling',
-    desc: 'Project-based learning across storytelling with AI, prompt engineering, and ethical AI - aligned with NEP 2020 and global education standards.',
-    tag: 'Grades 6-12',
-    icon: '/landing/eco-icon-1.svg',
-    bg: '#530ECD',
-    iconSize: '125px'
+    themeColor: '#4361EE',
+    iconBg: '#EEF2FF',
+    img: img1,
+    label: 'FOR STUDENTS',
+    title: 'Learn AI, Build Projects,\nLead Early',
+    desc: 'Interactive simulations, real-world challenges, and future skills - designed to help students stand out in school, college, and beyond.',
+    bullets: [
+      { b: 'Future Skill Development', text: ' - tracks for AI Explorers, Creators, and Innovators.' },
+      { b: 'Virtual Internships', text: ' - simulated professional roles that build career-readiness.' },
+      { b: 'Hackathons & Bootcamps', text: ' - build, pitch, and solve real problems.' },
+      { b: 'One-on-One Tutoring', text: ' - academic support plus AI skill development.' }
+    ],
+    buttonText: 'Start Learning →'
   },
   {
-    id: 2,
-    title: 'Virtual Internship',
-    desc: 'Role-based job simulations in AI product management, data analytics, digital marketing, and more - building real-world, 21st-century skills.',
-    tag: 'Grades 6-12',
-    icon: '/landing/eco-icon-2.svg',
-    bg: '#840BF4',
-    iconSize: '125px'
+    themeColor: '#8B5CF6',
+    iconBg: '#F5F3FF',
+    img: img2,
+    label: 'FOR EDUCATORS',
+    title: 'Upskill. Co-Create. Lead\nAI Classrooms',
+    desc: 'Empower your teaching with hands-on AI tools, real-world simulations, and a global community of innovators.',
+    bullets: [
+      { b: 'AI Immersive Learning', text: ' - become an AI-confident educator through hands-on training.' },
+      { b: 'Faculty Fellowship Programme', text: ' - lead research, collaboration, and institutional impact.' },
+      { b: 'Curriculum Co-Design Studio', text: ' - co-create future-ready, interdisciplinary curricula.' },
+      { b: 'Access to free tools', text: ', resource libraries, and mentorship communities.' }
+    ],
+    buttonText: 'Join Educator Cohort →'
   },
   {
-    id: 3,
-    title: 'One-on-One Tutoring',
-    desc: 'Personalised support for Math, Science, English, Coding, AI & Design Thinking, and Olympiad / Board Exam preparation (CBSE, ICSE).',
-    tag: 'Academic + AI',
-    icon: '/landing/eco-icon-3.svg',
-    bg: '#19A279',
-    iconSize: '97px',
-    link: 'Learn More →'
-  },
-  {
-    id: 4,
-    title: 'Skill Studios',
-    desc: 'Structured Skill Studios spanning Gen AI, Space, Sustainability, Finance, Cybersecurity, Public Speaking, and more - schools select 3 per year.',
-    tag: '15+ Future Domains',
-    icon: '/landing/eco-icon-4.svg',
-    bg: '#F43B06',
-    iconSize: '125px'
+    themeColor: '#10B981',
+    iconBg: '#ECFDF5',
+    img: img3,
+    label: 'FOR SCHOOLS',
+    title: 'Transform Into an AI-\nPowered Learning Hub',
+    desc: 'End-to-end school transformation - from AI readiness diagnostics to labs, curriculum integration, and recognition.',
+    bullets: [
+      { b: 'AI Readiness Audit via the CCMM framework', text: ' - Curriculum, Culture, Mindset & Methodology.' },
+      { b: 'AI Lab setup with NEP-aligned', text: ', scalable curriculum integration.' },
+      { b: 'Clubs, Events & Recognition', text: ' - activate student talent and leadership.' },
+      { b: 'Teacher Fellowships and Student Ambassador Programmes', text: ' for institutional impact.' }
+    ],
+    buttonText: 'REQUEST A CCMM AUDIT'
   }
 ];
 
@@ -44,145 +56,192 @@ export default function HomeEcosystem() {
       <style>{`
         .he-section {
           width: 100%;
-          background: #fff;
-          padding: 100px 0;
-          font-family: 'Poppins', sans-serif;
+          background: #FFFFFF;
+          padding: 100px 0 120px;
+          font-family: 'DM Sans', sans-serif;
         }
 
         .he-inner {
-          max-width: 1640px;
+          max-width: 1440px;
           margin: 0 auto;
           padding: 0 40px;
         }
 
+        /* ─── HEADER ─── */
         .he-header {
           text-align: center;
-          margin-bottom: 80px;
+          margin-bottom: 60px;
         }
 
         .he-badge {
           display: inline-block;
-          background: #EEF2FF;
-          border-radius: 40px;
-          padding: 8px 24px;
-          margin-bottom: 24px;
-        }
-
-        .he-badge span {
-          color: #6C3CF7;
+          border: 1px solid #D6E0FF;
+          background: #F0F4FF;
+          color: #4B5563;
           font-weight: 600;
-          font-size: 14px;
+          font-size: 12px;
+          padding: 6px 20px;
+          border-radius: 30px;
           text-transform: uppercase;
-          letter-spacing: 1px;
+          letter-spacing: 0.5px;
+          margin-bottom: 24px;
         }
 
         .he-title {
-          font-weight: 700;
-          font-size: 48px;
-          color: #1A1A2E;
-          margin-bottom: 24px;
+          font-weight: 800;
+          font-size: 44px;
+          color: #111827;
+          margin: 0 0 16px;
+        }
+
+        .he-title-highlight {
+          color: #6C3CF7;
         }
 
         .he-subtitle {
           font-weight: 400;
-          font-size: 20px;
-          color: #84888B;
-          max-width: 700px;
+          font-size: 18px;
+          line-height: 1.6;
+          color: #6B7280;
           margin: 0 auto;
-          line-height: 1.5;
+          max-width: 700px;
         }
 
+        /* ─── CARDS GRID ─── */
         .he-grid {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(3, 1fr);
           gap: 30px;
         }
 
         .he-card {
+          background: #FFFFFF;
           border-radius: 16px;
-          padding: 40px 30px;
+          border: 1px solid #E5E7EB;
+          box-shadow: 0 10px 40px rgba(0,0,0,0.04);
           display: flex;
           flex-direction: column;
-          color: #fff;
-          border: 1px solid #E0E6FE;
-          min-height: 439px;
           position: relative;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .he-card:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+          transform: translateY(-4px);
+          box-shadow: 0 15px 50px rgba(0,0,0,0.08);
         }
 
-        .he-card-header {
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-          margin-bottom: 40px;
+        /* Card Image Area */
+        .he-img-area {
+          padding: 24px 24px 0;
+          position: relative;
+        }
+
+        .he-img-area img {
+          width: 100%;
+          height: 180px;
+          object-fit: cover;
+          border-radius: 12px;
+          display: block;
         }
 
         .he-icon-box {
-          background: #fff;
-          border-radius: 12px;
-          width: 80px;
-          height: 80px;
+          position: absolute;
+          bottom: -20px;
+          left: 24px;
+          width: 40px;
+          height: 40px;
+          border-radius: 10px;
+          z-index: 2;
+        }
+
+        /* Card Content */
+        .he-content {
+          padding: 24px 24px 20px;
           display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden;
+          flex-direction: column;
+          flex: 1;
         }
 
-        .he-icon-box img {
-          width: 80%;
-          height: 80%;
-          object-fit: contain;
-        }
-
-        .he-tag-pill {
-          border: 1px solid rgba(255, 255, 255, 0.4);
-          border-radius: 40px;
-          padding: 6px 16px;
-          font-size: 12px;
-          font-weight: 600;
-          white-space: nowrap;
+        .he-card-label {
+          font-weight: 700;
+          font-size: 13px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin-bottom: 12px;
         }
 
         .he-card-title {
-          font-weight: 600;
+          font-weight: 800;
           font-size: 24px;
-          line-height: 46px;
-          color: #EDF2FE;
-          margin-bottom: 8px;
-          text-align: left;
+          color: #111827;
+          margin: 0 0 12px;
+          line-height: 1.35;
+          white-space: pre-line;
         }
 
         .he-card-desc {
           font-weight: 400;
           font-size: 16px;
-          line-height: 30px;
-          letter-spacing: 0.4px;
-          color: #EDF2FE;
-          margin-bottom: 24px;
-          text-align: left;
-          opacity: 1;
+          line-height: 1.5;
+          color: #374151;
+          margin: 0 0 16px;
         }
 
-        .he-card-link {
-          margin-top: auto;
-          font-weight: 600;
-          font-size: 14px;
+        .he-bullets {
+          list-style: none;
+          padding: 0;
+          margin: 0 0 20px 0;
+          flex: 1;
+        }
+
+        .he-bullets li {
+          position: relative;
+          padding-left: 20px;
+          margin-bottom: 10px;
+          font-size: 15px;
+          color: #374151;
+          line-height: 1.5;
+        }
+
+        .he-bullet-dot {
+          position: absolute;
+          left: 0;
+          top: 8px;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+        }
+
+        .he-bullets strong {
+          color: #374151;
+          font-weight: 700;
+        }
+
+        /* Button */
+        .he-btn {
+          width: 100%;
+          padding: 14px 0;
+          border-radius: 8px;
+          color: #fff;
+          font-weight: 700;
+          font-size: 15px;
+          border: none;
           cursor: pointer;
-          display: flex;
-          align-items: center;
+          text-align: center;
+          transition: opacity 0.2s ease, transform 0.2s ease;
         }
 
-        @media (max-width: 1400px) {
+        .he-btn:hover {
+          opacity: 0.9;
+          transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 1100px) {
           .he-grid {
             grid-template-columns: repeat(2, 1fr);
           }
         }
-
         @media (max-width: 768px) {
           .he-grid {
             grid-template-columns: 1fr;
@@ -195,46 +254,53 @@ export default function HomeEcosystem() {
 
       <section className="he-section">
         <div className="he-inner">
+          
           <div className="he-header">
-            <div className="he-badge">
-              <span>What We Do</span>
-            </div>
-            <h2 className="he-title">Our Learning Ecosystem</h2>
+            <div className="he-badge">WHO WE SERVE</div>
+            <h2 className="he-title">
+              Built for <span className="he-title-highlight">Every Learner</span>
+            </h2>
             <p className="he-subtitle">
-              Four core products designed to work together - from classroom learning to career-ready experience.
+              Tailored programmes and pathways for each stakeholder in the<br />education ecosystem.
             </p>
           </div>
 
           <div className="he-grid">
-            {ecoData.map((item) => (
+            {ecosystemData.map((item, idx) => (
               <div 
-                key={item.id} 
                 className="he-card" 
-                style={{ 
-                  background: item.bg,
-                  boxShadow: item.id === 3 ? '0px 2px 19px #00000012' : 'none'
-                }}
+                key={idx}
+                style={{ borderTop: `4px solid ${item.themeColor}` }}
               >
-                <div className="he-card-header">
-                  <div className="he-icon-box">
-                    <img src={item.icon} alt={item.title} />
-                  </div>
-                  <div className="he-tag-pill">
-                    {item.tag}
-                  </div>
+                <div className="he-img-area">
+                  <img src={item.img} alt={item.label} />
+                  <div className="he-icon-box" style={{ background: item.iconBg }}></div>
                 </div>
-
-                <h3 className="he-card-title">{item.title}</h3>
-                <p className="he-card-desc">{item.desc}</p>
                 
-                {item.link && (
-                  <div className="he-card-link">
-                    {item.link}
+                <div className="he-content">
+                  <div className="he-card-label" style={{ color: item.themeColor }}>
+                    {item.label}
                   </div>
-                )}
+                  <h3 className="he-card-title">{item.title}</h3>
+                  <p className="he-card-desc">{item.desc}</p>
+                  
+                  <ul className="he-bullets">
+                    {item.bullets.map((bullet, bIdx) => (
+                      <li key={bIdx}>
+                        <span className="he-bullet-dot" style={{ background: item.themeColor }}></span>
+                        <strong>{bullet.b}</strong>{bullet.text}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <button className="he-btn" style={{ background: item.themeColor }}>
+                    {item.buttonText}
+                  </button>
+                </div>
               </div>
             ))}
           </div>
+
         </div>
       </section>
     </>

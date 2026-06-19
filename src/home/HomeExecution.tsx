@@ -1,38 +1,37 @@
+import EXEC_IMG from '../assets/landing page/ChatGPT Image Jun 20, 2026, 01_55_48 AM copy.png';
+
+import { BookOpen, FlaskConical, TrendingUp, Award, Trophy } from 'lucide-react';
+
 const execData = [
   {
     id: '01',
     title: 'Future-Ready Curriculum Pathways',
     desc: 'AI, coding, design thinking, sustainability, and emerging technologies delivered through structured, age-appropriate, project-based learning journeys.',
-    icon: '/landing/exec-icon-1.svg',
-    bg: '#EEF2FE'
+    icon: <BookOpen color="#fff" size={28} strokeWidth={1.5} />
   },
   {
     id: '02',
     title: 'Skill Studios & Applied Innovation Labs',
     desc: 'Hands-on labs, simulations, challenges, and maker experiences where students build, prototype, solve, and apply learning in real-world contexts.',
-    icon: '/landing/exec-icon-2.svg',
-    bg: '#F5F3FE'
+    icon: <FlaskConical color="#fff" size={28} strokeWidth={1.5} />
   },
   {
     id: '03',
     title: 'Continuous Assessment & Progress Intelligence',
     desc: 'Competency tracking, learner portfolios, milestone dashboards, and growth analytics designed to measure mastery and make progress visible.',
-    icon: '/landing/exec-icon-3.svg',
-    bg: '#EFF6FE'
+    icon: <TrendingUp color="#fff" size={28} strokeWidth={1.5} />
   },
   {
     id: '04',
     title: 'Certification & Achievement Pathways',
     desc: 'Digital credentials, capstones, showcase projects, and certification pathways that validate skill development and celebrate achievement.',
-    icon: '/landing/exec-icon-4.svg',
-    bg: '#EDFFF7'
+    icon: <Award color="#fff" size={28} strokeWidth={1.5} />
   },
   {
     id: '05',
     title: 'League-Based Progression & Talent Development',
     desc: 'Explorer. Creator. Innovator. Leader. A challenge-led progression model powered by hackathons, ambassador programmes, innovation leagues, and recognition ecosystems.',
-    icon: '/landing/exec-icon-5.svg',
-    bg: '#FFF7EE'
+    icon: <Trophy color="#fff" size={28} strokeWidth={1.5} />
   }
 ];
 
@@ -42,8 +41,8 @@ export default function HomeExecution() {
       <style>{`
         .ef-section {
           width: 100%;
-          background: #7436CC;
-          padding: 120px 0 60px;
+          background: #FFFFFF;
+          padding: 120px 0 100px;
           font-family: 'Poppins', sans-serif;
           position: relative;
         }
@@ -52,144 +51,145 @@ export default function HomeExecution() {
           margin: 0 auto;
           padding: 0 40px;
         }
-        .ef-header {
-          text-align: center;
+        .ef-top-row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 60px;
           margin-bottom: 80px;
         }
-        .ef-badge {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          background: #FFFFFF;
-          border-radius: 40px;
-          padding: 10px 32px;
-          margin-bottom: 32px;
+        .ef-left {
+          flex: 1;
+          max-width: 680px;
         }
-        .ef-badge span {
-          color: #7436CC;
+        .ef-right {
+          flex: 1;
+          display: flex;
+          justify-content: flex-end;
+        }
+        .ef-right img {
+          max-width: 100%;
+          height: auto;
+          display: block;
+        }
+        .ef-label {
+          color: #6C3CF7;
           font-weight: 700;
           font-size: 14px;
           text-transform: uppercase;
           letter-spacing: 1.5px;
-          white-space: nowrap;
+          margin-bottom: 20px;
+          display: block;
         }
         .ef-title {
-          font-weight: 700;
-          font-size: clamp(32px, 3.5vw, 46px);
+          font-weight: 800;
+          font-size: 42px;
           line-height: 1.2;
-          color: #EDF2FE;
+          color: #1A1A2E;
           margin-bottom: 24px;
-          max-width: 972px;
-          margin-left: auto;
-          margin-right: auto;
         }
         .ef-subtitle {
           font-weight: 400;
-          font-size: clamp(16px, 1.2vw, 20px);
+          font-size: 18px;
           line-height: 1.6;
-          color: #EDF2FE;
-          max-width: 1113px;
-          margin: 0 auto;
+          color: #4B5563;
+          margin: 0;
         }
-        .ef-grid {
+        .ef-pillars-header {
+          margin-top: 100px;
+          margin-bottom: 60px;
+          max-width: 1440px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .ef-pillars-grid {
           display: grid;
           grid-template-columns: repeat(5, 1fr);
-          gap: 24px;
-          margin-top: 60px;
+          gap: 20px;
+          max-width: 1440px;
+          margin: 0 auto;
         }
-        .ef-card {
-          border-radius: 16px;
-          padding: 30px;
+        .ef-pillar {
           display: flex;
           flex-direction: column;
-          border: 1px solid #D2D3D3;
-          min-height: 457px;
-          position: relative;
-          transition: transform 0.3s ease;
         }
-        .ef-card:hover {
-          transform: translateY(-10px);
-        }
-        .ef-card-top {
+        .ef-pillar-icon {
+          width: 64px;
+          height: 64px;
+          border-radius: 50%;
+          background: #6C3CF7;
           display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-          margin-bottom: 30px;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 24px;
         }
-        .ef-icon {
-          width: 50px;
-          height: 50px;
-          object-fit: contain;
-        }
-        .ef-number {
-          font-weight: 600;
-          font-size: 30px;
-          line-height: 46px;
-          color: #230569;
-          opacity: 0.1;
-        }
-        .ef-card-title {
+        .ef-pillar-title {
           font-weight: 700;
-          font-size: clamp(18px, 1.3vw, 22px);
-          line-height: 1.3;
+          font-size: 18px;
+          line-height: 1.4;
           color: #1A1A2E;
-          margin-bottom: 20px;
+          margin-bottom: 16px;
         }
-        .ef-card-desc {
+        .ef-pillar-desc {
           font-weight: 400;
           font-size: 14px;
           line-height: 1.6;
           color: #4B5563;
+          margin: 0;
         }
         @media (max-width: 1400px) {
-          .ef-grid { grid-template-columns: repeat(3, 1fr); }
+          .ef-pillars-grid { grid-template-columns: repeat(3, 1fr); }
+          .ef-pillar { border-left: none !important; padding-left: 0 !important; }
         }
         @media (max-width: 900px) {
-          .ef-grid { grid-template-columns: repeat(2, 1fr); }
+          .ef-pillars-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 600px) {
-          .ef-grid { grid-template-columns: 1fr; }
-          .ef-title { font-size: 28px; }
+          .ef-pillars-grid { grid-template-columns: 1fr; }
+          .ef-title { font-size: 32px; }
+          .ef-top-row { flex-direction: column; gap: 40px; }
         }
       `}</style>
 
       <section className="ef-section">
         <div className="ef-inner">
-          <div className="ef-header">
-            <div className="ef-badge">
-              <span>Our Execution Framework</span>
+          <div className="ef-top-row">
+            <div className="ef-left">
+              <span className="ef-label">OUR EXECUTION FRAMEWORK</span>
+              <h2 className="ef-title">From Learning To Measurable Outcomes</h2>
+              <p className="ef-subtitle">
+                Skillzza Nova Goes Beyond Teaching AI — We Deliver A Structured Execution Model That Converts Learning Into Measurable Student Outcomes. Built As An Integrated K-12 Implementation Framework, Our Model Combines Future-Ready Curriculum, Experiential Skill Labs, Continuous Assessment, Certification Pathways, And League-Based Progression.
+              </p>
             </div>
-            <h2 className="ef-title">From Learning to Measurable Outcomes</h2>
-            <p className="ef-subtitle">
-              Skillzza K-12 goes beyond teaching AI and future skills - we deliver a structured execution model that transforms learning into measurable student outcomes. Built as an integrated K-12 implementation framework, our model combines future-ready curriculum, experiential skill labs, continuous assessment, certification pathways, and league-based progression to help learners move from exploration to leadership.
-            </p>
+            <div className="ef-right">
+              <img src={EXEC_IMG} alt="Execution Framework" />
+            </div>
           </div>
 
-          <div className="ef-grid">
-            {execData.map((item) => (
-              <div key={item.id} className="ef-card" style={{ background: item.bg }}>
-                <div className="ef-card-top">
-                  <img src={item.icon} alt={item.title} className="ef-icon" />
-                  <span className="ef-number">{item.id}</span>
+          <div className="ef-pillars-header">
+            <h2 className="ef-title">The Five Pillars Of Execution</h2>
+          </div>
+
+          <div className="ef-pillars-grid">
+            {execData.map((item, idx) => (
+              <div 
+                key={item.id} 
+                className="ef-pillar" 
+                style={{ 
+                  borderLeft: idx === 0 ? 'none' : '1px solid #E5E7EB', 
+                  paddingLeft: idx === 0 ? '0' : '20px' 
+                }}
+              >
+                <div className="ef-pillar-icon">
+                  {item.icon}
                 </div>
-                <h3 className="ef-card-title">{item.title}</h3>
-                <p className="ef-card-desc">{item.desc}</p>
+                <h3 className="ef-pillar-title">{item.title}</h3>
+                <p className="ef-pillar-desc">{item.desc}</p>
               </div>
             ))}
           </div>
 
-          {/* Student Journey Flow */}
-          <div style={{
-            maxWidth: 1400,
-            margin: '80px auto 0',
-            textAlign: 'center',
-          }}>
-            <img 
-              src="/landing/journey-flow.svg" 
-              alt="Student Journey Flow" 
-              style={{ width: '100%', height: 'auto' }} 
-            />
-          </div>
+
 
         </div>
       </section>

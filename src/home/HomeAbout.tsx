@@ -1,107 +1,113 @@
+import LEFT_IMG from '../assets/landing page/Homepage (1920x 1080px) – 2/ChatGPT Image Jun 20, 2026, 12_44_07 AM.png';
+
 export default function HomeAbout() {
   return (
     <>
       <style>{`
         .ha-section {
           width: 100%;
-          background: #230569;
-          box-shadow: 0px 3px 6px #431AA42F;
+          background: #ffffff;
           padding: clamp(60px, 8vw, 120px) 0;
           font-family: 'Poppins', sans-serif;
           position: relative;
-          overflow: hidden;
-          min-height: 919px;
-          display: flex;
-          align-items: center;
         }
 
         .ha-inner {
-          max-width: 1640px;
+          max-width: 1760px;
           margin: 0 auto;
           padding: 0 80px;
           display: flex;
           align-items: center;
-          gap: 60px;
-          position: relative;
-          z-index: 2;
+          gap: 80px;
         }
 
         .ha-left {
-          flex: 1;
-          max-width: 769px;
+          flex: 0 0 45%;
+          max-width: 45%;
+          display: flex;
+          justify-content: flex-start;
         }
 
-        .ha-badge {
-          background: #FFFFFF;
-          border-radius: 40px;
-          padding: 8px 24px;
-          display: inline-block;
-          margin-bottom: 32px;
+        .ha-left img {
+          width: 100%;
+          height: auto;
+          border-radius: 24px;
+          object-fit: cover;
+          box-shadow: 0 10px 40px rgba(0,0,0,0.05);
         }
 
-        .ha-badge span {
-          color: #230569;
+        .ha-right {
+          flex: 0 0 55%;
+          max-width: 55%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .ha-label {
+          color: #6C3CF7;
           font-weight: 700;
-          font-size: 14px;
-          letter-spacing: 1px;
+          font-size: 18px;
+          letter-spacing: 1.5px;
           text-transform: uppercase;
+          margin-bottom: 16px;
+          display: block;
         }
 
         .ha-h2 {
-          font-weight: 700;
-          font-size: clamp(32px, 3.5vw, 46px);
-          line-height: 1.25;
-          color: #FCFCFF;
-          margin: 0 0 40px;
+          font-weight: 800;
+          font-size: 42px;
+          line-height: 1.12;
+          color: #1A1A2E;
+          margin: 0 0 32px;
+          letter-spacing: -0.5px;
         }
 
         .ha-content {
           font-weight: 400;
-          font-size: clamp(16px, 1.2vw, 20px);
+          font-size: 16px;
           line-height: 1.6;
-          letter-spacing: 0.5px;
-          color: rgba(255, 255, 255, 0.57);
+          color: #374151;
         }
 
         .ha-content p {
-          margin-bottom: 24px;
+          margin-bottom: 18px;
+        }
+        
+        .ha-content p:last-child {
+          margin-bottom: 0;
         }
 
-        .ha-right {
-          flex: 1;
-          display: flex;
-          justify-content: flex-end;
+        .ha-purple {
+          color: #6C3CF7;
         }
 
-        .ha-right img {
-          width: 100%;
-          max-width: 741px;
-          height: auto;
-          object-fit: contain;
-        }
-
-        @media (max-width: 1200px) {
+        @media (max-width: 1100px) {
           .ha-inner {
             flex-direction: column;
-            padding: 0 40px;
-            text-align: center;
+            padding: 0 48px;
+          }
+          .ha-left, .ha-right {
+            max-width: 100%;
+            width: 100%;
+            flex: none;
           }
           .ha-left {
-            max-width: 100%;
-          }
-          .ha-right {
             justify-content: center;
-            margin-top: 40px;
+            margin-bottom: 40px;
           }
         }
 
         @media (max-width: 600px) {
           .ha-section {
             padding: 60px 0;
-            min-height: auto;
           }
           .ha-inner {
             padding: 0 20px;
+            gap: 40px;
+          }
+          .ha-left img {
+            border-radius: 16px;
           }
         }
       `}</style>
@@ -109,30 +115,27 @@ export default function HomeAbout() {
       <section className="ha-section">
         <div className="ha-inner">
           <div className="ha-left">
-            <div className="ha-badge">
-              <span>About Us</span>
-            </div>
-            
+            <img src={LEFT_IMG} alt="Student learning on tablet" />
+          </div>
+
+          <div className="ha-right">
+            <span className="ha-label">ABOUT SKILLZZA NOVA</span>
+
             <h2 className="ha-h2">
-              Building the Future of K-12,<br />
-              Across Six Regions
+              A K-12 Platform Built For An AI-First World
             </h2>
 
             <div className="ha-content">
               <p>
-                Skillzza K-12 is a next-generation K-12 learning platform built to prepare students, educators, and schools for an AI-powered world. By combining cognitive science, real-world skill-building, and intelligent learning systems, we equip young minds with the future-ready capabilities they need to lead with confidence.
+                Skillzza Nova Is The Next-Generation K-12 Learning Platform Preparing Students, Educators, And Schools For An AI-Powered Economy. We Combine Cognitive Science, Real-World Skill-Building, And Intelligent Learning Systems — Powered By <span className="ha-purple">Vedya AI</span>, Our Proprietary AI Co-Pilot — To Equip Young Minds With The Future-Ready Capabilities They Need To Lead With Confidence.
               </p>
               <p>
-                In a world where change is constant, textbooks alone are no longer enough. Students must master future skills - creativity, critical thinking, digital fluency, and ethical AI awareness - to thrive.
+                In A World Where Change Is Constant, Textbooks Alone Are No Longer Enough. Students Must Master Future Skills — Creativity, Critical Thinking, Digital Fluency, And Ethical AI Awareness — To Thrive Globally.
               </p>
               <p>
-                From personalised tutoring and project-based virtual internships to school transformation programmes, we make future-forward education both accessible and actionable - for every classroom, everywhere.
+                From AI-Powered Upskilling And Role-Based Virtual Internships To Whole-School Transformation Programmes, We Make Future-Forward Education Accessible, Measurable, And Actionable — For Every Classroom, Everywhere.
               </p>
             </div>
-          </div>
-
-          <div className="ha-right">
-            <img src="/landing/about-image.png" alt="Learning Platform" />
           </div>
         </div>
       </section>

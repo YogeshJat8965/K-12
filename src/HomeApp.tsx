@@ -5,8 +5,13 @@ import HomeTrusted from './home/HomeTrusted';
 import HomeAbout from './home/HomeAbout';
 import HomeEcosystem from './home/HomeEcosystem';
 import HomeExecution from './home/HomeExecution';
+import HomeJourney from './home/HomeJourney';
 import HomePhilosophy from './home/HomePhilosophy';
 import HomeAdobe from './home/HomeAdobe';
+import HomeCompare from './home/HomeCompare';
+import HomeReady from './home/HomeReady';
+import HomeCTA from './home/HomeCTA';
+import HomeLearningEcosystem from './home/HomeLearningEcosystem';
 
 export default function HomeApp() {
   return (
@@ -17,10 +22,15 @@ export default function HomeApp() {
         <HomeMission />
         <HomeTrusted />
         <HomeAbout />
-        <HomeEcosystem />
+        <HomeLearningEcosystem />
+        <HomeCompare />
         <HomeExecution />
+        <HomeJourney />
         <HomePhilosophy />
         <HomeAdobe />
+        <HomeEcosystem />
+        <HomeReady />
+        <HomeCTA />
       </div>
     </div>
   );

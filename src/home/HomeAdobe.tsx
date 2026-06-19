@@ -66,7 +66,7 @@ export default function HomeAdobe() {
 
         .ha-title {
           font-weight: 700;
-          font-size: clamp(32px, 3.5vw, 46px);
+          font-size: 42px;
           line-height: 1.25;
           margin-bottom: 32px;
           max-width: 619px;
@@ -175,7 +175,7 @@ export default function HomeAdobe() {
             </h2>
 
             <p className="ha-subheadline">Turn Students into Future Creators</p>
-            
+
             <p className="ha-desc">
               A NEP-aligned programme for Grades 5-10 that builds real-world skills in design, content creation, and AI - through hands-on, project-based learning on Adobe Express.
             </p>

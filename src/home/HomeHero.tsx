@@ -1,15 +1,14 @@
-const BG_HERO   = '/landing/bg-hero.png';
-const RIGHT_IMG  = '/landing/right-image.png';
-const ICON_1     = '/landing/icon-1.svg';
-const ICON_2     = '/landing/icon-2.svg';
-const ICON_3     = '/landing/icon-3.svg';
-const ICON_4     = '/landing/icon-4.svg';
+import RIGHT_IMG from '../assets/landing page/Homepage (1920x 1080px) – 2/ChatGPT Image Jun 20, 2026, 12_40_39 AM.png';
+const ICON_1 = '/landing/icon-1.svg';
+const ICON_2 = '/landing/icon-2.svg';
+const ICON_3 = '/landing/icon-3.svg';
+const ICON_4 = '/landing/icon-4.svg';
 
 const features = [
-  { icon: ICON_1, bg: '#EEF2FF', shadow: 'rgba(108,60,247,0.2)',   title: 'Learn AI',         desc: 'Foundational to advanced AI skills for every learner.' },
-  { icon: ICON_2, bg: '#ECFDF5', shadow: 'rgba(16,185,129,0.2)',   title: 'Build Projects',   desc: 'Turn ideas into real World projects and build your portfolio.' },
-  { icon: ICON_3, bg: '#F5F3FF', shadow: 'rgba(139,92,246,0.2)',   title: 'Intern Early',     desc: 'Gain real Experience through virtual internships.' },
-  { icon: ICON_4, bg: '#FFF7ED', shadow: 'rgba(245,158,11,0.2)',   title: 'Lead the Future',  desc: 'Develop the mindset and skills to lead in an AI-powered world.' },
+  { icon: ICON_1, bg: '#EEF2FF', shadow: 'rgba(108,60,247,0.2)', title: 'Learn AI', desc: 'Foundational to advanced AI skills for every learner.' },
+  { icon: ICON_2, bg: '#ECFDF5', shadow: 'rgba(16,185,129,0.2)', title: 'Build Projects', desc: 'Turn ideas into real World projects and build your portfolio.' },
+  { icon: ICON_3, bg: '#F5F3FF', shadow: 'rgba(139,92,246,0.2)', title: 'Intern Early', desc: 'Gain real Experience through virtual internships.' },
+  { icon: ICON_4, bg: '#FFF7ED', shadow: 'rgba(245,158,11,0.2)', title: 'Lead the Future', desc: 'Develop the mindset and skills to lead in an AI-powered world.' },
 ];
 
 export default function HomeHero() {
@@ -21,7 +20,7 @@ export default function HomeHero() {
         /* ─── hero outer ─── */
         .hh-section {
           width: 100%;
-          background: url(${BG_HERO}) 0 100% / cover no-repeat, #F0EFFF;
+          background: #ffffff;
           padding-top: 70px; /* navbar height */
           font-family: 'Poppins', sans-serif;
           position: relative;
@@ -32,11 +31,10 @@ export default function HomeHero() {
         .hh-content {
           max-width: 1760px;
           margin: 0 auto;
-          padding: 56px 80px 0;
+          padding: 16px 80px 80px;
           display: flex;
           align-items: center;
           gap: 0;
-          min-height: 680px;
         }
 
         /* ─── LEFT ─── */
@@ -77,11 +75,12 @@ export default function HomeHero() {
         /* Heading */
         .hh-h1 {
           font-weight: 800;
-          font-size: clamp(32px, 4.2vw, 74px);
+          font-size: clamp(28px, 4.2vw, 74px);
           line-height: 1.12;
           color: #1A1A2E;
           margin: 0 0 24px;
           letter-spacing: -0.5px;
+          white-space: nowrap;
         }
         .hh-h1 .purple { color: #6C3CF7; }
 
@@ -155,29 +154,31 @@ export default function HomeHero() {
           flex: 0 0 50%;
           max-width: 50%;
           display: flex;
-          align-items: flex-end;
-          justify-content: center;
-          position: relative;
-          align-self: flex-end;
+          align-items: center;
+          justify-content: flex-end;
         }
         .hh-right img {
-          width: 100%;
-          max-width: 820px;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 48vw;
+          max-width: 900px;
           height: auto;
           display: block;
-          mix-blend-mode: multiply;
           object-fit: contain;
+          object-position: right center;
         }
 
         /* ─── BOTTOM FEATURE CARD ─── */
         .hh-feature-bar {
-          background: #fff;
+          background: #F1F2FC;
           border-radius: 32px;
           box-shadow: 0 8px 60px rgba(0,0,0,0.07);
           border: 1px solid #F0F0F5;
           display: flex;
           align-items: stretch;
-          margin: 0 80px 0;
+          margin: 60px 80px 40px;
           position: relative;
           z-index: 20;
           overflow: hidden;
@@ -227,25 +228,31 @@ export default function HomeHero() {
 
         /* ─── RESPONSIVE ─── */
         @media (max-width: 1100px) {
-          .hh-content { padding: 48px 48px 0; min-height: 560px; }
-          .hh-feature-bar { margin: 0 48px 0; }
+          .hh-content { padding: 16px 48px 60px; }
+          .hh-feature-bar { margin: 50px 48px 40px; }
         }
 
         @media (max-width: 860px) {
           .hh-content {
             flex-direction: column;
-            padding: 40px 32px 0;
+            padding: 16px 32px 60px;
             gap: 32px;
-            min-height: auto;
           }
           .hh-left, .hh-right {
             flex: none; max-width: 100%; width: 100%;
             padding-right: 0;
           }
           .hh-right { justify-content: center; }
-          .hh-right img { max-width: 90%; }
+          .hh-right img { 
+            position: relative; 
+            top: auto; 
+            right: auto; 
+            transform: none; 
+            width: 100%; 
+            max-width: 90%; 
+          }
           .hh-feature-bar {
-            margin: 0 32px 0;
+            margin: 40px 32px 32px;
             flex-direction: column;
           }
           .hh-feat-divider { width: auto; height: 1px; margin: 0 20px; align-self: stretch; }
@@ -253,8 +260,8 @@ export default function HomeHero() {
         }
 
         @media (max-width: 600px) {
-          .hh-content { padding: 32px 20px 0; }
-          .hh-feature-bar { margin: 0 20px 0; border-radius: 20px; }
+          .hh-content { padding: 12px 20px 40px; }
+          .hh-feature-bar { margin: 32px 20px 24px; border-radius: 20px; }
           .hh-btns { gap: 10px; }
         }
       `}</style>
