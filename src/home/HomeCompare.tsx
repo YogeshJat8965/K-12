@@ -1,6 +1,79 @@
+import { useEffect, useRef } from 'react';
 import { Globe, Bot, Briefcase, Handshake, School, BookOpen, Trophy } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function HomeCompare() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+
+    const ctx = gsap.context(() => {
+      // Title blur-in per word
+      if (titleRef.current) {
+        const text = titleRef.current.innerText;
+        titleRef.current.innerHTML = '';
+        const words = text.split(' ');
+        words.forEach((word) => {
+          const span = document.createElement('span');
+          span.innerText = word + ' ';
+          span.style.display = 'inline-block';
+          span.style.opacity = '0';
+          span.style.filter = 'blur(20px)';
+          span.className = 'hc-word';
+          titleRef.current?.appendChild(span);
+        });
+
+        gsap.to('.hc-word', {
+          opacity: 1,
+          filter: 'blur(0px)',
+          duration: 1,
+          stagger: 0.1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: titleRef.current,
+            start: 'top 85%'
+          }
+        });
+      }
+
+      // Rows slide in 3D rotateY
+      if (listRef.current) {
+        const rows = listRef.current.querySelectorAll('.hc-card');
+        gsap.from(rows, {
+          x: -100,
+          rotationY: 20,
+          opacity: 0,
+          duration: 1,
+          stagger: 0.15,
+          ease: 'back.out(1.2)',
+          transformOrigin: 'left center',
+          scrollTrigger: {
+            trigger: listRef.current,
+            start: 'top 80%'
+          }
+        });
+
+        // Trigger highlight sweep for Nova text
+        rows.forEach((row) => {
+          ScrollTrigger.create({
+            trigger: row,
+            start: 'top 85%',
+            onEnter: () => {
+              const textEl = row.querySelector('.hc-sweep-text');
+              if (textEl) textEl.classList.add('swept');
+            }
+          });
+        });
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
   const data = [
     {
       title: 'Scope Of Skills',
@@ -178,6 +251,19 @@ export default function HomeCompare() {
           margin: 0;
         }
 
+        /* Highlight Sweep Text */
+        .hc-sweep-text {
+          background: linear-gradient(to right, #111827 50%, #6C3CF7 50%);
+          background-size: 200% 100%;
+          background-position: 0% 0%;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          transition: background-position 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hc-sweep-text.swept {
+          background-position: -100% 0%;
+        }
+
         /* Responsive */
         @media (max-width: 1200px) {
           .hc-inner { padding: 0 40px; }
@@ -212,20 +298,20 @@ export default function HomeCompare() {
         }
       `}</style>
 
-      <section className="hc-section">
+      <section className="hc-section" ref={sectionRef} style={{ perspective: '1200px' }}>
         <div className="hc-inner">
           
           <div className="hc-header">
             <span className="hc-label">WHY SKILLZA NOVA</span>
-            <h2 className="hc-title">Better Than The Alternatives. By Design.</h2>
+            <h2 className="hc-title" ref={titleRef}>Better Than The Alternatives. By Design.</h2>
             <p className="hc-subtitle">
               How We Compare Against Global AI Learning Platforms, Internship Simulators, And India's Coding-Only Edtechs
             </p>
           </div>
 
-          <div className="hc-list">
+          <div className="hc-list" ref={listRef}>
             {data.map((row, idx) => (
-              <div className="hc-card" key={idx}>
+              <div className="hc-card" key={idx} style={{ transformStyle: 'preserve-3d' }}>
                 
                 <div className="hc-col-1">
                   <div className="hc-icon-box" style={{ backgroundColor: row.iconBg, color: row.iconColor }}>
@@ -241,7 +327,7 @@ export default function HomeCompare() {
 
                 <div className="hc-col-3">
                   <p className="hc-col-head-nova">Skillza Nova</p>
-                  <p className="hc-col-desc">{row.novaDesc}</p>
+                  <p className="hc-col-desc hc-sweep-text">{row.novaDesc}</p>
                 </div>
 
               </div>

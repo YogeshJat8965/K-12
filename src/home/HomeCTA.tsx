@@ -1,6 +1,39 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function HomeCTA() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 80%'
+        }
+      });
+
+      // Background grid fade
+      tl.to('.cta-bg-grid', { opacity: 0.3, duration: 1.5, ease: 'none' }, 0);
+
+      // Left content
+      tl.from('.cta-badge', { y: -50, opacity: 0, duration: 0.8, ease: 'elastic.out(1, 0.5)' }, 0.2);
+      tl.from('.cta-title-base', { opacity: 0, duration: 0.8 }, 0.4);
+      tl.from('.cta-title-highlight', { scale: 1.3, opacity: 0, duration: 0.6, ease: 'back.out(1.5)' }, 0.6);
+      tl.from('.cta-desc', { y: 20, opacity: 0, duration: 0.6 }, 0.8);
+
+      // Cards float in
+      tl.from('.card-parents', { y: 100, opacity: 0, duration: 1, ease: 'power3.out' }, 0.6);
+      tl.from('.card-schools', { x: 100, y: -100, opacity: 0, duration: 1, ease: 'power3.out' }, 0.7);
+      tl.from('.card-educators', { x: 100, opacity: 0, duration: 1, ease: 'power3.out' }, 0.8);
+
+    }, sectionRef);
+    return () => ctx.revert();
+  }, []);
+
   return (
     <>
       <style>{`
@@ -9,12 +42,20 @@ export default function HomeCTA() {
           padding: 120px 0;
           font-family: 'DM Sans', sans-serif;
           background-color: #FAFAFA;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .cta-bg-grid {
+          position: absolute;
+          top: 0; left: 0; right: 0; bottom: 0;
           background-image: 
-            linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+            linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px);
           background-size: 40px 40px;
           background-position: center;
-          position: relative;
+          opacity: 0;
+          z-index: 0;
         }
 
         .cta-inner {
@@ -24,6 +65,8 @@ export default function HomeCTA() {
           display: flex;
           align-items: center;
           gap: 60px;
+          position: relative;
+          z-index: 1;
         }
 
         .cta-left {
@@ -81,11 +124,13 @@ export default function HomeCTA() {
           display: flex;
           flex-direction: column;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
+          transform-style: preserve-3d;
+          perspective: 1000px;
         }
 
         .cta-card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 15px 50px rgba(0,0,0,0.08);
+          transform: translateY(-10px) rotateX(3deg);
+          box-shadow: 0 20px 50px rgba(0,0,0,0.12);
         }
 
         .cta-card-header {
@@ -124,12 +169,29 @@ export default function HomeCTA() {
           font-size: 15px;
           border: none;
           cursor: pointer;
-          transition: opacity 0.2s ease, transform 0.2s ease;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+        }
+
+        .cta-card-btn::before {
+          content: "";
+          position: absolute;
+          top: 0; left: 0; width: 100%; height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+          transform: translateX(-100%);
+          transition: transform 0.5s ease;
+          z-index: -1;
+        }
+
+        .cta-card-btn:hover::before {
+          transform: translateX(100%);
         }
 
         .cta-card-btn:hover {
-          opacity: 0.9;
           transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
         /* Specific Cards */
@@ -142,10 +204,17 @@ export default function HomeCTA() {
         .card-parents .cta-card-title { color: #111827; }
         .card-parents .cta-card-btn { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); color: #FFFFFF; }
 
+        @keyframes pulseGlow {
+          0% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4); }
+          70% { box-shadow: 0 0 0 15px rgba(124, 58, 237, 0); }
+          100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0); }
+        }
+
         .card-schools {
           background: transparent linear-gradient(131deg, #0D1636 0%, #1D1460 100%) 0% 0% no-repeat padding-box;
           grid-column: 2;
           grid-row: 1;
+          animation: pulseGlow 3s infinite;
         }
         .card-schools .cta-card-icon { background: #2A2052; }
         .card-schools .cta-card-label { color: #A78BFA; }
@@ -197,12 +266,14 @@ export default function HomeCTA() {
         }
       `}</style>
 
-      <section className="cta-section">
+      <section className="cta-section" ref={sectionRef}>
+        <div className="cta-bg-grid"></div>
         <div className="cta-inner">
           <div className="cta-left">
             <span className="cta-badge">TAKE THE FIRST STEP</span>
             <h2 className="cta-title">
-              Launch Your AI Superpower — <span className="cta-title-highlight">Early</span>
+              <span className="cta-title-base">Launch Your AI Superpower — </span>
+              <span className="cta-title-highlight" style={{ display: 'inline-block' }}>Early</span>
             </h2>
             <p className="cta-desc">
               Master coding, AI, and data skills through real-world projects. Stand out in school, college, and beyond - whichever path you're on.

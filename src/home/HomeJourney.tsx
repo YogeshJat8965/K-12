@@ -4,6 +4,11 @@ import img2 from '../assets/2img.png';
 import img3 from '../assets/3img.png';
 import img4 from '../assets/4img.png';
 import img5 from '../assets/5img.png';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const journeyData = [
   {
@@ -49,6 +54,87 @@ const journeyData = [
 ];
 
 export default function HomeJourney() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      if (headerRef.current) {
+        // Top title
+        gsap.from('.hj-top-title', {
+          opacity: 0,
+          filter: 'blur(12px)',
+          duration: 1.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: headerRef.current,
+            start: 'top 85%'
+          }
+        });
+
+        // Words and arrows
+        gsap.from('.hj-flow-item', {
+          opacity: 0,
+          rotationY: 90,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: 'back.out(1.2)',
+          scrollTrigger: {
+            trigger: headerRef.current,
+            start: 'top 80%'
+          }
+        });
+      }
+
+      if (gridRef.current) {
+        gsap.from('.hj-card', {
+          y: 80,
+          rotationX: -15,
+          opacity: 0,
+          duration: 1,
+          stagger: 0.15,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: gridRef.current,
+            start: 'top 80%'
+          }
+        });
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    
+    const rotateX = ((y - centerY) / centerY) * -8;
+    const rotateY = ((x - centerX) / centerX) * 8;
+    
+    gsap.to(card, {
+      rotateX,
+      rotateY,
+      duration: 0.3,
+      ease: 'power2.out'
+    });
+  };
+
+  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+    gsap.to(e.currentTarget, {
+      rotateX: 0,
+      rotateY: 0,
+      duration: 0.5,
+      ease: 'power2.out'
+    });
+  };
+
   return (
     <>
       <style>{`
@@ -118,11 +204,12 @@ export default function HomeJourney() {
           display: flex;
           flex-direction: column;
           position: relative;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          transform-style: preserve-3d;
+          perspective: 1000px;
+          transition: box-shadow 0.3s ease;
         }
         .hj-card:hover {
-          transform: translateY(-6px);
-          box-shadow: 0 12px 40px rgba(124, 58, 237, 0.14);
+          box-shadow: 0 0 20px 2px rgba(108,60,247,0.3);
         }
 
         /* Image */
@@ -135,13 +222,26 @@ export default function HomeJourney() {
           margin-top: 10px;
           margin-bottom: 24px;
         }
+        @keyframes float-loop {
+          0% { transform: translateY(0px) scale(2.2); }
+          50% { transform: translateY(-10px) scale(2.2); }
+          100% { transform: translateY(0px) scale(2.2); }
+        }
+
         .hj-img-wrap img {
           max-width: 100%;
           max-height: 100%;
           object-fit: contain;
           transform: scale(2.2);
           transform-origin: center;
+          animation: float-loop 4s ease-in-out infinite;
         }
+
+        .hj-card:nth-child(1) .hj-img-wrap img { animation-delay: 0s; }
+        .hj-card:nth-child(2) .hj-img-wrap img { animation-delay: -0.8s; }
+        .hj-card:nth-child(3) .hj-img-wrap img { animation-delay: -1.6s; }
+        .hj-card:nth-child(4) .hj-img-wrap img { animation-delay: -2.4s; }
+        .hj-card:nth-child(5) .hj-img-wrap img { animation-delay: -3.2s; }
 
         /* Bottom */
         .hj-card-bottom {
@@ -193,33 +293,38 @@ export default function HomeJourney() {
         }
       `}</style>
 
-      <section className="hj-section">
+      <section className="hj-section" ref={sectionRef}>
         <div className="hj-inner">
           
           {/* Header */}
-          <div className="hj-header">
+          <div className="hj-header" ref={headerRef} style={{ perspective: '1000px' }}>
             <p className="hj-top-title">The Skillzza Learning Journey</p>
             <div className="hj-flow-row">
-              <span className="hj-flow-word">Learn</span>
-              <span className="hj-flow-arrow">→</span>
-              <span className="hj-flow-word">Practice</span>
-              <span className="hj-flow-arrow">→</span>
-              <span className="hj-flow-word">Build</span>
-              <span className="hj-flow-arrow">→</span>
-              <span className="hj-flow-word">Validate</span>
-              <span className="hj-flow-arrow">→</span>
-              <span className="hj-flow-word">Lead</span>
+              <span className="hj-flow-word hj-flow-item">Learn</span>
+              <span className="hj-flow-arrow hj-flow-item">→</span>
+              <span className="hj-flow-word hj-flow-item">Practice</span>
+              <span className="hj-flow-arrow hj-flow-item">→</span>
+              <span className="hj-flow-word hj-flow-item">Build</span>
+              <span className="hj-flow-arrow hj-flow-item">→</span>
+              <span className="hj-flow-word hj-flow-item">Validate</span>
+              <span className="hj-flow-arrow hj-flow-item">→</span>
+              <span className="hj-flow-word hj-flow-item">Lead</span>
             </div>
           </div>
 
           {/* Cards */}
-          <div className="hj-grid">
+          <div className="hj-grid" ref={gridRef} style={{ perspective: '1200px' }}>
             {journeyData.map((item) => (
-              <div className="hj-card" key={item.id}>
-                <div className="hj-img-wrap">
+              <div 
+                className="hj-card" 
+                key={item.id}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+              >
+                <div className="hj-img-wrap" style={{ transform: 'translateZ(30px)' }}>
                   <img src={item.image} alt={item.title} />
                 </div>
-                <div className="hj-card-bottom">
+                <div className="hj-card-bottom" style={{ transform: 'translateZ(20px)' }}>
                   <div className="hj-title-row">
                     <div className="hj-title-icon" style={{ background: item.color }}>
                       {item.icon}

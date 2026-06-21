@@ -1,6 +1,11 @@
 import img1 from '../assets/Mask Group 30.png';
 import img2 from '../assets/Mask Group 31.png';
 import img3 from '../assets/Mask Group 32.png';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ecosystemData = [
   {
@@ -51,6 +56,60 @@ const ecosystemData = [
 ];
 
 export default function HomeEcosystem() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // 1. Heading Typewriter
+      if (titleRef.current) {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: titleRef.current,
+            start: 'top 85%'
+          }
+        });
+        
+        tl.from('.he-title-base', { opacity: 0, duration: 0.6 })
+          .from('.he-type-char', { opacity: 0, duration: 0.1, stagger: 0.05, ease: 'none' }, '+=0.2')
+          .from('.he-subtitle', { y: 20, opacity: 0, duration: 0.6 }, '-=0.2');
+      }
+
+      // 2. Cards 3D Rise
+      if (gridRef.current) {
+        const cards = gridRef.current.querySelectorAll('.he-card');
+        
+        cards.forEach((card, idx) => {
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: gridRef.current,
+              start: 'top 80%'
+            },
+            delay: idx * 0.15
+          });
+
+          // Card enter
+          tl.from(card, { y: 100, rotationX: -12, opacity: 0, duration: 1, ease: 'power3.out' });
+
+          // Image Ken Burns
+          const img = card.querySelector('.he-img-area img');
+          tl.from(img, { scale: 1.15, duration: 0.8, ease: 'power2.out' }, '-=0.8');
+
+          // Top border draw
+          const border = card.querySelector('.he-card-top-border');
+          tl.fromTo(border, { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: 'power2.out', transformOrigin: 'left' }, '-=0.5');
+
+          // Bullets stagger
+          const bullets = card.querySelectorAll('li');
+          tl.from(bullets, { x: -20, opacity: 0, duration: 0.4, stagger: 0.08, ease: 'power2.out' }, '-=0.4');
+        });
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <>
       <style>{`
@@ -122,7 +181,18 @@ export default function HomeEcosystem() {
           display: flex;
           flex-direction: column;
           position: relative;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          transform-style: preserve-3d;
+          perspective: 1000px;
+          transition: box-shadow 0.3s ease;
+          overflow: hidden;
+        }
+        .he-card-top-border {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 4px;
+          z-index: 10;
         }
 
         .he-card:hover {
@@ -228,12 +298,33 @@ export default function HomeEcosystem() {
           border: none;
           cursor: pointer;
           text-align: center;
-          transition: opacity 0.2s ease, transform 0.2s ease;
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .he-btn::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(255,255,255,0.2);
+          z-index: -1;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.4s ease;
+        }
+
+        .he-btn:hover::before {
+          transform: scaleX(1);
         }
 
         .he-btn:hover {
-          opacity: 0.9;
           transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
 
         /* Responsive */
@@ -252,26 +343,31 @@ export default function HomeEcosystem() {
         }
       `}</style>
 
-      <section className="he-section">
+      <section className="he-section" ref={sectionRef}>
         <div className="he-inner">
           
           <div className="he-header">
             <div className="he-badge">WHO WE SERVE</div>
-            <h2 className="he-title">
-              Built for <span className="he-title-highlight">Every Learner</span>
+            <h2 className="he-title" ref={titleRef}>
+              <span className="he-title-base">Built for </span>
+              <span className="he-title-highlight">
+                {"Every Learner".split('').map((char, i) => (
+                  <span key={i} className="he-type-char">{char === ' ' ? '\u00A0' : char}</span>
+                ))}
+              </span>
             </h2>
             <p className="he-subtitle">
               Tailored programmes and pathways for each stakeholder in the<br />education ecosystem.
             </p>
           </div>
 
-          <div className="he-grid">
+          <div className="he-grid" ref={gridRef} style={{ perspective: '1200px' }}>
             {ecosystemData.map((item, idx) => (
               <div 
                 className="he-card" 
                 key={idx}
-                style={{ borderTop: `4px solid ${item.themeColor}` }}
               >
+                <div className="he-card-top-border" style={{ background: item.themeColor }}></div>
                 <div className="he-img-area">
                   <img src={item.img} alt={item.label} />
                   <div className="he-icon-box" style={{ background: item.iconBg }}></div>

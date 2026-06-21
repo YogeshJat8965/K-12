@@ -1,6 +1,73 @@
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import LEFT_IMG from '../assets/landing page/Homepage (1920x 1080px) – 2/ChatGPT Image Jun 20, 2026, 12_44_07 AM.png';
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function HomeAbout() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const labelRef = useRef<HTMLSpanElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+
+    const ctx = gsap.context(() => {
+      // Eyebrow label width animation
+      if (labelRef.current) {
+        gsap.from(labelRef.current, {
+          scaleX: 0,
+          transformOrigin: 'left center',
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 75%',
+          }
+        });
+      }
+
+      // Image 3D tilt reveal + glowing purple border
+      if (imgRef.current) {
+        gsap.fromTo(imgRef.current, 
+          { rotationY: -30, scale: 0.9, opacity: 0, boxShadow: '0 0 0px rgba(108, 43, 217, 0)' },
+          {
+            rotationY: 0,
+            scale: 1,
+            opacity: 1,
+            boxShadow: '0 0 30px 5px rgba(108, 43, 217, 0.4)',
+            duration: 1.2,
+            ease: 'back.out(1.2)',
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: 'top 70%',
+            }
+          }
+        );
+      }
+
+      // Paragraphs stagger
+      if (textRef.current) {
+        const paragraphs = textRef.current.querySelectorAll('p');
+        gsap.from(paragraphs, {
+          y: 30,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: textRef.current,
+            start: 'top 80%',
+          }
+        });
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <>
       <style>{`
@@ -112,20 +179,20 @@ export default function HomeAbout() {
         }
       `}</style>
 
-      <section className="ha-section">
+      <section className="ha-section" ref={sectionRef}>
         <div className="ha-inner">
-          <div className="ha-left">
-            <img src={LEFT_IMG} alt="Student learning on tablet" />
+          <div className="ha-left" style={{ perspective: '1000px' }}>
+            <img src={LEFT_IMG} alt="Student learning on tablet" ref={imgRef} />
           </div>
 
           <div className="ha-right">
-            <span className="ha-label">ABOUT SKILLZZA NOVA</span>
+            <span className="ha-label" ref={labelRef} style={{ display: 'inline-block' }}>ABOUT SKILLZZA NOVA</span>
 
             <h2 className="ha-h2">
               A K-12 Platform Built For An AI-First World
             </h2>
 
-            <div className="ha-content">
+            <div className="ha-content" ref={textRef}>
               <p>
                 Skillzza Nova Is The Next-Generation K-12 Learning Platform Preparing Students, Educators, And Schools For An AI-Powered Economy. We Combine Cognitive Science, Real-World Skill-Building, And Intelligent Learning Systems — Powered By <span className="ha-purple">Vedya AI</span>, Our Proprietary AI Co-Pilot — To Equip Young Minds With The Future-Ready Capabilities They Need To Lead With Confidence.
               </p>

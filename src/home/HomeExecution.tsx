@@ -1,6 +1,10 @@
+import { useEffect, useRef } from 'react';
 import EXEC_IMG from '../assets/landing page/ChatGPT Image Jun 20, 2026, 01_55_48 AM copy.png';
-
 import { BookOpen, FlaskConical, TrendingUp, Award, Trophy } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const execData = [
   {
@@ -36,6 +40,112 @@ const execData = [
 ];
 
 export default function HomeExecution() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
+  const pillarsTitleRef = useRef<HTMLHeadingElement>(null);
+
+  useEffect(() => {
+
+    const ctx = gsap.context(() => {
+      // Removed image rotate and float as requested
+      // Typewriter word by word
+      if (subtitleRef.current) {
+        const text = subtitleRef.current.innerText;
+        subtitleRef.current.innerHTML = '';
+        const words = text.split(' ');
+        words.forEach(word => {
+          const span = document.createElement('span');
+          span.innerText = word + ' ';
+          span.style.opacity = '0';
+          subtitleRef.current?.appendChild(span);
+        });
+
+        gsap.to(subtitleRef.current.querySelectorAll('span'), {
+          opacity: 1,
+          duration: 0.1,
+          stagger: 0.05,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: subtitleRef.current,
+            start: 'top 85%'
+          }
+        });
+      }
+
+      // Pillars Title Clip-Path Reveal
+      if (pillarsTitleRef.current) {
+        gsap.fromTo(pillarsTitleRef.current, 
+          { clipPath: 'inset(0 100% 0 0)' },
+          {
+            clipPath: 'inset(0 0% 0 0)',
+            duration: 1.5,
+            ease: 'power3.inOut',
+            scrollTrigger: {
+              trigger: pillarsTitleRef.current,
+              start: 'top 85%'
+            }
+          }
+        );
+      }
+
+      // Pillars Columns 3D Stagger & Divider Lines
+      const pillars = document.querySelectorAll('.ef-pillar');
+      gsap.from(pillars, {
+        y: 60,
+        rotationX: -30,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.12,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.ef-pillars-grid',
+          start: 'top 85%'
+        }
+      });
+
+      // Divider Lines
+      const dividers = document.querySelectorAll('.ef-divider');
+      gsap.fromTo(dividers, 
+        { scaleY: 0 },
+        {
+          scaleY: 1,
+          transformOrigin: 'top center',
+          duration: 1,
+          stagger: 0.12,
+          ease: 'power2.out',
+          delay: 0.5,
+          scrollTrigger: {
+            trigger: '.ef-pillars-grid',
+            start: 'top 85%'
+          }
+        }
+      );
+
+      // Icons Spring Bounce & Pulse Glow
+      const icons = document.querySelectorAll('.ef-pillar-icon');
+      icons.forEach((icon, i) => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: '.ef-pillars-grid',
+            start: 'top 85%'
+          },
+          delay: i * 0.12 + 0.3
+        });
+        tl.fromTo(icon, 
+          { scale: 0 },
+          { scale: 1, duration: 1, ease: 'elastic.out(1, 0.5)' }
+        ).to(icon, {
+          boxShadow: '0 0 0 20px rgba(108,60,247,0)',
+          duration: 0.6,
+          ease: 'power2.out'
+        });
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <>
       <style>{`
@@ -112,6 +222,20 @@ export default function HomeExecution() {
         .ef-pillar {
           display: flex;
           flex-direction: column;
+          position: relative;
+          transition: transform 0.3s ease;
+          transform-style: preserve-3d;
+        }
+        .ef-pillar:hover {
+          transform: translateY(-8px);
+        }
+        .ef-divider {
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 1px;
+          background: #E5E7EB;
         }
         .ef-pillar-icon {
           width: 64px;
@@ -122,6 +246,11 @@ export default function HomeExecution() {
           align-items: center;
           justify-content: center;
           margin-bottom: 24px;
+          transition: transform 0.3s ease;
+          box-shadow: 0 0 0 0 rgba(108,60,247,0.6);
+        }
+        .ef-pillar:hover .ef-pillar-icon {
+          transform: rotate(15deg);
         }
         .ef-pillar-title {
           font-weight: 700;
@@ -151,23 +280,23 @@ export default function HomeExecution() {
         }
       `}</style>
 
-      <section className="ef-section">
+      <section className="ef-section" ref={sectionRef}>
         <div className="ef-inner">
           <div className="ef-top-row">
             <div className="ef-left">
               <span className="ef-label">OUR EXECUTION FRAMEWORK</span>
               <h2 className="ef-title">From Learning To Measurable Outcomes</h2>
-              <p className="ef-subtitle">
+              <p className="ef-subtitle" ref={subtitleRef}>
                 Skillzza Nova Goes Beyond Teaching AI — We Deliver A Structured Execution Model That Converts Learning Into Measurable Student Outcomes. Built As An Integrated K-12 Implementation Framework, Our Model Combines Future-Ready Curriculum, Experiential Skill Labs, Continuous Assessment, Certification Pathways, And League-Based Progression.
               </p>
             </div>
-            <div className="ef-right">
-              <img src={EXEC_IMG} alt="Execution Framework" />
+            <div className="ef-right" style={{ perspective: '1000px' }}>
+              <img src={EXEC_IMG} alt="Execution Framework" ref={imgRef} />
             </div>
           </div>
 
           <div className="ef-pillars-header">
-            <h2 className="ef-title">The Five Pillars Of Execution</h2>
+            <h2 className="ef-title" ref={pillarsTitleRef}>The Five Pillars Of Execution</h2>
           </div>
 
           <div className="ef-pillars-grid">
@@ -176,10 +305,10 @@ export default function HomeExecution() {
                 key={item.id} 
                 className="ef-pillar" 
                 style={{ 
-                  borderLeft: idx === 0 ? 'none' : '1px solid #E5E7EB', 
                   paddingLeft: idx === 0 ? '0' : '20px' 
                 }}
               >
+                {idx > 0 && <div className="ef-divider" />}
                 <div className="ef-pillar-icon">
                   {item.icon}
                 </div>

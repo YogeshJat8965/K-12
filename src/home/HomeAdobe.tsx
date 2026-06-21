@@ -1,3 +1,9 @@
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 const adobeFeatures = [
   {
     id: 1,
@@ -18,6 +24,30 @@ const adobeFeatures = [
 ];
 
 export default function HomeAdobe() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.ha-box',
+          start: 'top 85%'
+        }
+      });
+
+      tl.from('.ha-box', { scale: 0.92, opacity: 0, duration: 1, ease: 'power3.out' })
+        .from('.ha-flagship-img', { y: -30, opacity: 0, duration: 0.8, ease: 'elastic.out(1, 0.5)' }, '-=0.5')
+        .from('.ha-partner-img', { rotationY: 180, opacity: 0, duration: 0.8, ease: 'back.out(1.5)' }, '-=0.6')
+        .from('.ha-word', { z: -100, opacity: 0, duration: 0.6, stagger: 0.05, ease: 'power2.out' }, '-=0.4')
+        .from('.ha-subheadline, .ha-desc', { y: 20, opacity: 0, duration: 0.6, stagger: 0.1 }, '-=0.4')
+        .from('.ha-main-img', { scale: 0.8, opacity: 0, duration: 1, ease: 'elastic.out(1, 0.5)' }, '-=0.8')
+        .from('.ha-feature-card', { x: 60, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'power2.out' }, '-=0.6')
+        .from('.ha-btn-wrap', { scale: 0.9, opacity: 0, duration: 0.6, ease: 'back.out(1.5)' }, '-=0.4');
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <>
       <style>{`
@@ -90,23 +120,36 @@ export default function HomeAdobe() {
           max-width: 580px;
         }
 
+        .ha-btn-wrap {
+          position: relative;
+          display: inline-flex;
+          border-radius: 12px;
+          padding: 2px;
+          background: conic-gradient(from 0deg, #6C3CF7, #A78BFA, #6C3CF7);
+          animation: conicRotate 3s linear infinite;
+          cursor: pointer;
+        }
+
+        @keyframes conicRotate {
+          100% { background: conic-gradient(from 360deg, #6C3CF7, #A78BFA, #6C3CF7); }
+        }
+
         .ha-btn {
           background: #FFFFFF;
           color: #230569;
           border: none;
           padding: 16px 36px;
-          border-radius: 12px;
+          border-radius: 10px;
           font-weight: 700;
           font-size: 18px;
-          cursor: pointer;
           display: inline-flex;
           align-items: center;
           gap: 12px;
           transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        .ha-btn:hover {
-          transform: translateY(-2px);
+        .ha-btn-wrap:hover .ha-btn {
+          transform: scale(1.04);
           box-shadow: 0 8px 24px rgba(0,0,0,0.2);
         }
 
@@ -118,11 +161,17 @@ export default function HomeAdobe() {
           z-index: 2;
         }
 
+        @keyframes floatUpDown {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-15px); }
+        }
+
         .ha-main-img {
           width: 100%;
           max-width: 665px;
           height: auto;
           object-fit: contain;
+          animation: floatUpDown 4s ease-in-out infinite;
         }
 
         .ha-feature-list {
@@ -164,14 +213,16 @@ export default function HomeAdobe() {
         }
       `}</style>
 
-      <section className="ha-container">
-        <div className="ha-box">
+      <section className="ha-container" ref={sectionRef}>
+        <div className="ha-box" style={{ perspective: '1000px' }}>
           <div className="ha-content">
             <img src="/landing/flagship-badge.svg" alt="Flagship Programme" className="ha-flagship-img" />
             <img src="/landing/partner-pills.svg" alt="Skillzza x Adobe" className="ha-partner-img" />
 
-            <h2 className="ha-title">
-              Adobe Digital Creativity & AI Programme
+            <h2 className="ha-title" style={{ perspective: '800px' }}>
+              {"Adobe Digital Creativity & AI Programme".split(' ').map((word, i) => (
+                <span key={i} className="ha-word" style={{ display: 'inline-block', marginRight: '8px' }}>{word}</span>
+              ))}
             </h2>
 
             <p className="ha-subheadline">Turn Students into Future Creators</p>
@@ -180,9 +231,11 @@ export default function HomeAdobe() {
               A NEP-aligned programme for Grades 5-10 that builds real-world skills in design, content creation, and AI - through hands-on, project-based learning on Adobe Express.
             </p>
 
-            <button className="ha-btn">
-              Explore the Adobe Programme →
-            </button>
+            <div className="ha-btn-wrap">
+              <button className="ha-btn">
+                Explore the Adobe Programme →
+              </button>
+            </div>
           </div>
 
           <div className="ha-visuals">

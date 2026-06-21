@@ -1,17 +1,92 @@
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import RIGHT_IMG from '../assets/landing page/Homepage (1920x 1080px) – 2/ChatGPT Image Jun 20, 2026, 12_40_39 AM.png';
-const ICON_1 = '/landing/icon-1.svg';
-const ICON_2 = '/landing/icon-2.svg';
-const ICON_3 = '/landing/icon-3.svg';
-const ICON_4 = '/landing/icon-4.svg';
+import { GraduationCap, Code2, Briefcase, Rocket } from 'lucide-react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const features = [
-  { icon: ICON_1, bg: '#EEF2FF', shadow: 'rgba(108,60,247,0.2)', title: 'Learn AI', desc: 'Foundational to advanced AI skills for every learner.' },
-  { icon: ICON_2, bg: '#ECFDF5', shadow: 'rgba(16,185,129,0.2)', title: 'Build Projects', desc: 'Turn ideas into real World projects and build your portfolio.' },
-  { icon: ICON_3, bg: '#F5F3FF', shadow: 'rgba(139,92,246,0.2)', title: 'Intern Early', desc: 'Gain real Experience through virtual internships.' },
-  { icon: ICON_4, bg: '#FFF7ED', shadow: 'rgba(245,158,11,0.2)', title: 'Lead the Future', desc: 'Develop the mindset and skills to lead in an AI-powered world.' },
+  { icon: <GraduationCap color="#4F46E5" size={28} strokeWidth={2} />, bg: '#D8E2FF', shadow: 'rgba(108,60,247,0.2)', title: 'Learn AI', desc: 'Foundational to advanced AI skills for every learner.' },
+  { icon: <Code2 color="#10B981" size={28} strokeWidth={2} />, bg: '#ECFDF5', shadow: 'rgba(16,185,129,0.2)', title: 'Build Projects', desc: 'Turn ideas into real World projects and build your portfolio.' },
+  { icon: <Briefcase color="#8B5CF6" size={28} strokeWidth={2} />, bg: '#E9D5FF', shadow: 'rgba(139,92,246,0.2)', title: 'Intern Early', desc: 'Gain real Experience through virtual internships.' },
+  { icon: <Rocket color="#F59E0B" size={28} strokeWidth={2} />, bg: '#FFF7ED', shadow: 'rgba(245,158,11,0.2)', title: 'Lead the Future', desc: 'Develop the mindset and skills to lead in an AI-powered world.' },
 ];
 
 export default function HomeHero() {
+  const heroRef = useRef<HTMLElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
+  const featBarRef = useRef<HTMLDivElement>(null);
+  const subtextRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    // Media query check for reduced motion
+
+    const ctx = gsap.context(() => {
+      // 1. Heading split animation
+      if (headingRef.current) {
+        gsap.to('.hero-char', {
+          opacity: 1,
+          z: 0,
+          scale: 1,
+          duration: 1,
+          stagger: 0.03,
+          ease: 'back.out(1.7)',
+          delay: 0.2
+        });
+      }
+
+      // 1.5 Subtext fast word-by-word reveal
+      if (subtextRef.current) {
+        gsap.to('.hero-sub-word', {
+          opacity: 1,
+          y: 0,
+          duration: 0.3,
+          stagger: 0.04, // Very fast stagger
+          ease: 'power2.out',
+          delay: 0.5 // Start after heading begins
+        });
+      }
+
+
+      // 2. Parallax float for right image
+      if (imgRef.current) {
+        gsap.to(imgRef.current, {
+          y: -100,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true,
+          }
+        });
+      }
+
+      // 3. Feature cards (bottom bar) 3D flip + stagger
+      if (featBarRef.current) {
+        const items = featBarRef.current.querySelectorAll('.hh-feat-item');
+        gsap.from(items, {
+          opacity: 0,
+          rotationX: -90,
+          y: 50,
+          transformOrigin: '50% 50% -50px',
+          duration: 1,
+          stagger: 0.15,
+          ease: 'back.out(1.4)',
+          scrollTrigger: {
+            trigger: featBarRef.current,
+            start: 'top 85%',
+          }
+        });
+      }
+
+    }, heroRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <>
       <style>{`
@@ -203,7 +278,7 @@ export default function HomeHero() {
         .hh-feat-icon:hover {
           transform: scale(1.12);
         }
-        .hh-feat-icon img { width: 36px; height: 36px; }
+        .hh-feat-icon svg { width: 32px; height: 32px; }
 
         .hh-feat-divider {
           width: 1px;
@@ -266,7 +341,7 @@ export default function HomeHero() {
         }
       `}</style>
 
-      <section className="hh-section">
+      <section className="hh-section" ref={heroRef}>
 
         {/* ── Two-column content ── */}
         <div className="hh-content">
@@ -281,14 +356,30 @@ export default function HomeHero() {
             </div>
 
             {/* Heading — exactly 2 lines */}
-            <h1 className="hh-h1">
-              From Classrooms to<br />
-              Code <span className="purple">-Built for AI</span>
+            <h1 className="hh-h1" ref={headingRef}>
+              <span className="hero-word">
+                {"From Classrooms to".split('').map((char, i) => (
+                  <span key={'l1-' + i} className="hero-char" style={{ display: 'inline-block', opacity: 0, transform: 'translateZ(-200px) scale(0.5)' }}>{char === ' ' ? '\u00A0' : char}</span>
+                ))}
+              </span>
+              <br />
+              <span className="hero-word">
+                {"Code ".split('').map((char, i) => (
+                  <span key={'l2-' + i} className="hero-char" style={{ display: 'inline-block', opacity: 0, transform: 'translateZ(-200px) scale(0.5)' }}>{char === ' ' ? '\u00A0' : char}</span>
+                ))}
+              </span>
+              <span className="purple">
+                {"-Built for AI".split('').map((char, i) => (
+                  <span key={'l3-' + i} className="hero-char" style={{ display: 'inline-block', opacity: 0, transform: 'translateZ(-200px) scale(0.5)' }}>{char === ' ' ? '\u00A0' : char}</span>
+                ))}
+              </span>
             </h1>
 
             {/* Subtext */}
-            <p className="hh-sub">
-              Empowering the next generation of AI thinkers - students, educators, and schools - to lead confidently in a technology-driven world.
+            <p className="hh-sub" ref={subtextRef}>
+              {"Empowering the next generation of AI thinkers - students, educators, and schools - to lead confidently in a technology-driven world.".split(' ').map((word, i) => (
+                <span key={'sub-' + i} className="hero-sub-word" style={{ opacity: 0, display: 'inline-block', marginRight: '5px', transform: 'translateY(10px)' }}>{word}</span>
+              ))}
             </p>
 
             {/* Buttons */}
@@ -306,12 +397,12 @@ export default function HomeHero() {
 
           {/* RIGHT */}
           <div className="hh-right">
-            <img src={RIGHT_IMG} alt="Students learning AI" />
+            <img ref={imgRef} src={RIGHT_IMG} alt="Students learning AI" />
           </div>
         </div>
 
         {/* ── Bottom Feature Bar ── */}
-        <div className="hh-feature-bar">
+        <div className="hh-feature-bar" ref={featBarRef}>
           {features.map((f, i) => (
             <>
               <div className="hh-feat-item" key={f.title}>
@@ -321,7 +412,9 @@ export default function HomeHero() {
                   onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = `0 8px 24px ${f.shadow}`; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = 'none'; }}
                 >
-                  <img src={f.icon} alt={f.title} />
+                  <div className="hh-feat-icon-inner">
+                    {f.icon}
+                  </div>
                 </div>
                 <div>
                   <p className="hh-feat-title">{f.title}</p>

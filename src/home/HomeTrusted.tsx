@@ -1,4 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const statsData = [
   { icon: '/landing/stat-icon-1.svg', target: 150000, suffix: '', label: 'Students Impacted', fmt: true },
@@ -27,15 +31,53 @@ function useCountUp(target: number, started: boolean, duration = 1800) {
 
 export default function HomeTrusted() {
   const ref = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const obs = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) setVisible(true);
-      else setVisible(false);
-    }, { threshold: 0.2 });
-    if (ref.current) obs.observe(ref.current);
-    return () => obs.disconnect();
+
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: ref.current,
+        start: 'top 80%',
+        onEnter: () => setVisible(true),
+        once: true
+      });
+
+      // Stats cards lift
+      if (ref.current) {
+        gsap.fromTo('.ht-card', 
+          { y: 60, opacity: 0, boxShadow: '0px 0px 0px rgba(0,0,0,0)' },
+          {
+            y: 0,
+            opacity: 1,
+            boxShadow: '0px 1px 3px rgba(0,0,0,0.11)',
+            duration: 1,
+            stagger: 0.15,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: ref.current,
+              start: 'top 85%'
+            }
+          }
+        );
+      }
+
+      // Map pins drop bounce
+      gsap.from('.ht-pin', {
+        y: -100,
+        opacity: 0,
+        duration: 1.5,
+        stagger: 0.2,
+        ease: 'bounce.out',
+        scrollTrigger: {
+          trigger: '.ht-map',
+          start: 'top 60%',
+        }
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
 
   return (
@@ -63,6 +105,15 @@ export default function HomeTrusted() {
           height: auto;
           z-index: 1;
           pointer-events: none;
+        }
+        .ht-pin {
+          position: absolute;
+          width: 14px;
+          height: 14px;
+          background: #6C3CF7;
+          border-radius: 50%;
+          box-shadow: 0 0 0 4px rgba(108,60,247,0.3);
+          z-index: 2;
         }
         .ht-badge {
           display: inline-flex;
@@ -136,8 +187,9 @@ export default function HomeTrusted() {
           transition: transform 0.2s, box-shadow 0.2s;
         }
         .ht-card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 8px 24px rgba(108,60,247,0.12);
+          transform: translateY(-6px) !important;
+          box-shadow: 0 12px 30px rgba(108,60,247,0.15) !important;
+          border-color: rgba(108,60,247,0.3);
         }
         .ht-card-icon {
           width: 60px; height: 60px;
@@ -190,8 +242,16 @@ export default function HomeTrusted() {
         }
       `}</style>
 
-      <section className="ht-section">
-        <img src="/landing/world-map.png" alt="" className="ht-map" />
+      <section className="ht-section" ref={sectionRef}>
+        <div style={{ position: 'absolute', top: 0, right: 0, width: 'clamp(400px, 52vw, 1005px)', height: '100%', pointerEvents: 'none' }}>
+          <img src="/landing/world-map.png" alt="" className="ht-map" style={{ position: 'relative', width: '100%' }} />
+          {/* Fake Pins for visual animation */}
+          <div className="ht-pin" style={{ top: '35%', left: '20%' }} />
+          <div className="ht-pin" style={{ top: '25%', left: '45%' }} />
+          <div className="ht-pin" style={{ top: '45%', left: '55%' }} />
+          <div className="ht-pin" style={{ top: '55%', left: '70%' }} />
+          <div className="ht-pin" style={{ top: '65%', left: '75%' }} />
+        </div>
 
         <div className="ht-inner">
           <div className="ht-badge">

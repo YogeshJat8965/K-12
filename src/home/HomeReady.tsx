@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import bgImage from '../assets/Image 19.png';
 import studentImg from '../assets/Image 18.png';
 import icon1 from '../assets/mental_18558397.svg';
@@ -6,6 +6,10 @@ import icon2 from '../assets/workshop_11933372.svg';
 import icon3 from '../assets/g2157.svg';
 import icon4 from '../assets/rocket_3064028.svg';
 import icon5 from '../assets/11-Leadership.svg';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const stepsData = [
   {
@@ -46,6 +50,64 @@ const stepsData = [
 ];
 
 export default function HomeReady() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const leftImgRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // 1. Heading "AI-Ready?" zoom & glow
+      gsap.fromTo('.hr-title-highlight',
+        { scale: 1.5, opacity: 0, textShadow: '0 0 40px rgba(139,92,246,1)' },
+        { scale: 1, opacity: 1, textShadow: '0 0 0px rgba(139,92,246,0)', duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: '.hr-title', start: 'top 85%' } }
+      );
+
+      // 2. Left Image Parallax
+      if (leftImgRef.current) {
+        gsap.from(leftImgRef.current, { scale: 0.9, opacity: 0, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: leftImgRef.current, start: 'top 80%' } });
+        gsap.to(leftImgRef.current, {
+          yPercent: 20,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true
+          }
+        });
+      }
+
+      // 3. Timeline Steps
+      const steps = document.querySelectorAll('.hr-step');
+      steps.forEach((step, idx) => {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: step,
+            start: 'top 85%',
+            toggleClass: 'active'
+          }
+        });
+
+        // Slide in container
+        tl.from(step, { x: 80, opacity: 0, duration: 0.6, ease: 'power2.out' });
+
+        // Draw border
+        const border = step.querySelector('.hr-step-border');
+        tl.from(border, { scaleY: 0, duration: 0.4, transformOrigin: 'top', ease: 'power2.out' }, '-=0.2');
+
+        // Number
+        const num = step.querySelector('.hr-step-label');
+        tl.from(num, { x: -20, opacity: 0, duration: 0.4 }, '-=0.2');
+
+        // Icon bounce
+        const icon = step.querySelector('.hr-step-icon');
+        tl.from(icon, { scale: 0, duration: 0.6, ease: 'back.out(2)' }, '-=0.4');
+      });
+
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <>
       <style>{`
@@ -126,15 +188,28 @@ export default function HomeReady() {
         }
 
         /* Step Cards */
+        /* Step Cards */
         .hr-step {
           display: flex;
           align-items: center;
           background: #F8FAFC;
-          border-left: 8px solid;
           border-radius: 0 8px 8px 0;
           padding: 24px 24px 24px 16px;
           box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
+          transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+          position: relative;
+        }
+        .hr-step-border {
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 8px;
+          border-radius: 4px 0 0 4px;
+          transition: box-shadow 0.3s ease;
+        }
+        .hr-step.active .hr-step-border {
+          box-shadow: 0 0 15px currentColor;
         }
 
         .hr-step:hover {
@@ -158,6 +233,7 @@ export default function HomeReady() {
           font-weight: 600;
           letter-spacing: 1px;
           text-transform: capitalize;
+          display: inline-block;
         }
 
         .hr-step-icon {
@@ -305,11 +381,11 @@ export default function HomeReady() {
         }
       `}</style>
 
-      <section className="hr-section">
+      <section className="hr-section" ref={sectionRef}>
         <div className="hr-inner">
           <div className="hr-header">
             <h2 className="hr-title">
-              Is Your School <span className="hr-title-highlight">AI-Ready?</span>
+              Is Your School <span className="hr-title-highlight" style={{ display: 'inline-block' }}>AI-Ready?</span>
             </h2>
             <p className="hr-subtitle">
               Check your school's readiness across the CCMM Framework -<br />
@@ -320,15 +396,16 @@ export default function HomeReady() {
 
           <div className="hr-content-grid">
             <div className="hr-left">
-              <img src={studentImg} alt="Student" />
+              <img src={studentImg} alt="Student" ref={leftImgRef} style={{ transformOrigin: 'center top' }} />
             </div>
             <div className="hr-right">
               {stepsData.map((item, idx) => (
                 <div 
                   className="hr-step" 
                   key={idx}
-                  style={{ borderLeftColor: item.color }}
+                  style={{ color: item.color }}
                 >
+                  <div className="hr-step-border" style={{ background: item.color }}></div>
                   <div className="hr-step-label-wrap">
                     <span className="hr-step-label">{item.step}</span>
                   </div>

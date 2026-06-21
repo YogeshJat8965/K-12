@@ -1,4 +1,53 @@
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default function HomeMission() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const leftCardRef = useRef<HTMLDivElement>(null);
+  const rightCardRef = useRef<HTMLDivElement>(null);
+  const robotRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+
+    const ctx = gsap.context(() => {
+      // Left Card: 3D Flip
+      if (leftCardRef.current) {
+        gsap.from(leftCardRef.current, {
+          rotationY: 90,
+          opacity: 0,
+          duration: 1.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 80%',
+          }
+        });
+      }
+
+      // Right Card: Slide up
+      if (rightCardRef.current) {
+        gsap.from(rightCardRef.current, {
+          y: 100,
+          opacity: 0,
+          duration: 1.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 80%',
+          }
+        });
+      }
+
+      // Robot animation removed as requested
+
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <>
       <style>{`
@@ -53,7 +102,9 @@ export default function HomeMission() {
           line-height: 1.35;
           color: #fff;
           margin: 0 0 24px;
-          max-width: 480px;
+          max-width: calc(100% - 200px);
+          position: relative;
+          z-index: 2;
         }
         .hm-left-sub {
           font-weight: 400;
@@ -61,7 +112,9 @@ export default function HomeMission() {
           line-height: 1.7;
           color: rgba(255,255,255,0.7);
           margin: 0;
-          max-width: 360px;
+          max-width: calc(100% - 180px);
+          position: relative;
+          z-index: 2;
         }
         .hm-left-line {
           width: 100%;
@@ -81,6 +134,7 @@ export default function HomeMission() {
           width: clamp(150px, 18vw, 258px);
           height: auto;
           pointer-events: none;
+          z-index: 1;
         }
 
         /* ═══ RIGHT CARD ═══ */
@@ -157,11 +211,11 @@ export default function HomeMission() {
         }
       `}</style>
 
-      <section className="hm-section">
+      <section className="hm-section" ref={sectionRef}>
         <div className="hm-inner">
 
           {/* LEFT */}
-          <div className="hm-left">
+          <div className="hm-left" ref={leftCardRef} style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}>
             <div className="hm-badge-l">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
               <span>Our Mission</span>
@@ -170,11 +224,11 @@ export default function HomeMission() {
             <p className="hm-left-sub">Every programme, every studio, every internship is designed around one question – what will tomorrow's world need from today's student?</p>
             <div className="hm-left-line" />
             <div className="hm-left-footer">Purposeful by design. Future-first in approach.</div>
-            <img src="/landing/robot.png" alt="" className="hm-robot" />
+            <img src="/landing/robot.png" alt="" className="hm-robot" ref={robotRef} />
           </div>
 
           {/* RIGHT */}
-          <div className="hm-right">
+          <div className="hm-right" ref={rightCardRef}>
             <div className="hm-badge-r">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
               <span>Globally Aligned</span>

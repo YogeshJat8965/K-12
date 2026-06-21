@@ -1,6 +1,11 @@
 import img1 from '../assets/21st century.png';
 import img2 from '../assets/Personalised Learning.png';
 import img3 from '../assets/Global Readiness.png';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const philData = [
   {
@@ -24,6 +29,85 @@ const philData = [
 ];
 
 export default function HomePhilosophy() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const quoteRef = useRef<HTMLParagraphElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // 1. Big quote word-by-word reveal
+      if (quoteRef.current) {
+        gsap.to('.hp-quote-word', {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.06,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: quoteRef.current,
+            start: 'top 85%'
+          },
+          onComplete: () => {
+            document.querySelectorAll('.hp-quote-highlight').forEach(el => {
+              el.classList.add('shimmer');
+            });
+          }
+        });
+      }
+
+      // 2. Eyebrow label & Heading 3D split
+      if (headerRef.current) {
+        gsap.fromTo('.hp-badge', 
+          { maxWidth: 0, opacity: 0 },
+          { maxWidth: 300, opacity: 1, duration: 1, ease: 'power3.inOut', scrollTrigger: { trigger: headerRef.current, start: 'top 85%' } }
+        );
+
+        gsap.to('.hp-title-char', {
+          z: 0,
+          opacity: 1,
+          filter: 'blur(0px)',
+          duration: 0.8,
+          stagger: 0.04,
+          ease: 'back.out(1.5)',
+          scrollTrigger: {
+            trigger: headerRef.current,
+            start: 'top 80%'
+          }
+        });
+      }
+
+      // 3. 3 philosophy cards alternating slide-in
+      if (gridRef.current) {
+        const cards = gridRef.current.querySelectorAll('.hp-item');
+        if (cards.length >= 3) {
+          const t1 = gsap.from(cards[0], { x: -100, rotationY: -15, opacity: 0, duration: 1, ease: 'power3.out' });
+          const t2 = gsap.from(cards[1], { y: 100, rotationX: 15, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.2 });
+          const t3 = gsap.from(cards[2], { x: 100, rotationY: 15, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.4 });
+          
+          ScrollTrigger.create({
+            trigger: gridRef.current,
+            start: 'top 80%',
+            animation: gsap.timeline().add(t1, 0).add(t2, 0).add(t3, 0)
+          });
+        }
+        
+        // Ken Burns image zoom
+        gsap.to('.hp-img-wrap img', {
+          scale: 1,
+          duration: 1.5,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: gridRef.current,
+            start: 'top 80%'
+          }
+        });
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <>
       <style>{`
@@ -54,6 +138,16 @@ export default function HomePhilosophy() {
         }
         .hp-quote-highlight {
           color: #7C3AED;
+          background: linear-gradient(120deg, #7C3AED 0%, #a78bfa 50%, #7C3AED 100%);
+          background-size: 200% auto;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        .hp-quote-highlight.shimmer {
+          animation: shimmerSweep 2s linear infinite;
+        }
+        @keyframes shimmerSweep {
+          to { background-position: 200% center; }
         }
 
         /* Header */
@@ -61,12 +155,18 @@ export default function HomePhilosophy() {
           margin-bottom: 40px;
         }
         .hp-badge {
+          display: inline-flex;
+          background: #F3E8FF;
           color: #4338CA;
+          padding: 8px 16px;
+          border-radius: 20px;
           font-weight: 600;
           font-size: 14px;
           text-transform: uppercase;
           letter-spacing: 0.5px;
-          margin-bottom: 8px;
+          margin-bottom: 20px;
+          overflow: hidden;
+          white-space: nowrap;
         }
         .hp-title {
           font-weight: 700;
@@ -102,6 +202,7 @@ export default function HomePhilosophy() {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          transform: scale(1.1);
         }
 
         /* Text */
@@ -142,22 +243,38 @@ export default function HomePhilosophy() {
         }
       `}</style>
 
-      <section className="hp-section">
+      <section className="hp-section" ref={sectionRef}>
         <div className="hp-inner">
           
           <div className="hp-quote">
-            <p className="hp-quote-text">
-              Students Don't Just Learn Future Skills -<br />
-              They <span className="hp-quote-highlight">Apply</span> Them, <span className="hp-quote-highlight">Prove</span> Them, And <span className="hp-quote-highlight">Grow</span> Through Them.
+            <p className="hp-quote-text" ref={quoteRef}>
+              {"Students Don't Just Learn Future Skills - They ".split(' ').map((w,i) => (
+                <span key={'q1-'+i} className="hp-quote-word" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>{w}</span>
+              ))}
+              <br />
+              <span className="hp-quote-word hp-quote-highlight" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>Apply</span>
+              <span className="hp-quote-word" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>Them,</span>
+              <span className="hp-quote-word hp-quote-highlight" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>Prove</span>
+              <span className="hp-quote-word" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>Them,</span>
+              <span className="hp-quote-word" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>And</span>
+              <span className="hp-quote-word hp-quote-highlight" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>Grow</span>
+              <span className="hp-quote-word" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>Through</span>
+              <span className="hp-quote-word" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>Them.</span>
             </p>
           </div>
 
-          <div className="hp-header">
+          <div className="hp-header" ref={headerRef} style={{ perspective: '1000px' }}>
             <div className="hp-badge">HOW WE TEACH</div>
-            <h2 className="hp-title">Our Learning Philosophy</h2>
+            <h2 className="hp-title">
+              {"Our Learning Philosophy".split('').map((c, i) => (
+                <span key={'t-'+i} className="hp-title-char" style={{display:'inline-block', opacity:0, transform:'translateZ(-200px)', filter:'blur(10px)'}}>
+                  {c === ' ' ? '\u00A0' : c}
+                </span>
+              ))}
+            </h2>
           </div>
 
-          <div className="hp-grid">
+          <div className="hp-grid" ref={gridRef} style={{ perspective: '1200px' }}>
             {philData.map((item) => (
               <div key={item.id} className="hp-item">
                 <div className="hp-img-wrap">

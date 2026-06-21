@@ -165,7 +165,16 @@ export default function HomeNavbar() {
         <div className="hn-inner">
 
           {/* Logo */}
-          <a href="/" className="hn-logo">
+          <a 
+            href="/home" 
+            onClick={(e) => {
+              if (window.location.pathname === '/home') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
+            className="hn-logo"
+          >
             <span className="hn-logo-skillzza">SKILLZZA</span>
             <span className="hn-logo-k12">K-12</span>
           </a>

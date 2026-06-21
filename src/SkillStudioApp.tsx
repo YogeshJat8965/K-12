@@ -1,25 +1,27 @@
-import heroImg from './assets/skill studio/hero img.png';
-import ScrollReveal from './components/ScrollReveal';
-import Navbar from './components/Navbar';
 import { useEffect, useState } from 'react';
-import { ArrowRight } from 'lucide-react';
-import { useScrollReveal } from './hooks/useScrollReveal';
-import StudioStats from './components/studio/StudioStats';
-import WhatIsSkillzzaClub from './components/studio/WhatIsSkillzzaClub';
-import SkillChallenge from './components/studio/SkillChallenge';
-import StudioGrid from './components/studio/StudioGrid';
-import LearningPathway from './components/studio/LearningPathway';
-import ImplementationFramework from './components/studio/ImplementationFramework';
-import ImpactFramework from './components/studio/ImpactFramework';
-import Partnerships from './components/studio/Partnerships';
-import TrustedBy from './components/studio/TrustedBy';
+import { LenisProvider, MagneticButton, TiltCard, ScrollRevealHeadline, StaggerRow, Section2Reveal, StatCounter, AnimatedCounter, RoadReveal, MagneticSphere, ScrollRevealWord } from './components/studio/Animations';
+import './components/studio/Animations.css';
+import { ArrowRight, GraduationCap, Building2, Box, Lightbulb, Users, Laptop, Scan, Calendar, Scale, Brain, Trophy } from 'lucide-react';
+import Navbar from './components/Navbar';
+import heroImg from './assets/skill studio/e531c7559b7451b1ec6b9df853698063c461a861.png';
+import bgImg from './assets/skill studio/background.png';
+import whatIsImg from './assets/skill studio/27d47828cc791e53813bb3ca6ec5d29ca22d5bb7 (1).png';
+import img1 from './assets/skill studio/1img.png';
+import img2 from './assets/skill studio/2img.png';
+import img3 from './assets/skill studio/3img.png';
+import img4 from './assets/skill studio/4img.png';
+import img5 from './assets/skill studio/5img.png';
+import img6 from './assets/skill studio/6img.png';
+import img7 from './assets/skill studio/7img.png';
+import implBg from './assets/skill studio/background img.png';
+import partnershipImg from './assets/skill studio/37432c54c564481b83e49588db6594f29d6d2fd7.png';
+import { LayoutGrid, CalendarRange, Clock, CalendarDays, BarChart3, TrendingUp, User, UserPlus, Award, BookOpen, ClipboardCheck, UserCog, Folder, BarChart, ClipboardList, LayoutDashboard, Sparkles, Rocket, Bot, MonitorPlay, Leaf } from 'lucide-react';
 
 export default function SkillStudioApp() {
-  useScrollReveal();
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
-    document.title = 'Skill Studio - Empowering Future Innovators | Skillzza';
+    document.title = 'Skill Studio | Skillzza';
 
     const handleScroll = () => {
       const winScroll = document.documentElement.scrollTop;
@@ -32,93 +34,1215 @@ export default function SkillStudioApp() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-purple-500/30 overflow-x-hidden">
+    <LenisProvider>
+    <div className="min-h-screen text-slate-900 overflow-x-hidden font-poppins" style={{ fontFamily: "'Poppins', sans-serif" }}>
+
+      <Navbar />
+
       {/* Scroll Progress Bar */}
-      <div className="fixed top-0 left-0 right-0 h-1.5 z-[100] bg-slate-100">
+      <div className="fixed top-0 left-0 right-0 h-1.5 z-[100] bg-white/10">
         <div
-          className="h-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-150"
+          className="h-full bg-[#FFD700] transition-all duration-150"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
 
-      <Navbar />
-
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      <section
+        className="relative z-10 w-full pt-28 pb-32 flex items-center text-white"
+        style={{
+          backgroundImage: `url(${bgImg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          minHeight: '95vh'
+        }}
+      >
+        <div className="max-w-[1400px] mx-auto px-6 w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-8 -mt-16">
 
-        {/* Background Image - Absolute positioned to the right */}
-        <div className="absolute top-16 right-0 w-full lg:w-[80%] h-[calc(100%-6rem)] z-0 hidden lg:block">
-          <img
-            src={heroImg}
-            alt="Skill Studio Hero"
-            className="w-full h-full object-cover object-right"
-            style={{
-              maskImage: 'linear-gradient(to right, transparent, black 30%)',
-              WebkitMaskImage: 'linear-gradient(to right, transparent, black 30%)'
-            }}
-          />
-        </div>
+          {/* Left Content */}
+          <div className="w-full lg:w-[55%] flex flex-col items-start text-left lg:pr-4">
 
-        <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
-          <div className="flex flex-col lg:flex-row items-center">
-
-            {/* Left Content */}
-            <div className="w-full lg:w-1/2 text-left">
-              <ScrollReveal>
-                <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-6 tracking-tight leading-tight">
-                  The <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-500">Skill Studio</span>
-                </h1>
-              </ScrollReveal>
-
-              <ScrollReveal delay={0.1}>
-                <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-6 leading-snug">
-                  Empowering Students with <br className="hidden md:block" />
-                  <span className="text-purple-600">Future Skills, Creativity & Innovation</span>
-                </h2>
-              </ScrollReveal>
-
-              <ScrollReveal delay={0.2}>
-                <p className="text-slate-600 text-lg md:text-xl max-w-xl mb-10 leading-relaxed">
-                  An AI-powered learning ecosystem designed to help students explore, build, and excel beyond traditional education.
-                </p>
-              </ScrollReveal>
-
-              <ScrollReveal delay={0.3}>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-full font-bold text-lg flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-purple-200/50 transition-all hover:-translate-y-1 active:scale-95">
-                    JOIN THE CLUB
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                  <button className="group px-8 py-4 bg-white border-2 border-slate-200 text-slate-900 rounded-full font-bold text-lg flex items-center justify-center gap-2 hover:border-purple-600 hover:text-purple-600 transition-all active:scale-95">
-                    EXPLORE PROGRAMS
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              </ScrollReveal>
+            {/* Pill Badge */}
+            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/20 backdrop-blur-md mb-8">
+              <span className="text-[11px] font-bold tracking-widest text-white/90">
+                SKILL STUDIOS | K-12 FUTURE SKILLS
+              </span>
             </div>
 
-            {/* Mobile Image - only shows on small screens */}
-            <div className="w-full mt-12 lg:hidden">
-              <img
+            {/* Heading */}
+            <ScrollRevealHeadline>
+            <h1
+              className="mb-7"
+              style={{
+                fontWeight: 600,
+                fontSize: '48px',
+                lineHeight: '121%',
+                letterSpacing: '0%'
+              }}
+            >
+              Empowering Students with <br />
+              <span className="text-[#FFD700]">Future Skills, Creativity &<br /> Innovation</span>
+            </h1>
+            </ScrollRevealHeadline>
+
+            {/* Subheading */}
+            <p className="text-lg md:text-xl text-white/90 max-w-xl mb-10 leading-[1.6] font-medium">
+              An AI-Powered Learning Ecosystem Designed To Help Students Explore, Build, And Excel Beyond Traditional Education.
+            </p>
+
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
+              <MagneticButton>
+              <button className="group px-8 py-3.5 bg-white text-[#340D7E] rounded-xl font-bold text-[15px] flex items-center justify-center gap-2 hover:bg-gray-100 transition-all shadow-lg shadow-black/10">
+                Join the club
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+              </MagneticButton>
+
+              <MagneticButton>
+              <button className="group px-8 py-3.5 bg-transparent border border-white/40 text-white rounded-xl font-bold text-[15px] flex items-center justify-center gap-2 hover:bg-white/10 transition-all">
+                Explore programmes
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+              </MagneticButton>
+            </div>
+
+          </div>
+
+          {/* Right Image with Orbits */}
+          <div className="w-full lg:w-[45%] flex justify-center items-center relative min-h-[400px] md:min-h-[550px] lg:min-h-[650px] mt-10 lg:mt-0">
+            
+            <style>
+              {`
+                @keyframes spin-cw {
+                  from { transform: translate(-50%, -50%) rotate(0deg); }
+                  to { transform: translate(-50%, -50%) rotate(360deg); }
+                }
+                @keyframes spin-ccw {
+                  from { transform: translate(-50%, -50%) rotate(0deg); }
+                  to { transform: translate(-50%, -50%) rotate(-360deg); }
+                }
+                @keyframes counter-spin-cw {
+                  from { transform: rotate(0deg); }
+                  to { transform: rotate(-360deg); }
+                }
+                @keyframes counter-spin-ccw {
+                  from { transform: rotate(0deg); }
+                  to { transform: rotate(360deg); }
+                }
+                @keyframes float-3d {
+                  0% { transform: perspective(1000px) translateY(0px) rotateX(0deg) rotateY(0deg) scale(1); filter: drop-shadow(0 0 40px rgba(168,85,247,0.4)) brightness(1); }
+                  33% { transform: perspective(1000px) translateY(-15px) rotateX(8deg) rotateY(12deg) scale(1.02); filter: drop-shadow(0 0 70px rgba(168,85,247,0.7)) brightness(1.15); }
+                  66% { transform: perspective(1000px) translateY(10px) rotateX(-5deg) rotateY(-8deg) scale(0.98); filter: drop-shadow(0 0 50px rgba(168,85,247,0.5)) brightness(0.95); }
+                  100% { transform: perspective(1000px) translateY(0px) rotateX(0deg) rotateY(0deg) scale(1); filter: drop-shadow(0 0 40px rgba(168,85,247,0.4)) brightness(1); }
+                }
+                
+                .orbit-1 { animation: spin-cw 35s linear infinite; }
+                .orbit-2 { animation: spin-ccw 50s linear infinite; }
+                
+                .badge-counter-1 { animation: counter-spin-cw 35s linear infinite; }
+                .badge-counter-2 { animation: counter-spin-ccw 50s linear infinite; }
+                
+                .orbit-badge {
+                  position: absolute;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  transform: translate(-50%, -50%);
+                  cursor: pointer;
+                }
+                .badge-icon-wrapper {
+                  width: 44px;
+                  height: 44px;
+                  border-radius: 50%;
+                  background: linear-gradient(180deg, #B283FF 0%, #7547F8 100%);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  box-shadow: -5.53px 11.06px 13.55px 0px #FFFFFF6E inset, 0px 0px 11.89px 0px #FFFFFF30;
+                  border: 2px solid rgba(255,255,255,0.15);
+                  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                }
+                .orbit-badge:hover .badge-icon-wrapper {
+                  transform: scale(1.15);
+                  box-shadow: -5.53px 11.06px 13.55px 0px #FFFFFF6E inset, 0 0 25px 8px rgba(178, 131, 255, 0.6);
+                  background: linear-gradient(180deg, #C29BFF 0%, #875CF9 100%);
+                }
+                @media (min-width: 768px) {
+                  .badge-icon-wrapper { width: 52px; height: 52px; }
+                }
+                .badge-label {
+                  font-size: 13px;
+                  font-weight: 800;
+                  color: #FFFFFF;
+                  margin-top: 8px;
+                  letter-spacing: 0.5px;
+                  text-shadow: 0 2px 4px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.6);
+                  transition: all 0.3s ease;
+                }
+                .orbit-badge:hover .badge-label {
+                  color: #FFD700;
+                  transform: scale(1.1) translateY(2px);
+                  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+                }
+                .animate-sphere-3d {
+                  animation: float-3d 8s ease-in-out infinite;
+                  transform-style: preserve-3d;
+                }
+              `}
+            </style>
+
+            {/* Orbit 2 (Outer) */}
+            <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] md:w-[440px] md:h-[440px] lg:w-[520px] lg:h-[520px] border border-dashed border-white/30 rounded-full orbit-2">
+              <div className="orbit-badge" style={{ left: '65%', top: '2.2%' }}>
+                <div className="badge-counter-2 flex flex-col items-center">
+                  <div className="badge-icon-wrapper"><Lightbulb className="w-5 h-5 md:w-6 md:h-6 text-white" /></div>
+                  <span className="badge-label">Entrepreneurship</span>
+                </div>
+              </div>
+              <div className="orbit-badge" style={{ left: '14.65%', top: '14.65%' }}>
+                <div className="badge-counter-2 flex flex-col items-center">
+                  <div className="badge-icon-wrapper"><TrendingUp className="w-5 h-5 md:w-6 md:h-6 text-white" /></div>
+                  <span className="badge-label">Finance</span>
+                </div>
+              </div>
+              <div className="orbit-badge" style={{ left: '35%', top: '97.8%' }}>
+                <div className="badge-counter-2 flex flex-col items-center">
+                  <div className="badge-icon-wrapper"><Scale className="w-5 h-5 md:w-6 md:h-6 text-white" /></div>
+                  <span className="badge-label">Law</span>
+                </div>
+              </div>
+              <div className="orbit-badge" style={{ left: '85.35%', top: '85.35%' }}>
+                <div className="badge-counter-2 flex flex-col items-center">
+                  <div className="badge-icon-wrapper"><Sparkles className="w-5 h-5 md:w-6 md:h-6 text-white" /></div>
+                  <span className="badge-label">Ai</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Orbit 1 (Inner) */}
+            <div className="absolute top-1/2 left-1/2 w-[220px] h-[220px] md:w-[320px] md:h-[320px] lg:w-[380px] lg:h-[380px] border border-dashed border-white/30 rounded-full orbit-1">
+              <div className="orbit-badge" style={{ left: '14.65%', top: '14.65%' }}>
+                <div className="badge-counter-1 flex flex-col items-center">
+                  <div className="badge-icon-wrapper"><Rocket className="w-5 h-5 md:w-6 md:h-6 text-white" /></div>
+                  <span className="badge-label">Space</span>
+                </div>
+              </div>
+              <div className="orbit-badge" style={{ left: '85.35%', top: '14.65%' }}>
+                <div className="badge-counter-1 flex flex-col items-center">
+                  <div className="badge-icon-wrapper"><Bot className="w-5 h-5 md:w-6 md:h-6 text-white" /></div>
+                  <span className="badge-label">Robotics</span>
+                </div>
+              </div>
+              <div className="orbit-badge" style={{ left: '14.65%', top: '85.35%' }}>
+                <div className="badge-counter-1 flex flex-col items-center">
+                  <div className="badge-icon-wrapper"><MonitorPlay className="w-5 h-5 md:w-6 md:h-6 text-white" /></div>
+                  <span className="badge-label">Media</span>
+                </div>
+              </div>
+              <div className="orbit-badge" style={{ left: '85.35%', top: '85.35%' }}>
+                <div className="badge-counter-1 flex flex-col items-center">
+                  <div className="badge-icon-wrapper"><Leaf className="w-5 h-5 md:w-6 md:h-6 text-white" /></div>
+                  <span className="badge-label">Sustainability</span>
+                </div>
+              </div>
+            </div>
+
+            {/* The Central Sphere */}
+            <div className="relative z-10 w-[200px] md:w-[280px] lg:w-[340px] flex justify-center items-center">
+              <MagneticSphere
                 src={heroImg}
-                alt="Skill Studio Hero"
-                className="w-full h-auto rounded-3xl shadow-2xl"
+                className="w-full h-auto object-contain animate-sphere-3d"
               />
             </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      {/* Stats Card - Overlapping Hero */}
+      <section className="relative z-20 -mt-24 max-w-[1280px] mx-auto px-6 mb-20">
+        <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] py-8 px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0">
+
+          {/* Stat 1 */}
+          <div className="stat-card group flex items-center gap-5 flex-1 justify-center md:border-r border-gray-100 w-full">
+            <div className="stat-icon w-16 h-16 rounded-full bg-[#F3EFFF] flex items-center justify-center shrink-0">
+              <GraduationCap className="w-8 h-8 text-[#6B3CF6]" />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 leading-tight"><AnimatedCounter end={150000} suffix=" +" /></h3>
+              <p className="text-sm font-medium text-gray-500 mt-1">Students</p>
+            </div>
+          </div>
+
+          {/* Stat 2 */}
+          <div className="stat-card group flex items-center gap-5 flex-1 justify-center md:border-r border-gray-100 w-full">
+            <div className="stat-icon w-16 h-16 rounded-full bg-[#FFF6E5] flex items-center justify-center shrink-0">
+              <Building2 className="w-8 h-8 text-[#FF9800]" />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 leading-tight"><AnimatedCounter end={150} suffix="+" /></h3>
+              <p className="text-sm font-medium text-gray-500 mt-1">Partner Schools</p>
+            </div>
+          </div>
+
+          {/* Stat 3 */}
+          <div className="stat-card group flex items-center gap-5 flex-1 justify-center md:border-r border-gray-100 w-full">
+            <div className="stat-icon w-16 h-16 rounded-full bg-[#FFEBEB] flex items-center justify-center shrink-0">
+              <Box className="w-8 h-8 text-[#FF3B30]" />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 leading-tight"><AnimatedCounter end={100} suffix="+" /></h3>
+              <p className="text-sm font-medium text-gray-500 mt-1">AI Projects</p>
+            </div>
+          </div>
+
+          {/* Stat 4 */}
+          <div className="stat-card group flex items-center gap-5 flex-1 justify-center w-full">
+            <div className="stat-icon w-16 h-16 rounded-full bg-[#E8FAED] flex items-center justify-center shrink-0">
+              <GraduationCap className="w-8 h-8 text-[#34C759]" />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 leading-tight"><AnimatedCounter end={700} suffix="+" /></h3>
+              <p className="text-sm font-medium text-gray-500 mt-1">Educator Cohorts Upskilled</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* What is Skillzza Club Section */}
+      <section className="py-20 bg-white">
+        <Section2Reveal className="max-w-[1280px] mx-auto px-6 flex flex-col lg:flex-row items-center lg:items-stretch gap-16">
+
+          {/* Left Image */}
+          <div className="w-full lg:w-1/2 group">
+            <img
+              src={whatIsImg}
+              alt="Students working on laptops"
+              className="w-full h-full object-cover rounded-[32px] shadow-sm transition-transform duration-500 group-hover:scale-[1.02]"
+            />
+          </div>
+
+          {/* Right Content */}
+          <div className="w-full lg:w-1/2 flex flex-col items-start text-left lg:pl-4 lg:py-4 justify-between">
+            <div className="w-full">
+              <ScrollRevealHeadline>
+              <h2
+                className="mb-8 text-[#1A1A2E]"
+                style={{
+                  fontWeight: 600,
+                  fontSize: '36px',
+                  lineHeight: '100%',
+                  letterSpacing: '0%'
+                }}
+              >
+                What is <span className="bg-gradient-to-r from-[#4200FF] via-[#E82194] to-[#FF6644] text-transparent bg-clip-text animate-pulse">Skillzza Club</span>
+              </h2>
+              </ScrollRevealHeadline>
+
+              <p className="text-[16px] text-[#5C6274] leading-[1.8] mb-6 font-medium">
+                Skillzza K-12 Studios Are <span className="font-semibold text-[#5B32EA]">Not Just After-School Activities.</span> They Are Structured Skill Studios Designed To Help Students Discover Their Strengths, Build Real-World Skills, And Develop A Career-Ready Personality - All While Having Fun And Learning Through Doing.
+              </p>
+
+              <p className="text-[16px] text-[#5C6274] leading-[1.8] font-medium mb-8 lg:mb-0">
+                Unlike Traditional School Clubs That Focus On Participation Certificates, Skillzza Studios Create <span className="font-semibold text-[#5B32EA]">Measurable Skill Evidence, Digital Portfolios, And Growth Milestones</span> That Students Carry Forward Into Their Academic And Professional Futures.
+              </p>
+            </div>
+
+            {/* Features Row */}
+            <div className="flex flex-wrap items-center justify-between w-full gap-4 pt-4 mt-auto">
+
+              {/* Feature 1 */}
+              <div className="feature-item flex items-center gap-3 cursor-pointer">
+                <div className="feature-icon-wrapper w-12 h-12 rounded-full bg-[#F3EFFF] flex items-center justify-center shrink-0">
+                  <GraduationCap className="w-6 h-6 text-[#6B3CF6]" />
+                </div>
+                <p className="text-[13px] font-semibold text-slate-700 leading-tight"><span className="feature-label">Hands-on<br />Projects</span></p>
+              </div>
+
+              {/* Feature 2 */}
+              <div className="feature-item flex items-center gap-3 cursor-pointer">
+                <div className="feature-icon-wrapper w-12 h-12 rounded-full bg-[#FFF6E5] flex items-center justify-center shrink-0">
+                  <Lightbulb className="w-6 h-6 text-[#FF9800]" />
+                </div>
+                <p className="text-[13px] font-semibold text-slate-700 leading-tight"><span className="feature-label">Critical<br />Thinking</span></p>
+              </div>
+
+              {/* Feature 3 */}
+              <div className="feature-item flex items-center gap-3 cursor-pointer">
+                <div className="feature-icon-wrapper w-12 h-12 rounded-full bg-[#FFEBEB] flex items-center justify-center shrink-0">
+                  <Users className="w-6 h-6 text-[#FF3B30]" />
+                </div>
+                <p className="text-[13px] font-semibold text-slate-700 leading-tight"><span className="feature-label">Collaboration</span></p>
+              </div>
+
+              {/* Feature 4 */}
+              <div className="feature-item flex items-center gap-3 cursor-pointer">
+                <div className="feature-icon-wrapper w-12 h-12 rounded-full bg-[#E8FAED] flex items-center justify-center shrink-0">
+                  <Laptop className="w-6 h-6 text-[#34C759]" />
+                </div>
+                <p className="text-[13px] font-semibold text-slate-700 leading-tight"><span className="feature-label">Digital<br />Literacy</span></p>
+              </div>
+
+            </div>
+
+          </div>
+        </Section2Reveal>
+      </section>
+
+      {/* The Challenge Section */}
+      <section className="py-20 lg:py-28" style={{ backgroundColor: '#F9F4FA' }}>
+        <div className="max-w-[1280px] mx-auto px-6 flex flex-col lg:flex-row items-center lg:items-center justify-between gap-12 lg:gap-0">
+
+          {/* Left Content */}
+          <div className="w-full lg:w-[36%] flex flex-col items-start text-left">
+            <span className="text-[12px] font-bold text-[#4200FF] uppercase mb-4 tracking-wide">
+              THE CHALLENGE
+            </span>
+            <ScrollRevealHeadline>
+            <h2 className="text-[36px] lg:text-[40px] font-bold text-[#1A1A2E] leading-[1.2] mb-6">
+              Bridging the Skills Gap <br className="hidden lg:block" />
+              in K-12 Education
+            </h2>
+            </ScrollRevealHeadline>
+            <p className="text-[16px] text-[#6B7280] leading-[1.8] font-medium pr-2">
+              Independent Research Across K-12 Institutions Reveals Systemic Gaps In How Schools Prepare Students For An AI-Driven World. Our Skill Studios Are Designed To Close These Gaps With Measurable Outcomes.
+            </p>
+          </div>
+
+          {/* Right Content - Stats Row */}
+          <StaggerRow className="w-full lg:w-[62%] grid grid-cols-2 lg:grid-cols-5 gap-y-10">
+
+            <StatCounter end={87} suffix="%" colorClass="text-[#3422F5]" label={<>Skill Gaps in<br />K-12 Education</>} icon={null} />
+            <StatCounter end={72} suffix="%" colorClass="text-[#F59E0B]" label={<>Limited Career<br />Alignment in School<br />Activities</>} icon={null} />
+            <StatCounter end={68} suffix="%" colorClass="text-[#A855F7]" label={<>Low Measurable<br />Skill Tracking</>} icon={null} />
+            <StatCounter end={81} suffix="%" colorClass="text-[#EF4444]" label={<>Minimal Real-World<br />Application<br />Exposure</>} icon={null} />
+            <StatCounter end={94} suffix="%" colorClass="text-[#10B981]" label={<>High Demand<br />for Future Skills<br />Integration</>} icon={null} />
+
+          </StaggerRow>
+
+        </div>
+      </section>
+
+      {/* Our Skill Studios Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-[1280px] mx-auto px-6">
+
+          {/* Header */}
+          <div className="mb-14">
+            <ScrollRevealHeadline>
+            <h2
+              className="mb-4 text-[#1A1A2E]"
+              style={{
+                fontWeight: 600,
+                fontSize: '36px',
+                lineHeight: '100%',
+                letterSpacing: '0%'
+              }}
+            >
+              our <span className="bg-gradient-to-r from-[#4200FF] via-[#E82194] to-[#FF6644] text-transparent bg-clip-text">Skill studios</span>
+            </h2>
+            </ScrollRevealHeadline>
+            <p className="text-[16px] text-[#6B7280] leading-[1.8] font-medium max-w-[900px]">
+              A Curated Portfolio Of 15 Future-Forward Skill Studios - Each Designed As An Immersive Learning Pod Where Students Build Capability, Confidence, And A Portfolio That Travels With Them.
+            </p>
+          </div>
+
+          {/* Cards Grid */}
+          <StaggerRow className="flex flex-wrap justify-center gap-6 lg:gap-8">
+
+            {/* Card 1 */}
+            <TiltCard className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.5rem)] min-w-[280px]">
+            <div className="w-full h-full bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] overflow-hidden transition-transform">
+              <div className="h-[220px] w-full relative overflow-hidden">
+                <img src={img1} alt="Jr. Agentic AI Engineer" className="w-full h-full object-cover" />
+              </div>
+              <div className="p-6 relative z-10 bg-white">
+                <div className="border-l-[3.5px] border-[#4200FF] pl-3 py-1">
+                  <h3 className="font-bold text-[#1A1A2E] text-[17.5px] leading-[1.3] tracking-tight">
+                    Jr. Agentic AI<br />Engineer
+                  </h3>
+                </div>
+              </div>
+            </div>
+            </TiltCard>
+
+            {/* Card 2 */}
+            <TiltCard className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.5rem)] min-w-[280px]">
+            <div className="w-full h-full bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] overflow-hidden transition-transform">
+              <div className="h-[220px] w-full relative overflow-hidden">
+                <img src={img2} alt="Gen AI & Deep Tech" className="w-full h-full object-cover" />
+              </div>
+              <div className="p-6 relative z-10 bg-white">
+                <div className="border-l-[3.5px] border-[#4200FF] pl-3 py-1">
+                  <h3 className="font-bold text-[#1A1A2E] text-[17.5px] leading-[1.3] tracking-tight">
+                    Gen AI & Deep<br />Tech
+                  </h3>
+                </div>
+              </div>
+            </div>
+            </TiltCard>
+
+            {/* Card 3 */}
+            <TiltCard className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.5rem)] min-w-[280px]">
+            <div className="w-full h-full bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] overflow-hidden transition-transform">
+              <div className="h-[220px] w-full relative overflow-hidden">
+                <img src={img3} alt="Jr. Data scientist" className="w-full h-full object-cover" />
+              </div>
+              <div className="p-6 relative z-10 bg-white">
+                <div className="border-l-[3.5px] border-[#4200FF] pl-3 py-1">
+                  <h3 className="font-bold text-[#1A1A2E] text-[17.5px] leading-[1.3] tracking-tight">
+                    Jr. Data<br />scientist
+                  </h3>
+                </div>
+              </div>
+            </div>
+            </TiltCard>
+
+            {/* Card 4 */}
+            <TiltCard className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.5rem)] min-w-[280px]">
+            <div className="w-full h-full bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] overflow-hidden transition-transform">
+              <div className="h-[220px] w-full relative overflow-hidden">
+                <img src={img4} alt="Jr. Digital Journalist" className="w-full h-full object-cover" />
+              </div>
+              <div className="p-6 relative z-10 bg-white">
+                <div className="border-l-[3.5px] border-[#4200FF] pl-3 py-1">
+                  <h3 className="font-bold text-[#1A1A2E] text-[17.5px] leading-[1.3] tracking-tight">
+                    Jr. Digital<br />Journalist
+                  </h3>
+                </div>
+              </div>
+            </div>
+            </TiltCard>
+
+            {/* Card 5 */}
+            <TiltCard className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.5rem)] min-w-[280px]">
+            <div className="w-full h-full bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] overflow-hidden transition-transform">
+              <div className="h-[220px] w-full relative overflow-hidden">
+                <img src={img5} alt="Mindfulness" className="w-full h-full object-cover" />
+              </div>
+              <div className="p-6 relative z-10 bg-white">
+                <div className="border-l-[3.5px] border-[#4200FF] pl-3 py-1">
+                  <h3 className="font-bold text-[#1A1A2E] text-[17.5px] leading-[1.3] tracking-tight">
+                    Mindfulness
+                  </h3>
+                </div>
+              </div>
+            </div>
+            </TiltCard>
+
+            {/* Card 6 */}
+            <TiltCard className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.5rem)] min-w-[280px]">
+            <div className="w-full h-full bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] overflow-hidden transition-transform">
+              <div className="h-[220px] w-full relative overflow-hidden">
+                <img src={img6} alt="Digital creativity & AI skills by ADOBE" className="w-full h-full object-cover" />
+              </div>
+              <div className="p-6 relative z-10 bg-white">
+                <div className="border-l-[3.5px] border-[#4200FF] pl-3 py-1">
+                  <h3 className="font-bold text-[#1A1A2E] text-[17.5px] leading-[1.3] tracking-tight">
+                    Digital creativity &<br />AI skills by ADOBE
+                  </h3>
+                </div>
+              </div>
+            </div>
+            </TiltCard>
+
+            {/* Card 7 */}
+            <TiltCard className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.5rem)] min-w-[280px]">
+            <div className="w-full h-full bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] overflow-hidden transition-transform">
+              <div className="h-[220px] w-full relative overflow-hidden">
+                <img src={img7} alt="Jr. Global ambassador" className="w-full h-full object-cover" />
+              </div>
+              <div className="p-6 relative z-10 bg-white">
+                <div className="border-l-[3.5px] border-[#4200FF] pl-3 py-1">
+                  <h3 className="font-bold text-[#1A1A2E] text-[17.5px] leading-[1.3] tracking-tight">
+                    Jr. Global<br />ambassador
+                  </h3>
+                </div>
+              </div>
+            </div>
+            </TiltCard>
+
+          </StaggerRow>
+        </div>
+      </section>
+
+      {/* The Skill Learning Pathway Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-[1280px] mx-auto px-6">
+
+          {/* Top Row: Heading and Buttons */}
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-16 gap-6 lg:gap-0">
+            <div>
+              <ScrollRevealHeadline>
+              <h2
+                className="mb-2 text-[#1A1A2E]"
+                style={{
+                  fontWeight: 600,
+                  fontSize: '36px',
+                  lineHeight: '100%',
+                  letterSpacing: '0%'
+                }}
+              >
+                The <span className="bg-gradient-to-r from-[#4200FF] via-[#E82194] to-[#FF6644] text-transparent bg-clip-text">Skill learning</span> pathway
+              </h2>
+              </ScrollRevealHeadline>
+              <p className="text-[16px] text-[#6B7280] font-medium">
+                Focused Depth. Measurable Impact.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center gap-4">
+              <MagneticButton className="w-full sm:w-auto">
+              <button className="w-full px-6 py-3 bg-[#6A3EEA] hover:bg-[#5B32EA] text-white text-[12px] font-bold tracking-wide rounded-md transition-colors flex items-center justify-center gap-2 uppercase">
+                Design Your Studio Mix <ArrowRight className="w-4 h-4" />
+              </button>
+              </MagneticButton>
+              <MagneticButton className="w-full sm:w-auto">
+              <button className="w-full px-6 py-3 bg-transparent border-[1.5px] border-[#6A3EEA] text-[#6A3EEA] hover:bg-[#F3EFFF] text-[12px] font-bold tracking-wide rounded-md transition-colors flex items-center justify-center gap-2 uppercase">
+                Schedule Discovery Session <ArrowRight className="w-4 h-4" />
+              </button>
+              </MagneticButton>
+            </div>
+          </div>
+
+          {/* Bottom Row: 5 Features Grid */}
+          <StaggerRow className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-12">
+
+            {/* Feature 1 */}
+            <div className="feature-item flex flex-col items-start text-left">
+              <div className="feature-icon-wrapper w-14 h-14 rounded-xl bg-[#EEF2FF] flex items-center justify-center mb-6">
+                <Scan className="w-6 h-6 text-[#4F46E5]" />
+              </div>
+              <h3 className="text-[16px] font-bold text-[#1A1A2E] mb-3 leading-tight">
+                <span className="feature-label">Curated Selection</span>
+              </h3>
+              <p className="text-[13.5px] text-[#6B7280] font-medium leading-[1.6]">
+                Schools Select Exactly<br className="hidden lg:block" />
+                3 Studios Per<br className="hidden lg:block" />
+                Academic Year For<br className="hidden lg:block" />
+                Focused Depth.
+              </p>
+            </div>
+
+            {/* Feature 2 */}
+            <div className="feature-item flex flex-col items-start text-left">
+              <div className="feature-icon-wrapper w-14 h-14 rounded-xl bg-[#FEF2F2] flex items-center justify-center mb-6">
+                <Calendar className="w-6 h-6 text-[#EF4444]" />
+              </div>
+              <h3 className="text-[16px] font-bold text-[#1A1A2E] mb-3 leading-tight">
+                <span className="feature-label">Flexible Deployment</span>
+              </h3>
+              <p className="text-[13.5px] text-[#6B7280] font-medium leading-[1.6]">
+                Term-Based,<br className="hidden lg:block" />
+                Semester-Based, Or<br className="hidden lg:block" />
+                Parallel-Track Models<br className="hidden lg:block" />
+                Built To Fit Your<br className="hidden lg:block" />
+                Timetable.
+              </p>
+            </div>
+
+            {/* Feature 3 */}
+            <div className="feature-item flex flex-col items-start text-left">
+              <div className="feature-icon-wrapper w-14 h-14 rounded-xl bg-[#FFFBEB] flex items-center justify-center mb-6">
+                <Scale className="w-6 h-6 text-[#F59E0B]" />
+              </div>
+              <h3 className="text-[16px] font-bold text-[#1A1A2E] mb-3 leading-tight">
+                <span className="feature-label">Balanced Domain Mix</span>
+              </h3>
+              <p className="text-[13.5px] text-[#6B7280] font-medium leading-[1.6]">
+                Every Year Blends<br className="hidden lg:block" />
+                STEM, Humanities, And<br className="hidden lg:block" />
+                Life Skills For Holistic<br className="hidden lg:block" />
+                Development.
+              </p>
+            </div>
+
+            {/* Feature 4 */}
+            <div className="feature-item flex flex-col items-start text-left">
+              <div className="feature-icon-wrapper w-14 h-14 rounded-xl bg-[#ECFDF5] flex items-center justify-center mb-6">
+                <Brain className="w-6 h-6 text-[#10B981]" />
+              </div>
+              <h3 className="text-[16px] font-bold text-[#1A1A2E] mb-3 leading-tight">
+                <span className="feature-label">Future-Skills Integration</span>
+              </h3>
+              <p className="text-[13.5px] text-[#6B7280] font-medium leading-[1.6]">
+                Emerging Technology,<br className="hidden lg:block" />
+                Critical Thinking, And<br className="hidden lg:block" />
+                Ethics Built Into Every<br className="hidden lg:block" />
+                Academic Year.
+              </p>
+            </div>
+
+            {/* Feature 5 */}
+            <div className="feature-item flex flex-col items-start text-left">
+              <div className="feature-icon-wrapper w-14 h-14 rounded-xl bg-[#FDF4FF] flex items-center justify-center mb-6">
+                <Trophy className="w-6 h-6 text-[#D946EF]" />
+              </div>
+              <h3 className="text-[16px] font-bold text-[#1A1A2E] mb-3 leading-tight">
+                <span className="feature-label">Structured Showcase</span>
+              </h3>
+              <p className="text-[13.5px] text-[#6B7280] font-medium leading-[1.6]">
+                Each Year Closes With<br className="hidden lg:block" />
+                A Formal Evaluation<br className="hidden lg:block" />
+                Framework And<br className="hidden lg:block" />
+                Student Showcase.
+              </p>
+            </div>
+
+          </StaggerRow>
+        </div>
+      </section>
+
+      {/* The Implementation Framework Section */}
+      <section className="pt-24 pb-6 bg-white relative overflow-hidden">
+
+        {/* Header */}
+        <div className="text-center mb-36 relative z-10">
+          <ScrollRevealHeadline>
+          <h2
+            className="mb-3 text-[#1A1A2E]"
+            style={{
+              fontWeight: 600,
+              fontSize: '36px',
+              lineHeight: '100%',
+              letterSpacing: '0%'
+            }}
+          >
+            The <span className="bg-gradient-to-r from-[#4200FF] via-[#E82194] to-[#FF6644] text-transparent bg-clip-text">Implementation</span> Framework
+          </h2>
+          </ScrollRevealHeadline>
+          <p className="text-[16px] text-[#6B7280] font-medium">
+            Simple. Structured. Outcome-Driven.
+          </p>
+        </div>
+
+        <div className="max-w-[1200px] mx-auto px-6 relative">
+
+          {/* Background Path Image */}
+          <div className="hidden md:flex absolute inset-x-0 -top-12 bottom-0 z-0 justify-center items-start pointer-events-none">
+            <RoadReveal>
+              <img src={implBg} alt="Path" className="w-[85%] h-full object-contain object-top origin-top scale-[1.3] mx-auto" />
+            </RoadReveal>
+          </div>
+
+          {/* Cards Container */}
+          <div className="relative z-10 flex flex-col gap-8 md:gap-0 pb-0 md:translate-x-5">
+
+            {/* Card 01 - Left */}
+            <TiltCard className="w-full md:w-[42%] self-start z-10 md:-mt-14">
+            <div className="bg-white border border-gray-200 rounded-[28px] shadow-[0_8px_40px_rgba(0,0,0,0.06)] p-6 flex items-center gap-5 w-full transition-transform">
+              <div className="feature-icon-wrapper w-16 h-16 md:w-20 md:h-20 rounded-[16px] md:rounded-[20px] bg-[#F3EFFF] flex items-center justify-center shrink-0">
+                <LayoutGrid className="w-7 h-7 md:w-8 md:h-8 text-[#5B32EA]" />
+              </div>
+              <div className="flex flex-col items-start">
+                <span className="text-[24px] md:text-[28px] font-bold text-[#5B32EA] leading-none mb-1">01</span>
+                <h3 className="text-[17px] md:text-[18px] font-bold text-[#1A1A2E] mb-1.5">Choose Studios</h3>
+                <p className="text-[13px] md:text-[13.5px] text-gray-500 font-medium leading-[1.6] mb-3 text-left">
+                  Select any 3 Skill Studios per year aligned to your school's goals, vision, and student profile.
+                </p>
+                <div className="bg-[#F3EFFF] text-[#5B32EA] text-[11px] md:text-[12px] font-bold px-3 py-1.5 rounded-full inline-flex items-center gap-2">
+                  <CalendarRange className="w-3.5 h-3.5" /> Planning & Alignment
+                </div>
+              </div>
+            </div>
+            </TiltCard>
+
+            {/* Card 02 - Right */}
+            <TiltCard className="w-full md:w-[42%] self-end z-20 mt-0 md:mt-28">
+            <div className="bg-white border border-gray-200 rounded-[28px] shadow-[0_8px_40px_rgba(0,0,0,0.06)] p-6 flex items-center gap-5 w-full justify-between transition-transform">
+              <div className="flex flex-col items-start">
+                <span className="text-[24px] md:text-[28px] font-bold text-[#3B82F6] leading-none mb-1">02</span>
+                <h3 className="text-[17px] md:text-[18px] font-bold text-[#1A1A2E] mb-1.5">Flexible Rollout</h3>
+                <p className="text-[13px] md:text-[13.5px] text-gray-500 font-medium leading-[1.6] mb-3 text-left">
+                  Term, semester, parallel, or student-choice models - built to fit your existing timetable without disruption.
+                </p>
+                <div className="bg-[#EFF6FF] text-[#3B82F6] text-[11px] md:text-[12px] font-bold px-3 py-1.5 rounded-full inline-flex items-center gap-2">
+                  <Clock className="w-3.5 h-3.5" /> Setup & Scheduling
+                </div>
+              </div>
+              <div className="feature-icon-wrapper w-16 h-16 md:w-20 md:h-20 rounded-[16px] md:rounded-[20px] bg-[#EFF6FF] flex items-center justify-center shrink-0">
+                <CalendarDays className="w-7 h-7 md:w-8 md:h-8 text-[#3B82F6]" />
+              </div>
+            </div>
+            </TiltCard>
+
+            {/* Card 03 - Left */}
+            <TiltCard className="w-full md:w-[42%] self-start z-30 mt-0 md:mt-40">
+            <div className="bg-white border border-gray-200 rounded-[28px] shadow-[0_8px_40px_rgba(0,0,0,0.06)] p-6 flex items-center gap-5 w-full transition-transform">
+              <div className="feature-icon-wrapper w-16 h-16 md:w-20 md:h-20 rounded-[16px] md:rounded-[20px] bg-[#FDF2F8] flex items-center justify-center shrink-0">
+                <BarChart3 className="w-7 h-7 md:w-8 md:h-8 text-[#EC4899]" />
+              </div>
+              <div className="flex flex-col items-start">
+                <span className="text-[24px] md:text-[28px] font-bold text-[#EC4899] leading-none mb-1">03</span>
+                <h3 className="text-[17px] md:text-[18px] font-bold text-[#1A1A2E] mb-1.5">Structured Execution</h3>
+                <p className="text-[13px] md:text-[13.5px] text-gray-500 font-medium leading-[1.6] mb-3 text-left">
+                  Onboarding → weekly sessions → progress tracking → term showcases → annual review.
+                </p>
+                <div className="bg-[#FDF2F8] text-[#EC4899] text-[11px] md:text-[12px] font-bold px-3 py-1.5 rounded-full inline-flex items-center gap-2">
+                  <TrendingUp className="w-3.5 h-3.5" /> Ongoing & Monitored
+                </div>
+              </div>
+            </div>
+            </TiltCard>
+
+            {/* Card 04 - Right */}
+            <TiltCard className="w-full md:w-[42%] self-end z-40 mt-0 md:mt-20">
+            <div className="bg-white border border-gray-200 rounded-[28px] shadow-[0_8px_40px_rgba(0,0,0,0.06)] p-6 flex items-center gap-5 w-full justify-between transition-transform">
+              <div className="flex flex-col items-start">
+                <span className="text-[24px] md:text-[28px] font-bold text-[#F97316] leading-none mb-1">04</span>
+                <h3 className="text-[17px] md:text-[18px] font-bold text-[#1A1A2E] mb-1.5">Experiential Learning</h3>
+                <p className="text-[13px] md:text-[13.5px] text-gray-500 font-medium leading-[1.6] mb-3 text-left">
+                  Hands-on projects, real-world challenges, and guided mentorship embedded in every session.
+                </p>
+                <div className="bg-[#FFF7ED] text-[#F97316] text-[11px] md:text-[12px] font-bold px-3 py-1.5 rounded-full inline-flex items-center gap-2">
+                  <UserPlus className="w-3.5 h-3.5" /> Apply & Grow
+                </div>
+              </div>
+              <div className="feature-icon-wrapper w-16 h-16 md:w-20 md:h-20 rounded-[16px] md:rounded-[20px] bg-[#FFF7ED] flex items-center justify-center shrink-0">
+                <User className="w-7 h-7 md:w-8 md:h-8 text-[#F97316]" />
+              </div>
+            </div>
+            </TiltCard>
+
+            {/* Card 05 - Left */}
+            <TiltCard className="w-full md:w-[42%] self-start z-50 mt-0 md:mt-4">
+            <div className="bg-white border border-gray-200 rounded-[28px] shadow-[0_8px_40px_rgba(0,0,0,0.06)] p-6 flex items-center gap-5 w-full transition-transform">
+              <div className="feature-icon-wrapper w-16 h-16 md:w-20 md:h-20 rounded-[16px] md:rounded-[20px] bg-[#ECFDF5] flex items-center justify-center shrink-0">
+                <Trophy className="w-7 h-7 md:w-8 md:h-8 text-[#10B981]" />
+              </div>
+              <div className="flex flex-col items-start">
+                <span className="text-[24px] md:text-[28px] font-bold text-[#10B981] leading-none mb-1">05</span>
+                <h3 className="text-[17px] md:text-[18px] font-bold text-[#1A1A2E] mb-1.5">Measurable Outcomes</h3>
+                <p className="text-[13px] md:text-[13.5px] text-gray-500 font-medium leading-[1.6] mb-3 text-left">
+                  Portfolios, capstone projects, certifications, and the annual Skillzza Studio Fest.
+                </p>
+                <div className="bg-[#ECFDF5] text-[#10B981] text-[11px] md:text-[12px] font-bold px-3 py-1.5 rounded-full inline-flex items-center gap-2">
+                  <Award className="w-3.5 h-3.5" /> Showcase & Celebrate
+                </div>
+              </div>
+            </div>
+            </TiltCard>
 
           </div>
         </div>
       </section>
 
-      <StudioStats />
-      <WhatIsSkillzzaClub />
-      <SkillChallenge />
-      <StudioGrid />
-      <LearningPathway />
-      <ImplementationFramework />
-      <ImpactFramework />
-      <TrustedBy />
-      <Partnerships />
+      {/* Bottom CTA Section */}
+      <section className="py-12 border-t border-b border-gray-100 bg-white">
+        <div className="max-w-[1280px] mx-auto px-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 lg:gap-0">
+
+          {/* Left Content */}
+          <div className="flex flex-col items-start text-left">
+            <h2 className="text-[24px] md:text-[28px] font-bold text-[#1A1A2E] mb-2 tracking-tight">
+              Seamless Implementation. Tangible Results.
+            </h2>
+            <p className="text-[15px] md:text-[16px] text-gray-500 font-medium">
+              Deliver Future Skills With A Model Designed For Scale, Simplicity, And Impact.
+            </p>
+          </div>
+
+          {/* Right Buttons */}
+          <div className="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto">
+            <MagneticButton className="w-full sm:w-auto">
+            <button className="w-full px-8 py-3.5 bg-[#5B32EA] hover:bg-[#4A26D0] text-white text-[13px] font-bold tracking-wide rounded-[8px] transition-colors flex items-center justify-center gap-2 uppercase">
+              Request Demo <ArrowRight className="w-4 h-4" />
+            </button>
+            </MagneticButton>
+            <MagneticButton className="w-full sm:w-auto">
+            <button className="w-full px-8 py-3.5 bg-transparent border-[1.5px] border-[#5B32EA] text-[#5B32EA] hover:bg-[#5B32EA]/5 text-[13px] font-bold tracking-wide rounded-[8px] transition-colors flex items-center justify-center gap-2 uppercase">
+              Start Program <ArrowRight className="w-4 h-4" />
+            </button>
+            </MagneticButton>
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* Impact Measurement Framework Section */}
+      <section className="pt-24 pb-8 bg-white relative z-20">
+        <div className="max-w-[1280px] mx-auto px-6">
+
+          {/* Header */}
+          <div className="mb-14 text-left">
+            <ScrollRevealHeadline>
+            <h2 className="text-[32px] md:text-[38px] font-bold text-[#1A1A2E] mb-3 tracking-tight leading-[1.2]">
+              Impact <span className="bg-gradient-to-r from-[#4200FF] via-[#E82194] to-[#FF6644] text-transparent bg-clip-text">Measurement</span> Framework
+            </h2>
+            </ScrollRevealHeadline>
+            <p className="text-[#F59E0B] italic font-bold text-[16px] mb-3">
+              Evidence Over Certificates.
+            </p>
+            <p className="text-[#6B7280] text-[15px] font-medium max-w-[850px] leading-[1.6]">
+              Skillzza Tracks Measurable Growth Across Five Dimensions - Supported By Transparent Reporting Tools For Schools, Parents, And Students.
+            </p>
+          </div>
+
+          {/* Grid */}
+          <StaggerRow className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            {/* Card 1 */}
+            <TiltCard className="h-full">
+            <div className="bg-white border border-gray-200 rounded-[20px] p-6 lg:p-8 flex items-start gap-5 shadow-[0_4px_24px_rgba(0,0,0,0.04)] h-full">
+              <div className="feature-icon-wrapper w-[60px] h-[60px] rounded-full bg-[#EFF6FF] flex items-center justify-center shrink-0">
+                <BookOpen className="w-7 h-7 text-[#3B82F6] stroke-[1.5]" />
+              </div>
+              <div className="flex flex-col pt-1">
+                <h3 className="text-[17px] font-bold text-[#1A1A2E] mb-2.5 leading-[1.3]">
+                  Knowledge & Concept<br className="hidden lg:block" />Mastery
+                </h3>
+                <p className="text-[13.5px] text-[#6B7280] font-medium leading-[1.6]">
+                  Depth of understanding across studio curricula, measured through rubrics and formative assessments.
+                </p>
+              </div>
+            </div>
+            </TiltCard>
+
+            {/* Card 2 */}
+            <TiltCard className="h-full">
+            <div className="bg-white border border-gray-200 rounded-[20px] p-6 lg:p-8 flex items-start gap-5 shadow-[0_4px_24px_rgba(0,0,0,0.04)] h-full">
+              <div className="feature-icon-wrapper w-[60px] h-[60px] rounded-full bg-[#ECFDF5] flex items-center justify-center shrink-0">
+                <ClipboardCheck className="w-7 h-7 text-[#10B981] stroke-[1.5]" />
+              </div>
+              <div className="flex flex-col pt-1">
+                <h3 className="text-[17px] font-bold text-[#1A1A2E] mb-2.5 leading-[1.3]">
+                  Skill Application &<br className="hidden lg:block" />Project Completion
+                </h3>
+                <p className="text-[13.5px] text-[#6B7280] font-medium leading-[1.6]">
+                  Real-world application through hands-on projects, builds, and submitted capstones.
+                </p>
+              </div>
+            </div>
+            </TiltCard>
+
+            {/* Card 3 */}
+            <TiltCard className="h-full">
+            <div className="bg-white border border-gray-200 rounded-[20px] p-6 lg:p-8 flex items-start gap-5 shadow-[0_4px_24px_rgba(0,0,0,0.04)] h-full">
+              <div className="feature-icon-wrapper w-[60px] h-[60px] rounded-full bg-[#FFFBEB] flex items-center justify-center shrink-0">
+                <Lightbulb className="w-7 h-7 text-[#F59E0B] stroke-[1.5]" />
+              </div>
+              <div className="flex flex-col pt-1">
+                <h3 className="text-[17px] font-bold text-[#1A1A2E] mb-2.5 leading-[1.3]">
+                  Creativity & Innovation
+                </h3>
+                <p className="text-[13.5px] text-[#6B7280] font-medium leading-[1.6]">
+                  Originality, problem-solving, and ideation quality tracked across iterations.
+                </p>
+              </div>
+            </div>
+            </TiltCard>
+
+            {/* Card 4 */}
+            <TiltCard className="h-full">
+            <div className="bg-white border border-gray-200 rounded-[20px] p-6 lg:p-8 flex items-start gap-5 shadow-[0_4px_24px_rgba(0,0,0,0.04)] h-full">
+              <div className="feature-icon-wrapper w-[60px] h-[60px] rounded-full bg-[#F5F3FF] flex items-center justify-center shrink-0">
+                <UserCog className="w-7 h-7 text-[#8B5CF6] stroke-[1.5]" />
+              </div>
+              <div className="flex flex-col pt-1">
+                <h3 className="text-[17px] font-bold text-[#1A1A2E] mb-2.5 leading-[1.3]">
+                  Confidence & Mindset<br className="hidden lg:block" />Development
+                </h3>
+                <p className="text-[13.5px] text-[#6B7280] font-medium leading-[1.6]">
+                  Growth in presentation, collaboration, resilience, and self-directed learning.
+                </p>
+              </div>
+            </div>
+            </TiltCard>
+
+            {/* Card 5 */}
+            <TiltCard className="h-full">
+            <div className="bg-white border border-gray-200 rounded-[20px] p-6 lg:p-8 flex items-start gap-5 shadow-[0_4px_24px_rgba(0,0,0,0.04)] h-full">
+              <div className="feature-icon-wrapper w-[60px] h-[60px] rounded-full bg-[#EFF6FF] flex items-center justify-center shrink-0">
+                <BarChart className="w-7 h-7 text-[#3B82F6] stroke-[1.5]" />
+              </div>
+              <div className="flex flex-col pt-1">
+                <h3 className="text-[17px] font-bold text-[#1A1A2E] mb-2.5 leading-[1.3]">
+                  School-Level Impact<br className="hidden lg:block" />Metrics
+                </h3>
+                <p className="text-[13.5px] text-[#6B7280] font-medium leading-[1.6]">
+                  Cohort-wide performance indicators, engagement analytics, and year-on-year benchmarking.
+                </p>
+              </div>
+            </div>
+            </TiltCard>
+
+            {/* Card 6 */}
+            <TiltCard className="h-full">
+            <div className="bg-white border border-gray-200 rounded-[20px] p-6 lg:p-8 flex items-start gap-5 shadow-[0_4px_24px_rgba(0,0,0,0.04)] h-full">
+              <div className="feature-icon-wrapper w-[60px] h-[60px] rounded-full bg-[#FEF2F2] flex items-center justify-center shrink-0">
+                <Folder className="w-7 h-7 text-[#EF4444] stroke-[1.5]" />
+              </div>
+              <div className="flex flex-col pt-1">
+                <h3 className="text-[17px] font-bold text-[#1A1A2E] mb-2.5 leading-[1.3]">
+                  Portfolio & Showcase<br className="hidden lg:block" />Cadence
+                </h3>
+                <p className="text-[13.5px] text-[#6B7280] font-medium leading-[1.6]">
+                  Digital portfolios, mid-year and annual showcases, and performance dashboards.
+                </p>
+              </div>
+            </div>
+            </TiltCard>
+
+          </StaggerRow>
+        </div>
+      </section>
+
+      {/* Reporting & Transparency Section */}
+      <section className="pb-24 bg-white relative z-20">
+        <div className="max-w-[1280px] mx-auto px-6">
+          <div className="bg-[#F8FAFC] rounded-[24px] p-2 md:px-4 md:py-2 border border-gray-100 flex flex-col gap-1">
+
+            {/* Header */}
+            <div>
+              <h3 className="text-[18px] md:text-[20px] font-bold text-[#1A1A2E] mb-3">
+                Reporting & Transparency
+              </h3>
+              <div className="w-12 h-[2.5px] bg-[#F59E0B] rounded-full"></div>
+            </div>
+
+            {/* Features Row */}
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-0 lg:divide-x lg:divide-gray-200">
+
+              {/* Item 1 */}
+              <div className="feature-item flex items-center gap-5 lg:w-1/4 lg:pr-8 cursor-pointer">
+                <div className="feature-icon-wrapper w-[52px] h-[52px] rounded-full bg-[#EFF6FF] flex items-center justify-center shrink-0">
+                  <ClipboardList className="w-6 h-6 text-[#3B82F6] stroke-[1.5]" />
+                </div>
+                <p className="text-[13px] md:text-[13.5px] text-[#1A1A2E] font-medium leading-[1.5]">
+                  <span className="feature-label">Digital portfolio<br className="hidden xl:block" />documentation for every<br className="hidden xl:block" />enrolled student.</span>
+                </p>
+              </div>
+
+              {/* Item 2 */}
+              <div className="feature-item flex items-center gap-5 lg:w-1/4 lg:px-8 cursor-pointer">
+                <div className="feature-icon-wrapper w-[52px] h-[52px] rounded-full bg-[#ECFDF5] flex items-center justify-center shrink-0">
+                  <CalendarDays className="w-6 h-6 text-[#10B981] stroke-[1.5]" />
+                </div>
+                <p className="text-[13px] md:text-[13.5px] text-[#1A1A2E] font-medium leading-[1.5]">
+                  <span className="feature-label">Structured mid-year<br className="hidden xl:block" />and annual showcase<br className="hidden xl:block" />events.</span>
+                </p>
+              </div>
+
+              {/* Item 3 */}
+              <div className="feature-item flex items-center gap-5 lg:w-1/4 lg:px-8 cursor-pointer">
+                <div className="feature-icon-wrapper w-[52px] h-[52px] rounded-full bg-[#F5F3FF] flex items-center justify-center shrink-0">
+                  <LayoutDashboard className="w-6 h-6 text-[#8B5CF6] stroke-[1.5]" />
+                </div>
+                <p className="text-[13px] md:text-[13.5px] text-[#1A1A2E] font-medium leading-[1.5]">
+                  <span className="feature-label">Live performance<br className="hidden xl:block" />reporting dashboards<br className="hidden xl:block" />for schools and parents.</span>
+                </p>
+              </div>
+
+              {/* Item 4 */}
+              <div className="feature-item flex items-center gap-5 lg:w-1/4 lg:pl-8 cursor-pointer">
+                <div className="feature-icon-wrapper w-[52px] h-[52px] rounded-full bg-[#FFFBEB] flex items-center justify-center shrink-0">
+                  <Trophy className="w-6 h-6 text-[#F59E0B] stroke-[1.5]" />
+                </div>
+                <p className="text-[13px] md:text-[13.5px] text-[#1A1A2E] font-medium leading-[1.5]">
+                  <span className="feature-label">Year-end Studio Fest -<br className="hidden xl:block" />a flagship celebration<br className="hidden xl:block" />of student work.</span>
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      {/* Trusted By Educational Institutes Section */}
+      <section className="pt-12 pb-6 bg-white relative z-20 overflow-hidden border-t border-gray-100">
+        <div className="max-w-[1280px] mx-auto px-6 mb-10">
+          <h2 className="text-[28px] md:text-[34px] font-bold text-center text-[#1A1A2E]">
+            Trusted By Educational Institutes
+          </h2>
+        </div>
+
+        {/* Marquee Container */}
+        <div className="relative w-full overflow-hidden flex bg-white pb-6">
+          <style>
+            {`
+              @keyframes marquee {
+                0% { transform: translateX(0%); }
+                100% { transform: translateX(-50%); }
+              }
+              .animate-marquee {
+                animation: marquee 30s linear infinite;
+              }
+              .animate-marquee:hover {
+                animation-play-state: paused;
+              }
+            `}
+          </style>
+
+          <div className="flex w-max animate-marquee">
+            {/* We render multiple identical blocks so it loops seamlessly. 50% translation requires at least 2 identical halves. Let's make 2 huge identical halves. */}
+
+            {[1, 2].map((half) => (
+              <div key={half} className="flex items-center gap-16 px-8 md:gap-24 md:px-12">
+
+                {/* Dummy Logo 1 */}
+                <div className="flex items-center gap-3 opacity-60 hover:opacity-100 transition-all cursor-pointer grayscale hover:grayscale-0">
+                  <div className="w-10 h-10 bg-green-700 rounded-[8px] flex items-center justify-center text-white font-bold text-xl shrink-0 shadow-sm">D</div>
+                  <div className="flex flex-col">
+                    <span className="font-bold text-[20px] leading-none text-green-800 mb-0.5 tracking-tight">DPS</span>
+                    <span className="text-[9.5px] text-gray-500 uppercase font-bold tracking-wider">Delhi Public School</span>
+                  </div>
+                </div>
+
+                {/* Dummy Logo 2 */}
+                <div className="flex items-center gap-3 opacity-60 hover:opacity-100 transition-all cursor-pointer grayscale hover:grayscale-0">
+                  <div className="w-10 h-10 bg-purple-700 rounded-[8px] flex items-center justify-center text-white font-bold text-xl shrink-0 shadow-sm">P</div>
+                  <div className="flex flex-col">
+                    <span className="font-bold text-[20px] leading-none text-purple-800 mb-0.5 tracking-tight">PODAR</span>
+                    <span className="text-[9.5px] text-gray-500 uppercase font-bold tracking-wider">International School</span>
+                  </div>
+                </div>
+
+                {/* Dummy Logo 3 */}
+                <div className="flex items-center gap-3 opacity-60 hover:opacity-100 transition-all cursor-pointer grayscale hover:grayscale-0">
+                  <div className="w-10 h-10 bg-red-800 rounded-full flex items-center justify-center text-white font-bold text-xl shrink-0 shadow-sm">O</div>
+                  <div className="flex flex-col">
+                    <span className="font-bold text-[20px] leading-none text-red-900 mb-0.5 tracking-tight">ORCHIDS</span>
+                    <span className="text-[9.5px] text-gray-500 uppercase font-bold tracking-wider">The Intl School</span>
+                  </div>
+                </div>
+
+                {/* Dummy Logo 4 */}
+                <div className="flex items-center gap-3 opacity-60 hover:opacity-100 transition-all cursor-pointer grayscale hover:grayscale-0">
+                  <div className="w-10 h-10 bg-orange-500 transform rotate-45 flex items-center justify-center text-white font-bold text-xl shrink-0 shadow-sm"><span className="-rotate-45">B</span></div>
+                  <div className="flex flex-col">
+                    <span className="font-bold text-[20px] leading-none text-blue-900 mb-0.5 tracking-tight">BILLABONG</span>
+                    <span className="text-[9.5px] text-gray-500 uppercase font-bold tracking-wider">High International</span>
+                  </div>
+                </div>
+
+                {/* Dummy Logo 5 */}
+                <div className="flex items-center gap-2 opacity-60 hover:opacity-100 transition-all cursor-pointer grayscale hover:grayscale-0">
+                  <span className="font-extrabold text-[32px] text-blue-900 tracking-tighter leading-none">Ryan</span>
+                  <span className="text-[9.5px] text-gray-500 uppercase font-bold tracking-wider mt-1.5 leading-tight">International<br />Group</span>
+                </div>
+
+                {/* Dummy Logo 6 */}
+                <div className="flex items-center gap-2.5 opacity-60 hover:opacity-100 transition-all cursor-pointer grayscale hover:grayscale-0">
+                  <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white shrink-0 shadow-sm"><GraduationCap className="w-5 h-5" /></div>
+                  <div className="flex flex-col">
+                    <span className="font-bold text-[22px] leading-none text-blue-900 tracking-tight mb-0.5">EuroSchool</span>
+                    <span className="text-[9.5px] text-gray-500 uppercase font-bold tracking-wider">Discover Yourself</span>
+                  </div>
+                </div>
+
+                {/* Extra spacing to seamlessly repeat the next half */}
+                <div className="w-4 md:w-8"></div>
+
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* Partnership Banner Section */}
+      <section className="pt-12 pb-20 bg-white relative z-20">
+        <div className="max-w-[1280px] mx-auto px-6">
+
+          <div
+            className="w-full relative shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex items-center justify-between overflow-hidden"
+            style={{
+              background: 'linear-gradient(90deg, #3B6CFF 23.47%, #FF00FF 59.9%, #FF9A00 96.32%)',
+              height: '232px',
+              borderRadius: '8px',
+              maxWidth: '1300px',
+              margin: '0 auto'
+            }}
+          >
+            {/* Left Image Shape Wrapper */}
+            <div
+              className="absolute hidden lg:block overflow-hidden"
+              style={{
+                width: '707px',
+                height: '232px',
+                left: '-207px',
+                top: '0',
+                borderTopRightRadius: '400px',
+                borderBottomRightRadius: '400px',
+                opacity: 1
+              }}
+            >
+              <img
+                src={partnershipImg}
+                alt="Partnerships"
+                className="absolute max-w-none"
+                style={{
+                  width: '500px',
+                  height: '232px',
+                  left: '207px',
+                  top: '0',
+                  objectFit: 'cover',
+                  objectPosition: 'left center'
+                }}
+              />
+            </div>
+
+            {/* Content (Middle & Right) */}
+            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between w-full h-full px-8 lg:pl-[520px] lg:pr-12">
+
+              {/* Text Block */}
+              <div className="flex flex-col text-white max-w-[550px]">
+                <h3 
+                  className="mb-3 text-white"
+                  style={{
+                    color: '#FFFFFF',
+                    fontFamily: '"Poppins", sans-serif',
+                    fontWeight: 600,
+                    fontSize: '24px',
+                    lineHeight: '111%',
+                    letterSpacing: '0%'
+                  }}
+                >
+                  Partnerships for<br />Transformational Learning
+                </h3>
+                <p 
+                  className="opacity-95 text-white"
+                  style={{
+                    color: '#FFFFFF',
+                    fontFamily: '"Poppins", sans-serif',
+                    fontWeight: 500,
+                    fontSize: '14px',
+                    lineHeight: '166%',
+                    letterSpacing: '0%',
+                    textTransform: 'capitalize'
+                  }}
+                >
+                  We partner with forward-looking schools, industry leaders, and academic bodies to co-create learning that matters. Whether you're a school seeking future-ready programmes, a brand looking to invest in the next generation, or an institution aligning with NEP 2020, we'd love to build with you
+                </p>
+              </div>
+
+              {/* Button */}
+              <div className="shrink-0 translate-x-4">
+                <MagneticButton>
+                <button className="bg-white text-[#3B6CFF] font-bold text-[12px] px-6 py-3 rounded-[8px] flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors uppercase tracking-wide">
+                  PARTNER WITH US <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+                </MagneticButton>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Bottom Italic Text */}
+          <div className="mt-14 text-center">
+            <h2 className="text-[26px] md:text-[34px] font-bold italic text-[#3300FF]">
+              <ScrollRevealWord text="Empowering the Next Generation of AI Thinkers." />
+            </h2>
+          </div>
+
+        </div>
+      </section>
+
     </div>
+    </LenisProvider>
   );
 }

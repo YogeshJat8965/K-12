@@ -1,3 +1,10 @@
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Lenis from '@studio-freight/lenis';
+import Particles from '@tsparticles/react';
+import { loadSlim } from '@tsparticles/slim';
+
 import HomeNavbar from './home/HomeNavbar';
 import HomeHero from './home/HomeHero';
 import HomeMission from './home/HomeMission';
@@ -13,24 +20,128 @@ import HomeReady from './home/HomeReady';
 import HomeCTA from './home/HomeCTA';
 import HomeLearningEcosystem from './home/HomeLearningEcosystem';
 
+gsap.registerPlugin(ScrollTrigger);
+
+// Global default to replay animations when scrolling back
+ScrollTrigger.defaults({
+  toggleActions: 'play none none reverse'
+});
+
 export default function HomeApp() {
+  const progressRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // 1. Initialize Lenis (Smooth Scroll)
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+      infinite: false,
+    });
+
+    lenis.on('scroll', ScrollTrigger.update);
+
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
+
+    // 2. Scroll Progress Bar
+    gsap.to(progressRef.current, {
+      scaleX: 1,
+      transformOrigin: 'left center',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: document.body,
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 0.3,
+      },
+    });
+
+    return () => {
+      lenis.destroy();
+      gsap.ticker.remove(lenis.raf);
+    };
+  }, []);
+
+  const particlesInit = async (engine: any) => {
+    await loadSlim(engine);
+  };
+
   return (
     <div style={{ minHeight: '100vh', background: '#fff', fontFamily: "'Poppins', sans-serif" }}>
-      <HomeNavbar />
-      <div style={{ paddingTop: '70px' }}>
-        <HomeHero />
-        <HomeMission />
-        <HomeTrusted />
-        <HomeAbout />
-        <HomeLearningEcosystem />
-        <HomeCompare />
-        <HomeExecution />
-        <HomeJourney />
-        <HomePhilosophy />
-        <HomeAdobe />
-        <HomeEcosystem />
-        <HomeReady />
-        <HomeCTA />
+      
+      {/* Scroll Progress Line */}
+      <div 
+        ref={progressRef}
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '3px',
+          background: '#6C2BD9',
+          zIndex: 9999,
+          transform: 'scaleX(0)',
+          transformOrigin: 'left center',
+        }}
+      />
+
+      {/* Global Subtle Particles Background */}
+      <div style={{ position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 0, opacity: 0.2 }}>
+        <Particles
+          id="tsparticles"
+          init={particlesInit}
+          options={{
+            background: { color: { value: "transparent" } },
+            fpsLimit: 60,
+            interactivity: { events: { onHover: { enable: false }, resize: true } },
+            particles: {
+              color: { value: "#6C2BD9" },
+              links: { enable: false },
+              move: {
+                direction: "none",
+                enable: true,
+                outModes: { default: "bounce" },
+                random: true,
+                speed: 0.3,
+                straight: false,
+              },
+              number: { density: { enable: true, area: 800 }, value: 40 },
+              opacity: { value: 0.3, animation: { enable: true, speed: 0.5, minimumValue: 0.1 } },
+              shape: { type: "circle" },
+              size: { value: { min: 1, max: 3 }, random: true },
+            },
+            detectRetina: true,
+          }}
+        />
+      </div>
+
+      {/* Main Content */}
+      <div style={{ position: 'relative', zIndex: 1 }}>
+        <HomeNavbar />
+        <div style={{ paddingTop: '70px' }}>
+          <HomeHero />
+          <HomeMission />
+          <HomeTrusted />
+          <HomeAbout />
+          <HomeLearningEcosystem />
+          {/* <HomeCompare /> */}
+          <HomeExecution />
+          <HomeJourney />
+          <HomePhilosophy />
+          <HomeAdobe />
+          <HomeEcosystem />
+          <HomeReady />
+          <HomeCTA />
+        </div>
       </div>
     </div>
   );
