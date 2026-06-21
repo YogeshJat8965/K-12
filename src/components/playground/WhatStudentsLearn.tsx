@@ -1,115 +1,185 @@
-import { Terminal, GitMerge, Sparkles, Shield, Compass, Brain } from 'lucide-react';
-import { motion } from 'framer-motion';
-import ScrollReveal from '../ScrollReveal';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function WhatStudentsLearn() {
-  const learningPillars = [
+  const sectionRef = useRef<HTMLElement>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      if (cardsRef.current) {
+        const cards = cardsRef.current.querySelectorAll('.wsl-card');
+        gsap.from(cards, {
+          y: 40,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 80%',
+          }
+        });
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  const cards = [
     {
+      id: "01",
       title: "Prompt Thinking",
-      desc: "Ask AI clearly, specifically, and creatively to get great results.",
-      icon: <Terminal strokeWidth={1.5} className="w-10 h-10" />,
-      color: "text-amber-300",
-      glow: "from-amber-300/20 to-transparent"
+      desc: "The most future-critical skill of our time - how to ask AI clearly, specifically, and creatively to get great results.",
     },
     {
+      id: "02",
       title: "Logical Sequencing",
-      desc: "Break problems into steps and build structured reasoning.",
-      icon: <GitMerge strokeWidth={1.5} className="w-10 h-10" />,
-      color: "text-purple-400",
-      glow: "from-purple-400/20 to-transparent"
+      desc: "Breaking problems into steps - the foundational mindset for coding, systems thinking, and structured reasoning.",
     },
     {
+      id: "03",
       title: "Creative Confidence",
-      desc: "Iterate, test, fail, and refine – the core of every creative endeavour.",
-      icon: <Sparkles strokeWidth={1.5} className="w-10 h-10" />,
-      color: "text-orange-400",
-      glow: "from-orange-400/20 to-transparent"
+      desc: "The courage to iterate, test, fail, and refine - core to every creative and entrepreneurial endeavour.",
     },
     {
+      id: "04",
       title: "AI Literacy & Ethics",
-      desc: "Understand AI's powers, limits, biases, and use it responsibly.",
-      icon: <Shield strokeWidth={1.5} className="w-10 h-10" />,
-      color: "text-emerald-400",
-      glow: "from-emerald-400/20 to-transparent"
+      desc: "Understanding what AI can and cannot do, its biases, and how to use it responsibly - digital citizenship in practice.",
     },
     {
+      id: "05",
       title: "Self-Directed Learning",
-      desc: "Curiosity-led exploration that builds the habit of lifelong learning.",
-      icon: <Compass strokeWidth={1.5} className="w-10 h-10" />,
-      color: "text-sky-400",
-      glow: "from-sky-400/20 to-transparent"
+      desc: "Curiosity-led exploration where students choose what to build and learn - the habit of lifelong learning, formed early.",
     },
     {
+      id: "06",
       title: "Computational Empathy",
-      desc: "Understand how machines think and learn to communicate with them.",
-      icon: <Brain strokeWidth={1.5} className="w-10 h-10" />,
-      color: "text-rose-400",
-      glow: "from-rose-400/20 to-transparent"
+      desc: "Understanding how machines 'think' and learning to communicate with them effectively - an essential modern skill.",
     }
   ];
 
   return (
-    <section className="py-8 bg-white px-6">
-      <div className="max-w-7xl mx-auto">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="bg-[#050B1F] rounded-[3rem] p-10 md:p-14 relative overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.3)] border border-white/5"
-        >
-          {/* Background Ambient Glows */}
-          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-purple-600/5 blur-[120px] -translate-y-1/2 rounded-full" />
-          <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-600/5 blur-[120px] translate-y-1/2 rounded-full" />
+    <>
+      <style>{`
+        .wsl-section {
+          width: 100%;
+          padding: 80px 40px;
+          background: #ffffff;
+          font-family: 'Poppins', sans-serif;
+          text-align: center;
+        }
 
-          {/* Header */}
-          <div className="text-center mb-12 relative z-10">
-            <h2 className="text-2xl md:text-4xl font-bold text-white tracking-tight">
-              <span className="text-purple-400">What Students Learn</span> – Without Realising It
-            </h2>
-          </div>
+        .wsl-container {
+          max-width: 1360px;
+          width: 100%;
+          margin: 0 auto;
+        }
 
-          {/* Pillars Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 lg:gap-4 relative z-10">
-            {learningPillars.map((pillar, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                whileHover={{ y: -8 }}
-                className="flex flex-col items-center text-center group"
-              >
-                {/* Icon Container with Modern Reveal */}
-                <div className="relative mb-5 p-4 rounded-3xl transition-all duration-500">
-                  {/* Hover Background Glow */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${pillar.glow} rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500`} />
-                  
-                  {/* Icon Motion */}
-                  <motion.div 
-                    whileHover={{ scale: 1.2, rotate: 5 }}
-                    className={`${pillar.color} relative z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]`}
-                  >
-                    {pillar.icon}
-                  </motion.div>
-                </div>
+        .wsl-h2 {
+          font-weight: 800;
+          font-size: clamp(32px, 3.5vw, 44px);
+          color: #1A1A2E;
+          margin: 0 0 16px;
+          letter-spacing: -0.5px;
+        }
 
-                {/* Text Content */}
-                <h3 className="text-white font-bold text-base mb-2 group-hover:text-purple-400 transition-colors duration-300">
-                  {pillar.title}
-                </h3>
-                <p className="text-slate-400 text-[12px] leading-relaxed px-1 transition-colors duration-300 group-hover:text-slate-300 line-clamp-3">
-                  {pillar.desc}
-                </p>
+        .wsl-h2 .purple {
+          color: #6C3CF7;
+        }
 
-                {/* Subtle Hover Indicator */}
-                <motion.div 
-                  className="mt-6 w-0 h-0.5 bg-gradient-to-r from-transparent via-purple-400 to-transparent group-hover:w-full transition-all duration-500"
-                />
-              </motion.div>
+        .wsl-subtitle {
+          font-size: 18px;
+          line-height: 1.6;
+          color: #6B7280;
+          margin: 0 auto 60px;
+          font-weight: 400;
+        }
+
+        .wsl-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 24px;
+        }
+
+        .wsl-card {
+          position: relative;
+          background-color: #F2EFF9; /* 2nd card's light purple color for all */
+          border-radius: 20px;
+          padding: 32px 28px; /* Reduced padding */
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          text-align: left;
+          min-height: 200px; /* Decreased height */
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .wsl-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+        }
+
+        .wsl-number {
+          font-size: 16px;
+          font-weight: 600;
+          margin-bottom: 12px;
+          color: #6021DD; /* 2nd card's purple text color for all numbers */
+        }
+
+        .wsl-card-title {
+          font-size: 24px;
+          font-weight: 600; /* Reduced from 700 to make it less dark/bold */
+          color: #1A1A2E;
+          margin: 0 0 16px;
+          letter-spacing: -0.5px;
+        }
+
+        .wsl-card-desc {
+          font-size: 16px;
+          line-height: 1.6;
+          color: #5C6165;
+          margin: 0;
+          font-weight: 400;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 1024px) {
+          .wsl-section { padding: 80px 32px; }
+          .wsl-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+          .wsl-card { padding: 24px; min-height: auto; }
+        }
+
+        @media (max-width: 600px) {
+          .wsl-section { padding: 60px 20px; }
+          .wsl-grid { grid-template-columns: 1fr; }
+        }
+      `}</style>
+
+      <section className="wsl-section" ref={sectionRef}>
+        <div className="wsl-container">
+          <h2 className="wsl-h2">
+            What Students Learn - <span className="purple">Without Realising It</span>
+          </h2>
+          
+          <p className="wsl-subtitle">
+            Play is the best teacher. Here's what's happening behind the fun.
+          </p>
+
+          <div className="wsl-grid" ref={cardsRef}>
+            {cards.map((card, idx) => (
+              <div key={idx} className="wsl-card">
+                <div className="wsl-number">{card.id}</div>
+                <h3 className="wsl-card-title">{card.title}</h3>
+                <p className="wsl-card-desc">{card.desc}</p>
+              </div>
             ))}
           </div>
-        </motion.div>
-      </div>
-    </section>
+        </div>
+      </section>
+    </>
   );
 }

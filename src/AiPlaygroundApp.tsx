@@ -1,6 +1,16 @@
 import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import { useScrollReveal } from './hooks/useScrollReveal';
+import PlaygroundHero from './components/playground/PlaygroundHero';
+import WhatIsPlayground from './components/playground/WhatIsPlayground';
+import HowItWorks from './components/playground/HowItWorks';
+import AgentLibrary from './components/playground/AgentLibrary';
+import AgentBuilderBanner from './components/playground/AgentBuilderBanner';
+import WhatStudentsLearn from './components/playground/WhatStudentsLearn';
+import SafeByDesign from './components/playground/SafeByDesign';
+import SchoolsAndEducators from './components/playground/SchoolsAndEducators';
+import PlayToMastery from './components/playground/PlayToMastery';
+import CtaBanner from './components/playground/CtaBanner';
 
 export default function AiPlaygroundApp() {
   useScrollReveal();
@@ -31,8 +41,17 @@ export default function AiPlaygroundApp() {
 
       <Navbar />
 
-      <main className="pt-24 min-h-screen">
-        {/* Placeholder for AI Playground Content */}
+      <main className="min-h-screen">
+        <PlaygroundHero />
+        <WhatIsPlayground />
+        <HowItWorks />
+        <AgentLibrary />
+        <AgentBuilderBanner />
+        <WhatStudentsLearn />
+        <SafeByDesign />
+        <PlayToMastery />
+        <SchoolsAndEducators />
+        <CtaBanner />
       </main>
     </div>
   );
