@@ -8,28 +8,48 @@ import Icon2 from '../../assets/AI playground/Group 27630.svg';
 import Icon3 from '../../assets/AI playground/Group 27631.svg';
 import Icon4 from '../../assets/AI playground/Group 27632.svg';
 
+import { useSplitReveal } from '../../hooks/useSplitReveal';
+import { useMagneticRipple } from '../../hooks/usePremiumHover';
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function PlaygroundHero() {
   const heroRef = useRef<HTMLElement>(null);
-  const headingRef = useRef<HTMLHeadingElement>(null);
   const imgRef = useRef<HTMLImageElement>(null);
   const featBarRef = useRef<HTMLDivElement>(null);
 
+  useSplitReveal('.ph-h1', 'lines', 0.07, 0.1);
+  useSplitReveal('.ph-sub', 'words', 0.02, 0.3);
+  useMagneticRipple('.ph-btn', 0.5);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Heading split animation
-      if (headingRef.current) {
-        gsap.to('.ph-hero-char', {
-          opacity: 1,
-          z: 0,
-          scale: 1,
-          duration: 1,
-          stagger: 0.02,
-          ease: 'back.out(1.7)',
-          delay: 0.1
-        });
-      }
+      // Badge
+      gsap.from('.ph-badge', { y: -30, opacity: 0, duration: 0.8, ease: 'power3.out' });
+
+      // Subtitle
+      gsap.from('.ph-subtitle', { opacity: 0, y: 20, duration: 0.8, delay: 0.2 });
+
+      // Buttons
+      gsap.from('.ph-btn-wrapper', {
+        y: 40,
+        opacity: 0,
+        rotateX: 20,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: 'back.out(1.2)',
+        delay: 0.4
+      });
+
+      // Hero Image
+      gsap.from(imgRef.current, {
+        x: 100,
+        opacity: 0,
+        rotateY: -15,
+        duration: 1.2,
+        ease: 'power3.out',
+        delay: 0.2
+      });
 
       // Parallax float for right image
       if (imgRef.current) {
@@ -47,11 +67,27 @@ export default function PlaygroundHero() {
 
       // Feature cards 3D flip + stagger
       if (featBarRef.current) {
+        gsap.from(featBarRef.current, {
+          y: 60, opacity: 0, duration: 0.8, ease: 'power3.out',
+          scrollTrigger: { trigger: featBarRef.current, start: 'top 95%' }
+        });
         const items = featBarRef.current.querySelectorAll('.ph-feat-item');
         gsap.from(items, {
           opacity: 0,
-          y: 20,
+          y: 30,
+          scale: 0.8,
           duration: 0.6,
+          stagger: 0.1,
+          ease: 'back.out(1.5)',
+          scrollTrigger: {
+            trigger: featBarRef.current,
+            start: 'top 95%',
+          }
+        });
+        const icons = featBarRef.current.querySelectorAll('.ph-feat-icon');
+        gsap.from(icons, {
+          rotate: 360,
+          duration: 0.8,
           stagger: 0.1,
           ease: 'power2.out',
           scrollTrigger: {
@@ -208,8 +244,8 @@ export default function PlaygroundHero() {
           right: 5%; /* Shifted to the left slightly */
           top: 46%; /* Adjusted vertical alignment */
           transform: translateY(-50%);
-          width: 40vw; /* Slightly increased size */
-          max-width: 760px;
+          width: 45vw; /* Slightly increased size */
+          max-width: 850px;
           z-index: 1;
           pointer-events: none;
         }
@@ -265,6 +301,31 @@ export default function PlaygroundHero() {
           font-size: 15px;
           color: #1A1A2E;
           line-height: 1.3;
+          position: relative;
+        }
+
+        .ph-feat-item:hover .ph-feat-icon img {
+          animation: liquidWiggle 0.6s ease;
+        }
+        .ph-feat-item:hover .ph-feat-text::after {
+          content: '';
+          position: absolute;
+          left: 0; bottom: -2px;
+          height: 2px;
+          background: #6C3CF7;
+          width: 100%;
+          transform-origin: left;
+          animation: drawUnderline 0.3s ease forwards;
+        }
+        @keyframes drawUnderline {
+          from { transform: scaleX(0); }
+          to { transform: scaleX(1); }
+        }
+        @keyframes liquidWiggle {
+          0%, 100% { transform: scale(1) rotate(0deg); }
+          25% { transform: scale(1.1) rotate(5deg) skewX(-5deg); }
+          50% { transform: scale(0.9) rotate(-5deg) skewX(5deg); }
+          75% { transform: scale(1.05) rotate(2deg) skewX(-2deg); }
         }
 
         /* ─── RESPONSIVE ─── */
@@ -276,27 +337,32 @@ export default function PlaygroundHero() {
         }
 
         @media (max-width: 1024px) {
-          .ph-section { padding-top: 100px; }
-          .ph-content { padding: 0 48px 80px; }
-          .ph-feature-wrapper { padding: 0 48px 40px; }
-          .ph-btns { flex-direction: column; align-items: flex-start; }
-          .ph-h1 { font-size: clamp(28px, 4vw, 48px); white-space: normal; }
+          .ph-section { padding-top: 100px; padding-left: 20px; padding-right: 20px; }
+          .ph-content { padding: 0 0 80px; flex-direction: column; align-items: center; }
+          .ph-left { flex: 1; max-width: 100%; padding-right: 0; }
+          .ph-right-img { position: relative; width: 90%; max-width: 600px; transform: none; right: auto; top: auto; margin: 40px auto 0; display: block; }
+          .ph-h1 { font-size: 2.2rem; white-space: normal; text-align: left; }
+          .ph-feature-wrapper { padding: 0 0 40px; margin-top: 20px; }
+          .ph-btns { justify-content: flex-start; }
         }
 
-        @media (max-width: 860px) {
-          .ph-content { padding: 0 32px 60px; flex-direction: column; align-items: flex-start; }
-          .ph-left { flex: 1; max-width: 100%; }
-          .ph-right-img { position: relative; width: 80%; max-width: 100%; transform: none; right: auto; top: auto; margin: 40px auto 0; display: block; }
-          .ph-feature-wrapper { padding: 0 32px 40px; margin-top: 20px; }
-          .ph-feature-bar { flex-wrap: wrap; width: 100%; justify-content: center; }
-          .ph-feat-item { min-width: 45%; }
-        }
-
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+          .ph-section { padding-left: 16px; padding-right: 16px; }
+          .ph-h1 { font-size: 1.8rem; line-height: 1.2; }
+          .ph-h1 .purple { display: block; }
+          .ph-btns { flex-direction: column; align-items: stretch; width: 100%; gap: 12px; }
+          .ph-btn-wrapper { width: 100%; }
           .ph-btns button { width: 100%; }
-          .ph-feature-bar { flex-direction: column; align-items: stretch; }
-          .ph-feat-item { min-width: 100%; justify-content: flex-start; }
-          .ph-feat-divider { width: auto; height: 1px; margin: 0 20px; }
+          .ph-right-img { width: 100%; }
+          .ph-feature-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; justify-items: center; background: transparent; box-shadow: none; }
+          .ph-feat-item { min-width: 0; width: 100%; background: #ffffff; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-radius: 12px; }
+          .ph-feat-divider { display: none; }
+        }
+
+        @media (max-width: 480px) {
+          .ph-h1 { font-size: 1.5rem; }
+          .ph-feature-bar { grid-template-columns: 1fr; }
+          .ph-feat-item { justify-content: flex-start; }
         }
       `}</style>
 
@@ -308,23 +374,9 @@ export default function PlaygroundHero() {
               <span className="ph-badge-text">AI PLAYGROUND | BUILD YOUR FIRST AI AGENT</span>
             </div>
 
-            <h1 className="ph-h1" ref={headingRef}>
-              <span className="hero-word">
-                {"Build Your First".split('').map((char, i) => (
-                  <span key={'l1-' + i} className="ph-hero-char" style={{ display: 'inline-block', opacity: 0, transform: 'translateZ(-100px) scale(0.8)' }}>{char === ' ' ? '\u00A0' : char}</span>
-                ))}
-              </span>
-              <br />
-              <span className="purple hero-word">
-                {"AI AGENT ".split('').map((char, i) => (
-                  <span key={'l2-' + i} className="ph-hero-char" style={{ display: 'inline-block', opacity: 0, transform: 'translateZ(-100px) scale(0.8)' }}>{char === ' ' ? '\u00A0' : char}</span>
-                ))}
-              </span>
-              <span className="hero-word">
-                {"in Minutes".split('').map((char, i) => (
-                  <span key={'l3-' + i} className="ph-hero-char" style={{ display: 'inline-block', opacity: 0, transform: 'translateZ(-100px) scale(0.8)' }}>{char === ' ' ? '\u00A0' : char}</span>
-                ))}
-              </span>
+            <h1 className="ph-h1">
+              Build Your First<br />
+              <span className="purple">AI AGENT</span> in Minutes
             </h1>
 
             <p className="ph-subtitle">
@@ -336,9 +388,9 @@ export default function PlaygroundHero() {
             </p>
 
             <div className="ph-btns">
-              <button className="ph-btn ph-btn-primary">Try The Playground</button>
-              <button className="ph-btn ph-btn-demo">WATCH 2-MIN DEMO</button>
-              <button className="ph-btn ph-btn-schools">For Schools</button>
+              <div className="ph-btn-wrapper"><button className="ph-btn ph-btn-primary">Try The Playground</button></div>
+              <div className="ph-btn-wrapper"><button className="ph-btn ph-btn-demo">WATCH 2-MIN DEMO</button></div>
+              <div className="ph-btn-wrapper"><button className="ph-btn ph-btn-schools">For Schools</button></div>
             </div>
           </div>
 

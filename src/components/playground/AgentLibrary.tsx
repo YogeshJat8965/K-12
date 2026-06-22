@@ -15,26 +15,43 @@ import Icon10 from '../../assets/AI playground/Group 27648.svg';
 import Icon11 from '../../assets/AI playground/Group 27649.svg';
 import Icon12 from '../../assets/AI playground/Group 27650.svg';
 
+import { useSplitReveal } from '../../hooks/useSplitReveal';
+import { use3DTilt } from '../../hooks/usePremiumHover';
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function AgentLibrary() {
   const sectionRef = useRef<HTMLElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 
+  useSplitReveal('.al-h2', 'lines', 0.08, 0);
+  useSplitReveal('.al-subtitle-1', 'lines', 0.05, 0.1);
+  useSplitReveal('.al-subtitle-2', 'lines', 0.03, 0.2);
+  use3DTilt('.al-card', 10, 1.02);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (gridRef.current) {
-        const cards = gridRef.current.querySelectorAll('.al-card');
-        gsap.from(cards, {
-          y: 40,
-          opacity: 0,
-          duration: 0.8,
-          stagger: 0.05,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 80%',
-          }
+        gridRef.current.style.perspective = '1200px';
+        const cards = Array.from(gridRef.current.querySelectorAll('.al-card'));
+        
+        cards.forEach((card, index) => {
+          const row = Math.floor(index / 4);
+          const delay = row * 0.2 + (index % 4) * 0.08;
+          
+          gsap.from(card, {
+            rotationX: -20,
+            y: -30,
+            z: -300,
+            opacity: 0,
+            duration: 1,
+            ease: 'back.out(1.2)',
+            delay: delay,
+            scrollTrigger: {
+              trigger: gridRef.current,
+              start: 'top 80%',
+            }
+          });
         });
       }
     }, sectionRef);
@@ -156,6 +173,7 @@ export default function AgentLibrary() {
         }
 
         .al-card {
+          position: relative;
           background: #2E166A; /* Dark purple background for cards */
           border-radius: 16px;
           padding: 24px;
@@ -163,12 +181,39 @@ export default function AgentLibrary() {
           align-items: flex-start;
           gap: 16px;
           text-align: left;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
+          border: 1px solid rgba(255,255,255,0.05);
+          transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+          overflow: hidden;
+        }
+
+        .al-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
+          transform: skewX(-25deg);
+          transition: all 0.6s ease;
+          z-index: 1;
+          pointer-events: none;
         }
 
         .al-card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+          background: #3A1F85;
+          border-color: rgba(255,255,255,0.2);
+          box-shadow: 0 20px 40px rgba(108, 60, 247, 0.4);
+        }
+
+        .al-card:hover::before {
+          animation: shine 0.8s forwards;
+        }
+
+        @keyframes shine {
+          100% {
+            left: 200%;
+          }
         }
 
         .al-card-icon {
@@ -215,15 +260,25 @@ export default function AgentLibrary() {
         }
 
         @media (max-width: 1024px) {
-          .al-section { padding: 60px 32px; }
-          .al-grid { grid-template-columns: repeat(2, 1fr); }
+          .al-section { padding: 60px 20px; }
+          .al-grid { grid-template-columns: repeat(3, 1fr); }
+          .al-h2 { font-size: 2.2rem; }
+          .al-card-title { font-size: 12px; }
+          .al-card-desc { font-size: 12px; }
         }
 
-        @media (max-width: 600px) {
-          .al-section { padding: 60px 20px; }
-          .al-grid { grid-template-columns: 1fr; }
-          .al-card { padding: 16px; gap: 12px; }
+        @media (max-width: 768px) {
+          .al-section { padding: 60px 16px; }
+          .al-grid { grid-template-columns: repeat(2, 1fr); }
+          .al-h2 { font-size: 1.8rem; line-height: 1.2; }
+          .al-card { flex-direction: column; align-items: flex-start; gap: 12px; padding: 20px; }
           .al-card-icon { width: 56px; height: 56px; }
+        }
+
+        @media (max-width: 480px) {
+          .al-h2 { font-size: 1.5rem; }
+          .al-grid { grid-template-columns: 1fr; }
+          .al-card-icon { width: 48px; height: 48px; }
         }
       `}</style>
 
@@ -244,7 +299,7 @@ export default function AgentLibrary() {
           <div className="al-grid" ref={gridRef}>
             {agents.map((agent, idx) => (
               <div key={idx} className="al-card">
-                <div className="al-card-icon">
+                <div className="al-card-icon tilt-pop">
                   <img src={agent.icon} alt={agent.title} />
                 </div>
                 <div className="al-card-content">

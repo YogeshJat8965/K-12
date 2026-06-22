@@ -4,6 +4,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import MaskGroup38 from '../../assets/AI playground/Mask Group 38.png';
 
+import { useSplitReveal } from '../../hooks/useSplitReveal';
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function PlayToMastery() {
@@ -11,20 +13,13 @@ export default function PlayToMastery() {
   const imageRef = useRef<HTMLDivElement>(null);
   const textRefs = useRef<(HTMLDivElement | null)[]>([]);
 
+  useSplitReveal('.ptm-title', 'lines', 0.08, 0);
+  useSplitReveal('.ptm-subtitle', 'lines', 0.05, 0.1);
+  useSplitReveal('.ptm-desc', 'lines', 0.03, 0.2);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animate top text
-      gsap.from('.ptm-header > *', {
-        y: 30,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 75%',
-        }
-      });
+      // Removed redundant header fade because useSplitReveal handles it
 
       // Animate image
       if (imageRef.current) {

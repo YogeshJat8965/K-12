@@ -4,22 +4,41 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import BgImage from '../../assets/AI playground/ChatGPT Image Jun 22, 2026, 02_18_18 AM.png';
 
+import { useSplitReveal } from '../../hooks/useSplitReveal';
+import { useMagneticRipple } from '../../hooks/usePremiumHover';
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function CtaBanner() {
   const containerRef = useRef<HTMLDivElement>(null);
 
+  useSplitReveal('.cta-title', 'words', 0.05, 0);
+  useSplitReveal('.cta-subtitle', 'lines', 0.03, 0.1);
+  useMagneticRipple('.cta-btn', 0.5);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.cta-content > *', {
-        y: 30,
+      gsap.from(containerRef.current, {
+        scale: 0.95,
         opacity: 0,
-        duration: 0.8,
-        stagger: 0.15,
+        duration: 1.2,
         ease: 'power3.out',
         scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 80%',
+          trigger: '.cta-section',
+          start: 'top 85%',
+        }
+      });
+      
+      gsap.from('.cta-btn-wrapper', {
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: 'back.out(1.2)',
+        delay: 0.3,
+        scrollTrigger: {
+          trigger: '.cta-section',
+          start: 'top 85%',
         }
       });
     }, containerRef);
@@ -145,9 +164,9 @@ export default function CtaBanner() {
             </p>
 
             <div className="cta-buttons">
-              <button className="cta-btn">START BUILDING FREE</button>
-              <button className="cta-btn">WATCH THE 2-MIN DEMO</button>
-              <button className="cta-btn">BOOK A SCHOOL DEMO</button>
+              <div className="cta-btn-wrapper"><button className="cta-btn">START BUILDING FREE</button></div>
+              <div className="cta-btn-wrapper"><button className="cta-btn">WATCH THE 2-MIN DEMO</button></div>
+              <div className="cta-btn-wrapper"><button className="cta-btn">BOOK A SCHOOL DEMO</button></div>
             </div>
 
             <p className="cta-footer">

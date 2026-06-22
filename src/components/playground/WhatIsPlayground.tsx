@@ -7,23 +7,62 @@ import Icon1 from '../../assets/AI playground/Group 27533.svg';
 import Icon2 from '../../assets/AI playground/Group 27633.svg';
 import Icon3 from '../../assets/AI playground/Group 27634.svg';
 
+import { useSplitReveal } from '../../hooks/useSplitReveal';
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function WhatIsPlayground() {
   const sectionRef = useRef<HTMLElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
+  useSplitReveal('.wip-h2', 'lines', 0.07, 0);
+  useSplitReveal('.wip-p', 'lines', 0.03, 0.2);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (containerRef.current) {
-        gsap.from(containerRef.current, {
-          y: 40,
+        // Parent container style updates
+        containerRef.current.style.perspective = '1400px';
+
+        // Image from left
+        const img = containerRef.current.querySelector('.wip-left');
+        gsap.from(img, {
+          x: -60,
+          rotateY: -20,
           opacity: 0,
-          duration: 0.8,
+          duration: 1.2,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: sectionRef.current,
             start: 'top 85%',
+          }
+        });
+
+        // Text content from right
+        const rightContent = containerRef.current.querySelector('.wip-right');
+        gsap.from(rightContent, {
+          x: 60,
+          rotateY: 20,
+          opacity: 0,
+          duration: 1.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 85%',
+          }
+        });
+
+        // Cards pop in from below
+        const cards = containerRef.current.querySelectorAll('.wip-card');
+        gsap.from(cards, {
+          scaleY: 0,
+          transformOrigin: 'bottom center',
+          duration: 0.8,
+          stagger: 0.12,
+          ease: 'elastic.out(1, 0.5)',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 70%',
           }
         });
       }
@@ -68,7 +107,14 @@ export default function WhatIsPlayground() {
           height: 100%;
           object-fit: contain;
           object-position: bottom center;
-          margin-bottom: 20px; /* Moved image slightly up */
+          margin-bottom: 20px;
+          transition: transform 0.4s ease, filter 0.4s ease;
+          will-change: transform;
+        }
+        
+        .wip-left img:hover {
+          transform: translateY(-6px);
+          filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15)) sepia(0.15) saturate(1.1);
         }
 
         .wip-right {
@@ -120,12 +166,14 @@ export default function WhatIsPlayground() {
           flex: 1 1 0; /* Distribute space evenly */
           min-width: 0; /* Prevents overflow from pushing cards */
           box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
+          border: 1px solid transparent;
+          transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
         }
 
         .wip-card:hover {
           transform: translateY(-3px);
-          box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+          box-shadow: 0 8px 30px rgba(108, 60, 247, 0.12);
+          border-color: rgba(108, 60, 247, 0.4);
         }
 
         .wip-card-icon {
@@ -135,6 +183,11 @@ export default function WhatIsPlayground() {
           display: flex;
           align-items: center;
           justify-content: center;
+          transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .wip-card:hover .wip-card-icon {
+          transform: scale(1.15) rotate(15deg);
         }
 
         .wip-card-icon img {
@@ -147,6 +200,11 @@ export default function WhatIsPlayground() {
           display: flex;
           flex-direction: column;
           overflow: hidden; /* For tight spaces */
+          transition: transform 0.3s ease;
+        }
+        
+        .wip-card:hover .wip-card-text {
+          transform: translateY(-2px);
         }
 
         .wip-card-label {
@@ -172,27 +230,33 @@ export default function WhatIsPlayground() {
         /* ─── RESPONSIVE ─── */
         @media (max-width: 1200px) {
           .wip-section { padding: 40px 48px; }
-          .wip-left { flex: 0 0 38%; max-width: 38%; }
-          .wip-right { flex: 0 0 62%; max-width: 62%; padding: 40px 40px 40px 20px; }
           .wip-card { flex-direction: column; text-align: center; align-items: center; padding: 16px 12px; gap: 8px; }
           .wip-card-text { align-items: center; }
         }
 
-        @media (max-width: 900px) {
-          .wip-section { padding: 40px 32px; }
+        @media (max-width: 1024px) {
+          .wip-section { padding: 40px 20px; }
+          .wip-left { flex: 0 0 40%; max-width: 40%; padding-top: 20px; }
+          .wip-left img { width: 100%; height: auto; object-fit: cover; }
+          .wip-right { flex: 0 0 60%; max-width: 60%; padding: 40px 20px; }
+          .wip-h2 { font-size: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+          .wip-section { padding: 40px 16px; }
           .wip-container { flex-direction: column; align-items: center; }
-          .wip-left { flex: 1; max-width: 100%; width: 100%; padding-top: 40px; }
-          .wip-left img { width: 70%; height: auto; }
-          .wip-right { flex: 1; max-width: 100%; width: 100%; padding: 40px 32px; }
-          .wip-features { flex-wrap: wrap; }
-          .wip-card { flex-direction: row; text-align: left; align-items: center; min-width: 100%; }
+          .wip-left { flex: 1; max-width: 80%; width: 100%; padding-top: 0; }
+          .wip-right { flex: 1; max-width: 100%; width: 100%; padding: 32px 16px; }
+          .wip-h2 { font-size: 1.8rem; line-height: 1.2; text-align: center; }
+          .wip-p { text-align: center; }
+          .wip-features { flex-direction: column; gap: 12px; }
+          .wip-card { flex-direction: row; text-align: left; align-items: center; width: 100%; }
           .wip-card-text { align-items: flex-start; }
         }
 
-        @media (max-width: 600px) {
-          .wip-section { padding: 40px 20px; }
-          .wip-right { padding: 32px 20px; }
-          .wip-left img { width: 90%; }
+        @media (max-width: 480px) {
+          .wip-left { max-width: 100%; }
+          .wip-h2 { font-size: 1.5rem; }
         }
       `}</style>
 

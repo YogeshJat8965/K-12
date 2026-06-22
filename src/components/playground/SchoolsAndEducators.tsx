@@ -7,11 +7,18 @@ import Icon2 from '../../assets/AI playground/Group 27655.svg';
 import Icon3 from '../../assets/AI playground/Group 27656.svg';
 import Icon4 from '../../assets/AI playground/Group 27657.svg';
 
+import { useSplitReveal } from '../../hooks/useSplitReveal';
+import { use3DTilt } from '../../hooks/usePremiumHover';
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function SchoolsAndEducators() {
   const sectionRef = useRef<HTMLElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  useSplitReveal('.sae-title', 'lines', 0.05, 0);
+  useSplitReveal('.sae-subtitle', 'lines', 0.03, 0.1);
+  use3DTilt('.sae-card', 7);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -27,17 +34,29 @@ export default function SchoolsAndEducators() {
         }
       });
 
-      gsap.from(cardsRef.current, {
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: '.sae-grid',
-          start: 'top 80%',
-        }
-      });
+      if (cardsRef.current.length > 0) {
+        const grid = document.querySelector('.sae-grid') as HTMLElement;
+        if (grid) grid.style.perspective = '1200px';
+
+        cardsRef.current.forEach((card, index) => {
+          if (!card) return;
+          // Top-left (0) and bottom-right (3) enter from -20deg
+          // Top-right (1) and bottom-left (2) enter from 20deg
+          const rotY = (index === 0 || index === 3) ? -20 : 20;
+
+          gsap.from(card, {
+            rotationY: rotY,
+            y: 60,
+            opacity: 0,
+            duration: 1.2,
+            ease: 'back.out(1.2)',
+            scrollTrigger: {
+              trigger: '.sae-grid',
+              start: 'top 80%',
+            }
+          });
+        });
+      }
     }, sectionRef);
 
     return () => ctx.revert();
@@ -128,6 +147,12 @@ export default function SchoolsAndEducators() {
           gap: 40px;
           position: relative;
           overflow: hidden; /* For the bottom line to be contained if necessary, but actually we want it flush */
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          background-color: transparent; /* Set via inline style, but we'll override in hover */
+        }
+
+        .sae-card:hover {
+          box-shadow: 0 16px 36px rgba(0,0,0,0.06);
         }
 
         .sae-card::after {
@@ -135,9 +160,17 @@ export default function SchoolsAndEducators() {
           position: absolute;
           bottom: 0;
           left: 5%;
-          width: 90%;
+          width: 20%; /* Partial width initially */
           height: 6px;
           border-radius: 6px 6px 0 0;
+          transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.4s ease;
+        }
+
+        .sae-card:hover::after {
+          width: 100%;
+          left: 0;
+          border-radius: 0;
+          filter: brightness(1.2); /* Brightens on hover */
         }
 
         .sae-icon {
@@ -147,6 +180,19 @@ export default function SchoolsAndEducators() {
           background-size: contain !important;
           background-position: center !important;
           background-repeat: no-repeat !important;
+          transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .sae-card:hover .sae-icon {
+          transform: scale(1.1) translateZ(25px);
+          animation: wiggleIcon 0.5s ease-in-out;
+          filter: brightness(0.95); /* deepens slightly */
+        }
+
+        @keyframes wiggleIcon {
+          0%, 100% { transform: scale(1.1) rotate(0deg) translateZ(25px); }
+          33% { transform: scale(1.1) rotate(-8deg) translateZ(25px); }
+          66% { transform: scale(1.1) rotate(8deg) translateZ(25px); }
         }
 
         .sae-content {
@@ -158,6 +204,11 @@ export default function SchoolsAndEducators() {
           font-weight: 700;
           color: #1A1A2E;
           margin: 0 0 16px;
+          transition: letter-spacing 0.3s ease;
+        }
+
+        .sae-card:hover .sae-card-title {
+          letter-spacing: 0.5px; /* Subtle letter-spacing expansion */
         }
 
         .sae-card-desc {
@@ -215,7 +266,7 @@ export default function SchoolsAndEducators() {
                     background-color: ${card.lineColor};
                   }
                 `}</style>
-                <div className="sae-icon" style={{ background: `transparent url('${card.icon}') 0% 0% no-repeat padding-box` }}></div>
+                <div className="sae-icon tilt-pop" style={{ background: `transparent url('${card.icon}') 0% 0% no-repeat padding-box` }}></div>
                 <div className="sae-content">
                   <h4 className="sae-card-title">{card.title}</h4>
                   <p className="sae-card-desc">{card.desc}</p>

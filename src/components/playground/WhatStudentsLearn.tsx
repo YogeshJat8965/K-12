@@ -2,25 +2,69 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+import { useSplitReveal } from '../../hooks/useSplitReveal';
+import { use3DTilt } from '../../hooks/usePremiumHover';
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function WhatStudentsLearn() {
   const sectionRef = useRef<HTMLElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
 
+  useSplitReveal('.wsl-h2', 'lines', 0.08, 0);
+  use3DTilt('.wsl-card', 7);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (cardsRef.current) {
-        const cards = cardsRef.current.querySelectorAll('.wsl-card');
-        gsap.from(cards, {
-          y: 40,
-          opacity: 0,
-          duration: 0.8,
-          stagger: 0.1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 80%',
+        cardsRef.current.style.perspective = '1400px';
+        const cards = Array.from(cardsRef.current.querySelectorAll('.wsl-card'));
+        
+        cards.forEach((card, i) => {
+          const isEvenCol = (i % 3) >= 1.5; // cols are 0, 1, 2. If 1 or 2... wait, odd vs even column.
+          // 3x2 grid. Col 0 (left), Col 1 (middle), Col 2 (right).
+          // Let's say odd-column (col 0, col 2) vs even-column (col 1).
+          // Actually prompt: "odd-column cards enter from rotateY(-25deg) translateX(-30px), even-column from rotateY(25deg) translateX(30px)"
+          const col = i % 3;
+          const isOddCol = col === 0 || col === 2; // 1st and 3rd visual columns
+          const rotY = isOddCol ? -25 : 25;
+          const tx = isOddCol ? -30 : 30;
+          const row = Math.floor(i / 3);
+          const delay = row * 0.1;
+
+          gsap.from(card, {
+            rotationY: rotY,
+            x: tx,
+            y: 40,
+            opacity: 0,
+            duration: 1.2,
+            delay: delay,
+            ease: 'back.out(1.2)',
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: 'top 80%',
+            }
+          });
+
+          // Number counter effect
+          const numberEl = card.querySelector('.wsl-number');
+          if (numberEl) {
+            const targetVal = i + 1;
+            const obj = { val: 0 };
+            gsap.to(obj, {
+              val: targetVal,
+              duration: 1,
+              delay: delay + 0.2,
+              ease: 'power2.out',
+              scrollTrigger: {
+                trigger: sectionRef.current,
+                start: 'top 80%',
+              },
+              onUpdate: () => {
+                const num = Math.floor(obj.val);
+                numberEl.textContent = num < 10 ? `0${num}` : num.toString();
+              }
+            });
           }
         });
       }
@@ -115,12 +159,29 @@ export default function WhatStudentsLearn() {
           align-items: flex-start;
           text-align: left;
           min-height: 200px; /* Decreased height */
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
+          border: 1px solid #EAE3FE; /* Light border */
+          transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+          overflow: hidden;
+        }
+
+        .wsl-card::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 2px;
+          width: 0%;
+          background-color: #6021DD;
+          transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .wsl-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+          border-color: #C1B4DF; /* Darkens border on hover */
+          box-shadow: 0 16px 36px rgba(108, 60, 247, 0.12);
+        }
+
+        .wsl-card:hover::after {
+          width: 100%;
         }
 
         .wsl-number {
@@ -128,6 +189,13 @@ export default function WhatStudentsLearn() {
           font-weight: 600;
           margin-bottom: 12px;
           color: #6021DD; /* 2nd card's purple text color for all numbers */
+          transition: transform 0.3s ease, filter 0.3s ease;
+          display: inline-block;
+        }
+
+        .wsl-card:hover .wsl-number {
+          transform: scale(1.15);
+          filter: brightness(1.1);
         }
 
         .wsl-card-title {
@@ -136,6 +204,23 @@ export default function WhatStudentsLearn() {
           color: #1A1A2E;
           margin: 0 0 16px;
           letter-spacing: -0.5px;
+          position: relative;
+          display: inline-block;
+        }
+
+        .wsl-card-title::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          width: 0%;
+          height: 2px;
+          background-color: #1A1A2E;
+          transition: width 0.4s ease;
+        }
+
+        .wsl-card:hover .wsl-card-title::after {
+          width: 100%;
         }
 
         .wsl-card-desc {
@@ -148,14 +233,23 @@ export default function WhatStudentsLearn() {
 
         /* ─── RESPONSIVE ─── */
         @media (max-width: 1024px) {
-          .wsl-section { padding: 80px 32px; }
-          .wsl-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-          .wsl-card { padding: 24px; min-height: auto; }
+          .wsl-section { padding: 80px 20px; }
+          .wsl-card { padding: 20px; min-height: auto; }
+          .wsl-card-title { font-size: 20px; }
+          .wsl-card-desc { font-size: 14px; }
+          .wsl-h2 { font-size: 2.2rem; }
         }
 
-        @media (max-width: 600px) {
-          .wsl-section { padding: 60px 20px; }
+        @media (max-width: 768px) {
+          .wsl-section { padding: 60px 16px; }
+          .wsl-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+          .wsl-h2 { font-size: 1.8rem; line-height: 1.2; }
+          .wsl-subtitle { font-size: 16px; margin-bottom: 40px; }
+        }
+
+        @media (max-width: 480px) {
           .wsl-grid { grid-template-columns: 1fr; }
+          .wsl-h2 { font-size: 1.5rem; }
         }
       `}</style>
 

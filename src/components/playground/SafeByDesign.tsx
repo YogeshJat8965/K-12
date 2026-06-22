@@ -5,6 +5,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import DashboardImg from '../../assets/AI playground/Image 24.png';
 import TickIcon from '../../assets/AI playground/Group 27594.svg';
 
+import { useSplitReveal } from '../../hooks/useSplitReveal';
+import { useMagneticPull, use3DTilt } from '../../hooks/usePremiumHover';
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function SafeByDesign() {
@@ -12,16 +15,20 @@ export default function SafeByDesign() {
   const rightRef = useRef<HTMLDivElement>(null);
   const bannerRef = useRef<HTMLDivElement>(null);
 
+  useSplitReveal('.sbd-h2', 'lines', 0.08, 0);
+  useSplitReveal('.sbd-subtitle', 'lines', 0.03, 0.2);
+  use3DTilt('.sbd-image-wrapper', 5);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animate the list items
+      // Animate the list items from the right
       if (rightRef.current) {
         const items = rightRef.current.querySelectorAll('.sbd-item');
         gsap.from(items, {
-          x: 50,
+          x: 40,
           opacity: 0,
-          duration: 0.8,
-          stagger: 0.15,
+          duration: 1,
+          stagger: 0.12,
           ease: 'power3.out',
           scrollTrigger: {
             trigger: sectionRef.current,
@@ -30,13 +37,42 @@ export default function SafeByDesign() {
         });
       }
 
+      // Animate Image
+      const imgWrapper = sectionRef.current?.querySelector('.sbd-image-wrapper');
+      if (imgWrapper) {
+        gsap.from(imgWrapper, {
+          x: -60,
+          rotationY: -20,
+          opacity: 0,
+          duration: 1.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 80%',
+          }
+        });
+
+        // Parallax effect on image
+        gsap.to(imgWrapper, {
+          y: -50, // Parallax movement
+          ease: 'none',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true,
+          }
+        });
+      }
+
       // Animate banner
       if (bannerRef.current) {
         gsap.from(bannerRef.current, {
-          y: 40,
+          y: 60,
+          rotationX: 8,
           opacity: 0,
-          duration: 0.8,
-          ease: 'power3.out',
+          duration: 1,
+          ease: 'back.out(1.2)',
           scrollTrigger: {
             trigger: bannerRef.current,
             start: 'top 85%',
@@ -138,6 +174,17 @@ export default function SafeByDesign() {
           display: flex;
           gap: 20px;
           align-items: flex-start;
+          margin: -16px;
+          padding: 16px;
+          border-radius: 16px;
+          border: 1px solid transparent;
+          transition: background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+        
+        .sbd-item:hover {
+          background: #F4F1FE; /* Very soft lavender highlight */
+          box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+          border-color: rgba(108, 60, 247, 0.1);
         }
 
         .sbd-icon {
@@ -147,6 +194,18 @@ export default function SafeByDesign() {
           background: transparent url('${TickIcon}') center center no-repeat padding-box;
           background-size: contain;
           margin-top: 2px;
+          transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .sbd-item:hover .sbd-icon {
+          transform: scale(0.9);
+          animation: reCheck 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        @keyframes reCheck {
+          0% { transform: scale(1) rotate(0deg); }
+          50% { transform: scale(0.8) rotate(-10deg); }
+          100% { transform: scale(1.1) rotate(5deg); }
         }
 
         .sbd-item-content {
@@ -159,6 +218,11 @@ export default function SafeByDesign() {
           font-weight: 700;
           color: #1A1A2E;
           margin: 0 0 8px;
+          transition: transform 0.3s ease;
+        }
+
+        .sbd-item:hover .sbd-item-title {
+          transform: translateX(-3px);
         }
 
         .sbd-item-desc {
@@ -169,6 +233,7 @@ export default function SafeByDesign() {
         }
 
         .sbd-banner {
+          position: relative;
           background: #2D68FF; /* Vibrant blue matching screenshot */
           border-radius: 16px;
           padding: 32px 48px; /* Reduced vertical padding to decrease height */
@@ -176,22 +241,45 @@ export default function SafeByDesign() {
           color: #FFFFFF;
           max-width: 850px; /* Reduced width */
           margin: 0 auto;
+          overflow: hidden;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .sbd-banner .sbd-banner-title {
-          font-size: 26px;
-          font-weight: 700;
-          margin: 0 0 16px;
-          color: #FFFFFF !important;
+        .sbd-banner:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 16px 36px rgba(45, 104, 255, 0.3);
         }
 
-        .sbd-banner .sbd-banner-desc {
-          font-size: 20px;
-          line-height: 1.6;
-          margin: 0 auto;
-          max-width: 800px; /* Adjusted to fit the narrower card */
-          font-weight: 400;
-          color: #FFFFFF !important;
+        .sbd-banner::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+          transform: skewX(-25deg);
+          transition: all 0.6s ease;
+          z-index: 1;
+          pointer-events: none;
+        }
+
+        .sbd-banner:hover::before {
+          animation: bannerShine 0.8s forwards;
+        }
+
+        @keyframes bannerShine {
+          100% { left: 200%; }
+        }
+
+        .sbd-banner-content {
+          position: relative;
+          z-index: 2;
+          transition: transform 0.3s ease;
+        }
+
+        .sbd-banner:hover .sbd-banner-content {
+          transform: translateY(-2px);
         }
 
         /* ─── RESPONSIVE ─── */
@@ -203,11 +291,15 @@ export default function SafeByDesign() {
 
         @media (max-width: 768px) {
           .sbd-section { padding: 60px 24px; }
-          .sbd-h2 { font-size: 32px; }
+          .sbd-h2 { font-size: 32px; white-space: normal; }
           .sbd-image-wrapper { height: 60vw; }
           .sbd-banner { padding: 32px 24px; }
           .sbd-banner-title { font-size: 20px; }
           .sbd-banner-desc { font-size: 16px; }
+        }
+        @media (max-width: 480px) {
+          .sbd-h2 { font-size: 28px; white-space: normal; }
+          .sbd-left-text { padding-left: 0; }
         }
       `}</style>
 
@@ -242,11 +334,13 @@ export default function SafeByDesign() {
           </div>
 
           <div className="sbd-banner" ref={bannerRef}>
-            <h3 className="sbd-banner-title">Our Promise to Parents</h3>
-            <p className="sbd-banner-desc">
-              If our Playground wouldn't feel right for our own children, it doesn't belong on
-              your child's screen. Every design decision is made with that filter first.
-            </p>
+            <div className="sbd-banner-content">
+              <h3 className="sbd-banner-title">Our Promise to Parents</h3>
+              <p className="sbd-banner-desc">
+                If our Playground wouldn't feel right for our own children, it doesn't belong on
+                your child's screen. Every design decision is made with that filter first.
+              </p>
+            </div>
           </div>
 
         </div>

@@ -4,19 +4,37 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import RobotImg from '../../assets/AI playground/Mask Group 41.png';
 
+import { use3DTilt } from '../../hooks/usePremiumHover';
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function AgentBuilderBanner() {
   const bannerRef = useRef<HTMLDivElement>(null);
 
+  use3DTilt('.abb-container', 5);
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (bannerRef.current) {
         gsap.from(bannerRef.current, {
-          y: 40,
+          y: 60,
+          rotateX: 10,
           opacity: 0,
-          duration: 0.8,
+          duration: 1.2,
           ease: 'power3.out',
+          scrollTrigger: {
+            trigger: bannerRef.current,
+            start: 'top 85%',
+          }
+        });
+
+        const robot = bannerRef.current.querySelector('.abb-image-wrapper');
+        gsap.from(robot, {
+          x: -60,
+          opacity: 0,
+          duration: 1.2,
+          delay: 0.3,
+          ease: 'bounce.out',
           scrollTrigger: {
             trigger: bannerRef.current,
             start: 'top 85%',
@@ -74,6 +92,15 @@ export default function AgentBuilderBanner() {
           opacity: 1;
         }
 
+        .abb-container:hover .abb-image-wrapper {
+          animation: robotBob 1.5s infinite alternate ease-in-out;
+        }
+
+        @keyframes robotBob {
+          from { transform: translateY(-50%) translateY(0); }
+          to { transform: translateY(-50%) translateY(-8px); }
+        }
+
         .abb-right {
           flex: 1;
           padding: 40px 60px 40px 40px; /* Added left padding to shift text right */
@@ -103,26 +130,33 @@ export default function AgentBuilderBanner() {
 
         /* ─── RESPONSIVE ─── */
         @media (max-width: 1024px) {
-          .abb-section { padding: 40px 32px; }
-          .abb-container { flex-direction: column; text-align: center; padding-top: 180px; min-height: auto; }
-          .abb-left { width: 100%; height: auto; position: static; flex: none; display: block; }
-          .abb-image-wrapper { 
-            position: absolute;
-            top: -60px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 320px;
-            height: 220px;
-            background-position: center;
-          }
-          .abb-right { padding: 0 32px 40px; }
+          .abb-section { padding: 40px 20px; }
+          .abb-left { flex: 0 0 30%; max-width: 30%; }
+          .abb-image-wrapper { width: 100%; height: 200px; left: 0; background-position: left center; }
+          .abb-right { padding: 40px 20px 40px 0; }
+          .abb-h3 { font-size: 22px; }
         }
 
-        @media (max-width: 600px) {
-          .abb-section { padding: 40px 20px; }
-          .abb-image-wrapper { width: 280px; height: 190px; top: -40px; }
-          .abb-container { padding-top: 160px; }
-          .abb-right { padding: 0 20px 32px; }
+        @media (max-width: 768px) {
+          .abb-section { padding: 40px 16px; }
+          .abb-container { flex-direction: column; text-align: center; padding: 40px 24px; min-height: auto; gap: 24px; }
+          .abb-left { width: 100%; height: auto; flex: none; display: flex; justify-content: center; }
+          .abb-image-wrapper { 
+            position: relative;
+            transform: none;
+            left: 0;
+            top: 0;
+            width: 100%;
+            max-width: 160px;
+            height: 160px;
+            background-position: center;
+          }
+          .abb-right { padding: 0; }
+        }
+
+        @media (max-width: 480px) {
+          .abb-h3 { font-size: 1.2rem; }
+          .abb-p { font-size: 14px; }
         }
       `}</style>
 

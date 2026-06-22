@@ -1,4 +1,7 @@
 import { useEffect, useState } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Lenis from '@studio-freight/lenis';
 import Navbar from './components/Navbar';
 import { useScrollReveal } from './hooks/useScrollReveal';
 import PlaygroundHero from './components/playground/PlaygroundHero';
@@ -12,12 +15,32 @@ import SchoolsAndEducators from './components/playground/SchoolsAndEducators';
 import PlayToMastery from './components/playground/PlayToMastery';
 import CtaBanner from './components/playground/CtaBanner';
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function AiPlaygroundApp() {
   useScrollReveal();
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     document.title = 'AI Playground | Skillzza';
+
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
+    });
+
+    lenis.on('scroll', ScrollTrigger.update);
+
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
 
     const handleScroll = () => {
       const winScroll = document.documentElement.scrollTop;
@@ -26,7 +49,11 @@ export default function AiPlaygroundApp() {
       setScrollProgress(scrolled);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      lenis.destroy();
+    };
   }, []);
 
   return (
