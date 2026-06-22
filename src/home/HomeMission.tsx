@@ -202,12 +202,22 @@ export default function HomeMission() {
           color: #6C3CF7;
         }
 
-        @media (max-width: 900px) {
-          .hm-inner { flex-direction: column; }
-        }
-        @media (max-width: 600px) {
-          .hm-left, .hm-right { padding: 32px 24px 28px; }
-          .hm-robot { width: 120px; }
+        @media (max-width: 1024px) {
+          .hm-inner {
+            flex-direction: column !important;
+          }
+          .hm-left, .hm-right {
+            width: 100% !important;
+            padding: 32px 24px 28px !important;
+          }
+          .hm-left *, .hm-right * {
+            word-break: normal !important;
+            overflow-wrap: normal !important;
+            white-space: normal !important;
+          }
+          .hm-robot {
+            width: 140px !important;
+          }
         }
       `}</style>
 

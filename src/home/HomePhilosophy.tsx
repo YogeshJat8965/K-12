@@ -240,6 +240,16 @@ export default function HomePhilosophy() {
           .hp-title {
             font-size: 36px;
           }
+          .hp-item {
+            text-align: left !important;
+            align-items: flex-start !important;
+          }
+          .hp-text-wrap {
+            text-align: left !important;
+          }
+          .hp-item-title, .hp-item-desc {
+            text-align: left !important;
+          }
         }
       `}</style>
 

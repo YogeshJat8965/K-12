@@ -18,8 +18,10 @@ export default function CtaBanner() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Banner entrance
       gsap.from(containerRef.current, {
         scale: 0.95,
+        rotationX: 6,
         opacity: 0,
         duration: 1.2,
         ease: 'power3.out',
@@ -29,13 +31,43 @@ export default function CtaBanner() {
         }
       });
       
+      // Title extra glow for the yellow line (if it has a yellow line)
+      const yellowSpan = document.querySelector('.cta-title span');
+      if (yellowSpan) {
+        gsap.to(yellowSpan, {
+          textShadow: "0 0 20px rgba(255, 193, 7, 0.8), 0 0 40px rgba(255, 193, 7, 0.4)",
+          duration: 0.3,
+          yoyo: true,
+          repeat: 1,
+          delay: 1.2, // after entrance
+          scrollTrigger: {
+            trigger: '.cta-section',
+            start: 'top 85%',
+          }
+        });
+      }
+
+      // Buttons stagger
       gsap.from('.cta-btn-wrapper', {
-        y: 40,
+        y: 30,
         opacity: 0,
         duration: 0.8,
         stagger: 0.1,
         ease: 'back.out(1.2)',
-        delay: 0.3,
+        delay: 0.4,
+        scrollTrigger: {
+          trigger: '.cta-section',
+          start: 'top 85%',
+        }
+      });
+
+      // Footer fade in
+      gsap.from('.cta-footer', {
+        opacity: 0,
+        y: 10,
+        duration: 0.8,
+        delay: 0.8,
+        ease: 'power2.out',
         scrollTrigger: {
           trigger: '.cta-section',
           start: 'top 85%',
@@ -132,11 +164,35 @@ export default function CtaBanner() {
           letter-spacing: 0.5px;
         }
 
+        .cta-link {
+          position: relative;
+          display: inline-block;
+          color: #FFFFFF;
+          text-decoration: none;
+        }
+
+        .cta-link::after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 1px;
+          bottom: -2px;
+          left: 0;
+          background-color: #FFFFFF;
+          transition: width 0.3s ease;
+        }
+
+        .cta-link:hover::after {
+          width: 100%;
+        }
+
         @media (max-width: 768px) {
           .cta-container {
             padding: 60px 24px 40px 24px;
             border-radius: 16px;
-            background-position: center left; /* Keep robot somewhat visible */
+            background: linear-gradient(rgba(9, 2, 59, 0.65), rgba(9, 2, 59, 0.65)), url('${BgImage}') center left no-repeat;
+            background-color: #09023B;
+            background-size: cover;
           }
           .cta-buttons {
             flex-direction: column;
@@ -170,7 +226,7 @@ export default function CtaBanner() {
             </div>
 
             <p className="cta-footer">
-              playground@skillzza.com &nbsp;|&nbsp; www.skillzza.com/playground
+              <span className="cta-link">playground@skillzza.com</span> &nbsp;|&nbsp; <span className="cta-link">www.skillzza.com/playground</span>
             </p>
 
           </div>

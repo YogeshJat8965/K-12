@@ -1063,7 +1063,7 @@ export default function SkillStudioApp() {
         </div>
 
         {/* Marquee Container */}
-        <div className="relative w-full overflow-hidden flex bg-white pb-6">
+        <div className="relative w-full overflow-hidden bg-white pb-6">
           <style>
             {`
               @keyframes marquee {
@@ -1083,58 +1083,28 @@ export default function SkillStudioApp() {
             {/* We render multiple identical blocks so it loops seamlessly. 50% translation requires at least 2 identical halves. Let's make 2 huge identical halves. */}
 
             {[1, 2].map((half) => (
-              <div key={half} className="flex items-center gap-16 px-8 md:gap-24 md:px-12">
+              <div key={half} className="flex items-center gap-16 px-8 md:gap-24 md:px-12 shrink-0">
 
-                {/* Dummy Logo 1 */}
-                <div className="flex items-center gap-3 opacity-60 hover:opacity-100 transition-all cursor-pointer grayscale hover:grayscale-0">
-                  <div className="w-10 h-10 bg-green-700 rounded-[8px] flex items-center justify-center text-white font-bold text-xl shrink-0 shadow-sm">D</div>
-                  <div className="flex flex-col">
-                    <span className="font-bold text-[20px] leading-none text-green-800 mb-0.5 tracking-tight">DPS</span>
-                    <span className="text-[9.5px] text-gray-500 uppercase font-bold tracking-wider">Delhi Public School</span>
+                {[
+                  { name: "ALEXANDER PUBLIC SCHOOL", img: "1.png" },
+                  { name: "THE GURUKULAM INTERNATIONAL PUBLIC SCHOOL", img: "2.png" },
+                  { name: "SWAMI VIVEKANANDA RAJKIYA MODEL SCHOOL", img: "3.png" },
+                  { name: "ST. SOLDIER PUBLIC SCHOOL", img: "4.png" },
+                  { name: "ST. JOSEPH'S ENGLISH MEDIUM SCHOOL", img: "5.png" },
+                  { name: "SARASWATI SHISHU MANDIR", img: "6.png" },
+                  { name: "SANFORT WORLD SCHOOL", img: "7.png" }
+                ].map((partner, index) => (
+                  <div key={index} className="flex items-center gap-4 shrink-0 cursor-pointer transition-transform hover:scale-105">
+                    <img
+                      src={`https://cognifyai.skillzza.com/assets/img/part/${partner.img}`}
+                      alt={partner.name}
+                      className="h-14 md:h-16 w-auto object-contain shrink-0"
+                    />
+                    <span className="font-bold text-[13px] md:text-[15px] leading-tight text-[#1A1A2E] tracking-tight max-w-[180px] whitespace-normal uppercase">
+                      {partner.name}
+                    </span>
                   </div>
-                </div>
-
-                {/* Dummy Logo 2 */}
-                <div className="flex items-center gap-3 opacity-60 hover:opacity-100 transition-all cursor-pointer grayscale hover:grayscale-0">
-                  <div className="w-10 h-10 bg-purple-700 rounded-[8px] flex items-center justify-center text-white font-bold text-xl shrink-0 shadow-sm">P</div>
-                  <div className="flex flex-col">
-                    <span className="font-bold text-[20px] leading-none text-purple-800 mb-0.5 tracking-tight">PODAR</span>
-                    <span className="text-[9.5px] text-gray-500 uppercase font-bold tracking-wider">International School</span>
-                  </div>
-                </div>
-
-                {/* Dummy Logo 3 */}
-                <div className="flex items-center gap-3 opacity-60 hover:opacity-100 transition-all cursor-pointer grayscale hover:grayscale-0">
-                  <div className="w-10 h-10 bg-red-800 rounded-full flex items-center justify-center text-white font-bold text-xl shrink-0 shadow-sm">O</div>
-                  <div className="flex flex-col">
-                    <span className="font-bold text-[20px] leading-none text-red-900 mb-0.5 tracking-tight">ORCHIDS</span>
-                    <span className="text-[9.5px] text-gray-500 uppercase font-bold tracking-wider">The Intl School</span>
-                  </div>
-                </div>
-
-                {/* Dummy Logo 4 */}
-                <div className="flex items-center gap-3 opacity-60 hover:opacity-100 transition-all cursor-pointer grayscale hover:grayscale-0">
-                  <div className="w-10 h-10 bg-orange-500 transform rotate-45 flex items-center justify-center text-white font-bold text-xl shrink-0 shadow-sm"><span className="-rotate-45">B</span></div>
-                  <div className="flex flex-col">
-                    <span className="font-bold text-[20px] leading-none text-blue-900 mb-0.5 tracking-tight">BILLABONG</span>
-                    <span className="text-[9.5px] text-gray-500 uppercase font-bold tracking-wider">High International</span>
-                  </div>
-                </div>
-
-                {/* Dummy Logo 5 */}
-                <div className="flex items-center gap-2 opacity-60 hover:opacity-100 transition-all cursor-pointer grayscale hover:grayscale-0">
-                  <span className="font-extrabold text-[32px] text-blue-900 tracking-tighter leading-none">Ryan</span>
-                  <span className="text-[9.5px] text-gray-500 uppercase font-bold tracking-wider mt-1.5 leading-tight">International<br />Group</span>
-                </div>
-
-                {/* Dummy Logo 6 */}
-                <div className="flex items-center gap-2.5 opacity-60 hover:opacity-100 transition-all cursor-pointer grayscale hover:grayscale-0">
-                  <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white shrink-0 shadow-sm"><GraduationCap className="w-5 h-5" /></div>
-                  <div className="flex flex-col">
-                    <span className="font-bold text-[22px] leading-none text-blue-900 tracking-tight mb-0.5">EuroSchool</span>
-                    <span className="text-[9.5px] text-gray-500 uppercase font-bold tracking-wider">Discover Yourself</span>
-                  </div>
-                </div>
+                ))}
 
                 {/* Extra spacing to seamlessly repeat the next half */}
                 <div className="w-4 md:w-8"></div>

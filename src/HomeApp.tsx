@@ -18,6 +18,7 @@ import HomeAdobe from './home/HomeAdobe';
 import HomeCompare from './home/HomeCompare';
 import HomeReady from './home/HomeReady';
 import HomeCTA from './home/HomeCTA';
+import './home/HomeResponsive.css';
 import HomeLearningEcosystem from './home/HomeLearningEcosystem';
 
 gsap.registerPlugin(ScrollTrigger);

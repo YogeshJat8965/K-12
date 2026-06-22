@@ -150,22 +150,31 @@ export const ScrollRevealHeadline: React.FC<{ children: React.ReactNode; classNa
     // Simple line split (assuming children is a string or contains simple text)
     // A robust approach in real app would use SplitText. We simulate it by wrapping words/lines.
     const element = ref.current;
-    
-    gsap.fromTo(
-      element,
-      { rotateX: 45, opacity: 0, y: 40, transformPerspective: 800 },
-      {
-        rotateX: 0,
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: element,
-          start: 'top 85%',
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 769px)", () => {
+      gsap.fromTo(
+        element,
+        { rotateX: 45, opacity: 0, y: 40, transformPerspective: 800 },
+        {
+          rotateX: 0, opacity: 1, y: 0, duration: 1, ease: 'power3.out',
+          scrollTrigger: { trigger: element, start: 'top 85%' }
         }
-      }
-    );
+      );
+    });
+
+    mm.add("(max-width: 768px)", () => {
+      gsap.fromTo(
+        element,
+        { rotateX: 22, opacity: 0, y: 20, transformPerspective: 800 },
+        {
+          rotateX: 0, opacity: 1, y: 0, duration: 1, ease: 'power3.out',
+          scrollTrigger: { trigger: element, start: 'top 85%' }
+        }
+      );
+    });
+
+    return () => mm.revert();
   }, []);
 
   return (
@@ -183,22 +192,31 @@ export const StaggerRow: React.FC<{ children: React.ReactNode; className?: strin
     if (!ref.current) return;
     const childrenElements = ref.current.children;
     
-    gsap.fromTo(
-      childrenElements,
-      { rotateY: (i) => (i % 2 === 0 ? -25 : 25), opacity: 0, z: -100, transformPerspective: 1000 },
-      {
-        rotateY: 0,
-        opacity: 1,
-        z: 0,
-        duration: 1.2,
-        stagger: 0.15,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: ref.current,
-          start: 'top 80%',
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 769px)", () => {
+      gsap.fromTo(
+        childrenElements,
+        { rotateY: (i) => (i % 2 === 0 ? -25 : 25), opacity: 0, z: -100, transformPerspective: 1000 },
+        {
+          rotateY: 0, opacity: 1, z: 0, duration: 1.2, stagger: 0.15, ease: 'power3.out',
+          scrollTrigger: { trigger: ref.current, start: 'top 80%' }
         }
-      }
-    );
+      );
+    });
+
+    mm.add("(max-width: 768px)", () => {
+      gsap.fromTo(
+        childrenElements,
+        { rotateY: (i) => (i % 2 === 0 ? -12 : 12), opacity: 0, z: -50, transformPerspective: 1000 },
+        {
+          rotateY: 0, opacity: 1, z: 0, duration: 1.2, stagger: 0.15, ease: 'power3.out',
+          scrollTrigger: { trigger: ref.current, start: 'top 80%' }
+        }
+      );
+    });
+
+    return () => mm.revert();
   }, []);
 
   return (
@@ -216,12 +234,19 @@ export const Section2Reveal: React.FC<{ children: React.ReactNode; className?: s
     if (!ref.current) return;
     const [leftCol, rightCol] = ref.current.children as unknown as HTMLElement[];
     
-    if (leftCol) {
-      gsap.fromTo(leftCol, { rotateY: -25, opacity: 0, x: -50, transformPerspective: 1000 }, { rotateY: 0, opacity: 1, x: 0, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: ref.current, start: 'top 75%' } });
-    }
-    if (rightCol) {
-      gsap.fromTo(rightCol, { rotateY: 25, opacity: 0, x: 50, transformPerspective: 1000 }, { rotateY: 0, opacity: 1, x: 0, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: ref.current, start: 'top 75%' } });
-    }
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 769px)", () => {
+      if (leftCol) gsap.fromTo(leftCol, { rotateY: -25, opacity: 0, x: -50, transformPerspective: 1000 }, { rotateY: 0, opacity: 1, x: 0, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: ref.current, start: 'top 75%' } });
+      if (rightCol) gsap.fromTo(rightCol, { rotateY: 25, opacity: 0, x: 50, transformPerspective: 1000 }, { rotateY: 0, opacity: 1, x: 0, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: ref.current, start: 'top 75%' } });
+    });
+
+    mm.add("(max-width: 768px)", () => {
+      if (leftCol) gsap.fromTo(leftCol, { rotateY: -12, opacity: 0, x: -20, transformPerspective: 1000 }, { rotateY: 0, opacity: 1, x: 0, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: ref.current, start: 'top 75%' } });
+      if (rightCol) gsap.fromTo(rightCol, { rotateY: 12, opacity: 0, x: 20, transformPerspective: 1000 }, { rotateY: 0, opacity: 1, x: 0, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: ref.current, start: 'top 75%' } });
+    });
+
+    return () => mm.revert();
   }, []);
 
   return <div ref={ref} className={className}>{children}</div>;
@@ -314,22 +339,31 @@ export const ScrollRevealWord: React.FC<{ text: string; className?: string }> = 
     if (!ref.current) return;
     const words = ref.current.children;
     
-    gsap.fromTo(
-      words,
-      { rotateX: 90, opacity: 0, y: 20, transformPerspective: 800 },
-      {
-        rotateX: 0,
-        opacity: 1,
-        y: 0,
-        duration: 1.2,
-        stagger: 0.1,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: ref.current,
-          start: 'top 90%',
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 769px)", () => {
+      gsap.fromTo(
+        words,
+        { rotateX: 90, opacity: 0, y: 20, transformPerspective: 800 },
+        {
+          rotateX: 0, opacity: 1, y: 0, duration: 1.2, stagger: 0.1, ease: 'power3.out',
+          scrollTrigger: { trigger: ref.current, start: 'top 90%' }
         }
-      }
-    );
+      );
+    });
+
+    mm.add("(max-width: 768px)", () => {
+      gsap.fromTo(
+        words,
+        { rotateX: 45, opacity: 0, y: 10, transformPerspective: 800 },
+        {
+          rotateX: 0, opacity: 1, y: 0, duration: 1.2, stagger: 0.1, ease: 'power3.out',
+          scrollTrigger: { trigger: ref.current, start: 'top 90%' }
+        }
+      );
+    });
+
+    return () => mm.revert();
   }, []);
 
   return (
