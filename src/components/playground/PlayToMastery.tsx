@@ -152,7 +152,7 @@ export default function PlayToMastery() {
         }
 
         .ptm-col-desc {
-          font-size: 14px;
+          font-size: 15px;
           line-height: 1.6;
           color: #D1D5DB; /* Lighter grey for better readability */
           margin: 0;

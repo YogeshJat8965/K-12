@@ -194,7 +194,7 @@ export default function SkillStudioApp() {
             </style>
 
             {/* Orbit 2 (Outer) */}
-            <div className="absolute top-1/2 left-1/2 w-[300px] h-[300px] md:w-[440px] md:h-[440px] lg:w-[520px] lg:h-[520px] border border-dashed border-white/30 rounded-full orbit-2">
+            <div className="absolute top-1/2 left-1/2 w-[330px] h-[330px] md:w-[460px] md:h-[460px] lg:w-[560px] lg:h-[560px] border border-dashed border-white/30 rounded-full orbit-2">
               <div className="orbit-badge" style={{ left: '65%', top: '2.2%' }}>
                 <div className="badge-counter-2 flex flex-col items-center">
                   <div className="badge-icon-wrapper"><Lightbulb className="w-5 h-5 md:w-6 md:h-6 text-white" /></div>
@@ -222,7 +222,7 @@ export default function SkillStudioApp() {
             </div>
 
             {/* Orbit 1 (Inner) */}
-            <div className="absolute top-1/2 left-1/2 w-[220px] h-[220px] md:w-[320px] md:h-[320px] lg:w-[380px] lg:h-[380px] border border-dashed border-white/30 rounded-full orbit-1">
+            <div className="absolute top-1/2 left-1/2 w-[250px] h-[250px] md:w-[360px] md:h-[360px] lg:w-[440px] lg:h-[440px] border border-dashed border-white/30 rounded-full orbit-1">
               <div className="orbit-badge" style={{ left: '14.65%', top: '14.65%' }}>
                 <div className="badge-counter-1 flex flex-col items-center">
                   <div className="badge-icon-wrapper"><Rocket className="w-5 h-5 md:w-6 md:h-6 text-white" /></div>
@@ -250,7 +250,7 @@ export default function SkillStudioApp() {
             </div>
 
             {/* The Central Sphere */}
-            <div className="relative z-10 w-[200px] md:w-[280px] lg:w-[340px] flex justify-center items-center">
+            <div className="relative z-10 w-[240px] md:w-[340px] lg:w-[420px] flex justify-center items-center">
               <MagneticSphere
                 src={heroImg}
                 className="w-full h-auto object-contain animate-sphere-3d"
@@ -462,7 +462,7 @@ export default function SkillStudioApp() {
               </div>
               <div className="p-6 relative z-10 bg-white">
                 <div className="border-l-[3.5px] border-[#4200FF] pl-3 py-1">
-                  <h3 className="font-bold text-[#1A1A2E] text-[17.5px] leading-[1.3] tracking-tight">
+                  <h3 className="font-bold text-[#1A1A2E] text-[19px] leading-[1.3] tracking-tight">
                     Jr. Agentic AI<br />Engineer
                   </h3>
                 </div>
@@ -478,7 +478,7 @@ export default function SkillStudioApp() {
               </div>
               <div className="p-6 relative z-10 bg-white">
                 <div className="border-l-[3.5px] border-[#4200FF] pl-3 py-1">
-                  <h3 className="font-bold text-[#1A1A2E] text-[17.5px] leading-[1.3] tracking-tight">
+                  <h3 className="font-bold text-[#1A1A2E] text-[19px] leading-[1.3] tracking-tight">
                     Gen AI & Deep<br />Tech
                   </h3>
                 </div>
@@ -494,7 +494,7 @@ export default function SkillStudioApp() {
               </div>
               <div className="p-6 relative z-10 bg-white">
                 <div className="border-l-[3.5px] border-[#4200FF] pl-3 py-1">
-                  <h3 className="font-bold text-[#1A1A2E] text-[17.5px] leading-[1.3] tracking-tight">
+                  <h3 className="font-bold text-[#1A1A2E] text-[19px] leading-[1.3] tracking-tight">
                     Jr. Data<br />scientist
                   </h3>
                 </div>
@@ -510,7 +510,7 @@ export default function SkillStudioApp() {
               </div>
               <div className="p-6 relative z-10 bg-white">
                 <div className="border-l-[3.5px] border-[#4200FF] pl-3 py-1">
-                  <h3 className="font-bold text-[#1A1A2E] text-[17.5px] leading-[1.3] tracking-tight">
+                  <h3 className="font-bold text-[#1A1A2E] text-[19px] leading-[1.3] tracking-tight">
                     Jr. Digital<br />Journalist
                   </h3>
                 </div>
@@ -526,7 +526,7 @@ export default function SkillStudioApp() {
               </div>
               <div className="p-6 relative z-10 bg-white">
                 <div className="border-l-[3.5px] border-[#4200FF] pl-3 py-1">
-                  <h3 className="font-bold text-[#1A1A2E] text-[17.5px] leading-[1.3] tracking-tight">
+                  <h3 className="font-bold text-[#1A1A2E] text-[19px] leading-[1.3] tracking-tight">
                     Mindfulness
                   </h3>
                 </div>
@@ -542,7 +542,7 @@ export default function SkillStudioApp() {
               </div>
               <div className="p-6 relative z-10 bg-white">
                 <div className="border-l-[3.5px] border-[#4200FF] pl-3 py-1">
-                  <h3 className="font-bold text-[#1A1A2E] text-[17.5px] leading-[1.3] tracking-tight">
+                  <h3 className="font-bold text-[#1A1A2E] text-[19px] leading-[1.3] tracking-tight">
                     Digital creativity &<br />AI skills by ADOBE
                   </h3>
                 </div>
@@ -558,7 +558,7 @@ export default function SkillStudioApp() {
               </div>
               <div className="p-6 relative z-10 bg-white">
                 <div className="border-l-[3.5px] border-[#4200FF] pl-3 py-1">
-                  <h3 className="font-bold text-[#1A1A2E] text-[17.5px] leading-[1.3] tracking-tight">
+                  <h3 className="font-bold text-[#1A1A2E] text-[19px] leading-[1.3] tracking-tight">
                     Jr. Global<br />ambassador
                   </h3>
                 </div>
@@ -1083,7 +1083,7 @@ export default function SkillStudioApp() {
             {/* We render multiple identical blocks so it loops seamlessly. 50% translation requires at least 2 identical halves. Let's make 2 huge identical halves. */}
 
             {[1, 2].map((half) => (
-              <div key={half} className="flex items-center gap-16 px-8 md:gap-24 md:px-12 shrink-0">
+              <div key={half} className="flex items-center gap-10 px-6 md:gap-16 md:px-8 shrink-0">
 
                 {[
                   { name: "ALEXANDER PUBLIC SCHOOL", img: "1.png" },

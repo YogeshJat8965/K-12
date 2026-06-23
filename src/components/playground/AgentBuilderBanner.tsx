@@ -82,23 +82,20 @@ export default function AgentBuilderBanner() {
 
         .abb-image-wrapper {
           position: absolute;
-          left: -20px; /* Slight overflow to the left if needed, or perfectly aligned */
+          left: 0px; 
           top: 50%;
           transform: translateY(-50%);
-          width: 380px; /* Image smaller */
-          height: 263px;
+          width: 290px; 
+          height: 200px;
           background: transparent url('${RobotImg}') center center no-repeat padding-box;
           background-size: contain;
           opacity: 1;
-        }
-
-        .abb-container:hover .abb-image-wrapper {
-          animation: robotBob 1.5s infinite alternate ease-in-out;
+          animation: robotBob 2.5s infinite alternate ease-in-out;
         }
 
         @keyframes robotBob {
           from { transform: translateY(-50%) translateY(0); }
-          to { transform: translateY(-50%) translateY(-8px); }
+          to { transform: translateY(-50%) translateY(-12px); }
         }
 
         .abb-right {

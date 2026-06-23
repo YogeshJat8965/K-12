@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import careerIcon from '../assets/landing page/Homepage (1920x 1080px) – 2/career discovery icon.png';
+import schoolIcon from '../assets/landing page/Homepage (1920x 1080px) – 2/institution icon.png';
+import teachingIcon from '../assets/landing page/Homepage (1920x 1080px) – 2/teaching icon.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,7 +44,7 @@ export default function HomeCTA() {
           width: 100%;
           padding: 120px 0;
           font-family: 'DM Sans', sans-serif;
-          background-color: #FAFAFA;
+          background: linear-gradient(135deg, #F8F5FF 0%, #F0EBFF 100%);
           position: relative;
           overflow: hidden;
         }
@@ -50,12 +53,24 @@ export default function HomeCTA() {
           position: absolute;
           top: 0; left: 0; right: 0; bottom: 0;
           background-image: 
-            linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px);
+            linear-gradient(rgba(108, 60, 247, 0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(108, 60, 247, 0.06) 1px, transparent 1px);
           background-size: 40px 40px;
           background-position: center;
           opacity: 0;
           z-index: 0;
+        }
+
+        .cta-glow {
+          position: absolute;
+          top: 50%;
+          right: -10%;
+          width: 800px;
+          height: 800px;
+          background: radial-gradient(circle, rgba(108, 60, 247, 0.08) 0%, rgba(108, 60, 247, 0) 60%);
+          transform: translateY(-50%);
+          z-index: 0;
+          pointer-events: none;
         }
 
         .cta-inner {
@@ -119,11 +134,12 @@ export default function HomeCTA() {
         .cta-card {
           background: #FFFFFF;
           border-radius: 20px;
+          border: 1px solid #E4D8FF;
           padding: 32px;
           box-shadow: 0 10px 40px rgba(0,0,0,0.04);
           display: flex;
           flex-direction: column;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
           transform-style: preserve-3d;
           perspective: 1000px;
         }
@@ -144,6 +160,15 @@ export default function HomeCTA() {
           width: 48px;
           height: 48px;
           border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #F5F3FF;
+        }
+        .cta-card-icon img {
+          width: 32px;
+          height: 32px;
+          object-fit: contain;
         }
 
         .cta-card-label {
@@ -199,7 +224,6 @@ export default function HomeCTA() {
           grid-row: 1 / 3;
           align-self: center;
         }
-        .card-parents .cta-card-icon { background: #F5F3FF; }
         .card-parents .cta-card-label { color: #9CA3AF; }
         .card-parents .cta-card-title { color: #111827; }
         .card-parents .cta-card-btn { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); color: #FFFFFF; }
@@ -211,21 +235,19 @@ export default function HomeCTA() {
         }
 
         .card-schools {
-          background: transparent linear-gradient(131deg, #0D1636 0%, #1D1460 100%) 0% 0% no-repeat padding-box;
           grid-column: 2;
           grid-row: 1;
-          animation: pulseGlow 3s infinite;
+          margin-left: -40px;
         }
-        .card-schools .cta-card-icon { background: #2A2052; }
-        .card-schools .cta-card-label { color: #A78BFA; }
-        .card-schools .cta-card-title { color: #FFFFFF; }
-        .card-schools .cta-card-btn { background: #FFFFFF; color: #111827; }
+        .card-schools .cta-card-label { color: #9CA3AF; }
+        .card-schools .cta-card-title { color: #111827; }
+        .card-schools .cta-card-btn { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); color: #FFFFFF; }
 
         .card-educators {
           grid-column: 2;
           grid-row: 2;
+          margin-left: -40px;
         }
-        .card-educators .cta-card-icon { background: #FDF4FF; }
         .card-educators .cta-card-label { color: #9CA3AF; }
         .card-educators .cta-card-title { color: #111827; }
         .card-educators .cta-card-btn { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); color: #FFFFFF; }
@@ -255,10 +277,12 @@ export default function HomeCTA() {
           .card-schools {
             grid-column: 1;
             grid-row: auto;
+            margin-left: 0;
           }
           .card-educators {
             grid-column: 1;
             grid-row: auto;
+            margin-left: 0;
           }
           .cta-title {
             font-size: 32px;
@@ -268,6 +292,7 @@ export default function HomeCTA() {
 
       <section className="cta-section" ref={sectionRef}>
         <div className="cta-bg-grid"></div>
+        <div className="cta-glow"></div>
         <div className="cta-inner">
           <div className="cta-left">
             <span className="cta-badge">TAKE THE FIRST STEP</span>
@@ -284,7 +309,7 @@ export default function HomeCTA() {
             {/* Card 1: Parents */}
             <div className="cta-card card-parents">
               <div className="cta-card-header">
-                <div className="cta-card-icon"></div>
+                <div className="cta-card-icon"><img src={careerIcon} alt="Career Discovery" /></div>
                 <span className="cta-card-label">FOR PARENTS</span>
               </div>
               <h3 className="cta-card-title">Book a Free Career<br/>Discovery Call</h3>
@@ -294,7 +319,7 @@ export default function HomeCTA() {
             {/* Card 2: Schools */}
             <div className="cta-card card-schools">
               <div className="cta-card-header">
-                <div className="cta-card-icon"></div>
+                <div className="cta-card-icon"><img src={schoolIcon} alt="Institution" /></div>
                 <span className="cta-card-label">FOR SCHOOLS</span>
               </div>
               <h3 className="cta-card-title">Become an AI-Ready<br/>Institution</h3>
@@ -304,7 +329,7 @@ export default function HomeCTA() {
             {/* Card 3: Educators */}
             <div className="cta-card card-educators">
               <div className="cta-card-header">
-                <div className="cta-card-icon"></div>
+                <div className="cta-card-icon"><img src={teachingIcon} alt="Teaching" /></div>
                 <span className="cta-card-label">FOR EDUCATORS</span>
               </div>
               <h3 className="cta-card-title">Level Up Your Teaching<br/>Practice</h3>

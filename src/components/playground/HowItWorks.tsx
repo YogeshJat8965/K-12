@@ -309,7 +309,6 @@ export default function HowItWorks() {
                   <div className="hiw-icon-box tilt-pop">
                     <img src={step.icon} alt={step.title} />
                   </div>
-                  <div className="hiw-number">{step.id}</div>
                 </div>
                 <h3 className="hiw-card-title">{step.title}</h3>
                 <p className="hiw-card-desc">{step.desc}</p>

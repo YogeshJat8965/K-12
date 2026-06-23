@@ -190,10 +190,13 @@ export default function HomeAdobe() {
           gap: 20px;
         }
 
-        .ha-feature-icon {
-          width: 36px;
-          height: 36px;
+        .ha-feature-bullet {
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.64);
           flex-shrink: 0;
+          margin-top: 5px; /* Align with first line of text */
         }
 
         .ha-feature-text {
@@ -244,7 +247,7 @@ export default function HomeAdobe() {
             <div className="ha-feature-list">
               {adobeFeatures.map((f) => (
                 <div key={f.id} className="ha-feature-card">
-                  <img src="/landing/check-icon.svg" alt="check" className="ha-feature-icon" />
+                  <div className="ha-feature-bullet" />
                   <p className="ha-feature-text">{f.text}</p>
                 </div>
               ))}

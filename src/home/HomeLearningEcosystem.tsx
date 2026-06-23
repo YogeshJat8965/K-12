@@ -361,7 +361,7 @@ export default function HomeLearningEcosystem() {
               <span className="hle-badge">OUR LEARNING ECOSYSTEM</span>
               <h2 className="hle-title" style={{ display: 'flex', flexDirection: 'column' }}>
                 <span ref={title1Ref} style={{ display: 'block' }}>Four Pillars.</span>
-                <span ref={title2Ref} style={{ display: 'block' }}>One Future-Ready Learner.</span>
+                <span ref={title2Ref} style={{ display: 'block' }}>One Future-Ready Learner ..</span>
               </h2>
             </div>
             <div className="hle-header-right">

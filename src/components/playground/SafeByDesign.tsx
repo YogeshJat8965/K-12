@@ -187,25 +187,18 @@ export default function SafeByDesign() {
           border-color: rgba(108, 60, 247, 0.1);
         }
 
-        .sbd-icon {
-          flex: 0 0 28px;
-          width: 28px;
-          height: 28px;
-          background: transparent url('${TickIcon}') center center no-repeat padding-box;
-          background-size: contain;
-          margin-top: 2px;
-          transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        .sbd-bullet {
+          flex: 0 0 12px;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background: #6C3CF7;
+          margin-top: 6px;
+          transition: transform 0.3s ease;
         }
 
-        .sbd-item:hover .sbd-icon {
-          transform: scale(0.9);
-          animation: reCheck 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-        }
-
-        @keyframes reCheck {
-          0% { transform: scale(1) rotate(0deg); }
-          50% { transform: scale(0.8) rotate(-10deg); }
-          100% { transform: scale(1.1) rotate(5deg); }
+        .sbd-item:hover .sbd-bullet {
+          transform: scale(1.2);
         }
 
         .sbd-item-content {
@@ -323,7 +316,7 @@ export default function SafeByDesign() {
             <div className="sbd-right" ref={rightRef}>
               {features.map((feature, idx) => (
                 <div key={idx} className="sbd-item">
-                  <div className="sbd-icon"></div>
+                  <div className="sbd-bullet"></div>
                   <div className="sbd-item-content">
                     <h4 className="sbd-item-title">{feature.title}</h4>
                     <p className="sbd-item-desc">{feature.desc}</p>
