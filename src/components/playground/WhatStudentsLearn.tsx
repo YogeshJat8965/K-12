@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { useSplitReveal } from '../../hooks/useSplitReveal';
 import { use3DTilt } from '../../hooks/usePremiumHover';
+import backgroundImg from '../../assets/AI playground/What Students Learn - Without Realising It.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -115,12 +116,26 @@ export default function WhatStudentsLearn() {
           background: #ffffff;
           font-family: 'Poppins', sans-serif;
           text-align: center;
+          position: relative;
+        }
+
+        .wsl-section::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: url('${backgroundImg}') no-repeat center center;
+          background-size: cover;
+          opacity: 0.25; /* Lightened image opacity without a white filter */
+          pointer-events: none;
+          z-index: 0;
         }
 
         .wsl-container {
           max-width: 1360px;
           width: 100%;
           margin: 0 auto;
+          position: relative;
+          z-index: 1;
         }
 
         .wsl-h2 {
@@ -136,9 +151,9 @@ export default function WhatStudentsLearn() {
         }
 
         .wsl-subtitle {
-          font-size: 18px;
+          font-size: 20px;
           line-height: 1.6;
-          color: #6B7280;
+          color: #000000; /* Black text */
           margin: 0 auto 60px;
           font-weight: 400;
         }
@@ -151,7 +166,7 @@ export default function WhatStudentsLearn() {
 
         .wsl-card {
           position: relative;
-          background-color: #F2EFF9; /* 2nd card's light purple color for all */
+          background-color: #FFFFFF; /* White background */
           border-radius: 20px;
           padding: 32px 28px; /* Reduced padding */
           display: flex;

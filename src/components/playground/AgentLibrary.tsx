@@ -7,13 +7,18 @@ import Icon2 from '../../assets/AI playground/Group 27640.svg';
 import Icon3 from '../../assets/AI playground/Group 27641.svg';
 import Icon4 from '../../assets/AI playground/Group 27642.svg';
 import Icon5 from '../../assets/AI playground/Group 27643.svg';
-import Icon6 from '../../assets/AI playground/Group 27644.svg';
-import Icon7 from '../../assets/AI playground/Group 27645.svg';
-import Icon8 from '../../assets/AI playground/Group 27646.svg';
-import Icon9 from '../../assets/AI playground/Group 27647.svg';
-import Icon10 from '../../assets/AI playground/Group 27648.svg';
-import Icon11 from '../../assets/AI playground/Group 27649.svg';
-import Icon12 from '../../assets/AI playground/Group 27650.svg';
+import imgStoryWeaver from '../../assets/AI playground/Story Weaver.png';
+import imgHomework from '../../assets/AI playground/Homework Helper.png';
+import imgCareer from '../../assets/AI playground/Career Coach.png';
+import imgDebate from '../../assets/AI playground/Debate Buddy.png';
+import imgScience from '../../assets/AI playground/Science Explorer.png';
+import imgMath from '../../assets/AI playground/Math Mentor.png';
+import imgCode from '../../assets/AI playground/Code Companion.png';
+import imgClimate from '../../assets/AI playground/Climate Strategist.png';
+import imgLanguage from '../../assets/AI playground/Language Buddy.png';
+import imgWellness from '../../assets/AI playground/Wellness Guide.png';
+import imgSpace from '../../assets/AI playground/Space Explorer.png';
+import imgHistory from '../../assets/AI playground/History Time Machine.png';
 
 import { useSplitReveal } from '../../hooks/useSplitReveal';
 import { use3DTilt } from '../../hooks/usePremiumHover';
@@ -37,19 +42,17 @@ export default function AgentLibrary() {
         
         cards.forEach((card, index) => {
           const row = Math.floor(index / 4);
-          const delay = row * 0.2 + (index % 4) * 0.08;
+          const delay = row * 0.15 + (index % 4) * 0.08;
           
           gsap.from(card, {
-            rotationX: -20,
-            y: -30,
-            z: -300,
+            y: 40,
             opacity: 0,
-            duration: 1,
-            ease: 'back.out(1.2)',
+            duration: 0.8,
+            ease: 'power3.out',
             delay: delay,
             scrollTrigger: {
               trigger: gridRef.current,
-              start: 'top 80%',
+              start: 'top 85%',
             }
           });
         });
@@ -61,64 +64,64 @@ export default function AgentLibrary() {
 
   const agents = [
     {
-      title: "STORY WEAVER",
+      title: "Story Weaver",
       desc: "Co-write stories, invent characters, and build fictional worlds with a creative writing companion.",
-      icon: Icon1
+      image: imgStoryWeaver
     },
     {
-      title: "HOMEWORK HELPER",
+      title: "Homework Helper",
       desc: "A patient tutor that explains concepts, walks through problems, and answers doubts across subjects.",
-      icon: Icon2
+      image: imgHomework
     },
     {
-      title: "CAREER COACH",
+      title: "Career Coach",
       desc: "Explore career options, understand different paths, and get guidance tailored to your interests.",
-      icon: Icon3
+      image: imgCareer
     },
     {
-      title: "DEBATE BUDDY",
+      title: "Debate Buddy",
       desc: "Practise argumentation, prepare for debates, and strengthen critical thinking with a sparring partner.",
-      icon: Icon4
+      image: imgDebate
     },
     {
-      title: "SCIENCE EXPLORER",
+      title: "Science Explorer",
       desc: "Ask big questions, design experiments, and understand how the world works through curiosity-led chats.",
-      icon: Icon5
+      image: imgScience
     },
     {
-      title: "MATH MENTOR",
+      title: "Math Mentor",
       desc: "Break down tricky problems step by step, practise techniques, and build confidence in numbers.",
-      icon: Icon6
+      image: imgMath
     },
     {
-      title: "CODE COMPANION",
+      title: "Code Companion",
       desc: "Learn to code, debug errors, and build your first programmes with a friendly coding buddy.",
-      icon: Icon7
+      image: imgCode
     },
     {
-      title: "CLIMATE STRATEGIST",
+      title: "Climate Strategist",
       desc: "Explore sustainability scenarios, model climate solutions, and design ideas to help the planet.",
-      icon: Icon8
+      image: imgClimate
     },
     {
-      title: "LANGUAGE BUDDY",
+      title: "Language Buddy",
       desc: "Practise English, Hindi, French, Spanish, or Mandarin through natural conversation.",
-      icon: Icon9
+      image: imgLanguage
     },
     {
-      title: "WELLNESS GUIDE",
+      title: "Wellness Guide",
       desc: "Mindfulness prompts, journaling companions, and gentle support for emotional well-being.",
-      icon: Icon10
+      image: imgWellness
     },
     {
-      title: "SPACE EXPLORER",
+      title: "Space Explorer",
       desc: "Journey through galaxies, understand space missions, and ask anything about the universe.",
-      icon: Icon11
+      image: imgSpace
     },
     {
-      title: "HISTORY TIME MACHINE",
+      title: "History Time Machine",
       desc: "Travel through time, meet historical figures, and explore events through immersive storytelling.",
-      icon: Icon12
+      image: imgHistory
     }
   ];
 
@@ -128,7 +131,7 @@ export default function AgentLibrary() {
         .al-section {
           width: 100%;
           padding: 80px 40px;
-          background: #6C3CF7; /* Vibrant purple from screenshot */
+          background: #e8e4fdff; /* Light purple background */
           font-family: 'Poppins', sans-serif;
           text-align: center;
         }
@@ -140,27 +143,28 @@ export default function AgentLibrary() {
         }
 
         .al-h2 {
-          font-weight: 700;
-          font-size: 46px;
-          color: #FFFFFF;
+          font-weight: 800;
+          font-size: clamp(32px, 4vw, 46px);
+          color: #1A1A2E; /* Dark text for light theme */
           margin: 0 0 16px;
+          letter-spacing: -0.5px;
         }
 
         .al-subtitle-1 {
           font-size: 20px;
-          font-weight: 500; /* Reduced boldness */
-          color: #FFFFFF;
+          font-weight: 600;
+          color: #1A1A2E;
           margin: 0 0 24px;
         }
         
         .al-subtitle-1 .pink {
-          color: #E83D8E; /* Pink/Magenta color */
+          color: #6C3CF7; /* Vibrant purple accent */
         }
 
         .al-subtitle-2 {
           font-size: 16px;
           line-height: 1.6;
-          color: rgba(255, 255, 255, 0.85);
+          color: #4A4A68;
           max-width: 900px;
           margin: 0 auto 60px;
           font-weight: 400;
@@ -169,116 +173,92 @@ export default function AgentLibrary() {
         .al-grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
-          gap: 20px;
+          gap: 24px;
         }
 
         .al-card {
           position: relative;
-          background: #2E166A; /* Dark purple background for cards */
+          background: #FFFFFF;
           border-radius: 16px;
-          padding: 24px;
           display: flex;
-          align-items: flex-start;
-          gap: 16px;
+          flex-direction: column;
           text-align: left;
-          border: 1px solid rgba(255,255,255,0.05);
-          transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05); /* Soft shadow like the screenshot */
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
           overflow: hidden;
-        }
-
-        .al-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -100%;
-          width: 50%;
-          height: 100%;
-          background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
-          transform: skewX(-25deg);
-          transition: all 0.6s ease;
-          z-index: 1;
-          pointer-events: none;
+          cursor: pointer;
         }
 
         .al-card:hover {
-          background: #3A1F85;
-          border-color: rgba(255,255,255,0.2);
-          box-shadow: 0 20px 40px rgba(108, 60, 247, 0.4);
+          transform: translateY(-6px);
+          box-shadow: 0 20px 40px rgba(108, 60, 247, 0.15);
         }
 
-        .al-card:hover::before {
-          animation: shine 0.8s forwards;
+        .al-card-image-wrapper {
+          width: 100%;
+          height: 180px; /* Taller image area as in screenshot */
+          background: #F0F0F5;
+          overflow: hidden;
         }
 
-        @keyframes shine {
-          100% {
-            left: 200%;
-          }
-        }
-
-        .al-card-icon {
-          width: 64px;
-          height: 64px;
-          flex-shrink: 0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: transparent;
-        }
-
-        .al-card-icon img {
+        .al-card-image-wrapper img {
           width: 100%;
           height: 100%;
-          object-fit: contain;
+          object-fit: cover; /* Full bleed image */
+          transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .al-card:hover .al-card-image-wrapper img {
+          transform: scale(1.08);
         }
 
         .al-card-content {
+          padding: 24px;
           display: flex;
           flex-direction: column;
+          flex-grow: 1;
+        }
+
+        .al-card-title-wrapper {
+          border-left: 3px solid #6C3CF7; /* Purple left border exactly like screenshot */
+          padding-left: 12px;
+          margin-bottom: 12px;
         }
 
         .al-card-title {
-          color: #FFFFFF; /* High contrast white */
-          font-size: 13px;
+          color: #1A1A2E;
+          font-size: 16px;
           font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-          margin: 0 0 8px;
+          margin: 0;
+          line-height: 1.3;
         }
 
         .al-card-desc {
-          color: rgba(255, 255, 255, 0.85); /* Highly readable white-gray */
+          color: #4A4A68;
           font-size: 13px;
-          line-height: 1.6;
+          line-height: 1.5;
           margin: 0;
+          padding-left: 15px; /* Align slightly with title */
           font-weight: 400;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
         }
 
         /* ─── RESPONSIVE ─── */
-        @media (max-width: 1300px) {
+        @media (max-width: 1200px) {
           .al-grid { grid-template-columns: repeat(3, 1fr); }
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 900px) {
+          .al-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
           .al-section { padding: 60px 20px; }
-          .al-grid { grid-template-columns: repeat(3, 1fr); }
-          .al-h2 { font-size: 2.2rem; }
-          .al-card-title { font-size: 12px; }
-          .al-card-desc { font-size: 12px; }
         }
 
-        @media (max-width: 768px) {
-          .al-section { padding: 60px 16px; }
-          .al-grid { grid-template-columns: repeat(2, 1fr); }
-          .al-h2 { font-size: 1.8rem; line-height: 1.2; }
-          .al-card { flex-direction: column; align-items: flex-start; gap: 12px; padding: 20px; }
-          .al-card-icon { width: 56px; height: 56px; }
-        }
-
-        @media (max-width: 480px) {
-          .al-h2 { font-size: 1.5rem; }
-          .al-grid { grid-template-columns: 1fr; }
-          .al-card-icon { width: 48px; height: 48px; }
+        @media (max-width: 600px) {
+          .al-section { padding: 50px 16px; }
+          .al-grid { grid-template-columns: 1fr; gap: 16px; }
         }
       `}</style>
 
@@ -299,11 +279,13 @@ export default function AgentLibrary() {
           <div className="al-grid" ref={gridRef}>
             {agents.map((agent, idx) => (
               <div key={idx} className="al-card">
-                <div className="al-card-icon tilt-pop">
-                  <img src={agent.icon} alt={agent.title} />
+                <div className="al-card-image-wrapper">
+                  <img src={agent.image} alt={agent.title} />
                 </div>
                 <div className="al-card-content">
-                  <h3 className="al-card-title">{agent.title}</h3>
+                  <div className="al-card-title-wrapper">
+                    <h3 className="al-card-title">{agent.title}</h3>
+                  </div>
                   <p className="al-card-desc">{agent.desc}</p>
                 </div>
               </div>

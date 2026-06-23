@@ -51,8 +51,8 @@ export default function AgentBuilderBanner() {
       <style>{`
         .abb-section {
           width: 100%;
-          /* This creates the two-tone background: top half is purple matching AgentLibrary, bottom half is white */
-          background: linear-gradient(to bottom, #6C3CF7 50%, #FFFFFF 50%);
+          /* Updated to match the AgentLibrary background color */
+          background: #e8e4fdff;
           padding: 60px 40px;
           display: flex;
           justify-content: center;
