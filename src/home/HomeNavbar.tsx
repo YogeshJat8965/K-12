@@ -6,7 +6,7 @@ const NAV_LINKS = [
   { label: 'Skill Studio',       href: '/skill-studio' },
   { label: 'Virtual Internship', href: '/' },
   { label: 'AI Playground',      href: '/ai-playground' },
-  { label: 'Learners',           href: '#' },
+  { label: 'International Studio', href: '/international-studio' },
 ];
 
 export default function HomeNavbar() {

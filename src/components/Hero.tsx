@@ -18,11 +18,11 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent w-full lg:hidden z-10" />
 
         {/* The Image with CSS Mask for seamless blending */}
-        <div className="w-full lg:w-[55%] h-full relative z-0">
+        <div className="w-full lg:w-[48%] h-full relative z-0 lg:translate-x-8 xl:translate-x-12">
           <img
             src={rightImage}
             alt="Virtual Internship Student"
-            className="w-full h-full object-cover object-[80%_center] lg:object-[85%_center]"
+            className="w-full h-full object-cover object-[80%_center] lg:object-right"
             style={{
               WebkitMaskImage: 'linear-gradient(to right, transparent, black 30%)',
               maskImage: 'linear-gradient(to right, transparent, black 30%)'
@@ -32,16 +32,16 @@ export default function Hero() {
       </div>
 
       <div className="relative z-20 max-w-7xl mx-auto px-6 w-full py-12 lg:py-0">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-[1.3fr_0.7fr] gap-4 lg:gap-8 items-center">
 
           {/* Left Content */}
-          <div className={`max-w-2xl transition-all duration-1000 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className={`max-w-[700px] transition-all duration-1000 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
 
             {/* Headline */}
-            <h1 className="text-5xl sm:text-6xl lg:text-[4.5rem] font-bold text-slate-900 leading-[1.05] mb-6 tracking-tight">
+            <h1 className="text-5xl sm:text-6xl lg:text-[4rem] xl:text-[4.25rem] font-bold text-slate-900 leading-[1.05] mb-6 tracking-tight">
               Give Your Child <br />
               a Head Start - <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6D28D9] to-[#8B5CF6]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6D28D9] to-[#8B5CF6] whitespace-nowrap inline-block">
                 Beyond Academics
               </span>
             </h1>

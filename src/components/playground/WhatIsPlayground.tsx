@@ -236,27 +236,28 @@ export default function WhatIsPlayground() {
 
         @media (max-width: 1024px) {
           .wip-section { padding: 40px 20px; }
-          .wip-left { flex: 0 0 40%; max-width: 40%; padding-top: 20px; }
-          .wip-left img { width: 100%; height: auto; object-fit: cover; }
-          .wip-right { flex: 0 0 60%; max-width: 60%; padding: 40px 20px; }
-          .wip-h2 { font-size: 2rem; }
+          .wip-container { flex-direction: column; align-items: center; text-align: center; padding-top: 40px; }
+          .wip-left { flex: none; width: 100%; max-width: 400px; padding: 0 20px; order: 1; }
+          .wip-left img { width: 100%; height: auto; object-fit: contain; }
+          .wip-right { flex: none; width: 100%; max-width: 100%; padding: 0 24px 40px; order: 2; align-items: center; }
+          .wip-h2 { font-size: 2.2rem; text-align: center; }
+          .wip-p { text-align: center; margin-left: auto; margin-right: auto; }
+          .wip-features { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 16px; width: 100%; }
+          .wip-card { flex: 1 1 calc(33.333% - 16px); min-width: 200px; }
         }
 
         @media (max-width: 768px) {
           .wip-section { padding: 40px 16px; }
-          .wip-container { flex-direction: column; align-items: center; }
-          .wip-left { flex: 1; max-width: 80%; width: 100%; padding-top: 0; }
-          .wip-right { flex: 1; max-width: 100%; width: 100%; padding: 32px 16px; }
-          .wip-h2 { font-size: 1.8rem; line-height: 1.2; text-align: center; }
-          .wip-p { text-align: center; }
-          .wip-features { flex-direction: column; gap: 12px; }
-          .wip-card { flex-direction: row; text-align: left; align-items: center; width: 100%; }
+          .wip-h2 { font-size: 1.8rem; line-height: 1.3; }
+          .wip-features { flex-direction: column; gap: 16px; width: 100%; }
+          .wip-card { flex-direction: row; text-align: left; align-items: center; width: 100%; max-width: 320px; margin: 0 auto; padding: 16px; }
           .wip-card-text { align-items: flex-start; }
         }
 
         @media (max-width: 480px) {
-          .wip-left { max-width: 100%; }
-          .wip-h2 { font-size: 1.5rem; }
+          .wip-left { max-width: 280px; }
+          .wip-h2 { font-size: 1.6rem; }
+          .wip-right { padding: 0 16px 40px; }
         }
       `}</style>
 

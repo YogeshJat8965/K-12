@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { MessageSquare, Network, Sparkles, ShieldCheck, Compass, HeartHandshake } from 'lucide-react';
 
 import { useSplitReveal } from '../../hooks/useSplitReveal';
 import { use3DTilt } from '../../hooks/usePremiumHover';
@@ -22,12 +23,8 @@ export default function WhatStudentsLearn() {
         const cards = Array.from(cardsRef.current.querySelectorAll('.wsl-card'));
         
         cards.forEach((card, i) => {
-          const isEvenCol = (i % 3) >= 1.5; // cols are 0, 1, 2. If 1 or 2... wait, odd vs even column.
-          // 3x2 grid. Col 0 (left), Col 1 (middle), Col 2 (right).
-          // Let's say odd-column (col 0, col 2) vs even-column (col 1).
-          // Actually prompt: "odd-column cards enter from rotateY(-25deg) translateX(-30px), even-column from rotateY(25deg) translateX(30px)"
           const col = i % 3;
-          const isOddCol = col === 0 || col === 2; // 1st and 3rd visual columns
+          const isOddCol = col === 0 || col === 2;
           const rotY = isOddCol ? -25 : 25;
           const tx = isOddCol ? -30 : 30;
           const row = Math.floor(i / 3);
@@ -46,27 +43,6 @@ export default function WhatStudentsLearn() {
               start: 'top 80%',
             }
           });
-
-          // Number counter effect
-          const numberEl = card.querySelector('.wsl-number');
-          if (numberEl) {
-            const targetVal = i + 1;
-            const obj = { val: 0 };
-            gsap.to(obj, {
-              val: targetVal,
-              duration: 1,
-              delay: delay + 0.2,
-              ease: 'power2.out',
-              scrollTrigger: {
-                trigger: sectionRef.current,
-                start: 'top 80%',
-              },
-              onUpdate: () => {
-                const num = Math.floor(obj.val);
-                numberEl.textContent = num < 10 ? `0${num}` : num.toString();
-              }
-            });
-          }
         });
       }
     }, sectionRef);
@@ -76,34 +52,34 @@ export default function WhatStudentsLearn() {
 
   const cards = [
     {
-      id: "01",
       title: "Prompt Thinking",
       desc: "The most future-critical skill of our time - how to ask AI clearly, specifically, and creatively to get great results.",
+      icon: <MessageSquare size={28} strokeWidth={2} />
     },
     {
-      id: "02",
       title: "Logical Sequencing",
       desc: "Breaking problems into steps - the foundational mindset for coding, systems thinking, and structured reasoning.",
+      icon: <Network size={28} strokeWidth={2} />
     },
     {
-      id: "03",
       title: "Creative Confidence",
       desc: "The courage to iterate, test, fail, and refine - core to every creative and entrepreneurial endeavour.",
+      icon: <Sparkles size={28} strokeWidth={2} />
     },
     {
-      id: "04",
       title: "AI Literacy & Ethics",
       desc: "Understanding what AI can and cannot do, its biases, and how to use it responsibly - digital citizenship in practice.",
+      icon: <ShieldCheck size={28} strokeWidth={2} />
     },
     {
-      id: "05",
       title: "Self-Directed Learning",
       desc: "Curiosity-led exploration where students choose what to build and learn - the habit of lifelong learning, formed early.",
+      icon: <Compass size={28} strokeWidth={2} />
     },
     {
-      id: "06",
       title: "Computational Empathy",
       desc: "Understanding how machines 'think' and learning to communicate with them effectively - an essential modern skill.",
+      icon: <HeartHandshake size={28} strokeWidth={2} />
     }
   ];
 
@@ -199,17 +175,15 @@ export default function WhatStudentsLearn() {
           width: 100%;
         }
 
-        .wsl-number {
-          font-size: 16px;
-          font-weight: 600;
-          margin-bottom: 12px;
-          color: #6021DD; /* 2nd card's purple text color for all numbers */
+        .wsl-icon {
+          color: #6021DD;
+          margin-bottom: 16px;
           transition: transform 0.3s ease, filter 0.3s ease;
-          display: inline-block;
+          display: inline-flex;
         }
 
-        .wsl-card:hover .wsl-number {
-          transform: scale(1.15);
+        .wsl-card:hover .wsl-icon {
+          transform: scale(1.15) translateY(-2px);
           filter: brightness(1.1);
         }
 
@@ -281,7 +255,7 @@ export default function WhatStudentsLearn() {
           <div className="wsl-grid" ref={cardsRef}>
             {cards.map((card, idx) => (
               <div key={idx} className="wsl-card">
-                <div className="wsl-number">{card.id}</div>
+                <div className="wsl-icon">{card.icon}</div>
                 <h3 className="wsl-card-title">{card.title}</h3>
                 <p className="wsl-card-desc">{card.desc}</p>
               </div>

@@ -138,7 +138,7 @@ export const finalCta = {
     { label: "▶ Take the Quiz", type: "primary" },
     { label: "▶ Explore Internships", type: "secondary" },
     { label: "▶ Book a Consultation", type: "ghost" }
-  ],
+  ], 
   email: "internships@skillzza.com",
   website: "www.skillzza.com/virtual-internships"
 }

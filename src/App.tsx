@@ -16,6 +16,17 @@ import ForParentsSchools from './components/ForParentsSchools';
 import WhySkillzza from './components/WhySkillzza';
 import LastBanner from './components/LastBanner';
 import Footer from './components/Footer';
+import VIHero from './components/virtual-internship/VIHero';
+import WhatIsVI from './components/virtual-internship/WhatIsVI';
+import WhyVIMatters from './components/virtual-internship/WhyVIMatters';
+import WhatVIGain from './components/virtual-internship/WhatVIGain';
+import HowProgramWorks from './components/virtual-internship/HowProgramWorks';
+import ExploreTracks from './components/virtual-internship/ExploreTracks';
+import WalkAway from './components/virtual-internship/WalkAway';
+import DesignedForStudents from './components/virtual-internship/DesignedForStudents';
+import ParentsSchools from './components/virtual-internship/ParentsSchools';
+import WhySkillzzaVI from './components/virtual-internship/WhySkillzzaVI';
+import VICtaBanner from './components/virtual-internship/VICtaBanner';
 
 const sections = [
   { id: 'hero', el: 'hero' },
@@ -87,19 +98,37 @@ function AppContent() {
       </div>
 
       <Navbar />
+
+      {/* NEW VIRTUAL INTERNSHIP CONTENT */}
+      <div id="vi-hero"><VIHero /></div>
+      <div id="vi-what-is"><WhatIsVI /></div>
+      <div id="vi-why-matters"><WhyVIMatters /></div>
+      <div id="vi-what-gain"><WhatVIGain /></div>
+      <div id="vi-how-program-works"><HowProgramWorks /></div>
+      <div id="vi-explore-tracks"><ExploreTracks /></div>
+      <div id="vi-walk-away"><WalkAway /></div>
+      <div id="vi-designed-for-students"><DesignedForStudents /></div>
+      <div id="vi-parents-schools"><ParentsSchools /></div>
+      <div id="vi-why-skillzza"><WhySkillzzaVI /></div>
+      <div id="vi-cta-banner"><VICtaBanner /></div>
+
+      {/* 
+        ========================================================================
+        OLD VIRTUAL INTERNSHIP SECTIONS - COMMENTED OUT FOR REDESIGN
+        ========================================================================
+      */}
+      {/* 
       <div id="hero"><Hero /></div>
-      {/* <div id="stats"><Stats /></div>
-      <div id="what-is"><WhatIs /></div> */}
       <div id="why-matters"><WhyMatters /></div>
       <div id="what-gain"><WhatGain /></div>
       <div id="how-it-works"><HowItWorks /></div>
       <div id="tracks"><Tracks /></div>
       <div id="outcomes"><Outcomes /></div>
-      {/* <div id="quiz"><Quiz /></div> */}
       <div id="for-parents"><ForParentsSchools /></div>
       <div id="why-skillzza"><WhySkillzza /></div>
       <div id="stats-bar"><StatsBar /></div>
-      <LastBanner />
+      <LastBanner /> 
+      */}
 
       {/* Floating Helper Mascot */}
       <div className="fixed bottom-6 right-6 z-50 animate-bounce cursor-pointer group hidden md:flex items-center gap-2">
