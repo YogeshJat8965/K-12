@@ -370,7 +370,6 @@ export default function HomeEcosystem() {
                 <div className="he-card-top-border" style={{ background: item.themeColor }}></div>
                 <div className="he-img-area">
                   <img src={item.img} alt={item.label} />
-                  <div className="he-icon-box" style={{ background: item.iconBg }}></div>
                 </div>
                 
                 <div className="he-content">

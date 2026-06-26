@@ -49,7 +49,7 @@ export default function MasteryPath() {
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <p className="text-slate-600 text-base md:text-lg max-w-4xl mx-auto leading-relaxed">
-              What starts as curiosity in the Playground naturally progresses into structured learning through Skillzza Nova's full ecosystem. Every agent a student builds becomes a doorway to deeper skills.
+              What starts as curiosity in the Playground naturally progresses into structured learning through SKILLZZA K-12's full ecosystem. Every agent a student builds becomes a doorway to deeper skills.
             </p>
           </ScrollReveal>
         </div>

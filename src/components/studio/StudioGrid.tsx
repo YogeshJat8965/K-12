@@ -44,7 +44,7 @@ export default function StudioGrid() {
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        
+
         {/* Header */}
         <div className="text-center mb-20">
           <ScrollReveal>
@@ -54,7 +54,7 @@ export default function StudioGrid() {
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
             <p className="text-slate-600 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
-              A curated portfolio of 15 future-forward Skill Studios – each designed as an immersive learning pod 
+              A curated portfolio of 7 Future-Forward Skill Studios – each designed as an immersive learning pod
               where students build capability, confidence, and a portfolio that travels with them.
             </p>
           </ScrollReveal>
@@ -65,7 +65,7 @@ export default function StudioGrid() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             <AnimatePresence mode="popLayout">
               {studios.slice(0, isExpanded ? 15 : 10).map((studio, index) => (
-                <motion.div 
+                <motion.div
                   key={studio.id}
                   layout
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -77,8 +77,8 @@ export default function StudioGrid() {
                 >
                   {/* Full Background Image */}
                   <div className="absolute inset-0 z-0">
-                    <img 
-                      src={studio.image} 
+                    <img
+                      src={studio.image}
                       alt={studio.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
@@ -87,7 +87,7 @@ export default function StudioGrid() {
                   </div>
 
                   {/* Decorative Glow */}
-                  <div 
+                  <div
                     className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-48 blur-[80px] opacity-0 group-hover:opacity-30 transition-opacity duration-500 z-10"
                     style={{ backgroundColor: studio.glow }}
                   />

@@ -5,7 +5,7 @@ import Lenis from '@studio-freight/lenis';
 import Particles from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
 
-import HomeNavbar from './home/HomeNavbar';
+import Navbar from './components/Navbar';
 import HomeHero from './home/HomeHero';
 import HomeMission from './home/HomeMission';
 import HomeTrusted from './home/HomeTrusted';
@@ -20,6 +20,7 @@ import HomeReady from './home/HomeReady';
 import HomeCTA from './home/HomeCTA';
 import './home/HomeResponsive.css';
 import HomeLearningEcosystem from './home/HomeLearningEcosystem';
+import Footer from './components/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -127,21 +128,22 @@ export default function HomeApp() {
 
       {/* Main Content */}
       <div style={{ position: 'relative', zIndex: 1 }}>
-        <HomeNavbar />
-        <div style={{ paddingTop: '70px' }}>
+        <Navbar />
+        <div>
           <HomeHero />
           <HomeMission />
           <HomeTrusted />
           <HomeAbout />
           <HomeLearningEcosystem />
           {/* <HomeCompare /> */}
-          <HomeExecution />
+          {/* <HomeExecution /> */}
           <HomeJourney />
           <HomePhilosophy />
           <HomeAdobe />
           <HomeEcosystem />
           <HomeReady />
           <HomeCTA />
+          <Footer />
         </div>
       </div>
     </div>

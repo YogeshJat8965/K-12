@@ -203,7 +203,7 @@ export default function HomeAdobe() {
           font-weight: 500;
           font-size: 16px;
           line-height: 1.5;
-          color: rgba(255, 255, 255, 0.64);
+          color: #FFFFFF;
           letter-spacing: 0.4px;
         }
 
@@ -219,11 +219,11 @@ export default function HomeAdobe() {
       <section className="ha-container" ref={sectionRef}>
         <div className="ha-box" style={{ perspective: '1000px' }}>
           <div className="ha-content">
-            <img src="/landing/flagship-badge.svg" alt="Flagship Programme" className="ha-flagship-img" />
-            <img src="/landing/partner-pills.svg" alt="Skillzza x Adobe" className="ha-partner-img" />
+            {/* <img src="/landing/flagship-badge.svg" alt="Flagship Programme" className="ha-flagship-img" />
+            <img src="/landing/partner-pills.svg" alt="Skillzza x Adobe" className="ha-partner-img" /> */}
 
             <h2 className="ha-title" style={{ perspective: '800px' }}>
-              {"Adobe Digital Creativity & AI Programme".split(' ').map((word, i) => (
+              {"Digital Creativity & AI Skills Programme".split(' ').map((word, i) => (
                 <span key={i} className="ha-word" style={{ display: 'inline-block', marginRight: '8px' }}>{word}</span>
               ))}
             </h2>

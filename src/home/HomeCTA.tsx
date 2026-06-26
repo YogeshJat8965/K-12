@@ -297,7 +297,7 @@ export default function HomeCTA() {
           <div className="cta-left">
             <span className="cta-badge">TAKE THE FIRST STEP</span>
             <h2 className="cta-title">
-              <span className="cta-title-base">Launch Your AI Superpower — </span>
+              <span className="cta-title-base">Launch Your AI Superpower - </span>
               <span className="cta-title-highlight" style={{ display: 'inline-block' }}>Early</span>
             </h2>
             <p className="cta-desc">
@@ -312,7 +312,7 @@ export default function HomeCTA() {
                 <div className="cta-card-icon"><img src={careerIcon} alt="Career Discovery" /></div>
                 <span className="cta-card-label">FOR PARENTS</span>
               </div>
-              <h3 className="cta-card-title">Book a Free Career<br/>Discovery Call</h3>
+              <h3 className="cta-card-title">Book a Free Career<br />Discovery Call</h3>
               <button className="cta-card-btn">Book a Call →</button>
             </div>
 
@@ -322,7 +322,7 @@ export default function HomeCTA() {
                 <div className="cta-card-icon"><img src={schoolIcon} alt="Institution" /></div>
                 <span className="cta-card-label">FOR SCHOOLS</span>
               </div>
-              <h3 className="cta-card-title">Become an AI-Ready<br/>Institution</h3>
+              <h3 className="cta-card-title">Become an AI-Ready<br />Institution</h3>
               <button className="cta-card-btn">Schedule Audit →</button>
             </div>
 
@@ -332,7 +332,7 @@ export default function HomeCTA() {
                 <div className="cta-card-icon"><img src={teachingIcon} alt="Teaching" /></div>
                 <span className="cta-card-label">FOR EDUCATORS</span>
               </div>
-              <h3 className="cta-card-title">Level Up Your Teaching<br/>Practice</h3>
+              <h3 className="cta-card-title">Level Up Your Teaching<br />Practice</h3>
               <button className="cta-card-btn">Join Cohort →</button>
             </div>
           </div>

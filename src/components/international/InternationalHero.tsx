@@ -48,7 +48,7 @@ export default function InternationalHero() {
         .ih-section {
           width: 100%;
           background: #FAFBFF; /* Very light blue-ish white */
-          padding-top: 140px;
+          padding-top: 110px;
           padding-bottom: 0px;
           font-family: 'Poppins', sans-serif;
           position: relative;

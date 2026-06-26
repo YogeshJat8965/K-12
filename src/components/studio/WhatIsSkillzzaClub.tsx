@@ -86,7 +86,7 @@ export default function WhatIsSkillzzaClub() {
                 <p>
                   Skillzza K-12 Studios are not just after-school activities. They are structured
                   <span className="font-semibold text-slate-800"> Skill Studios</span> designed to help students discover their strengths, build real-world
-                  skills, and develop a career-ready personality — all while having fun and learning
+                  skills, and develop a career-ready personality - all while having fun and learning
                   through doing.
                 </p>
               </ScrollReveal>

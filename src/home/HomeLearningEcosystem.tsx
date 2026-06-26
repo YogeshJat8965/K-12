@@ -16,29 +16,29 @@ const pillarsData = [
     img: img1,
     title: 'Vedya AI Co-Pilot',
     subtitle: 'Grades 5-12',
-    desc: 'An Adaptive AI Tutor That Personalises Pace, Content, And Feedback For Every Learner Across Academics And AI Skills — Named After The Goddess Durga, Designed For Safety-First Classroom Use.',
-    edge: 'Unlike Khanmigo Or Generic Chatbots, Vedya AI Is Purpose-Built For K-12, Multilingual For Indian Classrooms, And Aligned To CBSE, IB, And Cambridge Curricula Out Of The Box'
+    desc: 'An Adaptive AI Tutor That Personalises Pace, Content, And Feedback For Every Learner Across Academics And AI Skills.',
+    edge: 'Vedya AI Is Purpose-Built For K-12, Multilingual For Indian Classrooms, And Aligned To CBSE, IB, And Cambridge Curricula Out Of The Box'
   },
   {
     img: img2,
     title: 'Skill Studios',
     subtitle: '15+ Future Domains',
-    desc: 'Structured Learning Studios Spanning Generative AI, Space, Sustainability, Finance, Cybersecurity, Robotics, Public Speaking And More. Schools Select 3 Studios Per Academic Year.',
-    edge: 'Where Code.Org Teaches One Skill (Computing) And WhiteHat Jr Teaches One Stack (Coding), Skill Studios Cover 15+ Future Domains — With Capstone Projects, Not Just Tutorials'
+    desc: <>Structured Learning Studios Spanning Generative AI, Space, Sustainability, Finance, Cybersecurity, Robotics, Public Speaking And More.<br /><br />Schools Select 3 Studios Per Academic Year.</>,
+    edge: 'Where Code.Org Teaches One Skill (Computing) And WhiteHat Jr Teaches One Stack (Coding), Skill Studios Cover 15+ Future Domains - With Capstone Projects, Not Just Tutorials'
   },
   {
     img: img3,
-    title: 'Virtual Internships For K-12',
+    title: 'Virtual Internships',
     subtitle: 'Grades 6-12',
-    desc: 'Role-Based Job Simulations In AI Product Management, Data Analytics, Digital Marketing, UX Design, Sustainability Consulting, And More — The First True Career-Readiness Layer For School Students',
+    desc: <>Role-Based Job Simulations In AI Product Management, Data Analytics, Digital Marketing, UX Design, Sustainability Consulting, And More.<br /><br />The First True Career-Readiness Layer For School Students.</>,
     edge: 'Forage Built This For University. We Built It For School. Earlier Exposure, Age-Appropriate Scaffolding, And Certificates That Strengthen College Applications Globally'
-  },
+  }, 
   {
     img: img4,
     title: 'AI Playground',
     subtitle: 'Open Innovation Sandbox',
-    desc: 'A Safe, Browser-Based Environment Where Students Build, Test, And Ship Real AI Projects — From Chatbots And Image Classifiers To Agents And Prompt-Engineered Apps.',
-    edge: 'Most Platforms Stop At Theory. AI Playground Is A Hands-On Lab — Students Leave With Portfolios, Not Just Certificates.'
+    desc: <>A Safe, Browser-Based Environment Where Students Build, Test, And Ship Real AI Projects.<br /><br />From Chatbots And Image Classifiers To Agents And Prompt-Engineered Apps.</>,
+    edge: 'Most Platforms Stop At Theory. AI Playground Is A Hands-On Lab - Students Leave With Portfolios, Not Just Certificates.'
   }
 ];
 
@@ -120,7 +120,7 @@ export default function HomeLearningEcosystem() {
           display: flex;
           align-items: flex-end;
           justify-content: space-between;
-          margin-bottom: 60px;
+          margin-bottom: 5px;
           gap: 40px;
         }
 
@@ -143,7 +143,7 @@ export default function HomeLearningEcosystem() {
           font-weight: 800;
           font-size: 40px;
           color: #111827;
-          line-height: 1.2;
+          line-height: 1.25;
           margin: 0;
         }
 
@@ -356,26 +356,18 @@ export default function HomeLearningEcosystem() {
 
       <section className="hle-section" ref={sectionRef} style={{ perspective: '1200px' }}>
         <div className="hle-inner">
-          <div className="hle-header">
-            <div className="hle-header-left">
-              <span className="hle-badge">OUR LEARNING ECOSYSTEM</span>
+          <div className="hle-header" style={{ marginBottom: 0 }}>
+            <div className="hle-header-left" style={{ maxWidth: '100%' }}>
+              <span className="hle-badge" style={{ marginBottom: '8px' }}>OUR LEARNING ECOSYSTEM</span>
               <h2 className="hle-title" style={{ display: 'flex', flexDirection: 'column' }}>
                 <span ref={title1Ref} style={{ display: 'block' }}>Four Pillars.</span>
                 <span ref={title2Ref} style={{ display: 'block' }}>One Future-Ready Learner ..</span>
+                <span ref={title2Ref} style={{ display: 'block' }}>From First AI Lesson to First Internship to First Career...</span>
               </h2>
-            </div>
-            <div className="hle-header-right">
-              <p className="hle-subtitle">
-                Designed To Work As One System — From First AI Lesson To First Internship To First Career.
-              </p>
-              <div className="hle-line-wrap">
-                <div className="hle-line"></div>
-                <div className="hle-circle"></div>
-              </div>
             </div>
           </div>
 
-          <div className="hle-grid" ref={gridRef}>
+          <div className="hle-grid" ref={gridRef} style={{ marginTop: '20px' }}>
             {pillarsData.map((item, idx) => (
               <div className="hle-card" key={idx}>
                 <div className="hle-img-wrap">
@@ -385,10 +377,7 @@ export default function HomeLearningEcosystem() {
                   <h3 className="hle-card-title">{item.title}</h3>
                   <p className="hle-card-subtitle">{item.subtitle}</p>
                   <p className="hle-card-desc">{item.desc}</p>
-                  
-                  <h4 className="hle-card-edge-title">Our Edge</h4>
-                  <p className="hle-card-edge">{item.edge}</p>
-                  
+
                   <div className="hle-card-btn">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>

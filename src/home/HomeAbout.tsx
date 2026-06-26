@@ -31,7 +31,7 @@ export default function HomeAbout() {
 
       // Image 3D tilt reveal + glowing purple border
       if (imgRef.current) {
-        gsap.fromTo(imgRef.current, 
+        gsap.fromTo(imgRef.current,
           { rotationY: -30, scale: 0.9, opacity: 0, boxShadow: '0 0 0px rgba(108, 43, 217, 0)' },
           {
             rotationY: 0,
@@ -186,7 +186,7 @@ export default function HomeAbout() {
           </div>
 
           <div className="ha-right">
-            <span className="ha-label" ref={labelRef} style={{ display: 'inline-block' }}>ABOUT SKILLZZA NOVA</span>
+            <span className="ha-label" ref={labelRef} style={{ display: 'inline-block' }}>ABOUT SKILLZZA K-12</span>
 
             <h2 className="ha-h2">
               A K-12 Platform Built For An AI-First World
@@ -194,13 +194,13 @@ export default function HomeAbout() {
 
             <div className="ha-content" ref={textRef}>
               <p>
-                Skillzza Nova Is The Next-Generation K-12 Learning Platform Preparing Students, Educators, And Schools For An AI-Powered Economy. We Combine Cognitive Science, Real-World Skill-Building, And Intelligent Learning Systems — Powered By <span className="ha-purple">Vedya AI</span>, Our Proprietary AI Co-Pilot — To Equip Young Minds With The Future-Ready Capabilities They Need To Lead With Confidence.
+                SKILLZZA Is The Next-Generation K-12 Learning Platform Preparing Students, Educators, And Schools For An AI-Powered Economy. We Combine Cognitive Science, Real-World Skill-Building, And Intelligent Learning Systems powered by <span className="ha-purple">Vedya AI</span>, Our Proprietary AI Co-Pilot - To Equip Young Minds With The Future-Ready Capabilities They Need To Lead With Confidence.
               </p>
               <p>
-                In A World Where Change Is Constant, Textbooks Alone Are No Longer Enough. Students Must Master Future Skills — Creativity, Critical Thinking, Digital Fluency, And Ethical AI Awareness — To Thrive Globally.
+                In A World Where Change Is Constant, Textbooks Alone Are No Longer Enough. Students Must Master Future Skills - Creativity, Critical Thinking, Digital Fluency, And Ethical AI Awareness to thrive Globally.
               </p>
               <p>
-                From AI-Powered Upskilling And Role-Based Virtual Internships To Whole-School Transformation Programmes, We Make Future-Forward Education Accessible, Measurable, And Actionable — For Every Classroom, Everywhere.
+                From AI-Powered Upskilling And Role-Based Virtual Internships to Whole-School Transformation Programmes, We Make Future-Forward Education Accessible, Measurable, And Actionable - For Every Classroom, Everywhere.
               </p>
             </div>
           </div>

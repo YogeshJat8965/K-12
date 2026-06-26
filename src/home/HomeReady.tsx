@@ -400,8 +400,8 @@ export default function HomeReady() {
             </div>
             <div className="hr-right">
               {stepsData.map((item, idx) => (
-                <div 
-                  className="hr-step" 
+                <div
+                  className="hr-step"
                   key={idx}
                   style={{ color: item.color }}
                 >
@@ -430,7 +430,7 @@ export default function HomeReady() {
               <div className="hr-progress-fill"></div>
             </div>
             <p className="hr-assess-text">
-              Most schools assess at Integration level — take the test to find out where yours stands
+              Most schools assess at Integration level - take the test to find out where yours stands
             </p>
           </div>
 

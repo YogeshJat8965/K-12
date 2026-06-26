@@ -81,7 +81,7 @@ export default function HomeCompare() {
       iconColor: '#F59E0B',
       iconBg: '#FFFBEB',
       othersDesc: 'Single-Track: Coding Only (WhiteHat Jr) Or Computing Literacy Only (Code.Org).',
-      novaDesc: '15+ Future Domains — AI, Sustainability, Finance, Space, Design, Cybersecurity — In One Ecosystem'
+      novaDesc: '15+ Future Domains - AI, Sustainability, Finance, Space, Design, Cybersecurity - In One Ecosystem'
     },
     {
       title: 'AI Co-Pilot',
@@ -89,7 +89,7 @@ export default function HomeCompare() {
       iconColor: '#6C3CF7',
       iconBg: '#F5F3FF',
       othersDesc: 'Generic Chatbots Or US-Centric Tutors (Khanmigo) With Limited K-12 Safety Controls.',
-      novaDesc: 'Vedya AI — Multilingual, K-12 Native, Curriculum-Aligned, Classroom-Safe By Default.'
+      novaDesc: 'Vedya AI - Multilingual, K-12 Native, Curriculum-Aligned, Classroom-Safe By Default.'
     },
     {
       title: 'Career Readiness',
@@ -97,7 +97,7 @@ export default function HomeCompare() {
       iconColor: '#10B981',
       iconBg: '#ECFDF5',
       othersDesc: 'Forage And Similar Simulators Target University Students. School Students Miss Out',
-      novaDesc: 'First-Of-Its-Kind Virtual Internships Engineered For Grades 6-12 — College-Application Ready.'
+      novaDesc: 'First-Of-Its-Kind Virtual Internships Engineered For Grades 6-12 - College-Application Ready.'
     },
     {
       title: 'Industry Partnerships',
@@ -105,23 +105,23 @@ export default function HomeCompare() {
       iconColor: '#3B82F6',
       iconBg: '#EFF6FF',
       othersDesc: 'Brand Placements Without Functional Integration Or Recognised Credentials.',
-      novaDesc: 'Adobe Digital Creativity & AI — Free For Schools, With Globally-Recognised Adobe Creative Educator Certification.'
+      novaDesc: 'Adobe Digital Creativity & AI - Free For Schools, With Globally-Recognised Adobe Creative Educator Certification.'
     },
     {
       title: 'School Transformation',
       icon: <School size={28} strokeWidth={1.5} />,
       iconColor: '#EAB308',
       iconBg: '#FEF9C3',
-      othersDesc: 'LMS Or App Subscription Model — No Institutional Uplift.',
-      novaDesc: 'CCMM Framework — Curriculum, Culture, Mindset & Methodology — A Full-School AI Readiness Model.'
+      othersDesc: 'LMS Or App Subscription Model - No Institutional Uplift.',
+      novaDesc: 'CCMM Framework - Curriculum, Culture, Mindset & Methodology - A Full-School AI Readiness Model.'
     },
     {
       title: 'Curriculum Alignment',
       icon: <BookOpen size={28} strokeWidth={1.5} />,
       iconColor: '#F43F5E',
       iconBg: '#FCE7F3',
-      othersDesc: 'Aligned To One Region\'s Standards — Typically US Common Core Or UK National Curriculum',
-      novaDesc: 'Aligned To NEP 2020, IB, Cambridge, ISTE, And UN SDGs — Globally Portable, Locally Relevant.'
+      othersDesc: 'Aligned To One Region\'s Standards - Typically US Common Core Or UK National Curriculum',
+      novaDesc: 'Aligned To NEP 2020, IB, Cambridge, ISTE, And UN SDGs - Globally Portable, Locally Relevant.'
     },
     {
       title: 'Learner Outcomes',
@@ -300,7 +300,7 @@ export default function HomeCompare() {
 
       <section className="hc-section" ref={sectionRef} style={{ perspective: '1200px' }}>
         <div className="hc-inner">
-          
+
           <div className="hc-header">
             <span className="hc-label">WHY SKILLZA NOVA</span>
             <h2 className="hc-title" ref={titleRef}>Better Than The Alternatives. By Design.</h2>
@@ -312,7 +312,7 @@ export default function HomeCompare() {
           <div className="hc-list" ref={listRef}>
             {data.map((row, idx) => (
               <div className="hc-card" key={idx} style={{ transformStyle: 'preserve-3d' }}>
-                
+
                 <div className="hc-col-1">
                   <div className="hc-icon-box" style={{ backgroundColor: row.iconBg, color: row.iconColor }}>
                     {row.icon}

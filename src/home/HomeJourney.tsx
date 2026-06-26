@@ -23,7 +23,7 @@ const journeyData = [
     id: '02',
     image: img2,
     icon: <Pencil size={16} strokeWidth={2} />,
-    title: 'practice',
+    title: 'Practice',
     desc: 'Apply concepts through hands-on projects and real-world tasks.',
     color: '#6C3CF7'
   },
@@ -266,10 +266,8 @@ export default function HomeJourney() {
         }
         .hj-card-title {
           font-weight: 700;
-          font-size: 16px;
-          text-decoration: underline;
-          text-underline-offset: 3px;
-          text-decoration-thickness: 2px;
+          font-size: 17px;
+          text-decoration: none;
         }
         .hj-card-desc {
           font-weight: 400;
@@ -326,10 +324,7 @@ export default function HomeJourney() {
                 </div>
                 <div className="hj-card-bottom" style={{ transform: 'translateZ(20px)' }}>
                   <div className="hj-title-row">
-                    <div className="hj-title-icon" style={{ background: item.color }}>
-                      {item.icon}
-                    </div>
-                    <span className="hj-card-title" style={{ color: item.color, textDecorationColor: item.color }}>{item.title}</span>
+                    <span className="hj-card-title" style={{ color: item.color }}>{item.title}</span>
                   </div>
                   <p className="hj-card-desc">{item.desc}</p>
                 </div>

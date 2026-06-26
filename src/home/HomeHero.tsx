@@ -96,7 +96,7 @@ export default function HomeHero() {
         .hh-section {
           width: 100%;
           background: #ffffff;
-          padding-top: 70px; /* navbar height */
+          padding-top: 90px; /* single-level navbar height */
           font-family: 'Poppins', sans-serif;
           position: relative;
           overflow: hidden;
@@ -350,12 +350,12 @@ export default function HomeHero() {
           <div className="hh-left">
 
             {/* Badge */}
-            <div className="hh-badge">
+            {/* <div className="hh-badge">
               <span className="hh-badge-dot" />
               <span className="hh-badge-text">SKILLZZA K-12 | FUTURE LEARNING</span>
-            </div>
+            </div> */}
 
-            {/* Heading — exactly 2 lines */}
+            {/* Heading - exactly 2 lines */}
             <h1 className="hh-h1" ref={headingRef}>
               <span className="hero-word">
                 {"From Classrooms to".split('').map((char, i) => (
@@ -391,7 +391,7 @@ export default function HomeHero() {
 
             {/* Trust */}
             <p className="hh-trust">
-              Trusted by <strong>150,000+ students</strong> across <strong>6 regions</strong> worldwide
+              Trusted by <strong>250,000+ students</strong> across <strong>6 regions</strong> worldwide
             </p>
           </div>
 

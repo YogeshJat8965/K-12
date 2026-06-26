@@ -75,7 +75,7 @@ export default function HomeExecution() {
 
       // Pillars Title Clip-Path Reveal
       if (pillarsTitleRef.current) {
-        gsap.fromTo(pillarsTitleRef.current, 
+        gsap.fromTo(pillarsTitleRef.current,
           { clipPath: 'inset(0 100% 0 0)' },
           {
             clipPath: 'inset(0 0% 0 0)',
@@ -106,7 +106,7 @@ export default function HomeExecution() {
 
       // Divider Lines
       const dividers = document.querySelectorAll('.ef-divider');
-      gsap.fromTo(dividers, 
+      gsap.fromTo(dividers,
         { scaleY: 0 },
         {
           scaleY: 1,
@@ -132,7 +132,7 @@ export default function HomeExecution() {
           },
           delay: i * 0.12 + 0.3
         });
-        tl.fromTo(icon, 
+        tl.fromTo(icon,
           { scale: 0 },
           { scale: 1, duration: 1, ease: 'elastic.out(1, 0.5)' }
         ).to(icon, {
@@ -218,6 +218,7 @@ export default function HomeExecution() {
           gap: 20px;
           max-width: 1440px;
           margin: 0 auto;
+          align-items: flex-start;
         }
         .ef-pillar {
           display: flex;
@@ -266,7 +267,7 @@ export default function HomeExecution() {
           color: #4B5563;
           margin: 0;
         }
-        @media (max-width: 1400px) {
+        @media (max-width: 1024px) {
           .ef-pillars-grid { grid-template-columns: repeat(3, 1fr); }
           .ef-pillar { border-left: none !important; padding-left: 0 !important; }
         }
@@ -287,7 +288,7 @@ export default function HomeExecution() {
               <span className="ef-label">OUR EXECUTION FRAMEWORK</span>
               <h2 className="ef-title">From Learning To Measurable Outcomes</h2>
               <p className="ef-subtitle" ref={subtitleRef}>
-                Skillzza Nova Goes Beyond Teaching AI — We Deliver A Structured Execution Model That Converts Learning Into Measurable Student Outcomes. Built As An Integrated K-12 Implementation Framework, Our Model Combines Future-Ready Curriculum, Experiential Skill Labs, Continuous Assessment, Certification Pathways, And League-Based Progression.
+                SKILLZZA K-12 Goes Beyond Teaching AI - We Deliver A Structured Execution Model That Converts Learning Into Measurable Student Outcomes. <br /> Built As An Integrated K-12 Implementation Framework, Our Model Combines Future-Ready Curriculum, Experiential Skill Labs, Continuous Assessment, Certification Pathways, And League-Based Progression.
               </p>
             </div>
             <div className="ef-right" style={{ perspective: '1000px' }}>
@@ -301,11 +302,11 @@ export default function HomeExecution() {
 
           <div className="ef-pillars-grid">
             {execData.map((item, idx) => (
-              <div 
-                key={item.id} 
-                className="ef-pillar" 
-                style={{ 
-                  paddingLeft: idx === 0 ? '0' : '20px' 
+              <div
+                key={item.id}
+                className="ef-pillar"
+                style={{
+                  paddingLeft: idx === 0 ? '0' : '20px'
                 }}
               >
                 {idx > 0 && <div className="ef-divider" />}
