@@ -1,19 +1,26 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { 
-  BarChart3, 
-  BrainCircuit, 
-  PenTool, 
-  Bot, 
-  Users, 
+import {
+  BarChart3,
+  BrainCircuit,
+  PenTool,
+  Bot,
+  Users,
   Globe2,
   ArrowRight
 } from 'lucide-react';
+import ScrollReveal from '../ScrollReveal';
+
+// Using valid images from virtual internship
+import img1 from '../../assets/virtual internship/1img.png';
+import img2 from '../../assets/virtual internship/2img.png';
+import img3 from '../../assets/virtual internship/3img.png';
+import img4 from '../../assets/virtual internship/4img.png';
+import img5 from '../../assets/virtual internship/5img.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Data structure for cards to make the layout cleaner
 const studios = [
   {
     title: "Gen AI &\nDeep Tech Studio",
@@ -21,9 +28,10 @@ const studios = [
     theme: "purple",
     icon: BrainCircuit,
     tags: ["Generative AI", "AI Fundamentals", "Prompt Engineering", "Emerging Technologies", "AI Ethics", "Creative AI Tools"],
-    colorHex: "#6366F1", // Indigo/Purple
+    colorHex: "#6366F1",
     bgHex: "#EEF2FF",
-    hoverClass: "hover:border-blue-400 hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.3)]"
+    image: img1,
+    bgClass: "bg-indigo-600"
   },
   {
     title: "Digital Creativity\n& AI Studio",
@@ -32,9 +40,10 @@ const studios = [
     theme: "blue",
     icon: PenTool,
     tags: ["Graphic Design", "Digital Storytelling", "Creative Media", "Visual Communication", "Content Creation", "AI-Powered Creativity"],
-    colorHex: "#2563EB", // Blue
+    colorHex: "#2563EB",
     bgHex: "#EFF6FF",
-    hoverClass: "hover:border-blue-400 hover:shadow-[0_20px_40px_-15px_rgba(37,99,235,0.3)]"
+    image: img2,
+    bgClass: "bg-blue-600"
   },
   {
     title: "AI Builders\nStudio",
@@ -42,9 +51,10 @@ const studios = [
     theme: "green",
     icon: Bot,
     tags: ["AI Applications", "Intelligent Systems", "Automation Logic", "Problem-Solving", "AI Innovation Challenges"],
-    colorHex: "#16A34A", // Green
+    colorHex: "#16A34A",
     bgHex: "#F0FDF4",
-    hoverClass: "hover:border-blue-400 hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.3)]"
+    image: img3,
+    bgClass: "bg-green-600"
   },
   {
     title: "Future Leaders &\nEntrepreneurship Studio",
@@ -52,9 +62,10 @@ const studios = [
     theme: "orange",
     icon: Users,
     tags: ["Leadership", "Entrepreneurship", "Team Collaboration", "Design Thinking", "Innovation Mindset", "Communication Skills"],
-    colorHex: "#EA580C", // Orange
+    colorHex: "#EA580C",
     bgHex: "#FFF7ED",
-    hoverClass: "hover:border-blue-400 hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.3)]"
+    image: img4,
+    bgClass: "bg-orange-600"
   },
   {
     title: "Global Ambassador &\nWorld Affairs Studio",
@@ -62,9 +73,10 @@ const studios = [
     theme: "teal",
     icon: Globe2,
     tags: ["Global Awareness", "Public Policy Basics", "Sustainable Development", "Communication", "International Perspectives", "Cross-cultural Understanding"],
-    colorHex: "#0D9488", // Teal
+    colorHex: "#0D9488",
     bgHex: "#F0FDFA",
-    hoverClass: "hover:border-blue-400 hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.3)]"
+    image: img5,
+    bgClass: "bg-teal-600"
   }
 ];
 
@@ -74,19 +86,13 @@ export default function FutureSkillsStudios() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Intro animations
-      gsap.fromTo('.fss-intro', 
+      gsap.fromTo('.fss-intro',
         { y: 30, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: 'power3.out', scrollTrigger: { trigger: '.fss-intro', start: 'top 85%' } }
       );
 
-      // Cards stagger
-      gsap.fromTo('.fss-card', 
-        { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out', scrollTrigger: { trigger: '.fss-grid', start: 'top 80%' } }
-      );
-      
       // Bottom button
-      gsap.fromTo('.fss-btn', 
+      gsap.fromTo('.fss-btn',
         { y: 20, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out', scrollTrigger: { trigger: '.fss-btn', start: 'top 95%' } }
       );
@@ -96,152 +102,89 @@ export default function FutureSkillsStudios() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full pt-8 pb-24 bg-[#FAFBFC] overflow-hidden font-poppins">
-      
-      {/* Background Decor Elements */}
-      <div className="absolute top-20 left-0 w-64 h-64 bg-[#FFFBF0] rounded-full -translate-x-1/2 blur-2xl z-0"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#F3EFFF] rounded-full -translate-x-1/2 translate-y-1/2 blur-3xl z-0"></div>
-      
-      {/* Dot Grid Pattern (Bottom Right) */}
-      <div className="absolute bottom-20 right-10 w-32 h-32 z-0 opacity-40 hidden lg:block" style={{ backgroundImage: 'radial-gradient(#9CA3AF 2px, transparent 2px)', backgroundSize: '16px 16px' }}></div>
+    <section ref={sectionRef} className="relative w-full pt-8 pb-12 bg-[#F3F4F6] overflow-hidden font-poppins">
 
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10 flex flex-col items-center">
+      {/* Background elements */}
+      <div className="absolute top-20 left-10 w-[300px] h-[300px] bg-[#E0E7FF] rounded-full blur-[100px] opacity-40 pointer-events-none z-0"></div>
+      <div className="absolute bottom-20 right-10 w-[400px] h-[400px] bg-[#DBEAFE] rounded-full blur-[120px] opacity-40 pointer-events-none z-0"></div>
 
-        {/* Section Header */}
-        <div className="text-center mb-16 fss-intro max-w-[850px]">
-          <h2 className="text-[36px] md:text-[44px] font-bold text-[#1A1A2E] tracking-tight mb-6">
+      <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+
+        {/* Intro */}
+        <div className="text-center max-w-[800px] mx-auto mb-16">
+          <h2 className="fss-intro text-[36px] md:text-[44px] font-extrabold text-[#1A1A2E] leading-[1.15] mb-5 tracking-tight">
             Our Future <span className="text-[#3B82F6]">Skills Studios</span>
           </h2>
-          <p className="text-[#6B7280] text-[16px] font-medium leading-relaxed">
-            A Curated Portfolio Of Immersive Skill Studios Designed To Build Capability, Confidence, Creativity, And Future Readiness.
+          <p className="fss-intro text-[#6B7280] text-[16px] font-medium max-w-[700px] mx-auto leading-relaxed">
+            A Curated Portfolio Of Immersive Skill Studios Designed To Build Capability, Confidence, Creativity, And Future Readiness. Hover over the cards to view the Key Focus Areas.
           </p>
         </div>
 
-        {/* Cards Grid - Top 3 */}
-        <div className="fss-grid w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-          {studios.slice(0, 3).map((studio, idx) => {
-            const Icon = studio.icon;
-            return (
-              <div 
-                key={`top-${idx}`} 
-                className={`fss-card bg-white rounded-[24px] p-6 lg:p-7 flex flex-col shadow-sm border-2 border-gray-100 ${studio.hoverClass} hover:-translate-y-2 transition-all duration-500 group`}
-              >
-                {/* Top Half */}
-                <div className="flex gap-4 mb-5">
-                  {/* Icon Block */}
-                  <div 
-                    className="w-[64px] h-[64px] rounded-[18px] flex items-center justify-center shrink-0 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3"
-                    style={{ backgroundColor: studio.bgHex }}
-                  >
-                    <Icon size={28} style={{ color: studio.colorHex }} strokeWidth={1.5} />
+        {/* 3D Flip Cards Grid */}
+        <div className="flex flex-wrap justify-center gap-6">
+          {studios.map((studio, i) => (
+            <ScrollReveal
+              key={i}
+              delay={i * 0.1}
+              rotateX={15}
+              scale={0.9}
+              className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)] h-[320px] [perspective:1000px] group"
+            >
+              <div className="relative w-full h-full transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] cursor-pointer">
+
+                {/* FRONT SIDE */}
+                <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-[1.5rem] overflow-hidden bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 flex flex-col">
+                  <div className="h-[75%] w-full relative overflow-hidden">
+                    <img
+                      src={studio.image}
+                      alt={studio.title.replace('\n', ' ')}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-100" />
+
+                    {/* Removed overlay icon as requested */}
                   </div>
-                  
-                  {/* Title */}
-                  <div className="flex flex-col justify-center">
-                    <h3 className="text-[#1A1A2E] text-[21px] font-bold leading-tight whitespace-pre-line">
+                  <div className="flex-1 p-4 flex flex-col justify-center bg-white text-center">
+                    <h3 className="font-bold text-[15px] text-[#1A1A2E] leading-tight px-1 whitespace-pre-line">
                       {studio.title}
                     </h3>
                     {studio.subtitle && (
-                      <span className="text-[#3B82F6] text-[12px] font-bold mt-1 italic">
-                        {studio.subtitle}
-                      </span>
+                      <p className="text-[11px] text-[#2563EB] font-bold mt-1 uppercase tracking-wider">{studio.subtitle}</p>
                     )}
                   </div>
                 </div>
 
-                <p className="text-[#6B7280] text-[14.5px] leading-relaxed mb-6 flex-grow">
-                  {studio.desc}
-                </p>
+                {/* BACK SIDE */}
+                <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-[1.5rem] overflow-hidden bg-[#7C3AED] p-6 flex flex-col items-center justify-center text-center shadow-xl">
+                  {/* Decorative background circle */}
+                  <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full opacity-20 blur-2xl bg-white" />
 
-                <div className="w-full h-[1px] bg-gray-100 mb-5"></div>
-
-                {/* Bottom Half: Tags */}
-                <div>
-                  <h4 className="text-[14px] font-bold mb-3" style={{ color: studio.colorHex }}>
+                  <h3 className="text-white font-bold text-[18px] mb-4 border-b border-white/20 pb-2">
                     Key Focus Areas
-                  </h4>
-                  <div className="flex flex-wrap gap-1.5">
-                    {studio.tags.map((tag, i) => (
-                      <div 
-                        key={i} 
-                        className="px-3 py-1.5 rounded-full flex items-center gap-1.5"
-                        style={{ backgroundColor: studio.bgHex }}
-                      >
-                        <div className="w-1 h-1 rounded-full shrink-0" style={{ backgroundColor: studio.colorHex }}></div>
-                        <span className="text-[11.5px] md:text-[12px] font-bold whitespace-nowrap" style={{ color: studio.colorHex }}>
-                          {tag}
-                        </span>
-                      </div>
+                  </h3>
+
+                  <div className="flex flex-wrap justify-center gap-2">
+                    {studio.tags.map((tag, idx) => (
+                      <span key={idx} className="bg-white/10 border border-white/20 text-white text-[12px] font-medium py-1 px-3 rounded-full">
+                        {tag}
+                      </span>
                     ))}
                   </div>
+
                 </div>
+
               </div>
-            );
-          })}
+            </ScrollReveal>
+          ))}
         </div>
 
-        {/* Cards Grid - Bottom 2 (Centered) */}
-        <div className="fss-grid w-full grid grid-cols-1 md:grid-cols-2 gap-6 lg:max-w-[66.666%] mb-16 mx-auto">
-          {studios.slice(3, 5).map((studio, idx) => {
-            const Icon = studio.icon;
-            return (
-              <div 
-                key={`bot-${idx}`} 
-                className={`fss-card bg-white rounded-[24px] p-6 lg:p-7 flex flex-col shadow-sm border-2 border-gray-100 ${studio.hoverClass} hover:-translate-y-2 transition-all duration-500 group`}
-              >
-                {/* Top Half */}
-                <div className="flex gap-4 mb-5">
-                  {/* Icon Block */}
-                  <div 
-                    className="w-[64px] h-[64px] rounded-[18px] flex items-center justify-center shrink-0 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-3"
-                    style={{ backgroundColor: studio.bgHex }}
-                  >
-                    <Icon size={28} style={{ color: studio.colorHex }} strokeWidth={1.5} />
-                  </div>
-                  
-                  {/* Title */}
-                  <div className="flex flex-col justify-center">
-                    <h3 className="text-[#1A1A2E] text-[21px] font-bold leading-tight whitespace-pre-line">
-                      {studio.title}
-                    </h3>
-                  </div>
-                </div>
-
-                <p className="text-[#6B7280] text-[14.5px] leading-relaxed mb-6 flex-grow">
-                  {studio.desc}
-                </p>
-
-                <div className="w-full h-[1px] bg-gray-100 mb-5"></div>
-
-                {/* Bottom Half: Tags */}
-                <div>
-                  <h4 className="text-[14px] font-bold mb-3" style={{ color: studio.colorHex }}>
-                    Key Focus Areas
-                  </h4>
-                  <div className="flex flex-wrap gap-1.5">
-                    {studio.tags.map((tag, i) => (
-                      <div 
-                        key={i} 
-                        className="px-3 py-1.5 rounded-full flex items-center gap-1.5"
-                        style={{ backgroundColor: studio.bgHex }}
-                      >
-                        <div className="w-1 h-1 rounded-full shrink-0" style={{ backgroundColor: studio.colorHex }}></div>
-                        <span className="text-[11.5px] md:text-[12px] font-bold whitespace-nowrap" style={{ color: studio.colorHex }}>
-                          {tag}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+        {/* View All Studios Button */}
+        <div className="mt-16 flex justify-center fss-btn">
+          <button className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold text-white transition-all duration-300 bg-[#2563EB] rounded-full overflow-hidden hover:bg-[#1D4ED8] hover:shadow-[0_8px_25px_rgba(37,99,235,0.4)]">
+            <span className="relative z-10 text-[15px]">Explore All 15+ Studios</span>
+            <ArrowRight className="relative z-10 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={2.5} />
+          </button>
         </div>
-
-        {/* Explore Button */}
-        <button className="fss-btn mt-4 bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-8 py-3.5 rounded-xl font-semibold text-[15px] flex items-center gap-2 transition-colors shadow-md hover:shadow-lg">
-          Explore all studios <ArrowRight size={18} strokeWidth={2.5} />
-        </button>
 
       </div>
     </section>

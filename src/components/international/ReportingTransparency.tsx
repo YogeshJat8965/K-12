@@ -1,51 +1,10 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { 
-  FolderOpen, TrendingUp, CalendarDays, 
-  FileText, PieChart, Megaphone 
-} from 'lucide-react';
+
+import reportingImg from '../../assets/International Studio/Reporting & Transparency.png';
 
 gsap.registerPlugin(ScrollTrigger);
-
-const features = [
-  {
-    title: "Digital student\nportfolios",
-    icon: FolderOpen,
-    color: "#2563EB", // Blue
-    bg: "#EFF6FF"
-  },
-  {
-    title: "Progress\ndocumentation",
-    icon: TrendingUp, 
-    color: "#8B5CF6", // Purple
-    bg: "#F5F3FF"
-  },
-  {
-    title: "Mid-year and\nannual showcases",
-    icon: CalendarDays,
-    color: "#F97316", // Orange
-    bg: "#FFF7ED"
-  },
-  {
-    title: "Learning\nreflections",
-    icon: FileText,
-    color: "#16A34A", // Green
-    bg: "#F0FDF4"
-  },
-  {
-    title: "School performance\ndashboards",
-    icon: PieChart,
-    color: "#E11D48", // Pink
-    bg: "#FFF1F2"
-  },
-  {
-    title: "Studio showcase\nevents",
-    icon: Megaphone,
-    color: "#3B82F6", // Blue
-    bg: "#EFF6FF"
-  }
-];
 
 export default function ReportingTransparency() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -67,11 +26,11 @@ export default function ReportingTransparency() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full py-24 bg-white font-poppins relative overflow-hidden">
+    <section ref={sectionRef} className="w-full py-24 bg-[#F9F9F9] font-poppins relative overflow-hidden">
       <div className="max-w-[1250px] mx-auto px-6 lg:px-12 relative z-10">
         
         {/* Header Row */}
-        <div className="rt-header flex flex-col md:flex-row items-start md:items-center justify-between mb-16 gap-10">
+        <div className="rt-header flex flex-col md:flex-row items-start md:items-center justify-between mb-0 gap-10">
           
           {/* Left Text */}
           <div className="max-w-[650px]">
@@ -92,30 +51,13 @@ export default function ReportingTransparency() {
           </div>
         </div>
 
-        {/* Grid */}
-        <div className="rt-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {features.map((feature, idx) => {
-            const Icon = feature.icon;
-            return (
-              <div 
-                key={idx}
-                className="rt-card bg-white rounded-[24px] p-6 lg:p-7 flex items-center gap-6 border-2 border-gray-100 shadow-sm hover:border-blue-400 hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.3)] hover:-translate-y-2 transition-all duration-500 group"
-              >
-                {/* Icon Circle */}
-                <div 
-                  className="w-[72px] h-[72px] rounded-full flex items-center justify-center shrink-0 transition-transform duration-500 group-hover:scale-110"
-                  style={{ backgroundColor: feature.bg }}
-                >
-                  <Icon size={30} style={{ color: feature.color }} strokeWidth={1.5} />
-                </div>
-                
-                {/* Title */}
-                <h3 className="text-[17px] font-bold text-[#1A1A2E] leading-snug whitespace-pre-line">
-                  {feature.title}
-                </h3>
-              </div>
-            )
-          })}
+        {/* Image */}
+        <div className="rt-card w-full flex justify-center mt-0">
+          <img 
+            src={reportingImg} 
+            alt="Reporting & Transparency" 
+            className="w-full max-w-[1100px] h-auto object-contain" 
+          />
         </div>
 
       </div>

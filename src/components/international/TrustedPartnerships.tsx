@@ -5,6 +5,7 @@ import {
   Building2, Landmark, Share2, 
   Globe, Lightbulb, ArrowRight, Play 
 } from 'lucide-react';
+import bannerImg from '../../assets/International Studio/banner.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,31 +14,41 @@ const partners = [
     title: "A school\nleader",
     icon: Building2,
     color: "#6366F1", // Indigo
-    bg: "#E0E7FF"     // Indigo-100
+    blobBg: "linear-gradient(135deg, #E0E7FF 0%, #A5B4FC 100%)",
+    blobRadius: "60% 40% 70% 30% / 50% 60% 40% 50%",
+    shadow: "0px 10px 30px rgba(99, 102, 241, 0.15)"
   },
   {
     title: "An academic\ninstitution",
     icon: Landmark,
     color: "#F43F5E", // Rose
-    bg: "#FFE4E6"     // Rose-100
+    blobBg: "linear-gradient(135deg, #FFE4E6 0%, #FDA4AF 100%)",
+    blobRadius: "40% 60% 30% 70% / 60% 40% 70% 40%",
+    shadow: "0px 10px 30px rgba(244, 63, 94, 0.15)"
   },
   {
     title: "A learning\nnetwork",
     icon: Share2,
     color: "#F97316", // Orange
-    bg: "#FFEDD5"     // Orange-100
+    blobBg: "linear-gradient(135deg, #FFEDD5 0%, #FDBA74 100%)",
+    blobRadius: "50% 50% 60% 40% / 40% 70% 30% 60%",
+    shadow: "0px 10px 30px rgba(249, 115, 22, 0.15)"
   },
   {
     title: "A global education\npartner",
     icon: Globe,
     color: "#22C55E", // Green
-    bg: "#DCFCE7"     // Green-100
+    blobBg: "linear-gradient(135deg, #DCFCE7 0%, #86EFAC 100%)",
+    blobRadius: "70% 30% 50% 50% / 50% 50% 60% 40%",
+    shadow: "0px 10px 30px rgba(34, 197, 94, 0.15)"
   },
   {
     title: "An innovation-\nfocused organisation",
     icon: Lightbulb,
     color: "#A855F7", // Purple
-    bg: "#F3E8FF"     // Purple-100
+    blobBg: "linear-gradient(135deg, #F3E8FF 0%, #D8B4FE 100%)",
+    blobRadius: "40% 60% 60% 40% / 60% 30% 70% 40%",
+    shadow: "0px 10px 30px rgba(168, 85, 247, 0.15)"
   }
 ];
 
@@ -55,70 +66,115 @@ export default function TrustedPartnerships() {
         { y: 40, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'power3.out', scrollTrigger: { trigger: '.tp-grid', start: 'top 80%' } }
       );
-
-      gsap.fromTo('.tp-footer', 
-        { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out', scrollTrigger: { trigger: '.tp-footer', start: 'top 90%' } }
-      );
     }, sectionRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full pt-12 pb-24 bg-white font-poppins relative overflow-hidden">
+    <section ref={sectionRef} className="w-full pt-16 pb-24 bg-white font-poppins relative overflow-hidden">
       
-      {/* Decorative Solid Blobs */}
-      <div className="absolute top-[-5%] right-[-15%] w-[650px] h-[650px] bg-[#F4F7FF] rounded-full pointer-events-none"></div>
-      <div className="absolute bottom-[5%] left-[-15%] w-[450px] h-[450px] bg-[#FFFBF0] rounded-full pointer-events-none"></div>
+      {/* Background Decor */}
+      <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#EEF2FF] rounded-full blur-[80px] pointer-events-none opacity-60"></div>
+      <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-[#FFF7ED] rounded-full blur-[80px] pointer-events-none opacity-60"></div>
+      
+      {/* Dot Matrix Decoration Left */}
+      <div className="absolute top-[30%] left-[5%] grid grid-cols-4 gap-2 opacity-10 pointer-events-none">
+        {[...Array(16)].map((_, i) => (
+          <div key={i} className="w-2 h-2 rounded-full bg-[#1A1A2E]"></div>
+        ))}
+      </div>
 
-      <div className="max-w-[1250px] mx-auto px-6 lg:px-12 relative z-10 flex flex-col items-center">
+      <div className="max-w-[1200px] mx-auto px-6 relative z-10 flex flex-col items-center">
         
         {/* Header */}
-        <div className="tp-header text-center w-full max-w-[900px] mb-10">
-          <h2 className="text-[36px] md:text-[44px] font-bold text-[#1A1A2E] leading-tight mb-6">
-            Trusted Learning <span className="text-[#3B82F6]">Partnerships</span>
+        <div className="tp-header text-center w-full max-w-[900px] mb-12">
+          <h2 className="text-[40px] md:text-[50px] font-extrabold text-[#101828] leading-tight mb-4 tracking-tight">
+            Trusted Learning <span className="text-[#5B61FE]">Partnerships</span>
           </h2>
-          <p className="text-[#6B7280] text-[16px] md:text-[17px] leading-relaxed font-medium mb-10 px-4 md:px-10">
+          
+          {/* Small centered divider */}
+          <div className="flex items-center justify-center gap-2 mb-6">
+            <div className="w-[40px] h-[2px] bg-gray-200"></div>
+            <div className="w-2 h-2 rounded-full bg-[#5B61FE]"></div>
+            <div className="w-[40px] h-[2px] bg-[#5B61FE]"></div>
+          </div>
+
+          <p className="text-[#475467] text-[15px] md:text-[16px] leading-relaxed font-medium mb-12 px-4 md:px-10">
             We Collaborate With Forward-Looking Schools, Institutions, Educators, And Industry Partners To Build Meaningful Future-Skills Ecosystems For The Next Generation.
           </p>
-          <p className="text-[#6B7280] text-[16px] font-medium">
-            Whether You Are
-          </p>
-        </div>
-
-        {/* Flex Row of Partners */}
-        <div className="tp-grid w-full flex flex-wrap justify-center items-start gap-4 md:gap-6 lg:gap-8 mb-16 px-4">
-          {partners.map((partner, idx) => {
-            const Icon = partner.icon;
-            return (
-              <div key={idx} className="tp-card flex flex-col items-start hover:-translate-y-2 transition-transform duration-300 group cursor-default w-[140px] md:w-[155px]">
-                <div 
-                  className="w-[56px] h-[56px] rounded-[14px] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-sm"
-                  style={{ backgroundColor: partner.bg }}
-                >
-                  <Icon size={26} style={{ color: partner.color }} strokeWidth={1.5} />
-                </div>
-                <h3 className="text-[15px] font-bold text-[#1A1A2E] leading-snug whitespace-pre-line text-left">
-                  {partner.title}
-                </h3>
-              </div>
-            )
-          })}
-        </div>
-
-        {/* Footer Text and Buttons */}
-        <div className="tp-footer w-full flex flex-col items-center text-center">
-          <p className="text-[#6B7280] text-[16px] font-medium mb-10">
-            We Welcome Opportunities To Co-Create Transformative Learning Experiences.
-          </p>
           
-          <div className="flex flex-col sm:flex-row items-center gap-5">
-            <button className="flex items-center gap-2 px-8 py-3.5 bg-[#3B82F6] text-white rounded-[6px] font-bold text-[14px] hover:bg-blue-700 hover:shadow-[0_10px_20px_-10px_rgba(59,130,246,0.6)] transition-all duration-300 tracking-wide uppercase">
+          {/* Whether You Are */}
+          <div className="flex items-center justify-center w-full max-w-[600px] mx-auto mb-6">
+            <div className="flex-1 flex items-center justify-end pr-4 opacity-50">
+              <div className="w-full h-[1.5px] bg-gray-200"></div>
+              <div className="w-2 h-2 rounded-full bg-[#C084FC] shrink-0 ml-1"></div>
+            </div>
+            <h3 className="text-[#101828] text-[20px] font-bold shrink-0 px-2">
+              Whether You Are
+            </h3>
+            <div className="flex-1 flex items-center justify-start pl-4 opacity-50">
+              <div className="w-2 h-2 rounded-full bg-[#F59E0B] shrink-0 mr-1"></div>
+              <div className="w-full h-[1.5px] bg-gray-200"></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Timeline Graphic */}
+        <div className="tp-grid w-full relative mb-16">
+          
+          {/* Removed SVG Wavy Line Background as requested */}
+
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-10 md:gap-0 relative z-10 w-full px-[5%]">
+            {partners.map((partner, idx) => {
+              const Icon = partner.icon;
+              return (
+                <div key={idx} className="tp-card flex flex-col items-center group w-[160px]">
+                  
+                  {/* Organic Blob & Icon */}
+                  <div className="relative w-[130px] h-[130px] flex items-center justify-center mb-6">
+                    {/* Background Blob */}
+                    <div 
+                      className="absolute inset-0 transition-transform duration-500 group-hover:scale-105 animate-[spin_15s_linear_infinite]"
+                      style={{ 
+                        background: partner.blobBg,
+                        borderRadius: partner.blobRadius,
+                        boxShadow: partner.shadow
+                      }}
+                    ></div>
+                    
+                    {/* Inner White Circle */}
+                    <div className="relative w-[65px] h-[65px] bg-white rounded-full flex items-center justify-center shadow-sm z-10 transition-transform duration-300 group-hover:scale-110 group-hover:-translate-y-1">
+                      <Icon size={30} style={{ color: partner.color }} strokeWidth={2} />
+                    </div>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-[15px] font-bold text-[#101828] leading-snug whitespace-pre-line text-center px-2">
+                    {partner.title}
+                  </h3>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* Banner with Buttons Overlaid */}
+        <div className="w-full max-w-[1200px] mt-10 relative rounded-[24px] overflow-hidden flex items-end justify-end pb-[6%] md:pb-[4%] pr-[5%] lg:pr-[1%] shadow-lg border border-gray-100" style={{ aspectRatio: '16/4.2' }}>
+          {/* Background Banner Image */}
+          <img 
+            src={bannerImg} 
+            alt="Welcome Opportunities Banner" 
+            className="absolute inset-0 w-full h-full object-cover z-0" 
+          />
+          
+          {/* Buttons Overlay */}
+          <div className="relative z-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-5 px-4">
+            <button className="flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-3 bg-[#3B82F6] text-white rounded-[8px] font-bold text-[13px] sm:text-[14px] hover:bg-blue-700 hover:shadow-[0_10px_20px_-10px_rgba(59,130,246,0.6)] transition-all duration-300 tracking-wide uppercase">
               Partner with Skillzza
               <ArrowRight size={18} strokeWidth={2.5} />
             </button>
-            <button className="flex items-center gap-2 px-8 py-3.5 bg-white border border-[#3B82F6] text-[#3B82F6] rounded-[6px] font-bold text-[14px] hover:bg-[#F4F7FF] transition-all duration-300 tracking-wide uppercase">
+            <button className="flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-3 bg-white border border-[#3B82F6] text-[#3B82F6] rounded-[8px] font-bold text-[13px] sm:text-[14px] hover:bg-[#F4F7FF] hover:shadow-[0_10px_20px_-10px_rgba(59,130,246,0.2)] transition-all duration-300 tracking-wide uppercase">
               Request School Presentation
               <Play size={14} fill="currentColor" />
             </button>

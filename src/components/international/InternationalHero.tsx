@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Calendar } from 'lucide-react';
+import { Calendar, ArrowRight, Sparkles, Brain, Rocket, Bot, MonitorPlay, Leaf, Scale, Lightbulb, Landmark } from 'lucide-react';
 import { useSplitReveal } from '../../hooks/useSplitReveal';
-import { useMagneticRipple } from '../../hooks/usePremiumHover';
+import heroImg from '../../assets/virtual internship/girl_image.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,31 +12,24 @@ export default function InternationalHero() {
 
   useSplitReveal('.ih-h1', 'lines', 0.07, 0.1);
   useSplitReveal('.ih-sub', 'words', 0.02, 0.3);
-  useMagneticRipple('.ih-btn', 0.5);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Small title
-      gsap.from('.ih-top-title', { y: -20, opacity: 0, duration: 0.8, ease: 'power3.out' });
+      // Outer orbit rotates clockwise
+      gsap.to('.orbit-outer', { rotation: 360, duration: 80, repeat: -1, ease: 'linear' });
+      // Keep badges upright on outer orbit
+      gsap.to('.orbit-outer .orbit-badge', { rotation: -360, duration: 80, repeat: -1, ease: 'linear' });
 
-      // Buttons
-      gsap.from('.ih-btn-wrapper', {
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: 'back.out(1.2)',
-        delay: 0.4
-      });
+      // Middle orbit rotates clockwise
+      gsap.to('.orbit-middle', { rotation: 360, duration: 70, repeat: -1, ease: 'linear' });
+      // Keep badges upright on middle orbit (if any added later)
+      gsap.to('.orbit-middle .orbit-badge', { rotation: -360, duration: 70, repeat: -1, ease: 'linear' });
 
-      // Floating Background Elements
-      gsap.to('.float-element-1', { y: -15, rotation: 5, duration: 3, repeat: -1, yoyo: true, ease: 'sine.inOut' });
-      gsap.to('.float-element-2', { y: 15, rotation: -5, duration: 4, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 0.5 });
-      gsap.to('.float-element-3', { y: -10, x: 10, duration: 3.5, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 1 });
-      gsap.to('.float-element-4', { y: 20, x: -10, duration: 4.5, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 0.2 });
-
+      // Inner orbit rotates anticlockwise
+      gsap.to('.orbit-inner', { rotation: -360, duration: 60, repeat: -1, ease: 'linear' });
+      // Keep badges upright on inner orbit
+      gsap.to('.orbit-inner .orbit-badge', { rotation: 360, duration: 60, repeat: -1, ease: 'linear' });
     }, heroRef);
-
     return () => ctx.revert();
   }, []);
 
@@ -47,230 +40,279 @@ export default function InternationalHero() {
 
         .ih-section {
           width: 100%;
-          background: #FAFBFF; /* Very light blue-ish white */
-          padding-top: 110px;
-          padding-bottom: 0px;
+          background: #8B5CF6;
+          background-image: 
+            linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+          background-size: 40px 40px;
+          padding-top: 140px;
+          padding-bottom: 40px;
           font-family: 'Poppins', sans-serif;
           position: relative;
           overflow: hidden;
+          min-height: 85vh;
           display: flex;
           align-items: center;
-          justify-content: center;
         }
 
-        /* ----- Background Shapes & Ornaments ----- */
-        /* Left giant yellow curve */
-        .ih-bg-left {
-          position: absolute;
-          left: -15%;
-          top: 10%;
-          width: 30%;
-          padding-bottom: 30%;
-          background: radial-gradient(circle, rgba(255, 248, 220, 0.6) 0%, rgba(255, 250, 235, 0) 70%);
-          border-radius: 50%;
-          z-index: 0;
-        }
-
-        /* Right giant blue curve */
-        .ih-bg-right {
-          position: absolute;
-          right: -10%;
-          bottom: -10%;
-          width: 35%;
-          padding-bottom: 35%;
-          border: 1px solid rgba(59, 130, 246, 0.15);
-          border-radius: 50%;
-          z-index: 0;
-        }
-        .ih-bg-right-inner {
-          position: absolute;
-          right: -5%;
-          bottom: -5%;
-          width: 25%;
-          padding-bottom: 25%;
-          border: 1px solid rgba(59, 130, 246, 0.1);
-          border-radius: 50%;
-          z-index: 0;
-        }
-
-        /* Ornaments SVG containers */
-        .ih-ornament {
-          position: absolute;
-          z-index: 1;
-        }
-
-        /* ----- Content Layout ----- */
-        .ih-content {
-          max-width: 1200px;
-          width: 100%;
+        .ih-container {
+          max-width: 1440px;
           margin: 0 auto;
-          padding: 0 40px;
-          position: relative;
+          width: 100%;
+          padding: 0 5%;
           display: flex;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
           flex-direction: column;
+          align-items: center;
+          gap: 60px;
+          position: relative;
           z-index: 10;
         }
+        @media (min-width: 1024px) {
+          .ih-container { flex-direction: row; }
+        }
 
-        .ih-top-title {
+        /* Left Side */
+        .ih-left {
+          flex: 1;
+          color: white;
+          max-width: 650px;
+        }
+
+        .ih-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          background: rgba(255, 255, 255, 0.15);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          border-radius: 999px;
+          padding: 8px 16px;
+          font-size: 13px;
           font-weight: 600;
-          font-size: 16px;
-          letter-spacing: 0.5px;
-          color: #3B82F6; /* Blue */
-          text-transform: uppercase;
+          letter-spacing: 1px;
+          color: white;
           margin-bottom: 24px;
         }
 
         .ih-h1 {
-          font-weight: 700;
-          font-size: clamp(36px, 4.5vw, 56px);
-          line-height: 1.2;
-          color: #1A1A2E; /* Dark grey/black */
-          margin: 0 0 28px;
-          letter-spacing: -0.5px;
+          font-size: 56px;
+          font-weight: 800;
+          line-height: 1.1;
+          margin-bottom: 24px;
+          letter-spacing: -1px;
         }
-        .ih-h1 .blue { color: #2563EB; }
+        .ih-h1 .yellow {
+          color: #FDE047;
+        }
 
         .ih-sub {
-          font-weight: 500;
           font-size: 16px;
-          line-height: 1.8;
-          color: #6B7280; /* Gray text */
-          margin: 0 auto 24px;
-          max-width: 900px;
+          line-height: 1.6;
+          color: rgba(255, 255, 255, 0.9);
+          margin-bottom: 16px;
+          font-weight: 400;
         }
 
         .ih-btns {
           display: flex;
-          align-items: center;
-          justify-content: center;
           gap: 16px;
+          margin-top: 40px;
           flex-wrap: wrap;
-          margin-top: 16px;
-          margin-bottom: 40px;
         }
-
-        .ih-btn {
-          border: none; cursor: pointer;
-          font-family: 'Poppins', sans-serif;
-          font-weight: 600;
-          border-radius: 8px;
-          padding: 12px 28px;
-          transition: all 0.2s ease;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 8px;
-          white-space: nowrap;
-          font-size: 14.5px;
-        }
-        .ih-btn:hover { transform: translateY(-2px); }
 
         .ih-btn-primary {
-          background: #3B82F6; color: #fff;
-          box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+          background: white;
+          color: #1A1A2E;
+          font-weight: 700;
+          padding: 14px 28px;
+          border-radius: 999px;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          transition: transform 0.2s;
         }
         .ih-btn-primary:hover {
-          background: #2563EB;
-          box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+          transform: translateY(-2px);
         }
 
         .ih-btn-secondary {
-          background: #ffffff; color: #3B82F6;
-          border: 1px solid #93C5FD;
+          background: transparent;
+          color: white;
+          border: 1px solid rgba(255, 255, 255, 0.5);
+          font-weight: 600;
+          padding: 14px 28px;
+          border-radius: 999px;
+          transition: background 0.2s;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
         }
-        .ih-btn-secondary:hover { background: #EFF6FF; border-color: #3B82F6; }
-
-        .ih-bottom-text {
-          font-weight: 700;
-          font-size: 16px;
-          color: #1A1A2E;
+        .ih-btn-secondary:hover {
+          background: rgba(255, 255, 255, 0.1);
         }
 
+        /* Right Side - Orbits */
+        .ih-right {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          min-height: 600px;
+          width: 100%;
+        }
+
+        .orbit-badge {
+          position: absolute;
+          transform: translate(-50%, -50%);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          cursor: pointer;
+        }
+
+        .badge-icon-wrapper {
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+          background: white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+          color: #8B5CF6;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .orbit-badge:hover .badge-icon-wrapper {
+          transform: scale(1.15) translateY(-5px);
+          box-shadow: 0 10px 25px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.8) inset;
+          color: #6D28D9;
+        }
+
+        .badge-label {
+          color: white;
+          font-size: 13px;
+          font-weight: 600;
+          margin-top: 8px;
+          text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+          transition: all 0.3s ease;
+        }
+
+        .orbit-badge:hover .badge-label {
+          color: #FDE047;
+          transform: translateY(-2px) scale(1.05);
+          text-shadow: 0 0 10px rgba(253, 224, 71, 0.6);
+        }
+
+        .orbit-ring {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+        }
+        
+        .orbit-outer {
+          border: 2px dashed rgba(255, 255, 255, 0.4);
+        }
+        
+        .orbit-middle {
+          border: 2px dashed rgba(255, 255, 255, 0.4);
+        }
+        
+        .orbit-inner {
+          border: 2px dashed rgba(255, 255, 255, 0.4);
+        }
+
+        @media (max-width: 1024px) {
+          .ih-h1 { font-size: 40px; }
+          .ih-right { min-height: 500px; transform: scale(0.8); }
+        }
         @media (max-width: 768px) {
-          .ih-h1 { font-size: 2.2rem; }
-          .ih-btns { flex-direction: column; width: 100%; gap: 12px; }
-          .ih-btn-wrapper { width: 100%; }
-          .ih-btns button { width: 100%; }
+          .ih-h1 { font-size: 32px; }
+          .ih-right { min-height: 400px; transform: scale(0.6); }
+          .orbit-ring { border: none; }
         }
       `}</style>
 
       <section className="ih-section" ref={heroRef}>
-        
-        {/* ----- Background Elements ----- */}
-        <div className="ih-bg-left"></div>
-        <div className="ih-bg-right"></div>
-        <div className="ih-bg-right-inner"></div>
+        <div className="ih-container">
+          
+          {/* Left Side */}
+          <div className="ih-left">
+            <div className="ih-badge">
+              <Sparkles size={16} className="text-yellow-300" />
+              FUTURE SKILLS STUDIOS FOR NEXT-GENERATION LEARNING
+            </div>
 
-        {/* Left Side Ornaments */}
-        <svg className="ih-ornament float-element-1" style={{ top: '20%', left: '10%' }} width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" fill="#FDE047" fillOpacity="0.6"/>
-        </svg>
+            <h1 className="ih-h1">
+              Empowering Students for an<br />
+              <span className="yellow">AI-Driven Future</span>
+            </h1>
 
-        <svg className="ih-ornament float-element-2" style={{ top: '45%', left: '8%' }} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="10" stroke="#93C5FD" strokeWidth="2" fill="none" />
-        </svg>
-
-        <svg className="ih-ornament" style={{ top: '15%', left: '5%' }} width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="6" cy="6" r="4" fill="#93C5FD" />
-        </svg>
-
-        <svg className="ih-ornament" style={{ top: '22%', left: '4%' }} width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="4" cy="4" r="3" fill="#93C5FD" />
-        </svg>
-
-        {/* Right Side Ornaments */}
-        <svg className="ih-ornament float-element-3" style={{ top: '15%', right: '12%' }} width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Paper Airplane/Rocket shape matching screenshot */}
-          <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="#60A5FA" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-
-        {/* Dashed line representing flight path */}
-        <svg className="ih-ornament" style={{ top: '25%', right: '8%' }} width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 140 Q 50 80 140 10" stroke="#FDE047" strokeWidth="1.5" strokeDasharray="6 6" fill="none" />
-        </svg>
-
-        <svg className="ih-ornament float-element-4" style={{ top: '18%', right: '6%' }} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L13.5 9.5L21 11L13.5 12.5L12 20L10.5 12.5L3 11L10.5 9.5L12 2Z" fill="#93C5FD" fillOpacity="0.8"/>
-        </svg>
-
-        <svg className="ih-ornament float-element-1" style={{ top: '55%', right: '10%' }} width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" fill="#93C5FD" fillOpacity="0.6"/>
-        </svg>
-
-
-        {/* ----- Main Content ----- */}
-        <div className="ih-content">
-          <div className="ih-top-title">
-            FUTURE SKILLS STUDIOS FOR NEXT-GENERATION LEARNING
+            <div className="ih-btns" style={{ marginTop: '32px' }}>
+              <button className="ih-btn-primary">
+                Explore studios <ArrowRight size={18} />
+              </button>
+              <button className="ih-btn-secondary">
+                Schedule A Discover Session <Calendar size={18} />
+              </button>
+            </div>
           </div>
 
-          <h1 className="ih-h1">
-            Empowering Students for an<br />
-            <span className="blue">AI-Driven Future</span>
-          </h1>
-
-          <p className="ih-sub">
-            Skillzza K-12 Studios Is A Future-Focused Experiential Learning Ecosystem Designed To Help Students Build Creativity, Problem-Solving Abilities, Digital Fluency, Leadership, And Real-World Skills Beyond Traditional Classroom Education.
-          </p>
-
-          <p className="ih-sub" style={{ marginBottom: '32px' }}>
-            Built For Progressive Schools And Future-Ready Learners, Skillzza Combines Emerging Technologies, Interdisciplinary Learning, Hands-On Projects, And Measurable Outcomes Within A Structured School-Integrated Framework
-          </p>
-
-          <div className="ih-btns">
-            <div className="ih-btn-wrapper">
-              <button className="ih-btn ih-btn-primary">
-                Explore studios <span style={{ marginLeft: '4px' }}>→</span>
-              </button>
+          {/* Right Side */}
+          <div className="ih-right">
+            
+            {/* Outer Orbit (Ring 3) */}
+            <div className="orbit-ring orbit-outer hidden md:block" style={{ width: '560px', height: '560px' }}>
+              <div className="orbit-badge" style={{ left: '50%', top: '0%' }}>
+                <div className="badge-icon-wrapper"><Brain size={28} /></div>
+                <span className="badge-label">AI</span>
+              </div>
+              <div className="orbit-badge" style={{ left: '100%', top: '50%' }}>
+                <div className="badge-icon-wrapper"><Lightbulb size={28} /></div>
+                <span className="badge-label">Entrepreneurship</span>
+              </div>
+              <div className="orbit-badge" style={{ left: '50%', top: '100%' }}>
+                <div className="badge-icon-wrapper"><Landmark size={28} /></div>
+                <span className="badge-label">Finance</span>
+              </div>
+              <div className="orbit-badge" style={{ left: '0%', top: '50%' }}>
+                <div className="badge-icon-wrapper"><Scale size={28} /></div>
+                <span className="badge-label">Law</span>
+              </div>
             </div>
-            <div className="ih-btn-wrapper">
-              <button className="ih-btn ih-btn-secondary">
-                Schedule A Discover Session <Calendar size={16} />
-              </button>
+
+            {/* Middle Orbit (Ring 2.5) */}
+            <div className="orbit-ring orbit-middle hidden md:block" style={{ width: '490px', height: '490px' }}>
+              <div style={{ position: 'absolute', top: '14.65%', left: '85.35%', width: '10px', height: '10px', background: 'white', borderRadius: '50%', transform: 'translate(-50%, -50%)', boxShadow: '0 0 10px white' }}></div>
             </div>
+
+            {/* Inner Orbit (Ring 2) */}
+            <div className="orbit-ring orbit-inner hidden md:block" style={{ width: '420px', height: '420px' }}>
+              <div className="orbit-badge" style={{ left: '85.35%', top: '14.65%' }}>
+                <div className="badge-icon-wrapper"><Bot size={28} /></div>
+                <span className="badge-label">Robotics</span>
+              </div>
+              <div className="orbit-badge" style={{ left: '85.35%', top: '85.35%' }}>
+                <div className="badge-icon-wrapper"><Leaf size={28} /></div>
+                <span className="badge-label">Sustainability</span>
+              </div>
+              <div className="orbit-badge" style={{ left: '14.65%', top: '85.35%' }}>
+                <div className="badge-icon-wrapper"><MonitorPlay size={28} /></div>
+                <span className="badge-label">Media</span>
+              </div>
+              <div className="orbit-badge" style={{ left: '14.65%', top: '14.65%' }}>
+                <div className="badge-icon-wrapper"><Rocket size={28} /></div>
+                <span className="badge-label">Space</span>
+              </div>
+            </div>
+
+            {/* Center Image */}
+            <div style={{ position: 'absolute', zIndex: 10, width: '240px', height: '240px', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }}>
+              <img src={heroImg} alt="Student" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+
           </div>
 
         </div>

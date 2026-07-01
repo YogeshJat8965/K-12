@@ -9,6 +9,8 @@ import {
   BarChart, ClipboardCheck
 } from 'lucide-react';
 
+import frameworkImg from '../../assets/International Studio/xxx.png';
+
 gsap.registerPlugin(ScrollTrigger);
 
 const frameworkSteps = [
@@ -105,7 +107,7 @@ export default function LearningFramework() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full py-24 bg-[#FAFBFC] overflow-hidden font-poppins">
+    <section ref={sectionRef} className="relative w-full py-8 bg-white overflow-hidden font-poppins">
       
       {/* Background Decor Elements */}
       <div className="absolute top-40 left-0 w-80 h-80 bg-[#EFF6FF] rounded-full -translate-x-1/2 blur-3xl z-0 opacity-60"></div>
@@ -116,7 +118,7 @@ export default function LearningFramework() {
       <div className="max-w-[1300px] mx-auto px-4 md:px-6 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center mb-20 lf-intro">
+        <div className="text-center mb-10 lf-intro">
           <span className="text-[#2563EB] font-bold text-[15px] mb-3 block">
             Focused Depth. Measurable Growth.
           </span>
@@ -128,116 +130,11 @@ export default function LearningFramework() {
           </p>
         </div>
 
-        {/* Timeline Layout */}
-        <div className="lf-timeline relative w-full flex flex-col gap-6 md:gap-8">
-          
-          {/* Dashed Vertical Line */}
-          <div className="absolute left-[24px] md:left-[36px] top-10 bottom-10 w-[2px] border-l-2 border-dashed border-blue-200 z-0 hidden md:block"></div>
-
-          {frameworkSteps.map((step, idx) => {
-            const MainIcon = step.icon;
-            
-            return (
-              <div key={idx} className="lf-step relative flex items-center gap-4 md:gap-8 w-full z-10 group">
-                
-                {/* Timeline Number Node */}
-                <div className="hidden md:flex flex-col items-center shrink-0 w-[72px]">
-                  <div className="w-[52px] h-[52px] rounded-full bg-[#2563EB] text-white flex items-center justify-center font-bold text-[20px] shadow-md relative z-10 transition-transform duration-300 group-hover:scale-110">
-                    {step.num}
-                  </div>
-                </div>
-
-                {/* Card Content */}
-                <div className="flex-1 bg-white rounded-[24px] shadow-sm border border-gray-100 p-8 md:p-10 flex flex-col xl:flex-row gap-6 md:gap-10 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                  
-                  {/* Card Left: Text & Main Icon */}
-                  <div className="xl:w-[38%] xl:shrink-0 flex gap-6">
-                    {/* Circle Icon */}
-                    <div className="w-[72px] h-[72px] rounded-full bg-blue-50 flex items-center justify-center shrink-0 border border-blue-100">
-                      <MainIcon className="w-9 h-9 text-[#2563EB]" strokeWidth={1.5} />
-                    </div>
-                    {/* Text */}
-                    <div className="flex flex-col justify-center">
-                      <h3 className="text-[20px] md:text-[22px] font-bold text-[#1A1A2E] mb-3 leading-tight">
-                        {step.title}
-                      </h3>
-                      <p className="text-[#6B7280] text-[15px] leading-relaxed">
-                        {step.desc}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Vertical Divider (Desktop) */}
-                  <div className="hidden xl:block w-[1px] bg-gray-100 shrink-0"></div>
-
-                  {/* Card Right: Dynamic Items */}
-                  <div className="flex-1 flex items-center">
-                    
-                    {/* Right Type 1: Horizontal Details (Card 01) */}
-                    {step.rightType === "horizontal-details" && (
-                      <div className="w-full flex flex-col sm:flex-row gap-6 justify-between items-center">
-                        {step.items.map((item, i) => {
-                          const Icon = item.icon;
-                          return (
-                            <div key={i} className="flex gap-4 items-center">
-                              <div className="w-14 h-14 rounded-[16px] bg-blue-50 flex items-center justify-center shrink-0">
-                                <Icon className="w-7 h-7 text-[#2563EB]" strokeWidth={1.5} />
-                              </div>
-                              <div>
-                                <h4 className="text-[15px] font-bold text-[#1A1A2E] leading-tight mb-1.5">{item.title}</h4>
-                                <p className="text-[#6B7280] text-[12.5px] leading-tight max-w-[130px]">{item.sub}</p>
-                              </div>
-                            </div>
-                          )
-                        })}
-                      </div>
-                    )}
-
-                    {/* Right Type 2: Vertical Icons (Cards 02, 03, 04) */}
-                    {step.rightType === "vertical-icons" && (
-                      <div className="w-full grid grid-cols-3 sm:grid-cols-5 xl:flex xl:flex-row justify-between gap-5">
-                        {step.items.map((item, i) => {
-                          const Icon = item.icon;
-                          return (
-                            <div key={i} className="flex flex-col items-center text-center gap-3.5">
-                              <div className="w-14 h-14 rounded-[16px] bg-blue-50/70 flex items-center justify-center">
-                                <Icon className="w-7 h-7 text-[#2563EB]" strokeWidth={1.5} />
-                              </div>
-                              <span className="text-[13.5px] font-bold text-[#1A1A2E] whitespace-pre-line leading-tight">
-                                {item.title}
-                              </span>
-                            </div>
-                          )
-                        })}
-                      </div>
-                    )}
-
-                    {/* Right Type 3: Horizontal Simple (Card 05) */}
-                    {step.rightType === "horizontal-simple" && (
-                      <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-6 justify-between">
-                        {step.items.map((item, i) => {
-                          const Icon = item.icon;
-                          return (
-                            <div key={i} className="flex items-center gap-3.5">
-                              <div className="w-12 h-12 rounded-[14px] bg-blue-50 flex items-center justify-center shrink-0">
-                                <Icon className="w-6 h-6 text-[#2563EB]" strokeWidth={1.5} />
-                              </div>
-                              <span className="text-[14px] font-bold text-[#1A1A2E] whitespace-pre-line leading-tight">
-                                {item.title}
-                              </span>
-                            </div>
-                          )
-                        })}
-                      </div>
-                    )}
-
-                  </div>
-
-                </div>
-              </div>
-            );
-          })}
-
+        {/* Image Display */}
+        <div className="w-full flex justify-center items-center mt-6">
+          <div className="w-full max-w-[1200px] bg-white rounded-[32px] shadow-[0_10px_50px_rgba(0,0,0,0.05)] border border-gray-100 overflow-hidden min-h-[450px] flex items-center justify-center p-2">
+             <img src={frameworkImg} alt="Learning Framework" className="w-full h-auto object-contain rounded-[28px]" />
+          </div>
         </div>
 
       </div>

@@ -627,14 +627,14 @@ export default function SkillStudioApp() {
           
           {/* Animated Background Icons */}
           <div className="absolute inset-0 pointer-events-none z-[50] overflow-hidden">
-            <Bot className="absolute text-[#4200FF] opacity-[0.15] w-24 h-24 top-[10%] left-[5%] animate-float-1" />
-            <Brain className="absolute text-[#E82194] opacity-[0.12] w-32 h-32 top-[20%] right-[8%] animate-float-2" />
-            <Rocket className="absolute text-[#FF6644] opacity-[0.15] w-20 h-20 top-[45%] left-[2%] animate-float-3" />
-            <BookOpen className="absolute text-[#34C759] opacity-[0.12] w-28 h-28 bottom-[15%] left-[20%] animate-float-4" />
-            <Lightbulb className="absolute text-[#FF9800] opacity-[0.15] w-24 h-24 top-[65%] right-[5%] animate-float-1" />
-            <Laptop className="absolute text-[#3B82F6] opacity-[0.12] w-28 h-28 bottom-[5%] right-[25%] animate-float-2" />
-            <Sparkles className="absolute text-[#A855F7] opacity-[0.15] w-16 h-16 top-[30%] left-[25%] animate-float-3" />
-            <Users className="absolute text-[#EF4444] opacity-[0.12] w-24 h-24 bottom-[35%] right-[30%] animate-float-4" />
+            <Bot className="absolute text-[#4200FF] w-24 h-24 top-[10%] left-[5%] animate-float-1" />
+            <Brain className="absolute text-[#E82194] w-32 h-32 top-[20%] right-[8%] animate-float-2" />
+            <Rocket className="absolute text-[#FF6644] w-20 h-20 top-[45%] left-[2%] animate-float-3" />
+            <BookOpen className="absolute text-[#34C759] w-28 h-28 bottom-[15%] left-[20%] animate-float-4" />
+            <Lightbulb className="absolute text-[#FF9800] w-24 h-24 top-[65%] right-[5%] animate-float-1" />
+            <Laptop className="absolute text-[#3B82F6] w-28 h-28 bottom-[5%] right-[25%] animate-float-2" />
+            <Sparkles className="absolute text-[#A855F7] w-16 h-16 top-[30%] left-[25%] animate-float-3" />
+            <Users className="absolute text-[#EF4444] w-24 h-24 bottom-[35%] right-[30%] animate-float-4" />
           </div>
 
           {/* Header */}

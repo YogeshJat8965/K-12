@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useScrollReveal } from './hooks/useScrollReveal';
 import Navbar from './components/Navbar';
 import InternationalHero from './components/international/InternationalHero';
+import InternationalWhatIs from './components/international/InternationalWhatIs';
 import InternationalFeatures from './components/international/InternationalFeatures';
 import WhatAreStudios from './components/international/WhatAreStudios';
 import LearningStages from './components/international/LearningStages';
@@ -48,6 +49,7 @@ export default function InternationalStudioApp() {
 
       <main className="min-h-screen">
         <InternationalHero />
+        <InternationalWhatIs />
         <InternationalFeatures />
         <WhatAreStudios />
         <LearningStages />
