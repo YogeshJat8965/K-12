@@ -89,11 +89,11 @@ export default function HowProgramWorks() {
   }, []);
 
   const steps = [
-    { num: 1, title: "Discover", desc: "Students take a short interest and aptitude assessment to identify suitable career paths.", img: img1, icon: <Compass size={16} /> },
-    { num: 2, title: "Enroll in a Studio", desc: "They select a domain-specific internship and receive a real-world problem statement.", img: img2, icon: <Briefcase size={16} /> },
-    { num: 3, title: "Learn & Apply", desc: "Through guided modules, students learn relevant concepts and apply them to practical tasks.", img: img3, icon: <BookOpen size={16} /> },
-    { num: 4, title: "Build a Capstone", desc: "Students create a final deliverable - a product prototype, business pitch, or analytical report.", img: img4, icon: <Rocket size={16} /> },
-    { num: 5, title: "Earn & Showcase", desc: "Upon completion, students receive certification and a portfolio-ready project they can showcase.", img: img5, icon: <Trophy size={16} /> }
+    { num: 1, title: "Discover", desc: "Students take a short interest and aptitude assessment to identify suitable career paths.", img: img1 },
+    { num: 2, title: "Enroll in a Studio", desc: "They select a domain-specific internship and receive a real-world problem statement.", img: img2 },
+    { num: 3, title: "Learn & Apply", desc: "Through guided modules, students learn relevant concepts and apply them to practical tasks.", img: img3 },
+    { num: 4, title: "Build a Capstone", desc: "Students create a final deliverable - a product prototype, business pitch, or analytical report.", img: img4 },
+    { num: 5, title: "Earn & Showcase", desc: "Upon completion, students receive certification and a portfolio-ready project they can showcase.", img: img5 }
   ];
 
   return (
@@ -196,7 +196,7 @@ export default function HowProgramWorks() {
           transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), 
                       box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
                       border-color 0.3s ease;
-          border: 2px solid transparent;
+          border: 1px solid #E5E7EB;
           position: relative;
           overflow: hidden;
         }
@@ -239,29 +239,11 @@ export default function HowProgramWorks() {
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 10px;
           margin-bottom: 16px;
           color: #6C3CF7;
           width: 100%;
           position: relative;
           z-index: 1;
-        }
-
-        .hpw-card-icon {
-          width: 28px;
-          height: 28px;
-          border-radius: 50%;
-          background: #6C3CF7;
-          color: #FFFFFF;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-          transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
-        }
-        .hpw-card:hover .hpw-card-icon {
-          transform: rotateY(360deg) scale(1.15);
-          background: linear-gradient(135deg, #6C3CF7, #A78BFA);
         }
 
         .hpw-card-title {
@@ -293,13 +275,13 @@ export default function HowProgramWorks() {
 
         .hpw-banner {
           margin-top: 60px;
-          background: #F8F9FC;
+          background: #FFFFFF;
           border-radius: 24px;
           padding: 32px 48px;
           display: flex;
           justify-content: space-around;
           align-items: center;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
           border: 1px solid #F1F3F9;
         }
 
@@ -382,7 +364,6 @@ export default function HowProgramWorks() {
                   <div className="hpw-card">
                     <img src={step.img} alt={step.title} className="hpw-card-img" />
                     <div className="hpw-card-title-wrap">
-                      <span className="hpw-card-icon">{step.icon}</span>
                       <h3 className="hpw-card-title">{step.title}</h3>
                     </div>
                     <p className="hpw-card-desc">{step.desc}</p>

@@ -10,7 +10,7 @@ import { useMagneticRipple } from '../../hooks/usePremiumHover';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function CtaBanner() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useSplitReveal('.cta-title', 'words', 0.05, 0);
   useSplitReveal('.cta-subtitle', 'lines', 0.03, 0.1);
@@ -19,7 +19,7 @@ export default function CtaBanner() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Banner entrance
-      gsap.from(containerRef.current, {
+      gsap.from('.cta-container', {
         scale: 0.95,
         rotationX: 6,
         opacity: 0,
@@ -73,7 +73,7 @@ export default function CtaBanner() {
           start: 'top 85%',
         }
       });
-    }, containerRef);
+    }, sectionRef);
 
     return () => ctx.revert();
   }, []);
@@ -83,7 +83,7 @@ export default function CtaBanner() {
       <style>{`
         .cta-section {
           width: 100%;
-          padding: 80px 40px 120px 40px;
+          padding: 40px 40px 80px 40px;
           background: #FFFFFF;
           font-family: 'Poppins', sans-serif;
         }
@@ -94,7 +94,7 @@ export default function CtaBanner() {
           border-radius: 20px;
           background: #09023B url('${BgImage}') center center no-repeat;
           background-size: cover;
-          padding: 80px 40px 60px 40px;
+          padding: 32px 40px 24px 40px;
           position: relative;
           overflow: hidden;
           box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
@@ -113,7 +113,7 @@ export default function CtaBanner() {
           font-size: clamp(36px, 4vw, 48px);
           font-weight: 800;
           color: #FFFFFF;
-          margin: 0 0 24px;
+          margin: 0 0 8px;
           line-height: 1.3;
         }
 
@@ -125,7 +125,7 @@ export default function CtaBanner() {
           font-size: 18px;
           font-style: italic;
           color: #E2E8F0;
-          margin: 0 0 48px;
+          margin: 0 0 24px;
           font-weight: 400;
         }
 
@@ -134,7 +134,7 @@ export default function CtaBanner() {
           gap: 24px;
           flex-wrap: wrap;
           justify-content: center;
-          margin-bottom: 64px;
+          margin-bottom: 24px;
         }
 
         .cta-btn {
@@ -188,7 +188,7 @@ export default function CtaBanner() {
 
         @media (max-width: 768px) {
           .cta-container {
-            padding: 60px 24px 40px 24px;
+            padding: 40px 24px 32px 24px;
             border-radius: 16px;
             background: linear-gradient(rgba(9, 2, 59, 0.65), rgba(9, 2, 59, 0.65)), url('${BgImage}') center left no-repeat;
             background-color: #09023B;
@@ -206,8 +206,8 @@ export default function CtaBanner() {
         }
       `}</style>
 
-      <section className="cta-section">
-        <div className="cta-container" ref={containerRef}>
+      <section className="cta-section" ref={sectionRef}>
+        <div className="cta-container">
           <div className="cta-content">
             
             <h2 className="cta-title">

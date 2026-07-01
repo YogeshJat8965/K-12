@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Bot, BrainCircuit, Sparkles, BookOpen, Rocket, Code2, Cpu, Globe } from 'lucide-react';
 
 import Icon1 from '../../assets/AI playground/Group 27639.svg';
 import Icon2 from '../../assets/AI playground/Group 27640.svg';
@@ -128,18 +129,55 @@ export default function AgentLibrary() {
   return (
     <>
       <style>{`
+        /* Floating Background Icons */
+        .al-bg-icon {
+          position: absolute;
+          color: rgba(108, 60, 247, 0.08); /* Very subtle purple */
+          z-index: 0;
+          pointer-events: none;
+        }
+
+        .al-bg-icon-1 { top: 8%; left: 3%; animation: floatIcon1 15s ease-in-out infinite; }
+        .al-bg-icon-2 { top: 15%; right: 4%; animation: floatIcon2 18s ease-in-out infinite; }
+        .al-bg-icon-3 { top: 45%; left: 2%; animation: floatIcon3 20s ease-in-out infinite; }
+        .al-bg-icon-4 { bottom: 12%; right: 3%; animation: floatIcon1 16s ease-in-out infinite reverse; }
+        .al-bg-icon-5 { bottom: 5%; left: 10%; animation: floatIcon2 19s ease-in-out infinite; }
+        .al-bg-icon-6 { top: 60%; right: 2%; animation: floatIcon3 17s ease-in-out infinite reverse; }
+        .al-bg-icon-7 { top: 2%; left: 45%; animation: floatIcon2 22s ease-in-out infinite; }
+        .al-bg-icon-8 { bottom: 1%; right: 35%; animation: floatIcon1 14s ease-in-out infinite; }
+
+        @keyframes floatIcon1 {
+          0%, 100% { transform: translate(0, 0) rotate(0deg); }
+          33% { transform: translate(40px, -50px) rotate(15deg); }
+          66% { transform: translate(-20px, 30px) rotate(-10deg); }
+        }
+        @keyframes floatIcon2 {
+          0%, 100% { transform: translate(0, 0) rotate(0deg); }
+          33% { transform: translate(-40px, 35px) rotate(-15deg); }
+          66% { transform: translate(30px, -45px) rotate(10deg); }
+        }
+        @keyframes floatIcon3 {
+          0%, 100% { transform: translate(0, 0) rotate(0deg); }
+          33% { transform: translate(35px, 50px) rotate(20deg); }
+          66% { transform: translate(-30px, -35px) rotate(-15deg); }
+        }
+
         .al-section {
           width: 100%;
           padding: 80px 40px;
           background: #e8e4fdff; /* Light purple background */
           font-family: 'Poppins', sans-serif;
           text-align: center;
+          position: relative;
+          overflow: hidden;
         }
 
         .al-container {
           max-width: 1360px;
           width: 100%;
           margin: 0 auto;
+          position: relative;
+          z-index: 10;
         }
 
         .al-h2 {
@@ -263,11 +301,21 @@ export default function AgentLibrary() {
       `}</style>
 
       <section className="al-section" ref={sectionRef}>
+        {/* Floating Background Icons */}
+        <div className="al-bg-icon al-bg-icon-1"><Bot size={140} strokeWidth={1} /></div>
+        <div className="al-bg-icon al-bg-icon-2"><BrainCircuit size={120} strokeWidth={1} /></div>
+        <div className="al-bg-icon al-bg-icon-3"><Sparkles size={90} strokeWidth={1} /></div>
+        <div className="al-bg-icon al-bg-icon-4"><BookOpen size={130} strokeWidth={1} /></div>
+        <div className="al-bg-icon al-bg-icon-5"><Rocket size={110} strokeWidth={1} /></div>
+        <div className="al-bg-icon al-bg-icon-6"><Code2 size={120} strokeWidth={1} /></div>
+        <div className="al-bg-icon al-bg-icon-7"><Cpu size={80} strokeWidth={1} /></div>
+        <div className="al-bg-icon al-bg-icon-8"><Globe size={150} strokeWidth={1} /></div>
+
         <div className="al-container">
           <h2 className="al-h2">The Prebuilt Agent Library</h2>
           
           <div className="al-subtitle-1">
-            12 starter agents. <span className="pink">Endless possibilities.</span>
+            Start with Agents. <span className="pink">Endless possibilities.</span>
           </div>
           
           <p className="al-subtitle-2">

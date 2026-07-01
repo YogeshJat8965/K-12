@@ -87,10 +87,54 @@ export default function DesignedForStudents() {
       <style>{`
         .dfs-section {
           width: 100%;
-          padding: 120px 40px;
-          background-color: #FAFAFC;
+          padding: 80px 40px;
+          background-color: #F9FAFB;
           font-family: 'Poppins', sans-serif;
           overflow: hidden;
+          position: relative;
+        }
+        
+        /* Premium Background Elements */
+        .dfs-grid-bg {
+          position: absolute;
+          top: 0; left: 0; right: 0; bottom: 0;
+          background-image: 
+            linear-gradient(rgba(108, 60, 247, 0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(108, 60, 247, 0.04) 1px, transparent 1px);
+          background-size: 40px 40px;
+          z-index: 0;
+          mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%);
+          -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%);
+        }
+
+        .dfs-glow {
+          position: absolute;
+          width: 700px;
+          height: 700px;
+          border-radius: 50%;
+          filter: blur(120px);
+          z-index: 0;
+          opacity: 0.5;
+          pointer-events: none;
+          animation: floatGlow 12s ease-in-out infinite alternate;
+        }
+
+        .dfs-glow-1 {
+          background: rgba(108, 60, 247, 0.2); /* Soft Purple */
+          top: -250px;
+          right: -150px;
+        }
+
+        .dfs-glow-2 {
+          background: rgba(236, 72, 153, 0.15); /* Soft Pink */
+          bottom: -250px;
+          left: -150px;
+          animation-delay: -6s;
+        }
+
+        @keyframes floatGlow {
+          0% { transform: translate(0, 0) scale(1); }
+          100% { transform: translate(-40px, 60px) scale(1.1); }
         }
         .dfs-container {
           max-width: 1400px;
@@ -100,6 +144,8 @@ export default function DesignedForStudents() {
           grid-template-columns: 1fr 1.1fr;
           gap: 80px;
           align-items: center;
+          position: relative;
+          z-index: 2;
         }
 
         /* ─── LEFT COLUMN ─── */
@@ -290,21 +336,7 @@ export default function DesignedForStudents() {
         .dfs-pink .dfs-card-title { color: #DB2777; }
         .dfs-card-desc { font-size: 14px; color: #4B5563; line-height: 1.6; margin: 0; }
 
-        /* Dot patterns */
-        .dfs-dots-tl {
-          position: absolute; top: 40px; left: 40px;
-          width: 80px; height: 80px;
-          background-image: radial-gradient(#C7D2FE 2px, transparent 2px);
-          background-size: 16px 16px;
-          z-index: 0;
-        }
-        .dfs-dots-br {
-          position: absolute; bottom: 40px; right: 40px;
-          width: 80px; height: 80px;
-          background-image: radial-gradient(#C7D2FE 2px, transparent 2px);
-          background-size: 16px 16px;
-          z-index: 0;
-        }
+        /* Dot patterns removed in favor of premium glowing grid */
 
         @media (max-width: 1200px) {
           .dfs-container { grid-template-columns: 1fr; gap: 60px; }
@@ -330,9 +362,10 @@ export default function DesignedForStudents() {
         }
       `}</style>
 
-      <section className="dfs-section" ref={sectionRef} style={{ position: 'relative' }}>
-        <div className="dfs-dots-tl"></div>
-        <div className="dfs-dots-br"></div>
+      <section className="dfs-section" ref={sectionRef}>
+        <div className="dfs-grid-bg"></div>
+        <div className="dfs-glow dfs-glow-1"></div>
+        <div className="dfs-glow dfs-glow-2"></div>
 
         <div className="dfs-container">
           {/* LEFT: Text + Diagram */}

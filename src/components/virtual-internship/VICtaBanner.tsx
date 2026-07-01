@@ -133,13 +133,13 @@ export default function VICtaBanner() {
         .vi-cta-btn-outline {
           background: transparent;
           color: #FFFFFF;
-          border: 2px solid rgba(255,255,255,0.4);
+          border: 2px solid rgba(0, 0, 0, 0.3);
         }
         .vi-cta-btn-outline:hover {
-          border-color: #FFFFFF;
-          background: rgba(255,255,255,0.1);
+          border-color: rgba(246, 242, 242, 0.5);
+          background: rgba(0, 0, 0, 0.1);
           transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+          box-shadow: 0 8px 24px rgba(0,0,0,0.2);
         }
 
         .vi-cta-btn-icon {
@@ -185,11 +185,11 @@ export default function VICtaBanner() {
               <span className="vi-cta-btn-icon"><Play size={16} fill="currentColor" /></span>
               Take a free quiz
             </a>
-            <a href="#" className="vi-cta-btn vi-cta-btn-outline">
+            <a href="#" className="vi-cta-btn vi-cta-btn-primary">
               <span className="vi-cta-btn-icon"><Play size={16} fill="currentColor" /></span>
               Explore internships
             </a>
-            <a href="#" className="vi-cta-btn vi-cta-btn-outline">
+            <a href="#" className="vi-cta-btn vi-cta-btn-primary">
               <span className="vi-cta-btn-icon"><Play size={16} fill="currentColor" /></span>
               Book consultation
             </a>

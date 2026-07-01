@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { Briefcase, Code, BarChart2, ShieldCheck, Play } from 'lucide-react';
-import HeroImg from '../../assets/virtual internship/hero_VI.png';
+import HeroImg from '../../assets/virtual internship/girl_image.png';
 
 export default function VIHero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -23,7 +23,7 @@ export default function VIHero() {
         ease: 'power3.out', 
         delay: 0.4 
       });
-      gsap.from('.vih-btn', { y: 20, opacity: 0, duration: 0.8, ease: 'power3.out', delay: 0.6 });
+      gsap.from('.vih-btn-wrapper', { y: 20, opacity: 0, duration: 0.8, ease: 'power3.out', delay: 0.6 });
 
       // Image animation
       gsap.from(imgRef.current, {
@@ -44,10 +44,9 @@ export default function VIHero() {
       <style>{`
         .vih-section {
           width: 100%;
-          min-height: 100vh;
           display: flex;
           align-items: center;
-          padding: 120px 40px 20px;
+          padding: 160px 40px 80px;
           background-color: #FEFEFD;
           font-family: 'Poppins', sans-serif;
           overflow: hidden;
@@ -189,6 +188,7 @@ export default function VIHero() {
           max-width: 550px; /* Reduced image size */
           height: auto;
           object-fit: contain;
+          transform: translateY(-40px); /* Shifted slightly up */
           filter: drop-shadow(0 20px 40px rgba(0,0,0,0.05));
         }
 
@@ -275,11 +275,12 @@ export default function VIHero() {
                 <div className="vih-feature-text">Earn verified<br />credentials</div>
               </div>
             </div>
-            
-            <button className="vih-btn">
-              <Play size={20} fill="currentColor" />
-              Get started
-            </button>
+            <div className="vih-btn-wrapper">
+              <button className="vih-btn">
+                <Play size={20} fill="currentColor" />
+                Get started
+              </button>
+            </div>
           </div>
           
           <div className="vih-right" ref={imgRef}>

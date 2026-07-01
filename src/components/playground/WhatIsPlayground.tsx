@@ -86,7 +86,7 @@ export default function WhatIsPlayground() {
         .wip-container {
           max-width: 1600px;
           width: 100%;
-          background: transparent linear-gradient(270deg, rgba(245,245,250,0.82) 0%, rgba(255,255,255,0.82) 81%, rgba(245,245,250,0.82) 100%) 0% 0% no-repeat padding-box;
+          background: transparent linear-gradient(270deg, #EAEAF2 0%, #F5F5FA 81%, #EAEAF2 100%) 0% 0% no-repeat padding-box;
           border-radius: 20px;
           display: flex;
           align-items: stretch;

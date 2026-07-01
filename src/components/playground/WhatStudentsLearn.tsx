@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { MessageSquare, Network, Sparkles, ShieldCheck, Compass, HeartHandshake } from 'lucide-react';
+import { Bot, Workflow, Lightbulb, Scale, GraduationCap, Cpu } from 'lucide-react';
 
 import { useSplitReveal } from '../../hooks/useSplitReveal';
 import { use3DTilt } from '../../hooks/usePremiumHover';
@@ -54,32 +54,32 @@ export default function WhatStudentsLearn() {
     {
       title: "Prompt Thinking",
       desc: "The most future-critical skill of our time - how to ask AI clearly, specifically, and creatively to get great results.",
-      icon: <MessageSquare size={28} strokeWidth={2} />
+      icon: <Bot size={28} strokeWidth={2.2} />
     },
     {
       title: "Logical Sequencing",
       desc: "Breaking problems into steps - the foundational mindset for coding, systems thinking, and structured reasoning.",
-      icon: <Network size={28} strokeWidth={2} />
+      icon: <Workflow size={28} strokeWidth={2.2} />
     },
     {
       title: "Creative Confidence",
       desc: "The courage to iterate, test, fail, and refine - core to every creative and entrepreneurial endeavour.",
-      icon: <Sparkles size={28} strokeWidth={2} />
+      icon: <Lightbulb size={28} strokeWidth={2.2} />
     },
     {
       title: "AI Literacy & Ethics",
       desc: "Understanding what AI can and cannot do, its biases, and how to use it responsibly - digital citizenship in practice.",
-      icon: <ShieldCheck size={28} strokeWidth={2} />
+      icon: <Scale size={28} strokeWidth={2.2} />
     },
     {
       title: "Self-Directed Learning",
       desc: "Curiosity-led exploration where students choose what to build and learn - the habit of lifelong learning, formed early.",
-      icon: <Compass size={28} strokeWidth={2} />
+      icon: <GraduationCap size={28} strokeWidth={2.2} />
     },
     {
       title: "Computational Empathy",
       desc: "Understanding how machines 'think' and learning to communicate with them effectively - an essential modern skill.",
-      icon: <HeartHandshake size={28} strokeWidth={2} />
+      icon: <Cpu size={28} strokeWidth={2.2} />
     }
   ];
 
@@ -150,7 +150,7 @@ export default function WhatStudentsLearn() {
           align-items: flex-start;
           text-align: left;
           min-height: 200px; /* Decreased height */
-          border: 1px solid #EAE3FE; /* Light border */
+          border: 1px solid #9CA3AF; /* Darker border */
           transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
           overflow: hidden;
         }

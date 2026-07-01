@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { BookOpen, CheckCircle2, Clock, Users } from 'lucide-react';
+import { Laptop, Target, Timer, UserCheck } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -71,25 +71,25 @@ export default function WhatIsVI() {
     {
       title: "Application-Driven",
       desc: "Students Learn By Doing, Not By Reading. Every Concept Is Applied To A Real Task.",
-      icon: <BookOpen size={24} />,
+      icon: <Laptop size={24} strokeWidth={1.75} />,
       colorClass: "wivi-icon-blue"
     },
     {
       title: "Outcome-Focused",
       desc: "Every Internship Leads To A Tangible Project - A Deliverable That Proves Capability.",
-      icon: <CheckCircle2 size={24} />,
+      icon: <Target size={24} strokeWidth={1.75} />,
       colorClass: "wivi-icon-purple"
     },
     {
       title: "Flexible",
       desc: "Self-Paced Learning Experiences Designed To Fit Around A Student's Schedule.",
-      icon: <Clock size={24} />,
+      icon: <Timer size={24} strokeWidth={1.75} />,
       colorClass: "wivi-icon-green"
     },
     {
       title: "Mentor-Guided",
       desc: "Structured Modules Paired With Expert Mentorship And Real Feedback.",
-      icon: <Users size={24} />,
+      icon: <UserCheck size={24} strokeWidth={1.75} />,
       colorClass: "wivi-icon-orange"
     }
   ];
@@ -99,8 +99,8 @@ export default function WhatIsVI() {
       <style>{`
         .wivi-section {
           width: 100%;
-          padding: 0px 40px 100px; /* Reduced top padding */
-          background-color: #FFFFFF;
+          padding: 60px 40px 100px; /* Added top padding */
+          background-color: #F8FAFC; /* Subtle background added */
           font-family: 'Poppins', sans-serif;
           text-align: center;
         }

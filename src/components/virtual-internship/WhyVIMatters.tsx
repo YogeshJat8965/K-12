@@ -278,6 +278,7 @@ export default function WhyVIMatters() {
           max-width: 600px;
           height: auto;
           object-fit: contain;
+          transform: translateY(-40px);
         }
 
         /* ─── RESPONSIVE ─── */
@@ -316,12 +317,12 @@ export default function WhyVIMatters() {
 
             <div className="wvm-cards-wrapper">
               <div className="wvm-card">
-                <div className="wvm-card-header">
+                {/* <div className="wvm-card-header">
                   <div className="wvm-header-icon">
                     <AlertTriangle size={16} strokeWidth={2.5} />
                   </div>
                   <h3 className="wvm-card-title">THE CURRENT GAP</h3>
-                </div>
+                </div> */}
                 <div className="wvm-card-body">
                   <div className="wvm-timeline-line"></div>
                   
@@ -345,12 +346,12 @@ export default function WhyVIMatters() {
               </div>
 
               <div className="wvm-card">
-                <div className="wvm-card-header">
+                {/* <div className="wvm-card-header">
                   <div className="wvm-header-icon">
                     <Rocket size={16} strokeWidth={2.5} />
                   </div>
                   <h3 className="wvm-card-title">THE SHIFT IN EDUCATION</h3>
-                </div>
+                </div> */}
                 <div className="wvm-card-body">
                   <div className="wvm-timeline-line"></div>
                   

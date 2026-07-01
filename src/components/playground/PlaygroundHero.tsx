@@ -51,19 +51,7 @@ export default function PlaygroundHero() {
         delay: 0.2
       });
 
-      // Parallax float for right image
-      if (imgRef.current) {
-        gsap.to(imgRef.current, {
-          yPercent: -10,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: heroRef.current,
-            start: 'top top',
-            end: 'bottom top',
-            scrub: true,
-          }
-        });
-      }
+      // Parallax effect removed per user request
 
       // Feature cards 3D flip + stagger
       if (featBarRef.current) {
@@ -109,7 +97,7 @@ export default function PlaygroundHero() {
         .ph-section {
           width: 100%;
           background: #ffffff;
-          padding-top: 120px; /* Gap below single-level Navbar */
+          padding-top: 160px; /* Gap below single-level Navbar */
           padding-bottom: 20px;
           font-family: 'Poppins', sans-serif;
           position: relative;
@@ -337,7 +325,7 @@ export default function PlaygroundHero() {
         }
 
         @media (max-width: 1024px) {
-          .ph-section { padding-top: 120px; padding-left: 20px; padding-right: 20px; }
+          .ph-section { padding-top: 160px; padding-left: 20px; padding-right: 20px; }
           .ph-content { padding: 0 0 80px; flex-direction: column; align-items: center; }
           .ph-left { flex: 1; max-width: 100%; padding-right: 0; }
           .ph-right-img { position: relative; width: 90%; max-width: 600px; transform: none; right: auto; top: auto; margin: 40px auto 0; display: block; }

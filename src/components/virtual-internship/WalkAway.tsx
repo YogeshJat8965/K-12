@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { FileBadge, FolderOpen, Contact, Shield, Star, MessageCircle, TrendingUp } from 'lucide-react';
+import { Award, Briefcase, BadgeCheck, CheckSquare, Sparkles, LineChart } from 'lucide-react';
 import walkAwayImg from '../../assets/virtual internship/walk away.PNG';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -63,47 +63,42 @@ export default function WalkAway() {
       num: "01",
       title: "Verified Certificate",
       desc: "Mentor-approved, portfolio-credible certification for every completed internship.",
-      icon: <FileBadge size={44} strokeWidth={2} />,
+      icon: <Award size={40} strokeWidth={1.5} />,
       colorClass: "wa-purple"
     },
     {
       num: "02",
       title: "Portfolio Project",
       desc: "Real, shareable work - a prototype, report, or presentation built for public viewing.",
-      icon: <FolderOpen size={44} strokeWidth={2} />,
+      icon: <Briefcase size={40} strokeWidth={1.5} />,
       colorClass: "wa-green"
     },
     {
       num: "03",
       title: "Digital Skill Passport",
       desc: "A verifiable digital badge that grows with every internship - shareable via QR code, portfolio link, or later export to LinkedIn.",
-      icon: <Contact size={44} strokeWidth={2} />,
+      icon: <BadgeCheck size={40} strokeWidth={1.5} />,
       colorClass: "wa-orange"
     },
     {
       num: "04",
       title: "Skill-Based Badges",
       desc: "Micro-credentials that document specific competencies gained during the internship.",
-      icon: (
-        <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <Shield size={44} strokeWidth={2} />
-          <Star size={16} strokeWidth={2.5} style={{ position: 'absolute' }} />
-        </div>
-      ),
+      icon: <CheckSquare size={40} strokeWidth={1.5} />,
       colorClass: "wa-blue"
     },
     {
       num: "05",
       title: "Mentor Feedback",
       desc: "Structured evaluation with qualitative insights from domain experts.",
-      icon: <MessageCircle size={44} strokeWidth={2} />,
+      icon: <Sparkles size={40} strokeWidth={1.5} />,
       colorClass: "wa-yellow"
     },
     {
       num: "06",
       title: "Career Insight Report",
       desc: "Personalised guidance mapping strengths, aptitudes, and suggested next steps.",
-      icon: <TrendingUp size={44} strokeWidth={2} />,
+      icon: <LineChart size={40} strokeWidth={1.5} />,
       colorClass: "wa-pink"
     }
   ];
@@ -142,7 +137,7 @@ export default function WalkAway() {
         }
 
         .wa-header {
-          font-size: clamp(48px, 5vw, 64px);
+          font-size: 48px;
           font-weight: 800;
           color: #1A1A2E;
           line-height: 1.1;

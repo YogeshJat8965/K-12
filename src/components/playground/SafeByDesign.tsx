@@ -86,19 +86,19 @@ export default function SafeByDesign() {
 
   const features = [
     {
-      title: "Content Moderation, Always On:",
+      title: "Content Moderation, Always On",
       desc: "Every conversation is scanned in real-time against child-safety policies - inappropriate content is blocked before it ever reaches the student."
     },
     {
-      title: "No Personal Data Sharing:",
+      title: "No Personal Data Sharing",
       desc: "Agents never ask for real names, contact details, addresses, or personal information. Full stop."
     },
     {
-      title: "Parent Dashboard:",
+      title: "Parent Dashboard",
       desc: "Parents see their child's agents, conversation summaries, and time spent - complete visibility without intrusive monitoring."
     },
     {
-      title: "Teacher-Moderated at School:",
+      title: "Teacher-Moderated at School",
       desc: "When deployed in classrooms, teachers have admin-level visibility into cohort usage and student creations."
     }
   ];
@@ -188,12 +188,12 @@ export default function SafeByDesign() {
         }
 
         .sbd-bullet {
-          flex: 0 0 12px;
-          width: 12px;
-          height: 12px;
+          flex: 0 0 16px;
+          width: 16px;
+          height: 16px;
           border-radius: 50%;
           background: #6C3CF7;
-          margin-top: 6px;
+          margin-top: 4px;
           transition: transform 0.3s ease;
         }
 
@@ -273,6 +273,13 @@ export default function SafeByDesign() {
 
         .sbd-banner:hover .sbd-banner-content {
           transform: translateY(-2px);
+        }
+
+        .sbd-banner-title {
+          font-size: 24px;
+          font-weight: 700;
+          color: #FFFFFF;
+          margin: 0 0 12px;
         }
 
         /* ─── RESPONSIVE ─── */

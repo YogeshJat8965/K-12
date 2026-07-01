@@ -79,14 +79,48 @@ export default function WhySkillzzaVI() {
         .wsvi-section {
           width: 100%;
           padding: 100px 40px;
-          background-color: #FAFAFC;
+          background-color: #F8F9FC; /* Slightly distinct tint */
           font-family: 'Poppins', sans-serif;
           overflow: hidden;
+          position: relative;
+        }
+        
+        /* Premium Background Elements */
+        .wsvi-glow {
+          position: absolute;
+          width: 800px;
+          height: 800px;
+          border-radius: 50%;
+          filter: blur(120px);
+          z-index: 0;
+          opacity: 0.5;
+          pointer-events: none;
+        }
+        .wsvi-glow-left {
+          background: rgba(99, 102, 241, 0.12); /* Indigo */
+          top: -200px;
+          left: -300px;
+        }
+        .wsvi-glow-right {
+          background: rgba(168, 85, 247, 0.12); /* Purple */
+          bottom: -200px;
+          right: -300px;
+        }
+        .wsvi-bg-grid {
+          position: absolute;
+          top: 0; left: 0; right: 0; bottom: 0;
+          background-image: 
+            radial-gradient(circle at 100% 0%, rgba(99, 102, 241, 0.05) 0%, transparent 60%),
+            radial-gradient(circle at 0% 100%, rgba(168, 85, 247, 0.05) 0%, transparent 60%);
+          z-index: 0;
+          pointer-events: none;
         }
         .wsvi-container {
           max-width: 1360px;
           width: 100%;
           margin: 0 auto;
+          position: relative;
+          z-index: 2;
         }
 
         /* Header */
@@ -261,6 +295,10 @@ export default function WhySkillzzaVI() {
       `}</style>
 
       <section className="wsvi-section" ref={sectionRef}>
+        <div className="wsvi-glow wsvi-glow-left"></div>
+        <div className="wsvi-glow wsvi-glow-right"></div>
+        <div className="wsvi-bg-grid"></div>
+
         <div className="wsvi-container">
 
           <div className="wsvi-header-wrap">

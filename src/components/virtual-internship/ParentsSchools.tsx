@@ -1,61 +1,44 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
   Users, ShieldCheck, Clock, Briefcase, Lock, TrendingUp,
-  School, FileCheck, BarChart3, Presentation, Award
+  School, FileCheck, BarChart3, Presentation, Award, ArrowRight
 } from 'lucide-react';
+
+import parentsImg from '../../assets/virtual internship/girl_image.png';
+import schoolsImg from '../../assets/virtual internship/1img.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ParentsSchools() {
   const sectionRef = useRef<HTMLElement>(null);
-  const leftColRef = useRef<HTMLDivElement>(null);
-  const rightColRef = useRef<HTMLDivElement>(null);
+  const [activeTab, setActiveTab] = useState<'parents' | 'schools'>('parents');
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Header animation
       gsap.from('.ps-header-elem', {
         y: 30, opacity: 0, duration: 0.8, stagger: 0.15, ease: 'power3.out',
         scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' }
       });
-
-      // Left Column Items
-      if (leftColRef.current) {
-        const leftItems = leftColRef.current.querySelectorAll('.ps-item, .ps-col-header');
-        gsap.from(leftItems, {
-          y: 30, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'power3.out',
-          scrollTrigger: { trigger: leftColRef.current, start: 'top 80%' }
-        });
-      }
-
-      // Right Column Items
-      if (rightColRef.current) {
-        const rightItems = rightColRef.current.querySelectorAll('.ps-item, .ps-col-header');
-        gsap.from(rightItems, {
-          y: 30, opacity: 0, duration: 0.6, stagger: 0.1, ease: 'power3.out',
-          scrollTrigger: { trigger: rightColRef.current, start: 'top 80%' }
-        });
-      }
     }, sectionRef);
     return () => ctx.revert();
   }, []);
 
   const parentsItems = [
-    { icon: <ShieldCheck size={24} />, text: "Early career exposure - risk-free, structured, and age-appropriate." },
-    { icon: <Clock size={24} />, text: "Productive use of time beyond academics." },
-    { icon: <Briefcase size={24} />, text: "Strong portfolio that supports college admissions." },
-    { icon: <Lock size={24} />, text: "Safe, monitored digital environment with parent dashboard." },
-    { icon: <TrendingUp size={24} />, text: "Regular progress updates and milestone celebrations." }
+    { icon: <ShieldCheck size={20} strokeWidth={2.5} />, text: "Early career exposure - risk-free, structured, and age-appropriate." },
+    { icon: <Clock size={20} strokeWidth={2.5} />, text: "Productive use of time beyond academics." },
+    { icon: <Briefcase size={20} strokeWidth={2.5} />, text: "Strong portfolio that supports college admissions." },
+    { icon: <Lock size={20} strokeWidth={2.5} />, text: "Safe, monitored digital environment with parent dashboard." },
+    { icon: <TrendingUp size={20} strokeWidth={2.5} />, text: "Regular progress updates and milestone celebrations." }
   ];
 
   const schoolsItems = [
-    { icon: <FileCheck size={24} />, text: "Full alignment with NEP 2020 and skill-based education mandates." },
-    { icon: <Users size={24} />, text: "Cohort-based implementation across grades and sections." },
-    { icon: <BarChart3 size={24} />, text: "Teacher dashboards with cohort progress and outcome analytics." },
-    { icon: <Presentation size={24} />, text: "Student showcase opportunities and capstone presentations." },
-    { icon: <Award size={24} />, text: "Co-branded internship certification recognising your institution." }
+    { icon: <FileCheck size={20} strokeWidth={2.5} />, text: "Full alignment with NEP 2020 and skill-based education mandates." },
+    { icon: <Users size={20} strokeWidth={2.5} />, text: "Cohort-based implementation across grades and sections." },
+    { icon: <BarChart3 size={20} strokeWidth={2.5} />, text: "Teacher dashboards with cohort progress and outcome analytics." },
+    { icon: <Presentation size={20} strokeWidth={2.5} />, text: "Student showcase opportunities and capstone presentations." },
+    { icon: <Award size={20} strokeWidth={2.5} />, text: "Co-branded internship certification recognising your institution." }
   ];
 
   return (
@@ -64,225 +47,257 @@ export default function ParentsSchools() {
         .ps-section {
           width: 100%;
           padding: 100px 40px;
-          background-color: #FFFFFF;
+          background-color: #FAFAFD;
           font-family: 'Poppins', sans-serif;
           position: relative;
           overflow: hidden;
         }
         .ps-container {
-          max-width: 1280px; 
+          max-width: 1200px;
           width: 100%;
           margin: 0 auto;
         }
 
-        /* ─── HEADER ─── */
-        .ps-header-wrap {
-          text-align: center;
-          margin-bottom: 60px;
-        }
-        .ps-header {
-          font-size: clamp(36px, 4vw, 48px);
-          font-weight: 800;
-          color: #1A1A2E;
-          margin: 0 0 16px;
-          letter-spacing: -1px;
-        }
-        .ps-header .purple { color: #6C3CF7; }
-        .ps-line {
-          width: 60px;
-          height: 3px;
-          background-color: #6C3CF7;
-          border-radius: 4px;
-          margin: 0 auto;
+        /* Tabs Container */
+        .ps-tabs-box {
+          background: #FFFFFF;
+          border-radius: 40px;
+          box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+          border: 1px solid #F1F3F9;
+          overflow: hidden;
+          position: relative;
         }
 
-        /* ─── COLUMNS ─── */
-        .ps-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 40px;
-          justify-content: center;
-          margin: 0 auto;
-        }
-
-        /* Column Containers */
-        .ps-col {
-          border-radius: 24px;
-          padding: 40px;
+        /* Tab Switcher */
+        .ps-tab-header {
           display: flex;
-          flex-direction: column;
-          gap: 16px;
-          align-items: stretch;
+          border-bottom: 1px solid #F1F3F9;
+        }
+        .ps-tab-btn {
+          flex: 1;
+          padding: 24px;
+          font-size: 20px;
+          font-weight: 700;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #FFFFFF;
+          border: none;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+        .ps-tab-btn.active.parents {
+          color: #2563EB;
+          background: rgba(37, 99, 235, 0.04);
+        }
+        .ps-tab-btn.active.schools {
+          color: #6C3CF7;
+          background: rgba(108, 60, 247, 0.04);
+        }
+        .ps-tab-btn:not(.active) {
+          color: #9CA3AF;
+        }
+        .ps-tab-btn:not(.active):hover {
+          color: #6B7280;
+          background: #F9FAFB;
+        }
+        .ps-tab-divider {
+          width: 1px;
+          background: #F1F3F9;
+        }
+
+        /* Content Area */
+        .ps-content-area {
+          padding: 50px 60px;
+          position: relative;
           overflow: hidden;
         }
-        .ps-col-parents {
-          background-color: #FFF7E6; /* Slightly stronger orange/yellow */
-          border: 1px solid #FDE047;
+        
+        /* Decorative Background Blob */
+        .ps-bg-blob {
+          position: absolute;
+          top: -100px; right: -100px;
+          width: 600px; height: 600px;
+          border-radius: 50%;
+          filter: blur(80px);
+          pointer-events: none;
+          transition: background 0.8s ease;
+          opacity: 0.6;
+          z-index: 0;
         }
-        .ps-col-schools {
-          background-color: #F0F2FF; /* Slightly stronger purple */
-          border: 1px solid #C7D2FE;
+        .ps-bg-blob.parents { background: rgba(37, 99, 235, 0.1); }
+        .ps-bg-blob.schools { background: rgba(108, 60, 247, 0.1); }
+
+        /* Two column layout */
+        .ps-content-grid {
+          display: flex;
+          gap: 60px;
+          align-items: center;
+          position: relative;
+          z-index: 1;
+          animation: fadeSlideIn 0.5s ease-out;
+        }
+        @keyframes fadeSlideIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Column Header */
-        .ps-col-header {
-          background: #FFFFFF;
-          border-radius: 16px;
-          padding: 24px;
-          display: flex;
-          align-items: center;
-          gap: 20px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-          margin-bottom: 8px;
-          width: auto;
-          box-sizing: border-box;
-          margin: 0;
-        }
-        .ps-main-icon-box {
-          width: 72px; height: 72px;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-        }
-        .ps-col-parents .ps-main-icon-box {
-          background: #FEF3C7;
-          color: #F59E0B;
-        }
-        .ps-col-schools .ps-main-icon-box {
-          background: #EDE9FE;
-          color: #6C3CF7;
-        }
-        
-        .ps-col-title {
-          font-size: 24px;
+        .ps-left-col { flex: 1; }
+        .ps-right-col { flex: 1; position: relative; }
+
+        .ps-title {
+          font-size: 32px;
           font-weight: 800;
           color: #1A1A2E;
-          margin: 0 0 4px;
+          margin: 0 0 32px;
+          line-height: 1.2;
           letter-spacing: -0.5px;
         }
-        .ps-col-subtitle {
-          font-size: 15px;
-          font-style: italic;
-          margin: 0;
-          font-weight: 500;
-        }
-        .ps-col-parents .ps-col-subtitle { color: #F59E0B; }
-        .ps-col-schools .ps-col-subtitle { color: #6C3CF7; }
 
-        /* Items */
-        .ps-item {
-          background: #FFFFFF;
-          border-radius: 16px;
-          padding: 20px 24px;
+        .ps-list {
           display: flex;
-          align-items: center;
+          flex-direction: column;
           gap: 20px;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          width: auto;
-          box-sizing: border-box;
-          margin: 0;
         }
-        .ps-item:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+        .ps-list-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 16px;
         }
-
-        .ps-item-icon-box {
-          width: 48px; height: 48px;
+        .ps-list-icon {
+          width: 28px; height: 28px;
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
           flex-shrink: 0;
+          margin-top: 2px;
         }
-        .ps-col-parents .ps-item-icon-box {
-          background: #FFFBEB;
-          color: #F59E0B;
-        }
-        .ps-col-schools .ps-item-icon-box {
-          background: #F5F3FF;
-          color: #6C3CF7;
-        }
-
-        .ps-item-text {
-          font-size: 15px;
+        .parents .ps-list-icon { background: #EFF6FF; color: #3B82F6; border: 1px solid #DBEAFE; }
+        .schools .ps-list-icon { background: #F5F3FF; color: #6C3CF7; border: 1px solid #EDE9FE; }
+        
+        .ps-list-text {
+          font-size: 16px;
           color: #4B5563;
           line-height: 1.5;
           margin: 0;
           font-weight: 500;
         }
 
+        .ps-cta-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 16px;
+          font-weight: 700;
+          margin-top: 40px;
+          text-decoration: none;
+          transition: gap 0.3s ease;
+        }
+        .parents .ps-cta-link { color: #2563EB; }
+        .schools .ps-cta-link { color: #6C3CF7; }
+        .ps-cta-link:hover { gap: 12px; }
+
+        /* Right Column Image */
+        .ps-image {
+          width: 100%;
+          height: 400px;
+          object-fit: cover;
+          border-radius: 32px;
+          box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
-          .ps-grid { grid-template-columns: 1fr; gap: 40px; }
+          .ps-content-grid { flex-direction: column; gap: 40px; }
+          .ps-content-area { padding: 40px 30px; }
+          .ps-image { height: 350px; }
         }
         @media (max-width: 600px) {
           .ps-section { padding: 60px 20px; }
-          .ps-col { padding: 20px; }
-          .ps-col-header { flex-direction: column; text-align: center; padding: 24px 16px; }
-          .ps-item { padding: 16px; }
+          .ps-tab-btn { font-size: 16px; padding: 16px; }
+          .ps-content-area { padding: 30px 20px; }
+          .ps-title { font-size: 26px; }
+          .ps-list-text { font-size: 15px; }
+          .ps-image { height: 250px; border-radius: 20px; }
         }
       `}</style>
 
       <section className="ps-section" ref={sectionRef}>
         <div className="ps-container">
 
-          <div className="ps-header-wrap">
-            <h2 className="ps-header ps-header-elem">
-              For <span className="purple">Parents & Schools</span>
-            </h2>
-            <div className="ps-line ps-header-elem"></div>
-          </div>
-
-          <div className="ps-grid">
-
-            {/* PARENTS COLUMN */}
-            <div className="ps-col ps-col-parents" ref={leftColRef}>
-              <div className="ps-col-header">
-                <div className="ps-main-icon-box">
-                  <Users size={32} strokeWidth={2.5} />
-                </div>
-                <div>
-                  <h3 className="ps-col-title">For Parents</h3>
-                  <p className="ps-col-subtitle">A meaningful investment in your child's future</p>
-                </div>
-              </div>
-
-              {parentsItems.map((item, idx) => (
-                <div key={idx} className="ps-item">
-                  <div className="ps-item-icon-box">
-                    {item.icon}
-                  </div>
-                  <p className="ps-item-text">{item.text}</p>
-                </div>
-              ))}
+          <div className="ps-tabs-box ps-header-elem">
+            
+            {/* Header Tabs */}
+            <div className="ps-tab-header">
+              <button 
+                className={`ps-tab-btn parents ${activeTab === 'parents' ? 'active' : ''}`}
+                onClick={() => setActiveTab('parents')}
+              >
+                For Parents
+              </button>
+              <div className="ps-tab-divider"></div>
+              <button 
+                className={`ps-tab-btn schools ${activeTab === 'schools' ? 'active' : ''}`}
+                onClick={() => setActiveTab('schools')}
+              >
+                For Schools
+              </button>
             </div>
 
-            {/* SCHOOLS COLUMN */}
-            <div className="ps-col ps-col-schools" ref={rightColRef}>
-              <div className="ps-col-header">
-                <div className="ps-main-icon-box">
-                  <School size={32} strokeWidth={2.5} />
-                </div>
-                <div>
-                  <h3 className="ps-col-title">For Schools & Educators</h3>
-                  <p className="ps-col-subtitle">Experiential learning at scale, aligned to NEP 2020</p>
-                </div>
-              </div>
+            {/* Content Area */}
+            <div className="ps-content-area">
+              <div className={`ps-bg-blob ${activeTab}`}></div>
 
-              {schoolsItems.map((item, idx) => (
-                <div key={idx} className="ps-item">
-                  <div className="ps-item-icon-box">
-                    {item.icon}
+              {activeTab === 'parents' && (
+                <div className="ps-content-grid parents">
+                  <div className="ps-left-col">
+                    <h3 className="ps-title">A meaningful investment in your child's future</h3>
+                    
+                    <div className="ps-list">
+                      {parentsItems.map((item, idx) => (
+                        <div key={idx} className="ps-list-item">
+                          <div className="ps-list-icon">{item.icon}</div>
+                          <p className="ps-list-text">{item.text}</p>
+                        </div>
+                      ))}
+                    </div>
+
+                    <a href="#" className="ps-cta-link">
+                      View Parent Dashboard <ArrowRight size={18} strokeWidth={2.5} />
+                    </a>
                   </div>
-                  <p className="ps-item-text">{item.text}</p>
+                  <div className="ps-right-col">
+                    <img src={parentsImg} alt="For Parents" className="ps-image" />
+                  </div>
                 </div>
-              ))}
-            </div>
+              )}
 
+              {activeTab === 'schools' && (
+                <div className="ps-content-grid schools">
+                  <div className="ps-left-col">
+                    <h3 className="ps-title">Experiential learning at scale, aligned to NEP 2020</h3>
+                    
+                    <div className="ps-list">
+                      {schoolsItems.map((item, idx) => (
+                        <div key={idx} className="ps-list-item">
+                          <div className="ps-list-icon">{item.icon}</div>
+                          <p className="ps-list-text">{item.text}</p>
+                        </div>
+                      ))}
+                    </div>
+
+                    <a href="#" className="ps-cta-link">
+                      Request School Demo <ArrowRight size={18} strokeWidth={2.5} />
+                    </a>
+                  </div>
+                  <div className="ps-right-col">
+                    <img src={schoolsImg} alt="For Schools" className="ps-image" />
+                  </div>
+                </div>
+              )}
+
+            </div>
           </div>
 
         </div>

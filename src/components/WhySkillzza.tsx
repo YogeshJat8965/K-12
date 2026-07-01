@@ -52,7 +52,7 @@ export default function WhySkillzza() {
 
         {/* Header */}
         <div className="text-center mb-10">
-          <div className="reveal inline-flex items-center gap-2 bg-white text-purple-600 font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-4 border border-brand-navy/10">
+          <div className="reveal inline-flex items-center gap-2 bg-white text-blue-600 font-black text-xs uppercase tracking-widest px-4 py-2 rounded-full mb-4 border border-brand-navy/10">
             <Sparkles className="w-3.5 h-3.5" />
             The Skillzza
           </div>
