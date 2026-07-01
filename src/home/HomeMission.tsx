@@ -78,39 +78,21 @@ export default function HomeMission() {
           flex-direction: column;
           box-sizing: border-box;
         }
-        .hm-badge-l {
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-          background: #E8703A;
-          border-radius: 30px;
-          padding: 6px 16px;
-          width: fit-content;
-          margin-bottom: 32px;
-        }
-        .hm-badge-l svg { flex-shrink: 0; }
-        .hm-badge-l span {
-          font-weight: 700;
-          font-size: 11px;
-          letter-spacing: 1.8px;
-          color: #fff;
-          text-transform: uppercase;
-        }
         .hm-left h2 {
           font-weight: 700;
-          font-size: 26px;
+          font-size: 25px;
           line-height: 1.35;
           color: #fff;
           margin: 0 0 24px;
-          max-width: calc(100% - 200px);
+          max-width: calc(100% - 150px);
           position: relative;
           z-index: 2;
         }
         .hm-left-sub {
           font-weight: 400;
-          font-size: clamp(13px, 1vw, 16px);
+          font-size: clamp(11px, 0.95vw, 14px);
           line-height: 1.7;
-          color: rgba(255,255,255,0.7);
+          color: rgba(255,255,255,0.85);
           margin: 0;
           max-width: calc(100% - 180px);
           position: relative;
@@ -124,7 +106,7 @@ export default function HomeMission() {
           margin: auto 0 16px;
         }
         .hm-left-footer {
-          font-size: clamp(12px, 0.85vw, 14px);
+          font-size: clamp(11px, 0.85vw, 13px);
           font-style: italic;
           color: rgba(255,255,255,0.55);
         }
@@ -203,6 +185,7 @@ export default function HomeMission() {
         }
 
         @media (max-width: 1024px) {
+          .hm-br-desk { display: none; }
           .hm-inner {
             flex-direction: column !important;
           }
@@ -226,11 +209,11 @@ export default function HomeMission() {
 
           {/* LEFT */}
           <div className="hm-left" ref={leftCardRef} style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}>
-            <div className="hm-badge-l">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="#fff" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
-              <span>Our Mission</span>
-            </div>
-            <h2>We're not just teaching AI. We're shaping the minds that will shape the future.</h2>
+            <h2>
+              We're not just teaching AI.<br className="hm-br-desk" />
+              We're shaping the minds that<br className="hm-br-desk" />
+              will shape the future.
+            </h2>
             <p className="hm-left-sub">Every programme, every studio, every internship is designed around one question – what will tomorrow's world need from today's student?</p>
             <div className="hm-left-line" />
             <div className="hm-left-footer">Purposeful by design. Future-first in approach.</div>
@@ -239,10 +222,10 @@ export default function HomeMission() {
 
           {/* RIGHT */}
           <div className="hm-right" ref={rightCardRef}>
-            <div className="hm-badge-r">
+            {/* <div className="hm-badge-r">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
               <span>Globally Aligned</span>
-            </div>
+            </div> */}
             <h2>Powered by Skillzza. Aligned with global education standards.</h2>
             <p className="hm-right-sub">NEP 2020, International Baccalaureate, Cambridge, and UN SDG frameworks – our learning architecture meets the world where it is headed.</p>
             <div className="hm-tags">

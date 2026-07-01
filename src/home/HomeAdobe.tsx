@@ -36,8 +36,6 @@ export default function HomeAdobe() {
       });
 
       tl.from('.ha-box', { scale: 0.92, opacity: 0, duration: 1, ease: 'power3.out' })
-        .from('.ha-flagship-img', { y: -30, opacity: 0, duration: 0.8, ease: 'elastic.out(1, 0.5)' }, '-=0.5')
-        .from('.ha-partner-img', { rotationY: 180, opacity: 0, duration: 0.8, ease: 'back.out(1.5)' }, '-=0.6')
         .from('.ha-word', { z: -100, opacity: 0, duration: 0.6, stagger: 0.05, ease: 'power2.out' }, '-=0.4')
         .from('.ha-subheadline, .ha-desc', { y: 20, opacity: 0, duration: 0.6, stagger: 0.1 }, '-=0.4')
         .from('.ha-main-img', { scale: 0.8, opacity: 0, duration: 1, ease: 'elastic.out(1, 0.5)' }, '-=0.8')
@@ -61,16 +59,24 @@ export default function HomeAdobe() {
         .ha-box {
           max-width: 1619px;
           margin: 0 auto;
-          background: #230569;
+          background: linear-gradient(-45deg, #FF9E00, #FF0055, #D900C3, #FF9E00);
+          background-size: 300% 300%;
+          animation: runningBrightGradient 15s ease infinite;
           border-radius: 43px;
-          padding: clamp(30px, 4vw, 60px) clamp(40px, 5vw, 80px);
+          padding: 30px clamp(40px, 5vw, 80px);
           display: flex;
           align-items: center;
           gap: 40px;
           color: #fff;
           position: relative;
           overflow: hidden;
-          box-shadow: 0px 3px 6px #431AA42F;
+          box-shadow: 0px 10px 30px rgba(255, 0, 85, 0.2);
+        }
+
+        @keyframes runningBrightGradient {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
         }
 
         .ha-content {
@@ -98,7 +104,7 @@ export default function HomeAdobe() {
           font-weight: 700;
           font-size: 42px;
           line-height: 1.25;
-          margin-bottom: 32px;
+          margin-bottom: 20px;
           max-width: 619px;
           color: #FFFFFF;
         }
@@ -106,7 +112,7 @@ export default function HomeAdobe() {
         .ha-subheadline {
           font-weight: 500;
           font-size: 20px;
-          margin-bottom: 32px;
+          margin-bottom: 20px;
           color: #FFFFFF;
         }
 
@@ -116,7 +122,7 @@ export default function HomeAdobe() {
           line-height: 1.6;
           color: #FFFFFF;
           opacity: 1;
-          margin-bottom: 48px;
+          margin-bottom: 32px;
           max-width: 580px;
         }
 
@@ -125,18 +131,18 @@ export default function HomeAdobe() {
           display: inline-flex;
           border-radius: 12px;
           padding: 2px;
-          background: conic-gradient(from 0deg, #6C3CF7, #A78BFA, #6C3CF7);
-          animation: conicRotate 3s linear infinite;
+          background: conic-gradient(from 0deg, #FF9E00, #FF0055, #D900C3, #FF9E00);
+          animation: conicRotateBright 3s linear infinite;
           cursor: pointer;
         }
 
-        @keyframes conicRotate {
-          100% { background: conic-gradient(from 360deg, #6C3CF7, #A78BFA, #6C3CF7); }
+        @keyframes conicRotateBright {
+          100% { background: conic-gradient(from 360deg, #FF9E00, #FF0055, #D900C3, #FF9E00); }
         }
 
         .ha-btn {
           background: #FFFFFF;
-          color: #230569;
+          color: #FF0055;
           border: none;
           padding: 16px 36px;
           border-radius: 10px;
@@ -181,8 +187,9 @@ export default function HomeAdobe() {
         }
 
         .ha-feature-card {
-          background: rgba(255, 255, 255, 0.05);
-          border: 1px solid #5B4E9A;
+          background: rgba(255, 255, 255, 0.12);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          backdrop-filter: blur(12px);
           border-radius: 18px;
           padding: 16px 24px;
           display: flex;
@@ -191,12 +198,12 @@ export default function HomeAdobe() {
         }
 
         .ha-feature-bullet {
-          width: 14px;
-          height: 14px;
+          width: 18px;
+          height: 18px;
           border-radius: 50%;
-          background: rgba(255, 255, 255, 0.64);
+          background: rgba(255, 255, 255, 0.85);
           flex-shrink: 0;
-          margin-top: 5px; /* Align with first line of text */
+          margin-top: 2px; /* Align with first line of text */
         }
 
         .ha-feature-text {

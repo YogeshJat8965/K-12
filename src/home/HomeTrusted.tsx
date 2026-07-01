@@ -5,9 +5,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const statsData = [
-  { icon: '/landing/stat-icon-1.svg', target: 150000, suffix: '', label: 'Students Impacted', fmt: true },
-  { icon: '/landing/stat-icon-2.svg', target: 150, suffix: '+', label: 'Partner School', fmt: false },
-  { icon: '/landing/stat-icon-3.svg', target: 100, suffix: '+', label: 'AI Projects', fmt: false },
+  { icon: '/landing/stat-icon-1.svg', target: 200000, suffix: '', label: 'Students Impacted', fmt: true },
+  { icon: '/landing/stat-icon-2.svg', target: 450, suffix: '+', label: 'Partner School', fmt: false },
+  { icon: '/landing/stat-icon-3.svg', target: 500, suffix: '+', label: 'AI Projects', fmt: false },
   { icon: '/landing/stat-icon-4.svg', target: 700, suffix: '+', label: 'Educators Unskilled', fmt: false },
 ];
 
@@ -218,17 +218,17 @@ export default function HomeTrusted() {
           text-transform: uppercase;
           margin: 0 0 32px;
         }
-        .ht-logos {
-          display: flex;
-          gap: 16px;
-          justify-content: center;
+        @keyframes marquee {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-50%); }
         }
-        .ht-logo-box {
-          flex: 0 1 200px;
-          height: 80px;
-          background: #F7F8FA;
-          border-radius: 12px;
+        .animate-marquee {
+          animation: marquee 30s linear infinite;
         }
+        .animate-marquee:hover {
+          animation-play-state: paused;
+        }
+
         @media (max-width: 1000px) {
           .ht-stats { flex-wrap: wrap; }
           .ht-card { flex: 1 1 calc(50% - 12px); }
@@ -237,8 +237,6 @@ export default function HomeTrusted() {
         @media (max-width: 600px) {
           .ht-card { flex: 1 1 100%; }
           .ht-map { display: none; }
-          .ht-logos { flex-wrap: wrap; }
-          .ht-logo-box { flex: 1 1 calc(50% - 8px); }
         }
       `}</style>
 
@@ -281,8 +279,34 @@ export default function HomeTrusted() {
           </div>
 
           <p className="ht-partners-title">Trusted Partners and Framework</p>
-          <div className="ht-logos">
-            {[1, 2, 3, 4, 5].map(i => <div className="ht-logo-box" key={i} />)}
+          <div className="relative w-full overflow-hidden pb-6">
+            <div className="flex w-max animate-marquee">
+              {[1, 2].map((half) => (
+                <div key={half} className="flex items-center gap-10 px-6 md:gap-16 md:px-8 shrink-0">
+                  {[
+                    { name: "ALEXANDER PUBLIC SCHOOL", img: "1.png" },
+                    { name: "THE GURUKULAM INTERNATIONAL PUBLIC SCHOOL", img: "2.png" },
+                    { name: "SWAMI VIVEKANANDA RAJKIYA MODEL SCHOOL", img: "3.png" },
+                    { name: "ST. SOLDIER PUBLIC SCHOOL", img: "4.png" },
+                    { name: "ST. JOSEPH'S ENGLISH MEDIUM SCHOOL", img: "5.png" },
+                    { name: "SARASWATI SHISHU MANDIR", img: "6.png" },
+                    { name: "SANFORT WORLD SCHOOL", img: "7.png" }
+                  ].map((partner, index) => (
+                    <div key={index} className="flex items-center gap-4 shrink-0 cursor-pointer transition-transform hover:scale-105">
+                      <img
+                        src={`https://cognifyai.skillzza.com/assets/img/part/${partner.img}`}
+                        alt={partner.name}
+                        className="h-14 md:h-16 w-auto object-contain shrink-0"
+                      />
+                      <span className="font-bold text-[13px] md:text-[15px] leading-tight text-[#1A1A2E] tracking-tight max-w-[180px] whitespace-normal uppercase">
+                        {partner.name}
+                      </span>
+                    </div>
+                  ))}
+                  <div className="w-4 md:w-8"></div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import { LenisProvider, MagneticButton, TiltCard, ScrollRevealHeadline, StaggerRow, Section2Reveal, StatCounter, AnimatedCounter, RoadReveal, MagneticSphere, ScrollRevealWord } from './components/studio/Animations';
+import { LenisProvider, MagneticButton, TiltCard, ScrollRevealHeadline, StaggerRow, Section2Reveal, CircularProgressStat, AnimatedCounter, RoadReveal, MagneticSphere, ScrollRevealWord } from './components/studio/Animations';
 import './components/studio/Animations.css';
-import { ArrowRight, GraduationCap, Building2, Box, Lightbulb, Users, Laptop, Scan, Calendar, Scale, Brain, Trophy } from 'lucide-react';
+import { ArrowRight, GraduationCap, Building2, Box, Lightbulb, Users, Laptop, Scan, Calendar, Scale, Brain, Trophy, Library, Blocks, Palette, PieChart, Briefcase } from 'lucide-react';
 import Navbar from './components/Navbar';
 import heroImg from './assets/skill studio/e531c7559b7451b1ec6b9df853698063c461a861.png';
 import bgImg from './assets/skill studio/background.png';
+import learningPathwayImg from './assets/skill studio/learning.png';
 import whatIsImg from './assets/skill studio/27d47828cc791e53813bb3ca6ec5d29ca22d5bb7 (1).png';
 import img1 from './assets/skill studio/1img.png';
 import img2 from './assets/skill studio/2img.png';
@@ -250,10 +251,10 @@ export default function SkillStudioApp() {
               </div>
 
               {/* The Central Sphere */}
-              <div className="relative z-10 w-[240px] md:w-[340px] lg:w-[420px] flex justify-center items-center">
+              <div className="relative z-10 w-[270px] md:w-[390px] lg:w-[500px] flex justify-center items-center pointer-events-none">
                 <MagneticSphere
                   src={heroImg}
-                  className="w-full h-auto object-contain animate-sphere-3d"
+                  className="w-full h-auto object-contain animate-sphere-3d pointer-events-auto"
                 />
               </div>
 
@@ -269,7 +270,7 @@ export default function SkillStudioApp() {
             {/* Stat 1 */}
             <div className="stat-card group flex items-center gap-5 flex-1 justify-center md:border-r border-gray-100 w-full">
               <div className="stat-icon w-16 h-16 rounded-full bg-[#F3EFFF] flex items-center justify-center shrink-0">
-                <GraduationCap className="w-8 h-8 text-[#6B3CF6]" />
+                <Users className="w-8 h-8 text-[#6B3CF6]" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-slate-900 leading-tight"><AnimatedCounter end={150000} suffix=" +" /></h3>
@@ -291,7 +292,7 @@ export default function SkillStudioApp() {
             {/* Stat 3 */}
             <div className="stat-card group flex items-center gap-5 flex-1 justify-center md:border-r border-gray-100 w-full">
               <div className="stat-icon w-16 h-16 rounded-full bg-[#FFEBEB] flex items-center justify-center shrink-0">
-                <Box className="w-8 h-8 text-[#FF3B30]" />
+                <Bot className="w-8 h-8 text-[#FF3B30]" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-slate-900 leading-tight"><AnimatedCounter end={100} suffix="+" /></h3>
@@ -302,7 +303,7 @@ export default function SkillStudioApp() {
             {/* Stat 4 */}
             <div className="stat-card group flex items-center gap-5 flex-1 justify-center w-full">
               <div className="stat-icon w-16 h-16 rounded-full bg-[#E8FAED] flex items-center justify-center shrink-0">
-                <GraduationCap className="w-8 h-8 text-[#34C759]" />
+                <BookOpen className="w-8 h-8 text-[#34C759]" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-slate-900 leading-tight"><AnimatedCounter end={700} suffix="+" /></h3>
@@ -353,38 +354,26 @@ export default function SkillStudioApp() {
               </div>
 
               {/* Features Row */}
-              <div className="flex flex-wrap items-center justify-between w-full gap-4 pt-4 mt-auto">
+              <div className="flex flex-wrap items-center justify-start w-full gap-3 pt-4 mt-auto">
 
                 {/* Feature 1 */}
-                <div className="feature-item flex items-center gap-3 cursor-pointer">
-                  <div className="feature-icon-wrapper w-12 h-12 rounded-full bg-[#F3EFFF] flex items-center justify-center shrink-0">
-                    <GraduationCap className="w-6 h-6 text-[#6B3CF6]" />
-                  </div>
-                  <p className="text-[13px] font-semibold text-slate-700 leading-tight"><span className="feature-label">Hands-on<br />Projects</span></p>
+                <div className="px-5 py-2.5 border border-gray-200 rounded-lg cursor-pointer hover:border-[#6B3CF6] hover:bg-[#F3EFFF]/50 transition-all shadow-sm group">
+                  <p className="text-[13px] font-semibold text-slate-700 group-hover:text-[#6B3CF6] transition-colors whitespace-nowrap">Hands-on Projects</p>
                 </div>
 
                 {/* Feature 2 */}
-                <div className="feature-item flex items-center gap-3 cursor-pointer">
-                  <div className="feature-icon-wrapper w-12 h-12 rounded-full bg-[#FFF6E5] flex items-center justify-center shrink-0">
-                    <Lightbulb className="w-6 h-6 text-[#FF9800]" />
-                  </div>
-                  <p className="text-[13px] font-semibold text-slate-700 leading-tight"><span className="feature-label">Critical<br />Thinking</span></p>
+                <div className="px-5 py-2.5 border border-gray-200 rounded-lg cursor-pointer hover:border-[#FF9800] hover:bg-[#FFF6E5]/50 transition-all shadow-sm group">
+                  <p className="text-[13px] font-semibold text-slate-700 group-hover:text-[#FF9800] transition-colors whitespace-nowrap">Critical Thinking</p>
                 </div>
 
                 {/* Feature 3 */}
-                <div className="feature-item flex items-center gap-3 cursor-pointer">
-                  <div className="feature-icon-wrapper w-12 h-12 rounded-full bg-[#FFEBEB] flex items-center justify-center shrink-0">
-                    <Users className="w-6 h-6 text-[#FF3B30]" />
-                  </div>
-                  <p className="text-[13px] font-semibold text-slate-700 leading-tight"><span className="feature-label">Collaboration</span></p>
+                <div className="px-5 py-2.5 border border-gray-200 rounded-lg cursor-pointer hover:border-[#FF3B30] hover:bg-[#FFEBEB]/50 transition-all shadow-sm group">
+                  <p className="text-[13px] font-semibold text-slate-700 group-hover:text-[#FF3B30] transition-colors whitespace-nowrap">Collaboration</p>
                 </div>
 
                 {/* Feature 4 */}
-                <div className="feature-item flex items-center gap-3 cursor-pointer">
-                  <div className="feature-icon-wrapper w-12 h-12 rounded-full bg-[#E8FAED] flex items-center justify-center shrink-0">
-                    <Laptop className="w-6 h-6 text-[#34C759]" />
-                  </div>
-                  <p className="text-[13px] font-semibold text-slate-700 leading-tight"><span className="feature-label">Digital<br />Literacy</span></p>
+                <div className="px-5 py-2.5 border border-gray-200 rounded-lg cursor-pointer hover:border-[#34C759] hover:bg-[#E8FAED]/50 transition-all shadow-sm group">
+                  <p className="text-[13px] font-semibold text-slate-700 group-hover:text-[#34C759] transition-colors whitespace-nowrap">Digital Literacy</p>
                 </div>
 
               </div>
@@ -416,11 +405,11 @@ export default function SkillStudioApp() {
             {/* Right Content - Stats Row */}
             <StaggerRow className="w-full lg:w-[62%] grid grid-cols-2 lg:grid-cols-5 gap-y-10">
 
-              <StatCounter end={87} suffix="%" colorClass="text-[#3422F5]" label={<>Skill Gaps in<br />K-12 Education</>} icon={null} />
-              <StatCounter end={72} suffix="%" colorClass="text-[#F59E0B]" label={<>Limited Career<br />Alignment in School<br />Activities</>} icon={null} />
-              <StatCounter end={68} suffix="%" colorClass="text-[#A855F7]" label={<>Low Measurable<br />Skill Tracking</>} icon={null} />
-              <StatCounter end={81} suffix="%" colorClass="text-[#EF4444]" label={<>Minimal Real-World<br />Application<br />Exposure</>} icon={null} />
-              <StatCounter end={94} suffix="%" colorClass="text-[#10B981]" label={<>High Demand<br />for Future Skills<br />Integration</>} icon={null} />
+              <CircularProgressStat end={87} colorHex="#3422F5" label={<>Skill Gaps in<br />K-12 Education</>} />
+              <CircularProgressStat end={72} colorHex="#F59E0B" label={<>Limited Career<br />Alignment in School<br />Activities</>} />
+              <CircularProgressStat end={68} colorHex="#A855F7" label={<>Low Measurable<br />Skill Tracking</>} />
+              <CircularProgressStat end={81} colorHex="#EF4444" label={<>Minimal Real-World<br />Application<br />Exposure</>} />
+              <CircularProgressStat end={94} colorHex="#10B981" label={<>High Demand<br />for Future Skills<br />Integration</>} />
 
             </StaggerRow>
 
@@ -571,11 +560,11 @@ export default function SkillStudioApp() {
         </section>
 
         {/* The Skill Learning Pathway Section */}
-        <section className="py-24 bg-white">
+        <section className="pt-12 pb-8 bg-white">
           <div className="max-w-[1280px] mx-auto px-6">
 
             {/* Top Row: Heading and Buttons */}
-            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-16 gap-6 lg:gap-0">
+            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6 lg:mb-1 gap-6 lg:gap-0">
               <div>
                 <ScrollRevealHeadline>
                   <h2
@@ -609,96 +598,44 @@ export default function SkillStudioApp() {
               </div>
             </div>
 
-            {/* Bottom Row: 5 Features Grid */}
-            <StaggerRow className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-12">
-
-              {/* Feature 1 */}
-              <div className="feature-item flex flex-col items-start text-left">
-                <div className="feature-icon-wrapper w-14 h-14 rounded-xl bg-[#EEF2FF] flex items-center justify-center mb-6">
-                  <Scan className="w-6 h-6 text-[#4F46E5]" />
-                </div>
-                <h3 className="text-[16px] font-bold text-[#1A1A2E] mb-3 leading-tight">
-                  <span className="feature-label">Curated Selection</span>
-                </h3>
-                <p className="text-[13.5px] text-[#6B7280] font-medium leading-[1.6]">
-                  Schools Select Exactly<br className="hidden lg:block" />
-                  3 Studios Per<br className="hidden lg:block" />
-                  Academic Year For<br className="hidden lg:block" />
-                  Focused Depth.
-                </p>
-              </div>
-
-              {/* Feature 2 */}
-              <div className="feature-item flex flex-col items-start text-left">
-                <div className="feature-icon-wrapper w-14 h-14 rounded-xl bg-[#FEF2F2] flex items-center justify-center mb-6">
-                  <Calendar className="w-6 h-6 text-[#EF4444]" />
-                </div>
-                <h3 className="text-[16px] font-bold text-[#1A1A2E] mb-3 leading-tight">
-                  <span className="feature-label">Flexible Deployment</span>
-                </h3>
-                <p className="text-[13.5px] text-[#6B7280] font-medium leading-[1.6]">
-                  Term-Based,<br className="hidden lg:block" />
-                  Semester-Based, Or<br className="hidden lg:block" />
-                  Parallel-Track Models<br className="hidden lg:block" />
-                  Built To Fit Your<br className="hidden lg:block" />
-                  Timetable.
-                </p>
-              </div>
-
-              {/* Feature 3 */}
-              <div className="feature-item flex flex-col items-start text-left">
-                <div className="feature-icon-wrapper w-14 h-14 rounded-xl bg-[#FFFBEB] flex items-center justify-center mb-6">
-                  <Scale className="w-6 h-6 text-[#F59E0B]" />
-                </div>
-                <h3 className="text-[16px] font-bold text-[#1A1A2E] mb-3 leading-tight">
-                  <span className="feature-label">Balanced Domain Mix</span>
-                </h3>
-                <p className="text-[13.5px] text-[#6B7280] font-medium leading-[1.6]">
-                  Every Year Blends<br className="hidden lg:block" />
-                  STEM, Humanities, And<br className="hidden lg:block" />
-                  Life Skills For Holistic<br className="hidden lg:block" />
-                  Development.
-                </p>
-              </div>
-
-              {/* Feature 4 */}
-              <div className="feature-item flex flex-col items-start text-left">
-                <div className="feature-icon-wrapper w-14 h-14 rounded-xl bg-[#ECFDF5] flex items-center justify-center mb-6">
-                  <Brain className="w-6 h-6 text-[#10B981]" />
-                </div>
-                <h3 className="text-[16px] font-bold text-[#1A1A2E] mb-3 leading-tight">
-                  <span className="feature-label">Future-Skills Integration</span>
-                </h3>
-                <p className="text-[13.5px] text-[#6B7280] font-medium leading-[1.6]">
-                  Emerging Technology,<br className="hidden lg:block" />
-                  Critical Thinking, And<br className="hidden lg:block" />
-                  Ethics Built Into Every<br className="hidden lg:block" />
-                  Academic Year.
-                </p>
-              </div>
-
-              {/* Feature 5 */}
-              <div className="feature-item flex flex-col items-start text-left">
-                <div className="feature-icon-wrapper w-14 h-14 rounded-xl bg-[#FDF4FF] flex items-center justify-center mb-6">
-                  <Trophy className="w-6 h-6 text-[#D946EF]" />
-                </div>
-                <h3 className="text-[16px] font-bold text-[#1A1A2E] mb-3 leading-tight">
-                  <span className="feature-label">Structured Showcase</span>
-                </h3>
-                <p className="text-[13.5px] text-[#6B7280] font-medium leading-[1.6]">
-                  Each Year Closes With<br className="hidden lg:block" />
-                  A Formal Evaluation<br className="hidden lg:block" />
-                  Framework And<br className="hidden lg:block" />
-                  Student Showcase.
-                </p>
-              </div>
-
-            </StaggerRow>
+            {/* Learning Pathway Image */}
+            <Section2Reveal className="mt-4 lg:mt-6 w-full flex justify-center items-center">
+              <img 
+                src={learningPathwayImg} 
+                alt="The Skill Learning Pathway" 
+                className="w-full max-w-[1200px] h-auto object-contain mx-auto" 
+              />
+            </Section2Reveal>
           </div>
         </section>
 
         {/* The Implementation Framework Section */}
         <section className="pt-24 pb-6 bg-white relative overflow-hidden">
+          
+          <style>{`
+            @keyframes float-icon {
+              0% { transform: translate(0px, 0px) rotate(0deg) scale(1); }
+              33% { transform: translate(25px, -35px) rotate(12deg) scale(1.1); }
+              66% { transform: translate(-20px, 20px) rotate(-12deg) scale(0.9); }
+              100% { transform: translate(0px, 0px) rotate(0deg) scale(1); }
+            }
+            .animate-float-1 { animation: float-icon 18s ease-in-out infinite; }
+            .animate-float-2 { animation: float-icon 22s ease-in-out infinite reverse; }
+            .animate-float-3 { animation: float-icon 25s ease-in-out infinite 2s; }
+            .animate-float-4 { animation: float-icon 20s ease-in-out infinite reverse 1s; }
+          `}</style>
+          
+          {/* Animated Background Icons */}
+          <div className="absolute inset-0 pointer-events-none z-[50] overflow-hidden">
+            <Bot className="absolute text-[#4200FF] opacity-[0.15] w-24 h-24 top-[10%] left-[5%] animate-float-1" />
+            <Brain className="absolute text-[#E82194] opacity-[0.12] w-32 h-32 top-[20%] right-[8%] animate-float-2" />
+            <Rocket className="absolute text-[#FF6644] opacity-[0.15] w-20 h-20 top-[45%] left-[2%] animate-float-3" />
+            <BookOpen className="absolute text-[#34C759] opacity-[0.12] w-28 h-28 bottom-[15%] left-[20%] animate-float-4" />
+            <Lightbulb className="absolute text-[#FF9800] opacity-[0.15] w-24 h-24 top-[65%] right-[5%] animate-float-1" />
+            <Laptop className="absolute text-[#3B82F6] opacity-[0.12] w-28 h-28 bottom-[5%] right-[25%] animate-float-2" />
+            <Sparkles className="absolute text-[#A855F7] opacity-[0.15] w-16 h-16 top-[30%] left-[25%] animate-float-3" />
+            <Users className="absolute text-[#EF4444] opacity-[0.12] w-24 h-24 bottom-[35%] right-[30%] animate-float-4" />
+          </div>
 
           {/* Header */}
           <div className="text-center mb-36 relative z-10">
@@ -864,7 +801,7 @@ export default function SkillStudioApp() {
 
 
         {/* Impact Measurement Framework Section */}
-        <section className="pt-24 pb-8 bg-white relative z-20">
+        <section className="pt-24 pb-8 bg-[#F9F4FA] relative z-20">
           <div className="max-w-[1280px] mx-auto px-6">
 
             {/* Header */}
@@ -889,7 +826,7 @@ export default function SkillStudioApp() {
               <TiltCard className="h-full">
                 <div className="bg-white border border-gray-200 rounded-[20px] p-6 lg:p-8 flex items-start gap-5 shadow-[0_4px_24px_rgba(0,0,0,0.04)] h-full">
                   <div className="feature-icon-wrapper w-[60px] h-[60px] rounded-full bg-[#EFF6FF] flex items-center justify-center shrink-0">
-                    <BookOpen className="w-7 h-7 text-[#3B82F6] stroke-[1.5]" />
+                    <Library className="w-7 h-7 text-[#3B82F6] stroke-[1.5]" />
                   </div>
                   <div className="flex flex-col pt-1">
                     <h3 className="text-[17px] font-bold text-[#1A1A2E] mb-2.5 leading-[1.3]">
@@ -906,7 +843,7 @@ export default function SkillStudioApp() {
               <TiltCard className="h-full">
                 <div className="bg-white border border-gray-200 rounded-[20px] p-6 lg:p-8 flex items-start gap-5 shadow-[0_4px_24px_rgba(0,0,0,0.04)] h-full">
                   <div className="feature-icon-wrapper w-[60px] h-[60px] rounded-full bg-[#ECFDF5] flex items-center justify-center shrink-0">
-                    <ClipboardCheck className="w-7 h-7 text-[#10B981] stroke-[1.5]" />
+                    <Blocks className="w-7 h-7 text-[#10B981] stroke-[1.5]" />
                   </div>
                   <div className="flex flex-col pt-1">
                     <h3 className="text-[17px] font-bold text-[#1A1A2E] mb-2.5 leading-[1.3]">
@@ -923,7 +860,7 @@ export default function SkillStudioApp() {
               <TiltCard className="h-full">
                 <div className="bg-white border border-gray-200 rounded-[20px] p-6 lg:p-8 flex items-start gap-5 shadow-[0_4px_24px_rgba(0,0,0,0.04)] h-full">
                   <div className="feature-icon-wrapper w-[60px] h-[60px] rounded-full bg-[#FFFBEB] flex items-center justify-center shrink-0">
-                    <Lightbulb className="w-7 h-7 text-[#F59E0B] stroke-[1.5]" />
+                    <Palette className="w-7 h-7 text-[#F59E0B] stroke-[1.5]" />
                   </div>
                   <div className="flex flex-col pt-1">
                     <h3 className="text-[17px] font-bold text-[#1A1A2E] mb-2.5 leading-[1.3]">
@@ -940,7 +877,7 @@ export default function SkillStudioApp() {
               <TiltCard className="h-full">
                 <div className="bg-white border border-gray-200 rounded-[20px] p-6 lg:p-8 flex items-start gap-5 shadow-[0_4px_24px_rgba(0,0,0,0.04)] h-full">
                   <div className="feature-icon-wrapper w-[60px] h-[60px] rounded-full bg-[#F5F3FF] flex items-center justify-center shrink-0">
-                    <UserCog className="w-7 h-7 text-[#8B5CF6] stroke-[1.5]" />
+                    <TrendingUp className="w-7 h-7 text-[#8B5CF6] stroke-[1.5]" />
                   </div>
                   <div className="flex flex-col pt-1">
                     <h3 className="text-[17px] font-bold text-[#1A1A2E] mb-2.5 leading-[1.3]">
@@ -957,7 +894,7 @@ export default function SkillStudioApp() {
               <TiltCard className="h-full">
                 <div className="bg-white border border-gray-200 rounded-[20px] p-6 lg:p-8 flex items-start gap-5 shadow-[0_4px_24px_rgba(0,0,0,0.04)] h-full">
                   <div className="feature-icon-wrapper w-[60px] h-[60px] rounded-full bg-[#EFF6FF] flex items-center justify-center shrink-0">
-                    <BarChart className="w-7 h-7 text-[#3B82F6] stroke-[1.5]" />
+                    <PieChart className="w-7 h-7 text-[#3B82F6] stroke-[1.5]" />
                   </div>
                   <div className="flex flex-col pt-1">
                     <h3 className="text-[17px] font-bold text-[#1A1A2E] mb-2.5 leading-[1.3]">
@@ -974,7 +911,7 @@ export default function SkillStudioApp() {
               <TiltCard className="h-full">
                 <div className="bg-white border border-gray-200 rounded-[20px] p-6 lg:p-8 flex items-start gap-5 shadow-[0_4px_24px_rgba(0,0,0,0.04)] h-full">
                   <div className="feature-icon-wrapper w-[60px] h-[60px] rounded-full bg-[#FEF2F2] flex items-center justify-center shrink-0">
-                    <Folder className="w-7 h-7 text-[#EF4444] stroke-[1.5]" />
+                    <Briefcase className="w-7 h-7 text-[#EF4444] stroke-[1.5]" />
                   </div>
                   <div className="flex flex-col pt-1">
                     <h3 className="text-[17px] font-bold text-[#1A1A2E] mb-2.5 leading-[1.3]">
@@ -992,9 +929,9 @@ export default function SkillStudioApp() {
         </section>
 
         {/* Reporting & Transparency Section */}
-        <section className="pb-24 bg-white relative z-20">
+        <section className="pb-24 bg-[#F9F4FA] relative z-20">
           <div className="max-w-[1280px] mx-auto px-6">
-            <div className="bg-[#F8FAFC] rounded-[24px] p-2 md:px-4 md:py-2 border border-gray-100 flex flex-col gap-1">
+            <div className="bg-white rounded-[24px] p-6 md:p-8 border border-gray-200 flex flex-col gap-6 shadow-[0_4px_24px_rgba(0,0,0,0.02)]">
 
               {/* Header */}
               <div>
@@ -1005,45 +942,33 @@ export default function SkillStudioApp() {
               </div>
 
               {/* Features Row */}
-              <div className="flex flex-col lg:flex-row gap-8 lg:gap-0 lg:divide-x lg:divide-gray-200">
+              <div className="flex flex-col lg:flex-row gap-6 lg:gap-0 lg:divide-x lg:divide-gray-100">
 
                 {/* Item 1 */}
-                <div className="feature-item flex items-center gap-5 lg:w-1/4 lg:pr-8 cursor-pointer">
-                  <div className="feature-icon-wrapper w-[52px] h-[52px] rounded-full bg-[#EFF6FF] flex items-center justify-center shrink-0">
-                    <ClipboardList className="w-6 h-6 text-[#3B82F6] stroke-[1.5]" />
-                  </div>
-                  <p className="text-[13px] md:text-[13.5px] text-[#1A1A2E] font-medium leading-[1.5]">
-                    <span className="feature-label">Digital portfolio<br className="hidden xl:block" />documentation for every<br className="hidden xl:block" />enrolled student.</span>
+                <div className="flex flex-col justify-center lg:w-1/4 lg:pr-6 cursor-pointer group">
+                  <p className="text-[14px] text-[#1A1A2E] font-semibold leading-[1.6] group-hover:text-[#3B82F6] transition-colors">
+                    Digital portfolio documentation for every enrolled student.
                   </p>
                 </div>
 
                 {/* Item 2 */}
-                <div className="feature-item flex items-center gap-5 lg:w-1/4 lg:px-8 cursor-pointer">
-                  <div className="feature-icon-wrapper w-[52px] h-[52px] rounded-full bg-[#ECFDF5] flex items-center justify-center shrink-0">
-                    <CalendarDays className="w-6 h-6 text-[#10B981] stroke-[1.5]" />
-                  </div>
-                  <p className="text-[13px] md:text-[13.5px] text-[#1A1A2E] font-medium leading-[1.5]">
-                    <span className="feature-label">Structured mid-year<br className="hidden xl:block" />and annual showcase<br className="hidden xl:block" />events.</span>
+                <div className="flex flex-col justify-center lg:w-1/4 lg:px-6 cursor-pointer group">
+                  <p className="text-[14px] text-[#1A1A2E] font-semibold leading-[1.6] group-hover:text-[#10B981] transition-colors">
+                    Structured mid-year and annual showcase events.
                   </p>
                 </div>
 
                 {/* Item 3 */}
-                <div className="feature-item flex items-center gap-5 lg:w-1/4 lg:px-8 cursor-pointer">
-                  <div className="feature-icon-wrapper w-[52px] h-[52px] rounded-full bg-[#F5F3FF] flex items-center justify-center shrink-0">
-                    <LayoutDashboard className="w-6 h-6 text-[#8B5CF6] stroke-[1.5]" />
-                  </div>
-                  <p className="text-[13px] md:text-[13.5px] text-[#1A1A2E] font-medium leading-[1.5]">
-                    <span className="feature-label">Live performance<br className="hidden xl:block" />reporting dashboards<br className="hidden xl:block" />for schools and parents.</span>
+                <div className="flex flex-col justify-center lg:w-1/4 lg:px-6 cursor-pointer group">
+                  <p className="text-[14px] text-[#1A1A2E] font-semibold leading-[1.6] group-hover:text-[#8B5CF6] transition-colors">
+                    Live performance reporting dashboards for schools and parents.
                   </p>
                 </div>
 
                 {/* Item 4 */}
-                <div className="feature-item flex items-center gap-5 lg:w-1/4 lg:pl-8 cursor-pointer">
-                  <div className="feature-icon-wrapper w-[52px] h-[52px] rounded-full bg-[#FFFBEB] flex items-center justify-center shrink-0">
-                    <Trophy className="w-6 h-6 text-[#F59E0B] stroke-[1.5]" />
-                  </div>
-                  <p className="text-[13px] md:text-[13.5px] text-[#1A1A2E] font-medium leading-[1.5]">
-                    <span className="feature-label">Year-end Studio Fest -<br className="hidden xl:block" />a flagship celebration<br className="hidden xl:block" />of student work.</span>
+                <div className="flex flex-col justify-center lg:w-1/4 lg:pl-6 cursor-pointer group">
+                  <p className="text-[14px] text-[#1A1A2E] font-semibold leading-[1.6] group-hover:text-[#F59E0B] transition-colors">
+                    Year-end Studio Fest - a flagship celebration of student work.
                   </p>
                 </div>
 

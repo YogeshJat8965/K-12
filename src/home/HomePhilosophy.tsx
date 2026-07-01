@@ -58,10 +58,7 @@ export default function HomePhilosophy() {
 
       // 2. Eyebrow label & Heading 3D split
       if (headerRef.current) {
-        gsap.fromTo('.hp-badge', 
-          { maxWidth: 0, opacity: 0 },
-          { maxWidth: 300, opacity: 1, duration: 1, ease: 'power3.inOut', scrollTrigger: { trigger: headerRef.current, start: 'top 85%' } }
-        );
+
 
         gsap.to('.hp-title-char', {
           z: 0,
@@ -258,10 +255,11 @@ export default function HomePhilosophy() {
           
           <div className="hp-quote">
             <p className="hp-quote-text" ref={quoteRef}>
-              {"Students Don't Just Learn Future Skills - They ".split(' ').map((w,i) => (
+              {"Students Don't Just Learn Future Skills -".split(' ').map((w,i) => (
                 <span key={'q1-'+i} className="hp-quote-word" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>{w}</span>
               ))}
               <br />
+              <span className="hp-quote-word" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>They</span>
               <span className="hp-quote-word hp-quote-highlight" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>Apply</span>
               <span className="hp-quote-word" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>Them,</span>
               <span className="hp-quote-word hp-quote-highlight" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>Prove</span>
@@ -274,7 +272,7 @@ export default function HomePhilosophy() {
           </div>
 
           <div className="hp-header" ref={headerRef} style={{ perspective: '1000px' }}>
-            <div className="hp-badge">HOW WE TEACH</div>
+            {/* <div className="hp-badge">HOW WE TEACH</div> */}
             <h2 className="hp-title">
               {"Our Learning Philosophy".split('').map((c, i) => (
                 <span key={'t-'+i} className="hp-title-char" style={{display:'inline-block', opacity:0, transform:'translateZ(-200px)', filter:'blur(10px)'}}>

@@ -44,17 +44,25 @@ export default function HomeCTA() {
           width: 100%;
           padding: 120px 0;
           font-family: 'DM Sans', sans-serif;
-          background: linear-gradient(135deg, #F8F5FF 0%, #F0EBFF 100%);
+          background: linear-gradient(-45deg, #EDE9FE, #E0E7FF, #FCE7F3, #EDE9FE);
+          background-size: 300% 300%;
+          animation: fluidCtaGradient 15s ease infinite;
           position: relative;
           overflow: hidden;
+        }
+
+        @keyframes fluidCtaGradient {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
         }
 
         .cta-bg-grid {
           position: absolute;
           top: 0; left: 0; right: 0; bottom: 0;
           background-image: 
-            linear-gradient(rgba(108, 60, 247, 0.06) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(108, 60, 247, 0.06) 1px, transparent 1px);
+            linear-gradient(rgba(108, 60, 247, 0.08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(108, 60, 247, 0.08) 1px, transparent 1px);
           background-size: 40px 40px;
           background-position: center;
           opacity: 0;
@@ -295,7 +303,7 @@ export default function HomeCTA() {
         <div className="cta-glow"></div>
         <div className="cta-inner">
           <div className="cta-left">
-            <span className="cta-badge">TAKE THE FIRST STEP</span>
+            {/* <span className="cta-badge">TAKE THE FIRST STEP</span> */}
             <h2 className="cta-title">
               <span className="cta-title-base">Launch Your AI Superpower - </span>
               <span className="cta-title-highlight" style={{ display: 'inline-block' }}>Early</span>

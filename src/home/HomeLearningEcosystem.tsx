@@ -47,6 +47,7 @@ export default function HomeLearningEcosystem() {
   const gridRef = useRef<HTMLDivElement>(null);
   const title1Ref = useRef<HTMLSpanElement>(null);
   const title2Ref = useRef<HTMLSpanElement>(null);
+  const title3Ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
 
@@ -58,6 +59,10 @@ export default function HomeLearningEcosystem() {
           { y: 0, opacity: 1, filter: 'blur(0px)', duration: 1, ease: 'power3.out', scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' } }
         );
         gsap.fromTo(title2Ref.current,
+          { y: 50, opacity: 0, filter: 'blur(10px)' },
+          { y: 0, opacity: 1, filter: 'blur(0px)', duration: 1, ease: 'power3.out', delay: 0.1, scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' } }
+        );
+        gsap.fromTo(title3Ref.current,
           { y: 50, opacity: 0, filter: 'blur(10px)' },
           { y: 0, opacity: 1, filter: 'blur(0px)', duration: 1, ease: 'power3.out', delay: 0.2, scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' } }
         );
@@ -105,7 +110,7 @@ export default function HomeLearningEcosystem() {
         .hle-section {
           width: 100%;
           background: #FFFFFF;
-          padding: 100px 0;
+          padding: 10px 0 100px 0;
           font-family: 'DM Sans', sans-serif;
         }
 
@@ -311,6 +316,7 @@ export default function HomeLearningEcosystem() {
           align-items: center;
           justify-content: center;
           align-self: flex-end;
+          margin-top: auto;
           color: #111827;
           transition: all 0.3s ease;
           background: #fff;
@@ -362,13 +368,13 @@ export default function HomeLearningEcosystem() {
               <h2 className="hle-title" style={{ display: 'flex', flexDirection: 'column' }}>
                 <span ref={title1Ref} style={{ display: 'block' }}>Four Pillars.</span>
                 <span ref={title2Ref} style={{ display: 'block' }}>One Future-Ready Learner ..</span>
-                <span ref={title2Ref} style={{ display: 'block' }}>From First AI Lesson to First Internship to First Career...</span>
+                <span ref={title3Ref} style={{ display: 'block' }}>From First AI Lesson to First Internship to First Career...</span>
               </h2>
             </div>
           </div>
 
-          <div className="hle-grid" ref={gridRef} style={{ marginTop: '20px' }}>
-            {pillarsData.map((item, idx) => (
+          <div className="hle-grid" ref={gridRef} style={{ marginTop: '-40px' }}>
+            {pillarsData.map((item, idx) => ( 
               <div className="hle-card" key={idx}>
                 <div className="hle-img-wrap">
                   <img src={item.img} alt={item.title} />

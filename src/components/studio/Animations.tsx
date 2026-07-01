@@ -267,13 +267,89 @@ export const StatCounter: React.FC<{ end: number; suffix?: string; label: string
   );
 };
 
-export const AnimatedCounter: React.FC<{ end: number; suffix?: string }> = ({ end, suffix = '' }) => {
+export const CircularProgressStat: React.FC<{ end: number; colorHex: string; label: string | React.ReactNode }> = ({ end, colorHex, label }) => {
+  const circleRef = useRef<SVGCircleElement>(null);
+  const textRef = useRef<HTMLSpanElement>(null);
+  
+  useEffect(() => {
+    if (!circleRef.current || !textRef.current) return;
+    
+    // r=46 -> Circumference = 2 * PI * 46 = 289.026
+    const circumference = 289.026;
+    gsap.set(circleRef.current, { strokeDasharray: circumference, strokeDashoffset: circumference });
+    
+    const obj = { val: 0 };
+    
+    gsap.to(obj, {
+      val: end,
+      duration: 2.5,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: circleRef.current,
+        start: 'top 90%',
+      },
+      onUpdate: () => {
+        if (textRef.current) textRef.current.innerText = Math.floor(obj.val) + '%';
+        const currentOffset = circumference - (obj.val / 100) * circumference;
+        if (circleRef.current) circleRef.current.style.strokeDashoffset = currentOffset.toString();
+      }
+    });
+  }, [end]);
+
   return (
-    <span>
-      <CountUp end={end} duration={2.5} separator="," enableScrollSpy />
-      {suffix}
-    </span>
+    <div className="flex flex-col items-center text-center group">
+      <div className="relative w-[110px] h-[110px] mb-5 transform transition-transform duration-300 group-hover:scale-105">
+        <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
+          {/* Background Ring */}
+          <circle cx="50" cy="50" r="46" fill="transparent" stroke="#f3f4f6" strokeWidth="5" />
+          {/* Progress Ring */}
+          <circle 
+            ref={circleRef}
+            cx="50" cy="50" r="46" 
+            fill="transparent" 
+            stroke={colorHex} 
+            strokeWidth="5" 
+            strokeLinecap="round" 
+          />
+          {/* Inner Solid Circle */}
+          <circle cx="50" cy="50" r="37" fill={colorHex} className="transition-all duration-300 group-hover:opacity-90" />
+        </svg>
+        {/* Number Text */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span ref={textRef} className="text-white font-bold text-[26px] tracking-tight">0%</span>
+        </div>
+      </div>
+      <p className="text-[13px] text-[#5C6274] font-semibold leading-[1.6] max-w-[130px] transition-colors group-hover:text-slate-900">
+        {label}
+      </p>
+    </div>
   );
+};
+
+export const AnimatedCounter: React.FC<{ end: number; suffix?: string }> = ({ end, suffix = '' }) => {
+  const ref = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    if (!ref.current) return;
+    const obj = { val: 0 };
+    
+    gsap.to(obj, {
+      val: end,
+      duration: 2.5,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: ref.current,
+        start: 'top 90%',
+      },
+      onUpdate: () => {
+        if (ref.current) {
+          ref.current.innerText = Math.floor(obj.val).toLocaleString('en-US') + suffix;
+        }
+      }
+    });
+  }, [end, suffix]);
+
+  return <span ref={ref}>0{suffix}</span>;
 };
 
 // 8. Mask Reveal for PNG Road
