@@ -7,7 +7,7 @@ const NAV_LINKS = [
   { label: 'Virtual Internship', href: '/virtual-internship' },
   { label: 'AI Playground', href: '/ai-playground' },
   { label: 'International Studio', href: '/international-studio' },
-  { label: 'Learners', href: '#' },
+  { label: 'Learners', href: '/learners' },
 ];
 
 /* ─── Inline SVG Social Icons (exact replicas) ─── */
