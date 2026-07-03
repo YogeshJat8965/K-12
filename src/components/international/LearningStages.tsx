@@ -93,7 +93,7 @@ export default function LearningStages() {
         {/* Header */}
         <div className="text-center mb-10 ls-heading">
           <h2 className="text-[36px] md:text-[44px] font-bold text-[#1A1A2E] tracking-tight">
-            Designed for <span className="text-[#3B82F6]">Multiple</span> Learning Stages
+            Designed for <span className="text-[#7C3AED]">Multiple</span> Learning Stages
           </h2>
         </div>
 

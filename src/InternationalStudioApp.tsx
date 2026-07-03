@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useScrollReveal } from './hooks/useScrollReveal';
 import Navbar from './components/Navbar';
 import InternationalHero from './components/international/InternationalHero';
+import InternationalStats from './components/international/InternationalStats';
 import InternationalWhatIs from './components/international/InternationalWhatIs';
 import InternationalFeatures from './components/international/InternationalFeatures';
 import WhatAreStudios from './components/international/WhatAreStudios';
@@ -14,6 +15,7 @@ import ResponsibleAI from './components/international/ResponsibleAI';
 import ReportingTransparency from './components/international/ReportingTransparency';
 import GlobalEducation from './components/international/GlobalEducation';
 import TrustedPartnerships from './components/international/TrustedPartnerships';
+import Footer from './components/Footer';
 
 export default function InternationalStudioApp() {
   useScrollReveal();
@@ -49,6 +51,7 @@ export default function InternationalStudioApp() {
 
       <main className="min-h-screen">
         <InternationalHero />
+        <InternationalStats />
         <InternationalWhatIs />
         <InternationalFeatures />
         <WhatAreStudios />
@@ -62,6 +65,7 @@ export default function InternationalStudioApp() {
         <GlobalEducation />
         <TrustedPartnerships />
         {/* Additional components will be added here */}
+        <Footer />
       </main>
     </div>
   );

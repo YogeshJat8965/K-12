@@ -9,6 +9,7 @@ import LevelsSection from './components/creativity/LevelsSection';
 import FlagshipSection from './components/creativity/FlagshipSection';
 import WhyAdobeSkillzza from './components/creativity/WhyAdobeSkillzza';
 import DigitalFutureCTA from './components/creativity/DigitalFutureCTA';
+import Footer from './components/Footer';
 
 export default function DigitalCreativityApp() {
   useScrollReveal();
@@ -49,6 +50,7 @@ export default function DigitalCreativityApp() {
         <WhyAdobeSkillzza />
         <DigitalFutureCTA />
         {/* Future sections will be added here */}
+        <Footer />
       </main>
 
     </div>

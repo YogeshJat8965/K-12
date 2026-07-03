@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Target, Brain, Users, Monitor } from 'lucide-react';
-import heroImg from '../../assets/virtual internship/girl_image.png';
+import heroImg from '../../assets/International Studio/girl-grp.png';
 
 gsap.registerPlugin(ScrollTrigger);
 

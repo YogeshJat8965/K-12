@@ -119,11 +119,11 @@ export default function LearningFramework() {
         
         {/* Section Header */}
         <div className="text-center mb-10 lf-intro">
-          <span className="text-[#2563EB] font-bold text-[15px] mb-3 block">
+          <span className="text-[#7C3AED] font-bold text-[15px] mb-3 block">
             Focused Depth. Measurable Growth.
           </span>
           <h2 className="text-[36px] md:text-[44px] font-bold text-[#1A1A2E] tracking-tight mb-5">
-            The Skillzza <span className="text-[#3B82F6]">Learning Framework</span>
+            The Skillzza <span className="text-[#7C3AED]">Learning Framework</span>
           </h2>
           <p className="text-[#6B7280] text-[16px] font-medium leading-relaxed max-w-[800px] mx-auto">
             Schools Select Three Studios Annually Based On Student Needs, Institutional Priorities, And Learning Goals.

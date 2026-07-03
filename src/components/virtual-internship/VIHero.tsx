@@ -185,7 +185,7 @@ export default function VIHero() {
 
         .vih-image {
           width: 100%;
-          max-width: 550px; /* Reduced image size */
+          max-width: 650px; /* Slightly increased image size */
           height: auto;
           object-fit: contain;
           transform: translateY(-40px); /* Shifted slightly up */

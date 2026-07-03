@@ -119,6 +119,7 @@ export default function HomeHero() {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
+          padding-top: 80px; /* Pushed down slightly */
           padding-right: 40px;
           z-index: 10;
         }

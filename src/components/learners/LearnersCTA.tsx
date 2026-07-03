@@ -1,32 +1,6 @@
 import React from 'react';
 
-const ChartIcon = () => (
-  <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-    {/* Base line */}
-    <rect x="8" y="44" width="40" height="4" rx="2" fill="#5B32EA" />
-    
-    {/* Bars */}
-    <rect x="12" y="32" width="6" height="12" rx="1.5" fill="#5B32EA" />
-    <rect x="22" y="24" width="6" height="20" rx="1.5" fill="#5B32EA" />
-    <rect x="32" y="16" width="6" height="28" rx="1.5" fill="#5B32EA" />
-    
-    {/* Arrow */}
-    <path 
-      d="M12 24 L22 16 L28 20 L40 8" 
-      stroke="#5B32EA" 
-      strokeWidth="3.5" 
-      strokeLinecap="round" 
-      strokeLinejoin="round" 
-    />
-    <path 
-      d="M32 8 H40 V16" 
-      stroke="#5B32EA" 
-      strokeWidth="3.5" 
-      strokeLinecap="round" 
-      strokeLinejoin="round" 
-    />
-  </svg>
-);
+
 
 const WavePattern = () => (
   <svg 
@@ -59,15 +33,9 @@ export default function LearnersCTA() {
         
         {/* Top Banner */}
         <FadeIn3D delay={0.1} y={40}>
-          <div className="bg-white rounded-[24px] p-6 lg:p-8 flex flex-col md:flex-row items-center gap-6 lg:gap-8 relative overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.03)] border border-gray-100 transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(91,50,234,0.08)] group">
+          <div className="bg-white rounded-[24px] p-6 lg:p-8 flex flex-col items-center justify-center relative overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.03)] border border-gray-100 transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(91,50,234,0.08)] group">
             
-            <div className="w-[100px] h-[100px] rounded-full bg-[#F4EFFF] flex items-center justify-center shrink-0 z-10 transition-transform duration-500 group-hover:scale-110">
-              <ChartIcon />
-            </div>
-            
-            <div className="hidden md:block w-[1.5px] h-[70px] bg-gray-100 z-10" />
-            
-            <div className="z-10 flex-1 text-center md:text-left pr-0 md:pr-40">
+            <div className="z-10 text-center max-w-3xl mx-auto">
               <h3 className="text-[20px] md:text-[22px] lg:text-[24px] font-extrabold text-[#1A1A2E] mb-2 leading-[1.2]">
                 Deliver Measurable, Portfolio-Backed Outcomes
               </h3>

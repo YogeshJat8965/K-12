@@ -31,29 +31,6 @@ export default function HowProgramWorks() {
         }
       });
 
-      // Timeline nodes and line
-      gsap.from('.hpw-timeline-line', {
-        scaleX: 0,
-        transformOrigin: 'left',
-        duration: 1.2,
-        ease: 'power3.inOut',
-        scrollTrigger: {
-          trigger: '.hpw-timeline-container',
-          start: 'top 85%',
-        }
-      });
-
-      gsap.from('.hpw-node', {
-        scale: 0,
-        opacity: 0,
-        duration: 0.5,
-        stagger: 0.15,
-        ease: 'back.out(1.5)',
-        scrollTrigger: {
-          trigger: '.hpw-timeline-container',
-          start: 'top 85%',
-        }
-      });
 
       // Cards animation
       if (cardsRef.current) {
@@ -355,12 +332,12 @@ export default function HowProgramWorks() {
           </p>
 
           <div className="hpw-timeline-container">
-            <div className="hpw-timeline-line"></div>
+
             
             <div className="hpw-grid" ref={cardsRef}>
               {steps.map((step, idx) => (
                 <div key={idx} className="hpw-step-col">
-                  <div className="hpw-node">{step.num}</div>
+
                   <div className="hpw-card">
                     <img src={step.img} alt={step.title} className="hpw-card-img" />
                     <div className="hpw-card-title-wrap">

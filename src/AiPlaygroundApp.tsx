@@ -14,6 +14,7 @@ import SafeByDesign from './components/playground/SafeByDesign';
 import SchoolsAndEducators from './components/playground/SchoolsAndEducators';
 import PlayToMastery from './components/playground/PlayToMastery';
 import CtaBanner from './components/playground/CtaBanner';
+import Footer from './components/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -79,6 +80,7 @@ export default function AiPlaygroundApp() {
         <PlayToMastery />
         <SchoolsAndEducators />
         <CtaBanner />
+        <Footer />
       </main>
     </div>
   );

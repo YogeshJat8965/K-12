@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Calendar, ArrowRight, Sparkles, Brain, Rocket, Bot, MonitorPlay, Leaf, Scale, Lightbulb, Landmark } from 'lucide-react';
 import { useSplitReveal } from '../../hooks/useSplitReveal';
-import heroImg from '../../assets/virtual internship/girl_image.png';
+import heroImg from '../../assets/International Studio/hero-img.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -309,8 +309,8 @@ export default function InternationalHero() {
             </div>
 
             {/* Center Image */}
-            <div style={{ position: 'absolute', zIndex: 10, width: '240px', height: '240px', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }}>
-              <img src={heroImg} alt="Student" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <div style={{ position: 'absolute', zIndex: 10, width: '300px', height: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <img src={heroImg} alt="Hero Focus" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
 
           </div>

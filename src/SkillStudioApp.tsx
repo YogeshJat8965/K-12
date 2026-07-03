@@ -17,6 +17,7 @@ import img7 from './assets/skill studio/7img.png';
 import implBg from './assets/skill studio/background img.png';
 import partnershipImg from './assets/skill studio/37432c54c564481b83e49588db6594f29d6d2fd7.png';
 import { LayoutGrid, CalendarRange, Clock, CalendarDays, BarChart3, TrendingUp, User, UserPlus, Award, BookOpen, ClipboardCheck, UserCog, Folder, BarChart, ClipboardList, LayoutDashboard, Sparkles, Rocket, Bot, MonitorPlay, Leaf } from 'lucide-react';
+import Footer from './components/Footer';
 
 export default function SkillStudioApp() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -1136,6 +1137,7 @@ export default function SkillStudioApp() {
 
           </div>
         </section>
+        <Footer />
 
       </div>
     </LenisProvider>

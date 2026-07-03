@@ -111,6 +111,7 @@ function AppContent() {
       <div id="vi-parents-schools"><ParentsSchools /></div>
       <div id="vi-why-skillzza"><WhySkillzzaVI /></div>
       <div id="vi-cta-banner"><VICtaBanner /></div>
+      <Footer />
 
       {/* 
         ========================================================================

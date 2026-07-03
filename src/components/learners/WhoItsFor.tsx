@@ -42,14 +42,14 @@ export default function WhoItsFor() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {cards.map((c, i) => (
             <div key={i}>
-              <div 
+              <div
                 className="group h-full bg-white rounded-[24px] p-8 border border-gray-100 shadow-[0_4px_24px_rgba(0,0,0,0.03)] flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(91,50,234,0.12)] hover:border-[#E0D6FF]"
               >
                 <div className="mb-8 shrink-0">
-                  <img 
-                    src={c.icon} 
-                    alt={c.title.replace('\n', ' ')} 
-                    className="w-[88px] h-[88px] object-contain transition-transform duration-500 ease-out group-hover:scale-[1.15] group-hover:-translate-y-1" 
+                  <img
+                    src={c.icon}
+                    alt={c.title.replace('\n', ' ')}
+                    className="w-[88px] h-[88px] object-contain transition-transform duration-500 ease-out group-hover:scale-[1.15] group-hover:-translate-y-1"
                   />
                 </div>
 

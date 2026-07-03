@@ -113,7 +113,7 @@ export default function FutureSkillsStudios() {
         {/* Intro */}
         <div className="text-center max-w-[800px] mx-auto mb-16">
           <h2 className="fss-intro text-[36px] md:text-[44px] font-extrabold text-[#1A1A2E] leading-[1.15] mb-5 tracking-tight">
-            Our Future <span className="text-[#3B82F6]">Skills Studios</span>
+            Our Future <span className="text-[#7C3AED]">Skills Studios</span>
           </h2>
           <p className="fss-intro text-[#6B7280] text-[16px] font-medium max-w-[700px] mx-auto leading-relaxed">
             A Curated Portfolio Of Immersive Skill Studios Designed To Build Capability, Confidence, Creativity, And Future Readiness. Hover over the cards to view the Key Focus Areas.

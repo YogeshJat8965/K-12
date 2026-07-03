@@ -21,34 +21,34 @@ const partners = [
   {
     title: "An academic\ninstitution",
     icon: Landmark,
-    color: "#F43F5E", // Rose
-    blobBg: "linear-gradient(135deg, #FFE4E6 0%, #FDA4AF 100%)",
+    color: "#6366F1",
+    blobBg: "linear-gradient(135deg, #E0E7FF 0%, #A5B4FC 100%)",
     blobRadius: "40% 60% 30% 70% / 60% 40% 70% 40%",
-    shadow: "0px 10px 30px rgba(244, 63, 94, 0.15)"
+    shadow: "0px 10px 30px rgba(99, 102, 241, 0.15)"
   },
   {
     title: "A learning\nnetwork",
     icon: Share2,
-    color: "#F97316", // Orange
-    blobBg: "linear-gradient(135deg, #FFEDD5 0%, #FDBA74 100%)",
+    color: "#6366F1",
+    blobBg: "linear-gradient(135deg, #E0E7FF 0%, #A5B4FC 100%)",
     blobRadius: "50% 50% 60% 40% / 40% 70% 30% 60%",
-    shadow: "0px 10px 30px rgba(249, 115, 22, 0.15)"
+    shadow: "0px 10px 30px rgba(99, 102, 241, 0.15)"
   },
   {
     title: "A global education\npartner",
     icon: Globe,
-    color: "#22C55E", // Green
-    blobBg: "linear-gradient(135deg, #DCFCE7 0%, #86EFAC 100%)",
+    color: "#6366F1",
+    blobBg: "linear-gradient(135deg, #E0E7FF 0%, #A5B4FC 100%)",
     blobRadius: "70% 30% 50% 50% / 50% 50% 60% 40%",
-    shadow: "0px 10px 30px rgba(34, 197, 94, 0.15)"
+    shadow: "0px 10px 30px rgba(99, 102, 241, 0.15)"
   },
   {
     title: "An innovation-\nfocused organisation",
     icon: Lightbulb,
-    color: "#A855F7", // Purple
-    blobBg: "linear-gradient(135deg, #F3E8FF 0%, #D8B4FE 100%)",
+    color: "#6366F1",
+    blobBg: "linear-gradient(135deg, #E0E7FF 0%, #A5B4FC 100%)",
     blobRadius: "40% 60% 60% 40% / 60% 30% 70% 40%",
-    shadow: "0px 10px 30px rgba(168, 85, 247, 0.15)"
+    shadow: "0px 10px 30px rgba(99, 102, 241, 0.15)"
   }
 ];
 
@@ -90,7 +90,7 @@ export default function TrustedPartnerships() {
         {/* Header */}
         <div className="tp-header text-center w-full max-w-[900px] mb-12">
           <h2 className="text-[40px] md:text-[50px] font-extrabold text-[#101828] leading-tight mb-4 tracking-tight">
-            Trusted Learning <span className="text-[#5B61FE]">Partnerships</span>
+            Trusted Learning <span className="text-[#7C3AED]">Partnerships</span>
           </h2>
           
           {/* Small centered divider */}

@@ -50,7 +50,7 @@ export default function GlobalEducation() {
         <div className="flex flex-col md:flex-row items-start justify-between mb-8 w-full">
           <div className="max-w-[850px] w-full ge-left">
             <h2 className="text-[36px] md:text-[44px] font-bold text-[#1A1A2E] leading-tight mb-3">
-              Alignment with <span className="text-[#3B82F6] whitespace-nowrap">Global Education</span><br />
+              Alignment with <span className="text-[#7C3AED] whitespace-nowrap">Global Education</span><br />
               Trends
             </h2>
 

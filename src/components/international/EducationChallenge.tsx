@@ -17,8 +17,8 @@ import {
   BarChart3
 } from 'lucide-react';
 
-import img1 from '../../assets/International Studio/learning 1.png';
-import img2 from '../../assets/International Studio/responsible AI.png';
+import img1 from '../../assets/International Studio/traditional.png';
+import img2 from '../../assets/International Studio/future-reay.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -258,7 +258,7 @@ export default function EducationChallenge() {
               {activeTab === 'traditional' && (
                 <div className="ec-content-grid traditional">
                   <div className="ec-left-col">
-                    <h3 className="ec-title">Many traditional enrichment activities lack:</h3>
+                    <h3 className="ec-title">Many traditional enrichment activities lack</h3>
                     
                     <div className="ec-list">
                       {traditionalItems.map((item, idx) => (
@@ -278,7 +278,7 @@ export default function EducationChallenge() {
               {activeTab === 'future' && (
                 <div className="ec-content-grid future">
                   <div className="ec-left-col">
-                    <h3 className="ec-title">At the same time, students are entering a world shaped by:</h3>
+                    <h3 className="ec-title">At the same time, students are entering a world shaped by</h3>
                     
                     <div className="ec-list">
                       {futureItems.map((item, idx) => (

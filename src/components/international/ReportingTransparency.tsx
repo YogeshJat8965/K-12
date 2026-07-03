@@ -35,7 +35,7 @@ export default function ReportingTransparency() {
           {/* Left Text */}
           <div className="max-w-[650px]">
             <h2 className="text-[36px] md:text-[44px] font-bold text-[#1A1A2E] leading-tight mb-4">
-              Reporting & <span className="text-[#3B82F6]">Transparency</span>
+              Reporting & <span className="text-[#7C3AED]">Transparency</span>
             </h2>
             <p className="text-[#6B7280] text-[15.5px] leading-relaxed font-medium max-w-[500px]">
               Schools And Parents Receive Structured Visibility Into Student Learning Journeys Through:

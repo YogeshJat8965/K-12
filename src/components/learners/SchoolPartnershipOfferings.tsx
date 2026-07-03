@@ -217,7 +217,7 @@ export default function SchoolPartnershipOfferings() {
         {/* Single Carousel Card */}
         <FadeIn3D delay={0.2} y={50} rotateX={5} className="bg-white rounded-[40px] pl-6 pr-4 py-8 md:pl-10 md:pr-6 md:py-10 lg:pl-12 lg:pr-6 lg:py-12 border border-gray-100 shadow-[0_12px_60px_rgba(0,0,0,0.06)] overflow-hidden">
 
-          <div key={current} className="grid grid-cols-1 xl:grid-cols-[1fr_1.25fr] gap-8 xl:gap-5 items-stretch">
+          <div key={current} className="grid grid-cols-1 xl:grid-cols-[1fr_1.25fr] gap-8 xl:gap-5 items-center">
 
             {/* Left Content */}
             <div className={`flex flex-col justify-center ${slideClass}`}>
@@ -285,11 +285,11 @@ export default function SchoolPartnershipOfferings() {
             </div>
 
             {/* Right Image */}
-            <div className="group/img w-full min-h-[380px] xl:min-h-0 relative rounded-[28px] overflow-hidden anim-fade-scale">
+            <div className="group/img w-full relative rounded-[28px] overflow-hidden anim-fade-scale flex justify-center items-center">
               <img
                 src={s.image}
                 alt={s.title}
-                className="absolute inset-0 w-full h-full object-cover rounded-[28px] transition-transform duration-700 ease-[cubic-bezier(0.2,0,0,1)] group-hover/img:scale-[1.03]"
+                className="w-full h-auto object-contain rounded-[28px] transition-transform duration-700 ease-[cubic-bezier(0.2,0,0,1)] group-hover/img:scale-[1.03]"
               />
             </div>
           </div>

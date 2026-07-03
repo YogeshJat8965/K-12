@@ -7,6 +7,7 @@ import WhatSchoolCanEnable from './components/learners/WhatSchoolCanEnable';
 import SchoolPartnershipOfferings from './components/learners/SchoolPartnershipOfferings';
 import InstitutionalImpact from './components/learners/InstitutionalImpact';
 import LearnersCTA from './components/learners/LearnersCTA';
+import Footer from './components/Footer';
 
 export default function LearnersApp() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -44,6 +45,7 @@ export default function LearnersApp() {
         <InstitutionalImpact />
         <WhoItsFor />
         <LearnersCTA />
+        <Footer />
       </main>
     </div>
   );
