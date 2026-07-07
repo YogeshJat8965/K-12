@@ -60,7 +60,7 @@ export default function SkillStudioApp() {
             minHeight: '95vh'
           }}
         >
-          <div className="max-w-[1400px] mx-auto px-6 w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-8 -mt-16">
+          <div className="max-w-[1400px] mx-auto px-6 w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-8 mt-12 lg:-mt-16">
 
             {/* Left Content */}
             <div className="w-full lg:w-[55%] flex flex-col items-start text-left lg:pr-4">
@@ -75,10 +75,9 @@ export default function SkillStudioApp() {
               {/* Heading */}
               <ScrollRevealHeadline>
                 <h1
-                  className="mb-7"
+                  className="mb-7 text-[36px] md:text-[48px]"
                   style={{
                     fontWeight: 600,
-                    fontSize: '48px',
                     lineHeight: '121%',
                     letterSpacing: '0%'
                   }}
@@ -113,7 +112,7 @@ export default function SkillStudioApp() {
             </div>
 
             {/* Right Image with Orbits */}
-            <div className="w-full lg:w-[45%] flex justify-center items-center relative min-h-[400px] md:min-h-[550px] lg:min-h-[650px] mt-10 lg:mt-0">
+            <div className="w-full lg:w-[45%] flex justify-center items-center relative min-h-[400px] md:min-h-[550px] lg:min-h-[650px] -mt-8 lg:mt-0">
 
               <style>
                 {`
@@ -265,50 +264,50 @@ export default function SkillStudioApp() {
         </section>
 
         {/* Stats Card - Overlapping Hero */}
-        <section className="relative z-20 -mt-24 max-w-[1280px] mx-auto px-6 mb-20">
-          <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] py-8 px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0">
+        <section className="relative z-20 mt-8 md:-mt-24 max-w-[1280px] mx-auto px-4 sm:px-6 mb-20">
+          <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] py-6 px-4 lg:px-12 grid grid-cols-2 md:flex md:flex-row items-start md:items-center justify-between gap-y-8 gap-x-4 md:gap-0">
 
             {/* Stat 1 */}
-            <div className="stat-card group flex items-center gap-5 flex-1 justify-center md:border-r border-gray-100 w-full">
-              <div className="stat-icon w-16 h-16 rounded-full bg-[#F3EFFF] flex items-center justify-center shrink-0">
-                <Users className="w-8 h-8 text-[#6B3CF6]" />
+            <div className="stat-card group flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3 md:gap-5 flex-1 justify-center md:border-r border-gray-100 w-full">
+              <div className="stat-icon w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#F3EFFF] flex items-center justify-center shrink-0">
+                <Users className="w-6 h-6 md:w-8 md:h-8 text-[#6B3CF6]" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-slate-900 leading-tight"><AnimatedCounter end={150000} suffix=" +" /></h3>
-                <p className="text-sm font-medium text-gray-500 mt-1">Students</p>
+                <h3 className="text-xl md:text-2xl font-bold text-slate-900 leading-tight"><AnimatedCounter end={150000} suffix=" +" /></h3>
+                <p className="text-[12px] md:text-sm font-medium text-gray-500 mt-0.5 md:mt-1">Students</p>
               </div>
             </div>
 
             {/* Stat 2 */}
-            <div className="stat-card group flex items-center gap-5 flex-1 justify-center md:border-r border-gray-100 w-full">
-              <div className="stat-icon w-16 h-16 rounded-full bg-[#FFF6E5] flex items-center justify-center shrink-0">
-                <Building2 className="w-8 h-8 text-[#FF9800]" />
+            <div className="stat-card group flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3 md:gap-5 flex-1 justify-center md:border-r border-gray-100 w-full">
+              <div className="stat-icon w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#FFF6E5] flex items-center justify-center shrink-0">
+                <Building2 className="w-6 h-6 md:w-8 md:h-8 text-[#FF9800]" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-slate-900 leading-tight"><AnimatedCounter end={150} suffix="+" /></h3>
-                <p className="text-sm font-medium text-gray-500 mt-1">Partner Schools</p>
+                <h3 className="text-xl md:text-2xl font-bold text-slate-900 leading-tight"><AnimatedCounter end={150} suffix="+" /></h3>
+                <p className="text-[12px] md:text-sm font-medium text-gray-500 mt-0.5 md:mt-1">Partner Schools</p>
               </div>
             </div>
 
             {/* Stat 3 */}
-            <div className="stat-card group flex items-center gap-5 flex-1 justify-center md:border-r border-gray-100 w-full">
-              <div className="stat-icon w-16 h-16 rounded-full bg-[#FFEBEB] flex items-center justify-center shrink-0">
-                <Bot className="w-8 h-8 text-[#FF3B30]" />
+            <div className="stat-card group flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3 md:gap-5 flex-1 justify-center md:border-r border-gray-100 w-full">
+              <div className="stat-icon w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#FFEBEB] flex items-center justify-center shrink-0">
+                <Bot className="w-6 h-6 md:w-8 md:h-8 text-[#FF3B30]" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-slate-900 leading-tight"><AnimatedCounter end={100} suffix="+" /></h3>
-                <p className="text-sm font-medium text-gray-500 mt-1">AI Projects</p>
+                <h3 className="text-xl md:text-2xl font-bold text-slate-900 leading-tight"><AnimatedCounter end={100} suffix="+" /></h3>
+                <p className="text-[12px] md:text-sm font-medium text-gray-500 mt-0.5 md:mt-1">AI Projects</p>
               </div>
             </div>
 
             {/* Stat 4 */}
-            <div className="stat-card group flex items-center gap-5 flex-1 justify-center w-full">
-              <div className="stat-icon w-16 h-16 rounded-full bg-[#E8FAED] flex items-center justify-center shrink-0">
-                <BookOpen className="w-8 h-8 text-[#34C759]" />
+            <div className="stat-card group flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3 md:gap-5 flex-1 justify-center w-full">
+              <div className="stat-icon w-12 h-12 md:w-16 md:h-16 rounded-full bg-[#E8FAED] flex items-center justify-center shrink-0">
+                <BookOpen className="w-6 h-6 md:w-8 md:h-8 text-[#34C759]" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-slate-900 leading-tight"><AnimatedCounter end={700} suffix="+" /></h3>
-                <p className="text-sm font-medium text-gray-500 mt-1">Educator Cohorts Upskilled</p>
+                <h3 className="text-xl md:text-2xl font-bold text-slate-900 leading-tight"><AnimatedCounter end={700} suffix="+" /></h3>
+                <p className="text-[12px] md:text-sm font-medium text-gray-500 mt-0.5 md:mt-1">Educators Upskilled</p>
               </div>
             </div>
 
@@ -316,8 +315,8 @@ export default function SkillStudioApp() {
         </section>
 
         {/* What is Skillzza Club Section */}
-        <section className="py-20 bg-white">
-          <Section2Reveal className="max-w-[1280px] mx-auto px-6 flex flex-col lg:flex-row items-center lg:items-stretch gap-16">
+        <section className="py-10 lg:py-20 bg-white">
+          <Section2Reveal className="max-w-[1280px] mx-auto px-6 flex flex-col lg:flex-row items-center lg:items-stretch gap-8 lg:gap-16">
 
             {/* Left Image */}
             <div className="w-full lg:w-1/2 group">
@@ -333,10 +332,9 @@ export default function SkillStudioApp() {
               <div className="w-full">
                 <ScrollRevealHeadline>
                   <h2
-                    className="mb-8 text-[#1A1A2E]"
+                    className="mb-8 text-[28px] lg:text-[36px] text-[#1A1A2E]"
                     style={{
                       fontWeight: 600,
-                      fontSize: '36px',
                       lineHeight: '100%',
                       letterSpacing: '0%'
                     }}
@@ -384,7 +382,7 @@ export default function SkillStudioApp() {
         </section>
 
         {/* The Challenge Section */}
-        <section className="py-20 lg:py-28" style={{ backgroundColor: '#F9F4FA' }}>
+        <section className="py-12 lg:py-28" style={{ backgroundColor: '#F9F4FA' }}>
           <div className="max-w-[1280px] mx-auto px-6 flex flex-col lg:flex-row items-center lg:items-center justify-between gap-12 lg:gap-0">
 
             {/* Left Content */}
@@ -393,7 +391,7 @@ export default function SkillStudioApp() {
                 THE CHALLENGE
               </span>
               <ScrollRevealHeadline>
-                <h2 className="text-[36px] lg:text-[40px] font-bold text-[#1A1A2E] leading-[1.2] mb-6">
+                <h2 className="text-[28px] lg:text-[40px] font-bold text-[#1A1A2E] leading-[1.2] mb-6">
                   Bridging the Skills Gap <br className="hidden lg:block" />
                   in K-12 Education
                 </h2>
@@ -404,7 +402,7 @@ export default function SkillStudioApp() {
             </div>
 
             {/* Right Content - Stats Row */}
-            <StaggerRow className="w-full lg:w-[62%] grid grid-cols-2 lg:grid-cols-5 gap-y-10">
+            <StaggerRow className="w-full lg:w-[62%] grid grid-cols-2 lg:grid-cols-5 gap-y-6 lg:gap-y-10 gap-x-2">
 
               <CircularProgressStat end={87} colorHex="#3422F5" label={<>Skill Gaps in<br />K-12 Education</>} />
               <CircularProgressStat end={72} colorHex="#F59E0B" label={<>Limited Career<br />Alignment in School<br />Activities</>} />
@@ -418,17 +416,16 @@ export default function SkillStudioApp() {
         </section>
 
         {/* Our Skill Studios Section */}
-        <section className="py-24 bg-white">
+        <section className="py-12 md:py-24 bg-white">
           <div className="max-w-[1280px] mx-auto px-6">
 
             {/* Header */}
             <div className="mb-14">
               <ScrollRevealHeadline>
                 <h2
-                  className="mb-4 text-[#1A1A2E]"
+                  className="mb-4 text-[28px] md:text-[36px] text-[#1A1A2E]"
                   style={{
                     fontWeight: 600,
-                    fontSize: '36px',
                     lineHeight: '100%',
                     letterSpacing: '0%'
                   }}
@@ -463,7 +460,7 @@ export default function SkillStudioApp() {
               {/* Card 2 */}
               <TiltCard className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.5rem)] min-w-[280px]">
                 <div className="w-full h-full bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] overflow-hidden transition-transform">
-                  <div className="h-[220px] w-full relative overflow-hidden">
+                  <div className="h-[180px] sm:h-[220px] w-full relative overflow-hidden">
                     <img src={img2} alt="Gen AI & Deep Tech" className="w-full h-full object-cover" />
                   </div>
                   <div className="p-6 relative z-10 bg-white">
@@ -479,7 +476,7 @@ export default function SkillStudioApp() {
               {/* Card 3 */}
               <TiltCard className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.5rem)] min-w-[280px]">
                 <div className="w-full h-full bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] overflow-hidden transition-transform">
-                  <div className="h-[220px] w-full relative overflow-hidden">
+                  <div className="h-[180px] sm:h-[220px] w-full relative overflow-hidden">
                     <img src={img3} alt="Jr. Data scientist" className="w-full h-full object-cover" />
                   </div>
                   <div className="p-6 relative z-10 bg-white">
@@ -495,7 +492,7 @@ export default function SkillStudioApp() {
               {/* Card 4 */}
               <TiltCard className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.5rem)] min-w-[280px]">
                 <div className="w-full h-full bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] overflow-hidden transition-transform">
-                  <div className="h-[220px] w-full relative overflow-hidden">
+                  <div className="h-[180px] sm:h-[220px] w-full relative overflow-hidden">
                     <img src={img4} alt="Jr. Digital Journalist" className="w-full h-full object-cover" />
                   </div>
                   <div className="p-6 relative z-10 bg-white">
@@ -511,7 +508,7 @@ export default function SkillStudioApp() {
               {/* Card 5 */}
               <TiltCard className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.5rem)] min-w-[280px]">
                 <div className="w-full h-full bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] overflow-hidden transition-transform">
-                  <div className="h-[220px] w-full relative overflow-hidden">
+                  <div className="h-[180px] sm:h-[220px] w-full relative overflow-hidden">
                     <img src={img5} alt="Mindfulness" className="w-full h-full object-cover" />
                   </div>
                   <div className="p-6 relative z-10 bg-white">
@@ -527,7 +524,7 @@ export default function SkillStudioApp() {
               {/* Card 6 */}
               <TiltCard className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.5rem)] min-w-[280px]">
                 <div className="w-full h-full bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] overflow-hidden transition-transform">
-                  <div className="h-[220px] w-full relative overflow-hidden">
+                  <div className="h-[180px] sm:h-[220px] w-full relative overflow-hidden">
                     <img src={img6} alt="Digital creativity & AI skills by ADOBE" className="w-full h-full object-cover" />
                   </div>
                   <div className="p-6 relative z-10 bg-white">
@@ -543,7 +540,7 @@ export default function SkillStudioApp() {
               {/* Card 7 */}
               <TiltCard className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.5rem)] min-w-[280px]">
                 <div className="w-full h-full bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] overflow-hidden transition-transform">
-                  <div className="h-[220px] w-full relative overflow-hidden">
+                  <div className="h-[180px] sm:h-[220px] w-full relative overflow-hidden">
                     <img src={img7} alt="Jr. Global ambassador" className="w-full h-full object-cover" />
                   </div>
                   <div className="p-6 relative z-10 bg-white">
@@ -561,7 +558,7 @@ export default function SkillStudioApp() {
         </section>
 
         {/* The Skill Learning Pathway Section */}
-        <section className="pt-12 pb-8 bg-white">
+        <section className="pt-8 pb-6 bg-white">
           <div className="max-w-[1280px] mx-auto px-6">
 
             {/* Top Row: Heading and Buttons */}
@@ -569,10 +566,9 @@ export default function SkillStudioApp() {
               <div>
                 <ScrollRevealHeadline>
                   <h2
-                    className="mb-2 text-[#1A1A2E]"
+                    className="mb-2 text-[28px] md:text-[36px] text-[#1A1A2E]"
                     style={{
                       fontWeight: 600,
-                      fontSize: '36px',
                       lineHeight: '100%',
                       letterSpacing: '0%'
                     }}
@@ -611,7 +607,7 @@ export default function SkillStudioApp() {
         </section>
 
         {/* The Implementation Framework Section */}
-        <section className="pt-24 pb-6 bg-white relative overflow-hidden">
+        <section className="pt-12 md:pt-24 pb-6 bg-white relative overflow-hidden">
           
           <style>{`
             @keyframes float-icon {
@@ -627,7 +623,7 @@ export default function SkillStudioApp() {
           `}</style>
           
           {/* Animated Background Icons */}
-          <div className="absolute inset-0 pointer-events-none z-[50] overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none z-0 md:z-[50] overflow-hidden opacity-40 md:opacity-100">
             <Bot className="absolute text-[#4200FF] w-24 h-24 top-[10%] left-[5%] animate-float-1" />
             <Brain className="absolute text-[#E82194] w-32 h-32 top-[20%] right-[8%] animate-float-2" />
             <Rocket className="absolute text-[#FF6644] w-20 h-20 top-[45%] left-[2%] animate-float-3" />
@@ -639,13 +635,12 @@ export default function SkillStudioApp() {
           </div>
 
           {/* Header */}
-          <div className="text-center mb-36 relative z-10">
+          <div className="text-center mb-16 md:mb-36 relative z-10 px-4">
             <ScrollRevealHeadline>
               <h2
-                className="mb-3 text-[#1A1A2E]"
+                className="mb-3 text-[28px] md:text-[36px] text-[#1A1A2E]"
                 style={{
                   fontWeight: 600,
-                  fontSize: '36px',
                   lineHeight: '100%',
                   letterSpacing: '0%'
                 }}
@@ -671,7 +666,7 @@ export default function SkillStudioApp() {
             <div className="relative z-10 flex flex-col gap-8 md:gap-0 pb-0 md:translate-x-5">
 
               {/* Card 01 - Left */}
-              <TiltCard className="w-full md:w-[42%] self-start z-10 md:-mt-14">
+              <TiltCard className="w-full md:w-[42%] self-center md:self-start z-10 mt-0 md:-mt-14">
                 <div className="bg-white border border-gray-200 rounded-[28px] shadow-[0_8px_40px_rgba(0,0,0,0.06)] p-6 flex items-center gap-5 w-full transition-transform">
                   <div className="feature-icon-wrapper w-16 h-16 md:w-20 md:h-20 rounded-[16px] md:rounded-[20px] bg-[#F3EFFF] flex items-center justify-center shrink-0">
                     <LayoutGrid className="w-7 h-7 md:w-8 md:h-8 text-[#5B32EA]" />
@@ -690,7 +685,7 @@ export default function SkillStudioApp() {
               </TiltCard>
 
               {/* Card 02 - Right */}
-              <TiltCard className="w-full md:w-[42%] self-end z-20 mt-0 md:mt-28">
+              <TiltCard className="w-full md:w-[42%] self-center md:self-end z-20 mt-0 md:mt-28">
                 <div className="bg-white border border-gray-200 rounded-[28px] shadow-[0_8px_40px_rgba(0,0,0,0.06)] p-6 flex items-center gap-5 w-full justify-between transition-transform">
                   <div className="flex flex-col items-start">
                     <span className="text-[24px] md:text-[28px] font-bold text-[#3B82F6] leading-none mb-1">02</span>
@@ -709,7 +704,7 @@ export default function SkillStudioApp() {
               </TiltCard>
 
               {/* Card 03 - Left */}
-              <TiltCard className="w-full md:w-[42%] self-start z-30 mt-0 md:mt-40">
+              <TiltCard className="w-full md:w-[42%] self-center md:self-start z-30 mt-0 md:mt-40">
                 <div className="bg-white border border-gray-200 rounded-[28px] shadow-[0_8px_40px_rgba(0,0,0,0.06)] p-6 flex items-center gap-5 w-full transition-transform">
                   <div className="feature-icon-wrapper w-16 h-16 md:w-20 md:h-20 rounded-[16px] md:rounded-[20px] bg-[#FDF2F8] flex items-center justify-center shrink-0">
                     <BarChart3 className="w-7 h-7 md:w-8 md:h-8 text-[#EC4899]" />
@@ -728,7 +723,7 @@ export default function SkillStudioApp() {
               </TiltCard>
 
               {/* Card 04 - Right */}
-              <TiltCard className="w-full md:w-[42%] self-end z-40 mt-0 md:mt-20">
+              <TiltCard className="w-full md:w-[42%] self-center md:self-end z-40 mt-0 md:mt-20">
                 <div className="bg-white border border-gray-200 rounded-[28px] shadow-[0_8px_40px_rgba(0,0,0,0.06)] p-6 flex items-center gap-5 w-full justify-between transition-transform">
                   <div className="flex flex-col items-start">
                     <span className="text-[24px] md:text-[28px] font-bold text-[#F97316] leading-none mb-1">04</span>
@@ -747,7 +742,7 @@ export default function SkillStudioApp() {
               </TiltCard>
 
               {/* Card 05 - Left */}
-              <TiltCard className="w-full md:w-[42%] self-start z-50 mt-0 md:mt-4">
+              <TiltCard className="w-full md:w-[42%] self-center md:self-start z-50 mt-0 md:mt-4">
                 <div className="bg-white border border-gray-200 rounded-[28px] shadow-[0_8px_40px_rgba(0,0,0,0.06)] p-6 flex items-center gap-5 w-full transition-transform">
                   <div className="feature-icon-wrapper w-16 h-16 md:w-20 md:h-20 rounded-[16px] md:rounded-[20px] bg-[#ECFDF5] flex items-center justify-center shrink-0">
                     <Trophy className="w-7 h-7 md:w-8 md:h-8 text-[#10B981]" />
@@ -802,13 +797,13 @@ export default function SkillStudioApp() {
 
 
         {/* Impact Measurement Framework Section */}
-        <section className="pt-24 pb-8 bg-[#F9F4FA] relative z-20">
+        <section className="pt-12 md:pt-24 pb-8 bg-[#F9F4FA] relative z-20">
           <div className="max-w-[1280px] mx-auto px-6">
 
             {/* Header */}
             <div className="mb-14 text-left">
               <ScrollRevealHeadline>
-                <h2 className="text-[32px] md:text-[38px] font-bold text-[#1A1A2E] mb-3 tracking-tight leading-[1.2]">
+                <h2 className="text-[28px] md:text-[38px] font-bold text-[#1A1A2E] mb-3 tracking-tight leading-[1.2]">
                   Impact <span className="bg-gradient-to-r from-[#4200FF] via-[#E82194] to-[#FF6644] text-transparent bg-clip-text">Measurement</span> Framework
                 </h2>
               </ScrollRevealHeadline>
@@ -930,7 +925,7 @@ export default function SkillStudioApp() {
         </section>
 
         {/* Reporting & Transparency Section */}
-        <section className="pb-24 bg-[#F9F4FA] relative z-20">
+        <section className="pb-12 md:pb-24 bg-[#F9F4FA] relative z-20">
           <div className="max-w-[1280px] mx-auto px-6">
             <div className="bg-white rounded-[24px] p-6 md:p-8 border border-gray-200 flex flex-col gap-6 shadow-[0_4px_24px_rgba(0,0,0,0.02)]">
 
@@ -982,8 +977,8 @@ export default function SkillStudioApp() {
 
         {/* Trusted By Educational Institutes Section */}
         <section className="pt-12 pb-6 bg-white relative z-20 overflow-hidden border-t border-gray-100">
-          <div className="max-w-[1280px] mx-auto px-6 mb-10">
-            <h2 className="text-[28px] md:text-[34px] font-bold text-center text-[#1A1A2E]">
+          <div className="max-w-[1280px] mx-auto px-6 mb-8 md:mb-10">
+            <h2 className="text-[24px] md:text-[34px] font-bold text-center text-[#1A1A2E]">
               Trusted By Educational Institutes
             </h2>
           </div>
@@ -1009,7 +1004,7 @@ export default function SkillStudioApp() {
               {/* We render multiple identical blocks so it loops seamlessly. 50% translation requires at least 2 identical halves. Let's make 2 huge identical halves. */}
 
               {[1, 2].map((half) => (
-                <div key={half} className="flex items-center gap-10 px-6 md:gap-16 md:px-8 shrink-0">
+                <div key={half} className="flex items-center gap-6 md:gap-16 px-4 md:px-8 shrink-0">
 
                   {[
                     { name: "ALEXANDER PUBLIC SCHOOL", img: "1.png" },
@@ -1020,13 +1015,13 @@ export default function SkillStudioApp() {
                     { name: "SARASWATI SHISHU MANDIR", img: "6.png" },
                     { name: "SANFORT WORLD SCHOOL", img: "7.png" }
                   ].map((partner, index) => (
-                    <div key={index} className="flex items-center gap-4 shrink-0 cursor-pointer transition-transform hover:scale-105">
+                    <div key={index} className="flex items-center gap-3 md:gap-4 shrink-0 cursor-pointer transition-transform hover:scale-105">
                       <img
                         src={`https://cognifyai.skillzza.com/assets/img/part/${partner.img}`}
                         alt={partner.name}
-                        className="h-14 md:h-16 w-auto object-contain shrink-0"
+                        className="h-8 md:h-16 w-auto object-contain shrink-0"
                       />
-                      <span className="font-bold text-[13px] md:text-[15px] leading-tight text-[#1A1A2E] tracking-tight max-w-[180px] whitespace-normal uppercase">
+                      <span className="font-bold text-[12px] md:text-[15px] leading-tight text-[#1A1A2E] tracking-tight max-w-[130px] md:max-w-[180px] whitespace-normal uppercase">
                         {partner.name}
                       </span>
                     </div>
@@ -1045,10 +1040,11 @@ export default function SkillStudioApp() {
           <div className="max-w-[1280px] mx-auto px-6">
 
             <div
-              className="w-full relative shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex items-center justify-between overflow-hidden"
+              className="w-full relative shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex flex-col lg:flex-row items-center justify-between overflow-hidden py-8 lg:py-0"
               style={{
                 background: 'linear-gradient(90deg, #3B6CFF 23.47%, #FF00FF 59.9%, #FF9A00 96.32%)',
-                height: '232px',
+                minHeight: '232px',
+                height: 'auto',
                 borderRadius: '8px',
                 maxWidth: '1300px',
                 margin: '0 auto'
@@ -1083,17 +1079,16 @@ export default function SkillStudioApp() {
               </div>
 
               {/* Content (Middle & Right) */}
-              <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between w-full h-full px-8 lg:pl-[520px] lg:pr-12">
+              <div className="relative z-10 flex flex-col lg:flex-row items-center text-center lg:text-left justify-between w-full h-full px-6 lg:pl-[520px] lg:pr-12 gap-6 lg:gap-0">
 
                 {/* Text Block */}
                 <div className="flex flex-col text-white max-w-[550px]">
                   <h3
-                    className="mb-3 text-white"
+                    className="mb-3 text-white text-[20px] lg:text-[24px]"
                     style={{
                       color: '#FFFFFF',
                       fontFamily: '"Poppins", sans-serif',
                       fontWeight: 600,
-                      fontSize: '24px',
                       lineHeight: '111%',
                       letterSpacing: '0%'
                     }}

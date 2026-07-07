@@ -288,6 +288,8 @@ export default function HomeJourney() {
         @media (max-width: 500px) {
           .hj-grid { grid-template-columns: 1fr; }
           .hj-section { padding: 60px 0 80px; }
+          .hj-flow-word { font-size: 24px; }
+          .hj-flow-arrow { font-size: 20px; }
         }
       `}</style>
 

@@ -291,10 +291,11 @@ export default function HomeCompare() {
         @media (max-width: 600px) {
           .hc-inner { padding: 0 20px; }
           .hc-section { padding: 60px 0; }
-          .hc-title { font-size: 32px; }
+          .hc-title { font-size: 28px; }
           .hc-icon-box { width: 64px; height: 64px; }
           .hc-icon-box svg { width: 28px; height: 28px; }
           .hc-card-title { font-size: 20px; margin-left: 20px; }
+          .hc-card { padding: 24px 20px; }
         }
       `}</style>
 

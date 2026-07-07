@@ -228,14 +228,56 @@ export default function HomeTrusted() {
         .animate-marquee:hover {
           animation-play-state: paused;
         }
+        .ht-partner-item {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          flex-shrink: 0;
+          cursor: pointer;
+          transition: transform 0.2s;
+        }
+        .ht-partner-item:hover { transform: scale(1.05); }
+        .ht-partner-img {
+          height: 64px !important;
+          width: auto;
+          object-fit: contain;
+          flex-shrink: 0;
+        }
+        .ht-partner-text {
+          font-weight: 700;
+          font-size: 15px;
+          line-height: 1.2;
+          color: #1A1A2E;
+          letter-spacing: -0.5px;
+          max-width: 180px;
+          white-space: normal;
+          text-transform: uppercase;
+        }
 
         @media (max-width: 1000px) {
           .ht-stats { flex-wrap: wrap; }
           .ht-card { flex: 1 1 calc(50% - 12px); }
           .ht-map { width: 60vw; opacity: 0.4; }
         }
+        @media (max-width: 768px) {
+          .ht-section { padding-top: 40px !important; }
+          .ht-badge { 
+            display: flex !important; 
+            margin-left: auto !important; 
+            margin-right: auto !important; 
+          }
+          .ht-h2 { text-align: center; font-size: 32px !important; }
+          .ht-h2 .line1 { white-space: normal !important; }
+          .ht-regions { justify-content: center; }
+          .ht-card-num { font-size: clamp(22px, 6vw, 26px) !important; letter-spacing: -0.5px; }
+          .ht-card { padding: 20px 12px !important; }
+          
+          /* Marquee mobile overrides */
+          .ht-partner-img { height: 40px !important; }
+          .ht-partner-text { font-size: 11px !important; max-width: 120px; }
+          .ht-partner-item { gap: 10px !important; }
+        }
         @media (max-width: 600px) {
-          .ht-card { flex: 1 1 100%; }
           .ht-map { display: none; }
         }
       `}</style>
@@ -292,13 +334,13 @@ export default function HomeTrusted() {
                     { name: "SARASWATI SHISHU MANDIR", img: "6.png" },
                     { name: "SANFORT WORLD SCHOOL", img: "7.png" }
                   ].map((partner, index) => (
-                    <div key={index} className="flex items-center gap-4 shrink-0 cursor-pointer transition-transform hover:scale-105">
+                    <div key={index} className="ht-partner-item">
                       <img
                         src={`https://cognifyai.skillzza.com/assets/img/part/${partner.img}`}
                         alt={partner.name}
-                        className="h-14 md:h-16 w-auto object-contain shrink-0"
+                        className="ht-partner-img"
                       />
-                      <span className="font-bold text-[13px] md:text-[15px] leading-tight text-[#1A1A2E] tracking-tight max-w-[180px] whitespace-normal uppercase">
+                      <span className="ht-partner-text">
                         {partner.name}
                       </span>
                     </div>

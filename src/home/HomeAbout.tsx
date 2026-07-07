@@ -176,6 +176,9 @@ export default function HomeAbout() {
           .ha-left img {
             border-radius: 16px;
           }
+          .ha-h2 {
+            font-size: 32px;
+          }
         }
       `}</style>
 

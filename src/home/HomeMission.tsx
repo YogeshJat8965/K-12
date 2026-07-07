@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -9,6 +9,15 @@ export default function HomeMission() {
   const leftCardRef = useRef<HTMLDivElement>(null);
   const rightCardRef = useRef<HTMLDivElement>(null);
   const robotRef = useRef<HTMLImageElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 768px)');
+    const handler = (e: MediaQueryListEvent | MediaQueryList) => setIsMobile(e.matches);
+    handler(mq);
+    mq.addEventListener('change', handler as (e: MediaQueryListEvent) => void);
+    return () => mq.removeEventListener('change', handler as (e: MediaQueryListEvent) => void);
+  }, []);
 
   useEffect(() => {
 
@@ -62,12 +71,18 @@ export default function HomeMission() {
           max-width: 1640px;
           margin: 0 auto;
           display: flex;
-          gap: 24px;
+          flex-direction: column;
+          gap: 14px;
+        }
+        @media (min-width: 769px) {
+          .hm-inner {
+            flex-direction: row;
+            gap: 24px;
+          }
         }
 
         /* ═══ LEFT CARD ═══ */
         .hm-left {
-          flex: 1;
           background: linear-gradient(179deg, #431AA4 0%, #431AA4 100%);
           box-shadow: 0px 3px 6px rgba(67,26,164,0.18);
           border-radius: 20px;
@@ -77,6 +92,9 @@ export default function HomeMission() {
           display: flex;
           flex-direction: column;
           box-sizing: border-box;
+        }
+        @media (min-width: 769px) {
+          .hm-left { flex: 1; }
         }
         .hm-left h2 {
           font-weight: 700;
@@ -121,7 +139,6 @@ export default function HomeMission() {
 
         /* ═══ RIGHT CARD ═══ */
         .hm-right {
-          flex: 1;
           background: linear-gradient(270deg, #F0F4FE 0%, #FFFFFF 49%, #EDF1FE 100%);
           box-shadow: 0px 3px 6px rgba(0,0,0,0.16);
           border-radius: 20px;
@@ -129,6 +146,9 @@ export default function HomeMission() {
           display: flex;
           flex-direction: column;
           box-sizing: border-box;
+        }
+        @media (min-width: 769px) {
+          .hm-right { flex: 1; }
         }
         .hm-badge-r {
           display: inline-flex;
@@ -190,6 +210,7 @@ export default function HomeMission() {
             flex-direction: column !important;
           }
           .hm-left, .hm-right {
+            flex: none !important;
             width: 100% !important;
             padding: 32px 24px 28px !important;
           }
@@ -202,40 +223,129 @@ export default function HomeMission() {
             width: 140px !important;
           }
         }
+
+        /* ═══ MOBILE ═══ */
+        @media (max-width: 768px) {
+          .hm-section {
+            padding: 24px 0 !important;
+          }
+          .hm-inner {
+            flex-direction: column !important;
+            gap: 14px !important;
+          }
+          .hm-left {
+            flex: none !important;
+            width: 100% !important;
+            padding: 22px 18px 22px !important;
+            border-radius: 14px !important;
+            min-height: auto !important;
+          }
+          .hm-left h2 {
+            font-size: 17px !important;
+            line-height: 1.35 !important;
+            max-width: calc(100% - 90px) !important;
+            margin-bottom: 10px !important;
+          }
+          .hm-left-sub {
+            font-size: 11.5px !important;
+            line-height: 1.55 !important;
+            max-width: calc(100% - 90px) !important;
+            margin-bottom: 10px !important;
+          }
+          .hm-left-line {
+            margin: 8px 0 8px !important;
+            max-width: calc(100% - 100px) !important;
+          }
+          .hm-left-footer {
+            font-size: 10.5px !important;
+            max-width: calc(100% - 100px) !important;
+          }
+          .hm-robot {
+            width: 95px !important;
+            right: 4px !important;
+            bottom: 0px !important;
+          }
+          .hm-right {
+            flex: none !important;
+            width: 100% !important;
+            padding: 22px 18px 20px !important;
+            border-radius: 14px !important;
+            min-height: auto !important;
+          }
+          .hm-right h2 {
+            font-size: 18px !important;
+            line-height: 1.3 !important;
+            margin-bottom: 10px !important;
+          }
+          .hm-right-sub {
+            font-size: 12.5px !important;
+            line-height: 1.55 !important;
+          }
+          .hm-tags {
+            margin-top: 16px !important;
+            gap: 8px !important;
+          }
+          .hm-tag {
+            padding: 5px 12px !important;
+            font-size: 11px !important;
+          }
+          .hm-mobile-img-container {
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: flex-start;
+          }
+          .hm-mobile-img {
+            width: 200% !important;
+            max-width: 200% !important;
+            height: auto !important;
+            display: block;
+          }
+        }
       `}</style>
 
       <section className="hm-section" ref={sectionRef}>
-        <div className="hm-inner">
-
-          {/* LEFT */}
-          <div className="hm-left" ref={leftCardRef} style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}>
-            <h2>
-              We're not just teaching AI.<br className="hm-br-desk" />
-              We're shaping the minds that<br className="hm-br-desk" />
-              will shape the future.
-            </h2>
-            <p className="hm-left-sub">Every programme, every studio, every internship is designed around one question – what will tomorrow's world need from today's student?</p>
-            <div className="hm-left-line" />
-            <div className="hm-left-footer">Purposeful by design. Future-first in approach.</div>
-            <img src="/landing/robot.png" alt="" className="hm-robot" ref={robotRef} />
+        {isMobile ? (
+          /* ═══ MOBILE: Show image instead of cards ═══ */
+          <div className="hm-mobile-img-container">
+            <img
+              src="/landing/responsive-mission.png"
+              alt="Skillzza Mission"
+              className="hm-mobile-img"
+            />
           </div>
+        ) : (
+          /* ═══ DESKTOP: Original two-card layout ═══ */
+          <div className="hm-inner">
+            {/* LEFT */}
+            <div className="hm-left" ref={leftCardRef} style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}>
+              <h2>
+                We're not just teaching AI.<br className="hm-br-desk" />
+                We're shaping the minds that<br className="hm-br-desk" />
+                will shape the future.
+              </h2>
+              <p className="hm-left-sub">Every programme, every studio, every internship is designed around one question – what will tomorrow's world need from today's student?</p>
+              <div className="hm-left-line" />
+              <div className="hm-left-footer">Purposeful by design. Future-first in approach.</div>
+              <img src="/landing/robot.png" alt="" className="hm-robot" ref={robotRef} />
+            </div>
 
-          {/* RIGHT */}
-          <div className="hm-right" ref={rightCardRef}>
-            {/* <div className="hm-badge-r">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
-              <span>Globally Aligned</span>
-            </div> */}
-            <h2>Powered by Skillzza. Aligned with global education standards.</h2>
-            <p className="hm-right-sub">NEP 2020, International Baccalaureate, Cambridge, and UN SDG frameworks – our learning architecture meets the world where it is headed.</p>
-            <div className="hm-tags">
-              {['NEP 2020', 'IB Framework', 'Cambridge', 'UN SDGs'].map(t => (
-                <span className="hm-tag" key={t}>{t}</span>
-              ))}
+            {/* RIGHT */}
+            <div className="hm-right" ref={rightCardRef}>
+              {/* <div className="hm-badge-r">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
+                <span>Globally Aligned</span>
+              </div> */}
+              <h2>Powered by Skillzza. Aligned with global education standards.</h2>
+              <p className="hm-right-sub">NEP 2020, International Baccalaureate, Cambridge, and UN SDG frameworks – our learning architecture meets the world where it is headed.</p>
+              <div className="hm-tags">
+                {['NEP 2020', 'IB Framework', 'Cambridge', 'UN SDGs'].map(t => (
+                  <span className="hm-tag" key={t}>{t}</span>
+                ))}
+              </div>
             </div>
           </div>
-
-        </div>
+        )}
       </section>
     </>
   );

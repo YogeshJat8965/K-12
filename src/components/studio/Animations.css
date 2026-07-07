@@ -307,16 +307,8 @@ body, .min-h-screen, section { overflow-x: hidden !important; }
   section:nth-of-type(7) .tilt-card-wrapper { width: 100% !important; align-self: center !important; margin-top: 24px !important; margin-left: 0 !important; }
   /* Hide the road */
   section:nth-of-type(7) .absolute.inset-x-0 { display: none !important; }
-  /* Vertical timeline line */
+  /* Vertical timeline line - removed as per user request */
   section:nth-of-type(7) > div > div.relative.z-10 { position: relative; }
-  section:nth-of-type(7) > div > div.relative.z-10::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 24px; bottom: 0;
-    width: 2px;
-    border-left: 2px dashed #D1D5DB;
-    z-index: -1;
-  }
   
   /* Bottom CTA (section 8) */
   section:nth-of-type(8) h2 { font-size: 1.7rem !important; text-align: center !important; }

@@ -285,15 +285,52 @@ export default function HomeReady() {
 
         @media (max-width: 768px) {
           .hr-title {
-            font-size: 32px;
+            font-size: 28px;
+          }
+          .hr-section {
+            padding: 60px 0 0 0;
+            background-image: none !important;
+          }
+          .hr-inner {
+            padding: 0 20px;
+          }
+          .hr-right {
+            align-items: center;
           }
           .hr-step {
-            padding: 16px;
+            padding: 24px;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-radius: 16px;
+            gap: 16px;
+            width: 100%;
+            max-width: 360px;
+            margin: 0 auto;
+            box-sizing: border-box;
+          }
+          .hr-step-border {
+            width: 100%;
+            height: 6px;
+            bottom: auto;
+            right: auto;
+            left: 0;
+            border-radius: 16px 16px 0 0;
+          }
+          .hr-step-label-wrap {
+            padding-right: 0;
+            min-width: 0;
+          }
+          .hr-step-label {
+            writing-mode: horizontal-tb;
+            transform: none;
+            font-size: 14px;
+            display: inline-block;
           }
           .hr-step-icon {
-            width: 48px;
-            height: 48px;
-            margin-right: 16px;
+            width: 56px;
+            height: 56px;
+            margin-right: 0;
           }
         }
 

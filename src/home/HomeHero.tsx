@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import RIGHT_IMG from '../assets/landing page/Homepage (1920x 1080px) – 2/ChatGPT Image Jun 20, 2026, 12_40_39 AM.png';
@@ -338,7 +338,10 @@ export default function HomeHero() {
         @media (max-width: 600px) {
           .hh-content { padding: 12px 20px 40px; }
           .hh-feature-bar { margin: 32px 20px 24px; border-radius: 20px; }
-          .hh-btns { gap: 10px; }
+          .hh-btns { gap: 12px; flex-direction: column; width: 100%; }
+          .hh-btn { width: 100%; }
+          .hh-h1 { white-space: normal !important; }
+          .hh-h1 .hero-word { white-space: normal !important; }
         }
       `}</style>
 
@@ -405,8 +408,8 @@ export default function HomeHero() {
         {/* ── Bottom Feature Bar ── */}
         <div className="hh-feature-bar" ref={featBarRef}>
           {features.map((f, i) => (
-            <>
-              <div className="hh-feat-item" key={f.title}>
+            <React.Fragment key={f.title}>
+              <div className="hh-feat-item">
                 <div
                   className="hh-feat-icon"
                   style={{ background: f.bg }}
@@ -423,7 +426,7 @@ export default function HomeHero() {
                 </div>
               </div>
               {i < features.length - 1 && <div className="hh-feat-divider" key={`div-${i}`} />}
-            </>
+            </React.Fragment>
           ))}
         </div>
 

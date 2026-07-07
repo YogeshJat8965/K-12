@@ -9,37 +9,67 @@
    GLOBAL RULES
    ======================================================= */
 @media (max-width: 1024px) {
-  body, section, main {
+
+  body,
+  section,
+  main {
     overflow-x: hidden !important;
     max-width: 100vw !important;
   }
-  .hh-content, .hm-inner, .ht-inner, .ha-content, .he-content, .ef-inner, .hj-inner, .hp-inner, .ha-container, .hr-inner, .cta-inner {
+
+  .hh-content,
+  .hm-inner,
+  .ht-inner,
+  .ha-content,
+  .he-content,
+  .ef-inner,
+  .hj-inner,
+  .hp-inner,
+  .ha-container,
+  .hr-inner,
+  .cta-inner {
     padding-left: 20px !important;
     padding-right: 20px !important;
   }
 }
 
 @media (max-width: 768px) {
-  .hh-content, .hm-inner, .ht-inner, .ha-content, .he-content, .ef-inner, .hj-inner, .hp-inner, .ha-container, .hr-inner, .cta-inner {
+
+  .hh-content,
+  .hm-inner,
+  .ht-inner,
+  .ha-content,
+  .he-content,
+  .ef-inner,
+  .hj-inner,
+  .hp-inner,
+  .ha-container,
+  .hr-inner,
+  .cta-inner {
     padding-left: 16px !important;
     padding-right: 16px !important;
   }
+
   img {
     max-width: 100% !important;
     height: auto;
   }
-  
+
   /* Disable Parallax & Hover Effects */
-  [data-parallax], [data-speed] {
+  [data-parallax],
+  [data-speed] {
     transform: none !important;
   }
 }
 
 @media (hover: none) {
-  * {
-    transform: none !important;
-  }
-  .hh-feat-icon, .he-card, .hj-card, .cta-card, .ht-card, .ha-feature-card {
+
+  .hh-feat-icon,
+  .he-card,
+  .hj-card,
+  .cta-card,
+  .ht-card,
+  .ha-feature-card {
     transform: none !important;
   }
 }
@@ -48,206 +78,594 @@
    SECTION 1: HERO
    ======================================================= */
 @media (max-width: 1024px) {
-  .hh-left { flex: 0 0 52% !important; max-width: 52% !important; }
-  .hh-right { flex: 0 0 48% !important; max-width: 48% !important; }
-  .hh-h1 { font-size: 2.4rem !important; white-space: normal !important; line-height: 1.2 !important; }
-  .hh-right img { transform: scale(0.8) translateY(-50%) !important; transform-origin: right center !important; }
-  .hh-btns { flex-wrap: wrap !important; }
+  .hh-left {
+    flex: 0 0 52% !important;
+    max-width: 52% !important;
+  }
+
+  .hh-right {
+    flex: 0 0 48% !important;
+    max-width: 48% !important;
+  }
+
+  .hh-h1 {
+    font-size: 2.4rem !important;
+    white-space: normal !important;
+    line-height: 1.2 !important;
+  }
+
+  .hh-right img {
+    transform: scale(0.8) translateY(-50%) !important;
+    transform-origin: right center !important;
+  }
+
+  .hh-btns {
+    flex-wrap: wrap !important;
+  }
 }
 
 @media (max-width: 768px) {
-  .hh-content { flex-direction: column !important; align-items: center !important; text-align: center !important; padding-top: 40px !important; }
-  .hh-left { flex: 0 0 100% !important; max-width: 100% !important; align-items: center !important; }
-  .hh-right { flex: 0 0 100% !important; max-width: 100% !important; justify-content: center !important; margin-top: 30px !important; }
-  .hh-right img { position: relative !important; top: auto !important; right: auto !important; transform: none !important; max-height: 320px !important; object-fit: cover !important; object-position: top center !important; width: 100% !important; border-radius: 16px !important; }
-  
-  .hh-h1 { font-size: 2rem !important; }
-  .hh-sub { font-size: 0.9rem !important; margin-bottom: 24px !important; }
-  .hh-btns { flex-direction: column !important; width: 100% !important; }
-  .hh-btn { width: 100% !important; min-height: 48px !important; text-align: center !important; }
-  .hh-trust { text-align: center !important; white-space: normal !important; }
-  
-  .hh-feature-bar { flex-direction: row !important; flex-wrap: wrap !important; margin: 30px 16px !important; border-radius: 16px !important; padding: 10px !important; }
-  .hh-feat-item { flex: 0 0 50% !important; max-width: 50% !important; padding: 16px 12px !important; flex-direction: row !important; gap: 12px !important; }
-  .hh-feat-icon { width: 48px !important; height: 48px !important; }
-  .hh-feat-icon svg { width: 24px !important; height: 24px !important; }
-  .hh-feat-title { font-size: 1rem !important; }
-  .hh-feat-desc { display: none !important; }
-  .hh-feat-divider { display: none !important; }
+  .hh-content {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding-top: 40px !important;
+  }
+
+  .hh-left {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    align-items: center !important;
+  }
+
+  .hh-right {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    justify-content: center !important;
+    margin-top: 30px !important;
+  }
+
+  .hh-right img {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    transform: none !important;
+    max-height: 320px !important;
+    object-fit: cover !important;
+    object-position: top center !important;
+    width: 100% !important;
+    border-radius: 16px !important;
+  }
+
+  .hh-h1 {
+    font-size: 2rem !important;
+  }
+
+  .hh-sub {
+    font-size: 0.9rem !important;
+    margin-bottom: 24px !important;
+  }
+
+  .hh-btns {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .hh-btn {
+    width: 100% !important;
+    min-height: 48px !important;
+    text-align: center !important;
+  }
+
+  .hh-trust {
+    text-align: center !important;
+    white-space: normal !important;
+  }
+
+  .hh-feature-bar {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    margin: 30px 16px !important;
+    border-radius: 16px !important;
+    padding: 10px !important;
+  }
+
+  .hh-feat-item {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    padding: 16px 12px !important;
+    flex-direction: row !important;
+    gap: 12px !important;
+  }
+
+  .hh-feat-icon {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .hh-feat-icon svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  .hh-feat-title {
+    font-size: 1rem !important;
+  }
+
+  .hh-feat-desc {
+    display: none !important;
+  }
+
+  .hh-feat-divider {
+    display: none !important;
+  }
 }
 
 @media (max-width: 480px) {
-  .hh-h1 { font-size: 1.6rem !important; }
-  .hh-feature-bar { flex-direction: column !important; }
-  .hh-feat-item { flex: 0 0 100% !important; max-width: 100% !important; }
-  .hh-feat-desc { display: block !important; font-size: 0.85rem !important; }
+  .hh-h1 {
+    font-size: 1.6rem !important;
+  }
+
+  .hh-feature-bar {
+    flex-direction: column !important;
+  }
+
+  .hh-feat-item {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hh-feat-desc {
+    display: block !important;
+    font-size: 0.85rem !important;
+  }
 }
 
 /* =======================================================
    SECTION 2: MISSION
    ======================================================= */
 @media (max-width: 1024px) {
-  .hm-robot { max-width: 80% !important; }
+  .hm-robot {
+    max-width: 80% !important;
+  }
+
+  .hm-inner {
+    flex-direction: column !important;
+  }
+
+  .hm-left,
+  .hm-right {
+    flex: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
 }
 
 @media (max-width: 768px) {
-  
-  
-  .hm-left *, .hm-right * {
+  .hm-inner {
+    flex-direction: column !important;
+    gap: 14px !important;
+  }
+
+  .hm-left,
+  .hm-right {
+    flex: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+  }
+
+  .hm-left {
+    padding: 22px 18px 22px !important;
+    border-radius: 14px !important;
+    position: relative !important;
+  }
+
+  .hm-left h2 {
+    font-size: 17px !important;
+    line-height: 1.35 !important;
+    max-width: calc(100% - 100px) !important;
+    margin-bottom: 10px !important;
+  }
+
+  .hm-left-sub {
+    font-size: 12px !important;
+    line-height: 1.55 !important;
+    max-width: calc(100% - 100px) !important;
+    margin-bottom: 10px !important;
+  }
+
+  .hm-left-line {
+    margin: 8px 0 8px !important;
+    max-width: calc(100% - 110px) !important;
+  }
+
+  .hm-left-footer {
+    font-size: 10.5px !important;
+    max-width: calc(100% - 110px) !important;
+  }
+
+  .hm-robot {
+    position: absolute !important;
+    display: block !important;
+    width: 95px !important;
+    right: 4px !important;
+    bottom: 0px !important;
+    margin: 0 !important;
+  }
+
+  .hm-right {
+    padding: 22px 18px 20px !important;
+    border-radius: 14px !important;
+  }
+
+  .hm-right h2 {
+    font-size: 18px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .hm-right-sub {
+    font-size: 12.5px !important;
+    line-height: 1.55 !important;
+  }
+
+  .hm-tags {
+    margin-top: 16px !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+  }
+
+  .hm-tag {
+    padding: 5px 12px !important;
+    font-size: 11px !important;
+  }
+
+  .hm-left *,
+  .hm-right * {
     overflow: visible !important;
     white-space: normal !important;
-    word-break: break-word !important;
+    word-break: normal !important;
   }
-  .hm-left-sub { font-size: 1.5rem !important; }
-  .hm-robot { display: block !important; margin: 20px auto 0 !important; width: 60% !important; }
-  .hm-tags { flex-wrap: wrap !important; justify-content: center !important; }
 }
 
 /* =======================================================
    SECTION 3: WORLD MAP
    ======================================================= */
 @media (max-width: 1024px) {
-  .ht-inner { flex-direction: column !important; }
-  .ht-map { width: 100% !important; margin-top: 30px !important; }
-  .ht-stats { flex-wrap: wrap !important; justify-content: center !important; }
-  .ht-card { flex: 0 0 calc(50% - 12px) !important; max-width: calc(50% - 12px) !important; }
+  .ht-inner {
+    flex-direction: column !important;
+  }
+
+  .ht-map {
+    width: 100% !important;
+    margin-top: 30px !important;
+  }
+
+  .ht-stats {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+
+  .ht-card {
+    flex: 0 0 calc(50% - 12px) !important;
+    max-width: calc(50% - 12px) !important;
+  }
 }
 
 @media (max-width: 768px) {
-  .ht-h2 { font-size: 1.8rem !important; text-align: center !important; }
-  .ht-regions { flex-wrap: wrap !important; justify-content: center !important; line-height: 2 !important; }
-  .ht-pin .ht-badge { transform: scale(0.7) !important; font-size: 10px !important; }
-  .ht-stats { margin-top: 30px !important; }
+  .ht-h2 {
+    font-size: 1.8rem !important;
+    text-align: center !important;
+  }
+
+  .ht-regions {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    line-height: 2 !important;
+  }
+
+  .ht-pin .ht-badge {
+    transform: scale(0.7) !important;
+    font-size: 10px !important;
+  }
+
+  .ht-stats {
+    margin-top: 30px !important;
+  }
 }
 
 @media (max-width: 480px) {
-  .ht-pin .ht-badge { display: none !important; }
-  .ht-card-num { font-size: 2rem !important; }
+  .ht-pin .ht-badge {
+    display: none !important;
+  }
+
+  .ht-card-num {
+    font-size: 2rem !important;
+  }
 }
 
 /* =======================================================
    SECTION 4: ABOUT NOVA
    ======================================================= */
 @media (max-width: 1024px) {
-  .ha-left { flex: 0 0 42% !important; max-width: 42% !important; }
-  .ha-right { flex: 0 0 58% !important; max-width: 58% !important; padding-left: 20px !important; }
+  .ha-left {
+    flex: 0 0 42% !important;
+    max-width: 42% !important;
+  }
+
+  .ha-right {
+    flex: 0 0 58% !important;
+    max-width: 58% !important;
+    padding-left: 20px !important;
+  }
 }
 
 @media (max-width: 768px) {
-  .ha-content { flex-direction: column !important; }
-  .ha-left, .ha-right { flex: 0 0 100% !important; max-width: 100% !important; padding: 0 !important; }
-  .ha-left img { max-height: 300px !important; object-fit: cover !important; width: 100% !important; border-radius: 16px !important; }
-  .ha-label { font-size: 0.7rem !important; text-align: center !important; margin-top: 20px !important; }
-  .ha-h2 { font-size: 1.8rem !important; text-align: center !important; }
-  .ha-right p { font-size: 0.9rem !important; }
+  .ha-content {
+    flex-direction: column !important;
+  }
+
+  .ha-left,
+  .ha-right {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .ha-left img {
+    max-height: 300px !important;
+    object-fit: cover !important;
+    width: 100% !important;
+    border-radius: 16px !important;
+  }
+
+  .ha-label {
+    font-size: 0.7rem !important;
+    text-align: center !important;
+    margin-top: 20px !important;
+  }
+
+  .ha-h2 {
+    font-size: 1.8rem !important;
+    text-align: center !important;
+  }
+
+  .ha-right p {
+    font-size: 0.9rem !important;
+  }
 }
 
 /* =======================================================
    SECTION 5: FOUR PILLARS
    ======================================================= */
 @media (max-width: 1024px) {
-  .he-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 20px !important; }
-  .he-img-area { height: 200px !important; }
-  .he-img-area img { height: 100% !important; object-fit: cover !important; }
+  .he-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  .he-img-area {
+    height: 200px !important;
+  }
+
+  .he-img-area img {
+    height: 100% !important;
+    object-fit: cover !important;
+  }
 }
 
 @media (max-width: 768px) {
-  .he-grid { grid-template-columns: 1fr !important; }
-  .he-title-base { font-size: 1.8rem !important; line-height: 1.3 !important; }
+  .he-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .he-title-base {
+    font-size: 1.8rem !important;
+    line-height: 1.3 !important;
+  }
 }
 
 @media (max-width: 480px) {
-  .he-img-area { height: 180px !important; }
-  .he-card-title { font-size: 1.1rem !important; }
-  .he-card-desc { font-size: 0.85rem !important; }
+  .he-img-area {
+    height: 180px !important;
+  }
+
+  .he-card-title {
+    font-size: 1.1rem !important;
+  }
+
+  .he-card-desc {
+    font-size: 0.85rem !important;
+  }
 }
 
 /* =======================================================
    SECTION 6 & 7: EXECUTION FRAMEWORK
    ======================================================= */
 @media (max-width: 1024px) {
-  .ef-top-row { flex-direction: row !important; }
-  .ef-right { flex: 0 0 45% !important; max-width: 45% !important; }
+  .ef-top-row {
+    flex-direction: row !important;
+  }
+
+  .ef-right {
+    flex: 0 0 45% !important;
+    max-width: 45% !important;
+  }
 }
 
 @media (max-width: 768px) {
-  .ef-top-row { flex-direction: column !important; text-align: center !important; }
-  .ef-left, .ef-right { flex: 0 0 100% !important; max-width: 100% !important; padding: 0 !important; }
-  .ef-label { font-size: 0.7rem !important; margin: 0 auto 16px !important; }
-  .ef-title { font-size: 1.8rem !important; }
-  .ef-subtitle { font-size: 0.9rem !important; }
-  .ef-right img { max-width: 340px !important; margin: 20px auto 0 !important; display: block !important; object-fit: contain !important; }
-  
-  .ef-pillars-header { font-size: 1.8rem !important; text-align: center !important; }
-  .ef-pillars-grid { 
+  .ef-top-row {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+
+  .ef-left,
+  .ef-right {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .ef-label {
+    font-size: 0.7rem !important;
+    margin: 0 auto 16px !important;
+  }
+
+  .ef-title {
+    font-size: 1.8rem !important;
+  }
+
+  .ef-subtitle {
+    font-size: 0.9rem !important;
+  }
+
+  .ef-right img {
+    max-width: 340px !important;
+    margin: 20px auto 0 !important;
+    display: block !important;
+    object-fit: contain !important;
+  }
+
+  .ef-pillars-header {
+    font-size: 1.8rem !important;
+    text-align: center !important;
+  }
+
+  .ef-pillars-grid {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 32px !important; 
+    gap: 32px !important;
   }
-  .ef-pillar { 
+
+  .ef-pillar {
     width: 100% !important;
     max-width: 100% !important;
     flex: unset !important;
     text-align: left !important;
     border-right: none !important;
-    border-bottom: 1px solid #E5E7EB !important; 
-    padding-bottom: 24px !important; 
+    border-bottom: 1px solid #E5E7EB !important;
+    padding-bottom: 24px !important;
     margin: 0 !important;
   }
-  .ef-pillar:last-child { border-bottom: none !important; }
-  .ef-pillar-icon { margin-bottom: 12px !important; width: 56px !important; height: 56px !important; }
+
+  .ef-pillar:last-child {
+    border-bottom: none !important;
+  }
+
+  .ef-pillar-icon {
+    margin-bottom: 12px !important;
+    width: 56px !important;
+    height: 56px !important;
+  }
 }
 
 @media (max-width: 480px) {
-  .ef-pillar-icon { width: 48px !important; height: 48px !important; }
-  .ef-pillar-desc { font-size: 0.85rem !important; }
+  .ef-pillar-icon {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .ef-pillar-desc {
+    font-size: 0.85rem !important;
+  }
 }
 
 /* =======================================================
    SECTION 8: JOURNEY
    ======================================================= */
 @media (max-width: 1024px) {
-  .hj-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 16px !important; }
-  .hj-card:nth-child(4), .hj-card:nth-child(5) { grid-column: auto !important; }
+  .hj-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .hj-card:nth-child(4),
+  .hj-card:nth-child(5) {
+    grid-column: auto !important;
+  }
 }
 
 @media (max-width: 768px) {
-  .hj-grid { grid-template-columns: 1fr !important; }
-  .hj-flow-row { 
-    font-size: 1.5rem !important; 
+  .hj-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hj-flow-row {
+    font-size: 1.5rem !important;
     line-height: 1.4 !important;
     word-break: keep-all !important;
     overflow-wrap: normal !important;
   }
+
   .hj-flow-item {
     display: inline !important;
     white-space: nowrap !important;
   }
-  .hj-img-wrap { height: 180px !important; }
-  .hj-img-wrap img { object-fit: contain !important; height: 100% !important; }
-  .hj-card-desc { font-size: 0.9rem !important; }
+
+  .hj-img-wrap {
+    height: 180px !important;
+  }
+
+  .hj-img-wrap img {
+    object-fit: contain !important;
+    height: 100% !important;
+  }
+
+  .hj-card-desc {
+    font-size: 0.9rem !important;
+  }
 }
 
 @media (max-width: 480px) {
-  .hj-flow-row { font-size: 1.3rem !important; }
-  .hj-img-wrap { height: 150px !important; }
+  .hj-flow-row {
+    font-size: 1.3rem !important;
+  }
+
+  .hj-img-wrap {
+    height: 150px !important;
+  }
 }
 
 /* =======================================================
    SECTION 9: PHILOSOPHY
    ======================================================= */
 @media (max-width: 1024px) {
-  .hp-quote { font-size: 1.6rem !important; white-space: normal !important; padding: 0 20px !important; }
-  .hp-img-wrap { height: 180px !important; }
+  .hp-quote {
+    font-size: 1.6rem !important;
+    white-space: normal !important;
+    padding: 0 20px !important;
+  }
+
+  .hp-img-wrap {
+    height: 180px !important;
+  }
 }
 
 @media (max-width: 768px) {
-  .hp-badge { margin: 0 auto 20px !important; display: flex !important; width: fit-content !important; }
-  .hp-title { font-size: 1.6rem !important; text-align: center !important; }
-  .hp-quote { font-size: 1.3rem !important; line-height: 1.4 !important; }
-  .hp-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
-  
+  .hp-badge {
+    margin: 0 auto 20px !important;
+    display: flex !important;
+    width: fit-content !important;
+  }
+
+  .hp-title {
+    font-size: 1.6rem !important;
+    text-align: center !important;
+  }
+
+  .hp-quote {
+    font-size: 1.3rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .hp-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
   .hp-item {
     display: flex !important;
     flex-direction: row !important;
@@ -255,93 +673,210 @@
     gap: 16px !important;
     text-align: left !important;
   }
+
   .hp-img-wrap {
     width: 100px !important;
     height: 80px !important;
     flex-shrink: 0 !important;
   }
+
   .hp-img-wrap img {
     width: 100px !important;
     height: 80px !important;
     object-fit: cover !important;
     border-radius: 8px !important;
   }
-  .hp-text-wrap, .hp-item-title, .hp-item-desc {
+
+  .hp-text-wrap,
+  .hp-item-title,
+  .hp-item-desc {
     text-align: left !important;
     margin: 0 !important;
   }
 }
 
 @media (max-width: 480px) {
-  .hp-quote { font-size: 1.1rem !important; }
+  .hp-quote {
+    font-size: 1.1rem !important;
+  }
 }
 
 /* =======================================================
    SECTION 10: ADOBE FLAGSHIP
    ======================================================= */
 @media (max-width: 1024px) {
-  .ha-container { flex-direction: row !important; }
-  .ha-visuals { flex: 0 0 48% !important; max-width: 48% !important; }
+  .ha-container {
+    flex-direction: row !important;
+  }
+
+  .ha-visuals {
+    flex: 0 0 48% !important;
+    max-width: 48% !important;
+  }
 }
 
 @media (max-width: 768px) {
-  .ha-container { flex-direction: column !important; }
-  .ha-content { width: 100% !important; max-width: 100% !important; padding: 0 !important; text-align: center !important; }
-  .ha-partner-img { margin: 20px auto !important; }
-  .ha-title { font-size: 1.8rem !important; }
-  .ha-btn-wrap { justify-content: center !important; }
-  .ha-btn { width: 100% !important; text-align: center !important; }
-  .ha-visuals { width: 100% !important; max-width: 100% !important; margin-top: 40px !important; overflow: hidden !important; }
-  .ha-main-img { max-height: 280px !important; object-fit: contain !important; }
+  .ha-container {
+    flex-direction: column !important;
+  }
+
+  .ha-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+
+  .ha-partner-img {
+    margin: 20px auto !important;
+  }
+
+  .ha-title {
+    font-size: 1.8rem !important;
+  }
+
+  .ha-btn-wrap {
+    justify-content: center !important;
+  }
+
+  .ha-btn {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .ha-visuals {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 40px !important;
+    overflow: hidden !important;
+  }
+
+  .ha-main-img {
+    max-height: 280px !important;
+    object-fit: contain !important;
+  }
 }
 
 @media (max-width: 480px) {
-  .ha-title { font-size: 1.5rem !important; }
-  .ha-main-img { max-height: 220px !important; }
+  .ha-title {
+    font-size: 1.5rem !important;
+  }
+
+  .ha-main-img {
+    max-height: 220px !important;
+  }
 }
 
 /* =======================================================
    SECTION 11: BUILT FOR EVERY LEARNER
    ======================================================= */
 @media (max-width: 1024px) {
-  .hle-card { padding: 24px !important; }
-  .hle-img-wrap { height: 180px !important; }
-  .hle-img-wrap img { height: 100% !important; object-fit: cover !important; }
-  .hle-card-desc { font-size: 0.85rem !important; }
+  .hle-card {
+    padding: 24px !important;
+  }
+
+  .hle-img-wrap {
+    height: 180px !important;
+  }
+
+  .hle-img-wrap img {
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .hle-card-desc {
+    font-size: 0.85rem !important;
+  }
 }
 
 @media (max-width: 768px) {
-  .hle-grid { grid-template-columns: 1fr !important; }
-  .hle-img-wrap { height: 200px !important; width: 100% !important; }
-  .hle-card-subtitle { font-size: 0.7rem !important; }
-  .hle-card-title { font-size: 1.3rem !important; }
-  .hle-card-desc { font-size: 0.9rem !important; display: inline !important; }
-  .hle-card-btn { width: 100% !important; text-align: center !important; }
-  .hle-title { font-size: 1.8rem !important; text-align: center !important; }
+  .hle-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hle-img-wrap {
+    height: 200px !important;
+    width: 100% !important;
+  }
+
+  .hle-card-subtitle {
+    font-size: 0.7rem !important;
+  }
+
+  .hle-card-title {
+    font-size: 1.3rem !important;
+  }
+
+  .hle-card-desc {
+    font-size: 0.9rem !important;
+    display: inline !important;
+  }
+
+  .hle-card-btn {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .hle-title {
+    font-size: 1.8rem !important;
+    text-align: center !important;
+  }
 }
 
 @media (max-width: 480px) {
-  .hle-img-wrap { height: 160px !important; }
-  .hle-card-desc { font-size: 0.82rem !important; }
+  .hle-img-wrap {
+    height: 160px !important;
+  }
+
+  .hle-card-desc {
+    font-size: 0.82rem !important;
+  }
 }
 
 /* =======================================================
    SECTION 12: IS YOUR SCHOOL AI-READY?
    ======================================================= */
 @media (max-width: 1024px) {
-  .hr-left { flex: 0 0 40% !important; max-width: 40% !important; }
-  .hr-right { flex: 0 0 60% !important; max-width: 60% !important; }
+  .hr-left {
+    flex: 0 0 40% !important;
+    max-width: 40% !important;
+  }
+
+  .hr-right {
+    flex: 0 0 60% !important;
+    max-width: 60% !important;
+  }
 }
 
 @media (max-width: 768px) {
-  .hr-content-grid { flex-direction: column !important; display: flex !important; }
-  .hr-title { font-size: 1.8rem !important; text-align: center !important; }
-  .hr-subtitle { font-size: 0.9rem !important; text-align: center !important; margin: 0 auto 30px !important; max-width: 480px !important; }
-  
-  .hr-left { display: none !important; }
-  .hr-right { width: 100% !important; max-width: 100% !important; order: 1 !important; }
-  
-  .hr-step { 
+  .hr-content-grid {
+    flex-direction: column !important;
+    display: flex !important;
+  }
+
+  .hr-title {
+    font-size: 1.8rem !important;
+    text-align: center !important;
+  }
+
+  .hr-subtitle {
+    font-size: 0.9rem !important;
+    text-align: center !important;
+    margin: 0 auto 30px !important;
+    max-width: 480px !important;
+  }
+
+  .hr-left {
+    display: none !important;
+  }
+
+  .hr-right {
+    width: 100% !important;
+    max-width: 100% !important;
+    order: 1 !important;
+  }
+
+  .hr-step {
     display: flex !important;
     flex-direction: row !important;
     align-items: flex-start !important;
@@ -350,10 +885,11 @@
     margin-bottom: 16px !important;
     background: #F8F8FC !important;
     border-radius: 8px !important;
-    width: 100% !important; 
+    width: 100% !important;
   }
-  
-  .hr-step-label-wrap, .hr-step-label { 
+
+  .hr-step-label-wrap,
+  .hr-step-label {
     writing-mode: horizontal-tb !important;
     text-orientation: mixed !important;
     transform: none !important;
@@ -364,27 +900,28 @@
     padding-top: 2px !important;
     min-width: unset !important;
   }
-  
-  .hr-step-icon { 
-    width: 48px !important; 
-    height: 48px !important; 
+
+  .hr-step-icon {
+    width: 48px !important;
+    height: 48px !important;
     flex-shrink: 0 !important;
     margin-right: 0 !important;
   }
-  
-  .hr-step-text { 
+
+  .hr-step-text {
     text-align: left !important;
     flex: 1 !important;
     padding-left: 0 !important;
   }
-  
-  .hr-step-title { 
+
+  .hr-step-title {
     font-size: 1rem !important;
     margin-bottom: 4px !important;
   }
-  .hr-step-desc { 
-    font-size: 0.875rem !important; 
-    margin: 0 !important; 
+
+  .hr-step-desc {
+    font-size: 0.875rem !important;
+    margin: 0 !important;
   }
 }
 
@@ -396,98 +933,234 @@
    SECTION 13: FINAL CTA
    ======================================================= */
 @media (max-width: 1024px) {
-  .cta-left { flex: 0 0 35% !important; max-width: 35% !important; padding-right: 20px !important; }
-  .cta-right { flex: 0 0 65% !important; max-width: 65% !important; flex-direction: row !important; gap: 16px !important; }
-  .cta-card { padding: 24px !important; }
-  .cta-title-base { font-size: 2.2rem !important; }
+  .cta-left {
+    flex: 0 0 35% !important;
+    max-width: 35% !important;
+    padding-right: 20px !important;
+  }
+
+  .cta-right {
+    flex: 0 0 65% !important;
+    max-width: 65% !important;
+    flex-direction: row !important;
+    gap: 16px !important;
+  }
+
+  .cta-card {
+    padding: 24px !important;
+  }
+
+  .cta-title-base {
+    font-size: 2.2rem !important;
+  }
 }
 
 @media (max-width: 768px) {
-  .cta-inner { flex-direction: column !important; }
-  .cta-left, .cta-right { width: 100% !important; max-width: 100% !important; padding: 0 !important; }
-  
-  .cta-right { 
-    display: flex !important;
-    flex-direction: column !important; 
-    gap: 16px !important; 
+  .cta-inner {
+    flex-direction: column !important;
   }
-  .cta-card { 
+
+  .cta-left,
+  .cta-right {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .cta-right {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .cta-card {
     width: 100% !important;
     max-width: 100% !important;
     flex: unset !important;
   }
-  .cta-card-btn { 
-    width: 100% !important; 
-    text-align: center !important; 
+
+  .cta-card-btn {
+    width: 100% !important;
+    text-align: center !important;
   }
-  
-  .cta-badge { margin: 0 auto 20px !important; display: flex !important; width: fit-content !important; }
-  .cta-title-base { font-size: 1.8rem !important; text-align: center !important; }
-  .cta-desc { text-align: center !important; margin: 0 auto 30px !important; }
-  .cta-bg-grid { overflow: hidden !important; }
-  .cta-section { overflow: hidden !important; }
+
+  .cta-badge {
+    margin: 0 auto 20px !important;
+    display: flex !important;
+    width: fit-content !important;
+  }
+
+  .cta-title-base {
+    font-size: 1.8rem !important;
+    text-align: center !important;
+  }
+
+  .cta-desc {
+    text-align: center !important;
+    margin: 0 auto 30px !important;
+  }
+
+  .cta-bg-grid {
+    overflow: hidden !important;
+  }
+
+  .cta-section {
+    overflow: hidden !important;
+  }
 }
 
 @media (max-width: 480px) {
-  .cta-title-base { font-size: 1.5rem !important; }
-  .cta-card { padding: 20px !important; }
-  .cta-card-label { font-size: 0.65rem !important; }
+  .cta-title-base {
+    font-size: 1.5rem !important;
+  }
+
+  .cta-card {
+    padding: 20px !important;
+  }
+
+  .cta-card-label {
+    font-size: 0.65rem !important;
+  }
 }
 
 /* =======================================================
    SECTION 5: FOUR PILLARS (HomeLearningEcosystem)
    ======================================================= */
 @media (max-width: 1024px) {
-  .hle-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 20px !important; }
-  .hle-img-wrap { height: 200px !important; }
-  .hle-img-wrap img { height: 100% !important; object-fit: cover !important; width: 100% !important; }
+  .hle-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  .hle-img-wrap {
+    height: 200px !important;
+  }
+
+  .hle-img-wrap img {
+    height: 100% !important;
+    object-fit: cover !important;
+    width: 100% !important;
+  }
 }
 
 @media (max-width: 768px) {
-  .hle-grid { grid-template-columns: 1fr !important; }
-  .hle-title { font-size: 1.8rem !important; text-align: center !important; }
-  .hle-img-wrap { height: 200px !important; width: 100% !important; }
-  .hle-card-subtitle { font-size: 0.7rem !important; }
-  .hle-card-title { font-size: 1.3rem !important; }
-  .hle-card-desc { font-size: 0.9rem !important; }
-  .hle-card-btn { width: 32px !important; } /* Reset back from oval */
+  .hle-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hle-title {
+    font-size: 1.8rem !important;
+    text-align: center !important;
+  }
+
+  .hle-img-wrap {
+    height: 200px !important;
+    width: 100% !important;
+  }
+
+  .hle-card-subtitle {
+    font-size: 0.7rem !important;
+  }
+
+  .hle-card-title {
+    font-size: 1.3rem !important;
+  }
+
+  .hle-card-desc {
+    font-size: 0.9rem !important;
+  }
+
+  .hle-card-btn {
+    width: 32px !important;
+  }
+
+  /* Reset back from oval */
 }
 
 @media (max-width: 480px) {
-  .hle-img-wrap { height: 180px !important; }
-  .hle-card-title { font-size: 1.1rem !important; }
-  .hle-card-desc { font-size: 0.85rem !important; }
+  .hle-img-wrap {
+    height: 180px !important;
+  }
+
+  .hle-card-title {
+    font-size: 1.1rem !important;
+  }
+
+  .hle-card-desc {
+    font-size: 0.85rem !important;
+  }
 }
 
 /* =======================================================
    SECTION 11: BUILT FOR EVERY LEARNER (HomeEcosystem)
    ======================================================= */
 @media (max-width: 1024px) {
-  .he-card { padding: 24px !important; }
-  .he-img-area { height: 180px !important; }
-  .he-img-area img { height: 100% !important; object-fit: cover !important; }
-  .he-bullets li { font-size: 0.85rem !important; }
+  .he-card {
+    padding: 24px !important;
+  }
+
+  .he-img-area {
+    height: 180px !important;
+  }
+
+  .he-img-area img {
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .he-bullets li {
+    font-size: 0.85rem !important;
+  }
 }
 
 @media (max-width: 768px) {
-  .he-grid { grid-template-columns: 1fr !important; }
-  .he-img-area { height: 200px !important; width: 100% !important; }
-  .he-card-label { font-size: 0.7rem !important; }
-  .he-card-title { font-size: 1.3rem !important; }
-  .he-bullets li { font-size: 0.9rem !important; }
-  .he-btn { width: 100% !important; text-align: center !important; }
-  .he-title-base { font-size: 1.8rem !important; text-align: center !important; }
+  .he-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .he-img-area {
+    height: 200px !important;
+    width: 100% !important;
+  }
+
+  .he-card-label {
+    font-size: 0.7rem !important;
+  }
+
+  .he-card-title {
+    font-size: 1.3rem !important;
+  }
+
+  .he-bullets li {
+    font-size: 0.9rem !important;
+  }
+
+  .he-btn {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .he-title-base {
+    font-size: 1.8rem !important;
+    text-align: center !important;
+  }
 }
 
 @media (max-width: 480px) {
-  .he-img-area { height: 160px !important; }
-  .he-bullets li { font-size: 0.82rem !important; }
+  .he-img-area {
+    height: 160px !important;
+  }
+
+  .he-bullets li {
+    font-size: 0.82rem !important;
+  }
 }
 
 /* =======================================================
    BADGES ALIGNMENT FIX
    ======================================================= */
 @media (max-width: 768px) {
+
   .ha-label,
   .he-badge,
   .ef-label,
@@ -507,16 +1180,22 @@
    EXACT FIXES 1 & 2 
    ======================================================= */
 @media (max-width: 768px) {
-    /* FIX 1: Mission + Globally Aligned */
-  
 
-  
+  /* FIX 1: Mission + Globally Aligned */
+  .hm-inner {
+    flex-direction: column !important;
+  }
 
-  
+  .hm-left,
+  .hm-right {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: unset !important;
+  }
 
   /* FIX 2: Our Learning Philosophy */
   .hp-item p,
-  .hp-item > p,
+  .hp-item>p,
   .hp-item-desc {
     text-align: left !important;
   }

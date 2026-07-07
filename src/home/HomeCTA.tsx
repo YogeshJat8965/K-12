@@ -23,7 +23,7 @@ export default function HomeCTA() {
       tl.to('.cta-bg-grid', { opacity: 0.3, duration: 1.5, ease: 'none' }, 0);
 
       // Left content
-      tl.from('.cta-badge', { y: -50, opacity: 0, duration: 0.8, ease: 'elastic.out(1, 0.5)' }, 0.2);
+      // tl.from('.cta-badge', { y: -50, opacity: 0, duration: 0.8, ease: 'elastic.out(1, 0.5)' }, 0.2);
       tl.from('.cta-title-base', { opacity: 0, duration: 0.8 }, 0.4);
       tl.from('.cta-title-highlight', { scale: 1.3, opacity: 0, duration: 0.6, ease: 'back.out(1.5)' }, 0.6);
       tl.from('.cta-desc', { y: 20, opacity: 0, duration: 0.6 }, 0.8);
@@ -293,7 +293,16 @@ export default function HomeCTA() {
             margin-left: 0;
           }
           .cta-title {
-            font-size: 32px;
+            font-size: 28px;
+          }
+          .cta-section {
+            padding: 60px 0;
+          }
+          .cta-inner {
+            padding: 0 20px;
+          }
+          .cta-card {
+            padding: 24px;
           }
         }
       `}</style>

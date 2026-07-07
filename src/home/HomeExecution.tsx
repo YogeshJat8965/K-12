@@ -276,8 +276,10 @@ export default function HomeExecution() {
         }
         @media (max-width: 600px) {
           .ef-pillars-grid { grid-template-columns: 1fr; }
-          .ef-title { font-size: 32px; }
+          .ef-title { font-size: 28px; }
           .ef-top-row { flex-direction: column; gap: 40px; }
+          .ef-section { padding: 60px 0; }
+          .ef-inner { padding: 0 20px; }
         }
       `}</style>
 

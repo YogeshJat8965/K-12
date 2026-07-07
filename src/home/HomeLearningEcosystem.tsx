@@ -355,7 +355,10 @@ export default function HomeLearningEcosystem() {
             grid-template-columns: 1fr;
           }
           .hle-title {
-            font-size: 32px;
+            font-size: 28px;
+          }
+          .hle-inner {
+            padding: 0 20px;
           }
         }
       `}</style>
