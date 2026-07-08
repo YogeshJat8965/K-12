@@ -247,17 +247,24 @@ export default function WhatIsPlayground() {
         }
 
         @media (max-width: 768px) {
-          .wip-section { padding: 40px 16px; }
-          .wip-h2 { font-size: 1.8rem; line-height: 1.3; }
-          .wip-features { flex-direction: column; gap: 16px; width: 100%; }
-          .wip-card { flex-direction: row; text-align: left; align-items: center; width: 100%; max-width: 320px; margin: 0 auto; padding: 16px; }
-          .wip-card-text { align-items: flex-start; }
+          .wip-section { padding: 32px 16px; }
+          .wip-container { padding-top: 24px; }
+          .wip-right { padding: 0 24px 24px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; width: 100%; box-sizing: border-box; }
+          .wip-h2 { font-size: 1.8rem; line-height: 1.3; text-align: left !important; width: 100%; margin-bottom: 16px; }
+          .wip-h2 .purple { display: inline !important; }
+          .wip-p { text-align: left !important; width: 100%; box-sizing: border-box; margin-bottom: 16px; font-size: 14px; }
+          .wip-features { flex-direction: column; gap: 12px; width: 100%; align-items: stretch; margin-top: 8px; }
+          .wip-card { flex: none; flex-direction: row; text-align: left; align-items: center; justify-content: flex-start; width: 100%; margin: 0; padding: 16px; box-sizing: border-box; min-height: 74px; }
+          .wip-card-icon { min-width: 42px; min-height: 42px; width: 42px; height: 42px; flex-shrink: 0; }
+          .wip-card-text { align-items: flex-start; overflow: visible; }
+          .wip-card-label { font-size: 11px; white-space: normal; line-height: 1.2; }
+          .wip-card-value { font-size: 14px; white-space: normal; line-height: 1.2; }
         }
 
         @media (max-width: 480px) {
-          .wip-left { max-width: 280px; }
+          .wip-left { max-width: 240px; margin: 0 auto; }
           .wip-h2 { font-size: 1.6rem; }
-          .wip-right { padding: 0 16px 40px; }
+          .wip-right { padding: 0 16px 24px; }
         }
       `}</style>
 
@@ -266,7 +273,7 @@ export default function WhatIsPlayground() {
           <div className="wip-left">
             <img src={LeftImg} alt="Girl using AI Playground on a laptop" />
           </div>
-          
+
           <div className="wip-right">
             <h2 className="wip-h2">
               What is an

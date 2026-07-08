@@ -171,8 +171,10 @@ export default function PlayToMastery() {
         }
 
         @media (max-width: 600px) {
+          .ptm-section { padding: 40px 20px; }
           .ptm-grid {
             grid-template-columns: 1fr;
+            row-gap: 30px;
           }
           .ptm-image {
             height: 30vw;

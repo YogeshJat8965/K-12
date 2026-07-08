@@ -293,8 +293,9 @@ export default function WalkAway() {
 
         @media (max-width: 768px) {
           .wa-grid { grid-template-columns: 1fr; }
-          .wa-section { padding: 60px 20px; }
+          .wa-section { padding: 40px 20px; }
           .wa-header { font-size: 40px; }
+          .wa-line { margin-bottom: 40px; }
           .wa-bg-img { position: relative; width: 100%; max-width: 400px; margin: 0 auto 40px; display: block; opacity: 1; }
         }
       `}</style>

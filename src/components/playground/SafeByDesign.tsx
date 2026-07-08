@@ -290,7 +290,7 @@ export default function SafeByDesign() {
         }
 
         @media (max-width: 768px) {
-          .sbd-section { padding: 60px 24px; }
+          .sbd-section { padding: 40px 20px; }
           .sbd-h2 { font-size: 32px; white-space: normal; }
           .sbd-image-wrapper { height: 60vw; }
           .sbd-banner { padding: 32px 24px; }

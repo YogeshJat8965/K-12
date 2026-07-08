@@ -100,7 +100,9 @@ export default function HowItWorks() {
         }
 
         @media (max-width: 768px) {
-          .hiw-section { padding: 20px 16px 60px; }
+          .hiw-section { padding: 20px 16px 30px; }
+          .hiw-subtitle { margin-bottom: 20px; }
+          .hiw-timeline-line { left: 40px; }
           .hiw-h2 { font-size: 1.8rem; line-height: 1.2; }
         }
 

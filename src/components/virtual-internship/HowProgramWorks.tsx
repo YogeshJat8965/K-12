@@ -311,9 +311,10 @@ export default function HowProgramWorks() {
         }
 
         @media (max-width: 768px) {
-          .hpw-section { padding: 60px 24px; }
+          .hpw-section { padding: 40px 24px; }
           .hpw-grid { grid-template-columns: repeat(2, 1fr); }
           .hpw-header { font-size: 32px; }
+          .hpw-subtitle { margin-bottom: 30px; }
         }
 
         @media (max-width: 480px) {

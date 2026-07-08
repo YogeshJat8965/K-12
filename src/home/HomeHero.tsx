@@ -317,6 +317,7 @@ export default function HomeHero() {
           .hh-left, .hh-right {
             flex: none; max-width: 100%; width: 100%;
             padding-right: 0;
+            padding-top: 20px;
           }
           .hh-right { justify-content: center; }
           .hh-right img { 
