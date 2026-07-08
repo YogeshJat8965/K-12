@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth removed to prevent conflict with Lenis smooth scrolling */
 }
 
 h1,

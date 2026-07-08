@@ -88,7 +88,7 @@ export default function HomeReady() {
         });
 
         // Slide in container
-        tl.from(step, { x: 80, opacity: 0, duration: 0.6, ease: 'power2.out' });
+        tl.from(step, { y: 40, opacity: 0, duration: 0.6, ease: 'power2.out' });
 
         // Draw border
         const border = step.querySelector('.hr-step-border');
@@ -96,11 +96,12 @@ export default function HomeReady() {
 
         // Number
         const num = step.querySelector('.hr-step-label');
-        tl.from(num, { x: -20, opacity: 0, duration: 0.4 }, '-=0.2');
+        tl.from(num, { y: -20, opacity: 0, duration: 0.4 }, '-=0.2');
 
-        // Icon bounce
+        // Icon & text
         const icon = step.querySelector('.hr-step-icon');
-        tl.from(icon, { scale: 0, duration: 0.6, ease: 'back.out(2)' }, '-=0.4');
+        const text = step.querySelector('.hr-step-text');
+        tl.from([icon, text], { opacity: 0, y: 10, duration: 0.4, stagger: 0.1 }, '-=0.2');
       });
 
     }, sectionRef);
@@ -299,14 +300,14 @@ export default function HomeReady() {
           }
           .hr-step {
             padding: 24px;
-            flex-direction: column;
+            flex-direction: column !important;
             align-items: center;
             text-align: center;
             border-radius: 16px;
             gap: 16px;
-            width: 100%;
-            max-width: 360px;
-            margin: 0 auto;
+            width: 100% !important;
+            max-width: 320px !important;
+            margin: 0 auto !important;
             box-sizing: border-box;
           }
           .hr-step-border {

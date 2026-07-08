@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const NAV_LINKS = [
-  { label: 'Vidya AI',           href: '#' },
-  { label: 'Skill Studio',       href: '/skill-studio' },
+  { label: 'Vidya AI', href: '#' },
+  { label: 'Skill Studio', href: '/skill-studio' },
   { label: 'Virtual Internship', href: '/' },
-  { label: 'AI Playground',      href: '/ai-playground' },
+  { label: 'AI Playground', href: '/ai-playground' },
   { label: 'International Studio', href: '/international-studio' },
 ];
 
@@ -165,8 +165,8 @@ export default function HomeNavbar() {
         <div className="hn-inner">
 
           {/* Logo */}
-          <a 
-            href="/home" 
+          <a
+            href="/home"
             onClick={(e) => {
               if (window.location.pathname === '/home') {
                 e.preventDefault();

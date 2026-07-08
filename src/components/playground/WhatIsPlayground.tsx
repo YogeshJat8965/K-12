@@ -41,8 +41,9 @@ export default function WhatIsPlayground() {
         // Text content from right
         const rightContent = containerRef.current.querySelector('.wip-right');
         gsap.from(rightContent, {
-          x: 60,
-          rotateY: 20,
+          x: window.innerWidth > 1024 ? 60 : 0,
+          y: window.innerWidth > 1024 ? 0 : 40,
+          rotateY: window.innerWidth > 1024 ? 20 : 0,
           opacity: 0,
           duration: 1.2,
           ease: 'power3.out',
@@ -236,35 +237,30 @@ export default function WhatIsPlayground() {
 
         @media (max-width: 1024px) {
           .wip-section { padding: 40px 20px; }
-          .wip-container { flex-direction: column; align-items: center; text-align: center; padding-top: 40px; }
-          .wip-left { flex: none; width: 100%; max-width: 400px; padding: 0 20px; order: 1; }
-          .wip-left img { width: 100%; height: auto; object-fit: contain; }
-          .wip-right { flex: none; width: 100%; max-width: 100%; padding: 0 24px 40px; order: 2; align-items: center; }
-          .wip-h2 { font-size: 2.2rem; text-align: center; }
-          .wip-p { text-align: center; margin-left: auto; margin-right: auto; }
-          .wip-features { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 16px; width: 100%; }
-          .wip-card { flex: 1 1 calc(33.333% - 16px); min-width: 200px; }
+          .wip-container { display: block !important; padding-top: 40px; }
+          .wip-left { display: none !important; }
+          .wip-right { display: block !important; width: 100% !important; max-width: 100% !important; padding: 24px 16px 32px 16px !important; text-align: center !important; box-sizing: border-box; }
+          .wip-h2 { font-size: 2.2rem; text-align: center !important; width: 100% !important; }
+          .wip-p { text-align: center !important; margin-left: auto; margin-right: auto; width: 100% !important; max-width: 100% !important; }
+          .wip-features { display: none !important; }
         }
 
         @media (max-width: 768px) {
           .wip-section { padding: 32px 16px; }
-          .wip-container { padding-top: 24px; }
-          .wip-right { padding: 0 24px 24px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; width: 100%; box-sizing: border-box; }
-          .wip-h2 { font-size: 1.8rem; line-height: 1.3; text-align: left !important; width: 100%; margin-bottom: 16px; }
+          .wip-container { display: block !important; padding-top: 24px; }
+          .wip-left { display: none !important; }
+          .wip-right { display: block !important; padding: 24px 16px 32px 16px !important; width: 100% !important; max-width: 100% !important; text-align: center !important; box-sizing: border-box; }
+          .wip-h2 { font-size: 1.8rem; line-height: 1.3; text-align: center !important; width: 100% !important; margin-bottom: 16px; }
           .wip-h2 .purple { display: inline !important; }
-          .wip-p { text-align: left !important; width: 100%; box-sizing: border-box; margin-bottom: 16px; font-size: 14px; }
-          .wip-features { flex-direction: column; gap: 12px; width: 100%; align-items: stretch; margin-top: 8px; }
-          .wip-card { flex: none; flex-direction: row; text-align: left; align-items: center; justify-content: flex-start; width: 100%; margin: 0; padding: 16px; box-sizing: border-box; min-height: 74px; }
-          .wip-card-icon { min-width: 42px; min-height: 42px; width: 42px; height: 42px; flex-shrink: 0; }
-          .wip-card-text { align-items: flex-start; overflow: visible; }
-          .wip-card-label { font-size: 11px; white-space: normal; line-height: 1.2; }
-          .wip-card-value { font-size: 14px; white-space: normal; line-height: 1.2; }
+          .wip-h2 .line, .wip-p .line { text-align: center !important; display: inline-block !important; }
+          .wip-p { text-align: center !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box; margin-bottom: 16px; font-size: 14px; }
+          .wip-features { display: none !important; }
         }
 
         @media (max-width: 480px) {
-          .wip-left { max-width: 240px; margin: 0 auto; }
+          .wip-left { display: none !important; }
           .wip-h2 { font-size: 1.6rem; }
-          .wip-right { padding: 0 16px 24px; }
+          .wip-right { padding: 16px 12px 24px 12px !important; width: 100% !important; max-width: 100% !important; display: block !important; }
         }
       `}</style>
 
