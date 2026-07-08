@@ -96,11 +96,7 @@ export default function LearningFramework() {
         { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: 'power3.out', scrollTrigger: { trigger: '.lf-intro', start: 'top 85%' } }
       );
 
-      // Cards stagger
-      gsap.fromTo('.lf-step', 
-        { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: 'power3.out', scrollTrigger: { trigger: '.lf-timeline', start: 'top 75%' } }
-      );
+      // Cards stagger removed as they are replaced by an image
     }, sectionRef);
 
     return () => ctx.revert();
@@ -131,9 +127,9 @@ export default function LearningFramework() {
         </div>
 
         {/* Image Display */}
-        <div className="w-full flex justify-center items-center mt-6">
-          <div className="w-full max-w-[1200px] bg-white rounded-[32px] shadow-[0_10px_50px_rgba(0,0,0,0.05)] border border-gray-100 overflow-hidden min-h-[450px] flex items-center justify-center p-2">
-             <img src={frameworkImg} alt="Learning Framework" className="w-full h-auto object-contain rounded-[28px]" />
+        <div className="w-full flex justify-center items-center mt-6 md:mt-10">
+          <div className="w-full max-w-[1200px] md:bg-white md:rounded-[32px] md:shadow-[0_10px_50px_rgba(0,0,0,0.05)] md:border md:border-gray-100 overflow-hidden md:min-h-[450px] flex items-center justify-center md:p-4">
+             <img src={frameworkImg} alt="Learning Framework" className="w-full h-auto object-contain md:rounded-[28px]" />
           </div>
         </div>
 

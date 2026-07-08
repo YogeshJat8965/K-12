@@ -39,7 +39,7 @@ export default function GlobalEducation() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full pt-24 pb-12 bg-[#FAFAFA] overflow-hidden font-poppins relative">
+    <section ref={sectionRef} className="w-full pt-12 md:pt-24 pb-8 md:pb-12 bg-[#FAFAFA] overflow-hidden font-poppins relative">
       {/* Background Decor Elements */}
       <div className="absolute top-[-10%] left-[-5%] w-[400px] h-[400px] bg-[#E0E7FF] rounded-full blur-[120px] opacity-60 z-0"></div>
       <div className="absolute bottom-[-10%] right-[10%] w-[500px] h-[500px] bg-[#DBEAFE] rounded-full blur-[150px] opacity-50 z-0"></div>
@@ -72,7 +72,7 @@ export default function GlobalEducation() {
         </div>
 
         {/* Content Row */}
-        <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-16 pt-2">
+        <div className="flex flex-col lg:flex-row items-start gap-8 md:gap-10 lg:gap-16 pt-2">
 
           {/* Left List */}
           <div className="flex-1 w-full max-w-[600px] ge-left shrink-0">
@@ -93,7 +93,7 @@ export default function GlobalEducation() {
           </div>
 
           {/* Right Image */}
-          <div className="flex-1 w-full ge-right flex justify-center lg:justify-end lg:-mt-[220px] xl:-mt-[250px] lg:-mb-8 xl:-mb-16">
+          <div className="flex-1 w-full ge-right flex justify-center -mt-24 -mb-28 lg:justify-end lg:-mt-[220px] xl:-mt-[250px] lg:-mb-8 xl:-mb-16">
             <img
               src={globalEducationImg}
               alt="Global Education Trends"

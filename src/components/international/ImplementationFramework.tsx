@@ -79,12 +79,12 @@ export default function ImplementationFramework() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full py-24 bg-[#FAFBFC] overflow-hidden font-poppins">
+    <section ref={sectionRef} className="relative w-full py-12 md:py-24 bg-[#FAFBFC] overflow-hidden font-poppins">
 
       <div className="max-w-[1300px] mx-auto px-4 md:px-6 relative z-10">
 
         {/* Section Header */}
-        <div className="text-center mb-16 imp-intro">
+        <div className="text-center mb-8 md:mb-16 imp-intro">
           <h2 className="text-[36px] md:text-[44px] font-extrabold text-[#1A1A2E] tracking-tight">
             The <span className="text-[#6C3CF7]">Implementation</span> Framework
           </h2>
@@ -94,7 +94,7 @@ export default function ImplementationFramework() {
         </div>
 
         {/* Horizontal Timeline Layout */}
-        <div className="imp-timeline relative w-full mt-10">
+        <div className="imp-timeline relative w-full mt-4 md:mt-10">
           
           <div className="flex flex-col lg:flex-row items-stretch justify-between gap-6 lg:gap-4 relative">
             

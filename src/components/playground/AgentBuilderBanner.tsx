@@ -141,7 +141,7 @@ export default function AgentBuilderBanner() {
 
         @media (max-width: 768px) {
           .abb-section { padding: 40px 16px; }
-          .abb-container { flex-direction: column; text-align: center; padding: 40px 24px; min-height: auto; gap: 8px; }
+          .abb-container { flex-direction: column; text-align: center; padding: 24px 24px 40px; min-height: auto; gap: 8px; }
           .abb-left { width: 100%; height: auto; flex: none; display: flex; justify-content: center; }
           .abb-image-wrapper { 
             position: relative;
@@ -149,9 +149,9 @@ export default function AgentBuilderBanner() {
             top: 0;
             margin-top: 0;
             width: 100%;
-            max-width: 280px;
-            height: 280px;
-            background-position: center bottom;
+            max-width: 260px;
+            height: 160px;
+            background-position: center;
             animation: robotBobMobile 2.5s infinite alternate ease-in-out;
           }
           .abb-right { padding: 0; }

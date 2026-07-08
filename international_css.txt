@@ -1,0 +1,12 @@
+src/components/international/EducationChallenge.tsx:         @media (max-width: 1024px) {
+src/components/international/EducationChallenge.tsx:           .ec-content-grid { flex-direction: column; gap: 40px; }
+src/components/international/EducationChallenge.tsx:         @media (max-width: 600px) {
+src/components/international/EducationChallenge.tsx:           .ec-section { padding: 60px 20px; }
+src/components/international/InternationalHero.tsx:         @media (min-width: 1024px) {
+src/components/international/InternationalHero.tsx:           .ih-container { flex-direction: row; }
+src/components/international/InternationalHero.tsx:         @media (max-width: 1024px) {
+src/components/international/InternationalHero.tsx:           .ih-h1 { font-size: 40px; }
+src/components/international/InternationalHero.tsx:         @media (max-width: 768px) {
+src/components/international/InternationalHero.tsx:           .ih-h1 { font-size: 32px; }
+src/components/international/InternationalWhatIs.tsx:         @media (min-width: 1024px) {
+src/components/international/InternationalWhatIs.tsx:           .iwi-container { flex-direction: row; }

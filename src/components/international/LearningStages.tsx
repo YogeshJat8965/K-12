@@ -82,7 +82,7 @@ export default function LearningStages() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full pt-4 pb-24 bg-white overflow-hidden font-poppins">
+    <section ref={sectionRef} className="relative w-full pt-4 pb-12 md:pb-24 bg-white overflow-hidden font-poppins">
       
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-[#FFFBF0] rounded-full -translate-x-1/4 -translate-y-[10%] z-0"></div>
@@ -120,11 +120,11 @@ export default function LearningStages() {
             {/* Card 1 */}
             {activeTab === 0 && (
               <div className="ls-card bg-white rounded-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-200 hover:border-blue-100 hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row overflow-hidden relative group">
-                <div className="w-full md:w-[45%] lg:w-[48%] h-[260px] md:h-[auto] min-h-[300px] shrink-0 relative">
+                <div className="w-full md:w-[45%] lg:w-[48%] h-[260px] md:h-[auto] md:min-h-[300px] shrink-0 relative">
                   <img src={Learning1Img} alt="Grades 3-5 Discovery & Exploration" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 
-                <div className="w-full md:w-[55%] lg:w-[52%] p-6 md:p-10 lg:p-12 pr-24 lg:pr-32 flex flex-col justify-center relative bg-white z-10">
+                <div className="w-full md:w-[55%] lg:w-[52%] px-6 pb-6 pt-1 md:p-10 lg:p-12 md:pr-24 lg:pr-32 flex flex-col justify-center relative bg-white z-10">
                   <span className="text-[#3B82F6] font-semibold text-[14px] mb-2">Grades 3–5</span>
                   <h3 className="text-[#1A1A2E] text-[26px] md:text-[30px] font-bold leading-tight mb-3">
                     Discovery &<br/>Exploration
@@ -147,11 +147,11 @@ export default function LearningStages() {
             {/* Card 2 */}
             {activeTab === 1 && (
               <div className="ls-card bg-white rounded-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-200 hover:border-blue-100 hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row overflow-hidden relative group">
-                <div className="w-full md:w-[45%] lg:w-[48%] h-[260px] md:h-[auto] min-h-[300px] shrink-0 relative">
+                <div className="w-full md:w-[45%] lg:w-[48%] h-[260px] md:h-[auto] md:min-h-[300px] shrink-0 relative">
                   <img src={Learning2Img} alt="Grades 6-8 Skill Building & Innovation" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 
-                <div className="w-full md:w-[55%] lg:w-[52%] p-6 md:p-10 lg:p-12 pr-24 lg:pr-32 flex flex-col justify-center relative bg-white z-10">
+                <div className="w-full md:w-[55%] lg:w-[52%] px-6 pb-6 pt-1 md:p-10 lg:p-12 md:pr-24 lg:pr-32 flex flex-col justify-center relative bg-white z-10">
                   <span className="text-[#3B82F6] font-semibold text-[14px] mb-2">Grades 6–8</span>
                   <h3 className="text-[#1A1A2E] text-[26px] md:text-[30px] font-bold leading-tight mb-3">
                     Skill Building &<br/>Innovation
@@ -174,11 +174,11 @@ export default function LearningStages() {
             {/* Card 3 */}
             {activeTab === 2 && (
               <div className="ls-card bg-white rounded-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-200 hover:border-blue-100 hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row overflow-hidden relative group">
-                <div className="w-full md:w-[45%] lg:w-[48%] h-[260px] md:h-[auto] min-h-[300px] shrink-0 relative">
+                <div className="w-full md:w-[45%] lg:w-[48%] h-[260px] md:h-[auto] md:min-h-[300px] shrink-0 relative">
                   <img src={Learning3Img} alt="Grades 9-12 Advanced Application & Career Readiness" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 
-                <div className="w-full md:w-[55%] lg:w-[52%] p-6 md:p-10 lg:p-12 pr-24 lg:pr-32 flex flex-col justify-center relative bg-white z-10">
+                <div className="w-full md:w-[55%] lg:w-[52%] px-6 pb-6 pt-1 md:p-10 lg:p-12 md:pr-24 lg:pr-32 flex flex-col justify-center relative bg-white z-10">
                   <span className="text-[#3B82F6] font-semibold text-[14px] mb-2">Grades 9–12</span>
                   <h3 className="text-[#1A1A2E] text-[26px] md:text-[30px] font-bold leading-tight mb-3">
                     Advanced Application &<br/>Career Readiness

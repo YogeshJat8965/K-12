@@ -18,7 +18,7 @@ export default function ReportingTransparency() {
 
       gsap.fromTo('.rt-card', 
         { y: 40, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'power3.out', scrollTrigger: { trigger: '.rt-grid', start: 'top 80%' } }
+        { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out', scrollTrigger: { trigger: '.rt-card', start: 'top 80%' } }
       );
     }, sectionRef);
 
@@ -26,11 +26,11 @@ export default function ReportingTransparency() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full py-24 bg-[#F9F9F9] font-poppins relative overflow-hidden">
+    <section ref={sectionRef} className="w-full py-12 md:py-24 bg-[#F9F9F9] font-poppins relative overflow-hidden">
       <div className="max-w-[1250px] mx-auto px-6 lg:px-12 relative z-10">
         
         {/* Header Row */}
-        <div className="rt-header flex flex-col md:flex-row items-start md:items-center justify-between mb-0 gap-10">
+        <div className="rt-header flex flex-col md:flex-row items-start md:items-center justify-between mb-8 md:mb-0 gap-8 md:gap-10">
           
           {/* Left Text */}
           <div className="max-w-[650px]">

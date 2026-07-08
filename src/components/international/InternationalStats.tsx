@@ -28,8 +28,8 @@ export default function InternationalStats() {
   }, []);
 
   return (
-    <div ref={statsRef} className="w-full bg-[#F4F0FF] border-t border-[#D8C8FF] py-12 font-poppins relative z-20">
-      <div className="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-4 text-center">
+    <div ref={statsRef} className="w-full bg-[#F4F0FF] border-t border-[#D8C8FF] py-8 md:py-12 font-poppins relative z-20">
+      <div className="max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4 text-center">
         
         {/* Stat 1 */}
         <div className="flex flex-col items-center flex-1">
