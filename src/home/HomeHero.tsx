@@ -51,21 +51,18 @@ export default function HomeHero() {
 
 
       // 2. Parallax float for right image
-      let mm = gsap.matchMedia();
-      mm.add("(min-width: 861px)", () => {
-        if (imgRef.current) {
-          gsap.to(imgRef.current, {
-            y: -100,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: heroRef.current,
-              start: 'top top',
-              end: 'bottom top',
-              scrub: true,
-            }
-          });
-        }
-      });
+      if (imgRef.current) {
+        gsap.to(imgRef.current, {
+          y: -100,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true,
+          }
+        });
+      }
 
       // 3. Feature cards (bottom bar) 3D flip + stagger
       if (featBarRef.current) {
@@ -323,13 +320,12 @@ export default function HomeHero() {
           }
           .hh-right { justify-content: center; }
           .hh-right img { 
-            position: relative !important; 
-            top: auto !important; 
-            right: auto !important; 
-            transform: none !important; 
-            width: 100% !important; 
-            max-width: 90% !important; 
-            margin: 0 auto;
+            position: relative; 
+            top: auto; 
+            right: auto; 
+            transform: none; 
+            width: 100%; 
+            max-width: 90%; 
           }
           .hh-feature-bar {
             margin: 40px 32px 32px;

@@ -72,7 +72,7 @@ export default function TrustedPartnerships() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full pt-16 pb-24 bg-white font-poppins relative overflow-hidden">
+    <section ref={sectionRef} className="w-full pt-12 md:pt-16 pb-12 md:pb-24 bg-white font-poppins relative overflow-hidden">
       
       {/* Background Decor */}
       <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#EEF2FF] rounded-full blur-[80px] pointer-events-none opacity-60"></div>
@@ -121,7 +121,7 @@ export default function TrustedPartnerships() {
         </div>
 
         {/* Timeline Graphic */}
-        <div className="tp-grid w-full relative mb-16">
+        <div className="tp-grid w-full relative mb-8 md:mb-16">
           
           {/* Removed SVG Wavy Line Background as requested */}
 
@@ -159,8 +159,8 @@ export default function TrustedPartnerships() {
           </div>
         </div>
 
-        {/* Banner with Buttons Overlaid */}
-        <div className="w-full max-w-[1200px] mt-10 relative rounded-[24px] overflow-hidden flex items-end justify-end pb-[6%] md:pb-[4%] pr-[5%] lg:pr-[1%] shadow-lg border border-gray-100" style={{ aspectRatio: '16/4.2' }}>
+        {/* Banner with Buttons Overlaid (Desktop/Tablet Only) */}
+        <div className="hidden md:flex w-full max-w-[1200px] mt-10 relative rounded-[24px] overflow-hidden items-end justify-end pb-[6%] md:pb-[4%] pr-[5%] lg:pr-[1%] shadow-lg border border-gray-100" style={{ aspectRatio: '16/4.2' }}>
           {/* Background Banner Image */}
           <img 
             src={bannerImg} 
@@ -179,6 +179,14 @@ export default function TrustedPartnerships() {
               <Play size={14} fill="currentColor" />
             </button>
           </div>
+        </div>
+
+        {/* Mobile-Only Button */}
+        <div className="flex md:hidden w-full justify-center mt-8">
+          <button className="flex items-center justify-center gap-2 px-6 py-3.5 w-full max-w-[300px] bg-white border-2 border-[#3B82F6] text-[#3B82F6] rounded-[12px] font-bold text-[14px] shadow-[0_4px_14px_rgba(59,130,246,0.15)] active:scale-95 transition-all duration-200 tracking-wide uppercase">
+            Request School Presentation
+            <Play size={14} fill="currentColor" />
+          </button>
         </div>
 
       </div>

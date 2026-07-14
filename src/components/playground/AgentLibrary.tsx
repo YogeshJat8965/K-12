@@ -295,7 +295,8 @@ export default function AgentLibrary() {
         }
 
         @media (max-width: 600px) {
-          .al-section { padding: 50px 16px; }
+          .al-section { padding: 30px 16px; }
+          .al-subtitle { margin-bottom: 30px; }
           .al-grid { grid-template-columns: 1fr; gap: 16px; }
         }
       `}</style>

@@ -293,10 +293,12 @@ export default function WhyVIMatters() {
         }
 
         @media (max-width: 600px) {
-          .wvm-section { padding: 60px 20px; }
-          .wvm-cards-wrapper { flex-direction: column; gap: 40px; }
-          .wvm-arrow-btn { transform: translate(-50%, -50%) rotate(90deg); top: auto; left: 50%; margin-top: -20px; position: relative; } /* Arrow between cards vertically */
+          .wvm-section { padding: 40px 20px; }
+          .wvm-container { gap: 20px; }
+          .wvm-cards-wrapper { flex-direction: column; gap: 30px; }
+          .wvm-arrow-btn { transform: translate(-50%, -50%) rotate(90deg); top: auto; left: 50%; margin-top: -15px; position: relative; } /* Arrow between cards vertically */
           .wvm-timeline-line { left: 24px; top: 32px; bottom: 32px; }
+          .wvm-image { transform: none; margin-top: 10px; }
         }
       `}</style>
 

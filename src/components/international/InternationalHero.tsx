@@ -23,7 +23,7 @@ export default function InternationalHero() {
       // Middle orbit rotates clockwise
       gsap.to('.orbit-middle', { rotation: 360, duration: 70, repeat: -1, ease: 'linear' });
       // Keep badges upright on middle orbit (if any added later)
-      gsap.to('.orbit-middle .orbit-badge', { rotation: -360, duration: 70, repeat: -1, ease: 'linear' });
+      // gsap.to('.orbit-middle .orbit-badge', { rotation: -360, duration: 70, repeat: -1, ease: 'linear' });
 
       // Inner orbit rotates anticlockwise
       gsap.to('.orbit-inner', { rotation: -360, duration: 60, repeat: -1, ease: 'linear' });
@@ -229,9 +229,12 @@ export default function InternationalHero() {
           .ih-right { min-height: 500px; transform: scale(0.8); }
         }
         @media (max-width: 768px) {
+          .ih-section { padding-top: 100px; padding-bottom: 40px; min-height: auto; }
           .ih-h1 { font-size: 32px; }
-          .ih-right { min-height: 400px; transform: scale(0.6); }
+          .ih-p { font-size: 16px; }
+          .ih-right { min-height: 300px; transform: none; margin-top: 0; display: flex; align-items: center; justify-content: center; }
           .orbit-ring { border: none; }
+          .ih-container { gap: 30px; }
         }
       `}</style>
 

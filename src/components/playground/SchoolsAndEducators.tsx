@@ -225,6 +225,8 @@ export default function SchoolsAndEducators() {
         }
 
         @media (max-width: 600px) {
+          .sae-section { padding: 40px 20px; }
+          .sae-header { margin-bottom: 30px; }
           .sae-card {
             flex-direction: column;
             padding: 32px 24px;

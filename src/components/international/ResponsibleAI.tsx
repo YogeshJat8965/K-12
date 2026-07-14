@@ -25,12 +25,12 @@ export default function ResponsibleAI() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full py-24 bg-[#F3E8FF] overflow-hidden font-poppins">
+    <section ref={sectionRef} className="relative w-full py-12 md:py-24 bg-[#0B1121] overflow-hidden font-poppins">
 
       {/* Subtle Background Blob */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#7C3AED] rounded-full translate-x-1/3 -translate-y-1/3 blur-[120px] z-0 opacity-10"></div>
 
-      <div className="max-w-[1250px] mx-auto px-6 lg:px-12 relative z-10 flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+      <div className="max-w-[1250px] mx-auto px-6 lg:px-12 relative z-10 flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-20">
 
         {/* Left Content */}
         <div className="flex-1 flex flex-col justify-center rai-left py-6">
@@ -38,8 +38,8 @@ export default function ResponsibleAI() {
             Responsible <span className="text-[#7C3AED]">AI & Digital<br className="hidden md:block" /> Citizenship</span>
           </h2>
 
-          {/* Purple Line Divider */}
-          <div className="w-[80px] h-[4px] bg-[#7C3AED] mb-14 rounded-full"></div>
+          {/* Blue Line Divider */}
+          <div className="w-[80px] h-[4px] bg-[#3B82F6] mb-8 md:mb-14 rounded-full"></div>
 
           <p className="text-[#6B7280] text-[16px] leading-relaxed mb-6 font-medium pr-0 md:pr-10">
             Skillzza Integrates Ethical Technology Practices, Responsible AI Usage, Digital Wellbeing, Cyber Awareness, And Safe Online Behavior Across All Studio Experiences.

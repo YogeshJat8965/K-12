@@ -230,10 +230,10 @@ export default function WhatStudentsLearn() {
         }
 
         @media (max-width: 768px) {
-          .wsl-section { padding: 60px 16px; }
+          .wsl-section { padding: 40px 16px; }
           .wsl-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
           .wsl-h2 { font-size: 1.8rem; line-height: 1.2; }
-          .wsl-subtitle { font-size: 16px; margin-bottom: 40px; }
+          .wsl-subtitle { font-size: 16px; margin-bottom: 30px; }
         }
 
         @media (max-width: 480px) {

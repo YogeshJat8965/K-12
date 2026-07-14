@@ -95,16 +95,16 @@ export default function WhatAreStudios() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full pt-24 pb-12 bg-white overflow-hidden font-poppins">
+    <section ref={sectionRef} className="relative w-full pt-12 md:pt-24 pb-12 bg-white overflow-hidden font-poppins">
 
       {/* ----- Background Decor ----- */}
       {/* Right giant yellow circle */}
       <div className="absolute right-0 top-[10%] w-[600px] h-[600px] bg-[#FFFBF0] rounded-full translate-x-1/2 z-0"></div>
 
-      <div className="max-w-[1400px] mx-auto px-6 relative z-10 flex flex-col gap-16">
+      <div className="max-w-[1400px] mx-auto px-6 relative z-10 flex flex-col gap-8 md:gap-16">
 
         {/* Top 2 Columns */}
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center lg:items-start">
+        <div className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-20 items-center lg:items-start">
 
           {/* Left Column - Image & Decorations */}
           <div ref={leftRef} className="flex-1 w-full relative">

@@ -221,6 +221,12 @@ export default function HomeAdobe() {
           .ha-partner-img { object-position: center; }
           .ha-title, .ha-desc { margin-left: auto; margin-right: auto; }
         }
+
+        @media (max-width: 768px) {
+          .ha-box { padding: 30px 20px; }
+          .ha-title { font-size: 28px; }
+          .ha-subheadline { font-size: 16px; }
+        }
       `}</style>
 
       <section className="ha-container" ref={sectionRef}>

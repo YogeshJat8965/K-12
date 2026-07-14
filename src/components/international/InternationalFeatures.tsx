@@ -19,16 +19,18 @@ export default function InternationalFeatures() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Title
-      gsap.from(titleRef.current, {
-        y: 30,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 85%',
-        }
-      });
+      if (titleRef.current) {
+        gsap.from(titleRef.current, {
+          y: 30,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 85%',
+          }
+        });
+      }
 
       // Removed 5 Icons Row GSAP block as it's replaced by an image
       if (iconsRef.current) {
@@ -64,7 +66,7 @@ export default function InternationalFeatures() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full pt-0 pb-0 bg-[#FBF7EC] overflow-hidden font-poppins -mt-4">
+    <section ref={sectionRef} className="relative w-full pt-0 pb-0 bg-[#FBF7EC] overflow-hidden font-poppins mt-0">
       
       {/* ----- Background Decor ----- */}
       {/* Top right circular overlay */}

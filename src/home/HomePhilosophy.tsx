@@ -232,10 +232,10 @@ export default function HomePhilosophy() {
             grid-template-columns: 1fr;
           }
           .hp-quote-text {
-            font-size: 24px;
+            font-size: 20px;
           }
           .hp-title {
-            font-size: 36px;
+            font-size: 28px;
           }
           .hp-item {
             text-align: left !important;
@@ -246,6 +246,10 @@ export default function HomePhilosophy() {
           }
           .hp-item-title, .hp-item-desc {
             text-align: left !important;
+          }
+          .hp-img-wrap {
+            width: 100px;
+            height: 100px;
           }
         }
       `}</style>

@@ -162,7 +162,8 @@ export default function WhatVIGain() {
 
         @media (max-width: 768px) {
           .wvg-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-          .wvg-section { padding: 60px 20px; }
+          .wvg-section { padding: 20px 10px; }
+          .wvg-header { margin-bottom: 30px; }
           .wvg-header-text { font-size: 32px; }
         }
 

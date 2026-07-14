@@ -37,9 +37,10 @@ export default function AiPlaygroundApp() {
 
     lenis.on('scroll', ScrollTrigger.update);
 
-    gsap.ticker.add((time) => {
+    const updateLenis = (time: number) => {
       lenis.raf(time * 1000);
-    });
+    };
+    gsap.ticker.add(updateLenis);
 
     gsap.ticker.lagSmoothing(0);
 
@@ -53,6 +54,7 @@ export default function AiPlaygroundApp() {
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      gsap.ticker.remove(updateLenis);
       lenis.destroy();
     };
   }, []);

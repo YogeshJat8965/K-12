@@ -213,7 +213,7 @@ export default function EducationChallenge() {
           .ec-image { height: 350px; }
         }
         @media (max-width: 600px) {
-          .ec-section { padding: 60px 20px; }
+          .ec-section { padding: 40px 16px; }
           .ec-tab-btn { font-size: 16px; padding: 16px; }
           .ec-content-area { padding: 30px 20px; }
           .ec-title { font-size: 26px; }
@@ -225,7 +225,7 @@ export default function EducationChallenge() {
       <section className="ec-section" ref={sectionRef}>
         <div className="ec-container">
           
-          <div className="text-center mb-16 ec-header-elem">
+          <div className="text-center mb-8 md:mb-16 ec-header-elem">
             <h2 className="text-[32px] md:text-[40px] font-bold text-[#1A1A2E] leading-tight mb-4">
               The Educational Challenge
             </h2>

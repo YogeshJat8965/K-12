@@ -26,7 +26,7 @@ export default function CtaBanner() {
         duration: 1.2,
         ease: 'power3.out',
         scrollTrigger: {
-          trigger: '.cta-section',
+          trigger: sectionRef.current,
           start: 'top 85%',
         }
       });
@@ -41,7 +41,7 @@ export default function CtaBanner() {
           repeat: 1,
           delay: 1.2, // after entrance
           scrollTrigger: {
-            trigger: '.cta-section',
+            trigger: sectionRef.current,
             start: 'top 85%',
           }
         });
@@ -56,7 +56,7 @@ export default function CtaBanner() {
         ease: 'back.out(1.2)',
         delay: 0.4,
         scrollTrigger: {
-          trigger: '.cta-section',
+          trigger: sectionRef.current,
           start: 'top 85%',
         }
       });
@@ -69,7 +69,7 @@ export default function CtaBanner() {
         delay: 0.8,
         ease: 'power2.out',
         scrollTrigger: {
-          trigger: '.cta-section',
+          trigger: sectionRef.current,
           start: 'top 85%',
         }
       });
@@ -188,7 +188,7 @@ export default function CtaBanner() {
 
         @media (max-width: 768px) {
           .cta-container {
-            padding: 40px 24px 32px 24px;
+            padding: 32px 20px;
             border-radius: 16px;
             background: linear-gradient(rgba(9, 2, 59, 0.65), rgba(9, 2, 59, 0.65)), url('${BgImage}') center left no-repeat;
             background-color: #09023B;

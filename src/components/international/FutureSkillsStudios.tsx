@@ -111,7 +111,7 @@ export default function FutureSkillsStudios() {
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
 
         {/* Intro */}
-        <div className="text-center max-w-[800px] mx-auto mb-16">
+        <div className="text-center max-w-[800px] mx-auto mb-8 md:mb-16">
           <h2 className="fss-intro text-[36px] md:text-[44px] font-extrabold text-[#1A1A2E] leading-[1.15] mb-5 tracking-tight">
             Our Future <span className="text-[#7C3AED]">Skills Studios</span>
           </h2>
@@ -179,8 +179,8 @@ export default function FutureSkillsStudios() {
         </div>
 
         {/* View All Studios Button */}
-        <div className="mt-16 flex justify-center fss-btn">
-          <button className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold text-white transition-all duration-300 bg-[#7C3AED] rounded-full overflow-hidden hover:bg-[#6D28D9] hover:shadow-[0_8px_25px_rgba(124,58,237,0.4)]">
+        <div className="mt-8 md:mt-16 flex justify-center fss-btn">
+          <button className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold text-white transition-all duration-300 bg-[#2563EB] rounded-full overflow-hidden hover:bg-[#1D4ED8] hover:shadow-[0_8px_25px_rgba(37,99,235,0.4)]">
             <span className="relative z-10 text-[15px]">Explore All 15+ Studios</span>
             <ArrowRight className="relative z-10 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={2.5} />
           </button>

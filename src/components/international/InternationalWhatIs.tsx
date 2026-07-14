@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Target, Brain, Users, Monitor } from 'lucide-react';
 import heroImg from '../../assets/International Studio/girl-grp.png';
+import responsiveImg from '../../assets/International Studio/responsive img.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -142,9 +143,32 @@ export default function InternationalWhatIs() {
           object-fit: contain;
           border-radius: 20px;
         }
+
+        @media (max-width: 1024px) {
+          .iwi-container { 
+            flex-direction: column-reverse !important; 
+            gap: 40px !important; 
+            padding: 40px 5% 0 !important; 
+          }
+          .iwi-left, .iwi-right {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .iwi-title { font-size: 32px !important; text-align: center !important; }
+          .iwi-desc { 
+            font-size: 14px !important; 
+            text-align: center !important; 
+            max-width: 100%;
+          }
+          .iwi-img { transform: scale(1.15) !important; max-width: 90% !important; }
+          .iwi-tags { justify-content: center !important; margin-top: 24px !important; }
+          .iwi-section { padding-top: 20px !important; }
+        }
       `}</style>
 
-      <section className="iwi-section" ref={sectionRef}>
+      <section className="iwi-section hidden lg:block" ref={sectionRef}>
         
         {/* Background Decorative Elements */}
         <div className="iwi-blob iwi-blob-purple"></div>
@@ -189,6 +213,16 @@ export default function InternationalWhatIs() {
 
         </div>
       </section>
+
+      {/* Mobile-only replacement image */}
+      <div className="w-full bg-white block lg:hidden" style={{ paddingTop: '40px', paddingBottom: '60px', position: 'relative', zIndex: 30 }}>
+        <img 
+          src={responsiveImg} 
+          alt="Skillzza K-12 Studios" 
+          className="w-full h-auto block mx-auto"
+          style={{ display: 'block', width: '100%', height: 'auto' }}
+        />
+      </div>
     </>
   );
 }

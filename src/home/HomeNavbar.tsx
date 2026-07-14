@@ -255,8 +255,8 @@ export default function HomeNavbar() {
         <div className="hn-inner">
 
           {/* Logo */}
-          <a 
-            href="/home" 
+          <a
+            href="/home"
             onClick={(e) => {
               if (window.location.pathname === '/home') {
                 e.preventDefault();

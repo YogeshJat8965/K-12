@@ -12,10 +12,18 @@ export function useSplitReveal(selector: string, type: 'lines' | 'words' | 'char
 
     // A small timeout ensures fonts are loaded before splitting
     const timeout = setTimeout(() => {
+      const isMobile = window.innerWidth <= 1024;
+      
       elements.forEach(el => {
-        const split = new SplitType(el as HTMLElement, { types: type });
-        const target = type === 'lines' ? split.lines : type === 'words' ? split.words : split.chars;
-        if (!target) return;
+        let target: any;
+        
+        if (isMobile) {
+          target = el;
+        } else {
+          const split = new SplitType(el as HTMLElement, { types: type });
+          target = type === 'lines' ? split.lines : type === 'words' ? split.words : split.chars;
+          if (!target) return;
+        }
 
         // Reset parent overflow to allow 3D transforms without clipping if needed
         (el as HTMLElement).style.perspective = '1000px';

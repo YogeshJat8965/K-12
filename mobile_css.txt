@@ -1,0 +1,71 @@
+src/components/playground/AgentBuilderBanner.tsx:         @media (max-width: 1024px) {
+src/components/playground/AgentBuilderBanner.tsx:           .abb-section { padding: 40px 20px; }
+src/components/playground/AgentBuilderBanner.tsx:         @media (max-width: 768px) {
+src/components/playground/AgentBuilderBanner.tsx:           .abb-section { padding: 40px 16px; }
+src/components/playground/AgentBuilderBanner.tsx:         @media (max-width: 480px) {
+src/components/playground/AgentBuilderBanner.tsx:           .abb-h3 { font-size: 1.2rem; }
+src/components/playground/AgentLibrary.tsx:         @media (max-width: 1200px) {
+src/components/playground/AgentLibrary.tsx:           .al-grid { grid-template-columns: repeat(3, 1fr); }
+src/components/playground/AgentLibrary.tsx:         @media (max-width: 900px) {
+src/components/playground/AgentLibrary.tsx:           .al-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+src/components/playground/AgentLibrary.tsx:         @media (max-width: 600px) {
+src/components/playground/AgentLibrary.tsx:           .al-section { padding: 50px 16px; }
+src/components/playground/CtaBanner.tsx:         @media (max-width: 768px) {
+src/components/playground/CtaBanner.tsx:           .cta-container {
+src/components/playground/CtaBanner.tsx:             padding: 40px 24px 32px 24px;
+src/components/playground/CtaBanner.tsx:             border-radius: 16px;
+src/components/playground/CtaBanner.tsx:             background: linear-gradient(rgba(9, 2, 59, 0.65), rgba(9, 2, 59, 0.65)), url('${BgImage}') center left no-repeat;
+src/components/playground/HowItWorks.tsx:         @media (max-width: 1024px) {
+src/components/playground/HowItWorks.tsx:           .hiw-section { padding: 20px 20px 60px; }
+src/components/playground/HowItWorks.tsx:         @media (max-width: 768px) {
+src/components/playground/HowItWorks.tsx:           .hiw-section { padding: 20px 16px 60px; }
+src/components/playground/HowItWorks.tsx:         @media (max-width: 480px) {
+src/components/playground/HowItWorks.tsx:           .hiw-h2 { font-size: 1.5rem; }
+src/components/playground/PlayToMastery.tsx:         @media (max-width: 1024px) {
+src/components/playground/PlayToMastery.tsx:           .ptm-grid {
+src/components/playground/PlayToMastery.tsx:             grid-template-columns: repeat(2, 1fr);
+src/components/playground/PlayToMastery.tsx:             row-gap: 60px;
+src/components/playground/PlayToMastery.tsx:           }
+src/components/playground/PlayToMastery.tsx:         @media (max-width: 600px) {
+src/components/playground/PlayToMastery.tsx:           .ptm-grid {
+src/components/playground/PlayToMastery.tsx:             grid-template-columns: 1fr;
+src/components/playground/PlayToMastery.tsx:           }
+src/components/playground/PlaygroundHero.tsx:         @media (max-width: 1200px) {
+src/components/playground/PlaygroundHero.tsx:           .ph-right-img { width: 45vw; right: 2%; }
+src/components/playground/PlaygroundHero.tsx:         @media (max-width: 1024px) {
+src/components/playground/PlaygroundHero.tsx:           .ph-section { padding-top: 160px; padding-left: 20px; padding-right: 20px; }
+src/components/playground/PlaygroundHero.tsx:         @media (max-width: 768px) {
+src/components/playground/PlaygroundHero.tsx:           .ph-section { padding-left: 16px; padding-right: 16px; }
+src/components/playground/PlaygroundHero.tsx:         @media (max-width: 480px) {
+src/components/playground/PlaygroundHero.tsx:           .ph-h1 { font-size: 1.5rem; }
+src/components/playground/SafeByDesign.tsx:         @media (max-width: 1200px) {
+src/components/playground/SafeByDesign.tsx:           .sbd-top-row { flex-direction: column; align-items: flex-start; gap: 40px; }
+src/components/playground/SafeByDesign.tsx:         @media (max-width: 768px) {
+src/components/playground/SafeByDesign.tsx:           .sbd-section { padding: 60px 24px; }
+src/components/playground/SafeByDesign.tsx:         @media (max-width: 480px) {
+src/components/playground/SafeByDesign.tsx:           .sbd-h2 { font-size: 28px; white-space: normal; }
+src/components/playground/SchoolsAndEducators.tsx:         @media (max-width: 1024px) {
+src/components/playground/SchoolsAndEducators.tsx:           .sae-grid {
+src/components/playground/SchoolsAndEducators.tsx:             grid-template-columns: 1fr;
+src/components/playground/SchoolsAndEducators.tsx:           }
+src/components/playground/SchoolsAndEducators.tsx:         @media (max-width: 600px) {
+src/components/playground/SchoolsAndEducators.tsx:           .sae-card {
+src/components/playground/SchoolsAndEducators.tsx:             flex-direction: column;
+src/components/playground/SchoolsAndEducators.tsx:             padding: 32px 24px;
+src/components/playground/SchoolsAndEducators.tsx:             gap: 24px;
+src/components/playground/SchoolsAndEducators.tsx:             align-items: flex-start;
+src/components/playground/SchoolsAndEducators.tsx:           }
+src/components/playground/WhatIsPlayground.tsx:         @media (max-width: 1200px) {
+src/components/playground/WhatIsPlayground.tsx:           .wip-section { padding: 40px 48px; }
+src/components/playground/WhatIsPlayground.tsx:         @media (max-width: 1024px) {
+src/components/playground/WhatIsPlayground.tsx:           .wip-section { padding: 40px 20px; }
+src/components/playground/WhatIsPlayground.tsx:         @media (max-width: 768px) {
+src/components/playground/WhatIsPlayground.tsx:           .wip-section { padding: 40px 16px; }
+src/components/playground/WhatIsPlayground.tsx:         @media (max-width: 480px) {
+src/components/playground/WhatIsPlayground.tsx:           .wip-left { max-width: 280px; }
+src/components/playground/WhatStudentsLearn.tsx:         @media (max-width: 1024px) {
+src/components/playground/WhatStudentsLearn.tsx:           .wsl-section { padding: 80px 20px; }
+src/components/playground/WhatStudentsLearn.tsx:         @media (max-width: 768px) {
+src/components/playground/WhatStudentsLearn.tsx:           .wsl-section { padding: 60px 16px; }
+src/components/playground/WhatStudentsLearn.tsx:         @media (max-width: 480px) {
+src/components/playground/WhatStudentsLearn.tsx:           .wsl-grid { grid-template-columns: 1fr; }
