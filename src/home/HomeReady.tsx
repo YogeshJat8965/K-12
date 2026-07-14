@@ -113,7 +113,7 @@ export default function HomeReady() {
       <style>{`
         .hr-section {
           width: 100%;
-          padding: 100px 0 0 0;
+          padding: 40px 0 0 0;
           font-family: 'DM Sans', sans-serif;
           background-image: url('${bgImage}');
           background-size: cover;

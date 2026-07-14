@@ -59,7 +59,7 @@ export default function HomeAdobe() {
         .ha-box {
           max-width: 1619px;
           margin: 0 auto;
-          background: linear-gradient(-45deg, #FF9E00, #FF0055, #D900C3, #FF9E00);
+          background: linear-gradient(-45deg, #F3EFFF, #E5D9FF, #F8F4FF, #F3EFFF);
           background-size: 300% 300%;
           animation: runningBrightGradient 15s ease infinite;
           border-radius: 43px;
@@ -67,10 +67,10 @@ export default function HomeAdobe() {
           display: flex;
           align-items: center;
           gap: 40px;
-          color: #fff;
+          color: #1A1A2E;
           position: relative;
           overflow: hidden;
-          box-shadow: 0px 10px 30px rgba(255, 0, 85, 0.2);
+          box-shadow: 0px 10px 30px rgba(91, 50, 234, 0.1);
         }
 
         @keyframes runningBrightGradient {
@@ -106,21 +106,21 @@ export default function HomeAdobe() {
           line-height: 1.25;
           margin-bottom: 20px;
           max-width: 619px;
-          color: #FFFFFF;
+          color: #1A1A2E;
         }
 
         .ha-subheadline {
           font-weight: 500;
           font-size: 20px;
           margin-bottom: 20px;
-          color: #FFFFFF;
+          color: #5B32EA;
         }
 
         .ha-desc {
           font-weight: 400;
           font-size: 18px;
           line-height: 1.6;
-          color: #FFFFFF;
+          color: #4B5563;
           opacity: 1;
           margin-bottom: 32px;
           max-width: 580px;
@@ -131,18 +131,18 @@ export default function HomeAdobe() {
           display: inline-flex;
           border-radius: 12px;
           padding: 2px;
-          background: conic-gradient(from 0deg, #FF9E00, #FF0055, #D900C3, #FF9E00);
+          background: conic-gradient(from 0deg, #5B32EA, #9146EA, #C95DEB, #5B32EA);
           animation: conicRotateBright 3s linear infinite;
           cursor: pointer;
         }
 
         @keyframes conicRotateBright {
-          100% { background: conic-gradient(from 360deg, #FF9E00, #FF0055, #D900C3, #FF9E00); }
+          100% { background: conic-gradient(from 360deg, #5B32EA, #9146EA, #C95DEB, #5B32EA); }
         }
 
         .ha-btn {
           background: #FFFFFF;
-          color: #FF0055;
+          color: #5B32EA;
           border: none;
           padding: 16px 36px;
           border-radius: 10px;
@@ -187,21 +187,21 @@ export default function HomeAdobe() {
         }
 
         .ha-feature-card {
-          background: rgba(255, 255, 255, 0.12);
-          border: 1px solid rgba(255, 255, 255, 0.3);
-          backdrop-filter: blur(12px);
+          background: #FFFFFF;
+          border: 1px solid #E0D4FF;
           border-radius: 18px;
           padding: 16px 24px;
           display: flex;
           align-items: center;
           gap: 20px;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.03);
         }
 
         .ha-feature-bullet {
           width: 18px;
           height: 18px;
           border-radius: 50%;
-          background: rgba(255, 255, 255, 0.85);
+          background: #5B32EA;
           flex-shrink: 0;
           margin-top: 2px; /* Align with first line of text */
         }
@@ -210,7 +210,7 @@ export default function HomeAdobe() {
           font-weight: 500;
           font-size: 16px;
           line-height: 1.5;
-          color: #FFFFFF;
+          color: #111827;
           letter-spacing: 0.4px;
         }
 

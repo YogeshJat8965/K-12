@@ -17,9 +17,9 @@ const Sparkle = ({ className }: { className?: string }) => (
 
 const TargetIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="12" cy="12" r="9" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    <circle cx="12" cy="12" r="5" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    <circle cx="12" cy="12" r="1.5" fill="#2563EB"/>
+    <circle cx="12" cy="12" r="9" stroke="#7C3AED" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <circle cx="12" cy="12" r="5" stroke="#7C3AED" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <circle cx="12" cy="12" r="1.5" fill="#7C3AED"/>
   </svg>
 );
 
@@ -105,7 +105,7 @@ export default function LearningStages() {
               onClick={() => setActiveTab(index)}
               className={`px-6 py-3 rounded-full text-[15px] font-semibold transition-all duration-300 ${
                 activeTab === index 
-                ? 'bg-[#3B82F6] text-white shadow-md' 
+                ? 'bg-[#7C3AED] text-white shadow-md' 
                 : 'bg-[#F3F4F6] text-[#4B5563] hover:bg-[#E5E7EB]'
               }`}
             >
@@ -125,7 +125,7 @@ export default function LearningStages() {
                 </div>
                 
                 <div className="w-full md:w-[55%] lg:w-[52%] p-6 md:p-10 lg:p-12 pr-24 lg:pr-32 flex flex-col justify-center relative bg-white z-10">
-                  <span className="text-[#3B82F6] font-semibold text-[14px] mb-2">Grades 3–5</span>
+                  <span className="text-[#7C3AED] font-semibold text-[14px] mb-2">Grades 3–5</span>
                   <h3 className="text-[#1A1A2E] text-[26px] md:text-[30px] font-bold leading-tight mb-3">
                     Discovery &<br/>Exploration
                   </h3>
@@ -135,8 +135,8 @@ export default function LearningStages() {
 
                   <div className="absolute right-6 md:right-10 top-1/2 -translate-y-1/2 hidden md:flex items-center justify-center">
                     <Sparkle className="absolute -top-6 -left-6" />
-                    <div className="w-[64px] h-[64px] rounded-full bg-[#EEF2FF] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                      <Rocket className="w-6 h-6 text-[#3B82F6]" strokeWidth={2} />
+                    <div className="w-[64px] h-[64px] rounded-full bg-[#F3EFFF] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                      <Rocket className="w-6 h-6 text-[#7C3AED]" strokeWidth={2} />
                     </div>
                     <Sparkle className="absolute -bottom-6 -right-6" />
                   </div>
@@ -152,7 +152,7 @@ export default function LearningStages() {
                 </div>
                 
                 <div className="w-full md:w-[55%] lg:w-[52%] p-6 md:p-10 lg:p-12 pr-24 lg:pr-32 flex flex-col justify-center relative bg-white z-10">
-                  <span className="text-[#3B82F6] font-semibold text-[14px] mb-2">Grades 6–8</span>
+                  <span className="text-[#7C3AED] font-semibold text-[14px] mb-2">Grades 6–8</span>
                   <h3 className="text-[#1A1A2E] text-[26px] md:text-[30px] font-bold leading-tight mb-3">
                     Skill Building &<br/>Innovation
                   </h3>
@@ -162,8 +162,8 @@ export default function LearningStages() {
 
                   <div className="absolute right-6 md:right-10 top-1/2 -translate-y-1/2 hidden md:flex items-center justify-center">
                     <Sparkle className="absolute -top-6 -left-6" />
-                    <div className="w-[64px] h-[64px] rounded-full bg-[#EEF2FF] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                      <Lightbulb className="w-6 h-6 text-[#3B82F6]" strokeWidth={2} />
+                    <div className="w-[64px] h-[64px] rounded-full bg-[#F3EFFF] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                      <Lightbulb className="w-6 h-6 text-[#7C3AED]" strokeWidth={2} />
                     </div>
                     <Sparkle className="absolute -bottom-6 -right-6" />
                   </div>
@@ -179,7 +179,7 @@ export default function LearningStages() {
                 </div>
                 
                 <div className="w-full md:w-[55%] lg:w-[52%] p-6 md:p-10 lg:p-12 pr-24 lg:pr-32 flex flex-col justify-center relative bg-white z-10">
-                  <span className="text-[#3B82F6] font-semibold text-[14px] mb-2">Grades 9–12</span>
+                  <span className="text-[#7C3AED] font-semibold text-[14px] mb-2">Grades 9–12</span>
                   <h3 className="text-[#1A1A2E] text-[26px] md:text-[30px] font-bold leading-tight mb-3">
                     Advanced Application &<br/>Career Readiness
                   </h3>
@@ -189,7 +189,7 @@ export default function LearningStages() {
 
                   <div className="absolute right-6 md:right-10 top-1/2 -translate-y-1/2 hidden md:flex items-center justify-center">
                     <Sparkle className="absolute -top-6 -left-6" />
-                    <div className="w-[64px] h-[64px] rounded-full bg-[#EEF2FF] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                    <div className="w-[64px] h-[64px] rounded-full bg-[#F3EFFF] flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                       <TargetIcon />
                     </div>
                     <Sparkle className="absolute -bottom-6 -right-6" />

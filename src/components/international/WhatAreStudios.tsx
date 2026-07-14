@@ -159,42 +159,42 @@ export default function WhatAreStudios() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
 
               <div className="studio-grid-item bg-white border border-gray-100 rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow">
-                <Leaf className="w-8 h-8 text-[#3B82F6] mb-3" />
+                <Leaf className="w-8 h-8 text-[#7C3AED] mb-3" />
                 <p className="text-[12px] font-bold text-[#1A1A2E] leading-tight">Hands-on<br />learning</p>
               </div>
 
               <div className="studio-grid-item bg-white border border-gray-100 rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow">
-                <Users className="w-8 h-8 text-[#3B82F6] mb-3" />
+                <Users className="w-8 h-8 text-[#7C3AED] mb-3" />
                 <p className="text-[12px] font-bold text-[#1A1A2E] leading-tight">Collaborative<br />projects</p>
               </div>
 
               <div className="studio-grid-item bg-white border border-gray-100 rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow">
-                <Lightbulb className="w-8 h-8 text-[#3B82F6] mb-3" />
+                <Lightbulb className="w-8 h-8 text-[#7C3AED] mb-3" />
                 <p className="text-[12px] font-bold text-[#1A1A2E] leading-tight">Creativity and<br />innovation</p>
               </div>
 
               <div className="studio-grid-item bg-white border border-gray-100 rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow">
-                <Brain className="w-8 h-8 text-[#3B82F6] mb-3" />
+                <Brain className="w-8 h-8 text-[#7C3AED] mb-3" />
                 <p className="text-[12px] font-bold text-[#1A1A2E] leading-tight">Critical<br />thinking</p>
               </div>
 
               <div className="studio-grid-item bg-white border border-gray-100 rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow">
-                <MessageSquareText className="w-8 h-8 text-[#3B82F6] mb-3" />
+                <MessageSquareText className="w-8 h-8 text-[#7C3AED] mb-3" />
                 <p className="text-[12px] font-bold text-[#1A1A2E] leading-tight">Communication<br />skills</p>
               </div>
 
               <div className="studio-grid-item bg-white border border-gray-100 rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow">
-                <Monitor className="w-8 h-8 text-[#3B82F6] mb-3" />
+                <Monitor className="w-8 h-8 text-[#7C3AED] mb-3" />
                 <p className="text-[12px] font-bold text-[#1A1A2E] leading-tight">Digital<br />literacy</p>
               </div>
 
               <div className="studio-grid-item bg-white border border-gray-100 rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow">
-                <ShieldCheck className="w-8 h-8 text-[#3B82F6] mb-3" />
+                <ShieldCheck className="w-8 h-8 text-[#7C3AED] mb-3" />
                 <p className="text-[12px] font-bold text-[#1A1A2E] leading-tight">Ethical technology<br />awareness</p>
               </div>
 
               <div className="studio-grid-item bg-white border border-gray-100 rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow">
-                <Presentation className="w-8 h-8 text-[#3B82F6] mb-3" />
+                <Presentation className="w-8 h-8 text-[#7C3AED] mb-3" />
                 <p className="text-[12px] font-bold text-[#1A1A2E] leading-tight">Presentation and<br />showcase opportunities</p>
               </div>
 

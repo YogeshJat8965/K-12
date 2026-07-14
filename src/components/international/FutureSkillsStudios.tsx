@@ -40,11 +40,11 @@ const studios = [
     theme: "blue",
     icon: PenTool,
     tags: ["Graphic Design", "Digital Storytelling", "Creative Media", "Visual Communication", "Content Creation", "AI-Powered Creativity"],
-    colorHex: "#2563EB",
-    bgHex: "#EFF6FF",
+    colorHex: "#ea1f15ff", 
+    bgHex: "#e62720ff",
     image: img2,
     bgClass: "bg-blue-600"
-  },
+  }, 
   {
     title: "AI Builders\nStudio",
     desc: "Students develop foundational AI engineering and computational thinking skills through beginner-friendly innovation projects and intelligent systems exploration.",
@@ -149,7 +149,7 @@ export default function FutureSkillsStudios() {
                       {studio.title}
                     </h3>
                     {studio.subtitle && (
-                      <p className="text-[11px] text-[#2563EB] font-bold mt-1 uppercase tracking-wider">{studio.subtitle}</p>
+                      <p className="text-[11px] text-[#EA1F15] font-bold mt-1 uppercase tracking-wider">{studio.subtitle}</p>
                     )}
                   </div>
                 </div>
@@ -180,7 +180,7 @@ export default function FutureSkillsStudios() {
 
         {/* View All Studios Button */}
         <div className="mt-16 flex justify-center fss-btn">
-          <button className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold text-white transition-all duration-300 bg-[#2563EB] rounded-full overflow-hidden hover:bg-[#1D4ED8] hover:shadow-[0_8px_25px_rgba(37,99,235,0.4)]">
+          <button className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold text-white transition-all duration-300 bg-[#7C3AED] rounded-full overflow-hidden hover:bg-[#6D28D9] hover:shadow-[0_8px_25px_rgba(124,58,237,0.4)]">
             <span className="relative z-10 text-[15px]">Explore All 15+ Studios</span>
             <ArrowRight className="relative z-10 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={2.5} />
           </button>

@@ -170,11 +170,11 @@ export default function TrustedPartnerships() {
           
           {/* Buttons Overlay */}
           <div className="relative z-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-5 px-4">
-            <button className="flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-3 bg-[#3B82F6] text-white rounded-[8px] font-bold text-[13px] sm:text-[14px] hover:bg-blue-700 hover:shadow-[0_10px_20px_-10px_rgba(59,130,246,0.6)] transition-all duration-300 tracking-wide uppercase">
+            <button className="flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-3 bg-[#7C3AED] text-white rounded-[8px] font-bold text-[13px] sm:text-[14px] hover:bg-[#6D28D9] hover:shadow-[0_10px_20px_-10px_rgba(124,58,237,0.6)] transition-all duration-300 tracking-wide uppercase">
               Partner with Skillzza
               <ArrowRight size={18} strokeWidth={2.5} />
             </button>
-            <button className="flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-3 bg-white border border-[#3B82F6] text-[#3B82F6] rounded-[8px] font-bold text-[13px] sm:text-[14px] hover:bg-[#F4F7FF] hover:shadow-[0_10px_20px_-10px_rgba(59,130,246,0.2)] transition-all duration-300 tracking-wide uppercase">
+            <button className="flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-3 bg-[#7C3AED] text-white rounded-[8px] font-bold text-[13px] sm:text-[14px] hover:bg-[#6D28D9] hover:shadow-[0_10px_20px_-10px_rgba(124,58,237,0.6)] transition-all duration-300 tracking-wide uppercase">
               Request School Presentation
               <Play size={14} fill="currentColor" />
             </button>

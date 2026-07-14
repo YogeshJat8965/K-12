@@ -255,7 +255,7 @@ export default function HomePhilosophy() {
           
           <div className="hp-quote">
             <p className="hp-quote-text" ref={quoteRef}>
-              {"Students Don't Just Learn Future Skills -".split(' ').map((w,i) => (
+              {"Students Don't Just Learn Future Skills".split(' ').map((w,i) => (
                 <span key={'q1-'+i} className="hp-quote-word" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>{w}</span>
               ))}
               <br />

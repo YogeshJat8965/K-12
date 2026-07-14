@@ -1,12 +1,54 @@
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import logoImg from '../assets/skillzza-k12-horizontal copy.png';
 
 const NAV_LINKS = [
-  { label: 'Vidya AI',           href: '#' },
-  { label: 'Skill Studio',       href: '/skill-studio' },
-  { label: 'Virtual Internship', href: '/' },
-  { label: 'AI Playground',      href: '/ai-playground' },
-  { label: 'International Studio', href: '/international-studio' },
+  {
+    label: 'Vedya AI',
+    href: '#',
+    dropdown: [
+      { label: 'What is Vedya?', href: '#' },
+      { label: 'Vedya for Students', href: '#' },
+      { label: 'Vedya for Teachers', href: '#' },
+      { label: 'Responsible AI', href: '#' },
+    ],
+  },
+  {
+    label: 'Skill Studio',
+    href: '/skill-studio',
+    dropdown: [
+      { label: 'National', href: '/skill-studio' },
+      { label: 'International', href: '/international-studio' },
+    ],
+  },
+  {
+    label: 'Virtual Internship',
+    href: '/virtual-internship',
+    dropdown: [
+      { label: 'GenAI Innovators Fellowship', href: '#' },
+      { label: 'AI & Data Engineering Accelerator', href: '#' },
+      { label: 'Teen Finance Mastery Lab', href: '#' },
+      { label: 'UX & Product Innovation Studio', href: '#' },
+      { label: 'Mind+Wellness Program for Teens', href: '#' },
+      { label: 'Sustainability in Climate Innovator', href: '#' },
+      { label: 'the Entrepreneurship Thinker', href: '#' },
+      { label: 'Teen Storyteller and Media Journalist', href: '#' },
+      { label: "Digital Marketing for Youth Start-up's", href: '#' },
+      { label: 'Deepfake Awareness & AI Media Literacy', href: '#' },
+    ],
+  },
+  {
+    label: 'Learners Segment',
+    href: '#',
+    dropdown: [
+      { label: 'For Students', href: '#' },
+      { label: 'For Schools', href: '/learners' },
+      { label: 'For tutor', href: '#' },
+    ],
+  },
+  { label: 'AI Playground', href: '/ai-playground' },
+  { label: 'CCMM', href: '#' },
+  { label: 'Educator Circle', href: '#' },
 ];
 
 export default function HomeNavbar() {
@@ -73,7 +115,13 @@ export default function HomeNavbar() {
           flex: 1;
           justify-content: flex-end;
         }
-        .hn-links a {
+        .hn-nav-item {
+          position: relative;
+          display: flex;
+          align-items: center;
+          height: 70px;
+        }
+        .hn-links a.hn-main-link {
           font-family: 'Poppins', sans-serif;
           font-weight: 400;
           font-size: 14.5px;
@@ -82,9 +130,51 @@ export default function HomeNavbar() {
           white-space: nowrap;
           transition: color 0.2s ease;
           letter-spacing: 0.1px;
+          display: flex;
+          align-items: center;
+          gap: 4px;
         }
-        .hn-links a:hover {
+        .hn-links a.hn-main-link:hover {
           color: #1A1A2E;
+        }
+
+        /* ── Dropdown ── */
+        .hn-dropdown {
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%) translateY(10px);
+          background: #ffffff;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+          border-radius: 8px;
+          border: 1px solid #F0F0F0;
+          padding: 12px 0;
+          min-width: 260px;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.2s ease;
+          pointer-events: none;
+        }
+        .hn-nav-item:hover .hn-dropdown {
+          opacity: 1;
+          visibility: visible;
+          transform: translateX(-50%) translateY(0);
+          pointer-events: auto;
+        }
+        .hn-dropdown a {
+          display: block;
+          padding: 10px 20px;
+          font-family: 'Poppins', sans-serif;
+          font-size: 14px;
+          color: #6B7280;
+          text-decoration: none;
+          transition: background 0.15s, color 0.15s;
+          white-space: normal;
+          line-height: 1.4;
+        }
+        .hn-dropdown a:hover {
+          background: #F8F8F8;
+          color: #6C3CF7;
         }
 
         /* ── Get Started button ────────────────────────── */
@@ -175,15 +265,24 @@ export default function HomeNavbar() {
             }}
             className="hn-logo"
           >
-            <span className="hn-logo-skillzza">SKILLZZA</span>
-            <span className="hn-logo-k12">K-12</span>
+            <img src={logoImg} alt="Skillzza K-12" style={{ height: '36px', width: 'auto', objectFit: 'contain' }} />
           </a>
 
           {/* Desktop nav links */}
           <ul className="hn-links">
             {NAV_LINKS.map(l => (
-              <li key={l.label}>
-                <a href={l.href}>{l.label}</a>
+              <li key={l.label} className="hn-nav-item">
+                <a href={l.href} className="hn-main-link">
+                  {l.label}
+                  {l.dropdown && <ChevronDown size={14} />}
+                </a>
+                {l.dropdown && (
+                  <div className="hn-dropdown">
+                    {l.dropdown.map(d => (
+                      <a key={d.label} href={d.href}>{d.label}</a>
+                    ))}
+                  </div>
+                )}
               </li>
             ))}
           </ul>
@@ -204,9 +303,20 @@ export default function HomeNavbar() {
         {/* Mobile drawer */}
         <div className={`hn-mobile${open ? ' is-open' : ''}`}>
           {NAV_LINKS.map(l => (
-            <a key={l.label} href={l.href} onClick={() => setOpen(false)}>
-              {l.label}
-            </a>
+            <div key={l.label} style={{ display: 'flex', flexDirection: 'column' }}>
+              <a href={l.href} onClick={() => setOpen(false)} style={{ fontWeight: l.dropdown ? 600 : 400 }}>
+                {l.label}
+              </a>
+              {l.dropdown && (
+                <div style={{ paddingLeft: '16px', display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '8px' }}>
+                  {l.dropdown.map(d => (
+                    <a key={d.label} href={d.href} onClick={() => setOpen(false)} style={{ fontSize: '13px', borderBottom: 'none', padding: '6px 0' }}>
+                      {d.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
           <a href="#" className="hn-btn" onClick={() => setOpen(false)}>
             Get Started

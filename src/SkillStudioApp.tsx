@@ -802,10 +802,10 @@ export default function SkillStudioApp() {
 
 
         {/* Impact Measurement Framework Section */}
-        <section className="pt-24 pb-8 bg-[#F9F4FA] relative z-20">
+        <section className="pt-24 pb-8 bg-[#F5F0F6] relative z-20">
           <div className="max-w-[1280px] mx-auto px-6">
 
-            {/* Header */}
+            {/* Header */} 
             <div className="mb-14 text-left">
               <ScrollRevealHeadline>
                 <h2 className="text-[32px] md:text-[38px] font-bold text-[#1A1A2E] mb-3 tracking-tight leading-[1.2]">

@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import careerIcon from '../assets/landing page/Homepage (1920x 1080px) – 2/career discovery icon.png';
 import schoolIcon from '../assets/landing page/Homepage (1920x 1080px) – 2/institution icon.png';
 import teachingIcon from '../assets/landing page/Homepage (1920x 1080px) – 2/teaching icon.png';
+import bgImg from '../assets/Homepage (1920x 1080px) – 2/background-img.jpeg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,9 +19,6 @@ export default function HomeCTA() {
           start: 'top 80%'
         }
       });
-
-      // Background grid fade
-      tl.to('.cta-bg-grid', { opacity: 0.3, duration: 1.5, ease: 'none' }, 0);
 
       // Left content
       tl.from('.cta-badge', { y: -50, opacity: 0, duration: 0.8, ease: 'elastic.out(1, 0.5)' }, 0.2);
@@ -44,41 +42,12 @@ export default function HomeCTA() {
           width: 100%;
           padding: 120px 0;
           font-family: 'DM Sans', sans-serif;
-          background: linear-gradient(-45deg, #EDE9FE, #E0E7FF, #FCE7F3, #EDE9FE);
-          background-size: 300% 300%;
-          animation: fluidCtaGradient 15s ease infinite;
+          background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('${bgImg}');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
           position: relative;
           overflow: hidden;
-        }
-
-        @keyframes fluidCtaGradient {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-
-        .cta-bg-grid {
-          position: absolute;
-          top: 0; left: 0; right: 0; bottom: 0;
-          background-image: 
-            linear-gradient(rgba(108, 60, 247, 0.08) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(108, 60, 247, 0.08) 1px, transparent 1px);
-          background-size: 40px 40px;
-          background-position: center;
-          opacity: 0;
-          z-index: 0;
-        }
-
-        .cta-glow {
-          position: absolute;
-          top: 50%;
-          right: -10%;
-          width: 800px;
-          height: 800px;
-          background: radial-gradient(circle, rgba(108, 60, 247, 0.08) 0%, rgba(108, 60, 247, 0) 60%);
-          transform: translateY(-50%);
-          z-index: 0;
-          pointer-events: none;
         }
 
         .cta-inner {
@@ -126,7 +95,7 @@ export default function HomeCTA() {
           font-weight: 400;
           font-size: 16px;
           line-height: 1.6;
-          color: #6B7280;
+          color: #FFFFFF;
           margin: 0;
         }
 
@@ -299,8 +268,6 @@ export default function HomeCTA() {
       `}</style>
 
       <section className="cta-section" ref={sectionRef}>
-        <div className="cta-bg-grid"></div>
-        <div className="cta-glow"></div>
         <div className="cta-inner">
           <div className="cta-left">
             {/* <span className="cta-badge">TAKE THE FIRST STEP</span> */}
