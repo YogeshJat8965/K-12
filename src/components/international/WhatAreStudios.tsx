@@ -136,14 +136,14 @@ export default function WhatAreStudios() {
           <div ref={rightRef} className="flex-1 w-full flex flex-col relative z-10 pt-4">
 
             <h2 className="text-[32px] md:text-[40px] font-bold text-[#1A1A2E] leading-tight mb-6">
-              What Are <span className="text-[#7C3AED]">Skillzza Studios?</span>
+              What Are <span className="text-[#7C3AED]">Skill Studio?</span>
             </h2>
 
             <p className="text-[#4B5563] text-[15.5px] leading-relaxed font-medium mb-4">
-              Skillzza Studios Are Structured Experiential Learning Environments That Complement Academic Education With Future-Ready Competencies.
+              Skill Studio is a structured experiential learning environment that complements academic education with future-ready competencies.
             </p>
             <p className="text-[#4B5563] text-[15.5px] leading-relaxed font-medium mb-8">
-              Rather Than Focusing Only On Participation-Based Activities, Skillzza Enables Students To Build Measurable Skills, Real-World Exposure, Digital Portfolios, And Interdisciplinary Thinking Through Guided Learning Experiences.
+              Rather than focusing only on participation-based activities, Skill Studio enables students to build measurable skills, real-world exposure, digital portfolios, and interdisciplinary thinking through guided learning experiences.
             </p>
 
             <div className="flex items-center gap-4 mb-8">

@@ -7,6 +7,8 @@ import SkillStudioApp from './SkillStudioApp.tsx';
 import DigitalCreativityApp from './DigitalCreativityApp.tsx';
 import InternationalStudioApp from './InternationalStudioApp.tsx';
 import LearnersApp from './LearnersApp.tsx';
+import LoginApp from './LoginApp.tsx';
+import ContactApp from './ContactApp.tsx';
 import './index.css';
 
 const path = window.location.pathname;
@@ -20,6 +22,8 @@ createRoot(document.getElementById('root')!).render(
      path === '/international-studio' ? <InternationalStudioApp /> :
      path === '/learners' ? <LearnersApp /> :
      path === '/virtual-internship' ? <App /> :
+     path === '/login' ? <LoginApp /> :
+     path === '/contact' ? <ContactApp /> :
      <HomeApp />}
   </StrictMode>
 );

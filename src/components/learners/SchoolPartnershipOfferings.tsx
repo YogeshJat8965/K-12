@@ -126,11 +126,11 @@ const slides: Slide[] = [
   {
     title: "The Xperience Platform",
     subtitle: "One unified learning and credentialing platform",
-    desc: "SKILLZZA K-12's proprietary learning platform brings together every studio, every capstone, and every credential in one place. Powered by Vidya AI and the Potential Meter, it gives schools, parents, and students a single view of progress, mastery, and the evolving Skill DNA Profile of every learner.",
+    desc: "SKILLZZA K-12's proprietary learning platform brings together every studio, every capstone, and every credential in one place. Powered by Vedya AI and the Potential Meter, it gives schools, parents, and students a single view of progress, mastery, and the evolving Skill DNA Profile of every learner.",
     image: img6,
     featuresLayout: 'list',
     features: [
-      { icon: <SparkleIcon />, title: "Vidya AI personal learning companion", desc: "24/7 concept coach and doubt solver." },
+      { icon: <SparkleIcon />, title: "Vedya AI personal learning companion", desc: "24/7 concept coach and doubt solver." },
       { icon: <GaugeIcon />, title: "Potential Meter tracks mastery, depth, and readiness", desc: "across all enrolled studios." },
       { icon: <BarChartIcon />, title: "School-admin dashboard", desc: "for cohort analytics, engagement, and outcome reporting." },
       { icon: <FamilyIcon />, title: "Parent portal", desc: "with transparent progress, portfolio, and credential visibility." },

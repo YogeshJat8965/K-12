@@ -320,7 +320,7 @@ export default function HomeTrusted() {
             ))}
           </div>
 
-          <p className="ht-partners-title">Trusted Partners and Framework</p>
+          <p className="ht-partners-title">Our Academic Partners</p>
           <div className="relative w-full overflow-hidden pb-6">
             <div className="flex w-max animate-marquee">
               {[1, 2].map((half) => (

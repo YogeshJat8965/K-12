@@ -22,11 +22,11 @@ export default function LearnersHero() {
             </h1>
 
             <StaggerItem className="text-[#6B7280] text-base md:text-lg leading-[1.8] mb-10 font-medium">
-              Schools Today Must Go Beyond Curriculum Delivery To Build Real-World Competencies. SKILLZZA K-12 Enables Institutions To Integrate AI, Innovation, And Experiential Learning Into Everyday Education, Preparing Students For An Evolving, Technology-Driven Future.
+              Schools today must go beyond curriculum delivery to build real-world competencies. SKILLZZA K-12 enables institutions to integrate AI, innovation, and experiential learning into everyday education, preparing students for an evolving, technology-driven future.
             </StaggerItem>
 
             <StaggerItem className="flex flex-wrap items-center gap-4 pb-8">
-              <button className="flex items-center gap-2 bg-[#5B32EA] text-white px-6 py-3.5 rounded-lg font-semibold hover:bg-[#4A25C7] hover:scale-105 active:scale-95 transition-all">
+              <button onClick={() => window.location.href = '/contact'} className="flex items-center gap-2 bg-[#5B32EA] text-white px-6 py-3.5 rounded-lg font-semibold hover:bg-[#4A25C7] hover:scale-105 active:scale-95 transition-all">
                 <Play className="w-4 h-4 fill-current" />
                 Start Learning
               </button>

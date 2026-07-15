@@ -244,9 +244,9 @@ export default function VIHero() {
             <div className="vih-line"></div>
             
             <p className="vih-desc">
-              <span className="vih-desc-purple">Skillzza Virtual</span> Internships Are Structured, Mentor-Led, Project-Based 
-              Learning Experiences That Give School Students Their First Real-World 
-              Work Exposure - Building Both Clarity And Confidence Before College.
+              <span className="vih-desc-purple">Skill Virtual</span> Internships are structured, mentor-led, project-based 
+              learning experiences that give school students their first real-world 
+              work exposure - building both clarity and confidence before college.
             </p>
             
             <div className="vih-features">
@@ -276,10 +276,10 @@ export default function VIHero() {
               </div>
             </div>
             <div className="vih-btn-wrapper">
-              <button className="vih-btn">
+              <a href="/login" className="vih-btn" style={{ textDecoration: 'none' }}>
                 <Play size={20} fill="currentColor" />
                 Get started
-              </button>
+              </a>
             </div>
           </div>
           

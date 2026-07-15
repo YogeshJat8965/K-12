@@ -221,9 +221,9 @@ export default function WhatIsVI() {
           <h2 className="wivi-h2">What Is A Virtual Internship?</h2>
           
           <p className="wivi-subtitle">
-            A Virtual Internship Is A Structured, Online Work Experience Where Students Engage In Real-World, Industry-Inspired Tasks -<br className="hidden md:block" />
-            Designed To Simulate How Professionals Actually Work. Unlike Traditional Learning Models That Focus On Theory, Virtual<br className="hidden md:block" />
-            Internships Are <span className="wivi-subtitle-highlight">Application-Driven, Outcome-Focused, Flexible, And Mentor-Guided.</span>
+            A Virtual Internship is a structured, online work experience where students engage in real-world, industry-inspired tasks -<br className="hidden md:block" />
+            Designed to simulate how professionals actually work. Unlike traditional learning models that focus on theory, virtual<br className="hidden md:block" />
+            internships are <span className="wivi-subtitle-highlight">application-driven, outcome-focused, flexible, and mentor-guided.</span>
           </p>
 
           <div className="wivi-grid" ref={cardsRef}>
@@ -241,8 +241,8 @@ export default function WhatIsVI() {
           </div>
 
           <p className="wivi-footer-text">
-            While Such Experiences Have Traditionally Been Available Only To University Students, Skillzza Brings This Powerful Model To<br className="hidden md:block" />
-            <span className="wivi-subtitle-highlight">Grades 6-12</span> - Ensuring Early Exposure In A Safe, Age-Appropriate Environment.
+            While such experiences have traditionally been available only to university students, Skillzza brings this powerful model to<br className="hidden md:block" />
+            <span className="wivi-subtitle-highlight">Grades 6-12</span> - Ensuring early exposure in a safe, age-appropriate environment.
           </p>
           
         </div>

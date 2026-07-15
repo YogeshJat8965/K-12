@@ -312,9 +312,9 @@ export default function WhyVIMatters() {
               <span className="purple">Matter Today</span>
             </h2>
             <p className="wvm-desc">
-              Students Today Are Required To Make Some Of The Most Important Decisions Of 
-              Their Lives - Choosing Streams, Careers, And Colleges - Often Without Ever 
-              Experiencing What Those Paths Actually Involve.
+              Students today are required to make some of the most important decisions of 
+              their lives - choosing streams, careers, and colleges - often without ever 
+              experiencing what those paths actually involve.
             </p>
 
             <div className="wvm-cards-wrapper">

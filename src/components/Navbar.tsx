@@ -52,6 +52,17 @@ const NAV_LINKS = [
   { label: 'Educator Circle', href: '#' },
 ];
 
+const MOBILE_NAV_LINKS = [
+  { label: 'Home', href: '/home' },
+  { label: 'Skill Studio (National)', href: '/skill-studio' },
+  { label: 'Skill Studio (International)', href: '/international-studio' },
+  { label: 'Virtual Internship', href: '/virtual-internship' },
+  { label: 'Learners Segment (Schools)', href: '/learners' },
+  { label: 'AI Playground', href: '/ai-playground' },
+  { label: 'CCMM', href: '#' },
+  { label: 'Educator Circle', href: '#' },
+];
+
 /* ─── Inline SVG Social Icons (exact replicas) ─── */
 
 const WhatsAppIcon = () => (
@@ -431,6 +442,11 @@ export default function Navbar() {
           .nav-links, .nav-cta { display: none !important; }
           .nav-hamburger { display: block; }
           .nav-level3-inner { padding: 0 20px; gap: 0; }
+          .nav-logo img {
+            height: 38px !important;
+            max-width: 220px !important;
+            object-fit: contain !important;
+          }
         }
       `}</style>
 
@@ -465,7 +481,7 @@ export default function Navbar() {
             </ul>
 
             {/* Get Started */}
-            <a href="#" className="nav-cta">Get Started</a>
+            <a href="/login" className="nav-cta">Get Started</a>
 
             {/* Mobile hamburger */}
             <button
@@ -479,23 +495,12 @@ export default function Navbar() {
 
           {/* Mobile drawer */}
           <div className={`nav-mobile${open ? ' is-open' : ''}`}>
-            {NAV_LINKS.map(l => (
-              <div key={l.label} style={{ display: 'flex', flexDirection: 'column' }}>
-                <a href={l.href} onClick={() => setOpen(false)} style={{ fontWeight: l.dropdown ? 600 : 400 }}>
-                  {l.label}
-                </a>
-                {l.dropdown && (
-                  <div style={{ paddingLeft: '16px', display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '8px' }}>
-                    {l.dropdown.map(d => (
-                      <a key={d.label} href={d.href} onClick={() => setOpen(false)} style={{ fontSize: '13px', borderBottom: 'none', padding: '6px 0' }}>
-                        {d.label}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
+            {MOBILE_NAV_LINKS.map(l => (
+              <a key={l.label} href={l.href} onClick={() => setOpen(false)} style={{ fontWeight: 500 }}>
+                {l.label}
+              </a>
             ))}
-            <a href="#" className="nav-cta" onClick={() => setOpen(false)}>
+            <a href="/login" className="nav-cta" onClick={() => setOpen(false)}>
               Get Started
             </a>
           </div>

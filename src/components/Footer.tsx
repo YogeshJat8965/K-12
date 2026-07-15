@@ -107,7 +107,7 @@ export default function Footer() {
             <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">Quick Links</h3>
             <ul className="flex flex-col gap-3">
               <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">CCMM</a></li>
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Teacher Circle</a></li>
+              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Educator Circle</a></li>
               <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">AI Playground</a></li>
             </ul>
           </div>

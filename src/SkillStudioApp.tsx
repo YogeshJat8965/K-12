@@ -66,11 +66,11 @@ export default function SkillStudioApp() {
             <div className="w-full lg:w-[55%] flex flex-col items-start text-left lg:pr-4">
 
               {/* Pill Badge */}
-              <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/20 backdrop-blur-md mb-8">
+              {/* <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/20 backdrop-blur-md mb-8">
                 <span className="text-[11px] font-bold tracking-widest text-white/90">
                   SKILL STUDIOS | K-12 FUTURE SKILLS
                 </span>
-              </div>
+              </div> */}
 
               {/* Heading */}
               <ScrollRevealHeadline>
@@ -89,7 +89,7 @@ export default function SkillStudioApp() {
 
               {/* Subheading */}
               <p className="text-lg md:text-xl text-white/90 max-w-xl mb-10 leading-[1.6] font-medium">
-                An AI-Powered Learning Ecosystem Designed To Help Students Explore, Build, And Excel Beyond Traditional Education.
+                An AI-Powered learning ecosystem designed to help students explore, build, and excel beyond traditional education.
               </p>
 
               {/* Buttons */}
@@ -339,16 +339,16 @@ export default function SkillStudioApp() {
                       letterSpacing: '0%'
                     }}
                   >
-                    What is <span className="bg-gradient-to-r from-[#4200FF] via-[#E82194] to-[#FF6644] text-transparent bg-clip-text animate-pulse">Skillzza Club</span>
+                    What is <span className="bg-gradient-to-r from-[#4200FF] via-[#E82194] to-[#FF6644] text-transparent bg-clip-text animate-pulse">Skill Studio</span>
                   </h2>
                 </ScrollRevealHeadline>
 
                 <p className="text-[16px] text-[#5C6274] leading-[1.8] mb-6 font-medium">
-                  Skillzza K-12 Studios Are <span className="font-semibold text-[#5B32EA]">Not Just After-School Activities.</span> They Are Structured Skill Studios Designed To Help Students Discover Their Strengths, Build Real-World Skills, And Develop A Career-Ready Personality - All While Having Fun And Learning Through Doing.
+                  Skillzza K-12 Studios are <span className="font-semibold text-[#5B32EA]">not just after-school activities.</span> They are structured skill studios designed to help students discover their strengths, build real-world skills, and develop a career-ready personality - all while having fun and learning through doing.
                 </p>
 
                 <p className="text-[16px] text-[#5C6274] leading-[1.8] font-medium mb-8 lg:mb-0">
-                  Unlike Traditional School Clubs That Focus On Participation Certificates, Skillzza Studios Create <span className="font-semibold text-[#5B32EA]">Measurable Skill Evidence, Digital Portfolios, And Growth Milestones</span> That Students Carry Forward Into Their Academic And Professional Futures.
+                  Unlike traditional school clubs that focus on participation certificates, Skillzza Studios create <span className="font-semibold text-[#5B32EA]">measurable skill evidence, digital portfolios, and growth milestones</span> that students carry forward into their academic and professional futures.
                 </p>
               </div>
 
@@ -1037,7 +1037,7 @@ export default function SkillStudioApp() {
         </section>
         {/* Partnership Banner Section */}
         <section className="pt-12 pb-20 bg-white relative z-20">
-          <div className="max-w-[1280px] mx-auto px-6">
+          <div className="w-full max-w-[1500px] mx-auto px-4 lg:px-8">
 
             <div
               className="w-full relative shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex flex-col lg:flex-row items-center justify-between overflow-hidden py-8 lg:py-0"
@@ -1045,8 +1045,7 @@ export default function SkillStudioApp() {
                 background: 'linear-gradient(90deg, #3B6CFF 23.47%, #FF00FF 59.9%, #FF9A00 96.32%)',
                 minHeight: '232px',
                 height: 'auto',
-                borderRadius: '8px',
-                maxWidth: '1300px',
+                borderRadius: '12px',
                 margin: '0 auto'
               }}
             >
@@ -1055,7 +1054,8 @@ export default function SkillStudioApp() {
                 className="absolute hidden lg:block overflow-hidden"
                 style={{
                   width: '707px',
-                  height: '232px',
+                  height: '100%',
+                  minHeight: '260px',
                   left: '-207px',
                   top: '0',
                   borderTopRightRadius: '400px',
@@ -1069,7 +1069,8 @@ export default function SkillStudioApp() {
                   className="absolute max-w-none"
                   style={{
                     width: '500px',
-                    height: '232px',
+                    height: '100%',
+                    minHeight: '260px',
                     left: '207px',
                     top: '0',
                     objectFit: 'cover',
@@ -1079,55 +1080,52 @@ export default function SkillStudioApp() {
               </div>
 
               {/* Content (Middle & Right) */}
-              <div className="relative z-10 flex flex-col lg:flex-row items-center text-center lg:text-left justify-between w-full h-full px-6 lg:pl-[520px] lg:pr-12 gap-6 lg:gap-0">
+              <div className="relative z-10 flex flex-col w-full h-full justify-center px-6 lg:pl-[520px] lg:pr-12 py-8 lg:py-10 gap-6">
+                
+                <div className="flex flex-col lg:flex-row items-center justify-between w-full gap-6 lg:gap-0">
+                  {/* Text Block */}
+                  <div className="flex flex-col text-white max-w-[600px] text-center lg:text-left">
+                    <h3
+                      className="mb-3 text-white text-[20px] lg:text-[26px]"
+                      style={{
+                        fontFamily: '"Poppins", sans-serif',
+                        fontWeight: 600,
+                        lineHeight: '1.2',
+                      }}
+                    >
+                      Partnerships for<br />Transformational Learning
+                    </h3>
+                    <p
+                      className="opacity-95 text-white"
+                      style={{
+                        fontFamily: '"Poppins", sans-serif',
+                        fontWeight: 500,
+                        fontSize: '15px',
+                        lineHeight: '1.6',
+                      }}
+                    >
+                      We partner with forward-looking schools, industry leaders, and academic bodies to co-create learning that matters.
+                    </p>
+                  </div>
 
-                {/* Text Block */}
-                <div className="flex flex-col text-white max-w-[550px]">
-                  <h3
-                    className="mb-3 text-white text-[20px] lg:text-[24px]"
-                    style={{
-                      color: '#FFFFFF',
-                      fontFamily: '"Poppins", sans-serif',
-                      fontWeight: 600,
-                      lineHeight: '111%',
-                      letterSpacing: '0%'
-                    }}
-                  >
-                    Partnerships for<br />Transformational Learning
-                  </h3>
-                  <p
-                    className="opacity-95 text-white"
-                    style={{
-                      color: '#FFFFFF',
-                      fontFamily: '"Poppins", sans-serif',
-                      fontWeight: 500,
-                      fontSize: '14px',
-                      lineHeight: '166%',
-                      letterSpacing: '0%',
-                      textTransform: 'capitalize'
-                    }}
-                  >
-                    We partner with forward-looking schools, industry leaders, and academic bodies to co-create learning that matters. Whether you're a school seeking future-ready programmes, a brand looking to invest in the next generation, or an institution aligning with NEP 2020, we'd love to build with you
+                  {/* Button */}
+                  <div className="shrink-0 lg:translate-x-4">
+                    <MagneticButton>
+                      <button className="bg-white text-[#3B6CFF] font-bold text-[13px] px-8 py-3.5 rounded-[8px] flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors uppercase tracking-wide shadow-md hover:shadow-lg">
+                        PARTNER WITH US <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </MagneticButton>
+                  </div>
+                </div>
+
+                {/* Bottom Italic Text Inside Banner */}
+                <div className="w-full text-center lg:text-left pt-5 border-t border-white/25 mt-2">
+                  <p className="text-white text-[15px] sm:text-[17px] lg:text-[19px] font-bold italic whitespace-nowrap">
+                    Empowering the Next Generation of AI Thinkers.
                   </p>
                 </div>
 
-                {/* Button */}
-                <div className="shrink-0 translate-x-4">
-                  <MagneticButton>
-                    <button className="bg-white text-[#3B6CFF] font-bold text-[12px] px-6 py-3 rounded-[8px] flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors uppercase tracking-wide">
-                      PARTNER WITH US <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
-                  </MagneticButton>
-                </div>
-
               </div>
-            </div>
-
-            {/* Bottom Italic Text */}
-            <div className="mt-14 text-center">
-              <h2 className="text-[26px] md:text-[34px] font-bold italic text-[#3300FF]">
-                <ScrollRevealWord text="Empowering the Next Generation of AI Thinkers." />
-              </h2>
             </div>
 
           </div>

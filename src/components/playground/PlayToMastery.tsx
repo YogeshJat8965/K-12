@@ -186,8 +186,8 @@ export default function PlayToMastery() {
         <div className="ptm-container">
           
           <div className="ptm-header">
-            <h2 className="ptm-title">From Play to Mastery</h2>
-            <h3 className="ptm-subtitle">The Playground is just the beginning</h3>
+            <h2 className="ptm-title">The Playground is just the beginning</h2>
+            {/* <h3 className="ptm-subtitle">The Playground is just the beginning</h3> */}
             <p className="ptm-desc">
               What starts as curiosity in the Playground naturally progresses into structured learning through<br/>
               SKILLZZA K-12's full ecosystem. Every agent a student builds becomes a doorway to deeper skills.

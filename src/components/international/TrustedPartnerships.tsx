@@ -101,11 +101,11 @@ export default function TrustedPartnerships() {
           </div>
 
           <p className="text-[#475467] text-[15px] md:text-[16px] leading-relaxed font-medium mb-12 px-4 md:px-10">
-            We Collaborate With Forward-Looking Schools, Institutions, Educators, And Industry Partners To Build Meaningful Future-Skills Ecosystems For The Next Generation.
+            We collaborate with forward-looking schools, institutions, educators, and industry partners to build meaningful future-skills ecosystems for the next generation.
           </p>
           
           {/* Whether You Are */}
-          <div className="flex items-center justify-center w-full max-w-[600px] mx-auto mb-6">
+          {/* <div className="flex items-center justify-center w-full max-w-[600px] mx-auto mb-6">
             <div className="flex-1 flex items-center justify-end pr-4 opacity-50">
               <div className="w-full h-[1.5px] bg-gray-200"></div>
               <div className="w-2 h-2 rounded-full bg-[#C084FC] shrink-0 ml-1"></div>
@@ -117,7 +117,7 @@ export default function TrustedPartnerships() {
               <div className="w-2 h-2 rounded-full bg-[#F59E0B] shrink-0 mr-1"></div>
               <div className="w-full h-[1.5px] bg-gray-200"></div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Timeline Graphic */}

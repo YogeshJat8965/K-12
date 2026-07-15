@@ -243,10 +243,10 @@ export default function InternationalHero() {
           
           {/* Left Side */}
           <div className="ih-left">
-            <div className="ih-badge">
+            {/* <div className="ih-badge">
               <Sparkles size={16} className="text-yellow-300" />
               FUTURE SKILLS STUDIOS FOR NEXT-GENERATION LEARNING
-            </div>
+            </div> */}
 
             <h1 className="ih-h1">
               Empowering Students for an<br />

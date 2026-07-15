@@ -51,6 +51,17 @@ const NAV_LINKS = [
   { label: 'Educator Circle', href: '#' },
 ];
 
+const MOBILE_NAV_LINKS = [
+  { label: 'Home', href: '/home' },
+  { label: 'Skill Studio (National)', href: '/skill-studio' },
+  { label: 'Skill Studio (International)', href: '/international-studio' },
+  { label: 'Virtual Internship', href: '/virtual-internship' },
+  { label: 'Learners Segment (Schools)', href: '/learners' },
+  { label: 'AI Playground', href: '/ai-playground' },
+  { label: 'CCMM', href: '#' },
+  { label: 'Educator Circle', href: '#' },
+];
+
 export default function HomeNavbar() {
   const [open, setOpen] = useState(false);
 
@@ -248,6 +259,11 @@ export default function HomeNavbar() {
           .hn-links, .hn-btn { display: none !important; }
           .hn-hamburger { display: block; }
           .hn-inner { padding: 0 20px; gap: 0; }
+          .hn-logo img {
+            height: 38px !important;
+            max-width: 220px !important;
+            object-fit: contain !important;
+          }
         }
       `}</style>
 
@@ -288,7 +304,7 @@ export default function HomeNavbar() {
           </ul>
 
           {/* Get Started */}
-          <a href="#" className="hn-btn">Get Started</a>
+          <a href="/login" className="hn-btn">Get Started</a>
 
           {/* Mobile hamburger */}
           <button
@@ -302,23 +318,12 @@ export default function HomeNavbar() {
 
         {/* Mobile drawer */}
         <div className={`hn-mobile${open ? ' is-open' : ''}`}>
-          {NAV_LINKS.map(l => (
-            <div key={l.label} style={{ display: 'flex', flexDirection: 'column' }}>
-              <a href={l.href} onClick={() => setOpen(false)} style={{ fontWeight: l.dropdown ? 600 : 400 }}>
-                {l.label}
-              </a>
-              {l.dropdown && (
-                <div style={{ paddingLeft: '16px', display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '8px' }}>
-                  {l.dropdown.map(d => (
-                    <a key={d.label} href={d.href} onClick={() => setOpen(false)} style={{ fontSize: '13px', borderBottom: 'none', padding: '6px 0' }}>
-                      {d.label}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
+          {MOBILE_NAV_LINKS.map(l => (
+            <a key={l.label} href={l.href} onClick={() => setOpen(false)} style={{ fontWeight: 500 }}>
+              {l.label}
+            </a>
           ))}
-          <a href="#" className="hn-btn" onClick={() => setOpen(false)}>
+          <a href="/login" className="hn-btn" onClick={() => setOpen(false)}>
             Get Started
           </a>
         </div>

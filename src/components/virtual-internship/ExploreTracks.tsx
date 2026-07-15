@@ -57,49 +57,49 @@ export default function ExploreTracks() {
       img: imgAI,
       title: "AI, Data & Deep Tech",
       sub: "THE BUILDERS OF TOMORROW",
-      desc: "Hands-On Exposure To Artificial Intelligence, Data Analytics, Cybersecurity, Agentic AI, And Emerging Technologies Shaping The Future"
+      // desc: "Hands-On Exposure To Artificial Intelligence, Data Analytics, Cybersecurity, Agentic AI, And Emerging Technologies Shaping The Future"
     },
     {
       img: imgBusiness,
       title: "Business, Finance & Entrepreneurship",
       sub: "THE STRATEGIC THINKERS",
-      desc: "Foundational Understanding Of Business Models, Financial Literacy, Startup Thinking, Market Strategy, And Innovation."
+      // desc: "Foundational Understanding Of Business Models, Financial Literacy, Startup Thinking, Market Strategy, And Innovation."
     },
     {
       img: imgCreative,
       title: "Creative, Media & Product Design",
       sub: "THE STORYTELLERS & DESIGNERS",
-      desc: "Training In UX Design, Storytelling, Digital Content Creation, GenAI Creative Tools, Animation, And Modern Product Thinking."
+      // desc: "Training In UX Design, Storytelling, Digital Content Creation, GenAI Creative Tools, Animation, And Modern Product Thinking."
     },
     {
       img: imgSpace,
       title: "Space, Science & Frontier Tech",
       sub: "THE EXPLORERS & SCIENTISTS",
-      desc: "Space Exploration, Astronomy, Aerospace Fundamentals, Satellite Missions, And Frontier Science - Inspired By India's Space Ambitions."
+      // desc: "Space Exploration, Astronomy, Aerospace Fundamentals, Satellite Missions, And Frontier Science - Inspired By India's Space Ambitions."
     },
     {
       img: imgClimate,
       title: "Climate, Sustainability & Innovation",
       sub: "THE CHANGEMAKERS",
-      desc: "Climate Tech, Circular Economy, UN SDG-Linked Projects, Renewable Energy, And Green Entrepreneurship For A Better Planet."
+      // desc: "Climate Tech, Circular Economy, UN SDG-Linked Projects, Renewable Energy, And Green Entrepreneurship For A Better Planet."
     },
     {
       img: imgMindfulness,
       title: "Mindfulness, Wellness & Inner Growth",
       sub: "THE BALANCED LEADERS",
-      desc: "Mental Well-Being, Emotional Intelligence, Mindfulness Practices, Youth Resilience, And Building A Strong Inner Compass."
+      // desc: "Mental Well-Being, Emotional Intelligence, Mindfulness Practices, Youth Resilience, And Building A Strong Inner Compass."
     },
     {
       img: imgPublic,
       title: "Public Voice, Media & Global Affairs",
       sub: "THE COMMUNICATORS & DIPLOMATS",
-      desc: "Journalism, Public Speaking, Debate, World Affairs, Diplomacy Simulations, And Building A Credible Public Voice Early."
+      // desc: "Journalism, Public Speaking, Debate, World Affairs, Diplomacy Simulations, And Building A Credible Public Voice Early."
     },
     {
       img: imgLeadership,
       title: "Leadership, Civic & Social Impact",
       sub: "THE FUTURE LEADERS",
-      desc: "Civic Leadership, Community Projects, Social Entrepreneurship, Policy Thinking, And Building Solutions That Serve Others."
+      // desc: "Civic Leadership, Community Projects, Social Entrepreneurship, Policy Thinking, And Building Solutions That Serve Others."
     }
   ];
 
@@ -141,7 +141,7 @@ export default function ExploreTracks() {
           color: #5C6165;
           margin: 0;
           font-weight: 500;
-          max-width: 900px;
+          width: 100%;
           line-height: 1.6;
         }
 
@@ -231,8 +231,7 @@ export default function ExploreTracks() {
               Explore <span className="purple">Career</span> Tracks
             </h2>
             <p className="et-subtitle">
-              Eight Future-Ready Career Tracks, Mapped Across Technology, Enterprise, Creativity, Science, And Personal<br className="hidden md:block" />
-              Growth. Students Can Explore Across Tracks Before Choosing Their Capstone Specialisation.
+              Eight future-ready career tracks, mapped across technology, enterprise, creativity, science, and personal growth. Students can explore across tracks before choosing their capstone specialisation.
             </p>
           </div>
 

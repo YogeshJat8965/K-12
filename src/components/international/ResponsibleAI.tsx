@@ -34,7 +34,7 @@ export default function ResponsibleAI() {
 
         {/* Left Content */}
         <div className="flex-1 flex flex-col justify-center rai-left py-6">
-          <h2 className="text-[36px] md:text-[44px] font-bold text-[#1A1A2E] leading-tight mb-5">
+          <h2 className="text-[36px] md:text-[44px] font-bold text-white leading-tight mb-5">
             Responsible <span className="text-[#7C3AED]">AI & Digital<br className="hidden md:block" /> Citizenship</span>
           </h2>
 
@@ -42,11 +42,11 @@ export default function ResponsibleAI() {
           <div className="w-[80px] h-[4px] bg-[#3B82F6] mb-8 md:mb-14 rounded-full"></div>
 
           <p className="text-[#6B7280] text-[16px] leading-relaxed mb-6 font-medium pr-0 md:pr-10">
-            Skillzza Integrates Ethical Technology Practices, Responsible AI Usage, Digital Wellbeing, Cyber Awareness, And Safe Online Behavior Across All Studio Experiences.
+            Skill Studio integrates ethical technology practices, responsible AI usage, digital wellbeing, cyber awareness, and safe online behavior across all studio experiences.
           </p>
 
           <p className="text-[#6B7280] text-[16px] leading-relaxed font-medium pr-0 md:pr-10">
-            Students Are Encouraged To Become Not Only Technology Users - But Thoughtful, Responsible, And Ethical Innovators.
+            Students are encouraged to become not only technology users - but thoughtful, responsible, and ethical innovators.
           </p>
         </div>
 

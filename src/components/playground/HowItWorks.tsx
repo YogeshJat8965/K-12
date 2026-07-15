@@ -111,7 +111,7 @@ export default function HowItWorks() {
         }
       `}</style>
 
-      <section className="hiw-section" ref={sectionRef}>
+      {/* <section className="hiw-section" ref={sectionRef}>
         <div className="hiw-container">
           <div className="hiw-badge">HOW IT WORKS</div>
           
@@ -123,7 +123,7 @@ export default function HowItWorks() {
             <img src={newImg} alt="How It Works" className="hiw-image" />
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

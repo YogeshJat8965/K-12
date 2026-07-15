@@ -359,7 +359,7 @@ export default function PlaygroundHero() {
           <div className="ph-left">
             <div className="ph-badge">
               <span className="ph-badge-dot" />
-              <span className="ph-badge-text">AI PLAYGROUND | BUILD YOUR FIRST AI AGENT</span>
+              <span className="ph-badge-text">BUILD YOUR FIRST AI AGENT</span>
             </div>
 
             <h1 className="ph-h1">

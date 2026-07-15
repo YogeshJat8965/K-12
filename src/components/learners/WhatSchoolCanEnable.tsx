@@ -34,7 +34,7 @@ export default function WhatSchoolCanEnable() {
   ];
 
   return (
-    <section className="w-full relative py-20 lg:py-24 font-poppins overflow-hidden" style={{ background: 'linear-gradient(135deg, #1C115E 0%, #25167A 100%)' }}>
+    <section id="what-school-enable" className="w-full relative py-20 lg:py-24 font-poppins overflow-hidden" style={{ background: 'linear-gradient(135deg, #1C115E 0%, #25167A 100%)' }}>
 
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
@@ -49,7 +49,21 @@ export default function WhatSchoolCanEnable() {
         <div className="absolute top-20 -right-20 w-[500px] h-[500px] border-[1px] border-white/5 rounded-full"></div>
       </div>
 
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-8 relative z-10">
+      <style>{`
+        @media (max-width: 768px) {
+          #what-school-enable > div.override-what-school-layout {
+            display: block !important;
+            padding-left: 24px !important;
+            padding-right: 24px !important;
+          }
+          /* Ensure the background decorative div is also properly blocked and doesn't get a grid gap */
+          #what-school-enable > div.pointer-events-none {
+            display: block !important;
+          }
+        }
+      `}</style>
+
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-8 relative z-10 override-what-school-layout">
 
         <div className="text-center mb-16">
           <h2 className="text-[32px] md:text-[42px] lg:text-[46px] font-bold text-white tracking-wide">

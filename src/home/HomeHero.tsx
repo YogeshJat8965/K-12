@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, Fragment } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import RIGHT_IMG from '../assets/landing page/Homepage (1920x 1080px) – 2/ChatGPT Image Jun 20, 2026, 12_40_39 AM.png';
@@ -50,19 +50,22 @@ export default function HomeHero() {
       }
 
 
-      // 2. Parallax float for right image
-      if (imgRef.current) {
-        gsap.to(imgRef.current, {
-          y: -100,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: heroRef.current,
-            start: 'top top',
-            end: 'bottom top',
-            scrub: true,
-          }
-        });
-      }
+      // 2. Parallax float for right image (Desktop Only)
+      const mm = gsap.matchMedia();
+      mm.add("(min-width: 861px)", () => {
+        if (imgRef.current) {
+          gsap.to(imgRef.current, {
+            y: -100,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: heroRef.current,
+              start: 'top top',
+              end: 'bottom top',
+              scrub: true,
+            }
+          });
+        }
+      });
 
       // 3. Feature cards (bottom bar) 3D flip + stagger
       if (featBarRef.current) {
@@ -320,12 +323,13 @@ export default function HomeHero() {
           }
           .hh-right { justify-content: center; }
           .hh-right img { 
-            position: relative; 
-            top: auto; 
-            right: auto; 
-            transform: none; 
-            width: 100%; 
-            max-width: 90%; 
+            position: relative !important; 
+            top: auto !important; 
+            right: auto !important; 
+            transform: none !important; 
+            width: 100% !important; 
+            max-width: 90% !important; 
+            margin: 0 auto;
           }
           .hh-feature-bar {
             margin: 40px 32px 32px;
@@ -385,7 +389,7 @@ export default function HomeHero() {
 
             {/* Buttons */}
             <div className="hh-btns">
-              <button className="hh-btn hh-btn-primary">Start Learning</button>
+              <button onClick={() => window.location.href = '/contact'} className="hh-btn hh-btn-primary">Start Learning</button>
               <button className="hh-btn hh-btn-dark">Partner with Us</button>
               <button className="hh-btn hh-btn-outline">Schedule a Demo</button>
             </div>
@@ -405,8 +409,8 @@ export default function HomeHero() {
         {/* ── Bottom Feature Bar ── */}
         <div className="hh-feature-bar" ref={featBarRef}>
           {features.map((f, i) => (
-            <>
-              <div className="hh-feat-item" key={f.title}>
+            <Fragment key={f.title}>
+              <div className="hh-feat-item">
                 <div
                   className="hh-feat-icon"
                   style={{ background: f.bg }}
@@ -422,8 +426,8 @@ export default function HomeHero() {
                   <p className="hh-feat-desc">{f.desc}</p>
                 </div>
               </div>
-              {i < features.length - 1 && <div className="hh-feat-divider" key={`div-${i}`} />}
-            </>
+              {i < features.length - 1 && <div className="hh-feat-divider" />}
+            </Fragment>
           ))}
         </div>
 

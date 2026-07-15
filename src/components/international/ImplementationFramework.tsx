@@ -85,11 +85,14 @@ export default function ImplementationFramework() {
 
         {/* Section Header */}
         <div className="text-center mb-8 md:mb-16 imp-intro">
+          <p className="mt-4 text-[#6B7280] font-medium text-[16px]">
+            Simple. Structured. Scalable.
+          </p>
           <h2 className="text-[36px] md:text-[44px] font-extrabold text-[#1A1A2E] tracking-tight">
             The <span className="text-[#6C3CF7]">Implementation</span> Framework
           </h2>
-          <p className="mt-4 text-[#6B7280] font-medium text-[16px]">
-            Simple. Structured. Scalable.
+          <p className="mt-2 text-[#6B7280] font-medium text-[16px] w-full mx-auto leading-relaxed xl:whitespace-nowrap">
+            Schools select three studios annually based on student needs, institutional priorities, and learning goals.
           </p>
         </div>
 

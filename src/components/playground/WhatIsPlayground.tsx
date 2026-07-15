@@ -247,7 +247,7 @@ export default function WhatIsPlayground() {
 
         @media (max-width: 768px) {
           .wip-section { padding: 32px 16px; }
-          .wip-container { display: block !important; padding-top: 24px; }
+          #what-is-playground-section > .wip-container { display: block !important; padding-top: 24px; }
           .wip-left { display: none !important; }
           .wip-right { display: block !important; padding: 24px 16px 32px 16px !important; width: 100% !important; max-width: 100% !important; text-align: center !important; box-sizing: border-box; }
           .wip-h2 { font-size: 1.8rem; line-height: 1.3; text-align: center !important; width: 100% !important; margin-bottom: 16px; }
@@ -264,7 +264,7 @@ export default function WhatIsPlayground() {
         }
       `}</style>
 
-      <section className="wip-section" ref={sectionRef}>
+      <section id="what-is-playground-section" className="wip-section" ref={sectionRef}>
         <div className="wip-container" ref={containerRef}>
           <div className="wip-left">
             <img src={LeftImg} alt="Girl using AI Playground on a laptop" />
@@ -273,7 +273,7 @@ export default function WhatIsPlayground() {
           <div className="wip-right">
             <h2 className="wip-h2">
               What is an
-              <span className="purple">AI Playground?</span>
+              <div className="purple"> AI Playground?</div>
             </h2>
 
             <p className="wip-p">

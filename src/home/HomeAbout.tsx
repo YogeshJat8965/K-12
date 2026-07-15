@@ -189,7 +189,7 @@ export default function HomeAbout() {
           </div>
 
           <div className="ha-right">
-            <span className="ha-label" ref={labelRef} style={{ display: 'inline-block' }}>ABOUT SKILLZZA K-12</span>
+            <span className="ha-label" ref={labelRef} style={{ display: 'inline-block' }}>ABOUT US</span>
 
             <h2 className="ha-h2">
               A K-12 Platform Built For An AI-First World
@@ -197,13 +197,13 @@ export default function HomeAbout() {
 
             <div className="ha-content" ref={textRef}>
               <p>
-                SKILLZZA Is The Next-Generation K-12 Learning Platform Preparing Students, Educators, And Schools For An AI-Powered Economy. We Combine Cognitive Science, Real-World Skill-Building, And Intelligent Learning Systems powered by <span className="ha-purple">Vedya AI</span>, Our Proprietary AI Co-Pilot - To Equip Young Minds With The Future-Ready Capabilities They Need To Lead With Confidence.
+                Skillzza is the next-generation K-12 learning platform preparing students, educators, and schools for an AI-powered economy. We combine cognitive science, real-world skill-building, and intelligent learning systems powered by <span className="ha-purple">Vedya AI</span> to equip young minds with the future-ready capabilities they need to lead with confidence.
               </p>
               <p>
-                In A World Where Change Is Constant, Textbooks Alone Are No Longer Enough. Students Must Master Future Skills - Creativity, Critical Thinking, Digital Fluency, And Ethical AI Awareness to thrive Globally.
+                In a world where change is constant, textbooks alone are no longer enough. Students must master future skills - creativity, critical thinking, digital & fluency, and ethical AI awareness to thrive globally.
               </p>
               <p>
-                From AI-Powered Upskilling And Role-Based Virtual Internships to Whole-School Transformation Programmes, We Make Future-Forward Education Accessible, Measurable, And Actionable - For Every Classroom, Everywhere.
+                From AI-powered upskilling and role-based virtual internships to whole-school transformation programmes, we make future-forward education accessible, measurable, and actionable for every classroom, everywhere.
               </p>
             </div>
           </div>

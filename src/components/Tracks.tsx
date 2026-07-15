@@ -61,7 +61,7 @@ export default function Tracks() {
           <h2 className="mb-6">
             Explore <span className="text-[#A855F7]">Career Tracks</span>
           </h2>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto font-normal leading-relaxed">
+          <p className="text-lg text-slate-600 w-full mx-auto font-normal leading-relaxed">
             Eight future-ready career tracks, mapped across technology, enterprise, creativity, science, and personal growth. Students can explore across tracks before choosing their capstone specialisation.
           </p>
         </div>

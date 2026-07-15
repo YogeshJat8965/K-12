@@ -32,6 +32,16 @@ export default function InstitutionalImpact() {
     <section className="w-full bg-[#F5F7FA] py-20 lg:py-24 font-poppins">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
 
+        <style>{`
+          @media (max-width: 768px) {
+            .impact-icon {
+              height: 60px !important;
+              max-width: 60px !important;
+              object-fit: contain !important;
+            }
+          }
+        `}</style>
+
         <h2 className="text-[36px] md:text-[44px] lg:text-[48px] font-extrabold text-[#1A1A2E] leading-[1.2] mb-16 tracking-tight text-center">
           <WordReveal text="Institutional Impact" />
         </h2>
@@ -43,7 +53,7 @@ export default function InstitutionalImpact() {
                 className="group h-full bg-white rounded-[20px] p-8 border border-gray-100 shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex flex-col items-start transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(91,50,234,0.12)] hover:border-[#E0D6FF]"
               >
                 <div className="mb-8">
-                  <img src={card.icon} alt={card.title} className="h-[72px] object-contain transition-transform duration-500 ease-out group-hover:scale-[1.15] group-hover:-translate-y-1" />
+                  <img src={card.icon} alt={card.title} className="impact-icon h-[72px] object-contain transition-transform duration-500 ease-out group-hover:scale-[1.15] group-hover:-translate-y-1" />
                 </div>
 
                 <h3 className="text-[20px] md:text-[22px] font-extrabold text-[#111827] mb-4 leading-[1.2] whitespace-pre-line">

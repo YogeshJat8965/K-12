@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
@@ -23,65 +23,132 @@ gsap.registerPlugin(ScrollTrigger);
 
 const studios = [
   {
-    title: "Gen AI &\nDeep Tech Studio",
-    desc: "Students explore Artificial Intelligence, emerging technologies, prompt engineering, and ethical AI applications through hands-on learning and guided innovation projects.",
-    theme: "purple",
-    icon: BrainCircuit,
+    title: "Gen AI & Deep Tech Studio",
+    tagline: "Think. Build. Disrupt.",
+    grades: "Grades 6-12",
     tags: ["Generative AI", "AI Fundamentals", "Prompt Engineering", "Emerging Technologies", "AI Ethics", "Creative AI Tools"],
-    colorHex: "#6366F1",
-    bgHex: "#EEF2FF",
-    image: img1,
-    bgClass: "bg-indigo-600"
+    colorHex: "#3B82F6",
+    image: img1
   },
   {
-    title: "Digital Creativity\n& AI Studio",
+    title: "Digital Creativity &\nAI Skills Studio",
     subtitle: "Powered by Adobe",
-    desc: "Students learn modern digital creativity using industry-relevant tools for design, storytelling, branding, visual communication, and AI-assisted creative workflows.",
-    theme: "blue",
-    icon: PenTool,
+    tagline: "Create. Design. Innovate.",
+    grades: "Grades 5-10",
     tags: ["Graphic Design", "Digital Storytelling", "Creative Media", "Visual Communication", "Content Creation", "AI-Powered Creativity"],
-    colorHex: "#ea1f15ff", 
-    bgHex: "#e62720ff",
-    image: img2,
-    bgClass: "bg-blue-600"
-  }, 
+    colorHex: "#EA1F15",
+    image: img2
+  },
   {
-    title: "AI Builders\nStudio",
-    desc: "Students develop foundational AI engineering and computational thinking skills through beginner-friendly innovation projects and intelligent systems exploration.",
-    theme: "green",
-    icon: Bot,
-    tags: ["AI Applications", "Intelligent Systems", "Automation Logic", "Problem-Solving", "AI Innovation Challenges"],
+    title: "Junior Agentic AI\nEngineer Studio",
+    tagline: "Build AI That Acts. Create Agents That Think.",
+    grades: "Grades 8-12",
+    tags: ["AI Agents", "Agentic Frameworks", "Automation Logic", "Machine Learning", "System Design"],
     colorHex: "#16A34A",
-    bgHex: "#F0FDF4",
-    image: img3,
-    bgClass: "bg-green-600"
+    image: img3
   },
   {
     title: "Future Leaders &\nEntrepreneurship Studio",
-    desc: "Students build leadership, collaboration, entrepreneurial thinking, innovation mindset, and communication skills through practical activities and real-world simulations.",
-    theme: "orange",
-    icon: Users,
+    tagline: "Build It. Lead It. Scale It.",
+    grades: "Grades 6-12",
     tags: ["Leadership", "Entrepreneurship", "Team Collaboration", "Design Thinking", "Innovation Mindset", "Communication Skills"],
     colorHex: "#EA580C",
-    bgHex: "#FFF7ED",
-    image: img4,
-    bgClass: "bg-orange-600"
+    image: img4
   },
   {
     title: "Global Ambassador &\nWorld Affairs Studio",
-    desc: "Students explore global citizenship, diplomacy, sustainability, international affairs, and cross-cultural communication.",
-    theme: "teal",
-    icon: Globe2,
-    tags: ["Global Awareness", "Public Policy Basics", "Sustainable Development", "Communication", "International Perspectives", "Cross-cultural Understanding"],
-    colorHex: "#0D9488",
-    bgHex: "#F0FDFA",
-    image: img5,
-    bgClass: "bg-teal-600"
+    tagline: "Speak for Nations. Shape the World.",
+    grades: "Grades 6-12",
+    tags: ["Global Awareness", "Public Policy", "Sustainable Development", "Diplomacy", "International Perspectives", "Cross-cultural Understanding"],
+    colorHex: "#0284C7",
+    image: img5
+  },
+  {
+    title: "Inner Compass – Mindfulness\n& Life Skills Studio",
+    tagline: "Know Yourself. Lead Yourself.",
+    grades: "Grades 1-12",
+    tags: ["Mindfulness", "Emotional Intelligence", "Self-Awareness", "Resilience", "Well-being", "Life Skills"],
+    colorHex: "#E11D48",
+    image: img1
+  },
+  {
+    title: "Climate Tech &\nGreen Innovation Studio",
+    tagline: "Engineer the Solutions. Lead the Transition.",
+    grades: "Grades 6-12",
+    tags: ["Climate Science", "Sustainability", "Green Tech", "Renewable Energy", "Environmental Innovation", "Eco-Design"],
+    colorHex: "#059669",
+    image: img2
+  },
+  {
+    title: "Data Intelligence\nStudio",
+    tagline: "Read the World in Data. Never Be Fooled Again.",
+    grades: "Grades 6-12",
+    tags: ["Data Analytics", "Critical Thinking", "Statistics", "Data Visualization", "Information Literacy", "Pattern Recognition"],
+    colorHex: "#D97706",
+    image: img3
+  },
+  {
+    title: "No-Code\nBuilders Studio",
+    tagline: "Build Without Barriers. Launch Without Code.",
+    grades: "Grades 5-12",
+    tags: ["No-Code Tools", "Web Development", "App Building", "Rapid Prototyping", "Digital Products", "Logic Mapping"],
+    colorHex: "#2563EB",
+    image: img4
+  },
+  {
+    title: "Animation &\nGamification Studio",
+    tagline: "Bring Stories to Life.",
+    grades: "Grades 3-12",
+    tags: ["2D/3D Animation", "Game Design", "Storyboarding", "Interactive Media", "Character Design", "Digital Art"],
+    colorHex: "#DC2626",
+    image: img5
+  },
+  {
+    title: "Financial\nFunda Studio",
+    tagline: "The Money School Your School Never Gave You.",
+    grades: "Grades 5-12",
+    tags: ["Financial Literacy", "Investing", "Budgeting", "Economics", "Wealth Management", "Personal Finance"],
+    colorHex: "#15803D",
+    image: img1
+  },
+  {
+    title: "Cybersecurity &\nDigital Safety Studio",
+    tagline: "Defend the Digital World. Own Your Online Presence.",
+    grades: "Grades 6-12",
+    tags: ["Cyber Safety", "Ethical Hacking", "Digital Footprint", "Data Privacy", "Network Security", "Online Protection"],
+    colorHex: "#F59E0B",
+    image: img2
+  },
+  {
+    title: "Public Speaking &\nDebate Studio",
+    tagline: "Find Your Voice. Command Any Room.",
+    grades: "Grades 3-12",
+    tags: ["Public Speaking", "Debate", "Persuasion", "Elocution", "Speech Writing", "Confidence Building"],
+    colorHex: "#3B82F6",
+    image: img3
+  },
+  {
+    title: "Young Journalists &\nMedia Studio",
+    tagline: "Find the Story. Tell it Boldly.",
+    grades: "Grades 4-12",
+    tags: ["Journalism", "Media Literacy", "Writing", "Reporting", "Fact-Checking", "Digital Publishing"],
+    colorHex: "#EF4444",
+    image: img4
+  },
+  {
+    title: "Space &\nAstronomy Studio",
+    tagline: "Reach beyond the horizon. Think at a universal scale.",
+    grades: "Grades 5-12",
+    tags: ["Astronomy", "Space Exploration", "Astrophysics", "Cosmology", "Rocketry", "Planetary Science"],
+    colorHex: "#22C55E",
+    image: img5
   }
 ];
 
 export default function FutureSkillsStudios() {
   const sectionRef = useRef<HTMLElement>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const visibleStudios = isExpanded ? studios : studios.slice(0, 9);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -113,16 +180,16 @@ export default function FutureSkillsStudios() {
         {/* Intro */}
         <div className="text-center max-w-[800px] mx-auto mb-8 md:mb-16">
           <h2 className="fss-intro text-[36px] md:text-[44px] font-extrabold text-[#1A1A2E] leading-[1.15] mb-5 tracking-tight">
-            Our Future <span className="text-[#7C3AED]">Skills Studios</span>
+            Our Future <span className="text-[#7C3AED]">Skill Studio</span>
           </h2>
           <p className="fss-intro text-[#6B7280] text-[16px] font-medium max-w-[700px] mx-auto leading-relaxed">
-            A Curated Portfolio Of Immersive Skill Studios Designed To Build Capability, Confidence, Creativity, And Future Readiness. Hover over the cards to view the Key Focus Areas.
+            A curated portfolio of immersive skill studios designed to build capability, confidence, creativity, and future readiness. Hover over the cards to view the key focus areas.
           </p>
         </div>
 
         {/* 3D Flip Cards Grid */}
         <div className="flex flex-wrap justify-center gap-6">
-          {studios.map((studio, i) => (
+          {visibleStudios.map((studio, i) => (
             <ScrollReveal
               key={i}
               delay={i * 0.1}
@@ -141,10 +208,8 @@ export default function FutureSkillsStudios() {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-100" />
-
-                    {/* Removed overlay icon as requested */}
                   </div>
-                  <div className="flex-1 p-4 flex flex-col justify-center bg-white text-center">
+                  <div className="flex-1 p-4 flex flex-col items-center justify-center bg-white text-center">
                     <h3 className="font-bold text-[15px] text-[#1A1A2E] leading-tight px-1 whitespace-pre-line">
                       {studio.title}
                     </h3>
@@ -159,13 +224,21 @@ export default function FutureSkillsStudios() {
                   {/* Decorative background circle */}
                   <div className="absolute -top-10 -right-10 w-32 h-32 rounded-full opacity-20 blur-2xl bg-white" />
 
-                  <h3 className="text-white font-bold text-[18px] mb-4 border-b border-white/20 pb-2">
+                  <p className="text-white font-bold text-[15px] mb-2 leading-tight">
+                    {studio.tagline}
+                  </p>
+                  
+                  <p className="text-white/80 font-semibold text-[13px] mb-4">
+                    {studio.grades}
+                  </p>
+
+                  <h3 className="text-white font-bold text-[14px] mb-3 border-b border-white/20 pb-1 uppercase tracking-wider">
                     Key Focus Areas
                   </h3>
 
                   <div className="flex flex-wrap justify-center gap-2">
                     {studio.tags.map((tag, idx) => (
-                      <span key={idx} className="bg-white/10 border border-white/20 text-white text-[12px] font-medium py-1 px-3 rounded-full">
+                      <span key={idx} className="bg-white/10 border border-white/20 text-white text-[11px] font-medium py-1 px-2.5 rounded-full">
                         {tag}
                       </span>
                     ))}
@@ -180,9 +253,9 @@ export default function FutureSkillsStudios() {
 
         {/* View All Studios Button */}
         <div className="mt-8 md:mt-16 flex justify-center fss-btn">
-          <button className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold text-white transition-all duration-300 bg-[#2563EB] rounded-full overflow-hidden hover:bg-[#1D4ED8] hover:shadow-[0_8px_25px_rgba(37,99,235,0.4)]">
-            <span className="relative z-10 text-[15px]">Explore All 15+ Studios</span>
-            <ArrowRight className="relative z-10 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={2.5} />
+          <button onClick={() => setIsExpanded(!isExpanded)} className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold text-white transition-all duration-300 bg-[#7C3AED] rounded-full overflow-hidden hover:bg-[#6D28D9] hover:shadow-[0_8px_25px_rgba(124,58,237,0.4)]">
+            <span className="relative z-10 text-[15px]">{isExpanded ? "Show Less" : "Explore All 15+ Studios"}</span>
+            <ArrowRight className={`relative z-10 w-5 h-5 transition-transform duration-300 ${isExpanded ? "-rotate-90" : "group-hover:translate-x-1"}`} strokeWidth={2.5} />
           </button>
         </div>
 

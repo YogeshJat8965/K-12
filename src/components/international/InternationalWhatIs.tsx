@@ -197,11 +197,11 @@ export default function InternationalWhatIs() {
           
           <div className="iwi-left" ref={leftRef}>
             <p className="iwi-desc">
-              Skillzza K-12 Studios Is A Future-Focused Experiential Learning Ecosystem Designed To Help Students Build Creativity, Problem-Solving Abilities, Digital Fluency, Leadership, And Real-World Skills Beyond Traditional Classroom Education.
+              Skill Studio is a future-focused experiential learning ecosystem designed to help students build creativity, problem-solving abilities, digital fluency, leadership, and real-world skills beyond traditional classroom education.
             </p>
             
             <p className="iwi-desc">
-              Built For Progressive Schools And Future-Ready Learners, Skillzza Combines Emerging Technologies, Interdisciplinary Learning, Hands-On Projects, And Measurable Outcomes Within A Structured School-Integrated Framework
+              Built for progressive schools and future-ready learners, Skillzza combines emerging technologies, interdisciplinary learning, hands-on projects, and measurable outcomes within a structured school-integrated framework
             </p>
           </div>
 

@@ -60,7 +60,7 @@ export default function LearnersCTA() {
                 Transform Learning Into Measurable Impact
               </h2>
               <p className="text-white/95 text-[14px] md:text-[15px] font-semibold leading-[1.6] max-w-[500px] lg:max-w-[90%] mx-auto lg:mx-0">
-                Equip Your Students To Think Critically, Build Confidently, And Lead Responsibly In An AI-Driven World
+                Equip your students to think critically, build confidently, and lead responsibly in an AI-driven world
               </p>
             </div>
             

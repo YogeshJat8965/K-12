@@ -4,7 +4,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import careerIcon from '../assets/landing page/Homepage (1920x 1080px) – 2/career discovery icon.png';
 import schoolIcon from '../assets/landing page/Homepage (1920x 1080px) – 2/institution icon.png';
 import teachingIcon from '../assets/landing page/Homepage (1920x 1080px) – 2/teaching icon.png';
-import bgImg from '../assets/Homepage (1920x 1080px) – 2/background-img.jpeg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,12 +41,22 @@ export default function HomeCTA() {
           width: 100%;
           padding: 120px 0;
           font-family: 'DM Sans', sans-serif;
-          background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('${bgImg}');
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
+          background-color: #F3F0FF;
+          background-image: 
+            linear-gradient(to right, rgba(108, 60, 247, 0.12) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(108, 60, 247, 0.12) 1px, transparent 1px);
+          background-size: 40px 40px;
           position: relative;
           overflow: hidden;
+        }
+
+        /* Subtle radial fade to make the center pop */
+        .cta-section::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(circle at center, transparent 0%, #F3F0FF 100%);
+          pointer-events: none;
         }
 
         .cta-inner {
@@ -95,7 +104,7 @@ export default function HomeCTA() {
           font-weight: 400;
           font-size: 16px;
           line-height: 1.6;
-          color: #FFFFFF;
+          color: #4B5563;
           margin: 0;
         }
 

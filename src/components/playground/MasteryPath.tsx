@@ -42,11 +42,11 @@ export default function MasteryPath() {
         {/* Header */}
         <div className="text-center mb-16">
           <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">From Play to Mastery</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight">The Playground is just the beginning</h2>
           </ScrollReveal>
-          <ScrollReveal delay={0.1}>
+          {/* <ScrollReveal delay={0.1}>
             <h3 className="text-xl md:text-2xl text-purple-600 font-medium mb-6">The Playground is just the beginning.</h3>
-          </ScrollReveal>
+          </ScrollReveal> */}
           <ScrollReveal delay={0.2}>
             <p className="text-slate-600 text-base md:text-lg max-w-4xl mx-auto leading-relaxed">
               What starts as curiosity in the Playground naturally progresses into structured learning through SKILLZZA K-12's full ecosystem. Every agent a student builds becomes a doorway to deeper skills.

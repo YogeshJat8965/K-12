@@ -9,7 +9,6 @@ import WhatAreStudios from './components/international/WhatAreStudios';
 import LearningStages from './components/international/LearningStages';
 import EducationChallenge from './components/international/EducationChallenge';
 import FutureSkillsStudios from './components/international/FutureSkillsStudios';
-import LearningFramework from './components/international/LearningFramework';
 import ImplementationFramework from './components/international/ImplementationFramework';
 import ResponsibleAI from './components/international/ResponsibleAI';
 import ReportingTransparency from './components/international/ReportingTransparency';
@@ -58,7 +57,6 @@ export default function InternationalStudioApp() {
         <LearningStages />
         <EducationChallenge />
         <FutureSkillsStudios />
-        <LearningFramework />
         <ImplementationFramework />
         <ResponsibleAI />
         <ReportingTransparency />

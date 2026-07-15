@@ -50,15 +50,14 @@ export default function GlobalEducation() {
         <div className="flex flex-col md:flex-row items-start justify-between mb-8 w-full">
           <div className="max-w-[850px] w-full ge-left">
             <h2 className="text-[36px] md:text-[44px] font-bold text-[#1A1A2E] leading-tight mb-3">
-              Alignment with <span className="text-[#7C3AED] whitespace-nowrap">Global Education</span><br />
-              Trends
+              Alignment with <span className="text-[#7C3AED] whitespace-nowrap">Global Education</span>
             </h2>
 
             {/* Blue Line Divider */}
             <div className="w-[80px] h-[4px] bg-[#3B82F6] mb-4"></div>
 
             <p className="text-[#6B7280] text-[15px] font-medium">
-              Skillzza Studios Are Designed In Alignment With:
+              Our studios are designed in alignment with
             </p>
           </div>
 
