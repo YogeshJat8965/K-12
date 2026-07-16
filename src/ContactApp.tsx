@@ -53,7 +53,12 @@ export default function ContactApp() {
                 
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-semibold text-gray-700">School / Organization</label>
-                  <input type="text" placeholder="Your School Name" className="px-4 py-3.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/40 focus:border-[#7C3AED] transition-all" />
+                  <select defaultValue="" className="px-4 py-3.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/40 focus:border-[#7C3AED] transition-all cursor-pointer">
+                    <option value="" disabled>Select an option</option>
+                    <option value="school">School</option>
+                    <option value="organization">Organization</option>
+                    <option value="student">Student</option>
+                  </select>
                 </div>
 
                 <div className="flex flex-col gap-2">

@@ -80,7 +80,7 @@ export default function LoginApp() {
             <div className="flex items-center justify-between mt-1 mb-2">
               <label className="flex items-center gap-2 cursor-pointer group">
                 <input type="checkbox" className="w-4 h-4 rounded border-gray-300 text-[#6C3CF7] focus:ring-[#6C3CF7] cursor-pointer" />
-                <span className="text-[13px] font-medium text-[#4B5563] group-hover:text-[#1A1A2E] transition-colors">Remember me</span>
+                <span className="text-[14px] font-medium text-[#4B5563] group-hover:text-[#1A1A2E] transition-colors">I'm not a robot</span>
               </label>
               
               <a href="#" className="text-[13px] font-bold text-[#6C3CF7] hover:text-[#4200FF] transition-colors">

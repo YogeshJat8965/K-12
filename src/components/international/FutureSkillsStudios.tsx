@@ -19,6 +19,18 @@ import img3 from '../../assets/virtual internship/3img.png';
 import img4 from '../../assets/virtual internship/4img.png';
 import img5 from '../../assets/virtual internship/5img.png';
 
+// New images
+import imgInner from '../../assets/International Studio/Inner Compass – Mindfulness & Life Skills.png';
+import imgClimate from '../../assets/International Studio/Climate Tech & Green Innovation.png';
+import imgData from '../../assets/International Studio/Data Intelligence.png';
+import imgNoCode from '../../assets/International Studio/No-Code Builders.png';
+import imgAnimation from '../../assets/International Studio/Animation & Gamification.png';
+import imgFinance from '../../assets/International Studio/Financial Fun.png';
+import imgCyber from '../../assets/International Studio/Cybersecurity & Digital Safety.png';
+import imgPublicSpeaking from '../../assets/International Studio/Public Speaking & Debate.png';
+import imgJournalist from '../../assets/International Studio/oung Journalists & Media Studio.png';
+import imgSpace from '../../assets/International Studio/Space & Astronomy.png';
+
 gsap.registerPlugin(ScrollTrigger);
 
 const studios = [
@@ -69,7 +81,7 @@ const studios = [
     grades: "Grades 1-12",
     tags: ["Mindfulness", "Emotional Intelligence", "Self-Awareness", "Resilience", "Well-being", "Life Skills"],
     colorHex: "#E11D48",
-    image: img1
+    image: imgInner
   },
   {
     title: "Climate Tech &\nGreen Innovation Studio",
@@ -77,7 +89,7 @@ const studios = [
     grades: "Grades 6-12",
     tags: ["Climate Science", "Sustainability", "Green Tech", "Renewable Energy", "Environmental Innovation", "Eco-Design"],
     colorHex: "#059669",
-    image: img2
+    image: imgClimate
   },
   {
     title: "Data Intelligence\nStudio",
@@ -85,7 +97,7 @@ const studios = [
     grades: "Grades 6-12",
     tags: ["Data Analytics", "Critical Thinking", "Statistics", "Data Visualization", "Information Literacy", "Pattern Recognition"],
     colorHex: "#D97706",
-    image: img3
+    image: imgData
   },
   {
     title: "No-Code\nBuilders Studio",
@@ -93,7 +105,7 @@ const studios = [
     grades: "Grades 5-12",
     tags: ["No-Code Tools", "Web Development", "App Building", "Rapid Prototyping", "Digital Products", "Logic Mapping"],
     colorHex: "#2563EB",
-    image: img4
+    image: imgNoCode
   },
   {
     title: "Animation &\nGamification Studio",
@@ -101,7 +113,7 @@ const studios = [
     grades: "Grades 3-12",
     tags: ["2D/3D Animation", "Game Design", "Storyboarding", "Interactive Media", "Character Design", "Digital Art"],
     colorHex: "#DC2626",
-    image: img5
+    image: imgAnimation
   },
   {
     title: "Financial\nFunda Studio",
@@ -109,7 +121,7 @@ const studios = [
     grades: "Grades 5-12",
     tags: ["Financial Literacy", "Investing", "Budgeting", "Economics", "Wealth Management", "Personal Finance"],
     colorHex: "#15803D",
-    image: img1
+    image: imgFinance
   },
   {
     title: "Cybersecurity &\nDigital Safety Studio",
@@ -117,7 +129,7 @@ const studios = [
     grades: "Grades 6-12",
     tags: ["Cyber Safety", "Ethical Hacking", "Digital Footprint", "Data Privacy", "Network Security", "Online Protection"],
     colorHex: "#F59E0B",
-    image: img2
+    image: imgCyber
   },
   {
     title: "Public Speaking &\nDebate Studio",
@@ -125,7 +137,7 @@ const studios = [
     grades: "Grades 3-12",
     tags: ["Public Speaking", "Debate", "Persuasion", "Elocution", "Speech Writing", "Confidence Building"],
     colorHex: "#3B82F6",
-    image: img3
+    image: imgPublicSpeaking
   },
   {
     title: "Young Journalists &\nMedia Studio",
@@ -133,7 +145,7 @@ const studios = [
     grades: "Grades 4-12",
     tags: ["Journalism", "Media Literacy", "Writing", "Reporting", "Fact-Checking", "Digital Publishing"],
     colorHex: "#EF4444",
-    image: img4
+    image: imgJournalist
   },
   {
     title: "Space &\nAstronomy Studio",
@@ -141,7 +153,7 @@ const studios = [
     grades: "Grades 5-12",
     tags: ["Astronomy", "Space Exploration", "Astrophysics", "Cosmology", "Rocketry", "Planetary Science"],
     colorHex: "#22C55E",
-    image: img5
+    image: imgSpace
   }
 ];
 
