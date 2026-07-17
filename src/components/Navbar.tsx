@@ -48,6 +48,7 @@ const NAV_LINKS = [
     ],
   },
   { label: 'AI Playground', href: '/ai-playground' },
+  { label: 'University', href: '/university' },
   { label: 'CCMM', href: '#' },
   { label: 'Educator Circle', href: '#' },
 ];
@@ -59,6 +60,7 @@ const MOBILE_NAV_LINKS = [
   { label: 'Virtual Internship', href: '/virtual-internship' },
   { label: 'Learners Segment (Schools)', href: '/learners' },
   { label: 'AI Playground', href: '/ai-playground' },
+  { label: 'University', href: '/university' },
   { label: 'CCMM', href: '#' },
   { label: 'Educator Circle', href: '#' },
 ];
