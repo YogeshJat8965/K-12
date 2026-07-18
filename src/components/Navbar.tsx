@@ -50,7 +50,7 @@ const NAV_LINKS = [
   { label: 'AI Playground', href: '/ai-playground' },
   { label: 'University', href: '/university' },
   { label: 'CCMM', href: '#' },
-  { label: 'Educator Circle', href: '#' },
+  { label: 'Educator Circle', href: '/educator' },
 ];
 
 const MOBILE_NAV_LINKS = [
@@ -62,7 +62,7 @@ const MOBILE_NAV_LINKS = [
   { label: 'AI Playground', href: '/ai-playground' },
   { label: 'University', href: '/university' },
   { label: 'CCMM', href: '#' },
-  { label: 'Educator Circle', href: '#' },
+  { label: 'Educator Circle', href: '/educator' },
 ];
 
 /* ─── Inline SVG Social Icons (exact replicas) ─── */
