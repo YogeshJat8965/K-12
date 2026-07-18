@@ -234,8 +234,8 @@ export default function ProgrammeCalendar() {
         <div className="flex flex-col lg:flex-row">
           
           {/* Mobile Dial */}
-          <div className="w-full flex justify-start mb-12 lg:hidden ml-2 md:ml-4 overflow-hidden h-[450px]">
-            <div className="transform scale-[0.6] md:scale-[0.75] origin-left">
+          <div className="w-full flex justify-start mb-6 lg:hidden ml-2 md:ml-4 overflow-hidden h-[430px] md:h-[450px] -mt-12 md:-mt-8">
+            <div className="transform scale-[0.6] md:scale-[0.75] origin-top-left">
               {renderDial()}
             </div>
           </div>

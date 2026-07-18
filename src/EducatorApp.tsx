@@ -20,10 +20,10 @@ export default function EducatorApp() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen overflow-x-hidden">
       <Navbar />
       
-      <main className="flex-1 w-full bg-white">
+      <main className="flex-1 w-full bg-white overflow-x-hidden">
         <EducatorHero />
         <TeacherAtCenter />
         <MembershipBenefits />

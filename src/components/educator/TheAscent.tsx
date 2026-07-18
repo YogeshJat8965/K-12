@@ -25,30 +25,30 @@ export default function TheAscent() {
         </div>
 
         {/* Content Image */}
-        <div className="w-full flex justify-center lg:justify-start">
+        <div className="w-full flex justify-center lg:justify-start my-4 md:my-0">
           <img
             src={onePathImg}
             alt="One path from first login to the national stage"
-            className="w-full max-w-full lg:max-w-[1300px] xl:max-w-[1400px] h-auto object-contain"
+            className="w-full max-w-full lg:max-w-[1300px] xl:max-w-[1400px] h-auto object-contain transform scale-[1.08] md:scale-100 transition-transform origin-center"
           />
         </div>
 
         {/* Top Banner migrated from Community Circles */}
-        <div className="w-full bg-[#F8FAFC] border border-[#F1F5F9] rounded-[20px] py-4 px-6 md:px-8 flex flex-col md:flex-row items-center justify-center gap-6 shadow-md -mt-13 lg:-mt-12 relative z-20 mb-4 mx-auto max-w-5xl">
+        <div className="w-full bg-[#F8FAFC] border border-[#F1F5F9] rounded-[20px] py-5 px-6 md:px-8 flex flex-col md:flex-row items-start md:items-center justify-center gap-4 md:gap-6 shadow-md -mt-13 lg:-mt-12 relative z-20 mb-4 mx-auto max-w-5xl">
 
-          <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-[#F97316] border border-gray-50 shrink-0">
+          <div className="flex items-start md:items-center gap-4">
+            <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-[#F97316] border border-gray-50 shrink-0 mt-0.5 md:mt-0">
               <Star className="w-5 h-5" strokeWidth={2.5} />
             </div>
-            <p className="text-gray-600 text-[14px] md:text-[15px] font-medium">
+            <p className="text-gray-600 text-[14px] md:text-[15px] font-medium leading-snug pt-1 md:pt-0">
               <span className="text-[#F97316] font-bold">100 pts</span> for a complete Skill DNA profile
             </p>
           </div>
 
           <div className="hidden md:block w-[1px] h-6 bg-gray-200"></div>
 
-          <div className="flex items-center gap-3">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#4F46E5]"></div>
+          <div className="flex items-center gap-3 pl-14 md:pl-0">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#4F46E5] shrink-0"></div>
             <p className="text-gray-600 text-[14px] md:text-[15px] font-medium">
               <span className="text-[#4F46E5] font-bold">50 pts</span> per masterclass
             </p>
@@ -56,8 +56,8 @@ export default function TheAscent() {
 
           <div className="hidden md:block w-[1px] h-6 bg-gray-200"></div>
 
-          <div className="flex items-center gap-3">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#4F46E5]"></div>
+          <div className="flex items-center gap-3 pl-14 md:pl-0">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#4F46E5] shrink-0"></div>
             <p className="text-gray-600 text-[14px] md:text-[15px] font-medium">
               Points for every contribution
             </p>
