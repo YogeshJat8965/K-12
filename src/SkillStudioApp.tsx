@@ -37,7 +37,7 @@ export default function SkillStudioApp() {
 
   return (
     <LenisProvider>
-      <div className="min-h-screen text-slate-900 overflow-x-hidden font-poppins" style={{ fontFamily: "'Poppins', sans-serif" }}>
+      <div className="skill-studio-page min-h-screen text-slate-900 overflow-x-hidden font-poppins" style={{ fontFamily: "'Poppins', sans-serif" }}>
 
         <Navbar />
 

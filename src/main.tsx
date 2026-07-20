@@ -11,6 +11,7 @@ import LoginApp from './LoginApp.tsx';
 import ContactApp from './ContactApp.tsx';
 import UniversityApp from './UniversityApp.tsx';
 import EducatorApp from './EducatorApp.tsx';
+import CcmmApp from './CcmmApp.tsx';
 import './index.css';
 
 const path = window.location.pathname;
@@ -28,6 +29,7 @@ createRoot(document.getElementById('root')!).render(
      path === '/contact' ? <ContactApp /> :
      path === '/university' ? <UniversityApp /> :
      path === '/educator' ? <EducatorApp /> :
+     path === '/ccmm' ? <CcmmApp /> :
      <HomeApp />}
   </StrictMode>
 );

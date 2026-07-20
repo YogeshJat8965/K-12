@@ -128,35 +128,35 @@
 /* SKILL STUDIO RESPONSIVE FIXES (via nth-of-type targeting)    */
 /* ============================================================ */
 
-/* GLOBAL RULES */
-body, .min-h-screen, section { overflow-x: hidden !important; }
+/* GLOBAL RULES (scoped to Skill Studio page) */
+.skill-studio-page, .skill-studio-page .min-h-screen, .skill-studio-page section { overflow-x: hidden !important; }
 
 @media (max-width: 1024px) {
-  section > div.max-w-\[1400px\], section > div.max-w-\[1280px\], section > div.max-w-\[1200px\] {
+  .skill-studio-page section > div.max-w-\[1400px\], .skill-studio-page section > div.max-w-\[1280px\], .skill-studio-page section > div.max-w-\[1200px\] {
     padding-left: 20px !important;
     padding-right: 20px !important;
   }
 }
 @media (max-width: 768px) {
-  section > div.max-w-\[1400px\], section > div.max-w-\[1280px\], section > div.max-w-\[1200px\] {
+  .skill-studio-page section > div.max-w-\[1400px\], .skill-studio-page section > div.max-w-\[1280px\], .skill-studio-page section > div.max-w-\[1200px\] {
     padding-left: 16px !important;
     padding-right: 16px !important;
   }
-  img { max-width: 100% !important; height: auto !important; object-fit: cover !important; }
+  .skill-studio-page img { max-width: 100% !important; height: auto !important; object-fit: cover !important; }
 }
 
 /* 1. HERO (section:nth-of-type(1)) */
 @media (max-width: 1024px) {
-  section:nth-of-type(1) h1 { font-size: 2.4rem !important; }
+  .skill-studio-page section:nth-of-type(1) h1 { font-size: 2.4rem !important; }
   .orbit-2 { width: 380px !important; height: 380px !important; }
   .orbit-1 { width: 280px !important; height: 280px !important; }
   .badge-label { font-size: 10px !important; }
 }
 @media (max-width: 768px) {
-  section:nth-of-type(1) h1 { font-size: 1.9rem !important; white-space: normal !important; }
-  section:nth-of-type(1) p { font-size: 0.9rem !important; }
-  section:nth-of-type(1) .flex.flex-col.sm\:flex-row { flex-direction: column !important; width: 100% !important; }
-  section:nth-of-type(1) .flex.flex-col.sm\:flex-row button { width: 100% !important; justify-content: center; }
+  .skill-studio-page section:nth-of-type(1) h1 { font-size: 1.9rem !important; white-space: normal !important; }
+  .skill-studio-page section:nth-of-type(1) p { font-size: 0.9rem !important; }
+  .skill-studio-page section:nth-of-type(1) .flex.flex-col.sm\:flex-row { flex-direction: column !important; width: 100% !important; }
+  .skill-studio-page section:nth-of-type(1) .flex.flex-col.sm\:flex-row button { width: 100% !important; justify-content: center; }
   .orbit-2 { width: 310px !important; height: 310px !important; }
   .orbit-1 { width: 220px !important; height: 220px !important; }
   .badge-icon-wrapper { width: 36px !important; height: 36px !important; }
@@ -165,28 +165,28 @@ body, .min-h-screen, section { overflow-x: hidden !important; }
   .animate-sphere-3d { max-width: 240px !important; margin: 0 auto; }
 }
 @media (max-width: 480px) {
-  section:nth-of-type(1) h1 { font-size: 1.6rem !important; }
+  .skill-studio-page section:nth-of-type(1) h1 { font-size: 1.6rem !important; }
   .orbit-2 { width: 270px !important; height: 270px !important; }
   .orbit-1 { width: 190px !important; height: 190px !important; }
   .badge-icon-wrapper { width: 32px !important; height: 32px !important; }
   .badge-icon-wrapper svg { width: 16px !important; height: 16px !important; }
   .badge-label { font-size: 8px !important; margin-top: 2px !important; }
   .animate-sphere-3d { max-width: 190px !important; }
-  section:nth-of-type(1) .flex.flex-col.sm\:flex-row button { min-height: 44px !important; }
+  .skill-studio-page section:nth-of-type(1) .flex.flex-col.sm\:flex-row button { min-height: 44px !important; }
 }
 
 /* 2. STAT BAR (section:nth-of-type(2)) */
 @media (max-width: 1024px) {
-  section:nth-of-type(2) .stat-card h3 { font-size: 1.8rem !important; }
+  .skill-studio-page section:nth-of-type(2) .stat-card h3 { font-size: 1.8rem !important; }
 }
 @media (max-width: 768px) {
-  section:nth-of-type(2) > div {
+  .skill-studio-page section:nth-of-type(2) > div {
     display: grid !important; 
     grid-template-columns: 1fr 1fr !important; 
     gap: 16px !important;
     padding: 24px 16px !important;
   }
-  section:nth-of-type(2) .stat-card {
+  .skill-studio-page section:nth-of-type(2) .stat-card {
     flex-direction: row !important; /* icon left, text right */
     align-items: center !important;
     justify-content: flex-start !important;
@@ -196,217 +196,217 @@ body, .min-h-screen, section { overflow-x: hidden !important; }
     width: 100% !important;
     gap: 12px !important;
   }
-  section:nth-of-type(2) .stat-icon {
+  .skill-studio-page section:nth-of-type(2) .stat-icon {
     width: 48px !important;
     height: 48px !important;
   }
-  section:nth-of-type(2) .stat-icon svg {
+  .skill-studio-page section:nth-of-type(2) .stat-icon svg {
     width: 24px !important;
     height: 24px !important;
   }
-  section:nth-of-type(2) .stat-card:nth-last-child(-n+2) {
+  .skill-studio-page section:nth-of-type(2) .stat-card:nth-last-child(-n+2) {
     border-bottom: none !important;
     padding-bottom: 0 !important;
   }
   /* Horizontal divider between rows handled by borders on items */
 }
 @media (max-width: 480px) {
-  section:nth-of-type(2) .stat-card h3 { font-size: 1.25rem !important; white-space: nowrap !important; }
+  .skill-studio-page section:nth-of-type(2) .stat-card h3 { font-size: 1.25rem !important; white-space: nowrap !important; }
 }
 
 /* 3. WHAT IS SKILLZZA CLUB (section:nth-of-type(3)) */
 @media (max-width: 1024px) {
-  section:nth-of-type(3) h2 { font-size: 2.4rem !important; }
+  .skill-studio-page section:nth-of-type(3) h2 { font-size: 2.4rem !important; }
 }
 @media (max-width: 768px) {
-  section:nth-of-type(3) h2 { font-size: 1.7rem !important; }
-  section:nth-of-type(3) img { max-height: 280px !important; object-fit: cover !important; border-radius: 16px !important; }
-  section:nth-of-type(3) .flex-wrap {
+  .skill-studio-page section:nth-of-type(3) h2 { font-size: 1.7rem !important; }
+  .skill-studio-page section:nth-of-type(3) img { max-height: 280px !important; object-fit: cover !important; border-radius: 16px !important; }
+  .skill-studio-page section:nth-of-type(3) .flex-wrap {
     display: grid !important; 
     grid-template-columns: 1fr 1fr !important; 
     gap: 16px !important;
   }
-    section:nth-of-type(3) .feature-item { flex-direction: row !important; align-items: center !important; }
+    .skill-studio-page section:nth-of-type(3) .feature-item { flex-direction: row !important; align-items: center !important; }
 }
 
 /* 4. THE CHALLENGE (section:nth-of-type(4)) */
 @media (max-width: 1024px) {
-  section:nth-of-type(4) .stat-counter-wrapper h3 { font-size: 2.8rem !important; }
-  section:nth-of-type(4) .stat-counter-wrapper p { font-size: 0.75rem !important; }
+  .skill-studio-page section:nth-of-type(4) .stat-counter-wrapper h3 { font-size: 2.8rem !important; }
+  .skill-studio-page section:nth-of-type(4) .stat-counter-wrapper p { font-size: 0.75rem !important; }
 }
 @media (max-width: 768px) {
-  section:nth-of-type(4) h2 { font-size: 1.7rem !important; white-space: normal !important; }
-  section:nth-of-type(4) span.text-\[12px\] { font-size: 0.7rem !important; }
-  section:nth-of-type(4) .grid {
+  .skill-studio-page section:nth-of-type(4) h2 { font-size: 1.7rem !important; white-space: normal !important; }
+  .skill-studio-page section:nth-of-type(4) span.text-\[12px\] { font-size: 0.7rem !important; }
+  .skill-studio-page section:nth-of-type(4) .grid {
     grid-template-columns: 1fr 1fr !important; 
     gap: 24px !important;
   }
-  section:nth-of-type(4) .stat-counter-wrapper {
+  .skill-studio-page section:nth-of-type(4) .stat-counter-wrapper {
     border-left: none !important;
     padding-left: 0 !important;
     align-items: center !important;
     text-align: center !important;
   }
-  section:nth-of-type(4) .stat-counter-wrapper:last-child {
+  .skill-studio-page section:nth-of-type(4) .stat-counter-wrapper:last-child {
     grid-column: 1 / -1 !important;
   }
 }
 @media (max-width: 480px) {
-  section:nth-of-type(4) .grid { grid-template-columns: 1fr !important; }
-  section:nth-of-type(4) .stat-counter-wrapper h3 { font-size: 2.2rem !important; }
+  .skill-studio-page section:nth-of-type(4) .grid { grid-template-columns: 1fr !important; }
+  .skill-studio-page section:nth-of-type(4) .stat-counter-wrapper h3 { font-size: 2.2rem !important; }
 }
 
 /* 5. OUR SKILL STUDIOS (section:nth-of-type(5)) */
 @media (max-width: 1024px) {
-  section:nth-of-type(5) h2 { font-size: 2.4rem !important; }
-  section:nth-of-type(5) .tilt-card-wrapper {
+  .skill-studio-page section:nth-of-type(5) h2 { font-size: 2.4rem !important; }
+  .skill-studio-page section:nth-of-type(5) .tilt-card-wrapper {
     width: calc(50% - 1rem) !important;
   }
 }
 @media (max-width: 768px) {
-  section:nth-of-type(5) h2 { font-size: 1.7rem !important; }
-  section:nth-of-type(5) p.text-\[16px\] { font-size: 0.9rem !important; white-space: normal !important; }
-  section:nth-of-type(5) .tilt-card-wrapper {
+  .skill-studio-page section:nth-of-type(5) h2 { font-size: 1.7rem !important; }
+  .skill-studio-page section:nth-of-type(5) p.text-\[16px\] { font-size: 0.9rem !important; white-space: normal !important; }
+  .skill-studio-page section:nth-of-type(5) .tilt-card-wrapper {
     width: 100% !important;
   }
-  section:nth-of-type(5) .tilt-card-wrapper img { height: 200px !important; }
-  section:nth-of-type(5) .tilt-card-wrapper h3 { font-size: 1rem !important; padding: 16px !important; }
+  .skill-studio-page section:nth-of-type(5) .tilt-card-wrapper img { height: 200px !important; }
+  .skill-studio-page section:nth-of-type(5) .tilt-card-wrapper h3 { font-size: 1rem !important; padding: 16px !important; }
 }
 @media (max-width: 480px) {
-  section:nth-of-type(5) .tilt-card-wrapper img { height: 180px !important; }
-  section:nth-of-type(5) .tilt-card-wrapper h3 { font-size: 0.95rem !important; }
+  .skill-studio-page section:nth-of-type(5) .tilt-card-wrapper img { height: 180px !important; }
+  .skill-studio-page section:nth-of-type(5) .tilt-card-wrapper h3 { font-size: 0.95rem !important; }
 }
 
 /* 6. THE SKILL LEARNING PATHWAY (section:nth-of-type(6)) */
 @media (max-width: 1024px) {
-  section:nth-of-type(6) h2 { font-size: 2.4rem !important; }
-  section:nth-of-type(6) .grid {
+  .skill-studio-page section:nth-of-type(6) h2 { font-size: 2.4rem !important; }
+  .skill-studio-page section:nth-of-type(6) .grid {
     grid-template-columns: repeat(3, 1fr) !important;
   }
 }
 @media (max-width: 768px) {
-  section:nth-of-type(6) h2 { font-size: 1.7rem !important; text-align: center !important; }
-  section:nth-of-type(6) > div > div:first-child { align-items: center !important; text-align: center !important; }
-  section:nth-of-type(6) .flex-col.sm\:flex-row { flex-direction: column !important; width: 100% !important; }
-  section:nth-of-type(6) .grid { grid-template-columns: 1fr !important; }
-  section:nth-of-type(6) .feature-item { flex-direction: row !important; align-items: flex-start !important; gap: 16px !important; }
-  section:nth-of-type(6) .feature-icon-wrapper { margin-bottom: 0 !important; }
+  .skill-studio-page section:nth-of-type(6) h2 { font-size: 1.7rem !important; text-align: center !important; }
+  .skill-studio-page section:nth-of-type(6) > div > div:first-child { align-items: center !important; text-align: center !important; }
+  .skill-studio-page section:nth-of-type(6) .flex-col.sm\:flex-row { flex-direction: column !important; width: 100% !important; }
+  .skill-studio-page section:nth-of-type(6) .grid { grid-template-columns: 1fr !important; }
+  .skill-studio-page section:nth-of-type(6) .feature-item { flex-direction: row !important; align-items: flex-start !important; gap: 16px !important; }
+  .skill-studio-page section:nth-of-type(6) .feature-icon-wrapper { margin-bottom: 0 !important; }
 }
 @media (max-width: 480px) {
-  section:nth-of-type(6) .feature-item h3 { font-size: 1rem !important; }
-  section:nth-of-type(6) .feature-item p { font-size: 0.85rem !important; }
+  .skill-studio-page section:nth-of-type(6) .feature-item h3 { font-size: 1rem !important; }
+  .skill-studio-page section:nth-of-type(6) .feature-item p { font-size: 0.85rem !important; }
 }
 
 /* 7 & 8. IMPLEMENTATION FRAMEWORK (section:nth-of-type(7) & section:nth-of-type(8)) */
 @media (max-width: 1024px) {
-  section:nth-of-type(7) h2 { font-size: 2.4rem !important; }
-  section:nth-of-type(7) .tilt-card-wrapper { width: 45% !important; }
+  .skill-studio-page section:nth-of-type(7) h2 { font-size: 2.4rem !important; }
+  .skill-studio-page section:nth-of-type(7) .tilt-card-wrapper { width: 45% !important; }
 }
 @media (max-width: 768px) {
-  section:nth-of-type(7) h2 { font-size: 1.7rem !important; text-align: center !important; }
-  section:nth-of-type(7) .tilt-card-wrapper { width: 100% !important; align-self: center !important; margin-top: 24px !important; margin-left: 0 !important; }
+  .skill-studio-page section:nth-of-type(7) h2 { font-size: 1.7rem !important; text-align: center !important; }
+  .skill-studio-page section:nth-of-type(7) .tilt-card-wrapper { width: 100% !important; align-self: center !important; margin-top: 24px !important; margin-left: 0 !important; }
   /* Hide the road */
-  section:nth-of-type(7) .absolute.inset-x-0 { display: none !important; }
+  .skill-studio-page section:nth-of-type(7) .absolute.inset-x-0 { display: none !important; }
   /* Vertical timeline line - removed as per user request */
-  section:nth-of-type(7) > div > div.relative.z-10 { position: relative; }
+  .skill-studio-page section:nth-of-type(7) > div > div.relative.z-10 { position: relative; }
   
   /* Bottom CTA (section 8) */
-  section:nth-of-type(8) h2 { font-size: 1.7rem !important; text-align: center !important; }
-  section:nth-of-type(8) p { text-align: center !important; }
-  section:nth-of-type(8) > div > div:first-child { align-items: center !important; width: 100% !important; margin-bottom: 24px !important; }
-  section:nth-of-type(8) .flex-col.sm\:flex-row { flex-direction: column !important; width: 100% !important; }
-  section:nth-of-type(8) button { width: 100% !important; }
+  .skill-studio-page section:nth-of-type(8) h2 { font-size: 1.7rem !important; text-align: center !important; }
+  .skill-studio-page section:nth-of-type(8) p { text-align: center !important; }
+  .skill-studio-page section:nth-of-type(8) > div > div:first-child { align-items: center !important; width: 100% !important; margin-bottom: 24px !important; }
+  .skill-studio-page section:nth-of-type(8) .flex-col.sm\:flex-row { flex-direction: column !important; width: 100% !important; }
+  .skill-studio-page section:nth-of-type(8) button { width: 100% !important; }
 }
 @media (max-width: 480px) {
-  section:nth-of-type(7) .tilt-card-wrapper > div { padding: 16px !important; }
-  section:nth-of-type(7) .tilt-card-wrapper span.text-\[24px\] { font-size: 1.6rem !important; }
-  section:nth-of-type(7) .tilt-card-wrapper h3 { font-size: 1rem !important; }
+  .skill-studio-page section:nth-of-type(7) .tilt-card-wrapper > div { padding: 16px !important; }
+  .skill-studio-page section:nth-of-type(7) .tilt-card-wrapper span.text-\[24px\] { font-size: 1.6rem !important; }
+  .skill-studio-page section:nth-of-type(7) .tilt-card-wrapper h3 { font-size: 1rem !important; }
 }
 
 /* 9. IMPACT MEASUREMENT FRAMEWORK (section:nth-of-type(9)) */
 @media (max-width: 1024px) {
-  section:nth-of-type(9) h2 { font-size: 2.4rem !important; }
+  .skill-studio-page section:nth-of-type(9) h2 { font-size: 2.4rem !important; }
 }
 @media (max-width: 768px) {
-  section:nth-of-type(9) h2 { font-size: 1.7rem !important; }
-  section:nth-of-type(9) p { font-size: 0.9rem !important; }
-  section:nth-of-type(9) .grid { grid-template-columns: 1fr 1fr !important; }
-  section:nth-of-type(9) .tilt-card-wrapper > div { flex-direction: row !important; align-items: flex-start !important; gap: 16px !important; }
-  section:nth-of-type(9) .feature-icon-wrapper { flex-shrink: 0 !important; }
+  .skill-studio-page section:nth-of-type(9) h2 { font-size: 1.7rem !important; }
+  .skill-studio-page section:nth-of-type(9) p { font-size: 0.9rem !important; }
+  .skill-studio-page section:nth-of-type(9) .grid { grid-template-columns: 1fr 1fr !important; }
+  .skill-studio-page section:nth-of-type(9) .tilt-card-wrapper > div { flex-direction: row !important; align-items: flex-start !important; gap: 16px !important; }
+  .skill-studio-page section:nth-of-type(9) .feature-icon-wrapper { flex-shrink: 0 !important; }
 }
 @media (max-width: 480px) {
-  section:nth-of-type(9) .grid { grid-template-columns: 1fr !important; }
-  section:nth-of-type(9) h3 { font-size: 1rem !important; }
-  section:nth-of-type(9) p { font-size: 0.85rem !important; }
+  .skill-studio-page section:nth-of-type(9) .grid { grid-template-columns: 1fr !important; }
+  .skill-studio-page section:nth-of-type(9) h3 { font-size: 1rem !important; }
+  .skill-studio-page section:nth-of-type(9) p { font-size: 0.85rem !important; }
 }
 
 /* 10. REPORTING STRIP (section:nth-of-type(10)) */
 @media (min-width: 769px) and (max-width: 1024px) {
-  section:nth-of-type(10) > div > div.flex-col {
+  .skill-studio-page section:nth-of-type(10) > div > div.flex-col {
     flex-direction: row !important;
   }
-  section:nth-of-type(10) .feature-item { border-right: 1px solid #E5E7EB; padding-left: 16px; padding-right: 16px; }
-  section:nth-of-type(10) .feature-item:last-child { border-right: none; }
+  .skill-studio-page section:nth-of-type(10) .feature-item { border-right: 1px solid #E5E7EB; padding-left: 16px; padding-right: 16px; }
+  .skill-studio-page section:nth-of-type(10) .feature-item:last-child { border-right: none; }
 }
 @media (max-width: 768px) {
-  section:nth-of-type(10) > div > div.flex-col {
+  .skill-studio-page section:nth-of-type(10) > div > div.flex-col {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     gap: 24px !important;
   }
-  section:nth-of-type(10) .feature-item { width: 100% !important; padding: 0 !important; border: none !important; margin: 0 !important; }
+  .skill-studio-page section:nth-of-type(10) .feature-item { width: 100% !important; padding: 0 !important; border: none !important; margin: 0 !important; }
 }
 @media (max-width: 480px) {
-  section:nth-of-type(10) > div > div.flex-col {
+  .skill-studio-page section:nth-of-type(10) > div > div.flex-col {
     grid-template-columns: 1fr !important;
   }
 }
 
 /* 11. TRUSTED BY EDUCATIONAL INSTITUTES (section:nth-of-type(11)) */
 @media (max-width: 1024px) {
-  section:nth-of-type(11) h2 { font-size: 1.6rem !important; }
+  .skill-studio-page section:nth-of-type(11) h2 { font-size: 1.6rem !important; }
 }
 @media (max-width: 768px) {
-  section:nth-of-type(11) h2 { font-size: 1.4rem !important; text-align: center !important; }
-  section:nth-of-type(11) .overflow-hidden { overflow: hidden !important; }
+  .skill-studio-page section:nth-of-type(11) h2 { font-size: 1.4rem !important; text-align: center !important; }
+  .skill-studio-page section:nth-of-type(11) .overflow-hidden { overflow: hidden !important; }
 }
 
 
 /* 12. PARTNERSHIPS BANNER (section:nth-of-type(12)) */
 @media (max-width: 1024px) {
-  section:nth-of-type(12) .absolute.hidden.lg\:block { display: block !important; width: 40% !important; }
-  section:nth-of-type(12) .relative.z-10 { padding-left: 45% !important; }
+  .skill-studio-page section:nth-of-type(12) .absolute.hidden.lg\:block { display: block !important; width: 40% !important; }
+  .skill-studio-page section:nth-of-type(12) .relative.z-10 { padding-left: 45% !important; }
 }
 @media (max-width: 768px) {
-  section:nth-of-type(12) > div > div { flex-direction: column !important; height: auto !important; border-radius: 16px !important; padding: 0 !important; }
-  section:nth-of-type(12) .absolute.hidden.lg\:block { 
+  .skill-studio-page section:nth-of-type(12) > div > div { flex-direction: column !important; height: auto !important; border-radius: 16px !important; padding: 0 !important; }
+  .skill-studio-page section:nth-of-type(12) .absolute.hidden.lg\:block { 
     position: relative !important; 
     width: 100% !important; 
     height: 200px !important; 
     left: 0 !important; 
     border-radius: 16px 16px 0 0 !important;
   }
-  section:nth-of-type(12) .absolute.hidden.lg\:block img { 
+  .skill-studio-page section:nth-of-type(12) .absolute.hidden.lg\:block img { 
     width: 100% !important; 
     height: 100% !important; 
     left: 0 !important; 
     object-position: center !important;
   }
-  section:nth-of-type(12) .relative.z-10 {
+  .skill-studio-page section:nth-of-type(12) .relative.z-10 {
     padding: 24px !important;
     text-align: center !important;
   }
-  section:nth-of-type(12) .flex-col.lg\:flex-row { flex-direction: column !important; }
-  section:nth-of-type(12) .relative.z-10 > div { align-items: center !important; transform: none !important; margin-top: 16px !important; }
-  section:nth-of-type(12) h3 { font-size: 1.5rem !important; text-align: center !important; }
-  section:nth-of-type(12) p { text-align: center !important; }
-  section:nth-of-type(12) button { min-width: 180px !important; }
+  .skill-studio-page section:nth-of-type(12) .flex-col.lg\:flex-row { flex-direction: column !important; }
+  .skill-studio-page section:nth-of-type(12) .relative.z-10 > div { align-items: center !important; transform: none !important; margin-top: 16px !important; }
+  .skill-studio-page section:nth-of-type(12) h3 { font-size: 1.5rem !important; text-align: center !important; }
+  .skill-studio-page section:nth-of-type(12) p { text-align: center !important; }
+  .skill-studio-page section:nth-of-type(12) button { min-width: 180px !important; }
 }
 @media (max-width: 480px) {
-  section:nth-of-type(12) .absolute.hidden.lg\:block { height: 160px !important; }
-  section:nth-of-type(12) h3 { font-size: 1.3rem !important; }
-  section:nth-of-type(12) p { font-size: 0.85rem !important; }
-  section:nth-of-type(12) button { width: 100% !important; }
+  .skill-studio-page section:nth-of-type(12) .absolute.hidden.lg\:block { height: 160px !important; }
+  .skill-studio-page section:nth-of-type(12) h3 { font-size: 1.3rem !important; }
+  .skill-studio-page section:nth-of-type(12) p { font-size: 0.85rem !important; }
+  .skill-studio-page section:nth-of-type(12) button { width: 100% !important; }
 }
 
 /* ============================================================ */
@@ -418,5 +418,5 @@ body, .min-h-screen, section { overflow-x: hidden !important; }
   .tilt-card-wrapper img { transform: none !important; filter: none !important; }
   .tilt-card-wrapper h3, .tilt-card-wrapper p { transform: none !important; }
   .magnetic-btn { transform: none !important; }
-  button { transform: none !important; }
+  .skill-studio-page button { transform: none !important; }
 }
