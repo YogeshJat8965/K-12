@@ -115,10 +115,10 @@ export default function ContactApp() {
                     United Kingdom.
                   </p>
                   <div className="w-full h-px bg-[#7C3AED]/20 my-1"></div>
-                  <div className="flex items-center gap-3 font-semibold text-[#1A1A2E]">
+                  {/* <div className="flex items-center gap-3 font-semibold text-[#1A1A2E]">
                     <Phone size={18} className="text-[#7C3AED]" />
                     <span className="tracking-wide">+44 7500 794772</span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 

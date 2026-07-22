@@ -244,7 +244,7 @@ export default function SchoolsAndEducators() {
         }
       `}</style>
 
-      <section className="sae-section" ref={sectionRef}>
+      {/* <section className="sae-section" ref={sectionRef}>
         <div className="sae-container">
           
           <div className="sae-header">
@@ -278,7 +278,7 @@ export default function SchoolsAndEducators() {
           </div>
 
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

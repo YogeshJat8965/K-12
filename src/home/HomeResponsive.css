@@ -1,7 +1,7 @@
 /* --------------------------------------------------------
    HomeResponsive.css
    All overrides for mobile and tablet responsiveness 
-   for the SKILLZZA K-12 (Home) page.
+   for the Skill Studio (Home) page.
    Desktop layout (1280px+) remains completely untouched.
    -------------------------------------------------------- */
 
@@ -14,7 +14,13 @@
   section,
   main {
     overflow-x: hidden !important;
-    max-width: 100vw !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box !important;
   }
 
   .hh-content,
@@ -122,7 +128,7 @@
     flex: 0 0 100% !important;
     max-width: 100% !important;
     justify-content: center !important;
-    margin-top: 30px !important;
+    margin-top: 14px !important;
   }
 
   .hh-right img {
@@ -130,10 +136,14 @@
     top: auto !important;
     right: auto !important;
     transform: none !important;
-    max-height: 320px !important;
-    object-fit: cover !important;
-    object-position: top center !important;
-    width: 100% !important;
+    width: min(68vw, 240px) !important;
+    max-width: 68vw !important;
+    max-height: 160px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    display: block !important;
+    margin: 0 auto !important;
     border-radius: 16px !important;
   }
 
@@ -204,6 +214,12 @@
 @media (max-width: 480px) {
   .hh-h1 {
     font-size: 1.6rem !important;
+  }
+
+  .hh-right img {
+    width: min(60vw, 200px) !important;
+    max-width: 60vw !important;
+    max-height: 140px !important;
   }
 
   .hh-feature-bar {

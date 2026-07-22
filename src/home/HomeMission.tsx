@@ -227,7 +227,8 @@ export default function HomeMission() {
         /* ═══ MOBILE ═══ */
         @media (max-width: 768px) {
           .hm-section {
-            padding: 24px 0 !important;
+            padding: 0 !important;
+            overflow-x: hidden !important;
           }
           .hm-inner {
             flex-direction: column !important;
@@ -289,17 +290,17 @@ export default function HomeMission() {
             padding: 5px 12px !important;
             font-size: 11px !important;
           }
-          .hm-mobile-img-container {
-            width: 100%;
-            overflow: hidden;
-            display: flex;
-            justify-content: flex-start;
-          }
           .hm-mobile-img {
-            width: 200% !important;
-            max-width: 200% !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            max-height: none !important;
             height: auto !important;
             display: block;
+            object-fit: contain;
+            object-position: center center;
+            margin: 0;
+            transform: none !important;
+            border-radius: 0;
           }
         }
       `}</style>
@@ -307,13 +308,11 @@ export default function HomeMission() {
       <section className="hm-section" ref={sectionRef}>
         {isMobile ? (
           /* ═══ MOBILE: Show image instead of cards ═══ */
-          <div className="hm-mobile-img-container">
-            <img
-              src="/landing/responsive-mission.png"
-              alt="Skillzza Mission"
-              className="hm-mobile-img"
-            />
-          </div>
+          <img
+            src="/landing/responsive-mission.png"
+            alt="Skillzza Mission"
+            className="hm-mobile-img"
+          />
         ) : (
           /* ═══ DESKTOP: Original two-card layout ═══ */
           <div className="hm-inner">

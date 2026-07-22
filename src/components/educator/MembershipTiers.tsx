@@ -4,7 +4,7 @@ import { ShieldCheck } from 'lucide-react';
 export default function MembershipTiers() {
   const tiers = [
     {
-      badge: 'Community — Free',
+      badge: 'Community - Free',
       title: 'Explorer',
       features: [
         'Full Community & Circle Access',
@@ -13,7 +13,7 @@ export default function MembershipTiers() {
         'AI Lab Challenges & Lesson Library',
         'Digital Educator Card'
       ],
-      price: '₹0 - Forever',
+      // price: '₹0 - Forever',
       colors: {
         wave: '#EEF2FF', // indigo-50
         badgeBg: '#E0E7FF', // indigo-100
@@ -23,7 +23,7 @@ export default function MembershipTiers() {
       wavePath: "M0,0 L100,0 L100,12 C75,30 25,5 0,18 Z"
     },
     {
-      badge: 'PRO — MOST POPULAR',
+      badge: 'PRO - MOST POPULAR',
       title: 'Practitioner',
       features: [
         'Everything In Explorer',
@@ -32,7 +32,7 @@ export default function MembershipTiers() {
         'Vedya AI Priority Access',
         'Digital Skill Passport & CPD Report'
       ],
-      price: '₹499 / Year',
+      // price: '₹499 / Year',
       colors: {
         wave: '#EEF2FF', // indigo-50
         badgeBg: '#E0E7FF', // indigo-100
@@ -51,7 +51,7 @@ export default function MembershipTiers() {
         'Peer Mentor Certification',
         'National Yugantar Showcase Eligibility'
       ],
-      price: '₹1,499 / Year',
+      // price: '₹1,499 / Year',
       colors: {
         wave: '#EEF2FF', // indigo-50
         badgeBg: '#E0E7FF', // indigo-100
@@ -129,12 +129,12 @@ export default function MembershipTiers() {
               </ul>
 
               {/* Price Button/Badge */}
-              <div
+              {/* <div
                 className="relative z-10 px-6 py-2 rounded-full text-[13px] md:text-[14px] font-bold tracking-wide mt-auto"
                 style={{ backgroundColor: tier.colors.badgeBg, color: tier.colors.badgeText }}
               >
                 {tier.price}
-              </div>
+              </div> */}
             </div>
           ))}
         </div>
@@ -143,7 +143,7 @@ export default function MembershipTiers() {
         <div className="w-full max-w-5xl xl:max-w-[1200px] bg-[#F8FAFC] border border-[#F1F5F9] rounded-[16px] p-5 flex flex-col md:flex-row items-center justify-center gap-4 text-center">
 
           <p className="text-[#334155] text-[14px] md:text-[15px] font-bold leading-relaxed xl:whitespace-nowrap text-center">
-            Government School Teachers And Rural Educators Receive Free Pro Access — Apply Via Your District Education Office Partner.
+            Government School Teachers And Rural Educators Receive Free Pro Access - Apply Via Your District Education Office Partner.
           </p>
         </div>
 

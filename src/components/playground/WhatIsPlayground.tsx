@@ -277,11 +277,11 @@ export default function WhatIsPlayground() {
             </h2>
 
             <p className="wip-p">
-              Think of it as a creative workshop for AI - but without the complexity. Students explore a library of ready-made AI agents (mini-assistants designed for specific interests), customise them to their voice and style, and share what they create with friends, classmates, and teachers.
+              Think of it as a creative workshop for AI but without the complexity. Students explore a library of ready-made AI agents (mini assistants designed for specific interests), customise them to their voice and style, and share what they create with friends, classmates, and teachers.
             </p>
 
             <p className="wip-p">
-              No coding. No setup. No overwhelm. Just pick, tweak, build, share - and discover what AI can do when you're the one in charge.
+              No coding. No setup. No overwhelm. Just pick, tweak, build, share and discover what AI can do when you're the one in charge.
             </p>
 
             <div className="wip-features">

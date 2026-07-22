@@ -59,7 +59,7 @@ export default function CcmmCarries() {
       lineColor: 'border-[#5B45FF]',
       text: (
         <>
-          Inclusion in the <span className="text-[#5B45FF] font-bold">CCMM Index of AI-Ready Schools</span> — the national registry of certified institutions
+          Inclusion in the <span className="text-[#5B45FF] font-bold">CCMM Index of AI-Ready Schools</span> - the national registry of certified institutions
         </>
       )
     },

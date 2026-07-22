@@ -36,7 +36,7 @@ export default function UniversityHero() {
             <p className="text-gray-600 font-medium text-[14px] lg:text-[15px] leading-relaxed max-w-full lg:max-w-[90%] mb-8">
               Empower Your University With Adobe's Industry-Recognised Curriculum, 
               Licensed Creative Cloud Tools, AI-Powered Learning, And Professional 
-              Certifications — Helping Students Become Creative Thinkers, Digital 
+              Certifications - Helping Students Become Creative Thinkers, Digital 
               Innovators, And Career-Ready Professionals.
             </p>
             

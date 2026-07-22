@@ -13,7 +13,7 @@ export default function LearnersApp() {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
-    document.title = 'Learners | Skillzza K-12';
+    document.title = 'Learners | Skill Studio';
 
     const handleScroll = () => {
       const winScroll = document.documentElement.scrollTop;

@@ -89,14 +89,14 @@ export default function SafetySection() {
         </div>
 
         {/* Our Promise Footer */}
-        <div className="mt-24 pt-16 border-t border-slate-200 text-center">
+        {/* <div className="mt-24 pt-16 border-t border-slate-200 text-center">
           <ScrollReveal>
             <h3 className="text-2xl font-bold text-slate-900 mb-6">Our Promise to Parents</h3>
             <p className="text-slate-600 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed italic">
               "If our Playground wouldn't feel right for our own children, it doesn't belong on your child's screen. Every design decision is made with that filter first."
             </p>
           </ScrollReveal>
-        </div>
+        </div> */}
       </div>
     </section>
   );

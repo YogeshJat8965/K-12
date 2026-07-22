@@ -344,7 +344,7 @@ export default function SkillStudioApp() {
                 </ScrollRevealHeadline>
 
                 <p className="text-[16px] text-[#5C6274] leading-[1.8] mb-6 font-medium">
-                  Skillzza K-12 Studios are <span className="font-semibold text-[#5B32EA]">not just after-school activities.</span> They are structured skill studios designed to help students discover their strengths, build real-world skills, and develop a career-ready personality - all while having fun and learning through doing.
+                  Skill Studio Studios are <span className="font-semibold text-[#5B32EA]">not just after-school activities.</span> They are structured skill studios designed to help students discover their strengths, build real world skills, and develop a career-ready personality - all while having fun and learning through doing.
                 </p>
 
                 <p className="text-[16px] text-[#5C6274] leading-[1.8] font-medium mb-8 lg:mb-0">
@@ -434,7 +434,7 @@ export default function SkillStudioApp() {
                 </h2>
               </ScrollRevealHeadline>
               <p className="text-[16px] text-[#6B7280] leading-[1.8] font-medium max-w-[900px]">
-                A Curated Portfolio Of 7 Future-Forward Skill Studios - Each Designed As An Immersive Learning Pod Where Students Build Capability, Confidence, And A Portfolio That Travels With Them.
+                A curated portfolio of 7 future-forward Skill Studios <br /> Each designed as an immersive learning pod where students build Capability, Confidence, and a portfolio that travels with them.
               </p>
             </div>
 
@@ -531,7 +531,11 @@ export default function SkillStudioApp() {
                     <div className="border-l-[3.5px] border-[#4200FF] pl-3 py-1">
                       <h3 className="font-bold text-[#1A1A2E] text-[19px] leading-[1.3] tracking-tight">
                         Digital creativity &<br />AI skills by ADOBE
+            
                       </h3>
+                      <p className="text-[14px] text-red-500 mt-2">
+                        (Free)
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -925,54 +929,7 @@ export default function SkillStudioApp() {
         </section>
 
         {/* Reporting & Transparency Section */}
-        <section className="pb-12 md:pb-24 bg-[#F9F4FA] relative z-20">
-          <div className="max-w-[1280px] mx-auto px-6">
-            <div className="bg-white rounded-[24px] p-6 md:p-8 border border-gray-200 flex flex-col gap-6 shadow-[0_4px_24px_rgba(0,0,0,0.02)]">
-
-              {/* Header */}
-              <div>
-                <h3 className="text-[18px] md:text-[20px] font-bold text-[#1A1A2E] mb-3">
-                  Reporting & Transparency
-                </h3>
-                <div className="w-12 h-[2.5px] bg-[#F59E0B] rounded-full"></div>
-              </div>
-
-              {/* Features Row */}
-              <div className="flex flex-col lg:flex-row gap-6 lg:gap-0 lg:divide-x lg:divide-gray-100">
-
-                {/* Item 1 */}
-                <div className="flex flex-col justify-center lg:w-1/4 lg:pr-6 cursor-pointer group">
-                  <p className="text-[14px] text-[#1A1A2E] font-semibold leading-[1.6] group-hover:text-[#3B82F6] transition-colors">
-                    Digital portfolio documentation for every enrolled student.
-                  </p>
-                </div>
-
-                {/* Item 2 */}
-                <div className="flex flex-col justify-center lg:w-1/4 lg:px-6 cursor-pointer group">
-                  <p className="text-[14px] text-[#1A1A2E] font-semibold leading-[1.6] group-hover:text-[#10B981] transition-colors">
-                    Structured mid-year and annual showcase events.
-                  </p>
-                </div>
-
-                {/* Item 3 */}
-                <div className="flex flex-col justify-center lg:w-1/4 lg:px-6 cursor-pointer group">
-                  <p className="text-[14px] text-[#1A1A2E] font-semibold leading-[1.6] group-hover:text-[#8B5CF6] transition-colors">
-                    Live performance reporting dashboards for schools and parents.
-                  </p>
-                </div>
-
-                {/* Item 4 */}
-                <div className="flex flex-col justify-center lg:w-1/4 lg:pl-6 cursor-pointer group">
-                  <p className="text-[14px] text-[#1A1A2E] font-semibold leading-[1.6] group-hover:text-[#F59E0B] transition-colors">
-                    Year-end Studio Fest - a flagship celebration of student work.
-                  </p>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </section>
-
+        
 
 
         {/* Trusted By Educational Institutes Section */}

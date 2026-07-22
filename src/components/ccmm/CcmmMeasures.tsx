@@ -19,14 +19,14 @@ export default function CcmmMeasures() {
       title: 'Curriculum & Learning',
       titleColor: 'text-[#8B5CF6]',
       bg: 'bg-[#F5F3FF]',
-      desc: 'depth, integration, and relevance of AI and emerging-tech learning'
+      desc: 'Depth, Integration, and Relevance of AI and Emerging-Tech Learning'
     },
     {
       icon: <Presentation className="w-8 h-8 text-[#3B82F6]" strokeWidth={1.5} />,
       title: 'Educator Capability',
       titleColor: 'text-[#3B82F6]',
       bg: 'bg-[#EFF6FF]',
-      desc: 'teacher confidence, training, and use of AI in pedagogy'
+      desc: 'Teacher Confidence, Training, and use of AI in pedagogy'
     },
     {
       icon: (
@@ -40,28 +40,28 @@ export default function CcmmMeasures() {
       title: 'Infrastructure & Platform',
       titleColor: 'text-[#10B981]',
       bg: 'bg-[#ECFDF5]',
-      desc: 'digital and physical readiness, access, and the CoE'
+      desc: 'Digital and Physical Readiness, Access, and the CoE'
     },
     {
       icon: <Award className="w-8 h-8 text-[#F59E0B]" strokeWidth={1.5} />,
       title: 'Student Outcomes',
       titleColor: 'text-[#F59E0B]',
       bg: 'bg-[#FFFBEB]',
-      desc: 'skills, portfolios, projects, and demonstrable capability'
+      desc: 'Skills, Portfolios, Projects, and Demonstrable Capability'
     },
     {
       icon: <ShieldCheck className="w-8 h-8 text-[#F43F5E]" strokeWidth={1.5} />,
       title: 'Ethics & Governance',
       titleColor: 'text-[#F43F5E]',
       bg: 'bg-[#FFF1F2]',
-      desc: 'responsible AI, data, safety, and policy frameworks'
+      desc: 'Responsible AI, Data, Safety, and Policy Frameworks'
     },
     {
       icon: <Users className="w-8 h-8 text-[#06B6D4]" strokeWidth={1.5} />,
       title: 'Leadership & Culture',
       titleColor: 'text-[#06B6D4]',
       bg: 'bg-[#ECFEFF]',
-      desc: 'vision, strategy, community engagement, and SDG alignment'
+      desc: 'Vision, Strategy, Community Engagement, and SDG Alignment'
     }
   ];
 
@@ -91,7 +91,7 @@ export default function CcmmMeasures() {
               </div>
               <div className="flex flex-col">
                 <h4 className={`text-[17px] md:text-[19px] font-bold mb-1.5 ${item.titleColor}`}>
-                  {item.title} —
+                  {item.title}
                 </h4>
                 <p className="text-[#374151] font-medium text-[14px] md:text-[15px] leading-snug">
                   {item.desc}

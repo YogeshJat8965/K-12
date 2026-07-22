@@ -20,7 +20,7 @@ export default function TheAscent() {
           </h2>
 
           <p className="text-[#4B5563] font-medium text-[15px] md:text-[16px] leading-relaxed max-w-3xl">
-            Every Masterclass Attended, Lesson Shared, And Question Answered Moves You Up. This Isn't A Course You Finish — It's A Standing You Build With Your Community.
+            Every Masterclass Attended, Lesson Shared, And Question Answered Moves You Up. This Isn't A Course You Finish - It's A Standing You Build With Your Community.
           </p>
         </div>
 

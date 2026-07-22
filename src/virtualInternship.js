@@ -1,8 +1,8 @@
 export const hero = {
   headline: "Give Your Child a Head Start - Beyond Academics",
-  subline: "Skill Virtual Internships are structured, mentor-led, project-based...",
+  subline: "Virtual Internships are structured, mentor-led, project-based...",
   grades: "VIRTUAL INTERNSHIPS | GRADES 6-12",
-  badges: ["✓ Explore careers early", "✓ Build real-world projects",
+  badges: ["✓ Explore careers early", "✓ Build real world projects",
     "✓ Develop future-ready skills", "✓ Earn verified credentials"],
   ctas: [
     { label: "▶ Take the Quiz", type: "primary" },

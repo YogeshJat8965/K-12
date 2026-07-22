@@ -357,10 +357,10 @@ export default function PlaygroundHero() {
       <section className="ph-section" ref={heroRef}>
         <div className="ph-content">
           <div className="ph-left">
-            <div className="ph-badge">
+            {/* <div className="ph-badge">
               <span className="ph-badge-dot" />
               <span className="ph-badge-text">BUILD YOUR FIRST AI AGENT</span>
-            </div>
+            </div> */}
 
             <h1 className="ph-h1">
               Build Your First<br />
@@ -372,7 +372,7 @@ export default function PlaygroundHero() {
             </p>
 
             <p className="ph-sub">
-              AI Playground is a safe, plug-and-play creative space where students pick a prebuilt AI agent, shape it to their own interests, and bring their ideas to life - whether that's a story companion, a homework helper, a debate partner, or something entirely their own.
+              AI Playground is a safe, plug-and-play creative space where students pick a prebuilt AI agent, shape it to their own interests, and bring their ideas to life.
             </p>
 
             <div className="ph-btns">

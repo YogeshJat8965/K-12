@@ -29,13 +29,13 @@ export default function ProgrammeCalendar() {
         {
           iconBg: 'bg-purple-100', iconColor: 'text-purple-600',
           icon: <PenTool size={18} />,
-          title: 'AI LESSON DESIGN SPRINT — 3-DAY INTENSIVE',
+          title: 'AI LESSON DESIGN SPRINT - 3-DAY INTENSIVE',
           date: '7-9 JULY', badge: 'LIVE, ONLINE', badgeColor: 'text-purple-600'
         },
         {
           iconBg: 'bg-purple-100', iconColor: 'text-purple-600',
           icon: <Shield size={18} />,
-          title: 'WORLD YOUTH SKILLS DAY — EDUCATOR ROUNDTABLE',
+          title: 'WORLD YOUTH SKILLS DAY - EDUCATOR ROUNDTABLE',
           date: '15 JULY', badge: 'LIVE', badgeColor: 'text-purple-600'
         },
         {
@@ -56,13 +56,13 @@ export default function ProgrammeCalendar() {
         {
           iconBg: 'bg-blue-100', iconColor: 'text-blue-600',
           icon: <Play size={18} />,
-          title: 'VEDYA AI FOR EDUCATORS — DEEP DIVE MASTERCLASS',
+          title: 'VEDYA AI FOR EDUCATORS - DEEP DIVE MASTERCLASS',
           date: '6 AUG', badge: null
         },
         {
           iconBg: 'bg-blue-100', iconColor: 'text-blue-600',
           icon: <Users size={18} />,
-          title: 'AI EDUCATOR SHOWCASE — COHORT 1 DEMO DAY',
+          title: 'AI EDUCATOR SHOWCASE - COHORT 1 DEMO DAY',
           date: '22 AUG', badge: null
         },
         {
@@ -83,7 +83,7 @@ export default function ProgrammeCalendar() {
         {
           iconBg: 'bg-orange-100', iconColor: 'text-orange-600',
           icon: <TrendingUp size={18} />,
-          title: 'AI SCHOOL LEADERSHIP BOOTCAMP — ASCENT TRACK',
+          title: 'AI SCHOOL LEADERSHIP BOOTCAMP - ASCENT TRACK',
           date: '4-6 SEP', badge: null
         },
         {
@@ -95,7 +95,7 @@ export default function ProgrammeCalendar() {
         {
           iconBg: 'bg-orange-100', iconColor: 'text-orange-600',
           icon: <Compass size={18} />,
-          title: 'COHORT 2 AI ORIENTATION SPRINT — OPENS',
+          title: 'COHORT 2 AI ORIENTATION SPRINT - OPENS',
           date: '29 SEP', badge: null
         }
       ]
@@ -122,7 +122,7 @@ export default function ProgrammeCalendar() {
         {
           iconBg: 'bg-rose-100', iconColor: 'text-rose-600',
           icon: <Trophy size={18} />,
-          title: 'YUGANTAR — NATIONAL AI EDUCATOR AWARDS',
+          title: 'YUGANTAR - NATIONAL AI EDUCATOR AWARDS',
           date: 'DECEMBER', badge: null
         }
       ]

@@ -11,9 +11,9 @@ export default function LearnersHero() {
 
           {/* Left Content */}
           <StaggerContainer className="max-w-xl">
-            <StaggerItem className="inline-block text-[#5B32EA] font-semibold text-sm tracking-wider uppercase mb-6">
+            {/* <StaggerItem className="inline-block text-[#5B32EA] font-semibold text-sm tracking-wider uppercase mb-6">
               FOR SCHOOLS | K-12 PARTNERSHIPS
-            </StaggerItem>
+            </StaggerItem> */}
 
             <h1 className="text-[44px] md:text-[56px] lg:text-[64px] font-extrabold text-[#1A1A2E] leading-[1.1] mb-6">
               <WordReveal text="Enabling" delay={0.1} /><br />
@@ -22,7 +22,7 @@ export default function LearnersHero() {
             </h1>
 
             <StaggerItem className="text-[#6B7280] text-base md:text-lg leading-[1.8] mb-10 font-medium">
-              Schools today must go beyond curriculum delivery to build real-world competencies. SKILLZZA K-12 enables institutions to integrate AI, innovation, and experiential learning into everyday education, preparing students for an evolving, technology-driven future.
+              Schools today must go beyond curriculum delivery to build real-world competencies. Skill Studio enables institutions to integrate AI, innovation, and experiential learning into everyday education, preparing students for an evolving, technology-driven future.
             </StaggerItem>
 
             <StaggerItem className="flex flex-wrap items-center gap-4 pb-8">

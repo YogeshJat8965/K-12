@@ -26,7 +26,7 @@ export default function AiImmersion() {
           
           <p className="text-[#4B5563] font-medium text-[15px] md:text-[16px] leading-relaxed max-w-[95%] mb-12 lg:mb-0">
             A Hands-On, 13-Week Journey Designed To Equip Teachers With Practical 
-            AI Fluency — Not Just Theory. Every Phase Ends With A Tangible Classroom 
+            AI Fluency - Not Just Theory. Every Phase Ends With A Tangible Classroom 
             Deliverable You Can Use On Monday Morning.
           </p>
 

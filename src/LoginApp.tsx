@@ -33,7 +33,7 @@ export default function LoginApp() {
 
           <div className="relative z-10">
             <h1 className="text-4xl md:text-5xl font-semibold mb-4 leading-tight tracking-tight">
-              Sign in to<br/>Skillzza K-12
+              Sign in to<br/>Skill Studio
             </h1>
             <p className="text-white/85 text-[15px] md:text-[17px] leading-relaxed mb-6 font-medium">
               Continue your learning and collaboration journey with a secure, modern workspace.

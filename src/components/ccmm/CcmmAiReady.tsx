@@ -22,7 +22,7 @@ export default function CcmmAiReady() {
           The <span className="text-[#5B45FF]">NAAC</span> Of AI Readiness
         </>
       ),
-      desc: 'Think Of CCMM As The NAAC Of AI Readiness — A Structured, Evidence-Based, Nationally Benchmarked Standard That Turns A Vague Aspiration ("We Want To Be Future-Ready") Into A Measurable, Certifiable Outcome.'
+      desc: 'Think Of CCMM As The NAAC Of AI Readiness - A Structured, Evidence-Based, Nationally Benchmarked Standard That Turns A Vague Aspiration ("We Want To Be Future-Ready") Into A Measurable, Certifiable Outcome.'
     },
     {
       icon: <ShieldCheck className="w-6 h-6 text-[#5B45FF]" />,
@@ -32,7 +32,7 @@ export default function CcmmAiReady() {
           CCMM School <span className="text-[#5B45FF]">Certification</span>
         </>
       ),
-      desc: 'Think Of CCMM As The NAAC Of AI Readiness — A Structured, Evidence-Based, Nationally Benchmarked Standard That Turns A Vague Aspiration ("We Want To Be Future-Ready") Into A Measurable, Certifiable Outcome.'
+      desc: 'Think Of CCMM As The NAAC Of AI Readiness - A Structured, Evidence-Based, Nationally Benchmarked Standard That Turns A Vague Aspiration ("We Want To Be Future-Ready") Into A Measurable, Certifiable Outcome.'
     }
   ];
 
@@ -52,7 +52,7 @@ export default function CcmmAiReady() {
             <div className="w-16 h-1 bg-[#5B45FF] mb-6 rounded-full"></div>
             
             <p className="text-gray-600 font-medium text-[15px] md:text-[17px] leading-relaxed mb-10 max-w-xl">
-              Every Principal, Trustee, And Academic Head Is Being Asked The Same Question By Parents, Boards, And Regulators — And Very Few Can Answer It With Evidence.
+              Every Principal, Trustee, And Academic Head Is Being Asked The Same Question By Parents, Boards, And Regulators - And Very Few Can Answer It With Evidence.
             </p>
 
             <div className="flex flex-col gap-4">

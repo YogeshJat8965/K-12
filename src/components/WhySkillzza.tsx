@@ -1,7 +1,7 @@
 import { useEffect, useRef, useCallback } from 'react';
 import { whySkillzza } from '../virtualInternship';
 import { Sparkles } from 'lucide-react';
-import teacherImg from '../assets/virtual internship/skillzza k-12 teacher.png';
+import teacherImg from '../assets/virtual internship/Skill Studio teacher.png';
 
 export default function WhySkillzza() {
   const sectionRef = useRef<HTMLDivElement>(null);

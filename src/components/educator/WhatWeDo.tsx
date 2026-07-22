@@ -1,5 +1,3 @@
-import React from 'react';
-
 import img1 from '../../assets/educator circle/celebration/1.png';
 import img2 from '../../assets/educator circle/celebration/2.png';
 import img3 from '../../assets/educator circle/celebration/3.png';

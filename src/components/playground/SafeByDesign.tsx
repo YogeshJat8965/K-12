@@ -333,7 +333,7 @@ export default function SafeByDesign() {
             </div>
           </div>
 
-          <div className="sbd-banner" ref={bannerRef}>
+          {/* <div className="sbd-banner" ref={bannerRef}>
             <div className="sbd-banner-content">
               <h3 className="sbd-banner-title">Our Promise to Parents</h3>
               <p className="sbd-banner-desc">
@@ -341,7 +341,7 @@ export default function SafeByDesign() {
                 your child's screen. Every design decision is made with that filter first.
               </p>
             </div>
-          </div>
+          </div> */}
 
         </div>
       </section>

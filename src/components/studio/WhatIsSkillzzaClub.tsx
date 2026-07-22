@@ -84,7 +84,7 @@ export default function WhatIsSkillzzaClub() {
             <div className="space-y-6 text-slate-600 text-lg leading-relaxed max-w-2xl mb-12">
               <ScrollReveal delay={0.1}>
                 <p>
-                  Skillzza K-12 Studios are not just after-school activities. They are structured
+                  Skill Studio Studios are not just after-school activities. They are structured
                   <span className="font-semibold text-slate-800"> Skill Studios</span> designed to help students discover their strengths, build real-world
                   skills, and develop a career-ready personality - all while having fun and learning
                   through doing.

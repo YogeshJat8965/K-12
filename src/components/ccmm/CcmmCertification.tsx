@@ -42,7 +42,7 @@ export default function CcmmCertification() {
         {/* Header Section */}
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16">
           <h2 className="text-[32px] md:text-[42px] lg:text-[48px] font-extrabold text-[#111827] leading-[1.15] tracking-tight mb-6">
-            CCMM School Certification — <span className="text-[#5B45FF]">The Credential</span>
+            CCMM School Certification <span className="text-[#5B45FF]">Journey</span>
           </h2>
           <p className="text-[#4B5563] font-medium text-[15px] md:text-[16px] leading-relaxed max-w-3xl">
             At The End Of The CCMM Journey, Every School Is Awarded A Certification That Reflects Its Demonstrated Maturity. The CCMM Badge Is A Recognisable Mark Of Trust For Parents, Boards, Regulators, And The Wider Community

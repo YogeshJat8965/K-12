@@ -357,7 +357,7 @@ export default function HomeHero() {
             {/* Badge */}
             {/* <div className="hh-badge">
               <span className="hh-badge-dot" />
-              <span className="hh-badge-text">SKILLZZA K-12 | FUTURE LEARNING</span>
+              <span className="hh-badge-text">Skill Studio | FUTURE LEARNING</span>
             </div> */}
 
             {/* Heading - exactly 2 lines */}
@@ -374,7 +374,7 @@ export default function HomeHero() {
                 ))}
               </span>
               <span className="purple">
-                {"-Built for AI".split('').map((char, i) => (
+                {"Built for AI".split('').map((char, i) => (
                   <span key={'l3-' + i} className="hero-char" style={{ display: 'inline-block', opacity: 0, transform: 'translateZ(-200px) scale(0.5)' }}>{char === ' ' ? '\u00A0' : char}</span>
                 ))}
               </span>
@@ -382,7 +382,7 @@ export default function HomeHero() {
 
             {/* Subtext */}
             <p className="hh-sub" ref={subtextRef}>
-              {"Empowering the next generation of AI thinkers - students, educators, and schools - to lead confidently in a technology-driven world.".split(' ').map((word, i) => (
+              {"Empowering the next generation of AI thinkers students, educators, and schools to lead confidently in a technology-driven world.".split(' ').map((word, i) => (
                 <span key={'sub-' + i} className="hero-sub-word" style={{ opacity: 0, display: 'inline-block', marginRight: '5px', transform: 'translateY(10px)' }}>{word}</span>
               ))}
             </p>

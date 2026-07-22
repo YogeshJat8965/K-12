@@ -69,7 +69,7 @@ export default function LearnersCTA() {
                 <TriangleIcon className="w-2.5 h-3" /> REQUEST A DEMO
               </button>
               <button className="border-[2px] border-white/80 text-white font-extrabold text-[13px] md:text-[14px] px-6 py-3.5 md:py-4 rounded-[12px] flex items-center justify-center gap-2.5 hover:bg-white/10 hover:border-white hover:scale-105 active:scale-95 transition-all">
-                <TriangleIcon className="w-2.5 h-3 opacity-90" /> PARTNER WITH SKILLZZA K-12
+                <TriangleIcon className="w-2.5 h-3 opacity-90" /> PARTNER WITH Skill Studio
               </button>
             </div>
 

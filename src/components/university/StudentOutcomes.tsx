@@ -51,7 +51,7 @@ export default function StudentOutcomes() {
           </h2>
           <p className="text-gray-500 font-medium text-[14.5px] leading-relaxed mb-10 pr-0 lg:pr-12">
             Every Graduate Leaves With A Professional Portfolio, Adobe Credentials, And 
-            Demonstrable AI Fluency — The Evidence Employers Ask For.
+            Demonstrable AI Fluency - The Evidence Employers Ask For.
           </p>
 
           {/* 3x3 Outcomes Grid */}

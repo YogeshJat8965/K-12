@@ -70,7 +70,7 @@ const slides: Slide[] = [
     ]
   },
   {
-    title: "SKILLZZA K-12\nSkill Studios",
+    title: "Skill Studio\nSkill Studios",
     subtitle: "Experiential, domain-anchored learning pods for students",
     desc: "A curated portfolio of 20+ future-forward studios spanning Generative AI, Agentic AI, Quantum Computing, Product Design, Data Science, Robotics, Sustainability, and more. Each studio is a structured experience that blends conceptual foundations, hands-on builds, and industry-grade capstones – aligned to NEP 2020 skill frameworks.",
     image: img2,
@@ -126,7 +126,7 @@ const slides: Slide[] = [
   {
     title: "The Xperience Platform",
     subtitle: "One unified learning and credentialing platform",
-    desc: "SKILLZZA K-12's proprietary learning platform brings together every studio, every capstone, and every credential in one place. Powered by Vedya AI and the Potential Meter, it gives schools, parents, and students a single view of progress, mastery, and the evolving Skill DNA Profile of every learner.",
+    desc: "Skill Studio's proprietary learning platform brings together every studio, every capstone, and every credential in one place. Powered by Vedya AI and the Potential Meter, it gives schools, parents, and students a single view of progress, mastery, and the evolving Skill DNA Profile of every learner.",
     image: img6,
     featuresLayout: 'list',
     features: [

@@ -1,9 +1,8 @@
-import React from 'react';
 import teacherAtCenterImg from '../../assets/educator circle/teacher at center.png';
 
 export default function TeacherAtCenter() {
   return (
-    <section className="hidden md:block w-full bg-white font-poppins pt-20 pb-24 overflow-hidden">
+    <section className="hidden md:block w-full bg-white font-poppins pt-8 lg:pt-10 pb-24 overflow-hidden">
       <div className="max-w-[1536px] mx-auto px-6 md:px-12 lg:px-20">
         
         {/* Header Section */}
@@ -14,10 +13,10 @@ export default function TeacherAtCenter() {
           <h2 className="text-[26px] md:text-[34px] lg:text-[46px] font-extrabold text-[#111827] leading-[1.2] tracking-tight mb-6 max-w-4xl">
             One Teacher At The <span className="text-[#4F46E5]">Centre.</span> A Whole<br className="hidden lg:block" /> Nation <span className="text-[#4F46E5]">Around You.</span>
           </h2>
-          <p className="text-gray-500 font-medium text-[14px] md:text-[15px] leading-relaxed max-w-3xl">
-            The Moment You Join, Your Skill DNA Profile Places You Into The Circles That Fit — Your Peer Group, Your Subject, Your
+          {/* <p className="text-gray-500 font-medium text-[14px] md:text-[15px] leading-relaxed max-w-3xl">
+            The Moment You Join, Your Skill DNA Profile Places You Into The Circles That Fit - Your Peer Group, Your Subject, Your
             State, And The National Network. You're Never The Only Teacher Trying Something New.
-          </p>
+          </p> */}
         </div>
 
         {/* Image Section */}

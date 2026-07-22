@@ -178,7 +178,7 @@ export default function NationalNetwork() {
           {/* Bottom Quote Banner */}
           <div className="w-full bg-[#F8FAFC] rounded-[20px] p-5 md:p-6 flex items-center justify-center">
             <p className="text-[#64748B] text-[14px] md:text-[15px] font-medium italic text-center">
-              These are our year-one targets — the community we're building together.
+              These are our year-one targets - the community we're building together.
             </p>
           </div>
 

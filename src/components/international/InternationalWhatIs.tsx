@@ -218,7 +218,7 @@ export default function InternationalWhatIs() {
       <div className="w-full bg-white block lg:hidden" style={{ paddingTop: '40px', paddingBottom: '60px', position: 'relative', zIndex: 30 }}>
         <img 
           src={responsiveImg} 
-          alt="Skillzza K-12 Studios" 
+          alt="Skill Studio Studios" 
           className="w-full h-auto block mx-auto"
           style={{ display: 'block', width: '100%', height: 'auto' }}
         />

@@ -8,7 +8,7 @@ export default function MembershipBenefits() {
     {
       title: 'Learn',
       icon: <BookOpen className="w-10 h-10 text-[#4F46E5]" strokeWidth={2} />,
-      desc: 'Practical AI teaching, led by experts and partners — never just theory.',
+      desc: 'Practical AI teaching, led by experts and partners - never just theory.',
       bullets: [
         'Monthly live masterclasses',
         'Adobe digital creativity sessions',
@@ -112,33 +112,33 @@ export default function MembershipBenefits() {
         </div>
 
         {/* Grid Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-6">
           
           {cards.map((card, idx) => (
             <div 
               key={idx} 
-              className="bg-white rounded-[24px] p-8 md:p-10 shadow-sm border border-gray-100 flex flex-col sm:flex-row gap-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(79,70,229,0.08)] hover:border-[#E0E7FF] group cursor-pointer"
+              className="bg-white rounded-[24px] p-6 md:p-8 shadow-sm border border-gray-100 flex flex-col sm:flex-row gap-5 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(79,70,229,0.08)] hover:border-[#E0E7FF] group cursor-pointer"
             >
               {/* Icon Container */}
-              <div className="w-[88px] h-[88px] rounded-full bg-[#E0E7FF] bg-opacity-70 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-[#E0E7FF] transition-all duration-300">
+              <div className="w-[78px] h-[48px] md:w-[84px] md:h-[84px] rounded-full bg-[#E0E7FF] bg-opacity-70 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-[#E0E7FF] transition-all duration-300">
                 {card.icon}
               </div>
               
               {/* Content Container */}
-              <div className="flex flex-col flex-1 mt-2 sm:mt-0">
-                <h3 className="text-[#4F46E5] text-[22px] md:text-[24px] font-bold mb-2">
+              <div className="flex flex-col flex-1 mt-1 sm:mt-0">
+                <h3 className="text-[#4F46E5] text-[21px] md:text-[23px] font-bold mb-1.5 leading-tight">
                   {card.title}
                 </h3>
                 
-                <p className="text-[#4B5563] text-[14px] md:text-[15px] font-medium leading-relaxed pb-4 mb-4 border-b border-[#EEF2FF]">
+                <p className="text-[#4B5563] text-[13px] md:text-[14px] font-medium leading-relaxed pb-3 mb-3 border-b border-[#EEF2FF]">
                   {card.desc}
                 </p>
                 
-                <ul className="flex flex-col gap-3">
+                <ul className="flex flex-col gap-2.5">
                   {card.bullets.map((bullet, bIdx) => (
-                    <li key={bIdx} className="flex items-start gap-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#4F46E5] mt-[7px] flex-shrink-0 shadow-sm"></span>
-                      <span className="text-[#4B5563] text-[13px] md:text-[14px] font-medium leading-relaxed">
+                    <li key={bIdx} className="flex items-start gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#4F46E5] mt-[6px] flex-shrink-0 shadow-sm"></span>
+                      <span className="text-[#4B5563] text-[12px] md:text-[13px] font-medium leading-relaxed">
                         {bullet}
                       </span>
                     </li>

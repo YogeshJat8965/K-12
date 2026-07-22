@@ -111,12 +111,12 @@ export default function CcmmWhyExists() {
 
         {/* Bottom Banner */}
         <div className="w-full bg-[#F5F3FF] rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 shadow-sm border border-purple-50">
-          <div className="w-16 h-16 rounded-full bg-[#EDE9FE] flex items-center justify-center shrink-0">
+          {/* <div className="w-16 h-16 rounded-full bg-[#EDE9FE] flex items-center justify-center shrink-0">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#5B45FF]">
               <circle cx="12" cy="8" r="6"></circle>
               <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
             </svg>
-          </div>
+          </div> */}
           <p className="text-[#4B5563] font-medium text-[15px] leading-relaxed">
             <span className="text-[#5B45FF] font-bold">CCMM answers all of these.</span> It replaces guesswork and one-off workshops with a single, coherent transformation standard that a school can be measured against, improve on, and proudly certify.
           </p>

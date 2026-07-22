@@ -1,4 +1,4 @@
-# Skillzza K-12 Website Typography & Styling System
+# Skill Studio Website Typography & Styling System
 
 Based on the Home Hero section, here is the standard design language that will be strictly followed across the entire website to maintain pixel-perfect consistency.
 

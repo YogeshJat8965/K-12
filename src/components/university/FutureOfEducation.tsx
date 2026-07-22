@@ -98,7 +98,7 @@ export default function FutureOfEducation() {
               <div className="flex flex-col items-center text-center px-1 md:px-2 lg:px-4">
                 <Counter target={1} prefix="#" className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-2 sm:mb-3 md:mb-4 tracking-tight" />
                 <p className="text-white font-bold text-[11px] sm:text-[12px] lg:text-[13px] leading-tight mb-3">
-                  AI & Big Data — fastest<br />growing skill
+                  AI & Big Data - fastest<br />growing skill
                 </p>
               </div>
               
@@ -106,7 +106,7 @@ export default function FutureOfEducation() {
               <div className="flex flex-col items-center text-center px-1 md:px-2 lg:px-4">
                 <Counter target={4} prefix="#" className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-2 sm:mb-3 md:mb-4 tracking-tight" />
                 <p className="text-white font-bold text-[11px] sm:text-[12px] lg:text-[13px] leading-tight mb-3">
-                  Creative Thinking — future<br />workforce skill
+                  Creative Thinking - future<br />workforce skill
                 </p>
               </div>
               

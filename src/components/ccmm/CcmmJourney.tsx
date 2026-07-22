@@ -9,7 +9,7 @@ export default function CcmmJourney() {
         {/* Header Section */}
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16">
           <h2 className="text-[32px] md:text-[42px] lg:text-[48px] font-extrabold text-[#111827] leading-[1.15] tracking-tight">
-            The CCMM journey — <span className="text-[#5B45FF]">How it works</span>
+            The CCMM journey - <span className="text-[#5B45FF]">How it works</span>
           </h2>
         </div>
 

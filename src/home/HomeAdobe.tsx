@@ -7,11 +7,11 @@ gsap.registerPlugin(ScrollTrigger);
 const adobeFeatures = [
   {
     id: 1,
-    text: 'Industry-standard tools - learn on the same platform used by professional creators worldwide.'
+    text: 'Industry standard tools learn on the same platform used by professional creators worldwide.'
   },
   {
     id: 2,
-    text: 'Globally-recognised Adobe Creative Educator certification for teachers.'
+    text: 'Globally recognised Adobe Creative Educator certification for teachers.'
   },
   {
     id: 3,
@@ -65,7 +65,7 @@ export default function HomeAdobe() {
           border-radius: 43px;
           padding: 30px clamp(40px, 5vw, 80px);
           display: flex;
-          align-items: center;
+          align-items: flex-start;
           gap: 40px;
           color: #1A1A2E;
           position: relative;
@@ -82,6 +82,7 @@ export default function HomeAdobe() {
         .ha-content {
           flex: 1.1;
           z-index: 2;
+          padding-top: 16px;
         }
 
         .ha-flagship-img {
@@ -165,6 +166,7 @@ export default function HomeAdobe() {
           flex-direction: column;
           gap: 0px;
           z-index: 2;
+          padding-top: 0;
         }
 
         @keyframes floatUpDown {
@@ -215,11 +217,12 @@ export default function HomeAdobe() {
         }
 
         @media (max-width: 1200px) {
-          .ha-box { flex-direction: column; padding: 60px 30px; }
+          .ha-box { flex-direction: column; align-items: center; padding: 60px 30px; }
           .ha-content { width: 100%; text-align: center; }
           .ha-flagship-img, .ha-partner-img, .ha-btn { margin-left: auto; margin-right: auto; }
           .ha-partner-img { object-position: center; }
           .ha-title, .ha-desc { margin-left: auto; margin-right: auto; }
+          .ha-content { padding-top: 0; }
         }
 
         @media (max-width: 768px) {
@@ -244,7 +247,7 @@ export default function HomeAdobe() {
             <p className="ha-subheadline">Turn Students into Future Creators</p>
 
             <p className="ha-desc">
-              A NEP-aligned programme for Grades 5-10 that builds real-world skills in design, content creation, and AI - through hands-on, project-based learning on Adobe Express.
+              A NEP-aligned programme for Grades 5-10 that builds real world skills in design, content creation, and AI through hands on, project based learning on Adobe Express.
             </p>
 
             <div className="ha-btn-wrap">

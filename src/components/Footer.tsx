@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Column 1: Brand, Presence & Social */}
           <div className="flex flex-col gap-4 pr-8">
             <div className="flex items-center gap-2">
-              <img src={logoImg} alt="Skillzza K-12" className="h-14 w-auto object-contain" />
+              <img src={logoImg} alt="Skill Studio" className="h-14 w-auto object-contain" />
             </div>
 
             <div className="flex flex-col gap-4">
@@ -34,7 +34,7 @@ export default function Footer() {
                     Swindon, SN3 3EH,<br />
                     United Kingdom.
                   </p>
-                  <p className="text-black-600 text-[14px] font-semibold">+44 7500 794772</p>
+                  {/* <p className="text-black-600 text-[14px] font-semibold">+44 7500 794772</p> */}
                 </div>
               </div>
             </div>
@@ -83,12 +83,12 @@ export default function Footer() {
               <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">AI & Data Engineering Accelerator</a></li>
               <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Teen Finance Mastery Lab</a></li>
               <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">UX & Product Innovation Studio</a></li>
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Mind+Wellness Program for Teens</a></li>
+              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Mindfullness Program for Teens</a></li>
               <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Sustainability in Climate Innovator</a></li>
               <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">the Entrepreneurship Thinker</a></li>
               <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Teen Storyteller and Media Journalist</a></li>
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Digital Marketing for Youth Start-up's</a></li>
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Deepfake Awareness & AI Media Literacy</a></li>
+              {/* <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Digital Marketing for Youth Start-up's</a></li> */}
+              {/* <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Deepfake Awareness & AI Media Literacy</a></li> */}
             </ul>
           </div>
 
@@ -117,7 +117,7 @@ export default function Footer() {
         {/* Footer Bottom */}
         <div className="border-t border-gray-200 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-[14px]">
-            © {new Date().getFullYear()} Skillzza K-12. All rights reserved.
+            © {new Date().getFullYear()} Skill Studio. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <a href="#" className="text-gray-500 text-[14px] hover:text-gray-900 transition-colors">Privacy Policy</a>

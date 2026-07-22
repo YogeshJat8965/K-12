@@ -13,7 +13,7 @@ const features = [
     id: "01",
     image: img1,
     title: "Licensed Adobe Creative Cloud",
-    description: "Professional software used by global industries — Photoshop, Illustrator, Premiere Pro, and more.",
+    description: "Professional software used by global industries - Photoshop, Illustrator, Premiere Pro, and more.",
     type: "horizontal"
   },
   {

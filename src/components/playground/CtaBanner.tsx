@@ -83,7 +83,8 @@ export default function CtaBanner() {
       <style>{`
         .cta-section {
           width: 100%;
-          padding: 40px 40px 80px 40px;
+          padding: 0 40px 80px 40px;
+          margin-top: -88px;
           background: #FFFFFF;
           font-family: 'Poppins', sans-serif;
         }
@@ -187,6 +188,11 @@ export default function CtaBanner() {
         }
 
         @media (max-width: 768px) {
+          .cta-section {
+            padding: 0 20px 60px;
+            margin-top: -10px;
+          }
+
           .cta-container {
             padding: 32px 20px;
             border-radius: 16px;

@@ -51,7 +51,7 @@ export default function CcmmStages() {
         {/* Header Section */}
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16">
           <h2 className="text-[32px] md:text-[42px] lg:text-[48px] font-extrabold text-[#111827] leading-[1.15] tracking-tight mb-6">
-            The CCMM Maturity Model - <br /> <span className="text-[#5B45FF]">Five Stages</span>
+            The CCMM Maturity Model <br /> <span className="text-[#5B45FF]">Five Stages</span>
           </h2>
           <p className="text-[#4B5563] font-medium text-[15px] md:text-[16px] leading-relaxed max-w-3xl">
             CCMM Places Every School On A Clear Five-Stage Maturity Curve. The Diagnostic Identifies Exactly Where You Stand Today The Roadmap Shows How To Advance.

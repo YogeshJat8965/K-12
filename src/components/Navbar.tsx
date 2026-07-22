@@ -30,12 +30,12 @@ const NAV_LINKS = [
       { label: 'AI & Data Engineering Accelerator', href: '#' },
       { label: 'Teen Finance Mastery Lab', href: '#' },
       { label: 'UX & Product Innovation Studio', href: '#' },
-      { label: 'Mind+Wellness Program for Teens', href: '#' },
+      { label: 'Mindfullness Program for Teens', href: '#' },
       { label: 'Sustainability in Climate Innovator', href: '#' },
       { label: 'the Entrepreneurship Thinker', href: '#' },
       { label: 'Teen Storyteller and Media Journalist', href: '#' },
-      { label: "Digital Marketing for Youth Start-up's", href: '#' },
-      { label: 'Deepfake Awareness & AI Media Literacy', href: '#' },
+      // { label: "Digital Marketing for Youth Start-up's", href: '#' },
+      // { label: 'Deepfake Awareness & AI Media Literacy', href: '#' },
     ],
   },
   {
@@ -460,7 +460,7 @@ export default function Navbar() {
 
             {/* Logo */}
             <a href="/" className="nav-logo">
-              <img src={logoImg} alt="Skillzza K-12" style={{ height: '36px', width: 'auto', objectFit: 'contain' }} />
+              <img src={logoImg} alt="Skill Studio" style={{ height: '36px', width: 'auto', objectFit: 'contain' }} />
             </a>
 
             {/* Desktop nav links */}

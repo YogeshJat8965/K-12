@@ -16,7 +16,7 @@ export default function CcmmWhySchool() {
       icon: <Target className="w-6 h-6 text-[#5B45FF]" strokeWidth={2} />,
       text: (
         <>
-          It is <span className="text-[#5B45FF] font-bold">outcome-led, not vendor-led</span> — Skillzza is accountable for transformation, not just delivery.
+          It is <span className="text-[#5B45FF] font-bold">outcome-led, not vendor-led</span> - Skillzza is accountable for transformation, not just delivery.
         </>
       )
     },
@@ -24,7 +24,7 @@ export default function CcmmWhySchool() {
       icon: <Network className="w-6 h-6 text-[#5B45FF]" strokeWidth={2} />,
       text: (
         <>
-          It comes with the full <span className="text-[#5B45FF] font-bold">Skillzza Nova K-12 AI Learning Ecosystem</span> — Skill Studios, the Vedya AI Co-Pilot, Virtual Internships, the Digital Skill Passport, and more.
+          It comes with the full <span className="text-[#5B45FF] font-bold">Skillzza Nova K-12 AI Learning Ecosystem</span> - Skill Studios, the Vedya AI Co-Pilot, Virtual Internships, the Digital Skill Passport, and more.
         </>
       )
     },
@@ -40,7 +40,7 @@ export default function CcmmWhySchool() {
       icon: <Award className="w-6 h-6 text-[#5B45FF]" strokeWidth={2} />,
       text: (
         <>
-          It produces <span className="text-[#5B45FF] font-bold">tangible, marketable proof of leadership</span> — a CCMM certification that parents, regulators, and the community recognise and trust.
+          It produces <span className="text-[#5B45FF] font-bold">tangible, marketable proof of leadership</span> - a CCMM certification that parents, regulators, and the community recognise and trust.
         </>
       )
     }

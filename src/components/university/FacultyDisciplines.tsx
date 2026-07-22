@@ -43,7 +43,7 @@ export default function FacultyDisciplines() {
             Built For Every Discipline <span className="text-[#7C3AED]">On Campus</span>
           </h2>
           <p className="text-gray-500 font-medium text-[15px] lg:text-[16px] max-w-2xl mx-auto leading-relaxed mb-6">
-            Creativity And AI Fluency Are Universal Skills — The Skills Centre Serves Students<br className="hidden md:block" />
+            Creativity And AI Fluency Are Universal Skills - The Skills Centre Serves Students<br className="hidden md:block" />
             Across All Streams.
           </p>
           <div className="w-16 h-[4px] bg-[#7C3AED] rounded-full"></div>

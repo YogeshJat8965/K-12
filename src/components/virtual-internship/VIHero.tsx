@@ -244,9 +244,9 @@ export default function VIHero() {
             <div className="vih-line"></div>
             
             <p className="vih-desc">
-              <span className="vih-desc-purple">Skill Virtual</span> Internships are structured, mentor-led, project-based 
-              learning experiences that give school students their first real-world 
-              work exposure - building both clarity and confidence before college.
+              <span className="vih-desc-purple">Virtual</span> Internships are structured, mentor led, project based 
+              learning experiences that give school students their first real world 
+              work exposure building both clarity and confidence before college.
             </p>
             
             <div className="vih-features">
@@ -260,13 +260,13 @@ export default function VIHero() {
                 <div className="vih-feature-icon">
                   <Code size={20} strokeWidth={2.5} />
                 </div>
-                <div className="vih-feature-text">Build real-world<br />projects</div>
+                <div className="vih-feature-text">Build real world<br />projects</div>
               </div>
               <div className="vih-feature">
                 <div className="vih-feature-icon">
                   <BarChart2 size={20} strokeWidth={2.5} />
                 </div>
-                <div className="vih-feature-text">Develop future-<br />ready skills</div>
+                <div className="vih-feature-text">Develop future<br />ready skills</div>
               </div>
               <div className="vih-feature">
                 <div className="vih-feature-icon">

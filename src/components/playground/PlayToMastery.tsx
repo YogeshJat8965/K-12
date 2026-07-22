@@ -182,35 +182,7 @@ export default function PlayToMastery() {
         }
       `}</style>
 
-      <section className="ptm-section" ref={sectionRef}>
-        <div className="ptm-container">
-          
-          <div className="ptm-header">
-            <h2 className="ptm-title">The Playground is just the beginning</h2>
-            {/* <h3 className="ptm-subtitle">The Playground is just the beginning</h3> */}
-            <p className="ptm-desc">
-              What starts as curiosity in the Playground naturally progresses into structured learning through<br/>
-              SKILLZZA K-12's full ecosystem. Every agent a student builds becomes a doorway to deeper skills.
-            </p>
-          </div>
-
-          <div className="ptm-image" ref={imageRef}></div>
-
-          <div className="ptm-grid">
-            {columns.map((col, idx) => (
-              <div 
-                key={idx} 
-                className="ptm-col" 
-                ref={el => { textRefs.current[idx] = el; }}
-              >
-                <h4 className="ptm-col-title">{col.title}</h4>
-                <p className="ptm-col-desc">{col.desc}</p>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
+     
     </>
   );
 }

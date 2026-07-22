@@ -290,7 +290,7 @@ export default function HomeExecution() {
               <span className="ef-label">OUR EXECUTION FRAMEWORK</span>
               <h2 className="ef-title">From Learning To Measurable Outcomes</h2>
               <p className="ef-subtitle" ref={subtitleRef}>
-                SKILLZZA K-12 Goes Beyond Teaching AI - We Deliver A Structured Execution Model That Converts Learning Into Measurable Student Outcomes. <br /> Built As An Integrated K-12 Implementation Framework, Our Model Combines Future-Ready Curriculum, Experiential Skill Labs, Continuous Assessment, Certification Pathways, And League-Based Progression.
+                Skill Studio Goes Beyond Teaching AI - We Deliver A Structured Execution Model That Converts Learning Into Measurable Student Outcomes. <br /> Built As An Integrated K-12 Implementation Framework, Our Model Combines Future-Ready Curriculum, Experiential Skill Labs, Continuous Assessment, Certification Pathways, And League-Based Progression.
               </p>
             </div>
             <div className="ef-right" style={{ perspective: '1000px' }}>

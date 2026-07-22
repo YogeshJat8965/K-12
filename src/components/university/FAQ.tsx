@@ -5,7 +5,7 @@ import faqImg from '../../assets/university/faq.png';
 const faqs = [
   {
     question: "What is the Adobe Digital Creativity & AI Skills Centre?",
-    answer: "An integrated campus program combining Adobe's industry-recognised curriculum, licensed Creative Cloud tools, AI-powered learning, digital badges, and professional certification pathways — delivered and implemented by Skillzza."
+    answer: "An integrated campus program combining Adobe's industry-recognised curriculum, licensed Creative Cloud tools, AI-powered learning, digital badges, and professional certification pathways - delivered and implemented by Skillzza."
   },
   {
     question: "Who can participate?",

@@ -197,7 +197,7 @@ export default function HomeAbout() {
 
             <div className="ha-content" ref={textRef}>
               <p>
-                Skillzza is the next-generation K-12 learning platform preparing students, educators, and schools for an AI-powered economy. We combine cognitive science, real-world skill-building, and intelligent learning systems powered by <span className="ha-purple">Vedya AI</span> to equip young minds with the future-ready capabilities they need to lead with confidence.
+                Skill Studio is the next-generation K-12 learning platform preparing students, educators, and schools for an AI-powered economy. We combine cognitive science, real-world skill-building, and intelligent learning systems powered by <span className="ha-purple">Vedya AI</span> to equip young minds with the future-ready capabilities they need to lead with confidence.
               </p>
               <p>
                 In a world where change is constant, textbooks alone are no longer enough. Students must master future skills - creativity, critical thinking, digital & fluency, and ethical AI awareness to thrive globally.

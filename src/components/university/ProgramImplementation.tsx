@@ -12,7 +12,7 @@ export default function ProgramImplementation() {
             PROGRAM IMPLEMENTATION
           </p>
           <h2 className="text-[36px] md:text-[42px] lg:text-[48px] font-extrabold text-[#1A1A2E] leading-tight tracking-tight">
-            From Registration To <span className="text-[#7C3AED]">Launch</span> —<br />
+            From Registration To <span className="text-[#7C3AED]">Launch</span> -<br />
             A Guided Rollout
           </h2>
         </div>
