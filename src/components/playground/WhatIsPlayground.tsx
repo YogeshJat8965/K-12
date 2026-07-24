@@ -265,7 +265,7 @@ export default function WhatIsPlayground() {
       `}</style>
 
       <section id="what-is-playground-section" className="wip-section" ref={sectionRef}>
-        <div className="wip-container" ref={containerRef}>
+        {/* <div className="wip-container" ref={containerRef}>
           <div className="wip-left">
             <img src={LeftImg} alt="Girl using AI Playground on a laptop" />
           </div>
@@ -316,7 +316,7 @@ export default function WhatIsPlayground() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
     </>
   );

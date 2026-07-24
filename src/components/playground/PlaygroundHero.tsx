@@ -396,7 +396,7 @@ export default function PlaygroundHero() {
               </div>
             </div>
             <div className="ph-feat-divider" />
-            
+
             <div className="ph-feat-item">
               <div className="ph-feat-icon">
                 <img src={Icon2} alt="Prebuilt Agents" />

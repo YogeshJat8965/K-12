@@ -30,7 +30,7 @@ export default function CtaBanner() {
           start: 'top 85%',
         }
       });
-      
+
       // Title extra glow for the yellow line (if it has a yellow line)
       const yellowSpan = document.querySelector('.cta-title span');
       if (yellowSpan) {
@@ -215,12 +215,12 @@ export default function CtaBanner() {
       <section className="cta-section" ref={sectionRef}>
         <div className="cta-container">
           <div className="cta-content">
-            
+
             <h2 className="cta-title">
               Ready to Build Your<br />
               <span>First AI Agent?</span>
             </h2>
-            
+
             <p className="cta-subtitle">
               Start free. No credit card. No setup. Just curiosity, a name, and an idea.
             </p>
@@ -232,7 +232,7 @@ export default function CtaBanner() {
             </div>
 
             <p className="cta-footer">
-              <span className="cta-link">playground@skillzza.com</span> &nbsp;|&nbsp; <span className="cta-link">www.skillzza.com/playground</span>
+              <span className="cta-link">playground@skillzza.com</span> &nbsp;|&nbsp; <span className="cta-link">www.skillzzak12.com/ai-playground</span>
             </p>
 
           </div>

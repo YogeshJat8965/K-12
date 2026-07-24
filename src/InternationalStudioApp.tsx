@@ -51,13 +51,13 @@ export default function InternationalStudioApp() {
       <main className="min-h-screen">
         <InternationalHero />
         <InternationalStats />
-        <InternationalWhatIs />
+        {/* <InternationalWhatIs /> */}
         <InternationalFeatures />
         <WhatAreStudios />
         <LearningStages />
         <EducationChallenge />
         <FutureSkillsStudios />
-        <ImplementationFramework />
+        {/* <ImplementationFramework /> */}
         <ResponsibleAI />
         <ReportingTransparency />
         <GlobalEducation />

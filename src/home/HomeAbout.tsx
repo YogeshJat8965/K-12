@@ -192,12 +192,12 @@ export default function HomeAbout() {
             <span className="ha-label" ref={labelRef} style={{ display: 'inline-block' }}>ABOUT US</span>
 
             <h2 className="ha-h2">
-              A K-12 Platform Built For An AI-First World
+              A <span style={{ margin: '0 6px', display: 'inline-block' }}>K-12</span> Platform Built For An AI-First World
             </h2>
 
             <div className="ha-content" ref={textRef}>
               <p>
-                Skill Studio is the next-generation K-12 learning platform preparing students, educators, and schools for an AI-powered economy. We combine cognitive science, real-world skill-building, and intelligent learning systems powered by <span className="ha-purple">Vedya AI</span> to equip young minds with the future-ready capabilities they need to lead with confidence.
+                Skill Studio is the next-generation K-12  learning platform preparing students, educators, and schools for an AI-powered economy. We combine cognitive science, real-world skill-building, and intelligent learning systems powered by <span className="ha-purple">Vedya AI</span> to equip young minds with the future-ready capabilities they need to lead with confidence.
               </p>
               <p>
                 In a world where change is constant, textbooks alone are no longer enough. Students must master future skills - creativity, critical thinking, digital & fluency, and ethical AI awareness to thrive globally.

@@ -143,7 +143,7 @@ export default function HomeApp() {
           <HomeAdobe />
           <HomeEcosystem />
           <HomeReady />
-          <HomeCTA />
+          {/* <HomeCTA /> */}
           <Footer />
         </div>
       </div>

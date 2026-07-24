@@ -98,7 +98,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-3">
               <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">For Students</a></li>
               <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">For Schools</a></li>
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">For tutor</a></li>
+              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">For Educator</a></li>
             </ul>
           </div>
 

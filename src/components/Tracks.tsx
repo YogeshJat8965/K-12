@@ -58,10 +58,10 @@ export default function Tracks() {
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-10">
-          <h2 className="mb-6">
+          <h2 className="mb-6 text-center">
             Explore <span className="text-[#A855F7]">Career Tracks</span>
           </h2>
-          <p className="text-lg text-slate-600 w-full mx-auto font-normal leading-relaxed">
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto font-normal leading-relaxed text-center">
             Eight future-ready career tracks, mapped across technology, enterprise, creativity, science, and personal growth. Students can explore across tracks before choosing their capstone specialisation.
           </p>
         </div>

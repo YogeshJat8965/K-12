@@ -22,7 +22,7 @@ export default function LearnersHero() {
             </h1>
 
             <StaggerItem className="text-[#6B7280] text-base md:text-lg leading-[1.8] mb-10 font-medium">
-              Schools today must go beyond curriculum delivery to build real-world competencies. Skill Studio enables institutions to integrate AI, innovation, and experiential learning into everyday education, preparing students for an evolving, technology-driven future.
+              Schools today must go beyond curriculum delivery to build real-world competencies. Skillzza enables institutions to integrate AI, innovation, and experiential learning into everyday education, preparing students for an evolving, technology-driven future.
             </StaggerItem>
 
             <StaggerItem className="flex flex-wrap items-center gap-4 pb-8">

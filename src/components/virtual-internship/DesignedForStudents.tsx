@@ -11,21 +11,24 @@ export default function DesignedForStudents() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo('.dfs-text-elem', 
+      gsap.fromTo('.dfs-text-elem',
         { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'power3.out',
+        {
+          y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'power3.out',
           scrollTrigger: { trigger: sectionRef.current, start: 'top 75%' }
         }
       );
       gsap.fromTo('.dfs-center-node',
         { scale: 0, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 0.8, ease: 'back.out(1.2)',
+        {
+          scale: 1, opacity: 1, duration: 0.8, ease: 'back.out(1.2)',
           scrollTrigger: { trigger: sectionRef.current, start: 'top 75%' }
         }
       );
       gsap.fromTo('.dfs-outer-node',
         { scale: 0, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 0.6, stagger: 0.1, ease: 'back.out(1.5)', delay: 0.3,
+        {
+          scale: 1, opacity: 1, duration: 0.6, stagger: 0.1, ease: 'back.out(1.5)', delay: 0.3,
           scrollTrigger: { trigger: sectionRef.current, start: 'top 75%' }
         }
       );
@@ -33,7 +36,8 @@ export default function DesignedForStudents() {
       const cards = gsap.utils.toArray('.dfs-card');
       gsap.fromTo(cards,
         { x: 40, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out',
+        {
+          x: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out',
           clearProps: 'all',
           scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' }
         }
@@ -376,7 +380,7 @@ export default function DesignedForStudents() {
             </h2>
             <div className="dfs-line dfs-text-elem"></div>
             <p className="dfs-desc dfs-text-elem">
-              Skillzza Virtual Internships are <span className="purple-bold">not adapted from adult programmes</span> -
+              Virtual Internships are <span className="purple-bold">not adapted from regular programmes</span> -
               they are purpose-built for school learners, with age-appropriate pacing, safeguards, and support.
             </p>
 
@@ -384,7 +388,7 @@ export default function DesignedForStudents() {
               <div className="dfs-orbit-ring"></div>
               <div className="dfs-center-node">
                 <GraduationCap className="dfs-center-icon" size={56} />
-                <p className="dfs-center-text">Purpose-Built<br/>for School<br/>Learners</p>
+                <p className="dfs-center-text">Purpose-Built<br />for School<br />Learners</p>
               </div>
               <div className="dfs-orbit-wrapper">
                 {features.map((feature, idx) => {

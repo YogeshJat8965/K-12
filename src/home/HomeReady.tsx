@@ -473,8 +473,9 @@ export default function HomeReady() {
           </div>
 
           <div className="hr-cta-area">
-            <button className="hr-cta-btn">Take the CCMM Self-Assessment →</button>
-            <p className="hr-cta-helper">Take the free 5-minute CCMM self-assessment and receive a personalised growth roadmap.</p>
+            <button className="hr-cta-btn">Take the CCMM Assessment →</button>
+            <p className="hr-cta-helper">Become an AI-Ready
+              Institution</p>
           </div>
         </div>
       </section>

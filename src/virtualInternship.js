@@ -122,7 +122,7 @@ export const forSchools = {
 }
 
 export const whySkillzza = [
-  { icon: "🏫", title: "Built Exclusively for School Students", desc: "Not adapted from adult platforms - every element is designed for Grades 6-12." },
+  { icon: "🏫", title: "Built Exclusively for School Students", desc: "Not adapted from regular platforms - every element is designed for Grades 6-12." },
   { icon: "🎯", title: "Outcomes Over Theory", desc: "Every internship ends with a tangible project, not a passive completion certificate." },
   { icon: "🏭", title: "Industry-Aligned Curriculum", desc: "Curated with inputs from working professionals and industry mentors." },
   { icon: "🧑‍🏫", title: "Mentor-Guided Experience", desc: "Students get real human feedback, not just automated reviews." },
@@ -138,7 +138,7 @@ export const finalCta = {
     { label: "▶ Take the Quiz", type: "primary" },
     { label: "▶ Explore Internships", type: "secondary" },
     { label: "▶ Book a Consultation", type: "ghost" }
-  ], 
+  ],
   email: "internships@skillzza.com",
   website: "www.skillzza.com/virtual-internships"
 }

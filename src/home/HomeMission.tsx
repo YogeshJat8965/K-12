@@ -323,9 +323,12 @@ export default function HomeMission() {
                 We're shaping the minds that<br className="hm-br-desk" />
                 will shape the future.
               </h2>
-              <p className="hm-left-sub">Every programme, every studio, every internship is designed around one question – what will tomorrow's world need from today's student?</p>
-              <div className="hm-left-line" />
-              <div className="hm-left-footer">Purposeful by design. Future-first in approach.</div>
+              <p className="hm-left-sub">
+                Every programme, every studio, every internship is designed around one question
+                <span style={{ display: 'block', marginTop: '6px', fontWeight: 600, color: '#ffffff' }}>
+                  what will tomorrow's world need from today's student?
+                </span>
+              </p>
               <img src="/landing/robot.png" alt="" className="hm-robot" ref={robotRef} />
             </div>
 
@@ -335,7 +338,7 @@ export default function HomeMission() {
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
                 <span>Globally Aligned</span>
               </div> */}
-              <h2>Powered by Skillzza. Aligned with global education standards.</h2>
+              <h2>Aligned with global education standards.</h2>
               <p className="hm-right-sub">NEP 2020, International Baccalaureate, Cambridge, and UN SDG frameworks – our learning architecture meets the world where it is headed.</p>
               <div className="hm-tags">
                 {['NEP 2020', 'IB Framework', 'Cambridge', 'UN SDGs'].map(t => (

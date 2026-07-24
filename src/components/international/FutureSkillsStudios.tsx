@@ -44,7 +44,7 @@ const studios = [
   },
   {
     title: "Digital Creativity &\nAI Skills Studio",
-    subtitle: "Powered by Adobe",
+    // subtitle: "Powered by Adobe",
     tagline: "Create. Design. Innovate.",
     grades: "Grades 5-10",
     tags: ["Graphic Design", "Digital Storytelling", "Creative Media", "Visual Communication", "Content Creation", "AI-Powered Creativity"],
@@ -239,7 +239,7 @@ export default function FutureSkillsStudios() {
                   <p className="text-white font-bold text-[15px] mb-2 leading-tight">
                     {studio.tagline}
                   </p>
-                  
+
                   <p className="text-white/80 font-semibold text-[13px] mb-4">
                     {studio.grades}
                   </p>

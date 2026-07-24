@@ -10,7 +10,7 @@ export default function ForParentsSchools() {
   return (
     <section id="parents" className="py-12 lg:py-16 bg-gradient-to-t from-violet-900 via-violet-400 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        
+
         {/* ── 1. Designed For Students Strip ── */}
         <div className="mb-12">
           <div className="text-center mb-10">
@@ -18,7 +18,7 @@ export default function ForParentsSchools() {
               Designed Specifically for  <span className="text-[#A855F7]">School Students</span>
             </h2>
             <p className="text-slate-500 max-w-2xl mx-auto font-normal">
-              Skillzza Virtual Internships are not adapted from adult programmes - they are purpose-built for school learners, with age-appropriate pacing, safeguards, and support.
+              Virtual Internships are not adapted from regular programmes - they are purpose-built for school learners, with age-appropriate pacing, safeguards, and support.
 
             </p>
           </div>
@@ -27,14 +27,17 @@ export default function ForParentsSchools() {
             {designedFor.map((item, i) => {
               const icons = ['🎯', '🪜', '⏱️', '🛡️', '🧑‍🏫'];
               const colors = ['bg-sky-100 text-sky-600', 'bg-orange-100 text-orange-600', 'bg-green-100 text-green-600', 'bg-purple-100 text-purple-600', 'bg-pink-100 text-pink-600'];
-              
+
               // Split item into title and desc roughly
               const parts = item.split(': ');
-              const title = parts.length > 1 ? parts[0] : `Feature ${i+1}`;
+              const title = parts.length > 1 ? parts[0] : `Feature ${i + 1}`;
               const desc = parts.length > 1 ? parts[1] : item;
 
               return (
                 <div key={i} className="min-w-[280px] lg:min-w-0 bg-white rounded-3xl p-8 shadow-sm border border-purple-200 snap-center hover:shadow-lg hover:-translate-y-1 transition-all">
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-xl mb-4 ${colors[i % colors.length]}`}>
+                    {icons[i % icons.length]}
+                  </div>
                   <h4 className="font-bold text-slate-800 text-lg mb-3">{title}</h4>
                   <p className="text-slate-500 text-sm leading-relaxed font-normal">{desc}</p>
                 </div>
@@ -45,27 +48,25 @@ export default function ForParentsSchools() {
 
         {/* ── 2. Trust Tabs (Parents / Schools) ── */}
         <div className="bg-white rounded-[2.5rem] shadow-xl border border-purple-200 overflow-hidden relative">
-          
+
           {/* Tab Switcher */}
           <div className="flex border-b border-slate-100 relative z-10 bg-white">
             <button
               onClick={() => setActiveTab('parents')}
-              className={`flex-1 py-6 flex items-center justify-center font-bold text-xl lg:text-2xl transition-all ${
-                activeTab === 'parents' 
-                  ? 'text-blue-600 bg-blue-50/50' 
-                  : 'text-slate-400 hover:text-slate-600 hover:bg-slate-50'
-              }`}
+              className={`flex-1 py-6 flex items-center justify-center font-bold text-xl lg:text-2xl transition-all ${activeTab === 'parents'
+                ? 'text-blue-600 bg-blue-50/50'
+                : 'text-slate-400 hover:text-slate-600 hover:bg-slate-50'
+                }`}
             >
               For Parents
             </button>
             <div className="w-px bg-slate-100" />
             <button
               onClick={() => setActiveTab('schools')}
-              className={`flex-1 py-6 flex items-center justify-center font-bold text-xl lg:text-2xl transition-all ${
-                activeTab === 'schools' 
-                  ? 'text-emerald-600 bg-emerald-50/50' 
-                  : 'text-slate-400 hover:text-slate-600 hover:bg-slate-50'
-              }`}
+              className={`flex-1 py-6 flex items-center justify-center font-bold text-xl lg:text-2xl transition-all ${activeTab === 'schools'
+                ? 'text-emerald-600 bg-emerald-50/50'
+                : 'text-slate-400 hover:text-slate-600 hover:bg-slate-50'
+                }`}
             >
               For Schools
             </button>
@@ -74,9 +75,8 @@ export default function ForParentsSchools() {
           {/* Tab Content */}
           <div className="p-8 lg:p-12 relative overflow-hidden">
             {/* Background decorative blob */}
-            <div className={`absolute top-0 right-0 w-[800px] h-[800px] rounded-full blur-[100px] pointer-events-none transition-colors duration-1000 ${
-              activeTab === 'parents' ? 'bg-blue-50/60' : 'bg-emerald-50/60'
-            }`} />
+            <div className={`absolute top-0 right-0 w-[800px] h-[800px] rounded-full blur-[100px] pointer-events-none transition-colors duration-1000 ${activeTab === 'parents' ? 'bg-blue-50/60' : 'bg-emerald-50/60'
+              }`} />
 
             {/* PARENTS CONTENT */}
             {activeTab === 'parents' && (
@@ -103,9 +103,9 @@ export default function ForParentsSchools() {
                   </button>
                 </div>
                 <div className="flex-1 w-full relative">
-                  <img 
-                    src={parentsImg} 
-                    alt="Parent and child learning" 
+                  <img
+                    src={parentsImg}
+                    alt="Parent and child learning"
                     className="w-full h-[400px] object-cover rounded-[2rem] relative z-10 shadow-2xl"
                   />
                 </div>
@@ -116,9 +116,9 @@ export default function ForParentsSchools() {
             {activeTab === 'schools' && (
               <div className="flex flex-col lg:flex-row gap-12 items-center animate-fade-in relative z-10">
                 <div className="flex-1 w-full relative order-2 lg:order-1">
-                  <img 
-                    src={schoolsImg} 
-                    alt="Modern classroom" 
+                  <img
+                    src={schoolsImg}
+                    alt="Modern classroom"
                     className="w-full h-[400px] object-cover rounded-[2rem] relative z-10 shadow-2xl"
                   />
                 </div>

@@ -101,7 +101,7 @@ function AppContent() {
 
       {/* NEW VIRTUAL INTERNSHIP CONTENT */}
       <div id="vi-hero"><VIHero /></div>
-      <div id="vi-what-is"><WhatIsVI /></div>
+      {/* <div id="vi-what-is"><WhatIsVI /></div> */}
       <div id="vi-why-matters"><WhyVIMatters /></div>
       <div id="vi-what-gain"><WhatVIGain /></div>
       <div id="vi-how-program-works"><HowProgramWorks /></div>

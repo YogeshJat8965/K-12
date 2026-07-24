@@ -29,7 +29,7 @@ export default function WhySkillzza() {
 
   // Derive "Others" content from WhySkillzza to show contrast
   const comparisonData = [
-    { others: "Repurposed adult courses", skillzza: whySkillzza[0].title },
+    { others: "Repurposed regular courses", skillzza: whySkillzza[0].title },
     { others: "Passive video watching", skillzza: whySkillzza[1].title },
     { others: "Theoretical academic concepts", skillzza: whySkillzza[2].title },
     { others: "Automated multiple-choice grading", skillzza: whySkillzza[3].title },

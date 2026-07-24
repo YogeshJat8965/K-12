@@ -77,14 +77,14 @@ export default function WhatIsSkillzzaClub() {
             <ScrollReveal>
               <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-8 leading-tight">
                 What is <br />
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-500">Skillzza Club</span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-500">Skillzza Club?</span>
               </h2>
             </ScrollReveal>
 
             <div className="space-y-6 text-slate-600 text-lg leading-relaxed max-w-2xl mb-12">
               <ScrollReveal delay={0.1}>
                 <p>
-                  Skill Studio Studios are not just after-school activities. They are structured
+                  Skill Studio are not just after-school activities. They are structured
                   <span className="font-semibold text-slate-800"> Skill Studios</span> designed to help students discover their strengths, build real-world
                   skills, and develop a career-ready personality - all while having fun and learning
                   through doing.

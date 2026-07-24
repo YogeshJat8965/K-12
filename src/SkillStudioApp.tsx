@@ -339,12 +339,12 @@ export default function SkillStudioApp() {
                       letterSpacing: '0%'
                     }}
                   >
-                    What is <span className="bg-gradient-to-r from-[#4200FF] via-[#E82194] to-[#FF6644] text-transparent bg-clip-text animate-pulse">Skill Studio</span>
+                    What is <span className="bg-gradient-to-r from-[#4200FF] via-[#E82194] to-[#FF6644] text-transparent bg-clip-text animate-pulse">Skill Studio?</span>
                   </h2>
                 </ScrollRevealHeadline>
 
                 <p className="text-[16px] text-[#5C6274] leading-[1.8] mb-6 font-medium">
-                  Skill Studio Studios are <span className="font-semibold text-[#5B32EA]">not just after-school activities.</span> They are structured skill studios designed to help students discover their strengths, build real world skills, and develop a career-ready personality - all while having fun and learning through doing.
+                  Skill Studio are <span className="font-semibold text-[#5B32EA]">not just after-school activities.</span> They are structured skill studios designed to help students discover their strengths, build real world skills, and develop a career-ready personality - all while having fun and learning through doing.
                 </p>
 
                 <p className="text-[16px] text-[#5C6274] leading-[1.8] font-medium mb-8 lg:mb-0">
@@ -375,6 +375,14 @@ export default function SkillStudioApp() {
                   <p className="text-[13px] font-semibold text-slate-700 group-hover:text-[#34C759] transition-colors whitespace-nowrap">Digital Literacy</p>
                 </div>
 
+                <div className="px-5 py-2.5 border border-gray-200 rounded-lg cursor-pointer hover:border-[#FF9800] hover:bg-[#FFF6E5]/50 transition-all shadow-sm group">
+                  <p className="text-[13px] font-semibold text-slate-700 group-hover:text-[#FF9800] transition-colors whitespace-nowrap">AI Skilling</p>
+                </div>
+
+                <div className="px-5 py-2.5 border border-gray-200 rounded-lg cursor-pointer hover:border-[#FF9800] hover:bg-[#FFF6E5]/50 transition-all shadow-sm group">
+                  <p className="text-[13px] font-semibold text-slate-700 group-hover:text-[#FF9800] transition-colors whitespace-nowrap">Experiential Learning</p>
+                </div>
+
               </div>
 
             </div>
@@ -397,7 +405,7 @@ export default function SkillStudioApp() {
                 </h2>
               </ScrollRevealHeadline>
               <p className="text-[16px] text-[#6B7280] leading-[1.8] font-medium pr-2">
-                Independent Research Across K-12 Institutions Reveals Systemic Gaps In How Schools Prepare Students For An AI-Driven World. Our Skill Studios Are Designed To Close These Gaps With Measurable Outcomes.
+                Independent research across K-12 institutions reveals systemic gaps in how schools prepare students for an AI-driven world. Our Skill Studios are designed to close these gaps with measurable outcomes.
               </p>
             </div>
 
@@ -420,7 +428,7 @@ export default function SkillStudioApp() {
           <div className="max-w-[1280px] mx-auto px-6">
 
             {/* Header */}
-            <div className="mb-14">
+            <div className="mb-14 text-center flex flex-col items-center">
               <ScrollRevealHeadline>
                 <h2
                   className="mb-4 text-[28px] md:text-[36px] text-[#1A1A2E]"
@@ -430,12 +438,17 @@ export default function SkillStudioApp() {
                     letterSpacing: '0%'
                   }}
                 >
-                  our <span className="bg-gradient-to-r from-[#4200FF] via-[#E82194] to-[#FF6644] text-transparent bg-clip-text">Skill studios</span>
+                  Our <span className="bg-gradient-to-r from-[#4200FF] via-[#E82194] to-[#FF6644] text-transparent bg-clip-text">Skill Studios</span>
                 </h2>
               </ScrollRevealHeadline>
-              <p className="text-[16px] text-[#6B7280] leading-[1.8] font-medium max-w-[900px]">
-                A curated portfolio of 7 future-forward Skill Studios <br /> Each designed as an immersive learning pod where students build Capability, Confidence, and a portfolio that travels with them.
-              </p>
+              <div className="max-w-[1150px] text-center">
+                <span className="block text-[14px] italic text-[#6B7280] leading-[1.6] mb-1">
+                  A curated portfolio of 7 future-forward Skill Studios
+                </span>
+                <p className="text-[16px] text-[#6B7280] leading-[1.8] font-medium max-w-none lg:whitespace-nowrap">
+                  Each designed as an immersive learning pod where students build Capability, Confidence, and a portfolio that travels with them.
+                </p>
+              </div>
             </div>
 
             {/* Cards Grid */}
@@ -530,12 +543,9 @@ export default function SkillStudioApp() {
                   <div className="p-6 relative z-10 bg-white">
                     <div className="border-l-[3.5px] border-[#4200FF] pl-3 py-1">
                       <h3 className="font-bold text-[#1A1A2E] text-[19px] leading-[1.3] tracking-tight">
-                        Digital creativity &<br />AI skills by ADOBE
-            
+                        Digital creativity &<br />
+                        AI skills by ADOBE <span className="text-[14px] text-red-500 font-semibold ml-1">(Free)</span>
                       </h3>
-                      <p className="text-[14px] text-red-500 mt-2">
-                        (Free)
-                      </p>
                     </div>
                   </div>
                 </div>
@@ -601,10 +611,10 @@ export default function SkillStudioApp() {
 
             {/* Learning Pathway Image */}
             <Section2Reveal className="mt-4 lg:mt-6 w-full flex justify-center items-center">
-              <img 
-                src={learningPathwayImg} 
-                alt="The Skill Learning Pathway" 
-                className="w-full max-w-[1200px] h-auto object-contain mx-auto" 
+              <img
+                src={learningPathwayImg}
+                alt="The Skill Learning Pathway"
+                className="w-full max-w-[1200px] h-auto object-contain mx-auto"
               />
             </Section2Reveal>
           </div>
@@ -612,7 +622,7 @@ export default function SkillStudioApp() {
 
         {/* The Implementation Framework Section */}
         <section className="pt-12 md:pt-24 pb-6 bg-white relative overflow-hidden">
-          
+
           <style>{`
             @keyframes float-icon {
               0% { transform: translate(0px, 0px) rotate(0deg) scale(1); }
@@ -625,7 +635,7 @@ export default function SkillStudioApp() {
             .animate-float-3 { animation: float-icon 25s ease-in-out infinite 2s; }
             .animate-float-4 { animation: float-icon 20s ease-in-out infinite reverse 1s; }
           `}</style>
-          
+
           {/* Animated Background Icons */}
           <div className="absolute inset-0 pointer-events-none z-0 md:z-[50] overflow-hidden opacity-40 md:opacity-100">
             <Bot className="absolute text-[#4200FF] w-24 h-24 top-[10%] left-[5%] animate-float-1" />
@@ -800,11 +810,11 @@ export default function SkillStudioApp() {
         </section>
 
 
-        {/* Impact Measurement Framework Section */}
+        {/* Impact Measurement Framework Section - COMMENTED OUT */}
+        {/* 
         <section className="pt-12 md:pt-24 pb-8 bg-[#F9F4FA] relative z-20">
           <div className="max-w-[1280px] mx-auto px-6">
 
-            {/* Header */} 
             <div className="mb-14 text-left">
               <ScrollRevealHeadline>
                 <h2 className="text-[28px] md:text-[38px] font-bold text-[#1A1A2E] mb-3 tracking-tight leading-[1.2]">
@@ -819,10 +829,8 @@ export default function SkillStudioApp() {
               </p>
             </div>
 
-            {/* Grid */}
             <StaggerRow className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-              {/* Card 1 */}
               <TiltCard className="h-full">
                 <div className="bg-white border border-gray-200 rounded-[20px] p-6 lg:p-8 flex items-start gap-5 shadow-[0_4px_24px_rgba(0,0,0,0.04)] h-full">
                   <div className="feature-icon-wrapper w-[60px] h-[60px] rounded-full bg-[#EFF6FF] flex items-center justify-center shrink-0">
@@ -839,7 +847,6 @@ export default function SkillStudioApp() {
                 </div>
               </TiltCard>
 
-              {/* Card 2 */}
               <TiltCard className="h-full">
                 <div className="bg-white border border-gray-200 rounded-[20px] p-6 lg:p-8 flex items-start gap-5 shadow-[0_4px_24px_rgba(0,0,0,0.04)] h-full">
                   <div className="feature-icon-wrapper w-[60px] h-[60px] rounded-full bg-[#ECFDF5] flex items-center justify-center shrink-0">
@@ -856,7 +863,6 @@ export default function SkillStudioApp() {
                 </div>
               </TiltCard>
 
-              {/* Card 3 */}
               <TiltCard className="h-full">
                 <div className="bg-white border border-gray-200 rounded-[20px] p-6 lg:p-8 flex items-start gap-5 shadow-[0_4px_24px_rgba(0,0,0,0.04)] h-full">
                   <div className="feature-icon-wrapper w-[60px] h-[60px] rounded-full bg-[#FFFBEB] flex items-center justify-center shrink-0">
@@ -873,7 +879,6 @@ export default function SkillStudioApp() {
                 </div>
               </TiltCard>
 
-              {/* Card 4 */}
               <TiltCard className="h-full">
                 <div className="bg-white border border-gray-200 rounded-[20px] p-6 lg:p-8 flex items-start gap-5 shadow-[0_4px_24px_rgba(0,0,0,0.04)] h-full">
                   <div className="feature-icon-wrapper w-[60px] h-[60px] rounded-full bg-[#F5F3FF] flex items-center justify-center shrink-0">
@@ -890,7 +895,6 @@ export default function SkillStudioApp() {
                 </div>
               </TiltCard>
 
-              {/* Card 5 */}
               <TiltCard className="h-full">
                 <div className="bg-white border border-gray-200 rounded-[20px] p-6 lg:p-8 flex items-start gap-5 shadow-[0_4px_24px_rgba(0,0,0,0.04)] h-full">
                   <div className="feature-icon-wrapper w-[60px] h-[60px] rounded-full bg-[#EFF6FF] flex items-center justify-center shrink-0">
@@ -907,7 +911,6 @@ export default function SkillStudioApp() {
                 </div>
               </TiltCard>
 
-              {/* Card 6 */}
               <TiltCard className="h-full">
                 <div className="bg-white border border-gray-200 rounded-[20px] p-6 lg:p-8 flex items-start gap-5 shadow-[0_4px_24px_rgba(0,0,0,0.04)] h-full">
                   <div className="feature-icon-wrapper w-[60px] h-[60px] rounded-full bg-[#FEF2F2] flex items-center justify-center shrink-0">
@@ -927,9 +930,10 @@ export default function SkillStudioApp() {
             </StaggerRow>
           </div>
         </section>
+        */}
 
         {/* Reporting & Transparency Section */}
-        
+
 
 
         {/* Trusted By Educational Institutes Section */}
@@ -1038,7 +1042,7 @@ export default function SkillStudioApp() {
 
               {/* Content (Middle & Right) */}
               <div className="relative z-10 flex flex-col w-full h-full justify-center px-6 lg:pl-[520px] lg:pr-12 py-8 lg:py-10 gap-6">
-                
+
                 <div className="flex flex-col lg:flex-row items-center justify-between w-full gap-6 lg:gap-0">
                   {/* Text Block */}
                   <div className="flex flex-col text-white max-w-[600px] text-center lg:text-left">

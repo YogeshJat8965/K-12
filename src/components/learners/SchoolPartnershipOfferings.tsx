@@ -70,7 +70,7 @@ const slides: Slide[] = [
     ]
   },
   {
-    title: "Skill Studio\nSkill Studios",
+    title: "Skill Studio",
     subtitle: "Experiential, domain-anchored learning pods for students",
     desc: "A curated portfolio of 20+ future-forward studios spanning Generative AI, Agentic AI, Quantum Computing, Product Design, Data Science, Robotics, Sustainability, and more. Each studio is a structured experience that blends conceptual foundations, hands-on builds, and industry-grade capstones – aligned to NEP 2020 skill frameworks.",
     image: img2,
@@ -193,9 +193,7 @@ export default function SchoolPartnershipOfferings() {
               <WordReveal text="Our School Partnership Offerings" />
             </h2>
             <StaggerItem className="text-[#6B7280] text-[15px] md:text-[16px] leading-[1.7] font-medium max-w-3xl">
-              A Modular, End-To-End Ecosystem Designed To Meet Schools Wherever They Are On Their
-              Innovation Journey - From Assessing Institutional AI Readiness To Building Student Skill Portfolios
-              And Upskilling Your Teaching Faculty.
+              A modular, end-to-end ecosystem designed to meet schools from assessing institutional AI readiness to building student skill portfolios and upskilling your teaching faculty.
             </StaggerItem>
           </div>
           <StaggerItem className="flex items-center gap-4 shrink-0">
@@ -300,11 +298,10 @@ export default function SchoolPartnershipOfferings() {
               <button
                 key={i}
                 onClick={() => goTo(i, i > current ? 'right' : 'left')}
-                className={`rounded-full transition-all duration-300 relative overflow-hidden ${
-                  i === current
-                    ? 'w-10 h-3 bg-[#E0D6FF]'
-                    : 'w-3 h-3 bg-[#E0D6FF] hover:bg-[#C4B5FD]'
-                }`}
+                className={`rounded-full transition-all duration-300 relative overflow-hidden ${i === current
+                  ? 'w-10 h-3 bg-[#E0D6FF]'
+                  : 'w-3 h-3 bg-[#E0D6FF] hover:bg-[#C4B5FD]'
+                  }`}
               >
                 {i === current && (
                   <span

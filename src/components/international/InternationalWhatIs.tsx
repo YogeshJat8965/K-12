@@ -168,61 +168,7 @@ export default function InternationalWhatIs() {
         }
       `}</style>
 
-      <section className="iwi-section hidden lg:block" ref={sectionRef}>
-        
-        {/* Background Decorative Elements */}
-        <div className="iwi-blob iwi-blob-purple"></div>
-        <div className="iwi-blob iwi-blob-green"></div>
-        <div className="iwi-blob iwi-blob-pink"></div>
-        <div className="iwi-blob iwi-blob-yellow"></div>
-        
-        {/* Curvy background SVG */}
-        <svg className="iwi-bg-curve" viewBox="0 0 1440 600" fill="none" preserveAspectRatio="none">
-          <path d="M-100 300 C 300 0, 700 600, 1500 200" stroke="#E5E7EB" strokeWidth="1" strokeDasharray="4 4" />
-          <path d="M-100 400 C 400 100, 800 700, 1600 300" stroke="#F3F4F6" strokeWidth="1.5" />
-        </svg>
-
-        {/* Floating Icons (using emojis to simulate the tiny graphics in bg) */}
-        <div className="iwi-float-icon" style={{ top: '15%', left: '8%', fontSize: '20px' }}>✏️</div>
-        <div className="iwi-float-icon" style={{ bottom: '25%', left: '5%', fontSize: '20px' }}>📐</div>
-        <div className="iwi-float-icon" style={{ top: '10%', right: '45%', fontSize: '20px' }}>⭐</div>
-        <div className="iwi-float-icon" style={{ bottom: '15%', left: '45%', fontSize: '20px' }}>🧩</div>
-        <div className="iwi-float-icon" style={{ top: '25%', right: '10%', fontSize: '20px' }}>📖</div>
-        <div className="iwi-float-icon" style={{ bottom: '35%', right: '5%', fontSize: '20px' }}>🌍</div>
-        <div className="iwi-float-icon" style={{ top: '45%', left: '3%', fontSize: '20px' }}>🎵</div>
-        <div className="iwi-float-icon" style={{ bottom: '20%', right: '15%', fontSize: '20px' }}>🎨</div>
-        <div className="iwi-float-icon" style={{ top: '12%', left: '30%', fontSize: '20px' }}>💡</div>
-
-        <div className="iwi-container">
-          
-          <div className="iwi-left" ref={leftRef}>
-            <p className="iwi-desc">
-              Skill Studio is a future-focused experiential learning ecosystem designed to help students build creativity, problem-solving abilities, digital fluency, leadership, and real-world skills beyond traditional classroom education.
-            </p>
-            
-            <p className="iwi-desc">
-              Built for progressive schools and future-ready learners, Skillzza combines emerging technologies, interdisciplinary learning, hands-on projects, and measurable outcomes within a structured school-integrated framework
-            </p>
-          </div>
-
-          <div className="iwi-right" ref={rightRef}>
-            <div className="iwi-img-wrap">
-              <img src={heroImg} alt="Skill Studio Student" className="iwi-img" />
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* Mobile-only replacement image */}
-      <div className="w-full bg-white block lg:hidden" style={{ paddingTop: '40px', paddingBottom: '60px', position: 'relative', zIndex: 30 }}>
-        <img 
-          src={responsiveImg} 
-          alt="Skill Studio Studios" 
-          className="w-full h-auto block mx-auto"
-          style={{ display: 'block', width: '100%', height: 'auto' }}
-        />
-      </div>
+      {/* <section className="iwi-section hidden lg:block" ref={sectionRef}> ... </section> */}
     </>
   );
 }

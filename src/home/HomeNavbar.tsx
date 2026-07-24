@@ -43,7 +43,7 @@ const NAV_LINKS = [
     dropdown: [
       { label: 'For Students', href: '#' },
       { label: 'For Schools', href: '/learners' },
-      { label: 'For tutor', href: '#' },
+      { label: 'For Educator', href: '#' },
     ],
   },
   { label: 'AI Playground', href: '/ai-playground' },

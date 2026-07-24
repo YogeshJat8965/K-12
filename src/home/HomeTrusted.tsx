@@ -5,7 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const statsData = [
-  { icon: '/landing/stat-icon-1.svg', target: 200000, suffix: '', label: 'Students Impacted', fmt: true },
+  { icon: '/landing/stat-icon-1.svg', target: 200000, suffix: '+', label: 'Students Impacted', fmt: true },
   { icon: '/landing/stat-icon-2.svg', target: 450, suffix: '+', label: 'Partner School', fmt: false },
   { icon: '/landing/stat-icon-3.svg', target: 500, suffix: '+', label: 'AI Projects', fmt: false },
   { icon: '/landing/stat-icon-4.svg', target: 700, suffix: '+', label: 'Educators Unskilled', fmt: false },
@@ -46,7 +46,7 @@ export default function HomeTrusted() {
 
       // Stats cards lift
       if (ref.current) {
-        gsap.fromTo('.ht-card', 
+        gsap.fromTo('.ht-card',
           { y: 60, opacity: 0, boxShadow: '0px 0px 0px rgba(0,0,0,0)' },
           {
             y: 0,

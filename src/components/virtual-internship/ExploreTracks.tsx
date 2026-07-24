@@ -120,7 +120,7 @@ export default function ExploreTracks() {
         }
 
         .et-header {
-          text-align: left;
+          text-align: center;
           margin-bottom: 60px;
         }
 
@@ -139,10 +139,11 @@ export default function ExploreTracks() {
         .et-subtitle {
           font-size: 16px;
           color: #5C6165;
-          margin: 0;
+          margin: 0 auto;
           font-weight: 500;
-          width: 100%;
+          max-width: 1100px;
           line-height: 1.6;
+          text-align: center;
         }
 
         .et-grid {
@@ -225,13 +226,14 @@ export default function ExploreTracks() {
 
       <section className="et-section" ref={sectionRef}>
         <div className="et-container">
-          
+
           <div className="et-header">
             <h2 className="et-header-text">
               Explore <span className="purple">Career</span> Tracks
             </h2>
             <p className="et-subtitle">
-              Eight future-ready career tracks, mapped across technology, enterprise, creativity, science, and personal growth. Students can explore across tracks before choosing their capstone specialisation.
+              Eight future-ready career tracks, mapped across technology, enterprise, creativity, science, and personal growth. <br />
+              Students can explore across tracks before choosing their capstone specialisation.
             </p>
           </div>
 

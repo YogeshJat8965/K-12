@@ -78,58 +78,7 @@ export default function ImplementationFramework() {
     return () => ctx.revert();
   }, []);
 
-  return (
-    <section ref={sectionRef} className="relative w-full py-12 md:py-24 bg-[#FAFBFC] overflow-hidden font-poppins">
-
-      <div className="max-w-[1300px] mx-auto px-4 md:px-6 relative z-10">
-
-        {/* Section Header */}
-        <div className="text-center mb-8 md:mb-16 imp-intro">
-          <p className="mt-4 text-[#6B7280] font-medium text-[16px]">
-            Simple. Structured. Scalable.
-          </p>
-          <h2 className="text-[36px] md:text-[44px] font-extrabold text-[#1A1A2E] tracking-tight">
-            The <span className="text-[#6C3CF7]">Implementation</span> Framework
-          </h2>
-          <p className="mt-2 text-[#6B7280] font-medium text-[16px] w-full mx-auto leading-relaxed xl:whitespace-nowrap">
-            Schools select three studios annually based on student needs, institutional priorities, and learning goals.
-          </p>
-        </div>
-
-        {/* Horizontal Timeline Layout */}
-        <div className="imp-timeline relative w-full mt-4 md:mt-10">
-          
-          <div className="flex flex-col lg:flex-row items-stretch justify-between gap-6 lg:gap-4 relative">
-            
-            {steps.map((step, idx) => (
-              <div key={idx} className="imp-step-card flex-1 flex flex-col items-center group w-full">
-
-                {/* Card Container */}
-                <div className="bg-white rounded-[24px] shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(108,60,247,0.15)] border border-gray-100 p-6 flex flex-col items-center text-center transition-all duration-500 hover:-translate-y-2 w-full h-full min-h-[320px]">
-                  
-                  {/* Image */}
-                  <div className="w-32 h-32 sm:w-40 sm:h-40 mb-6 flex items-center justify-center">
-                    <img src={step.image} alt={step.title} className="w-full h-full object-contain scale-110 group-hover:scale-125 transition-transform duration-500" />
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="font-bold text-[17px] mb-3 leading-tight" style={{ color: step.color }}>
-                    {step.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-[#4B5563] text-[13px] font-medium leading-relaxed">
-                    {step.desc}
-                  </p>
-                  
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-
-      </div>
-    </section>
+    {/* <section ref={sectionRef} className="relative w-full py-12 md:py-24 bg-[#FAFBFC] overflow-hidden font-poppins"> ... </section> */}
+    null
   );
 }

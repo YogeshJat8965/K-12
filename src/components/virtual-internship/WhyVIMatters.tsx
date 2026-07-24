@@ -254,12 +254,18 @@ export default function WhyVIMatters() {
         }
 
         .wvm-bottom-highlight {
-          font-size: clamp(20px, 2vw, 24px);
+          font-size: clamp(15px, 1.2vw, 18px);
           font-style: italic;
-          font-weight: 700;
+          font-weight: 400;
           color: #1A1A2E;
           line-height: 1.4;
           margin: 0;
+          white-space: normal;
+        }
+        @media (min-width: 1024px) {
+          .wvm-bottom-highlight {
+            white-space: nowrap;
+          }
         }
 
         .wvm-bottom-highlight .purple {
@@ -304,16 +310,16 @@ export default function WhyVIMatters() {
 
       <section className="wvm-section" ref={sectionRef}>
         <div className="wvm-container">
-          
+
           <div className="wvm-left" ref={leftRef}>
-            <span className="wvm-eyebrow">THE CASE FOR CHANGE</span>
+            {/* <span className="wvm-eyebrow">THE CASE FOR CHANGE</span> */}
             <h2 className="wvm-heading">
               Why Virtual Internships<br />
               <span className="purple">Matter Today</span>
             </h2>
             <p className="wvm-desc">
-              Students today are required to make some of the most important decisions of 
-              their lives - choosing streams, careers, and colleges - often without ever 
+              Students today are required to make some of the most important decisions of
+              their lives - choosing streams, careers, and colleges - often without ever
               experiencing what those paths actually involve.
             </p>
 
@@ -327,18 +333,18 @@ export default function WhyVIMatters() {
                 </div>
                 <div className="wvm-card-body">
                   <div className="wvm-timeline-line"></div>
-                  
+
                   <div className="wvm-list-item">
                     <div className="wvm-timeline-dot"></div>
-                    <p className="wvm-list-item-text">Textbooks explain concepts,<br/>not careers.</p>
+                    <p className="wvm-list-item-text">Textbooks explain concepts,<br />not careers.</p>
                   </div>
                   <div className="wvm-list-item">
                     <div className="wvm-timeline-dot"></div>
-                    <p className="wvm-list-item-text">Schools focus on marks, not<br/>exposure</p>
+                    <p className="wvm-list-item-text">Schools focus on marks, not<br />exposure</p>
                   </div>
                   <div className="wvm-list-item">
                     <div className="wvm-timeline-dot"></div>
-                    <p className="wvm-list-item-text">Students lack clarity, direction,<br/>and confidence.</p>
+                    <p className="wvm-list-item-text">Students lack clarity, direction,<br />and confidence.</p>
                   </div>
                 </div>
               </div>
@@ -356,26 +362,25 @@ export default function WhyVIMatters() {
                 </div>
                 <div className="wvm-card-body">
                   <div className="wvm-timeline-line"></div>
-                  
+
                   <div className="wvm-list-item">
                     <div className="wvm-timeline-dot"></div>
-                    <p className="wvm-list-item-text">NEP 2020 emphasises experiential<br/>learning from Grade 6.</p>
+                    <p className="wvm-list-item-text">NEP 2020 emphasises experiential<br />learning from Grade 6.</p>
                   </div>
                   <div className="wvm-list-item">
                     <div className="wvm-timeline-dot"></div>
-                    <p className="wvm-list-item-text">Top global universities value<br/>projects, portfolios, and initiative</p>
+                    <p className="wvm-list-item-text">Top global universities value<br />projects, portfolios, and initiative</p>
                   </div>
                   <div className="wvm-list-item">
                     <div className="wvm-timeline-dot"></div>
-                    <p className="wvm-list-item-text">The future workforce demands<br/>skills, not just degrees.</p>
+                    <p className="wvm-list-item-text">The future workforce demands<br />skills, not just degrees.</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <p className="wvm-bottom-highlight">
-              Virtual Internships Bridge This Gap - Transforming<br className="hidden md:block" />
-              Learning From <span className="purple">Passive</span> To <span className="purple">Practical</span>.
+              Virtual Internships Bridge This Gap - Transforming Learning From <span className="purple">Passive</span> To <span className="purple">Practical</span>.
             </p>
           </div>
 

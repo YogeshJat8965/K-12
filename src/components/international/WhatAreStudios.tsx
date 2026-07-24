@@ -205,8 +205,8 @@ export default function WhatAreStudios() {
 
         {/* Bottom Banner */}
         <div ref={bottomRef} className="w-full bg-[#F3F6FA] rounded-xl p-8 flex items-center justify-center gap-6 relative z-10 mt-12 mb-0">
-          <p className="text-[#1A1A2E] text-[16px] font-semibold leading-relaxed text-center whitespace-nowrap overflow-hidden text-ellipsis md:whitespace-normal">
-            The Learning Model Is Designed To Help Students Move From Exploration To Application.While Building Confidence And Self-Direction.
+          <p className=" italic text-[#1A1A2E] text-[16px] font-semibold leading-relaxed text-center whitespace-nowrap overflow-hidden text-ellipsis md:whitespace-normal">
+            The learning model is designed to help students move from exploration to application.While building confidence and self-direction.
           </p>
         </div>
 

@@ -25,7 +25,7 @@ export default function WhySkillzzaVI() {
   const cards = [
     {
       title: "Built Exclusively for School Students",
-      desc: "Not adapted from adult platforms – every element is designed for Grades 6–12.",
+      desc: "Not adapted from regular platforms – every element is designed for Grades 6–12.",
       icon: <GraduationCap size={36} strokeWidth={1.8} />,
       color: "#6C3CF7",
       bgLight: "rgba(108,60,247,0.08)",
@@ -306,7 +306,7 @@ export default function WhySkillzzaVI() {
               Why <span className="purple">Skillzza</span> Virtual Internships
             </h2>
             <p className="wsvi-subtitle wsvi-header-elem">
-              What Sets Us Apart In An Increasingly Crowded Edtech Landscape:
+              What sets us apart in an increasingly crowded edtech landscape:
             </p>
           </div>
 

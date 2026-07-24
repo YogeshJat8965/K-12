@@ -324,7 +324,7 @@ export default function HowProgramWorks() {
 
       <section className="hpw-section" ref={sectionRef}>
         <div className="hpw-container">
-          
+
           <h2 className="hpw-header">
             How the <span className="purple">Program</span> Works
           </h2>
@@ -334,7 +334,7 @@ export default function HowProgramWorks() {
 
           <div className="hpw-timeline-container">
 
-            
+
             <div className="hpw-grid" ref={cardsRef}>
               {steps.map((step, idx) => (
                 <div key={idx} className="hpw-step-col">
@@ -378,7 +378,7 @@ export default function HowProgramWorks() {
               </div>
               <div className="hpw-banner-text">
                 <p className="hpw-banner-label">FORMAT</p>
-                <p className="hpw-banner-val">100% Online, Self-Paced</p>
+                <p className="hpw-banner-val">100% Online, Self-Paced, Mentor Led</p>
               </div>
             </div>
           </div>

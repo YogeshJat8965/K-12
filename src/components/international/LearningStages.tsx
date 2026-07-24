@@ -17,9 +17,9 @@ const Sparkle = ({ className }: { className?: string }) => (
 
 const TargetIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="12" cy="12" r="9" stroke="#7C3AED" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    <circle cx="12" cy="12" r="5" stroke="#7C3AED" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    <circle cx="12" cy="12" r="1.5" fill="#7C3AED"/>
+    <circle cx="12" cy="12" r="9" stroke="#7C3AED" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <circle cx="12" cy="12" r="5" stroke="#7C3AED" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <circle cx="12" cy="12" r="1.5" fill="#7C3AED" />
   </svg>
 );
 
@@ -47,7 +47,7 @@ export default function LearningStages() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Heading animation
-      gsap.fromTo('.ls-heading', 
+      gsap.fromTo('.ls-heading',
         { y: 30, opacity: 0 },
         {
           y: 0,
@@ -60,8 +60,8 @@ export default function LearningStages() {
           }
         }
       );
-      
-      gsap.fromTo('.ls-tabs', 
+
+      gsap.fromTo('.ls-tabs',
         { y: 30, opacity: 0 },
         {
           y: 0,
@@ -83,13 +83,13 @@ export default function LearningStages() {
 
   return (
     <section ref={sectionRef} className="relative w-full pt-4 pb-12 md:pb-24 bg-white overflow-hidden font-poppins">
-      
+
       {/* Background Decor */}
       <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-[#FFFBF0] rounded-full -translate-x-1/4 -translate-y-[10%] z-0"></div>
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#F3EFFF] rounded-full translate-x-1/4 translate-y-[10%] z-0"></div>
 
       <div className="max-w-[1050px] mx-auto px-6 relative z-10">
-        
+
         {/* Header */}
         <div className="text-center mb-10 ls-heading">
           <h2 className="text-[36px] md:text-[44px] font-bold text-[#1A1A2E] tracking-tight">
@@ -103,11 +103,10 @@ export default function LearningStages() {
             <button
               key={index}
               onClick={() => setActiveTab(index)}
-              className={`px-6 py-3 rounded-full text-[15px] font-semibold transition-all duration-300 ${
-                activeTab === index 
-                ? 'bg-[#7C3AED] text-white shadow-md' 
+              className={`px-6 py-3 rounded-full text-[15px] font-semibold transition-all duration-300 ${activeTab === index
+                ? 'bg-[#7C3AED] text-white shadow-md'
                 : 'bg-[#F3F4F6] text-[#4B5563] hover:bg-[#E5E7EB]'
-              }`}
+                }`}
             >
               {tab}
             </button>
@@ -123,14 +122,14 @@ export default function LearningStages() {
                 <div className="w-full md:w-[45%] lg:w-[48%] h-[260px] md:h-[auto] md:min-h-[300px] shrink-0 relative">
                   <img src={Learning1Img} alt="Grades 3-5 Discovery & Exploration" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
-                
+
                 <div className="w-full md:w-[55%] lg:w-[52%] px-6 pb-6 pt-1 md:p-10 lg:p-12 md:pr-24 lg:pr-32 flex flex-col justify-center relative bg-white z-10">
                   <span className="text-[#3B82F6] font-semibold text-[14px] mb-2">Grades 3–5</span>
                   <h3 className="text-[#1A1A2E] text-[26px] md:text-[30px] font-bold leading-tight mb-3">
-                    Discovery &<br/>Exploration
+                    Discovery &<br />Exploration
                   </h3>
                   <p className="text-[#6B7280] text-[14.5px] font-medium leading-relaxed">
-                    Students Develop Curiosity, Creativity, Communication, And Foundational Digital Confidence Through Interactive And Project-Based Experiences.
+                    Students develop curiosity, creativity, communication, and foundational digital confidence through interactive and project-based experiences.
                   </p>
 
                   <div className="absolute right-6 md:right-10 top-1/2 -translate-y-1/2 hidden md:flex items-center justify-center">
@@ -150,14 +149,14 @@ export default function LearningStages() {
                 <div className="w-full md:w-[45%] lg:w-[48%] h-[260px] md:h-[auto] md:min-h-[300px] shrink-0 relative">
                   <img src={Learning2Img} alt="Grades 6-8 Skill Building & Innovation" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
-                
+
                 <div className="w-full md:w-[55%] lg:w-[52%] px-6 pb-6 pt-1 md:p-10 lg:p-12 md:pr-24 lg:pr-32 flex flex-col justify-center relative bg-white z-10">
                   <span className="text-[#3B82F6] font-semibold text-[14px] mb-2">Grades 6–8</span>
                   <h3 className="text-[#1A1A2E] text-[26px] md:text-[30px] font-bold leading-tight mb-3">
-                    Skill Building &<br/>Innovation
+                    Skill Building &<br />Innovation
                   </h3>
                   <p className="text-[#6B7280] text-[14.5px] font-medium leading-relaxed">
-                    Learners Begin Applying Problem-Solving, Teamwork, Design Thinking, And Technology Skills Through Guided Challenges And Interdisciplinary Projects.
+                    Learners begin applying problem-solving, teamwork, design thinking, and technology skills through guided challenges and interdisciplinary projects.
                   </p>
 
                   <div className="absolute right-6 md:right-10 top-1/2 -translate-y-1/2 hidden md:flex items-center justify-center">
@@ -177,14 +176,14 @@ export default function LearningStages() {
                 <div className="w-full md:w-[45%] lg:w-[48%] h-[260px] md:h-[auto] md:min-h-[300px] shrink-0 relative">
                   <img src={Learning3Img} alt="Grades 9-12 Advanced Application & Career Readiness" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
-                
+
                 <div className="w-full md:w-[55%] lg:w-[52%] px-6 pb-6 pt-1 md:p-10 lg:p-12 md:pr-24 lg:pr-32 flex flex-col justify-center relative bg-white z-10">
                   <span className="text-[#3B82F6] font-semibold text-[14px] mb-2">Grades 9–12</span>
                   <h3 className="text-[#1A1A2E] text-[26px] md:text-[30px] font-bold leading-tight mb-3">
-                    Advanced Application &<br/>Career Readiness
+                    Immersive Learning &<br />Career Readiness
                   </h3>
                   <p className="text-[#6B7280] text-[14.5px] font-medium leading-relaxed">
-                    Students Focus On Real-World Problem Solving, Advanced Tools, Entrepreneurship, And Portfolio Creation To Prepare For Future Careers.
+                    Students focus on real-world problem solving, advanced tools, entrepreneurship, and portfolio creation to prepare for future careers.
                   </p>
 
                   <div className="absolute right-6 md:right-10 top-1/2 -translate-y-1/2 hidden md:flex items-center justify-center">

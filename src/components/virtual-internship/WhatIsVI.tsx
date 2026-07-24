@@ -215,38 +215,8 @@ export default function WhatIsVI() {
         }
       `}</style>
 
-      <section className="wivi-section" ref={sectionRef}>
-        <div className="wivi-container">
-          
-          <h2 className="wivi-h2">What Is A Virtual Internship?</h2>
-          
-          <p className="wivi-subtitle">
-            A Virtual Internship is a structured, online work experience where students engage in real-world, industry-inspired tasks -<br className="hidden md:block" />
-            Designed to simulate how professionals actually work. Unlike traditional learning models that focus on theory, virtual<br className="hidden md:block" />
-            internships are <span className="wivi-subtitle-highlight">application-driven, outcome-focused, flexible, and mentor-guided.</span>
-          </p>
-
-          <div className="wivi-grid" ref={cardsRef}>
-            {cards.map((card, idx) => (
-              <div key={idx} className={`wivi-card ${card.colorClass}`}>
-                <div className="wivi-icon-box">
-                  {card.icon}
-                </div>
-                <div className="wivi-card-content">
-                  <h3 className="wivi-card-title">{card.title}</h3>
-                  <p className="wivi-card-desc">{card.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <p className="wivi-footer-text">
-            While such experiences have traditionally been available only to university students, Skillzza brings this powerful model to<br className="hidden md:block" />
-            <span className="wivi-subtitle-highlight">Grades 6-12</span> - Ensuring early exposure in a safe, age-appropriate environment.
-          </p>
-          
-        </div>
-      </section>
+      {/* <section className="wivi-section" ref={sectionRef}> ... </section> */}
+      null
     </>
   );
 }

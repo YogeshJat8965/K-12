@@ -70,7 +70,7 @@ export default function HomeEcosystem() {
             start: 'top 85%'
           }
         });
-        
+
         tl.from('.he-title-base', { opacity: 0, duration: 0.6 })
           .from('.he-type-char', { opacity: 0, duration: 0.1, stagger: 0.05, ease: 'none' }, '+=0.2')
           .from('.he-subtitle', { y: 20, opacity: 0, duration: 0.6 }, '-=0.2');
@@ -79,7 +79,7 @@ export default function HomeEcosystem() {
       // 2. Cards 3D Rise
       if (gridRef.current) {
         const cards = gridRef.current.querySelectorAll('.he-card');
-        
+
         cards.forEach((card, idx) => {
           const tl = gsap.timeline({
             scrollTrigger: {
@@ -345,7 +345,7 @@ export default function HomeEcosystem() {
 
       <section className="he-section" ref={sectionRef}>
         <div className="he-inner">
-          
+
           <div className="he-header">
             <div className="he-badge">WHO WE SERVE</div>
             <h2 className="he-title" ref={titleRef}>
@@ -356,29 +356,29 @@ export default function HomeEcosystem() {
                 ))}
               </span>
             </h2>
-            <p className="he-subtitle">
+            {/* <p className="he-subtitle">
               Tailored programmes and pathways for each stakeholder in the<br />education ecosystem.
-            </p>
+            </p> */}
           </div>
 
           <div className="he-grid" ref={gridRef} style={{ perspective: '1200px' }}>
             {ecosystemData.map((item, idx) => (
-              <div 
-                className="he-card" 
+              <div
+                className="he-card"
                 key={idx}
               >
                 <div className="he-card-top-border" style={{ background: item.themeColor }}></div>
                 <div className="he-img-area">
                   <img src={item.img} alt={item.label} />
                 </div>
-                
+
                 <div className="he-content">
                   <div className="he-card-label" style={{ color: item.themeColor }}>
                     {item.label}
                   </div>
                   <h3 className="he-card-title">{item.title}</h3>
                   <p className="he-card-desc">{item.desc}</p>
-                  
+
                   <ul className="he-bullets">
                     {item.bullets.map((bullet, bIdx) => (
                       <li key={bIdx}>
