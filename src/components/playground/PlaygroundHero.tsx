@@ -108,7 +108,7 @@ export default function PlaygroundHero() {
           max-width: 1760px;
           width: 100%;
           margin: 0 auto;
-          padding: 0 80px 100px;
+          padding: 0 80px 20px;
           position: relative;
           display: flex;
           align-items: center;
@@ -246,7 +246,7 @@ export default function PlaygroundHero() {
           width: 100%;
           margin: 0 auto;
           padding: 0 80px 40px;
-          margin-top: -60px; /* Slight overlap */
+          margin-top: 20px;
         }
 
         .ph-feature-bar {

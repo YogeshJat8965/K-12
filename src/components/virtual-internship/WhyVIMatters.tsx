@@ -85,7 +85,7 @@ export default function WhyVIMatters() {
       <style>{`
         .wvm-section {
           width: 100%;
-          padding: 80px 40px;
+          padding: 10px 40px 40px;
           background-color: #FFFFFF;
           font-family: 'Poppins', sans-serif;
           overflow: hidden;

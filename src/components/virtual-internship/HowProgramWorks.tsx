@@ -78,7 +78,7 @@ export default function HowProgramWorks() {
       <style>{`
         .hpw-section {
           width: 100%;
-          padding: 100px 40px;
+          padding: 40px 40px;
           background-color: #FAFAFC;
           font-family: 'Poppins', sans-serif;
           position: relative;
@@ -107,7 +107,7 @@ export default function HowProgramWorks() {
         .hpw-subtitle {
           font-size: 18px;
           color: #5C6165;
-          margin: 0 0 60px;
+          margin: 0 0 24px;
           font-weight: 500;
         }
 
@@ -251,7 +251,7 @@ export default function HowProgramWorks() {
         }
 
         .hpw-banner {
-          margin-top: 60px;
+          margin-top: 40px;
           background: #FFFFFF;
           border-radius: 24px;
           padding: 32px 48px;

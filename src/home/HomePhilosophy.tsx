@@ -111,7 +111,7 @@ export default function HomePhilosophy() {
         .hp-section {
           width: 100%;
           background: linear-gradient(135deg, #FDFBFF 0%, #FFFFFF 15%);
-          padding: 80px 0 100px;
+          padding: 40px 0 48px;
           font-family: 'Poppins', sans-serif;
         }
 
@@ -124,7 +124,7 @@ export default function HomePhilosophy() {
         /* Top Quote Section */
         .hp-quote {
           text-align: center;
-          margin-bottom: 80px;
+          margin-bottom: 32px;
         }
         .hp-quote-text {
           font-weight: 700;

@@ -3,11 +3,11 @@ import React from 'react';
 
 
 const WavePattern = () => (
-  <svg 
-    width="500" 
-    height="120" 
-    viewBox="0 0 500 120" 
-    fill="none" 
+  <svg
+    width="500"
+    height="120"
+    viewBox="0 0 500 120"
+    fill="none"
     className="absolute right-0 top-0 h-full opacity-[0.35] pointer-events-none hidden md:block"
   >
     <path d="M0,120 C100,120 200,20 350,50 C420,65 470,30 500,20" stroke="#5B32EA" strokeWidth="2" strokeDasharray="1 5" strokeLinecap="round" fill="none" />
@@ -30,9 +30,9 @@ export default function LearnersCTA() {
   return (
     <section className="w-full bg-[#F5F7FA] pb-24 font-poppins pt-4">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-12 flex flex-col gap-10">
-        
+
         {/* Top Banner */}
-        <FadeIn3D delay={0.1} y={40}>
+        {/* <FadeIn3D delay={0.1} y={40}>
           <div className="bg-white rounded-[24px] p-6 lg:p-8 flex flex-col items-center justify-center relative overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.03)] border border-gray-100 transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(91,50,234,0.08)] group">
             
             <div className="z-10 text-center max-w-3xl mx-auto">
@@ -46,12 +46,12 @@ export default function LearnersCTA() {
 
             <WavePattern />
           </div>
-        </FadeIn3D>
+        </FadeIn3D> */}
 
         {/* Bottom CTA Banner */}
         <FadeIn3D delay={0.2} y={40}>
           <div className="bg-gradient-to-r from-[#6731EA] via-[#9146EA] to-[#C95DEB] rounded-[24px] px-8 py-10 lg:px-12 lg:py-10 flex flex-col lg:flex-row justify-between items-center gap-8 shadow-[0_12px_40px_rgba(103,49,234,0.3)] hover:shadow-[0_16px_50px_rgba(103,49,234,0.4)] transition-shadow duration-300 relative overflow-hidden">
-            
+
             {/* Very subtle glow effect overlay */}
             <div className="absolute inset-0 bg-white/5 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
@@ -63,7 +63,7 @@ export default function LearnersCTA() {
                 Equip your students to think critically, build confidently, and lead responsibly in an AI-driven world
               </p>
             </div>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 shrink-0 z-10">
               <button className="bg-white text-[#6731EA] font-extrabold text-[13px] md:text-[14px] px-6 py-3.5 md:py-4 rounded-[12px] flex items-center justify-center gap-2.5 hover:bg-gray-50 hover:scale-105 active:scale-95 transition-all shadow-[0_8px_20px_rgba(0,0,0,0.1)]">
                 <TriangleIcon className="w-2.5 h-3" /> REQUEST A DEMO

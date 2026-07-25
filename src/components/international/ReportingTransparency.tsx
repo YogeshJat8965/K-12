@@ -26,7 +26,7 @@ export default function ReportingTransparency() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full py-12 md:py-24 bg-[#F9F9F9] font-poppins relative overflow-hidden">
+    <section ref={sectionRef} className="w-full py-8 md:py-12 bg-[#F9F9F9] font-poppins relative overflow-hidden">
       <div className="max-w-[1250px] mx-auto px-6 lg:px-12 relative z-10">
         
         {/* Header Row */}

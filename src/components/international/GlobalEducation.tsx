@@ -39,7 +39,7 @@ export default function GlobalEducation() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full pt-12 md:pt-24 pb-8 md:pb-12 bg-[#FAFAFA] overflow-hidden font-poppins relative">
+    <section ref={sectionRef} className="w-full pt-8 md:pt-12 pb-8 md:pb-12 bg-[#FAFAFA] overflow-hidden font-poppins relative">
       {/* Background Decor Elements */}
       <div className="absolute top-[-10%] left-[-5%] w-[400px] h-[400px] bg-[#E0E7FF] rounded-full blur-[120px] opacity-60 z-0"></div>
       <div className="absolute bottom-[-10%] right-[10%] w-[500px] h-[500px] bg-[#DBEAFE] rounded-full blur-[150px] opacity-50 z-0"></div>

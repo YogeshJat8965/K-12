@@ -65,11 +65,11 @@ const reportingItems = [
 
 export default function ImpactFramework() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Header - Centered */}
-        <div className="mb-20 text-center max-w-5xl mx-auto">
+        <div className="mb-10 text-center max-w-5xl mx-auto">
           <ScrollReveal>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 font-display leading-tight whitespace-nowrap">
               Impact Measurement Framework
@@ -81,7 +81,7 @@ export default function ImpactFramework() {
         </div>
 
         {/* Impact Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
           {impactPillars.map((pillar, index) => (
             <ScrollReveal key={index} delay={index * 0.1} direction="up">
               <div className="group flex flex-col h-full cursor-default relative">

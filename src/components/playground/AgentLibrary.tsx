@@ -164,7 +164,7 @@ export default function AgentLibrary() {
 
         .al-section {
           width: 100%;
-          padding: 80px 40px;
+          padding: 40px 40px;
           background: #e8e4fdff; /* Light purple background */
           font-family: 'Poppins', sans-serif;
           text-align: center;
@@ -291,7 +291,7 @@ export default function AgentLibrary() {
 
         @media (max-width: 900px) {
           .al-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
-          .al-section { padding: 60px 20px; }
+          .al-section { padding: 40px 20px; }
         }
 
         @media (max-width: 600px) {

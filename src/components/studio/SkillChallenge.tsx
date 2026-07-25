@@ -32,7 +32,7 @@ const challenges = [
 
 export default function SkillChallenge() {
   return (
-    <section className="py-24 bg-[#F8F7FF] text-slate-900 relative overflow-hidden">
+    <section className="py-12 bg-[#F8F7FF] text-slate-900 relative overflow-hidden">
       {/* Background patterns */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-full h-full" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #6366f1 1px, transparent 0)', backgroundSize: '40px 40px' }} />
@@ -41,7 +41,7 @@ export default function SkillChallenge() {
       <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-200/50 rounded-full blur-[120px]" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <ScrollReveal>
             <div className="inline-block px-4 py-1.5 bg-purple-600/10 border border-purple-600/20 rounded-full text-purple-600 font-bold text-sm tracking-widest uppercase mb-6">
               THE CHALLENGE

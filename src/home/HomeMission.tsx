@@ -63,7 +63,7 @@ export default function HomeMission() {
         .hm-section {
           width: 100%;
           background: #fff;
-          padding: clamp(40px,4vw,80px) clamp(20px,4vw,80px);
+          padding: clamp(20px,2.5vw,40px) clamp(20px,4vw,80px);
           font-family: 'Poppins', sans-serif;
           box-sizing: border-box;
         }

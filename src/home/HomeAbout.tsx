@@ -74,7 +74,7 @@ export default function HomeAbout() {
         .ha-section {
           width: 100%;
           background: #ffffff;
-          padding: clamp(60px, 8vw, 120px) 0;
+          padding: clamp(32px, 4vw, 56px) 0;
           font-family: 'Poppins', sans-serif;
           position: relative;
         }
@@ -167,7 +167,7 @@ export default function HomeAbout() {
 
         @media (max-width: 600px) {
           .ha-section {
-            padding: 60px 0;
+            padding: 32px 0;
           }
           .ha-inner {
             padding: 0 20px;

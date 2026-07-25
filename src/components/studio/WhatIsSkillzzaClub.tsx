@@ -68,7 +68,7 @@ const features = [
 
 export default function WhatIsSkillzzaClub() {
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-12 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center gap-16">
 

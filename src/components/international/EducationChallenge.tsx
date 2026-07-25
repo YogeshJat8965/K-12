@@ -59,7 +59,7 @@ export default function EducationChallenge() {
       <style>{`
         .ec-section {
           width: 100%;
-          padding: 80px 40px;
+          padding: 40px 40px;
           background-color: #F5F3FF;
           font-family: 'Poppins', sans-serif;
           position: relative;
@@ -225,7 +225,7 @@ export default function EducationChallenge() {
       <section className="ec-section" ref={sectionRef}>
         <div className="ec-container">
           
-          <div className="text-center mb-8 md:mb-16 ec-header-elem">
+          <div className="text-center mb-8 md:mb-8 ec-header-elem">
             <h2 className="text-[32px] md:text-[40px] font-bold text-[#1A1A2E] leading-tight mb-4">
               The Educational Challenge
             </h2>
@@ -299,7 +299,7 @@ export default function EducationChallenge() {
           </div>
 
           {/* Bottom Banner */}
-          <div className="w-full bg-[#F8FAFC] rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-center gap-6 mt-16 shadow-sm border border-blue-50 relative z-10 ec-header-elem">
+          <div className="w-full bg-[#F8FAFC] rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-center gap-6 mt-8 shadow-sm border border-blue-50 relative z-10 ec-header-elem">
             <div className="shrink-0">
               <BarChart3 className="w-10 h-10 text-[#3B82F6]" strokeWidth={1.5} />
             </div>

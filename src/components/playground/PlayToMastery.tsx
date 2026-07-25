@@ -78,7 +78,7 @@ export default function PlayToMastery() {
           width: 100%;
           background: #09023B 0% 0% no-repeat padding-box;
           box-shadow: 0px 3px 6px #431AA42F;
-          padding: 100px 40px;
+          padding: 40px 40px;
           font-family: 'Poppins', sans-serif;
           color: #FFFFFF;
           overflow-x: hidden;
@@ -96,7 +96,7 @@ export default function PlayToMastery() {
         .ptm-header {
           text-align: center;
           max-width: 900px;
-          margin-bottom: 80px;
+          margin-bottom: 40px;
         }
 
         .ptm-title {

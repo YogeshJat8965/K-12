@@ -91,7 +91,7 @@ export default function DesignedForStudents() {
       <style>{`
         .dfs-section {
           width: 100%;
-          padding: 80px 40px;
+          padding: 10px 40px 40px;
           background-color: #F9FAFB;
           font-family: 'Poppins', sans-serif;
           overflow: hidden;
@@ -177,7 +177,7 @@ export default function DesignedForStudents() {
           font-size: 18px;
           line-height: 1.6;
           color: #4B5563;
-          margin: 0 0 60px;
+          margin: 0 0 16px;
           font-weight: 500;
           max-width: 90%;
         }
@@ -193,6 +193,8 @@ export default function DesignedForStudents() {
           height: 500px;
           flex-shrink: 0;
           margin-left: 20px;
+          margin-top: -20px;
+          margin-bottom: -40px;
         }
         .dfs-orbit-ring {
           position: absolute;
@@ -359,7 +361,7 @@ export default function DesignedForStudents() {
         }
 
         @media (max-width: 600px) {
-          .dfs-section { padding: 60px 20px; }
+          .dfs-section { padding: 40px 20px; }
           .dfs-header { font-size: 32px; }
           .dfs-desc { font-size: 15px; }
           .dfs-card { flex-direction: column; align-items: flex-start; gap: 16px; padding: 20px; text-align: left; }

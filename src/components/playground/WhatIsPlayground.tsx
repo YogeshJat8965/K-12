@@ -77,7 +77,7 @@ export default function WhatIsPlayground() {
       <style>{`
         .wip-section {
           width: 100%;
-          padding: 60px 80px;
+          padding: 40px 80px;
           background: #ffffff;
           font-family: 'Poppins', sans-serif;
           display: flex;

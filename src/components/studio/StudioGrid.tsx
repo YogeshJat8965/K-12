@@ -42,11 +42,11 @@ export default function StudioGrid() {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-10">
           <ScrollReveal>
             <h2 className="text-4xl md:text-5xl font-bold text-[#1E1B4B] mb-6 font-display">
               Our Skill Studios
@@ -107,7 +107,7 @@ export default function StudioGrid() {
           </div>
 
           {/* Expand/Collapse Button */}
-          <div className="mt-16 flex justify-center">
+          <div className="mt-8 flex justify-center">
             <button
               onClick={() => setIsExpanded(!isExpanded)}
               className="group flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-purple-600 to-pink-500 text-white rounded-full font-bold text-lg hover:shadow-xl hover:shadow-purple-200/50 transition-all active:scale-95"

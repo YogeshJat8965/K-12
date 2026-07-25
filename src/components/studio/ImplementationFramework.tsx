@@ -53,14 +53,14 @@ const steps = [
 
 export default function ImplementationFramework() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden w-full">
+    <section className="py-12 bg-white relative overflow-hidden w-full">
       {/* Background Decorative Elements */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-100/30 rounded-full blur-[120px] -z-0" />
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Header - Centered and Impactful */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <ScrollReveal>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 font-display leading-tight">
               The <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600">Implementation Framework</span>
@@ -75,7 +75,7 @@ export default function ImplementationFramework() {
         </div>
 
         {/* The Connected Roadmap */}
-        <div className="relative mb-24">
+        <div className="relative mb-12">
           {/* Connecting Glow Line (Desktop) */}
           <div className="hidden lg:block absolute top-[45px] left-10 right-10 h-[2px] bg-slate-100 overflow-hidden">
             <motion.div 

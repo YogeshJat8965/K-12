@@ -46,7 +46,7 @@ export default function ParentsSchools() {
       <style>{`
         .ps-section {
           width: 100%;
-          padding: 100px 40px;
+          padding: 40px 40px;
           background-color: #FAFAFD;
           font-family: 'Poppins', sans-serif;
           position: relative;
@@ -214,7 +214,7 @@ export default function ParentsSchools() {
           .ps-image { height: 350px; }
         }
         @media (max-width: 600px) {
-          .ps-section { padding: 60px 20px; }
+          .ps-section { padding: 40px 20px; }
           .ps-tab-btn { font-size: 16px; padding: 16px; }
           .ps-content-area { padding: 30px 20px; }
           .ps-title { font-size: 26px; }

@@ -37,7 +37,7 @@ export default function HowItWorks() {
       <style>{`
         .hiw-section {
           width: 100%;
-          padding: 20px 40px 80px;
+          padding: 20px 40px 40px;
           background: #ffffff;
           font-family: 'Poppins', sans-serif;
           text-align: center;
@@ -95,7 +95,7 @@ export default function HowItWorks() {
 
         /* ─── RESPONSIVE ─── */
         @media (max-width: 1024px) {
-          .hiw-section { padding: 20px 20px 60px; }
+          .hiw-section { padding: 20px 20px 40px; }
           .hiw-h2 { font-size: 2.2rem; }
         }
 

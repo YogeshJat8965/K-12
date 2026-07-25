@@ -209,7 +209,7 @@ export default function VIHero() {
         }
 
         @media (max-width: 768px) {
-          .vih-section { padding: 100px 24px 60px; }
+          .vih-section { padding: 100px 24px 40px; }
           .vih-title { font-size: clamp(32px, 8vw, 40px); line-height: 1.2; }
           .vih-desc { font-size: 15px; }
           .vih-features { width: 100%; max-width: 400px; }
@@ -217,7 +217,7 @@ export default function VIHero() {
         }
 
         @media (max-width: 600px) {
-          .vih-section { padding: 90px 20px 40px; }
+          .vih-section { padding: 90px 20px 20px; }
           .vih-container { gap: 24px; }
           .vih-features { grid-template-columns: repeat(2, 1fr); gap: 16px; width: 100%; margin-bottom: 24px; }
           .vih-title { font-size: 32px; }

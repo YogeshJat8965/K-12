@@ -88,7 +88,7 @@ export default function HomeTrusted() {
           position: relative;
           background: url(/landing/trusted-bg.png) 0% 0% / cover no-repeat;
           font-family: 'Poppins', sans-serif;
-          padding: clamp(60px,5vw,100px) clamp(20px,4vw,80px) clamp(48px,4vw,80px);
+          padding: clamp(28px,3vw,50px) clamp(20px,4vw,80px) clamp(28px,3vw,50px);
           box-sizing: border-box;
           overflow: hidden;
         }
@@ -170,8 +170,8 @@ export default function HomeTrusted() {
         .ht-stats {
           display: flex;
           gap: 24px;
-          margin-top: clamp(60px, 6vw, 120px);
-          margin-bottom: clamp(60px, 6vw, 100px);
+          margin-top: clamp(28px, 4vw, 50px);
+          margin-bottom: clamp(24px, 3vw, 40px);
         }
         .ht-card {
           flex: 1;

@@ -3,7 +3,7 @@ import partnershipsImg from '../../assets/skill studio/partnerships.png';
 
 export default function Partnerships() {
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-12 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-stretch gap-12 lg:gap-16">
           

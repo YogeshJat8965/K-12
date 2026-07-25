@@ -72,7 +72,7 @@ export default function TrustedPartnerships() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full pt-12 md:pt-16 pb-12 md:pb-24 bg-white font-poppins relative overflow-hidden">
+    <section ref={sectionRef} className="w-full pt-8 md:pt-10 pb-8 md:pb-12 bg-white font-poppins relative overflow-hidden">
       
       {/* Background Decor */}
       <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#EEF2FF] rounded-full blur-[80px] pointer-events-none opacity-60"></div>
@@ -88,7 +88,7 @@ export default function TrustedPartnerships() {
       <div className="max-w-[1200px] mx-auto px-6 relative z-10 flex flex-col items-center">
         
         {/* Header */}
-        <div className="tp-header text-center w-full max-w-[900px] mb-12">
+        <div className="tp-header text-center w-full max-w-[900px] mb-8">
           <h2 className="text-[40px] md:text-[50px] font-extrabold text-[#101828] leading-tight mb-4 tracking-tight">
             Trusted Learning <span className="text-[#7C3AED]">Partnerships</span>
           </h2>
@@ -100,7 +100,7 @@ export default function TrustedPartnerships() {
             <div className="w-[40px] h-[2px] bg-[#5B61FE]"></div>
           </div>
 
-          <p className="text-[#475467] text-[15px] md:text-[16px] leading-relaxed font-medium mb-12 px-4 md:px-10">
+          <p className="text-[#475467] text-[15px] md:text-[16px] leading-relaxed font-medium mb-8 px-4 md:px-10">
             We collaborate with forward-looking schools, institutions, educators, and industry partners to build meaningful future-skills ecosystems for the next generation.
           </p>
           
@@ -121,7 +121,7 @@ export default function TrustedPartnerships() {
         </div>
 
         {/* Timeline Graphic */}
-        <div className="tp-grid w-full relative mb-8 md:mb-16">
+        <div className="tp-grid w-full relative mb-8">
           
           {/* Removed SVG Wavy Line Background as requested */}
 

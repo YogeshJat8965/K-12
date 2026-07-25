@@ -108,8 +108,8 @@ export default function SafeByDesign() {
       <style>{`
         .sbd-section {
           width: 100%;
-          padding: 100px 40px 100px 40px;
-          background: linear-gradient(to bottom, #EDF1FC calc(100% - 186px), #FFFFFF calc(100% - 186px)); /* Recalculated for smaller card height */
+          padding: 40px 40px 80px;
+          background: #EDF1FC;
           font-family: 'Poppins', sans-serif;
         }
 
@@ -123,7 +123,7 @@ export default function SafeByDesign() {
           display: flex;
           gap: 100px; /* Increased gap to shift right content right */
           align-items: center;
-          margin-bottom: 80px;
+          margin-bottom: 40px;
         }
 
         .sbd-left {

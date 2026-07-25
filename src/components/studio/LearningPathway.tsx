@@ -57,11 +57,11 @@ const HexagonIcon = ({ children, color, borderColor }: { children: React.ReactNo
 
 export default function LearningPathway() {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-12 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <ScrollReveal>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 font-display leading-tight">
               The Skill <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-500">Learning Pathway</span>
@@ -75,7 +75,7 @@ export default function LearningPathway() {
         </div>
 
         {/* Pathway Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-10">
           {pathways.map((item, index) => (
             <div key={index} className="group flex flex-col items-center text-center">
               <ScrollReveal delay={index * 0.1} direction="up">

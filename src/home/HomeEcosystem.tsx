@@ -72,8 +72,12 @@ export default function HomeEcosystem() {
         });
 
         tl.from('.he-title-base', { opacity: 0, duration: 0.6 })
-          .from('.he-type-char', { opacity: 0, duration: 0.1, stagger: 0.05, ease: 'none' }, '+=0.2')
-          .from('.he-subtitle', { y: 20, opacity: 0, duration: 0.6 }, '-=0.2');
+          .from('.he-type-char', { opacity: 0, duration: 0.1, stagger: 0.05, ease: 'none' }, '+=0.2');
+          
+        const subtitle = document.querySelector('.he-subtitle');
+        if (subtitle) {
+          tl.from(subtitle, { y: 20, opacity: 0, duration: 0.6 }, '-=0.2');
+        }
       }
 
       // 2. Cards 3D Rise
@@ -116,7 +120,7 @@ export default function HomeEcosystem() {
         .he-section {
           width: 100%;
           background: #FFFFFF;
-          padding: 100px 0 120px;
+          padding: 40px 0 50px;
           font-family: 'DM Sans', sans-serif;
         }
 
@@ -129,7 +133,7 @@ export default function HomeEcosystem() {
         /* ─── HEADER ─── */
         .he-header {
           text-align: center;
-          margin-bottom: 60px;
+          margin-bottom: 32px;
         }
 
         .he-badge {

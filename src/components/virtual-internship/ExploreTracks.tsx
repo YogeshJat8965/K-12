@@ -108,7 +108,7 @@ export default function ExploreTracks() {
       <style>{`
         .et-section {
           width: 100%;
-          padding: 100px 40px;
+          padding: 40px 40px;
           background-color: #FFFFFF;
           font-family: 'Poppins', sans-serif;
         }
@@ -121,7 +121,7 @@ export default function ExploreTracks() {
 
         .et-header {
           text-align: center;
-          margin-bottom: 60px;
+          margin-bottom: 40px;
         }
 
         .et-header-text {
@@ -218,7 +218,7 @@ export default function ExploreTracks() {
         }
 
         @media (max-width: 600px) {
-          .et-section { padding: 60px 20px; }
+          .et-section { padding: 40px 20px; }
           .et-grid { grid-template-columns: 1fr; }
           .et-header-text { font-size: 32px; }
         }

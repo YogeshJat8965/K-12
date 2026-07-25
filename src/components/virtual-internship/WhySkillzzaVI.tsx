@@ -78,7 +78,7 @@ export default function WhySkillzzaVI() {
       <style>{`
         .wsvi-section {
           width: 100%;
-          padding: 100px 40px;
+          padding: 40px 40px 60px;
           background-color: #F8F9FC; /* Slightly distinct tint */
           font-family: 'Poppins', sans-serif;
           overflow: hidden;
@@ -126,7 +126,7 @@ export default function WhySkillzzaVI() {
         /* Header */
         .wsvi-header-wrap {
           text-align: center;
-          margin-bottom: 56px;
+          margin-bottom: 24px;
         }
         .wsvi-header {
           font-size: clamp(36px, 4vw, 52px);
@@ -287,7 +287,7 @@ export default function WhySkillzzaVI() {
         }
         @media (max-width: 768px) {
           .wsvi-grid { grid-template-columns: repeat(2, 1fr); }
-          .wsvi-section { padding: 60px 20px; }
+          .wsvi-section { padding: 40px 20px; }
         }
         @media (max-width: 500px) {
           .wsvi-grid { grid-template-columns: 1fr; }

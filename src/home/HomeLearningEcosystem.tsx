@@ -109,9 +109,9 @@ export default function HomeLearningEcosystem() {
       <style>{`
         .hle-section {
           width: 100%;
-          background: #FFFFFF;
-          padding: 10px 0 100px 0;
-          font-family: 'DM Sans', sans-serif;
+          background: #ffffff;
+          padding: 10px 0 80px 0;
+          font-family: 'Poppins', sans-serif;
         }
 
         .hle-inner {

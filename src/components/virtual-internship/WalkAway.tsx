@@ -113,7 +113,7 @@ export default function WalkAway() {
           font-family: 'Poppins', sans-serif;
           position: relative;
           overflow: hidden;
-          padding: 80px 40px 100px;
+          padding: 40px 40px;
         }
 
         .wa-bg-img {
@@ -155,7 +155,7 @@ export default function WalkAway() {
           height: 3px;
           background-color: #4F46E5;
           border-radius: 4px;
-          margin-bottom: 120px;
+          margin-bottom: 60px;
         }
 
         .wa-grid {

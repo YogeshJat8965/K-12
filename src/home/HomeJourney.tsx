@@ -141,7 +141,7 @@ export default function HomeJourney() {
         .hj-section {
           width: 100%;
           background: linear-gradient(120deg, #FFFFFF 0%, #FFFFFF 40%, #F5EEFF 65%, #EDE3FF 85%, #E8D5FF 100%);
-          padding: 100px 0 120px;
+          padding: 80px 0 50px;
           font-family: 'Poppins', sans-serif;
           overflow: hidden;
         }
@@ -154,7 +154,7 @@ export default function HomeJourney() {
         /* Header */
         .hj-header {
           text-align: center;
-          margin-bottom: 48px;
+          margin-bottom: 28px;
         }
         .hj-top-title {
           font-weight: 700;
@@ -287,7 +287,7 @@ export default function HomeJourney() {
         }
         @media (max-width: 500px) {
           .hj-grid { grid-template-columns: 1fr; }
-          .hj-section { padding: 60px 0 80px; }
+          .hj-section { padding: 30px 0 40px; }
           .hj-flow-word { font-size: 24px; }
           .hj-flow-arrow { font-size: 20px; }
         }

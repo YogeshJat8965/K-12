@@ -53,7 +53,7 @@ export default function AgentBuilderBanner() {
           width: 100%;
           /* Updated to match the AgentLibrary background color */
           background: #e8e4fdff;
-          padding: 60px 40px;
+          padding: 40px 40px;
           display: flex;
           justify-content: center;
           font-family: 'Poppins', sans-serif;

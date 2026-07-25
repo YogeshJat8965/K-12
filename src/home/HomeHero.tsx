@@ -109,7 +109,7 @@ export default function HomeHero() {
         .hh-content {
           max-width: 1760px;
           margin: 0 auto;
-          padding: 16px 80px 80px;
+          padding: 16px 80px 24px;
           display: flex;
           align-items: center;
           gap: 0;
@@ -122,7 +122,7 @@ export default function HomeHero() {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          padding-top: 80px; /* Pushed down slightly */
+          padding-top: 20px; /* Shifted up per user request */
           padding-right: 40px;
           z-index: 10;
         }
@@ -307,14 +307,14 @@ export default function HomeHero() {
 
         /* ─── RESPONSIVE ─── */
         @media (max-width: 1100px) {
-          .hh-content { padding: 16px 48px 60px; }
+          .hh-content { padding: 16px 48px 24px; }
           .hh-feature-bar { margin: 50px 48px 40px; }
         }
 
         @media (max-width: 860px) {
           .hh-content {
             flex-direction: column;
-            padding: 16px 32px 60px;
+            padding: 16px 32px 24px;
             gap: 32px;
           }
           .hh-left, .hh-right {
@@ -340,7 +340,7 @@ export default function HomeHero() {
         }
 
         @media (max-width: 600px) {
-          .hh-content { padding: 12px 20px 40px; }
+          .hh-content { padding: 12px 20px 20px; }
           .hh-feature-bar { margin: 32px 20px 24px; border-radius: 20px; }
           .hh-btns { gap: 10px; }
         }

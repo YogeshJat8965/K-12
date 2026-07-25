@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import LearnersHero from './components/learners/LearnersHero';
-import WhoItsFor from './components/learners/WhoItsFor';
+// import WhoItsFor from './components/learners/WhoItsFor';
 import WhatSchoolCanEnable from './components/learners/WhatSchoolCanEnable';
 
 import SchoolPartnershipOfferings from './components/learners/SchoolPartnershipOfferings';
@@ -43,7 +43,7 @@ export default function LearnersApp() {
         <WhatSchoolCanEnable />
         <SchoolPartnershipOfferings />
         <InstitutionalImpact />
-        <WhoItsFor />
+        {/* <WhoItsFor /> */}
         <LearnersCTA />
         <Footer />
       </main>

@@ -98,7 +98,7 @@ export default function SchoolsAndEducators() {
       <style>{`
         .sae-section {
           width: 100%;
-          padding: 100px 40px;
+          padding: 40px 40px;
           background: #FFFFFF;
           font-family: 'Poppins', sans-serif;
         }
@@ -110,7 +110,7 @@ export default function SchoolsAndEducators() {
 
         .sae-header {
           text-align: center;
-          margin-bottom: 80px;
+          margin-bottom: 40px;
         }
 
         .sae-title {

@@ -61,7 +61,7 @@ export default function WhatVIGain() {
       <style>{`
         .wvg-section {
           width: 100%;
-          padding: 80px 40px;
+          padding: 10px 40px 80px;
           background-color: #FFFFFF;
           font-family: 'Poppins', sans-serif;
           text-align: center;
@@ -77,7 +77,7 @@ export default function WhatVIGain() {
           display: flex;
           flex-direction: column;
           align-items: center;
-          margin-bottom: 60px;
+          margin-bottom: 24px;
         }
 
         .wvg-header-text {

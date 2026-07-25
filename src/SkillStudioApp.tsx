@@ -51,7 +51,7 @@ export default function SkillStudioApp() {
 
         {/* Hero Section */}
         <section
-          className="relative z-10 w-full pt-32 pb-32 flex items-center text-white"
+          className="relative z-10 w-full pt-32 pb-12 flex items-center text-white"
           style={{
             backgroundImage: `url(${bgImg})`,
             backgroundSize: 'cover',
@@ -264,7 +264,7 @@ export default function SkillStudioApp() {
         </section>
 
         {/* Stats Card - Overlapping Hero */}
-        <section className="relative z-20 mt-8 md:-mt-24 max-w-[1280px] mx-auto px-4 sm:px-6 mb-20">
+        <section className="relative z-20 mt-8 md:-mt-24 max-w-[1280px] mx-auto px-4 sm:px-6 mb-10">
           <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] py-6 px-4 lg:px-12 grid grid-cols-2 md:flex md:flex-row items-start md:items-center justify-between gap-y-8 gap-x-4 md:gap-0">
 
             {/* Stat 1 */}
@@ -315,7 +315,7 @@ export default function SkillStudioApp() {
         </section>
 
         {/* What is Skillzza Club Section */}
-        <section className="py-10 lg:py-20 bg-white">
+        <section className="py-8 lg:py-12 bg-white">
           <Section2Reveal className="max-w-[1280px] mx-auto px-6 flex flex-col lg:flex-row items-center lg:items-stretch gap-8 lg:gap-16">
 
             {/* Left Image */}
@@ -390,7 +390,7 @@ export default function SkillStudioApp() {
         </section>
 
         {/* The Challenge Section */}
-        <section className="py-12 lg:py-28" style={{ backgroundColor: '#F9F4FA' }}>
+        <section className="py-10 lg:py-16" style={{ backgroundColor: '#F9F4FA' }}>
           <div className="max-w-[1280px] mx-auto px-6 flex flex-col lg:flex-row items-center lg:items-center justify-between gap-12 lg:gap-0">
 
             {/* Left Content */}
@@ -424,11 +424,11 @@ export default function SkillStudioApp() {
         </section>
 
         {/* Our Skill Studios Section */}
-        <section className="py-12 md:py-24 bg-white">
+        <section className="py-10 md:py-12 bg-white">
           <div className="max-w-[1280px] mx-auto px-6">
 
             {/* Header */}
-            <div className="mb-14 text-center flex flex-col items-center">
+            <div className="mb-8 text-center flex flex-col items-center">
               <ScrollRevealHeadline>
                 <h2
                   className="mb-4 text-[28px] md:text-[36px] text-[#1A1A2E]"
@@ -572,11 +572,11 @@ export default function SkillStudioApp() {
         </section>
 
         {/* The Skill Learning Pathway Section */}
-        <section className="pt-8 pb-6 bg-white">
+        <section className="pt-2 pb-6 bg-white">
           <div className="max-w-[1280px] mx-auto px-6">
 
             {/* Top Row: Heading and Buttons */}
-            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6 lg:mb-1 gap-6 lg:gap-0">
+            <div className="flex flex-col items-center text-center mb-8 gap-6">
               <div>
                 <ScrollRevealHeadline>
                   <h2
@@ -590,12 +590,12 @@ export default function SkillStudioApp() {
                     The <span className="bg-gradient-to-r from-[#4200FF] via-[#E82194] to-[#FF6644] text-transparent bg-clip-text">Skill learning</span> pathway
                   </h2>
                 </ScrollRevealHeadline>
-                <p className="text-[16px] text-[#6B7280] font-medium">
+                <p className="text-[16px] text-[#6B7280] font-medium mt-3">
                   Focused Depth. Measurable Impact.
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row items-center gap-4">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
                 <MagneticButton className="w-full sm:w-auto">
                   <button className="w-full px-6 py-3 bg-[#6A3EEA] hover:bg-[#5B32EA] text-white text-[12px] font-bold tracking-wide rounded-md transition-colors flex items-center justify-center gap-2 uppercase">
                     Design Your Studio Mix <ArrowRight className="w-4 h-4" />
@@ -610,7 +610,7 @@ export default function SkillStudioApp() {
             </div>
 
             {/* Learning Pathway Image */}
-            <Section2Reveal className="mt-4 lg:mt-6 w-full flex justify-center items-center">
+            <Section2Reveal className="-mt-6 lg:-mt-10 w-full flex justify-center items-center relative z-0">
               <img
                 src={learningPathwayImg}
                 alt="The Skill Learning Pathway"
@@ -621,7 +621,7 @@ export default function SkillStudioApp() {
         </section>
 
         {/* The Implementation Framework Section */}
-        <section className="pt-12 md:pt-24 pb-6 bg-white relative overflow-hidden">
+        <section className="pt-2 md:pt-0 pb-6 bg-white relative overflow-hidden">
 
           <style>{`
             @keyframes float-icon {
@@ -649,7 +649,7 @@ export default function SkillStudioApp() {
           </div>
 
           {/* Header */}
-          <div className="text-center mb-16 md:mb-36 relative z-10 px-4">
+          <div className="text-center mb-10 md:mb-16 relative z-10 px-4">
             <ScrollRevealHeadline>
               <h2
                 className="mb-3 text-[28px] md:text-[36px] text-[#1A1A2E]"

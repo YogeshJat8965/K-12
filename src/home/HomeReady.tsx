@@ -133,7 +133,7 @@ export default function HomeReady() {
         /* Header */
         .hr-header {
           text-align: center;
-          margin-bottom: 60px;
+          margin-bottom: 28px;
         }
 
         .hr-title {
@@ -279,7 +279,7 @@ export default function HomeReady() {
             gap: 40px;
           }
           .hr-right {
-            padding-bottom: 60px;
+            padding-bottom: 20px;
             width: 100%;
           }
         }
@@ -289,7 +289,7 @@ export default function HomeReady() {
             font-size: 28px;
           }
           .hr-section {
-            padding: 60px 0 0 0;
+            padding: 30px 0 0 0;
             background-image: none !important;
           }
           .hr-inner {

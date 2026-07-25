@@ -4,9 +4,9 @@ const schoolLogos = [1, 2, 3, 4, 5, 6];
 
 export default function TrustedBy() {
   return (
-    <section className="py-24 bg-slate-50/50">
+    <section className="py-12 bg-slate-50/50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="mb-20 text-center">
+        <div className="mb-10 text-center">
           <ScrollReveal>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4 font-display leading-tight whitespace-nowrap">
               Trusted By Educational Institutes

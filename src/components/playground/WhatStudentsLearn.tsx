@@ -88,7 +88,7 @@ export default function WhatStudentsLearn() {
       <style>{`
         .wsl-section {
           width: 100%;
-          padding: 80px 40px;
+          padding: 40px 40px;
           background: #ffffff;
           font-family: 'Poppins', sans-serif;
           text-align: center;
@@ -222,7 +222,7 @@ export default function WhatStudentsLearn() {
 
         /* ─── RESPONSIVE ─── */
         @media (max-width: 1024px) {
-          .wsl-section { padding: 80px 20px; }
+          .wsl-section { padding: 40px 20px; }
           .wsl-card { padding: 20px; min-height: auto; }
           .wsl-card-title { font-size: 20px; }
           .wsl-card-desc { font-size: 14px; }

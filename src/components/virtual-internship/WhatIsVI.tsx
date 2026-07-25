@@ -99,7 +99,7 @@ export default function WhatIsVI() {
       <style>{`
         .wivi-section {
           width: 100%;
-          padding: 60px 40px 100px; /* Added top padding */
+          padding: 40px 40px; /* Reduced top padding */
           background-color: #F8FAFC; /* Subtle background added */
           font-family: 'Poppins', sans-serif;
           text-align: center;
@@ -208,7 +208,7 @@ export default function WhatIsVI() {
         }
 
         @media (max-width: 768px) {
-          .wivi-section { padding: 60px 24px; }
+          .wivi-section { padding: 40px 24px; }
           .wivi-grid { grid-template-columns: 1fr; gap: 16px; }
           .wivi-h2 { font-size: 28px; }
           .wivi-subtitle, .wivi-footer-text { font-size: 16px; }
