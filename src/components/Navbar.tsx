@@ -59,19 +59,13 @@ const NAV_LINKS = [
   },
 ];
 
-const MOBILE_NAV_LINKS = [
-  { label: 'Home', href: '/home' },
-  { label: 'Skill Studio (National)', href: '/skill-studio' },
-  { label: 'Skill Studio (International)', href: '/international-studio' },
-  { label: 'Virtual Internship', href: '/virtual-internship' },
-  { label: 'Learners Segment (Schools)', href: '/learners' },
-  { label: 'AI Playground', href: '/ai-playground' },
-  { label: 'CCMM', href: '/ccmm' },
-  { label: 'Educator Circle', href: '/educator' },
-];
-
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [expandedMenu, setExpandedMenu] = useState<string | null>(null);
+
+  const toggleSubmenu = (label: string) => {
+    setExpandedMenu(prev => (prev === label ? null : label));
+  };
 
   return (
     <>
@@ -498,29 +492,135 @@ export default function Navbar() {
 
         /* Mobile drawer */
         .nav-mobile {
-          display: none;
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 85%;
+          max-width: 400px;
+          height: 100vh;
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          z-index: 2000;
+          display: flex;
           flex-direction: column;
-          padding: 16px 24px 20px;
-          border-top: 1px solid #F0F0F0;
-          background: #fff;
-          gap: 2px;
+          padding: 80px 24px 30px;
+          box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+          transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          overflow-y: auto;
         }
-        .nav-mobile.is-open { display: flex; }
-        .nav-mobile a {
-          font-weight: 400;
-          font-size: 15px;
-          color: #6B7280;
-          text-decoration: none;
-          padding: 10px 0;
-          border-bottom: 1px solid #F5F5F5;
-          transition: color 0.2s;
+        .nav-mobile.is-open {
+          right: 0;
         }
-        .nav-mobile a:hover { color: #1A1A2E; }
-        .nav-mobile .nav-cta {
-          margin-top: 14px;
-          text-align: center;
+        .nav-mobile-overlay {
+          position: fixed;
+          inset: 0;
+          background: rgba(0,0,0,0.4);
+          backdrop-filter: blur(4px);
+          -webkit-backdrop-filter: blur(4px);
+          z-index: 1999;
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.3s ease;
+        }
+        .nav-mobile-overlay.is-open {
+          opacity: 1;
+          pointer-events: auto;
+        }
+        .nav-mobile-close {
+          position: absolute;
+          top: 20px;
+          right: 24px;
+          background: rgba(0,0,0,0.05);
+          border: none;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
           justify-content: center;
-          border-radius: 8px;
+          cursor: pointer;
+          color: #1A1A2E;
+        }
+        .mobile-nav-item {
+          border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .mobile-nav-item:last-child {
+          border-bottom: none;
+        }
+        .mobile-nav-link {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 16px 0;
+          font-size: 16px;
+          font-weight: 600;
+          color: #1A1A2E;
+          text-decoration: none;
+          width: 100%;
+          background: transparent;
+          border: none;
+          text-align: left;
+        }
+        .mobile-nav-link svg {
+          transition: transform 0.3s ease;
+        }
+        .mobile-nav-link.is-expanded svg {
+          transform: rotate(180deg);
+        }
+        .mobile-sub-menu {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.4s ease;
+        }
+        .mobile-sub-menu.is-expanded {
+          max-height: 800px;
+        }
+        .mobile-sub-link {
+          display: block;
+          padding: 12px 16px 12px 24px;
+          font-size: 14px;
+          color: #1A1A2E;
+          font-weight: 500;
+          text-decoration: none;
+          position: relative;
+        }
+        .mobile-sub-link::before {
+          content: '';
+          position: absolute;
+          left: 8px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 6px;
+          height: 6px;
+          background: #D1D5DB;
+          border-radius: 50%;
+        }
+        .mobile-mega-title {
+          font-size: 12px;
+          text-transform: uppercase;
+          color: #9CA3AF;
+          font-weight: 700;
+          padding: 16px 16px 8px 24px;
+          letter-spacing: 0.5px;
+        }
+        .mobile-cta-wrapper {
+          margin-top: auto;
+          padding-top: 30px;
+        }
+        .mobile-cta {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          padding: 14px;
+          border-radius: 12px;
+          background: linear-gradient(90deg, #6C3CF7, #A78BFA);
+          color: white;
+          font-weight: 700;
+          text-decoration: none;
+          font-size: 16px;
+          box-shadow: 0 4px 15px rgba(108,60,247,0.3);
         }
 
         /* ─── Responsive ─── */
@@ -645,16 +745,110 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Mobile drawer */}
+          {/* Mobile Overlay */}
+          <div 
+            className={`nav-mobile-overlay${open ? ' is-open' : ''}`}
+            onClick={() => setOpen(false)}
+          />
+
+          {/* Modern Mobile drawer */}
           <div className={`nav-mobile${open ? ' is-open' : ''}`}>
-            {MOBILE_NAV_LINKS.map(l => (
-              <a key={l.label} href={l.href} onClick={() => setOpen(false)} style={{ fontWeight: 500 }}>
-                {l.label}
+            <button className="nav-mobile-close" onClick={() => setOpen(false)}>
+              <X size={20} />
+            </button>
+
+            <div className="flex flex-col flex-1">
+              {NAV_LINKS.map(l => {
+                // 1. Virtual Internship -> Normal link, no dropdown
+                if (l.label === 'Virtual Internship') {
+                  return (
+                    <div key={l.label} className="mobile-nav-item">
+                      <a href={l.href} className="mobile-nav-link" onClick={() => setOpen(false)}>
+                        {l.label}
+                      </a>
+                    </div>
+                  );
+                }
+
+                // 2. Skill Studio -> Always open, no accordion toggle
+                if (l.label === 'Skill Studio') {
+                  return (
+                    <div key={l.label} className="mobile-nav-item">
+                      <div className="mobile-nav-link" style={{ color: '#1A1A2E', paddingBottom: '4px' }}>
+                        {l.label}
+                      </div>
+                      <div className="mobile-sub-menu" style={{ maxHeight: 'none' }}>
+                        {l.dropdown && l.dropdown.map((d: any) => (
+                          <a key={d.label} href={d.href} className="mobile-sub-link" onClick={() => setOpen(false)}>
+                            {d.label}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                }
+
+                // 3. More -> Always open, only specific pages
+                if (l.label === 'More') {
+                  return (
+                    <div key={l.label} className="mobile-nav-item">
+                      <div className="mobile-nav-link" style={{ color: '#1A1A2E', paddingBottom: '4px' }}>
+                        {l.label}
+                      </div>
+                      <div className="mobile-sub-menu" style={{ maxHeight: 'none' }}>
+                        <a href="/learners" className="mobile-sub-link" onClick={() => setOpen(false)}>For Schools</a>
+                        <a href="/ccmm" className="mobile-sub-link" onClick={() => setOpen(false)}>CCMM</a>
+                        <a href="/educator" className="mobile-sub-link" onClick={() => setOpen(false)}>Educator Circle</a>
+                      </div>
+                    </div>
+                  );
+                }
+
+                // 4. Default behavior (e.g. AI Playground)
+                return (
+                  <div key={l.label} className="mobile-nav-item">
+                    {l.dropdown || l.columns ? (
+                      <>
+                        <button 
+                          className={`mobile-nav-link ${expandedMenu === l.label ? 'is-expanded' : ''}`}
+                          onClick={() => toggleSubmenu(l.label)}
+                        >
+                          {l.label}
+                          <ChevronDown size={18} color="#9CA3AF" />
+                        </button>
+                        <div className={`mobile-sub-menu ${expandedMenu === l.label ? 'is-expanded' : ''}`}>
+                          {l.dropdown && l.dropdown.map((d: any) => (
+                            <a key={d.label} href={d.href} className="mobile-sub-link" onClick={() => setOpen(false)}>
+                              {d.label}
+                            </a>
+                          ))}
+                          {l.columns && l.columns.map((col: any) => (
+                            <div key={col.title}>
+                              <div className="mobile-mega-title">{col.title}</div>
+                              {col.links.map((link: any) => (
+                                <a key={link.label} href={link.href} className="mobile-sub-link" onClick={() => setOpen(false)}>
+                                  {link.label}
+                                </a>
+                              ))}
+                            </div>
+                          ))}
+                        </div>
+                      </>
+                    ) : (
+                      <a href={l.href} className="mobile-nav-link" onClick={() => setOpen(false)}>
+                        {l.label}
+                      </a>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="mobile-cta-wrapper">
+              <a href="/login" className="mobile-cta" onClick={() => setOpen(false)}>
+                Get Started
               </a>
-            ))}
-            <a href="/login" className="nav-cta" onClick={() => setOpen(false)}>
-              Get Started
-            </a>
+            </div>
           </div>
         </div>
       </nav>
