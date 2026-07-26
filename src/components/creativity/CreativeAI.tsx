@@ -1,70 +1,100 @@
 import ScrollReveal from '../ScrollReveal';
-import creativeAiImg from '../../assets/digital creativity/creative AI.png';
+import { Lightbulb, Network, BookOpen, Users, Palette, Wand2, Brain } from 'lucide-react';
+import img1 from '../../assets/digital creativity/img1.png';
+import img2 from '../../assets/digital creativity/img2.png';
+import img3 from '../../assets/digital creativity/img3.png';
 
 const aiCapabilities = [
   {
     number: "01",
     title: "Creativity",
-    desc: "Creativity defines the future of teaching, together with research about critical to create-to a straight line... Empowering students to express their unique ideas through digital art and design, fostering an environment where imagination knows no bounds."
+    desc: "Creativity defines the future of teaching, together with research about critical to create-to a straight line... Empowering students to express their unique ideas through digital art and design, fostering an environment where imagination knows no bounds.",
+    color: "purple",
+    bgClass: "bg-purple-500",
+    textClass: "text-purple-600",
+    borderClass: "border-purple-200",
+    icon: Lightbulb,
+    img: img1
   },
   {
     number: "02",
     title: "Generative AI",
-    desc: "Generative AI is estimated to generative and explore modern... Utilizing cutting-edge AI tools to assist in the creative process, allowing students to iterate faster and explore complex concepts with ease and precision."
+    desc: "Generative AI is estimated to generative and explore modern... Utilizing cutting-edge AI tools to assist in the creative process, allowing students to iterate faster and explore complex concepts with ease and precision.",
+    color: "orange",
+    bgClass: "bg-orange-500",
+    textClass: "text-orange-500",
+    borderClass: "border-orange-200",
+    icon: Network,
+    img: img2
   },
   {
     number: "03",
     title: "AI Literacy",
-    desc: "AI Literacy is comprises reflecting AI education across for... Building a foundational understanding of how AI works, its ethical implications, and how to leverage it responsibly as a powerful creative partner."
+    desc: "AI Literacy is comprises reflecting AI education across for... Building a foundational understanding of how AI works, its ethical implications, and how to leverage it responsibly as a powerful creative partner.",
+    color: "blue",
+    bgClass: "bg-blue-500",
+    textClass: "text-blue-500",
+    borderClass: "border-blue-200",
+    icon: BookOpen,
+    img: img3
   }
 ];
 
 export default function CreativeAI() {
   return (
-    <section className="py-24 bg-[#FAFCFD] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-12 md:py-16 bg-[#FAFCFD] overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-6">
 
         {/* Header */}
-        <div className="text-center mb-20 max-w-4xl mx-auto">
+        <div className="mb-16 max-w-3xl">
           <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 font-display leading-tight">
-              Creative AI in Classrooms
+            <h2 className="text-4xl md:text-[3.5rem] font-extrabold mb-4 font-display leading-tight tracking-tight">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-fuchsia-500">Creative </span>
+              <span className="text-pink-500">AI</span>{' '}
+              <span className="text-[#0B192C]">in Classrooms</span>
             </h2>
-            <p className="text-slate-600 text-lg md:text-xl font-medium leading-relaxed">
+            <div className="w-24 h-1.5 bg-gradient-to-r from-purple-600 to-orange-500 rounded-full mb-6" />
+            <p className="text-slate-600 text-base md:text-lg font-medium leading-relaxed max-w-2xl">
               Three intersecting capabilities define the future of learning. Together, they equip students to imagine, create, and think critically in an AI-powered world.
             </p>
           </ScrollReveal>
         </div>
 
-        {/* Capabilities Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-2">
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           {aiCapabilities.map((item, index) => (
-            <ScrollReveal key={index} delay={index * 0.1} direction="up">
-              <div className="flex flex-col h-full">
-                <span className="text-5xl font-black text-[#FA0F00] mb-6 opacity-80 font-display">
-                  {item.number}
-                </span>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4 font-display">
-                  {item.title}
-                </h3>
-                <p className="text-slate-600 leading-relaxed text-base font-medium">
-                  {item.desc}
-                </p>
+            <ScrollReveal key={index} delay={index * 0.1} direction="up" className="h-full">
+              <div className="relative w-full h-full bg-white rounded-3xl overflow-hidden border-[1.5px] border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                <img src={item.img} alt={item.title} className="w-full h-full object-cover object-top" />
               </div>
             </ScrollReveal>
           ))}
         </div>
 
-        {/* Bottom Illustration */}
-        <ScrollReveal delay={0.4} direction="up" distance={50}>
-          <div className="relative w-[140%] -ml-[10%] md:w-[140%] md:-ml-[20%] mt-8">
-            <img
-              src={creativeAiImg}
-              alt="Creative AI Brain Illustration"
-              className="w-full h-[350px] md:h-[400px] object-fill"
-            />
+        {/* Bottom Banner */}
+        <ScrollReveal delay={0.4} direction="up">
+          <div className="max-w-4xl mx-auto bg-white rounded-full border-[1.5px] border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] p-2 sm:py-3 flex flex-col md:flex-row items-center justify-between gap-4">
+            
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 ml-1">
+                <Users className="w-7 h-7 text-white" />
+              </div>
+              <div className="text-sm md:text-base leading-tight">
+                <span className="font-bold text-purple-600 block md:inline">Where Creativity Meets Technology.</span>
+                <span className="text-slate-300 mx-3 hidden md:inline-block">|</span>
+                <span className="font-medium text-slate-500 block md:inline mt-1 md:mt-0">Preparing students today for the opportunities of tomorrow.</span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-5 pr-6">
+              <Palette className="w-6 h-6 text-purple-600" strokeWidth={1.5} />
+              <Wand2 className="w-6 h-6 text-purple-600" strokeWidth={1.5} />
+              <Brain className="w-6 h-6 text-purple-600" strokeWidth={1.5} />
+            </div>
+
           </div>
         </ScrollReveal>
+
       </div>
     </section>
   );

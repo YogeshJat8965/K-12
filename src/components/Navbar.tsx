@@ -532,15 +532,20 @@ export default function Navbar() {
         }
         @media (max-width: 768px) {
           .nav-announcement-inner {
-            flex-direction: column;
-            justify-content: center;
-            padding: 8px 20px;
-            height: auto;
-            gap: 8px;
-            text-align: center;
+            padding: 0 12px 0 0;
           }
-          .nav-announcement { height: auto; padding: 6px 0; }
-          .nav-announcement-text { font-size: 12px; flex-wrap: wrap; justify-content: center; }
+          .nav-announcement-text { 
+            font-size: 12px; 
+          }
+          .nav-announcement-actions {
+            padding-left: 8px;
+            gap: 4px;
+          }
+          .nav-announcement-actions a {
+            padding: 4px 8px;
+            font-size: 9px;
+            letter-spacing: 0px;
+          }
           
           .nav-level1 { display: none; }
           .nav-level2 { display: none; }

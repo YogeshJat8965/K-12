@@ -1,4 +1,5 @@
 import ScrollReveal from '../ScrollReveal';
+import adobeImg from '../../assets/digital creativity/adobeXskillzza.png';
 
 const pointsColumn1 = [
   {
@@ -28,7 +29,7 @@ const pointsColumn2 = [
 
 export default function WhyAdobeSkillzza() {
   return (
-    <section className="py-24 bg-white overflow-hidden relative">
+    <section className="py-12 md:py-16 bg-white overflow-hidden relative">
       {/* --- Adobe Creative Cloud Inspired Background Elements --- */}
       {/* Top Left Blob */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-[#FA0F00]/10 to-[#ff9a9e]/10 blur-[100px] rounded-full mix-blend-multiply -translate-x-1/2 -translate-y-1/2 animate-blob" />
@@ -63,56 +64,13 @@ export default function WhyAdobeSkillzza() {
           </ScrollReveal>
         </div>
 
-        {/* Two Columns Grid */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 relative">
-          
-          {/* Connecting line behind cards (desktop only) */}
-          <div className="hidden md:block absolute top-1/2 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#FA0F00]/20 to-transparent -z-10" />
-
-          {/* Column 1 */}
-          <ScrollReveal delay={0.1} direction="up" className="h-full">
-            <div className="group relative bg-white/60 backdrop-blur-xl border border-[#FA0F00]/20 rounded-[2.5rem] p-8 md:p-12 h-full shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(250,15,0,0.1)] transition-all duration-500 hover:-translate-y-1 overflow-hidden">
-              {/* Card internal glow */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#FA0F00]/10 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
-              
-              <ul className="space-y-8 relative z-10">
-                {pointsColumn1.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-5">
-                    <div className="relative mt-1.5 flex-shrink-0">
-                      <div className="w-3 h-3 bg-gradient-to-br from-[#FA0F00] to-red-700 rounded-sm rotate-45 shadow-[0_0_10px_rgba(250,15,0,0.3)] group-hover:rotate-[225deg] transition-transform duration-700" />
-                    </div>
-                    <p className="text-slate-700 leading-relaxed text-base md:text-lg">
-                      <strong className="font-bold text-slate-900 block mb-1 text-lg">{item.title}</strong> 
-                      {item.desc}
-                    </p>
-                  </li>
-                ))}
-              </ul>
+        {/* Image Display */}
+        <div className="max-w-5xl mx-auto relative mt-16">
+          <ScrollReveal delay={0.1} direction="up" className="w-full">
+            <div className="w-full rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+              <img src={adobeImg} alt="Why Adobe x Skillzza features" className="w-full h-auto object-contain" />
             </div>
           </ScrollReveal>
-
-          {/* Column 2 */}
-          <ScrollReveal delay={0.2} direction="up" className="h-full">
-            <div className="group relative bg-white/60 backdrop-blur-xl border border-[#FA0F00]/20 rounded-[2.5rem] p-8 md:p-12 h-full shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(250,15,0,0.1)] transition-all duration-500 hover:-translate-y-1 overflow-hidden">
-              {/* Card internal glow */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-purple-500/10 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
-              
-              <ul className="space-y-8 relative z-10">
-                {pointsColumn2.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-5">
-                    <div className="relative mt-1.5 flex-shrink-0">
-                      <div className="w-3 h-3 bg-gradient-to-br from-[#FA0F00] to-red-700 rounded-sm rotate-45 shadow-[0_0_10px_rgba(250,15,0,0.3)] group-hover:rotate-[225deg] transition-transform duration-700" />
-                    </div>
-                    <p className="text-slate-700 leading-relaxed text-base md:text-lg">
-                      <strong className="font-bold text-slate-900 block mb-1 text-lg">{item.title}</strong> 
-                      {item.desc}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </ScrollReveal>
-
         </div>
 
       </div>

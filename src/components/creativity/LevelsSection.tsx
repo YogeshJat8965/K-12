@@ -3,7 +3,7 @@ import ScrollReveal from '../ScrollReveal';
 
 export default function LevelsSection() {
   return (
-    <section className="py-24 bg-[#F4F4F7] overflow-hidden">
+    <section className="py-2 bg-[#F4F4F7] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <ScrollReveal direction="up">
           <div className="w-full max-w-5xl mx-auto">
