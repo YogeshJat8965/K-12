@@ -252,7 +252,7 @@ export default function HomeAdobe() {
 
             <div className="ha-btn-wrap">
               <button onClick={() => window.location.href = '/digital-creativity'} className="ha-btn">
-                Explore the Adobe Programme →
+                Explore the Programme →
               </button>
             </div>
           </div>

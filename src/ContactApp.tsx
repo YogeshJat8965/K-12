@@ -2,9 +2,48 @@ import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { Phone, MapPin } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 export default function ContactApp() {
   const [showPopup, setShowPopup] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    role: '',
+    message: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const templateParams = {
+      form_name: "Contact Us Form",
+      user_name: `${formData.firstName} ${formData.lastName}`,
+      user_email: formData.email,
+      user_role: formData.role,
+      user_message: formData.message
+    };
+
+    emailjs.send(
+      'service_6c66tcm', 
+      'template_wt0w8kn', 
+      templateParams,
+      'CM_nb8U7I8dEOty2d' 
+    )
+    .then(() => {
+      setShowPopup(true);
+      setLoading(false);
+      setFormData({ firstName: '', lastName: '', email: '', role: '', message: '' });
+    })
+    .catch((err) => {
+      console.error('FAILED...', err);
+      alert('Failed to send message. Please check the credentials and try again.');
+      setLoading(false);
+    });
+  };
   useEffect(() => {
     document.title = 'Contact Us | Skillzza';
   }, []);
@@ -35,26 +74,26 @@ export default function ContactApp() {
             <div className="flex-1 w-full bg-white p-8 md:p-12 rounded-[28px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-gray-100 relative">
               <h2 className="text-2xl font-bold text-[#1A1A2E] mb-8">Send us a message</h2>
               
-              <form className="flex flex-col gap-6" onSubmit={(e) => { e.preventDefault(); setShowPopup(true); }}>
+              <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="flex flex-col gap-2">
                     <label className="text-sm font-semibold text-gray-700">First Name *</label>
-                    <input type="text" placeholder="John" className="px-4 py-3.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/40 focus:border-[#7C3AED] transition-all" required />
+                    <input type="text" value={formData.firstName} onChange={(e) => setFormData({...formData, firstName: e.target.value})} placeholder="John" className="px-4 py-3.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/40 focus:border-[#7C3AED] transition-all" required />
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className="text-sm font-semibold text-gray-700">Last Name *</label>
-                    <input type="text" placeholder="Doe" className="px-4 py-3.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/40 focus:border-[#7C3AED] transition-all" required />
+                    <input type="text" value={formData.lastName} onChange={(e) => setFormData({...formData, lastName: e.target.value})} placeholder="Doe" className="px-4 py-3.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/40 focus:border-[#7C3AED] transition-all" required />
                   </div>
                 </div>
 
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-semibold text-gray-700">Email Address *</label>
-                  <input type="email" placeholder="john@example.com" className="px-4 py-3.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/40 focus:border-[#7C3AED] transition-all" required />
+                  <input type="email" value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})} placeholder="john@example.com" className="px-4 py-3.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/40 focus:border-[#7C3AED] transition-all" required />
                 </div>
                 
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-semibold text-gray-700">School / Organization</label>
-                  <select defaultValue="" className="px-4 py-3.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/40 focus:border-[#7C3AED] transition-all cursor-pointer">
+                  <select value={formData.role} onChange={(e) => setFormData({...formData, role: e.target.value})} className="px-4 py-3.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/40 focus:border-[#7C3AED] transition-all cursor-pointer">
                     <option value="" disabled>Select an option</option>
                     <option value="school">School</option>
                     <option value="organization">Organization</option>
@@ -64,11 +103,11 @@ export default function ContactApp() {
 
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-semibold text-gray-700">Message *</label>
-                  <textarea rows={4} placeholder="How can we help you?" className="px-4 py-3.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/40 focus:border-[#7C3AED] transition-all resize-none" required></textarea>
+                  <textarea rows={4} value={formData.message} onChange={(e) => setFormData({...formData, message: e.target.value})} placeholder="How can we help you?" className="px-4 py-3.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/40 focus:border-[#7C3AED] transition-all resize-none" required></textarea>
                 </div>
 
-                <button type="submit" className="mt-4 w-full bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-bold py-4 rounded-xl shadow-[0_10px_20px_-10px_rgba(124,58,237,0.5)] hover:shadow-[0_15px_25px_-10px_rgba(124,58,237,0.6)] transition-all duration-300 transform hover:-translate-y-[2px]">
-                  Send Message
+                <button type="submit" disabled={loading} className={`mt-4 w-full text-white font-bold py-4 rounded-xl shadow-[0_10px_20px_-10px_rgba(124,58,237,0.5)] transition-all duration-300 transform ${loading ? 'bg-[#9CA3AF] cursor-not-allowed' : 'bg-[#7C3AED] hover:bg-[#6D28D9] hover:shadow-[0_15px_25px_-10px_rgba(124,58,237,0.6)] hover:-translate-y-[2px]'}`}>
+                  {loading ? 'Sending Message...' : 'Send Message'}
                 </button>
               </form>
             </div>
@@ -125,7 +164,7 @@ export default function ContactApp() {
             </p>
             
             <button 
-              onClick={() => setShowPopup(false)}
+              onClick={() => window.location.href = '/'}
               className="w-full bg-[#1A1A2E] hover:bg-black text-white font-bold py-3.5 rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-[1px]"
             >
               Continue

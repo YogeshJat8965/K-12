@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="w-full bg-white pt-10 pb-6 px-8 font-poppins relative z-20 border-t border-gray-100">
       <div className="max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.4fr_1fr_1fr] gap-x-6 gap-y-10 mb-8">
-          
+
           {/* Column 1: Brand, Presence & Social */}
           <div className="flex flex-col gap-4 pr-8">
             <div className="flex items-center gap-2">
@@ -79,14 +79,14 @@ export default function Footer() {
           <div className="flex flex-col gap-4 lg:mt-[72px]">
             <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">Virtual Internship</h3>
             <ul className="flex flex-col gap-3">
-              <li><span className="text-gray-600 text-[14px] cursor-default">GenAI Innovators Fellowship</span></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">AI & Data Engineering Accelerator</span></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">Teen Finance Mastery Lab</span></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">UX & Product Innovation Studio</span></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">Mindfullness Program for Teens</span></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">Sustainability in Climate Innovator</span></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">the Entrepreneurship Thinker</span></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">Teen Storyteller and Media Journalist</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">GenAI Innovation Internship</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">AI & Data Engineering Professional Internship</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">Financial Literacy & Investment Internship</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">UX Design & Product Innovation Internship</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">Mental Wellness & Mindfulness Internship</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">Climate Action & Sustainability Internship</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">Entrepreneurship & Startup Innovation Internship</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">Digital Storytelling & Media Journalism Internship</span></li>
               {/* <li><span className="text-gray-600 text-[14px] cursor-default">Digital Marketing for Youth Start-up's</span></li> */}
               {/* <li><span className="text-gray-600 text-[14px] cursor-default">Deepfake Awareness & AI Media Literacy</span></li> */}
             </ul>

