@@ -54,6 +54,8 @@ export default function HomeHero() {
       const mm = gsap.matchMedia();
       mm.add("(min-width: 861px)", () => {
         if (imgRef.current) {
+          // Tell GSAP about the existing CSS transform (-50%) so it doesn't overwrite it with 0
+          gsap.set(imgRef.current, { yPercent: -50, y: 0 });
           gsap.to(imgRef.current, {
             y: -100,
             ease: 'none',
