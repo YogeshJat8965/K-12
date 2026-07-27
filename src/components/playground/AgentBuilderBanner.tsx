@@ -135,23 +135,25 @@ export default function AgentBuilderBanner() {
         }
 
         @keyframes robotBobMobile {
-          from { transform: translateY(0); }
-          to { transform: translateY(-12px); }
+          from { transform: translateY(0) scale(1.5); }
+          to { transform: translateY(-12px) scale(1.5); }
         }
 
         @media (max-width: 768px) {
           .abb-section { padding: 40px 16px; }
           .abb-container { flex-direction: column; text-align: center; padding: 24px 24px 40px; min-height: auto; gap: 8px; }
-          .abb-left { width: 100%; height: auto; flex: none; display: flex; justify-content: center; }
+          .abb-left { width: 100%; height: auto; flex: none; display: flex; justify-content: center; overflow: visible; }
           .abb-image-wrapper { 
             position: relative;
             left: 0;
             top: 0;
-            margin-top: 0;
+            margin-top: 20px;
+            margin-bottom: 10px;
             width: 100%;
-            max-width: 260px;
-            height: 160px;
+            max-width: 220px;
+            height: 140px;
             background-position: center;
+            background-size: contain;
             animation: robotBobMobile 2.5s infinite alternate ease-in-out;
           }
           .abb-right { padding: 0; }

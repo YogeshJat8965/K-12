@@ -25,7 +25,7 @@ export default function PlaygroundHero() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Badge
-      if (document.querySelector('.ph-badge')) {
+      if (heroRef.current?.querySelector('.ph-badge')) {
         gsap.from('.ph-badge', { y: -30, opacity: 0, duration: 0.8, ease: 'power3.out' });
       }
 
@@ -337,7 +337,7 @@ export default function PlaygroundHero() {
         }
 
         @media (max-width: 768px) {
-          .ph-section { padding-left: 16px; padding-right: 16px; }
+          .ph-section { padding-top: 140px; padding-left: 16px; padding-right: 16px; }
           .ph-h1 { font-size: 1.8rem; line-height: 1.2; }
           .ph-h1 .purple { display: block; }
           .ph-btns { flex-direction: column; align-items: stretch; width: 100%; gap: 12px; }

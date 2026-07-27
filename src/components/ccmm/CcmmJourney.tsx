@@ -14,7 +14,7 @@ export default function CcmmJourney() {
         </div>
 
         {/* Journey Image Container */}
-        <div className="w-full bg-white rounded-3xl p-4 md:p-8 border border-gray-100 shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(91,69,255,0.08)] transition-shadow duration-500 flex justify-center items-center">
+        <div className="w-full bg-white rounded-3xl p-4 md:p-8 border border-gray-100 shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(91,69,255,0.08)] transition-shadow duration-500 flex justify-center items-center transform scale-[1.15] md:scale-100 my-6 md:my-0 origin-center">
           <img 
             src={journeyImg} 
             alt="The CCMM Journey" 

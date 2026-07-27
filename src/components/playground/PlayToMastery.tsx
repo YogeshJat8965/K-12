@@ -36,7 +36,7 @@ export default function PlayToMastery() {
       }
 
       // Animate bottom text columns
-      if (document.querySelector('.ptm-grid') && textRefs.current.filter(Boolean).length > 0) {
+      if (sectionRef.current?.querySelector('.ptm-grid') && textRefs.current.filter(Boolean).length > 0) {
         gsap.from(textRefs.current, {
           y: 40,
           opacity: 0,

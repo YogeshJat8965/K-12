@@ -328,9 +328,9 @@ export default function HomeHero() {
             position: relative !important; 
             top: auto !important; 
             right: auto !important; 
-            transform: none !important; 
+            transform: scale(1.15) !important; 
             width: 100% !important; 
-            max-width: 90% !important; 
+            max-width: 100% !important; 
             margin: 0 auto;
           }
           .hh-feature-bar {

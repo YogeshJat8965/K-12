@@ -22,7 +22,7 @@ export default function SchoolsAndEducators() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      if (document.querySelector('.sae-header')) {
+      if (sectionRef.current?.querySelector('.sae-header')) {
         gsap.from('.sae-header > *', {
           y: 40,
           opacity: 0,

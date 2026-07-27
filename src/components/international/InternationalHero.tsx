@@ -229,10 +229,10 @@ export default function InternationalHero() {
           .ih-right { min-height: 500px; transform: scale(0.8); }
         }
         @media (max-width: 768px) {
-          .ih-section { padding-top: 100px; padding-bottom: 40px; min-height: auto; }
+          .ih-section { padding-top: 140px; padding-bottom: 40px; min-height: auto; }
           .ih-h1 { font-size: 32px; }
           .ih-p { font-size: 16px; }
-          .ih-right { min-height: 300px; transform: none; margin-top: 0; display: flex; align-items: center; justify-content: center; }
+          .ih-right { min-height: 300px; transform: none; margin-top: 100px; display: flex; align-items: center; justify-content: center; }
           .orbit-ring { border: none; }
           .ih-container { gap: 30px; }
         }
@@ -240,7 +240,7 @@ export default function InternationalHero() {
 
       <section className="ih-section" ref={heroRef}>
         <div className="ih-container">
-          
+
           {/* Left Side */}
           <div className="ih-left">
             {/* <div className="ih-badge">
@@ -265,7 +265,7 @@ export default function InternationalHero() {
 
           {/* Right Side */}
           <div className="ih-right">
-            
+
             {/* Outer Orbit (Ring 3) */}
             <div className="orbit-ring orbit-outer hidden md:block" style={{ width: '560px', height: '560px' }}>
               <div className="orbit-badge" style={{ left: '50%', top: '0%' }}>

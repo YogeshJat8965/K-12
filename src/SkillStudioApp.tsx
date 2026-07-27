@@ -19,6 +19,15 @@ import partnershipImg from './assets/skill studio/37432c54c564481b83e49588db6594
 import { LayoutGrid, CalendarRange, Clock, CalendarDays, BarChart3, TrendingUp, User, UserPlus, Award, BookOpen, ClipboardCheck, UserCog, Folder, BarChart, ClipboardList, LayoutDashboard, Sparkles, Rocket, Bot, MonitorPlay, Leaf } from 'lucide-react';
 import Footer from './components/Footer';
 
+import Logo1 from './assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.20 PM (1).jpeg';
+import Logo2 from './assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.20 PM (2).jpeg';
+import Logo3 from './assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.20 PM (3).jpeg';
+import Logo4 from './assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.20 PM.jpeg';
+import Logo5 from './assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.23 PM.jpeg';
+import Logo6 from './assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.27 PM.jpeg';
+import Logo7 from './assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.28 PM.jpeg';
+import Logo8 from './assets/Homepage (1920x 1080px) – 2/logo/logo.jpeg';
+
 export default function SkillStudioApp() {
   const [scrollProgress, setScrollProgress] = useState(0);
 
@@ -937,15 +946,15 @@ export default function SkillStudioApp() {
 
 
         {/* Trusted By Educational Institutes Section */}
-        <section className="pt-12 pb-6 bg-white relative z-20 overflow-hidden border-t border-gray-100">
-          <div className="max-w-[1280px] mx-auto px-6 mb-8 md:mb-10">
+        <section className="pt-8 md:pt-12 pb-4 bg-white relative z-20 overflow-hidden border-t border-gray-100">
+          <div className="max-w-[1280px] mx-auto px-6 mb-4 md:mb-6">
             <h2 className="text-[24px] md:text-[34px] font-bold text-center text-[#1A1A2E]">
               Trusted By Educational Institutes
             </h2>
           </div>
 
-          {/* Marquee Container */}
-          <div className="relative w-full overflow-hidden bg-white pb-6">
+          {/* Marquee Container exactly as Home page */}
+          <div className="w-[100vw] relative left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-white py-12 overflow-hidden">
             <style>
               {`
               @keyframes marquee {
@@ -953,46 +962,66 @@ export default function SkillStudioApp() {
                 100% { transform: translateX(-50%); }
               }
               .animate-marquee {
-                animation: marquee 30s linear infinite;
+                animation: marquee 20s linear infinite;
               }
               .animate-marquee:hover {
                 animation-play-state: paused;
               }
+              .ht-partner-item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                cursor: pointer;
+                transition: transform 0.2s;
+              }
+              .ht-partner-item:hover { transform: scale(1.05); }
+              .ht-partner-img {
+                height: 64px !important;
+                width: auto;
+                object-fit: contain;
+                flex-shrink: 0;
+                transition: all 0.3s ease;
+              }
+              @media (max-width: 768px) {
+                .ht-partner-img { height: 40px !important; }
+                .ht-partner-item { gap: 10px !important; }
+              }
             `}
             </style>
 
-            <div className="flex w-max animate-marquee">
-              {/* We render multiple identical blocks so it loops seamlessly. 50% translation requires at least 2 identical halves. Let's make 2 huge identical halves. */}
-
-              {[1, 2].map((half) => (
-                <div key={half} className="flex items-center gap-6 md:gap-16 px-4 md:px-8 shrink-0">
-
-                  {[
-                    { name: "ALEXANDER PUBLIC SCHOOL", img: "1.png" },
-                    { name: "THE GURUKULAM INTERNATIONAL PUBLIC SCHOOL", img: "2.png" },
-                    { name: "SWAMI VIVEKANANDA RAJKIYA MODEL SCHOOL", img: "3.png" },
-                    { name: "ST. SOLDIER PUBLIC SCHOOL", img: "4.png" },
-                    { name: "ST. JOSEPH'S ENGLISH MEDIUM SCHOOL", img: "5.png" },
-                    { name: "SARASWATI SHISHU MANDIR", img: "6.png" },
-                    { name: "SANFORT WORLD SCHOOL", img: "7.png" }
-                  ].map((partner, index) => (
-                    <div key={index} className="flex items-center gap-3 md:gap-4 shrink-0 cursor-pointer transition-transform hover:scale-105">
-                      <img
-                        src={`https://cognifyai.skillzza.com/assets/img/part/${partner.img}`}
-                        alt={partner.name}
-                        className="h-8 md:h-16 w-auto object-contain shrink-0"
-                      />
-                      <span className="font-bold text-[12px] md:text-[15px] leading-tight text-[#1A1A2E] tracking-tight max-w-[130px] md:max-w-[180px] whitespace-normal uppercase">
-                        {partner.name}
-                      </span>
-                    </div>
-                  ))}
-
-                  {/* Extra spacing to seamlessly repeat the next half */}
-                  <div className="w-4 md:w-8"></div>
-
-                </div>
-              ))}
+            <div className="relative w-full flex h-14 md:h-20 items-center">
+              <div className="flex w-max animate-marquee gap-10 md:gap-16 items-center h-full">
+                {[1, 2].map((half) => (
+                  <div key={half} className="flex items-center gap-10 md:gap-16 shrink-0 pr-10 md:pr-16 h-full">
+                    {[
+                      "https://cognifyai.skillzza.com/assets/img/part/1.png",
+                      "https://cognifyai.skillzza.com/assets/img/part/2.png",
+                      "https://cognifyai.skillzza.com/assets/img/part/3.png",
+                      "https://cognifyai.skillzza.com/assets/img/part/4.png",
+                      "https://cognifyai.skillzza.com/assets/img/part/5.png",
+                      "https://cognifyai.skillzza.com/assets/img/part/6.png",
+                      "https://cognifyai.skillzza.com/assets/img/part/7.png",
+                      Logo1,
+                      Logo2,
+                      Logo3,
+                      Logo4,
+                      Logo5,
+                      Logo6,
+                      Logo7,
+                      Logo8
+                    ].map((imgSrc, index) => (
+                      <div key={index} className="ht-partner-item h-14 md:h-20 flex items-center justify-center">
+                        <img
+                          src={imgSrc}
+                          alt="Academic Partner"
+                          className="ht-partner-img"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -1080,8 +1109,8 @@ export default function SkillStudioApp() {
                 </div>
 
                 {/* Bottom Italic Text Inside Banner */}
-                <div className="w-full text-center lg:text-left pt-5 border-t border-white/25 mt-2">
-                  <p className="text-white text-[15px] sm:text-[17px] lg:text-[19px] font-bold italic whitespace-nowrap">
+                <div className="w-full text-center lg:text-left pt-5 border-t border-white/25 mt-2 px-2">
+                  <p className="text-white text-[15px] sm:text-[17px] lg:text-[19px] font-bold italic leading-relaxed sm:whitespace-nowrap">
                     Empowering the Next Generation of AI Thinkers.
                   </p>
                 </div>
