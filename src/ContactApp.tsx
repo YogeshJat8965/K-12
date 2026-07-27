@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { Phone, MapPin } from 'lucide-react';
 
 export default function ContactApp() {
+  const [showPopup, setShowPopup] = useState(false);
   useEffect(() => {
     document.title = 'Contact Us | Skillzza';
   }, []);
@@ -34,7 +35,7 @@ export default function ContactApp() {
             <div className="flex-1 w-full bg-white p-8 md:p-12 rounded-[28px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-gray-100 relative">
               <h2 className="text-2xl font-bold text-[#1A1A2E] mb-8">Send us a message</h2>
               
-              <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
+              <form className="flex flex-col gap-6" onSubmit={(e) => { e.preventDefault(); setShowPopup(true); }}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="flex flex-col gap-2">
                     <label className="text-sm font-semibold text-gray-700">First Name *</label>
@@ -99,29 +100,6 @@ export default function ContactApp() {
                 </div>
               </div>
 
-              {/* UK Office Card */}
-              <div className="bg-[#F3E8FF] p-8 md:p-10 rounded-[28px] shadow-xl text-[#1A1A2E] relative overflow-hidden group border border-[#E9D5FF]">
-                <div className="absolute top-[-20%] right-[-20%] w-48 h-48 bg-[#7C3AED] rounded-full blur-[70px] opacity-10 group-hover:opacity-20 transition-opacity duration-500"></div>
-                <h3 className="text-[22px] font-bold text-[#7C3AED] mb-6 flex items-center gap-3 relative z-10">
-                  <div className="w-10 h-10 rounded-full bg-[#7C3AED]/10 flex items-center justify-center">
-                    <MapPin size={20} className="text-[#7C3AED]" />
-                  </div>
-                  UK Office
-                </h3>
-                <div className="flex flex-col gap-5 text-gray-700 pl-1 relative z-10">
-                  <p className="leading-relaxed font-medium text-[15px]">
-                    132 Drakes Way,<br/>
-                    Swindon, SN3 3EH,<br/>
-                    United Kingdom.
-                  </p>
-                  <div className="w-full h-px bg-[#7C3AED]/20 my-1"></div>
-                  {/* <div className="flex items-center gap-3 font-semibold text-[#1A1A2E]">
-                    <Phone size={18} className="text-[#7C3AED]" />
-                    <span className="tracking-wide">+44 7500 794772</span>
-                  </div> */}
-                </div>
-              </div>
-
             </div>
 
           </div>
@@ -129,6 +107,56 @@ export default function ContactApp() {
       </div>
       
       <Footer />
+
+      {/* Modern Success Popup */}
+      {showPopup && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm animate-fadeIn">
+          <div className="bg-white rounded-[24px] shadow-2xl p-8 max-w-sm w-full text-center relative animate-slideUp scale-95 border border-white/50">
+            {/* Animated Check Icon */}
+            <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg className="w-10 h-10 text-green-500 animate-checkmark" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+            
+            <h3 className="text-2xl font-bold text-[#1A1A2E] mb-2">Message Sent!</h3>
+            <p className="text-[#6B7280] text-[15px] mb-8 font-medium">
+              Thank you for reaching out. Our team will get back to you shortly.
+            </p>
+            
+            <button 
+              onClick={() => setShowPopup(false)}
+              className="w-full bg-[#1A1A2E] hover:bg-black text-white font-bold py-3.5 rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-[1px]"
+            >
+              Continue
+            </button>
+          </div>
+        </div>
+      )}
+
+      <style>{`
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.3s ease-out forwards;
+        }
+        @keyframes slideUp {
+          from { opacity: 0; transform: translateY(20px) scale(0.95); }
+          to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .animate-slideUp {
+          animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes checkmark {
+          0% { stroke-dasharray: 0, 100; opacity: 0; }
+          100% { stroke-dasharray: 100, 0; opacity: 1; }
+        }
+        .animate-checkmark {
+          animation: checkmark 0.6s ease-out forwards;
+        }
+      `}</style>
     </div>
   );
 }

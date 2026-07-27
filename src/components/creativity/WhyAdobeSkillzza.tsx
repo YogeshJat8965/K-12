@@ -29,7 +29,7 @@ const pointsColumn2 = [
 
 export default function WhyAdobeSkillzza() {
   return (
-    <section className="py-12 md:py-16 bg-white overflow-hidden relative">
+    <section className="pt-12 pb-4 md:pt-16 md:pb-6 bg-white overflow-hidden relative">
       {/* --- Adobe Creative Cloud Inspired Background Elements --- */}
       {/* Top Left Blob */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-gradient-to-br from-[#FA0F00]/10 to-[#ff9a9e]/10 blur-[100px] rounded-full mix-blend-multiply -translate-x-1/2 -translate-y-1/2 animate-blob" />
@@ -49,7 +49,7 @@ export default function WhyAdobeSkillzza() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Header */}
-        <div className="text-center mb-20 max-w-4xl mx-auto">
+        <div className="text-center mb-8 max-w-4xl mx-auto">
           <ScrollReveal>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 border border-red-100 mb-6 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-[#FA0F00] animate-ping" />
@@ -65,7 +65,7 @@ export default function WhyAdobeSkillzza() {
         </div>
 
         {/* Image Display */}
-        <div className="max-w-5xl mx-auto relative mt-16">
+        <div className="max-w-5xl mx-auto relative mt-4">
           <ScrollReveal delay={0.1} direction="up" className="w-full">
             <div className="w-full rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
               <img src={adobeImg} alt="Why Adobe x Skillzza features" className="w-full h-auto object-contain" />

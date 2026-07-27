@@ -99,7 +99,7 @@ export default function HomeHero() {
         .hh-section {
           width: 100%;
           background: #ffffff;
-          padding-top: 90px; /* single-level navbar height */
+          padding-top: 140px; /* Increased gap to prevent navbar overlap */
           font-family: 'Poppins', sans-serif;
           position: relative;
           overflow: hidden;

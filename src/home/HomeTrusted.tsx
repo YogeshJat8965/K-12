@@ -2,6 +2,15 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+import Logo1 from '../assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.20 PM (1).jpeg';
+import Logo2 from '../assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.20 PM (2).jpeg';
+import Logo3 from '../assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.20 PM (3).jpeg';
+import Logo4 from '../assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.20 PM.jpeg';
+import Logo5 from '../assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.23 PM.jpeg';
+import Logo6 from '../assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.27 PM.jpeg';
+import Logo7 from '../assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.28 PM.jpeg';
+import Logo8 from '../assets/Homepage (1920x 1080px) – 2/logo/logo.jpeg';
+
 gsap.registerPlugin(ScrollTrigger);
 
 const statsData = [
@@ -321,33 +330,39 @@ export default function HomeTrusted() {
           </div>
 
           <p className="ht-partners-title">Our Academic Partners</p>
-          <div className="relative w-full overflow-hidden pb-6">
-            <div className="flex w-max animate-marquee">
-              {[1, 2].map((half) => (
-                <div key={half} className="flex items-center gap-10 px-6 md:gap-16 md:px-8 shrink-0">
-                  {[
-                    { name: "ALEXANDER PUBLIC SCHOOL", img: "1.png" },
-                    { name: "THE GURUKULAM INTERNATIONAL PUBLIC SCHOOL", img: "2.png" },
-                    { name: "SWAMI VIVEKANANDA RAJKIYA MODEL SCHOOL", img: "3.png" },
-                    { name: "ST. SOLDIER PUBLIC SCHOOL", img: "4.png" },
-                    { name: "ST. JOSEPH'S ENGLISH MEDIUM SCHOOL", img: "5.png" },
-                    { name: "SARASWATI SHISHU MANDIR", img: "6.png" },
-                    { name: "SANFORT WORLD SCHOOL", img: "7.png" }
-                  ].map((partner, index) => (
-                    <div key={index} className="ht-partner-item">
-                      <img
-                        src={`https://cognifyai.skillzza.com/assets/img/part/${partner.img}`}
-                        alt={partner.name}
-                        className="ht-partner-img"
-                      />
-                      <span className="ht-partner-text">
-                        {partner.name}
-                      </span>
-                    </div>
-                  ))}
-                  <div className="w-4 md:w-8"></div>
-                </div>
-              ))}
+          <div className="w-[100vw] relative left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] bg-white py-6 overflow-hidden">
+            <div className="relative w-full flex">
+              <div className="flex w-max animate-marquee gap-10 md:gap-16">
+                {[1, 2].map((half) => (
+                  <div key={half} className="flex items-center gap-10 md:gap-16 shrink-0 pr-10 md:pr-16">
+                    {[
+                      "https://cognifyai.skillzza.com/assets/img/part/1.png",
+                      "https://cognifyai.skillzza.com/assets/img/part/2.png",
+                      "https://cognifyai.skillzza.com/assets/img/part/3.png",
+                      "https://cognifyai.skillzza.com/assets/img/part/4.png",
+                      "https://cognifyai.skillzza.com/assets/img/part/5.png",
+                      "https://cognifyai.skillzza.com/assets/img/part/6.png",
+                      "https://cognifyai.skillzza.com/assets/img/part/7.png",
+                      Logo1,
+                      Logo2,
+                      Logo3,
+                      Logo4,
+                      Logo5,
+                      Logo6,
+                      Logo7,
+                      Logo8
+                    ].map((imgSrc, index) => (
+                      <div key={index} className="ht-partner-item">
+                        <img
+                          src={imgSrc}
+                          alt="Academic Partner"
+                          className="ht-partner-img"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

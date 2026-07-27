@@ -73,24 +73,13 @@ export default function CreativeAI() {
 
         {/* Bottom Banner */}
         <ScrollReveal delay={0.4} direction="up">
-          <div className="max-w-4xl mx-auto bg-white rounded-full border-[1.5px] border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] p-2 sm:py-3 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="max-w-4xl mx-auto bg-white rounded-full border-[1.5px] border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] p-3 sm:py-4 flex items-center justify-center">
             
-            <div className="flex items-center gap-4">
-              <div className="w-14 h-14 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 ml-1">
-                <Users className="w-7 h-7 text-white" />
-              </div>
-              <div className="text-sm md:text-base leading-tight">
-                <span className="font-bold text-purple-600 block md:inline">Where Creativity Meets Technology.</span>
-                <span className="text-slate-300 mx-3 hidden md:inline-block">|</span>
-                <span className="font-medium text-slate-500 block md:inline mt-1 md:mt-0">Preparing students today for the opportunities of tomorrow.</span>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-5 pr-6">
-              <Palette className="w-6 h-6 text-purple-600" strokeWidth={1.5} />
-              <Wand2 className="w-6 h-6 text-purple-600" strokeWidth={1.5} />
-              <Brain className="w-6 h-6 text-purple-600" strokeWidth={1.5} />
-            </div>
+            <div className="text-sm md:text-base leading-tight text-center w-full px-4">
+              <span className="italic font-bold text-purple-600">Where Creativity Meets Technology.</span>
+              <span className="text-slate-300 mx-3 hidden md:inline">|</span>
+              <span className="font-medium text-slate-500 block md:inline mt-1 md:mt-0">Preparing students today for the opportunities of tomorrow.</span>
+            </div> 
 
           </div>
         </ScrollReveal>

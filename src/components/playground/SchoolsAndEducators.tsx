@@ -22,17 +22,19 @@ export default function SchoolsAndEducators() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.sae-header > *', {
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 75%',
-        }
-      });
+      if (document.querySelector('.sae-header')) {
+        gsap.from('.sae-header > *', {
+          y: 40,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 75%',
+          }
+        });
+      }
 
       if (cardsRef.current.length > 0) {
         const grid = document.querySelector('.sae-grid') as HTMLElement;

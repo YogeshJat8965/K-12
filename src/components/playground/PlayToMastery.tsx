@@ -36,17 +36,19 @@ export default function PlayToMastery() {
       }
 
       // Animate bottom text columns
-      gsap.from(textRefs.current, {
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: '.ptm-grid',
-          start: 'top 85%',
-        }
-      });
+      if (document.querySelector('.ptm-grid') && textRefs.current.filter(Boolean).length > 0) {
+        gsap.from(textRefs.current, {
+          y: 40,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.ptm-grid',
+            start: 'top 85%',
+          }
+        });
+      }
     }, sectionRef);
 
     return () => ctx.revert();

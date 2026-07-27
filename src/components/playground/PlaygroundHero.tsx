@@ -25,7 +25,9 @@ export default function PlaygroundHero() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Badge
-      gsap.from('.ph-badge', { y: -30, opacity: 0, duration: 0.8, ease: 'power3.out' });
+      if (document.querySelector('.ph-badge')) {
+        gsap.from('.ph-badge', { y: -30, opacity: 0, duration: 0.8, ease: 'power3.out' });
+      }
 
       // Subtitle
       gsap.from('.ph-subtitle', { opacity: 0, y: 20, duration: 0.8, delay: 0.2 });
@@ -97,7 +99,7 @@ export default function PlaygroundHero() {
         .ph-section {
           width: 100%;
           background: #ffffff;
-          padding-top: 160px; /* Gap below single-level Navbar */
+          padding-top: 210px; /* Increased gap to prevent navbar overlap */
           padding-bottom: 20px;
           font-family: 'Poppins', sans-serif;
           position: relative;
