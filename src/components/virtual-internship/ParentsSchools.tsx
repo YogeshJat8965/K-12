@@ -6,8 +6,8 @@ import {
   School, FileCheck, BarChart3, Presentation, Award, ArrowRight
 } from 'lucide-react';
 
-import parentsImg from '../../assets/virtual internship/forParent.png';
-import schoolsImg from '../../assets/virtual internship/forTeachers.png';
+import parentsImg from '../../assets/virtual internship/forParent.webp';
+import schoolsImg from '../../assets/virtual internship/forTeachers.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 

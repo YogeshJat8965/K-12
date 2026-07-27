@@ -1,4 +1,4 @@
-import schoolsImg from '../../assets/AI Playground/For Schools & Educators.png';
+import schoolsImg from '../../assets/AI Playground/For Schools & Educators.webp';
 import ScrollReveal from '../ScrollReveal';
 
 export default function SchoolsEducators() {

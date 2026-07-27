@@ -1,5 +1,5 @@
 import { Target, Ship, Calendar } from 'lucide-react';
-import bannerImg from '../assets/virtual internship/last banner section.png';
+import bannerImg from '../assets/virtual internship/last banner section.webp';
 
 export default function LastBanner() {
   return (
@@ -22,19 +22,19 @@ export default function LastBanner() {
 
           <div className="flex flex-wrap gap-4">
             {/* Take the Quiz */}
-            <button className="bg-purple-600 hover:bg-purple-700 text-slate-900 px-7 py-3.5 rounded-xl font-bold flex items-center gap-3 transition-all transform hover:-translate-y-1 shadow-lg shadow-yellow-500/20 uppercase text-[11px] tracking-wide">
+            <button onClick={(e) => e.preventDefault()} className="bg-purple-600 hover:bg-purple-700 text-slate-900 px-7 py-3.5 rounded-xl font-bold flex items-center gap-3 transition-all transform hover:-translate-y-1 shadow-lg shadow-yellow-500/20 uppercase text-[11px] tracking-wide">
               <Target className="w-5 h-5" />
               TAKE THE QUIZ
             </button>
 
             {/* Explore Internships */}
-            <button className="bg-[#6D28D9] hover:bg-[#5B21B6] text-white px-7 py-3.5 rounded-xl font-bold flex items-center gap-3 transition-all transform hover:-translate-y-1 shadow-lg shadow-purple-500/20 uppercase text-[11px] tracking-wide">
+            <button onClick={() => document.getElementById('explore-career-tracks')?.scrollIntoView({ behavior: 'smooth' })} className="bg-[#6D28D9] hover:bg-[#5B21B6] text-white px-7 py-3.5 rounded-xl font-bold flex items-center gap-3 transition-all transform hover:-translate-y-1 shadow-lg shadow-purple-500/20 uppercase text-[11px] tracking-wide">
               <Ship className="w-5 h-5" />
               EXPLORE INTERNSHIPS
             </button>
 
             {/* Book a Consultation */}
-            <button className="bg-[#0F172A]/40 hover:bg-[#0F172A]/60 border border-white/20 text-white px-7 py-3.5 rounded-xl font-bold flex items-center gap-3 transition-all transform hover:-translate-y-1 backdrop-blur-sm uppercase text-[11px] tracking-wide">
+            <button onClick={() => window.location.href = '/contact'} className="bg-[#0F172A]/40 hover:bg-[#0F172A]/60 border border-white/20 text-white px-7 py-3.5 rounded-xl font-bold flex items-center gap-3 transition-all transform hover:-translate-y-1 backdrop-blur-sm uppercase text-[11px] tracking-wide">
               <Calendar className="w-5 h-5" />
               BOOK A CONSULTATION
             </button>

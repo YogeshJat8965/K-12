@@ -1,9 +1,9 @@
 import ScrollReveal from './ScrollReveal';
-import img1 from '../assets/virtual internship/Career Clarity Before It Matters.jpeg';
-import img2 from '../assets/virtual internship/A Portfolio That Stands Out.jpeg';
-import img3 from '../assets/virtual internship/Future-Ready Skill Development.jpeg';
-import img4 from '../assets/virtual internship/Verified Credentials.jpeg';
-import img5 from '../assets/virtual internship/Outcome-Focused.jpeg';
+import img1 from '../assets/virtual internship/Career Clarity Before It Matters.webp';
+import img2 from '../assets/virtual internship/A Portfolio That Stands Out.webp';
+import img3 from '../assets/virtual internship/Future-Ready Skill Development.webp';
+import img4 from '../assets/virtual internship/Verified Credentials.webp';
+import img5 from '../assets/virtual internship/Outcome-Focused.webp';
 
 const gains = [
   {

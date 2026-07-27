@@ -1,5 +1,5 @@
 import React from 'react';
-import registrationImg from '../../assets/university/registration to launch.png';
+import registrationImg from '../../assets/university/registration to launch.webp';
 
 export default function ProgramImplementation() {
   return (

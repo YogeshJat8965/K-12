@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight, Calendar } from 'lucide-react';
-import heroImg from '../../assets/university/heroimg.png';
+import heroImg from '../../assets/university/heroimg.webp';
 
 export default function UniversityHero() {
   return (

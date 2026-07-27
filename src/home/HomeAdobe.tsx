@@ -251,14 +251,14 @@ export default function HomeAdobe() {
             </p>
 
             <div className="ha-btn-wrap">
-              <button className="ha-btn">
+              <button onClick={() => window.location.href = '/digital-creativity'} className="ha-btn">
                 Explore the Adobe Programme →
               </button>
             </div>
           </div>
 
           <div className="ha-visuals">
-            <img src="/landing/adobe-hero.png" alt="Adobe Creativity" className="ha-main-img" />
+            <img src="/landing/adobe-hero.webp" alt="Adobe Creativity" className="ha-main-img" />
 
             <div className="ha-feature-list">
               {adobeFeatures.map((f) => (

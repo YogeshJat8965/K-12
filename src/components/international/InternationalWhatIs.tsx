@@ -2,8 +2,8 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Target, Brain, Users, Monitor } from 'lucide-react';
-import heroImg from '../../assets/International Studio/girl-grp.png';
-import responsiveImg from '../../assets/International Studio/responsive img.png';
+import heroImg from '../../assets/International Studio/girl-grp.webp';
+import responsiveImg from '../../assets/International Studio/responsive img.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 

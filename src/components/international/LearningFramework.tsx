@@ -9,7 +9,7 @@ import {
   BarChart, ClipboardCheck
 } from 'lucide-react';
 
-import frameworkImg from '../../assets/International Studio/xxx.png';
+import frameworkImg from '../../assets/International Studio/xxx.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 

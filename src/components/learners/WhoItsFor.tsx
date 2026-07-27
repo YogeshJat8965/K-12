@@ -1,7 +1,7 @@
-import icon1 from '../../assets/learners/1sticon.png';
-import icon2 from '../../assets/learners/2ndicon.png';
-import icon3 from '../../assets/learners/3rdicon.png';
-import icon4 from '../../assets/learners/4thicon.png';
+import icon1 from '../../assets/learners/1sticon.webp';
+import icon2 from '../../assets/learners/2ndicon.webp';
+import icon3 from '../../assets/learners/3rdicon.webp';
+import icon4 from '../../assets/learners/4thicon.webp';
 
 const cards = [
   {

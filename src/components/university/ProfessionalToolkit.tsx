@@ -1,6 +1,6 @@
 import React from 'react';
 import { LayoutGrid, MonitorSmartphone, Sparkles, Cloud } from 'lucide-react';
-import toolkitImg from '../../assets/university/toolkit.png';
+import toolkitImg from '../../assets/university/toolkit.webp';
 
 const toolkitItems = [
   {

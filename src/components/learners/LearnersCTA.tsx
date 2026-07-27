@@ -65,10 +65,10 @@ export default function LearnersCTA() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 shrink-0 z-10">
-              <button className="bg-white text-[#6731EA] font-extrabold text-[13px] md:text-[14px] px-6 py-3.5 md:py-4 rounded-[12px] flex items-center justify-center gap-2.5 hover:bg-gray-50 hover:scale-105 active:scale-95 transition-all shadow-[0_8px_20px_rgba(0,0,0,0.1)]">
+              <button onClick={(e) => e.preventDefault()} className="bg-white text-[#6731EA] font-extrabold text-[13px] md:text-[14px] px-6 py-3.5 md:py-4 rounded-[12px] flex items-center justify-center gap-2.5 hover:bg-gray-50 hover:scale-105 active:scale-95 transition-all shadow-[0_8px_20px_rgba(0,0,0,0.1)]">
                 <TriangleIcon className="w-2.5 h-3" /> REQUEST A DEMO
               </button>
-              <button className="border-[2px] border-white/80 text-white font-extrabold text-[13px] md:text-[14px] px-6 py-3.5 md:py-4 rounded-[12px] flex items-center justify-center gap-2.5 hover:bg-white/10 hover:border-white hover:scale-105 active:scale-95 transition-all">
+              <button onClick={() => window.location.href = '/contact'} className="border-[2px] border-white/80 text-white font-extrabold text-[13px] md:text-[14px] px-6 py-3.5 md:py-4 rounded-[12px] flex items-center justify-center gap-2.5 hover:bg-white/10 hover:border-white hover:scale-105 active:scale-95 transition-all">
                 <TriangleIcon className="w-2.5 h-3 opacity-90" /> PARTNER WITH Skill Studio
               </button>
             </div>

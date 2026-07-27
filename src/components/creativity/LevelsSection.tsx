@@ -1,4 +1,4 @@
-import levelsImg from '../../assets/digital creativity/levels.png';
+import levelsImg from '../../assets/digital creativity/levels.webp';
 import ScrollReveal from '../ScrollReveal';
 
 export default function LevelsSection() {

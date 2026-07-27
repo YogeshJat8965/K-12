@@ -1,7 +1,7 @@
 import { useEffect, useRef, Fragment } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import RIGHT_IMG from '../assets/landing page/Homepage (1920x 1080px) – 2/ChatGPT Image Jun 20, 2026, 12_40_39 AM.png';
+import RIGHT_IMG from '../assets/landing page/Homepage (1920x 1080px) – 2/ChatGPT Image Jun 20, 2026, 12_40_39 AM.webp';
 import { GraduationCap, Code2, Briefcase, Rocket } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -391,9 +391,9 @@ export default function HomeHero() {
 
             {/* Buttons */}
             <div className="hh-btns">
-              <button onClick={() => window.location.href = '/contact'} className="hh-btn hh-btn-primary">Start Learning</button>
-              <button className="hh-btn hh-btn-dark">Partner with Us</button>
-              <button className="hh-btn hh-btn-outline">Schedule a Demo</button>
+              <button onClick={() => window.location.href = '/login'} className="hh-btn hh-btn-primary">Start Learning</button>
+              <button onClick={() => window.location.href = '/contact'} className="hh-btn hh-btn-dark">Partner with Us</button>
+              <button onClick={(e) => e.preventDefault()} className="hh-btn hh-btn-outline">Schedule a Demo</button>
             </div>
 
             {/* Trust */}

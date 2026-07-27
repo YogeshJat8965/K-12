@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { AlertTriangle, Rocket, ChevronsRight } from 'lucide-react';
-import WhyVIImg from '../../assets/virtual internship/why VI.png';
+import WhyVIImg from '../../assets/virtual internship/why VI.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 

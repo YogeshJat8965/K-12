@@ -309,7 +309,7 @@ export default function HomeMission() {
         {isMobile ? (
           /* ═══ MOBILE: Show image instead of cards ═══ */
           <img
-            src="/landing/responsive-mission.png"
+            src="/landing/responsive-mission.webp"
             alt="Skillzza Mission"
             className="hm-mobile-img"
           />
@@ -329,7 +329,7 @@ export default function HomeMission() {
                   what will tomorrow's world need from today's student?
                 </span>
               </p>
-              <img src="/landing/robot.png" alt="" className="hm-robot" ref={robotRef} />
+              <img src="/landing/robot.webp" alt="" className="hm-robot" ref={robotRef} />
             </div>
 
             {/* RIGHT */}

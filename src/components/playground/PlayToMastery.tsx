@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import MaskGroup38 from '../../assets/AI playground/Mask Group 38.png';
+import MaskGroup38 from '../../assets/AI playground/Mask Group 38.webp';
 
 import { useSplitReveal } from '../../hooks/useSplitReveal';
 

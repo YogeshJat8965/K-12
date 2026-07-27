@@ -1,5 +1,5 @@
 import { ShieldCheck, Eye, Lock, Users, GraduationCap, Clock } from 'lucide-react';
-import standingMan from '../../assets/AI Playground/standing man.png';
+import standingMan from '../../assets/AI Playground/standing man.webp';
 import ScrollReveal from '../ScrollReveal';
 
 export default function SafetySection() {

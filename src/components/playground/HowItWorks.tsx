@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import newImg from '../../assets/AI playground/new-img.png';
+import newImg from '../../assets/AI playground/new-img.webp';
 import { useSplitReveal } from '../../hooks/useSplitReveal';
 
 gsap.registerPlugin(ScrollTrigger);

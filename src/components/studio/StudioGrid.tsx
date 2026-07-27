@@ -4,21 +4,21 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 import ScrollReveal from '../ScrollReveal';
 
 // Import all 15 studio images
-import s1 from '../../assets/skill studio/1 img.png';
-import s2 from '../../assets/skill studio/2 img.png';
-import s3 from '../../assets/skill studio/3 img.png';
-import s4 from '../../assets/skill studio/4 img.png';
-import s5 from '../../assets/skill studio/5 img.png';
-import s6 from '../../assets/skill studio/6 img.png';
-import s7 from '../../assets/skill studio/7 img.png';
-import s8 from '../../assets/skill studio/8 img.png';
-import s9 from '../../assets/skill studio/9 img.png';
-import s10 from '../../assets/skill studio/10 img.png';
-import s11 from '../../assets/skill studio/11 img.png';
-import s12 from '../../assets/skill studio/12 img.png';
-import s13 from '../../assets/skill studio/13 img.png';
-import s14 from '../../assets/skill studio/14 img.png';
-import s15 from '../../assets/skill studio/15 img.png';
+import s1 from '../../assets/skill studio/1 img.webp';
+import s2 from '../../assets/skill studio/2 img.webp';
+import s3 from '../../assets/skill studio/3 img.webp';
+import s4 from '../../assets/skill studio/4 img.webp';
+import s5 from '../../assets/skill studio/5 img.webp';
+import s6 from '../../assets/skill studio/6 img.webp';
+import s7 from '../../assets/skill studio/7 img.webp';
+import s8 from '../../assets/skill studio/8 img.webp';
+import s9 from '../../assets/skill studio/9 img.webp';
+import s10 from '../../assets/skill studio/10 img.webp';
+import s11 from '../../assets/skill studio/11 img.webp';
+import s12 from '../../assets/skill studio/12 img.webp';
+import s13 from '../../assets/skill studio/13 img.webp';
+import s14 from '../../assets/skill studio/14 img.webp';
+import s15 from '../../assets/skill studio/15 img.webp';
 
 const studios = [
   { id: 1, title: "Gen AI & Deep Tech Studio", image: s1, glow: "rgba(37, 99, 235, 0.3)" },

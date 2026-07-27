@@ -1,6 +1,6 @@
 import React from 'react';
 import { Brain, Target, ShieldCheck } from 'lucide-react';
-import aiReadyImg from '../../assets/CCMM/ai ready.png';
+import aiReadyImg from '../../assets/CCMM/ai ready.webp';
 
 export default function CcmmAiReady() {
   const cards = [

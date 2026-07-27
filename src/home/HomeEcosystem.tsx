@@ -1,6 +1,6 @@
-import img1 from '../assets/Mask Group 30.png';
-import img2 from '../assets/Mask Group 31.png';
-import img3 from '../assets/Mask Group 32.png';
+import img1 from '../assets/Mask Group 30.webp';
+import img2 from '../assets/Mask Group 31.webp';
+import img3 from '../assets/Mask Group 32.webp';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -21,7 +21,8 @@ const ecosystemData = [
       { b: 'Hackathons & Bootcamps', text: ' - build, pitch, and solve real problems.' },
       { b: 'One-on-One Tutoring', text: ' - academic support plus AI skill development.' }
     ],
-    buttonText: 'Start Learning →'
+    buttonText: 'Start Learning →',
+    link: '/login'
   },
   {
     themeColor: '#8B5CF6',
@@ -36,7 +37,8 @@ const ecosystemData = [
       { b: 'Curriculum Co-Design Studio', text: ' - co-create future-ready, interdisciplinary curricula.' },
       { b: 'Access to free tools', text: ', resource libraries, and mentorship communities.' }
     ],
-    buttonText: 'Join Educator Cohort →'
+    buttonText: 'Join Educator Cohort →',
+    link: '/educator'
   },
   {
     themeColor: '#10B981',
@@ -51,7 +53,8 @@ const ecosystemData = [
       { b: 'Clubs, Events & Recognition', text: ' - activate student talent and leadership.' },
       { b: 'Teacher Fellowships and Student Ambassador Programmes', text: ' for institutional impact.' }
     ],
-    buttonText: 'REQUEST A CCMM AUDIT'
+    buttonText: 'REQUEST A CCMM AUDIT',
+    link: '/contact'
   }
 ];
 
@@ -392,7 +395,7 @@ export default function HomeEcosystem() {
                     ))}
                   </ul>
 
-                  <button className="he-btn" style={{ background: item.themeColor }}>
+                  <button onClick={() => { if (item.link) window.location.href = item.link; }} className="he-btn" style={{ background: item.themeColor }}>
                     {item.buttonText}
                   </button>
                 </div>

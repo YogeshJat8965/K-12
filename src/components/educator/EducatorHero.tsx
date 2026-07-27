@@ -1,5 +1,5 @@
 import { ArrowRight, Users, ShieldCheck } from 'lucide-react';
-import heroImg from '../../assets/educator circle/heroimage.png';
+import heroImg from '../../assets/educator circle/heroimage.webp';
 
 export default function EducatorHero() {
   return (
@@ -43,12 +43,12 @@ export default function EducatorHero() {
             
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-              <button className="bg-[#4F46E5] text-white rounded-lg px-8 py-3.5 font-bold text-[14px] flex items-center justify-center gap-2 transition-all duration-300 hover:bg-[#4338CA] hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500/30 w-full sm:w-auto">
+              <button onClick={() => window.location.href = '/signup'} className="bg-[#4F46E5] text-white rounded-lg px-8 py-3.5 font-bold text-[14px] flex items-center justify-center gap-2 transition-all duration-300 hover:bg-[#4338CA] hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-500/30 w-full sm:w-auto">
                 Join for free
                 <ArrowRight className="w-4 h-4" strokeWidth={2.5} />
               </button>
               
-              <button className="bg-white text-[#4F46E5] border border-gray-200 shadow-sm rounded-lg px-8 py-3.5 font-bold text-[14px] flex items-center justify-center gap-2 transition-all duration-300 hover:border-[#4F46E5] hover:shadow-md hover:-translate-y-1 w-full sm:w-auto">
+              <button onClick={() => document.getElementById('rhythm-of-learning')?.scrollIntoView({ behavior: 'smooth' })} className="bg-white text-[#4F46E5] border border-gray-200 shadow-sm rounded-lg px-8 py-3.5 font-bold text-[14px] flex items-center justify-center gap-2 transition-all duration-300 hover:border-[#4F46E5] hover:shadow-md hover:-translate-y-1 w-full sm:w-auto">
                 Explore Community
                 <Users className="w-4 h-4" strokeWidth={2.5} />
               </button>

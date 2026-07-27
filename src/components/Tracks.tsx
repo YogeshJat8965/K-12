@@ -1,13 +1,13 @@
 import { ArrowRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
-import img1 from '../assets/virtual internship/1st img.png';
-import img2 from '../assets/virtual internship/2nd img.png';
-import img3 from '../assets/virtual internship/3rd img.png';
-import img4 from '../assets/virtual internship/4th img.png';
-import img5 from '../assets/virtual internship/5th img.png';
-import img6 from '../assets/virtual internship/6th img.png';
-import img7 from '../assets/virtual internship/7th img.png';
-import img8 from '../assets/virtual internship/8th img.png';
+import img1 from '../assets/virtual internship/1st img.webp';
+import img2 from '../assets/virtual internship/2nd img.webp';
+import img3 from '../assets/virtual internship/3rd img.webp';
+import img4 from '../assets/virtual internship/4th img.webp';
+import img5 from '../assets/virtual internship/5th img.webp';
+import img6 from '../assets/virtual internship/6th img.webp';
+import img7 from '../assets/virtual internship/7th img.webp';
+import img8 from '../assets/virtual internship/8th img.webp';
 
 const careerTracks = [
   {

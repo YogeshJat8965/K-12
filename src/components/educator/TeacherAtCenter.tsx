@@ -1,4 +1,4 @@
-import teacherAtCenterImg from '../../assets/educator circle/teacher at center.png';
+import teacherAtCenterImg from '../../assets/educator circle/teacher at center.webp';
 
 export default function TeacherAtCenter() {
   return (

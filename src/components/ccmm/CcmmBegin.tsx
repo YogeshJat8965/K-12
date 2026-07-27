@@ -1,6 +1,6 @@
 import React from 'react';
 import { Calendar } from 'lucide-react';
-import beginImg from '../../assets/CCMM/begin.png';
+import beginImg from '../../assets/CCMM/begin.webp';
 
 export default function CcmmBegin() {
   return (
@@ -36,7 +36,7 @@ export default function CcmmBegin() {
               The Schools That Act Today Will Define What Learning Looks Like For The Next Generation. Skillzza Invites You To Take The First Measured, Confident Step On That Journey.
             </p>
 
-            <button className="flex items-center gap-3 bg-[#5B45FF] text-white font-semibold text-[15px] md:text-[16px] px-8 py-4 rounded-lg shadow-[0_4px_15px_rgba(91,69,255,0.3)] hover:bg-[#4A34EE] hover:shadow-[0_8px_25px_rgba(91,69,255,0.4)] hover:-translate-y-1 transition-all duration-300">
+            <button onClick={() => window.location.href = '/contact'} className="flex items-center gap-3 bg-[#5B45FF] text-white font-semibold text-[15px] md:text-[16px] px-8 py-4 rounded-lg shadow-[0_4px_15px_rgba(91,69,255,0.3)] hover:bg-[#4A34EE] hover:shadow-[0_8px_25px_rgba(91,69,255,0.4)] hover:-translate-y-1 transition-all duration-300">
               <Calendar className="w-5 h-5" />
               Request a CCMM's Discover Call
             </button>

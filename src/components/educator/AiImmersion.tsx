@@ -1,5 +1,5 @@
 import React from 'react';
-import aiImmersionImg from '../../assets/educator circle/ai immersion.png';
+import aiImmersionImg from '../../assets/educator circle/ai immersion.webp';
 
 export default function AiImmersion() {
   return (

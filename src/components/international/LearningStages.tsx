@@ -3,9 +3,9 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Rocket, Lightbulb } from 'lucide-react';
 
-import Learning1Img from '../../assets/International Studio/learning 1.png';
-import Learning2Img from '../../assets/International Studio/learning 2.png';
-import Learning3Img from '../../assets/International Studio/learning 3.png';
+import Learning1Img from '../../assets/International Studio/learning 1.webp';
+import Learning2Img from '../../assets/International Studio/learning 2.webp';
+import Learning3Img from '../../assets/International Studio/learning 3.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 

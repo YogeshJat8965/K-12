@@ -1,4 +1,4 @@
-import walkAwaySectionImg from '../assets/virtual internship/students walks away img.png';
+import walkAwaySectionImg from '../assets/virtual internship/students walks away img.webp';
 
 export default function Outcomes() {
   return (

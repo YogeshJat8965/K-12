@@ -4,8 +4,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { GraduationCap, Lightbulb, ShieldCheck, Rocket, Briefcase, Building2, Box } from 'lucide-react';
 import { AnimatedCounter } from '../../components/studio/Animations';
 
-import FourImage from '../../assets/International Studio/4 image.png';
-import DesignedImage from '../../assets/International Studio/Designed for Schools That Want to Build.png';
+import FourImage from '../../assets/International Studio/4 image.webp';
+import DesignedImage from '../../assets/International Studio/Designed for Schools That Want to Build.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 

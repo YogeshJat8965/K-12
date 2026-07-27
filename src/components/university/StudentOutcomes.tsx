@@ -10,7 +10,7 @@ import {
   Rocket, 
   Shield 
 } from 'lucide-react';
-import certificateImg from '../../assets/university/certificateimg.png';
+import certificateImg from '../../assets/university/certificateimg.webp';
 
 const outcomes = [
   { text: "Professional Portfolio", icon: Briefcase, color: "#6366F1", bg: "#EEF2FF" },

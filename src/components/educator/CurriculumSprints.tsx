@@ -1,10 +1,10 @@
 import React from 'react';
 
 // Import images
-import imgOrientation from '../../assets/educator circle/ai orientation.png';
-import imgLesson from '../../assets/educator circle/lesson design.png';
-import imgPowered from '../../assets/educator circle/ai powered.png';
-import imgDigital from '../../assets/educator circle/digital.png';
+import imgOrientation from '../../assets/educator circle/ai orientation.webp';
+import imgLesson from '../../assets/educator circle/lesson design.webp';
+import imgPowered from '../../assets/educator circle/ai powered.webp';
+import imgDigital from '../../assets/educator circle/digital.webp';
 
 export default function CurriculumSprints() {
   const cards = [

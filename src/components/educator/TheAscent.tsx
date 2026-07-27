@@ -1,6 +1,6 @@
 import React from 'react';
 import { Star } from 'lucide-react';
-import onePathImg from '../../assets/educator circle/one  path.png';
+import onePathImg from '../../assets/educator circle/one  path.webp';
 
 export default function TheAscent() {
   return (

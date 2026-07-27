@@ -1,12 +1,12 @@
-import img1 from '../../assets/educator circle/celebration/1.png';
-import img2 from '../../assets/educator circle/celebration/2.png';
-import img3 from '../../assets/educator circle/celebration/3.png';
-import img4 from '../../assets/educator circle/celebration/4.png';
-import img5 from '../../assets/educator circle/celebration/5.png';
-import img6 from '../../assets/educator circle/celebration/6.png';
-import img7 from '../../assets/educator circle/celebration/7.png';
-import img8 from '../../assets/educator circle/celebration/8.png';
-import img9 from '../../assets/educator circle/celebration/9.png';
+import img1 from '../../assets/educator circle/celebration/1.webp';
+import img2 from '../../assets/educator circle/celebration/2.webp';
+import img3 from '../../assets/educator circle/celebration/3.webp';
+import img4 from '../../assets/educator circle/celebration/4.webp';
+import img5 from '../../assets/educator circle/celebration/5.webp';
+import img6 from '../../assets/educator circle/celebration/6.webp';
+import img7 from '../../assets/educator circle/celebration/7.webp';
+import img8 from '../../assets/educator circle/celebration/8.webp';
+import img9 from '../../assets/educator circle/celebration/9.webp';
 
 export default function WhatWeDo() {
   const activities = [
@@ -58,7 +58,7 @@ export default function WhatWeDo() {
   ];
 
   return (
-    <section className="w-full bg-white font-poppins py-20 relative overflow-hidden">
+    <section id="rhythm-of-learning" className="w-full bg-white font-poppins py-20 relative overflow-hidden">
       <div className="max-w-[1536px] mx-auto px-6 md:px-12 lg:px-20 relative z-10">
         
         {/* Header Content */}

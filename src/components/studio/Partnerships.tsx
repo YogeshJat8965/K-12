@@ -1,5 +1,5 @@
 import ScrollReveal from '../ScrollReveal';
-import partnershipsImg from '../../assets/skill studio/partnerships.png';
+import partnershipsImg from '../../assets/skill studio/partnerships.webp';
 
 export default function Partnerships() {
   return (

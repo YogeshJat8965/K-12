@@ -1,5 +1,5 @@
 import { Play } from 'lucide-react';
-import learnersHeroImg from '../../assets/learners/hero-img.png';
+import learnersHeroImg from '../../assets/learners/hero-img.webp';
 import { FadeIn3D, WordReveal, StaggerContainer, StaggerItem } from '../animations/ScrollAnimations';
 
 export default function LearnersHero() {
@@ -26,12 +26,12 @@ export default function LearnersHero() {
             </StaggerItem>
 
             <StaggerItem className="flex flex-wrap items-center gap-4 pb-8">
-              <button onClick={() => window.location.href = '/contact'} className="flex items-center gap-2 bg-[#5B32EA] text-white px-6 py-3.5 rounded-lg font-semibold hover:bg-[#4A25C7] hover:scale-105 active:scale-95 transition-all">
+              <button onClick={() => window.location.href = '/signup'} className="flex items-center gap-2 bg-[#5B32EA] text-white px-6 py-3.5 rounded-lg font-semibold hover:bg-[#4A25C7] hover:scale-105 active:scale-95 transition-all">
                 <Play className="w-4 h-4 fill-current" />
                 Start Learning
               </button>
 
-              <button className="flex items-center gap-2 bg-white text-[#5B32EA] border-2 border-[#5B32EA] px-6 py-3.5 rounded-lg font-semibold hover:bg-slate-50 hover:scale-105 active:scale-95 transition-all">
+              <button onClick={() => window.location.href = '/contact'} className="flex items-center gap-2 bg-white text-[#5B32EA] border-2 border-[#5B32EA] px-6 py-3.5 rounded-lg font-semibold hover:bg-slate-50 hover:scale-105 active:scale-95 transition-all">
                 <Play className="w-4 h-4 fill-current" />
                 Partner with us
               </button>

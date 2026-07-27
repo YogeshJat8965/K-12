@@ -1,12 +1,12 @@
 import { useState, useCallback, useEffect } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { WordReveal, StaggerContainer, StaggerItem, FadeIn3D } from '../animations/ScrollAnimations';
-import img1 from '../../assets/learners/1img.png';
-import img2 from '../../assets/learners/2img.png';
-import img3 from '../../assets/learners/3img.png';
-import img4 from '../../assets/learners/4img.png';
-import img5 from '../../assets/learners/5img.png';
-import img6 from '../../assets/learners/6img.png';
+import img1 from '../../assets/learners/1img.webp';
+import img2 from '../../assets/learners/2img.webp';
+import img3 from '../../assets/learners/3img.webp';
+import img4 from '../../assets/learners/4img.webp';
+import img5 from '../../assets/learners/5img.webp';
+import img6 from '../../assets/learners/6img.webp';
 
 /* ─── Icon Components ─── */
 const I = ({ children }: { children: React.ReactNode }) => (

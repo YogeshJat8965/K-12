@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import EXEC_IMG from '../assets/landing page/ChatGPT Image Jun 20, 2026, 01_55_48 AM copy.png';
+import EXEC_IMG from '../assets/landing page/ChatGPT Image Jun 20, 2026, 01_55_48 AM copy.webp';
 import { BookOpen, FlaskConical, TrendingUp, Award, Trophy } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';

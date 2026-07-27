@@ -1,6 +1,6 @@
 import React from 'react';
 import { Calendar } from 'lucide-react';
-import heroImg from '../../assets/CCMM/hero.png';
+import heroImg from '../../assets/CCMM/hero.webp';
 
 export default function CcmmHero() {
   return (
@@ -27,7 +27,7 @@ export default function CcmmHero() {
               A universal algorithm for schools to energise young brains in the world of Emerging Technologies (aligned to the United Nations Sustainable Development Goals)
             </p>
 
-            <button className="bg-[#5B45FF] hover:bg-[#4a35ea] text-white font-bold py-3.5 px-8 md:py-4 md:px-10 rounded-lg shadow-[0_8px_20px_rgba(91,69,255,0.3)] hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 w-full sm:w-auto">
+            <button onClick={() => window.location.href = '/contact'} className="bg-[#5B45FF] hover:bg-[#4a35ea] text-white font-bold py-3.5 px-8 md:py-4 md:px-10 rounded-lg shadow-[0_8px_20px_rgba(91,69,255,0.3)] hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 w-full sm:w-auto">
               <Calendar className="w-5 h-5" strokeWidth={2.5} />
               <span>Request a CCMM's Discover Call</span>
             </button>

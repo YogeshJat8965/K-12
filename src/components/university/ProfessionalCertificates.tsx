@@ -1,8 +1,8 @@
 import React from 'react';
 import { Sparkles, ArrowRight } from 'lucide-react';
-import prof1 from '../../assets/university/professional1.png';
-import prof2 from '../../assets/university/professional2.png';
-import prof3 from '../../assets/university/professional3.png';
+import prof1 from '../../assets/university/professional1.webp';
+import prof2 from '../../assets/university/professional2.webp';
+import prof3 from '../../assets/university/professional3.webp';
 
 const certificates = [
   {

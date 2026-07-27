@@ -1,4 +1,4 @@
-import flagshipImg from '../../assets/digital creativity/flagship.png';
+import flagshipImg from '../../assets/digital creativity/flagship.webp';
 import ScrollReveal from '../ScrollReveal';
 
 export default function FlagshipSection() {

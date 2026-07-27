@@ -1,4 +1,4 @@
-import endImg from '../../assets/AI Playground/end section.png';
+import endImg from '../../assets/AI Playground/end section.webp';
 import ScrollReveal from '../ScrollReveal';
 
 export default function PlaygroundEndBanner() {

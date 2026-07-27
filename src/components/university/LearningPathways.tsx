@@ -1,6 +1,6 @@
 import React from 'react';
 import { Award } from 'lucide-react';
-import oneFoundationImg from '../../assets/university/one foundation.png';
+import oneFoundationImg from '../../assets/university/one foundation.webp';
 
 export default function LearningPathways() {
   return (

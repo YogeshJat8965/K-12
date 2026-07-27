@@ -15,15 +15,15 @@ import {
   FileBadge,
   Target
 } from 'lucide-react';
-import img1 from '../../assets/university/workplace/1.jpeg';
-import img2 from '../../assets/university/workplace/2.jpeg';
-import img3 from '../../assets/university/workplace/3.jpeg';
-import img4 from '../../assets/university/workplace/4.jpeg';
-import img5 from '../../assets/university/workplace/5.jpeg';
-import img6 from '../../assets/university/workplace/6.jpeg';
-import img7 from '../../assets/university/workplace/7.jpeg';
-import img8 from '../../assets/university/workplace/8.jpeg';
-import img9 from '../../assets/university/workplace/9.jpeg';
+import img1 from '../../assets/university/workplace/1.webp';
+import img2 from '../../assets/university/workplace/2.webp';
+import img3 from '../../assets/university/workplace/3.webp';
+import img4 from '../../assets/university/workplace/4.webp';
+import img5 from '../../assets/university/workplace/5.webp';
+import img6 from '../../assets/university/workplace/6.webp';
+import img7 from '../../assets/university/workplace/7.webp';
+import img8 from '../../assets/university/workplace/8.webp';
+import img9 from '../../assets/university/workplace/9.webp';
 
 const courses = [
   {

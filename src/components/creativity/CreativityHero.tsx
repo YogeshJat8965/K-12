@@ -1,5 +1,5 @@
 import { Gift, User, Award, School } from 'lucide-react';
-import heroImg from '../../assets/digital creativity/heroimg.png';
+import heroImg from '../../assets/digital creativity/heroimg.webp';
 import ScrollReveal from '../ScrollReveal';
 
 export default function CreativityHero() {

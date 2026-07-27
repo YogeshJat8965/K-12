@@ -1,12 +1,12 @@
 import React from 'react';
-import img1 from '../../assets/university/AI ecosystem/1.png';
+import img1 from '../../assets/university/AI ecosystem/1.webp';
 import img2 from '../../assets/university/AI ecosystem/2.webp';
-import img3 from '../../assets/university/AI ecosystem/3.png';
-import img4 from '../../assets/university/AI ecosystem/4.png';
-import img5 from '../../assets/university/AI ecosystem/5.png';
-import img6 from '../../assets/university/AI ecosystem/6.png';
-import img7 from '../../assets/university/AI ecosystem/7.png';
-import img8 from '../../assets/university/AI ecosystem/8.png';
+import img3 from '../../assets/university/AI ecosystem/3.webp';
+import img4 from '../../assets/university/AI ecosystem/4.webp';
+import img5 from '../../assets/university/AI ecosystem/5.webp';
+import img6 from '../../assets/university/AI ecosystem/6.webp';
+import img7 from '../../assets/university/AI ecosystem/7.webp';
+import img8 from '../../assets/university/AI ecosystem/8.webp';
 
 const features = [
   {

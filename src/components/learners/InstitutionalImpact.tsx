@@ -1,8 +1,8 @@
 import { WordReveal, StaggerContainer, StaggerItem, FadeIn3D } from '../animations/ScrollAnimations';
-import icon1 from '../../assets/learners/icon1.png';
-import icon2 from '../../assets/learners/icon2.png';
-import icon3 from '../../assets/learners/icon3.png';
-import icon4 from '../../assets/learners/icon4.png';
+import icon1 from '../../assets/learners/icon1.webp';
+import icon2 from '../../assets/learners/icon2.webp';
+import icon3 from '../../assets/learners/icon3.webp';
+import icon4 from '../../assets/learners/icon4.webp';
 
 const impactCards = [
   {

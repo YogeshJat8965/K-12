@@ -1,5 +1,5 @@
 import ScrollReveal from '../ScrollReveal';
-import bgImg from '../../assets/Homepage (1920x 1080px) – 2/logo/background img.jpeg';
+import bgImg from '../../assets/Homepage (1920x 1080px) – 2/logo/background img.webp';
 
 const cardsData = [
   {

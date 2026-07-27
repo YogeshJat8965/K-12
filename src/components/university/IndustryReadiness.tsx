@@ -1,5 +1,5 @@
 import React from 'react';
-import timelineImg from '../../assets/university/industries readiness.png';
+import timelineImg from '../../assets/university/industries readiness.webp';
 
 export default function IndustryReadiness() {
   return (

@@ -1,5 +1,5 @@
 import ScrollReveal from '../ScrollReveal';
-import adobeImg from '../../assets/digital creativity/adobeXskillzza.png';
+import adobeImg from '../../assets/digital creativity/adobeXskillzza.webp';
 
 const pointsColumn1 = [
   {

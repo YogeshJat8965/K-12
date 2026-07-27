@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Calendar, ArrowRight, Sparkles, Brain, Rocket, Bot, MonitorPlay, Leaf, Scale, Lightbulb, Landmark } from 'lucide-react';
 import { useSplitReveal } from '../../hooks/useSplitReveal';
-import heroImg from '../../assets/International Studio/hero-img.png';
+import heroImg from '../../assets/International Studio/hero-img.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -254,10 +254,10 @@ export default function InternationalHero() {
             </h1>
 
             <div className="ih-btns" style={{ marginTop: '32px' }}>
-              <button className="ih-btn-primary">
+              <button onClick={() => { document.getElementById('future-skill-studios')?.scrollIntoView({ behavior: 'smooth' }) }} className="ih-btn-primary">
                 Explore studios <ArrowRight size={18} />
               </button>
-              <button className="ih-btn-secondary">
+              <button onClick={() => window.location.href = '/contact'} className="ih-btn-secondary">
                 Schedule A Discover Session <Calendar size={18} />
               </button>
             </div>

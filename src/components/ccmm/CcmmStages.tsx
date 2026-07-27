@@ -1,9 +1,9 @@
 import React from 'react';
-import img1 from '../../assets/CCMM/5 stages/1.png';
-import img2 from '../../assets/CCMM/5 stages/2.png';
-import img3 from '../../assets/CCMM/5 stages/3.png';
-import img4 from '../../assets/CCMM/5 stages/4.png';
-import img5 from '../../assets/CCMM/5 stages/5.png';
+import img1 from '../../assets/CCMM/5 stages/1.webp';
+import img2 from '../../assets/CCMM/5 stages/2.webp';
+import img3 from '../../assets/CCMM/5 stages/3.webp';
+import img4 from '../../assets/CCMM/5 stages/4.webp';
+import img5 from '../../assets/CCMM/5 stages/5.webp';
 
 export default function CcmmStages() {
   const stages = [

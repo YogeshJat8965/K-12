@@ -5,7 +5,7 @@ import {
   FileText, GraduationCap, Landmark,
   Heart, Users, Network, Leaf
 } from 'lucide-react';
-import globalEducationImg from '../../assets/International Studio/global education.png';
+import globalEducationImg from '../../assets/International Studio/global education.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 

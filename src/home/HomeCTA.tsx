@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import careerIcon from '../assets/landing page/Homepage (1920x 1080px) – 2/career discovery icon.png';
-import schoolIcon from '../assets/landing page/Homepage (1920x 1080px) – 2/institution icon.png';
-import teachingIcon from '../assets/landing page/Homepage (1920x 1080px) – 2/teaching icon.png';
+import careerIcon from '../assets/landing page/Homepage (1920x 1080px) – 2/career discovery icon.webp';
+import schoolIcon from '../assets/landing page/Homepage (1920x 1080px) – 2/institution icon.webp';
+import teachingIcon from '../assets/landing page/Homepage (1920x 1080px) – 2/teaching icon.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import journeyImg from '../../assets/CCMM/journey.png';
+import journeyImg from '../../assets/CCMM/journey.webp';
 
 export default function CcmmJourney() {
   return (

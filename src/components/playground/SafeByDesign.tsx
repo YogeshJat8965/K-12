@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import DashboardImg from '../../assets/AI playground/Image 24.png';
+import DashboardImg from '../../assets/AI playground/Image 24.webp';
 import TickIcon from '../../assets/AI playground/Group 27594.svg';
 
 import { useSplitReveal } from '../../hooks/useSplitReveal';

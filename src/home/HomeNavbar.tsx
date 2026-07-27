@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import logoImg from '../assets/skillzza-k12-horizontal copy.png';
+import logoImg from '../assets/skillzza-k12-horizontal copy.webp';
 
 const NAV_LINKS = [
   {

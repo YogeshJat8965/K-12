@@ -1,5 +1,5 @@
 import { ChevronsRight } from 'lucide-react';
-import womenImg from '../assets/virtual internship/women img.png';
+import womenImg from '../assets/virtual internship/women img.webp';
 import ScrollReveal from './ScrollReveal';
 
 export default function WhyMatters() {

@@ -17,8 +17,8 @@ import {
   BarChart3
 } from 'lucide-react';
 
-import img1 from '../../assets/International Studio/traditional.png';
-import img2 from '../../assets/International Studio/future-reay.png';
+import img1 from '../../assets/International Studio/traditional.webp';
+import img2 from '../../assets/International Studio/future-reay.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 

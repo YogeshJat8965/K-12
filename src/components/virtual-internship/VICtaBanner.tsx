@@ -181,18 +181,18 @@ export default function VICtaBanner() {
 
           {/* Right buttons */}
           <div className="vi-cta-buttons">
-            <a href="#" className="vi-cta-btn vi-cta-btn-primary">
+            <button onClick={(e) => e.preventDefault()} className="vi-cta-btn vi-cta-btn-primary">
               <span className="vi-cta-btn-icon"><Play size={16} fill="currentColor" /></span>
               Take a free quiz
-            </a>
-            <a href="#" className="vi-cta-btn vi-cta-btn-primary">
+            </button>
+            <button onClick={() => document.getElementById('explore-career-tracks')?.scrollIntoView({ behavior: 'smooth' })} className="vi-cta-btn vi-cta-btn-primary">
               <span className="vi-cta-btn-icon"><Play size={16} fill="currentColor" /></span>
               Explore internships
-            </a>
-            <a href="#" className="vi-cta-btn vi-cta-btn-primary">
+            </button>
+            <button onClick={() => window.location.href = '/contact'} className="vi-cta-btn vi-cta-btn-primary">
               <span className="vi-cta-btn-icon"><Play size={16} fill="currentColor" /></span>
               Book consultation
-            </a>
+            </button>
           </div>
         </div>
       </div>

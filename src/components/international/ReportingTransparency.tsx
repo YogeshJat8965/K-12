@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import reportingImg from '../../assets/International Studio/Reporting & Transparency.png';
+import reportingImg from '../../assets/International Studio/Reporting & Transparency.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 

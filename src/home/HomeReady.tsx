@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import bgImage from '../assets/Image 19.png';
-import studentImg from '../assets/Image 18.png';
+import bgImage from '../assets/Image 19.webp';
+import studentImg from '../assets/Image 18.webp';
 import icon1 from '../assets/mental_18558397.svg';
 import icon2 from '../assets/workshop_11933372.svg';
 import icon3 from '../assets/g2157.svg';
@@ -473,7 +473,7 @@ export default function HomeReady() {
           </div>
 
           <div className="hr-cta-area">
-            <button className="hr-cta-btn">Take the CCMM Assessment →</button>
+            <button onClick={() => window.location.href = '/ccmm'} className="hr-cta-btn">Take the CCMM Assessment →</button>
             <p className="hr-cta-helper">Become an AI-Ready
               Institution</p>
           </div>

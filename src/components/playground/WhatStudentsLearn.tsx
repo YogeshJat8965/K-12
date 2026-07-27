@@ -5,7 +5,7 @@ import { Bot, Workflow, Lightbulb, Scale, GraduationCap, Cpu } from 'lucide-reac
 
 import { useSplitReveal } from '../../hooks/useSplitReveal';
 import { use3DTilt } from '../../hooks/usePremiumHover';
-import backgroundImg from '../../assets/AI playground/What Students Learn - Without Realising It.png';
+import backgroundImg from '../../assets/AI playground/What Students Learn - Without Realising It.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 

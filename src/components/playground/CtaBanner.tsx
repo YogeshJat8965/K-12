@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import BgImage from '../../assets/AI playground/ChatGPT Image Jun 22, 2026, 02_18_18 AM.png';
+import BgImage from '../../assets/AI playground/ChatGPT Image Jun 22, 2026, 02_18_18 AM.webp';
 
 import { useSplitReveal } from '../../hooks/useSplitReveal';
 import { useMagneticRipple } from '../../hooks/usePremiumHover';
@@ -226,9 +226,9 @@ export default function CtaBanner() {
             </p>
 
             <div className="cta-buttons">
-              <div className="cta-btn-wrapper"><button className="cta-btn">START BUILDING FREE</button></div>
-              <div className="cta-btn-wrapper"><button className="cta-btn">WATCH THE 2-MIN DEMO</button></div>
-              <div className="cta-btn-wrapper"><button className="cta-btn">BOOK A SCHOOL DEMO</button></div>
+              <div className="cta-btn-wrapper"><button onClick={() => window.location.href = '/signup'} className="cta-btn">START BUILDING FREE</button></div>
+              <div className="cta-btn-wrapper"><button onClick={(e) => e.preventDefault()} className="cta-btn">WATCH THE 2-MIN DEMO</button></div>
+              <div className="cta-btn-wrapper"><button onClick={() => window.location.href = '/contact'} className="cta-btn">BOOK A SCHOOL DEMO</button></div>
             </div>
 
             <p className="cta-footer">

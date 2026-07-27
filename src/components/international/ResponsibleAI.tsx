@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import responsibleAiImg from '../../assets/International Studio/responsible AI.png';
+import responsibleAiImg from '../../assets/International Studio/responsible AI.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 

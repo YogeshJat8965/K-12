@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import RobotImg from '../../assets/AI playground/Mask Group 41.png';
+import RobotImg from '../../assets/AI playground/Mask Group 41.webp';
 
 import { use3DTilt } from '../../hooks/usePremiumHover';
 

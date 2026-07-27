@@ -1,6 +1,6 @@
-import img1 from '../assets/21st century.png';
-import img2 from '../assets/Personalised Learning.png';
-import img3 from '../assets/Global Readiness.png';
+import img1 from '../assets/21st century.webp';
+import img2 from '../assets/Personalised Learning.webp';
+import img3 from '../assets/Global Readiness.webp';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import img1 from '../assets/landing page/1ChatGPT Image Jun 20, 2026, 01_16_52 AM.png';
-import img2 from '../assets/landing page/2ChatGPT Image Jun 20, 2026, 01_17_58 AM.png';
-import img3 from '../assets/landing page/3ChatGPT Image Jun 20, 2026, 01_18_16 AM.png';
-import img4 from '../assets/landing page/4ChatGPT Image Jun 20, 2026, 01_19_23 AM.png';
+import img1 from '../assets/landing page/1ChatGPT Image Jun 20, 2026, 01_16_52 AM.webp';
+import img2 from '../assets/landing page/2ChatGPT Image Jun 20, 2026, 01_17_58 AM.webp';
+import img3 from '../assets/landing page/3ChatGPT Image Jun 20, 2026, 01_18_16 AM.webp';
+import img4 from '../assets/landing page/4ChatGPT Image Jun 20, 2026, 01_19_23 AM.webp';
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
@@ -17,28 +17,32 @@ const pillarsData = [
     title: 'Vedya AI Co-Pilot',
     subtitle: 'Grades 5-12',
     desc: 'An Adaptive AI Tutor That Personalises Pace, Content, And Feedback For Every Learner Across Academics And AI Skills.',
-    edge: 'Vedya AI Is Purpose-Built For K-12, Multilingual For Indian Classrooms, And Aligned To CBSE, IB, And Cambridge Curricula Out Of The Box'
+    edge: 'Vedya AI Is Purpose-Built For K-12, Multilingual For Indian Classrooms, And Aligned To CBSE, IB, And Cambridge Curricula Out Of The Box',
+    link: '#'
   },
   {
     img: img2,
     title: 'Skill Studios',
     subtitle: '15+ Future Domains',
     desc: <>Structured Learning Studios Spanning Generative AI, Space, Sustainability, Finance, Cybersecurity, Robotics, Public Speaking And More.<br /><br />Schools Select 3 Studios Per Academic Year.</>,
-    edge: 'Where Code.Org Teaches One Skill (Computing) And WhiteHat Jr Teaches One Stack (Coding), Skill Studios Cover 15+ Future Domains - With Capstone Projects, Not Just Tutorials'
+    edge: 'Where Code.Org Teaches One Skill (Computing) And WhiteHat Jr Teaches One Stack (Coding), Skill Studios Cover 15+ Future Domains - With Capstone Projects, Not Just Tutorials',
+    link: '/skill-studio'
   },
   {
     img: img3,
     title: 'Virtual Internships',
     subtitle: 'Grades 6-12',
     desc: <>Role-Based Job Simulations In AI Product Management, Data Analytics, Digital Marketing, UX Design, Sustainability Consulting, And More.<br /><br />The First True Career-Readiness Layer For School Students.</>,
-    edge: 'Forage Built This For University. We Built It For School. Earlier Exposure, Age-Appropriate Scaffolding, And Certificates That Strengthen College Applications Globally'
+    edge: 'Forage Built This For University. We Built It For School. Earlier Exposure, Age-Appropriate Scaffolding, And Certificates That Strengthen College Applications Globally',
+    link: '/virtual-internship'
   }, 
   {
     img: img4,
     title: 'AI Playground',
     subtitle: 'Open Innovation Sandbox',
     desc: <>A Safe, Browser-Based Environment Where Students Build, Test, And Ship Real AI Projects.<br /><br />From Chatbots And Image Classifiers To Agents And Prompt-Engineered Apps.</>,
-    edge: 'Most Platforms Stop At Theory. AI Playground Is A Hands-On Lab - Students Leave With Portfolios, Not Just Certificates.'
+    edge: 'Most Platforms Stop At Theory. AI Playground Is A Hands-On Lab - Students Leave With Portfolios, Not Just Certificates.',
+    link: '/ai-playground'
   }
 ];
 
@@ -378,7 +382,7 @@ export default function HomeLearningEcosystem() {
 
           <div className="hle-grid" ref={gridRef} style={{ marginTop: '-40px' }}>
             {pillarsData.map((item, idx) => ( 
-              <div className="hle-card" key={idx}>
+              <a href={item.link} className="hle-card" key={idx} style={{ textDecoration: 'none', cursor: item.link === '#' ? 'default' : 'pointer', display: 'block' }} onClick={(e) => { if(item.link === '#') e.preventDefault(); }}>
                 <div className="hle-img-wrap">
                   <img src={item.img} alt={item.title} />
                 </div>
@@ -394,7 +398,7 @@ export default function HomeLearningEcosystem() {
                     </svg>
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>

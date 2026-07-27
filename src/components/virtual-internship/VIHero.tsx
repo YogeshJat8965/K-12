@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { Briefcase, Code, BarChart2, ShieldCheck, Play } from 'lucide-react';
-import HeroImg from '../../assets/virtual internship/girl_image.png';
+import HeroImg from '../../assets/virtual internship/girl_image.webp';
 
 export default function VIHero() {
   const sectionRef = useRef<HTMLElement>(null);

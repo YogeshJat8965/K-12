@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { designedFor, forParents, forSchools } from '../virtualInternship';
 import { ShieldCheck, CheckCircle2, ArrowRight, GraduationCap } from 'lucide-react';
-import parentsImg from '../assets/virtual internship/For Parents.jpeg';
-import schoolsImg from '../assets/virtual internship/For Schools & Educators.jpeg';
+import parentsImg from '../assets/virtual internship/For Parents.webp';
+import schoolsImg from '../assets/virtual internship/For Schools & Educators.webp';
 
 export default function ForParentsSchools() {
   const [activeTab, setActiveTab] = useState<'parents' | 'schools'>('parents');

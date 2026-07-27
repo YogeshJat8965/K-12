@@ -1,7 +1,7 @@
 import React from 'react';
 import { BookOpen, Users, ClipboardCheck, Award } from 'lucide-react';
-import plantElementImg from '../../assets/educator circle/plant-element.png';
-import rocketImg from '../../assets/educator circle/rocket.png';
+import plantElementImg from '../../assets/educator circle/plant-element.webp';
+import rocketImg from '../../assets/educator circle/rocket.webp';
 
 export default function MembershipBenefits() {
   const cards = [

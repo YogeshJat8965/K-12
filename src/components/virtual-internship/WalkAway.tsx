@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Award, Briefcase, BadgeCheck, CheckSquare, Sparkles, LineChart } from 'lucide-react';
-import walkAwayImg from '../../assets/virtual internship/walk away.PNG';
+import walkAwayImg from '../../assets/virtual internship/walk away.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 

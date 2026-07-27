@@ -3,30 +3,30 @@ import { LenisProvider, MagneticButton, TiltCard, ScrollRevealHeadline, StaggerR
 import './components/studio/Animations.css';
 import { ArrowRight, GraduationCap, Building2, Box, Lightbulb, Users, Laptop, Scan, Calendar, Scale, Brain, Trophy, Library, Blocks, Palette, PieChart, Briefcase } from 'lucide-react';
 import Navbar from './components/Navbar';
-import heroImg from './assets/skill studio/e531c7559b7451b1ec6b9df853698063c461a861.png';
-import bgImg from './assets/skill studio/background.png';
-import learningPathwayImg from './assets/skill studio/learning.png';
-import whatIsImg from './assets/skill studio/27d47828cc791e53813bb3ca6ec5d29ca22d5bb7 (1).png';
-import img1 from './assets/skill studio/1img.png';
-import img2 from './assets/skill studio/2img.png';
-import img3 from './assets/skill studio/3img.png';
-import img4 from './assets/skill studio/4img.png';
-import img5 from './assets/skill studio/5img.png';
-import img6 from './assets/skill studio/6img.png';
-import img7 from './assets/skill studio/7img.png';
-import implBg from './assets/skill studio/background img.png';
-import partnershipImg from './assets/skill studio/37432c54c564481b83e49588db6594f29d6d2fd7.png';
+import heroImg from './assets/skill studio/e531c7559b7451b1ec6b9df853698063c461a861.webp';
+import bgImg from './assets/skill studio/background.webp';
+import learningPathwayImg from './assets/skill studio/learning.webp';
+import whatIsImg from './assets/skill studio/27d47828cc791e53813bb3ca6ec5d29ca22d5bb7 (1).webp';
+import img1 from './assets/skill studio/1img.webp';
+import img2 from './assets/skill studio/2img.webp';
+import img3 from './assets/skill studio/3img.webp';
+import img4 from './assets/skill studio/4img.webp';
+import img5 from './assets/skill studio/5img.webp';
+import img6 from './assets/skill studio/6img.webp';
+import img7 from './assets/skill studio/7img.webp';
+import implBg from './assets/skill studio/background img.webp';
+import partnershipImg from './assets/skill studio/37432c54c564481b83e49588db6594f29d6d2fd7.webp';
 import { LayoutGrid, CalendarRange, Clock, CalendarDays, BarChart3, TrendingUp, User, UserPlus, Award, BookOpen, ClipboardCheck, UserCog, Folder, BarChart, ClipboardList, LayoutDashboard, Sparkles, Rocket, Bot, MonitorPlay, Leaf } from 'lucide-react';
 import Footer from './components/Footer';
 
-import Logo1 from './assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.20 PM (1).jpeg';
-import Logo2 from './assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.20 PM (2).jpeg';
-import Logo3 from './assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.20 PM (3).jpeg';
-import Logo4 from './assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.20 PM.jpeg';
-import Logo5 from './assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.23 PM.jpeg';
-import Logo6 from './assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.27 PM.jpeg';
-import Logo7 from './assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.28 PM.jpeg';
-import Logo8 from './assets/Homepage (1920x 1080px) – 2/logo/logo.jpeg';
+import Logo1 from './assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.20 PM (1).webp';
+import Logo2 from './assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.20 PM (2).webp';
+import Logo3 from './assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.20 PM (3).webp';
+import Logo4 from './assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.20 PM.webp';
+import Logo5 from './assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.23 PM.webp';
+import Logo6 from './assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.27 PM.webp';
+import Logo7 from './assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.28 PM.webp';
+import Logo8 from './assets/Homepage (1920x 1080px) – 2/logo/logo.webp';
 
 export default function SkillStudioApp() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -104,14 +104,14 @@ export default function SkillStudioApp() {
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
                 <MagneticButton>
-                  <button className="group px-8 py-3.5 bg-white text-[#340D7E] rounded-xl font-bold text-[15px] flex items-center justify-center gap-2 hover:bg-gray-100 transition-all shadow-lg shadow-black/10">
+                  <button onClick={() => window.location.href = '/login'} className="group px-8 py-3.5 bg-white text-[#340D7E] rounded-xl font-bold text-[15px] flex items-center justify-center gap-2 hover:bg-gray-100 transition-all shadow-lg shadow-black/10">
                     Join the club
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </MagneticButton>
 
                 <MagneticButton>
-                  <button className="group px-8 py-3.5 bg-transparent border border-white/40 text-white rounded-xl font-bold text-[15px] flex items-center justify-center gap-2 hover:bg-white/10 transition-all">
+                  <button onClick={() => { document.getElementById('our-skill-studios')?.scrollIntoView({ behavior: 'smooth' }); }} className="group px-8 py-3.5 bg-transparent border border-white/40 text-white rounded-xl font-bold text-[15px] flex items-center justify-center gap-2 hover:bg-white/10 transition-all">
                     Explore programmes
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
@@ -433,7 +433,7 @@ export default function SkillStudioApp() {
         </section>
 
         {/* Our Skill Studios Section */}
-        <section className="py-10 md:py-12 bg-white">
+        <section id="our-skill-studios" className="py-10 md:py-12 bg-white">
           <div className="max-w-[1280px] mx-auto px-6">
 
             {/* Header */}
@@ -606,12 +606,12 @@ export default function SkillStudioApp() {
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
                 <MagneticButton className="w-full sm:w-auto">
-                  <button className="w-full px-6 py-3 bg-[#6A3EEA] hover:bg-[#5B32EA] text-white text-[12px] font-bold tracking-wide rounded-md transition-colors flex items-center justify-center gap-2 uppercase">
+                  <button onClick={(e) => e.preventDefault()} className="w-full px-6 py-3 bg-[#6A3EEA] hover:bg-[#5B32EA] text-white text-[12px] font-bold tracking-wide rounded-md transition-colors flex items-center justify-center gap-2 uppercase">
                     Design Your Studio Mix <ArrowRight className="w-4 h-4" />
                   </button>
                 </MagneticButton>
                 <MagneticButton className="w-full sm:w-auto">
-                  <button className="w-full px-6 py-3 bg-transparent border-[1.5px] border-[#6A3EEA] text-[#6A3EEA] hover:bg-[#F3EFFF] text-[12px] font-bold tracking-wide rounded-md transition-colors flex items-center justify-center gap-2 uppercase">
+                  <button onClick={() => window.location.href = '/contact'} className="w-full px-6 py-3 bg-transparent border-[1.5px] border-[#6A3EEA] text-[#6A3EEA] hover:bg-[#F3EFFF] text-[12px] font-bold tracking-wide rounded-md transition-colors flex items-center justify-center gap-2 uppercase">
                     Schedule Discovery Session <ArrowRight className="w-4 h-4" />
                   </button>
                 </MagneticButton>
@@ -809,7 +809,7 @@ export default function SkillStudioApp() {
                 </button>
               </MagneticButton>
               <MagneticButton className="w-full sm:w-auto">
-                <button className="w-full px-8 py-3.5 bg-transparent border-[1.5px] border-[#5B32EA] text-[#5B32EA] hover:bg-[#5B32EA]/5 text-[13px] font-bold tracking-wide rounded-[8px] transition-colors flex items-center justify-center gap-2 uppercase">
+                <button onClick={() => window.location.href = '/login'} className="w-full px-8 py-3.5 bg-transparent border-[1.5px] border-[#5B32EA] text-[#5B32EA] hover:bg-[#5B32EA]/5 text-[13px] font-bold tracking-wide rounded-[8px] transition-colors flex items-center justify-center gap-2 uppercase">
                   Start Program <ArrowRight className="w-4 h-4" />
                 </button>
               </MagneticButton>
@@ -1101,7 +1101,7 @@ export default function SkillStudioApp() {
                   {/* Button */}
                   <div className="shrink-0 lg:translate-x-4">
                     <MagneticButton>
-                      <button className="bg-white text-[#3B6CFF] font-bold text-[13px] px-8 py-3.5 rounded-[8px] flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors uppercase tracking-wide shadow-md hover:shadow-lg">
+                      <button onClick={() => window.location.href = '/contact'} className="bg-white text-[#3B6CFF] font-bold text-[13px] px-8 py-3.5 rounded-[8px] flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors uppercase tracking-wide shadow-md hover:shadow-lg">
                         PARTNER WITH US <ArrowRight className="w-4 h-4" />
                       </button>
                     </MagneticButton>

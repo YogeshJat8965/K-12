@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Sparkles, Workflow, Target, Cpu, Award } from 'lucide-react';
 import ScrollReveal from '../ScrollReveal';
-import frameworkImg from '../../assets/skill studio/frameworks img.png';
+import frameworkImg from '../../assets/skill studio/frameworks img.webp';
 
 const steps = [
   {

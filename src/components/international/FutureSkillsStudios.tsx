@@ -13,23 +13,23 @@ import {
 import ScrollReveal from '../ScrollReveal';
 
 // Using valid images from virtual internship
-import img1 from '../../assets/virtual internship/1img.png';
-import img2 from '../../assets/virtual internship/2img.png';
-import img3 from '../../assets/virtual internship/3img.png';
-import img4 from '../../assets/virtual internship/4img.png';
-import img5 from '../../assets/virtual internship/5img.png';
+import img1 from '../../assets/virtual internship/1img.webp';
+import img2 from '../../assets/virtual internship/2img.webp';
+import img3 from '../../assets/virtual internship/3img.webp';
+import img4 from '../../assets/virtual internship/4img.webp';
+import img5 from '../../assets/virtual internship/5img.webp';
 
 // New images
-import imgInner from '../../assets/International Studio/Inner Compass – Mindfulness & Life Skills.png';
-import imgClimate from '../../assets/International Studio/Climate Tech & Green Innovation.png';
-import imgData from '../../assets/International Studio/Data Intelligence.png';
-import imgNoCode from '../../assets/International Studio/No-Code Builders.png';
-import imgAnimation from '../../assets/International Studio/Animation & Gamification.png';
-import imgFinance from '../../assets/International Studio/Financial Fun.png';
-import imgCyber from '../../assets/International Studio/Cybersecurity & Digital Safety.png';
-import imgPublicSpeaking from '../../assets/International Studio/Public Speaking & Debate.png';
-import imgJournalist from '../../assets/International Studio/oung Journalists & Media Studio.png';
-import imgSpace from '../../assets/International Studio/Space & Astronomy.png';
+import imgInner from '../../assets/International Studio/Inner Compass – Mindfulness & Life Skills.webp';
+import imgClimate from '../../assets/International Studio/Climate Tech & Green Innovation.webp';
+import imgData from '../../assets/International Studio/Data Intelligence.webp';
+import imgNoCode from '../../assets/International Studio/No-Code Builders.webp';
+import imgAnimation from '../../assets/International Studio/Animation & Gamification.webp';
+import imgFinance from '../../assets/International Studio/Financial Fun.webp';
+import imgCyber from '../../assets/International Studio/Cybersecurity & Digital Safety.webp';
+import imgPublicSpeaking from '../../assets/International Studio/Public Speaking & Debate.webp';
+import imgJournalist from '../../assets/International Studio/oung Journalists & Media Studio.webp';
+import imgSpace from '../../assets/International Studio/Space & Astronomy.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -181,7 +181,7 @@ export default function FutureSkillsStudios() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full pt-8 pb-12 bg-[#F3F4F6] overflow-hidden font-poppins">
+    <section id="future-skill-studios" ref={sectionRef} className="relative w-full pt-8 pb-12 bg-[#F3F4F6] overflow-hidden font-poppins">
 
       {/* Background elements */}
       <div className="absolute top-20 left-10 w-[300px] h-[300px] bg-[#E0E7FF] rounded-full blur-[100px] opacity-40 pointer-events-none z-0"></div>

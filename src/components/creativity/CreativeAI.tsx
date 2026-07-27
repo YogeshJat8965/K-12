@@ -1,8 +1,8 @@
 import ScrollReveal from '../ScrollReveal';
 import { Lightbulb, Network, BookOpen, Users, Palette, Wand2, Brain } from 'lucide-react';
-import img1 from '../../assets/digital creativity/img1.png';
-import img2 from '../../assets/digital creativity/img2.png';
-import img3 from '../../assets/digital creativity/img3.png';
+import img1 from '../../assets/digital creativity/img1.webp';
+import img2 from '../../assets/digital creativity/img2.webp';
+import img3 from '../../assets/digital creativity/img3.webp';
 
 const aiCapabilities = [
   {

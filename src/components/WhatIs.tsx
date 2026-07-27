@@ -1,8 +1,8 @@
 import { useState, useRef } from 'react';
 import { whatIs } from '../virtualInternship';
 import { Target, Pin, Clock, Users } from 'lucide-react';
-import traditionalLearningImg from '../assets/traditional learning.jpg';
-import skillzzaWayImg from '../assets/skillzza Way.jpg';
+import traditionalLearningImg from '../assets/traditional learning.webp';
+import skillzzaWayImg from '../assets/skillzza Way.webp';
 
 const pillarIcons = [
   <Target className="w-7 h-7 text-sky-600" />,

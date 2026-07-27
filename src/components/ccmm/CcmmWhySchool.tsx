@@ -1,6 +1,6 @@
 import React from 'react';
 import { ShieldCheck, Target, Network, Users, Award } from 'lucide-react';
-import whySchoolImg from '../../assets/CCMM/why school.png';
+import whySchoolImg from '../../assets/CCMM/why school.webp';
 
 export default function CcmmWhySchool() {
   const reasons = [

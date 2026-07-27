@@ -14,7 +14,7 @@ import {
   Target
 } from 'lucide-react';
 
-import SkillStudiosImg from '../../assets/International Studio/skill studios.png';
+import SkillStudiosImg from '../../assets/International Studio/skill studios.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 

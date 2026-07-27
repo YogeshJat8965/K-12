@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import RightImg from '../../assets/AI playground/Untitled-2.png';
+import RightImg from '../../assets/AI playground/Untitled-2.webp';
 import Icon1 from '../../assets/AI playground/Group 27629.svg';
 import Icon2 from '../../assets/AI playground/Group 27630.svg';
 import Icon3 from '../../assets/AI playground/Group 27631.svg';
@@ -378,9 +378,9 @@ export default function PlaygroundHero() {
             </p>
 
             <div className="ph-btns">
-              <div className="ph-btn-wrapper"><button className="ph-btn ph-btn-primary">Try The Playground</button></div>
-              <div className="ph-btn-wrapper"><button className="ph-btn ph-btn-demo">WATCH 2-MIN DEMO</button></div>
-              <div className="ph-btn-wrapper"><button className="ph-btn ph-btn-schools">For Schools</button></div>
+              <div className="ph-btn-wrapper"><button onClick={(e) => e.preventDefault()} className="ph-btn ph-btn-primary">Try The Playground</button></div>
+              <div className="ph-btn-wrapper"><button onClick={(e) => e.preventDefault()} className="ph-btn ph-btn-demo">WATCH 2-MIN DEMO</button></div>
+              <div className="ph-btn-wrapper"><button onClick={() => window.location.href = '/learners'} className="ph-btn ph-btn-schools">For Schools</button></div>
             </div>
           </div>
 

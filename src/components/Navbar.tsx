@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import logoImg from '../assets/skillzza-k12-horizontal copy.png';
+import logoImg from '../assets/skillzza-k12-horizontal copy.webp';
 
 /* ─── Nav link data for Level 3 ─── */
 const NAV_LINKS = [
@@ -665,7 +665,7 @@ export default function Navbar() {
         {/* ═══ LEVEL 1 - Announcement Bar ═══ */}
         <div className="nav-announcement">
           <div className="nav-announcement-inner">
-            <div className="nav-marquee-wrapper">
+            <div className="nav-marquee-wrapper" onClick={() => window.location.href = '/digital-creativity'} style={{ cursor: 'pointer' }}>
               <div className="nav-marquee-content">
                 <div className="nav-announcement-text">
                   <span>New</span> 
@@ -686,8 +686,8 @@ export default function Navbar() {
               </div>
             </div>
             <div className="nav-announcement-actions">
-              <a href="/demo" className="nav-btn-secondary">Get a Demo</a>
-              <a href="/enroll" className="nav-btn-primary">Join as Student</a>
+              <a href="#" className="nav-btn-secondary">Get a Demo</a>
+              <a href="/login" className="nav-btn-primary">Join as Student</a>
             </div>
           </div>
         </div>
@@ -733,7 +733,7 @@ export default function Navbar() {
             </ul>
 
             {/* Get Started */}
-            <a href="/login" className="nav-cta">Get Started</a>
+            <a href="/signup" className="nav-cta">Get Started</a>
 
             {/* Mobile hamburger */}
             <button
@@ -845,7 +845,7 @@ export default function Navbar() {
             </div>
 
             <div className="mobile-cta-wrapper">
-              <a href="/login" className="mobile-cta" onClick={() => setOpen(false)}>
+              <a href="/signup" className="mobile-cta" onClick={() => setOpen(false)}>
                 Get Started
               </a>
             </div>

@@ -1,4 +1,4 @@
-import clubGirl from '../../assets/skill studio/club_girl.png';
+import clubGirl from '../../assets/skill studio/club_girl.webp';
 import ScrollReveal from '../ScrollReveal';
 
 const ProjectIcon = () => (

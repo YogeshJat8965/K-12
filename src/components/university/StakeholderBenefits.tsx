@@ -15,9 +15,9 @@ import {
   Monitor,
   Handshake
 } from 'lucide-react';
-import studentsImg from '../../assets/university/students.png';
-import facultyImg from '../../assets/university/faculty.png';
-import universitiesImg from '../../assets/university/universities.png';
+import studentsImg from '../../assets/university/students.webp';
+import facultyImg from '../../assets/university/faculty.webp';
+import universitiesImg from '../../assets/university/universities.webp';
 
 const stakeholders = [
   {

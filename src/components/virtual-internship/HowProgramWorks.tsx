@@ -3,11 +3,11 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Compass, Briefcase, BookOpen, Rocket, Trophy, Calendar, Clock, Monitor } from 'lucide-react';
 
-import img1 from '../../assets/virtual internship/IMG_9190.PNG';
-import img2 from '../../assets/virtual internship/IMG_9191.PNG';
-import img3 from '../../assets/virtual internship/IMG_9192.PNG';
-import img4 from '../../assets/virtual internship/IMG_9193.PNG';
-import img5 from '../../assets/virtual internship/IMG_9194.PNG';
+import img1 from '../../assets/virtual internship/IMG_9190.webp';
+import img2 from '../../assets/virtual internship/IMG_9191.webp';
+import img3 from '../../assets/virtual internship/IMG_9192.webp';
+import img4 from '../../assets/virtual internship/IMG_9193.webp';
+import img5 from '../../assets/virtual internship/IMG_9194.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 

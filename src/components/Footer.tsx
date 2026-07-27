@@ -1,5 +1,5 @@
 import { Instagram, Linkedin, Twitter, Youtube } from 'lucide-react';
-import logoImg from '../assets/skillzza-k12-horizontal copy.png';
+import logoImg from '../assets/skillzza-k12-horizontal copy.webp';
 
 export default function Footer() {
   return (
@@ -59,10 +59,10 @@ export default function Footer() {
           <div className="flex flex-col gap-4 lg:mt-[72px]">
             <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">Vedya AI</h3>
             <ul className="flex flex-col gap-3">
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">What is Vedya?</a></li>
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Vedya for Students</a></li>
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Vedya for Teachers</a></li>
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Responsible AI</a></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">What is Vedya?</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">Vedya for Students</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">Vedya for Teachers</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">Responsible AI</span></li>
             </ul>
           </div>
 
@@ -70,8 +70,8 @@ export default function Footer() {
           <div className="flex flex-col gap-4 lg:mt-[72px]">
             <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">Skill Studio</h3>
             <ul className="flex flex-col gap-3">
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">National</a></li>
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">International</a></li>
+              <li><a href="/skill-studio" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">National</a></li>
+              <li><a href="/international-studio" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">International</a></li>
             </ul>
           </div>
 
@@ -79,16 +79,16 @@ export default function Footer() {
           <div className="flex flex-col gap-4 lg:mt-[72px]">
             <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">Virtual Internship</h3>
             <ul className="flex flex-col gap-3">
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">GenAI Innovators Fellowship</a></li>
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">AI & Data Engineering Accelerator</a></li>
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Teen Finance Mastery Lab</a></li>
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">UX & Product Innovation Studio</a></li>
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Mindfullness Program for Teens</a></li>
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Sustainability in Climate Innovator</a></li>
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">the Entrepreneurship Thinker</a></li>
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Teen Storyteller and Media Journalist</a></li>
-              {/* <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Digital Marketing for Youth Start-up's</a></li> */}
-              {/* <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Deepfake Awareness & AI Media Literacy</a></li> */}
+              <li><span className="text-gray-600 text-[14px] cursor-default">GenAI Innovators Fellowship</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">AI & Data Engineering Accelerator</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">Teen Finance Mastery Lab</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">UX & Product Innovation Studio</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">Mindfullness Program for Teens</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">Sustainability in Climate Innovator</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">the Entrepreneurship Thinker</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">Teen Storyteller and Media Journalist</span></li>
+              {/* <li><span className="text-gray-600 text-[14px] cursor-default">Digital Marketing for Youth Start-up's</span></li> */}
+              {/* <li><span className="text-gray-600 text-[14px] cursor-default">Deepfake Awareness & AI Media Literacy</span></li> */}
             </ul>
           </div>
 
@@ -96,9 +96,9 @@ export default function Footer() {
           <div className="flex flex-col gap-4 lg:mt-[72px]">
             <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">Learners Segment</h3>
             <ul className="flex flex-col gap-3">
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">For Students</a></li>
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">For Schools</a></li>
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">For Educator</a></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">For Students</span></li>
+              <li><a href="/learners" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">For Schools</a></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">For Educator</span></li>
             </ul>
           </div>
 
@@ -106,9 +106,9 @@ export default function Footer() {
           <div className="flex flex-col gap-4 lg:mt-[72px]">
             <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">Quick Links</h3>
             <ul className="flex flex-col gap-3">
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">CCMM</a></li>
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Educator Circle</a></li>
-              <li><a href="#" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">AI Playground</a></li>
+              <li><a href="/ccmm" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">CCMM</a></li>
+              <li><a href="/educator" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Educator Circle</a></li>
+              <li><a href="/ai-playground" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">AI Playground</a></li>
             </ul>
           </div>
 
@@ -120,9 +120,9 @@ export default function Footer() {
             © {new Date().getFullYear()} Skill Studio. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-gray-500 text-[14px] hover:text-gray-900 transition-colors">Privacy Policy</a>
-            <a href="#" className="text-gray-500 text-[14px] hover:text-gray-900 transition-colors">Terms of Service</a>
-            <a href="#" className="text-gray-500 text-[14px] hover:text-gray-900 transition-colors">Cookie Policy</a>
+            <span className="text-gray-500 text-[14px] cursor-default">Privacy Policy</span>
+            <span className="text-gray-500 text-[14px] cursor-default">Terms of Service</span>
+            <span className="text-gray-500 text-[14px] cursor-default">Cookie Policy</span>
           </div>
         </div>
       </div>

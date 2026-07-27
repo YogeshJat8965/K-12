@@ -2,14 +2,14 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import Logo1 from '../assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.20 PM (1).jpeg';
-import Logo2 from '../assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.20 PM (2).jpeg';
-import Logo3 from '../assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.20 PM (3).jpeg';
-import Logo4 from '../assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.20 PM.jpeg';
-import Logo5 from '../assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.23 PM.jpeg';
-import Logo6 from '../assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.27 PM.jpeg';
-import Logo7 from '../assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.28 PM.jpeg';
-import Logo8 from '../assets/Homepage (1920x 1080px) – 2/logo/logo.jpeg';
+import Logo1 from '../assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.20 PM (1).webp';
+import Logo2 from '../assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.20 PM (2).webp';
+import Logo3 from '../assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.20 PM (3).webp';
+import Logo4 from '../assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.20 PM.webp';
+import Logo5 from '../assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.23 PM.webp';
+import Logo6 from '../assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.27 PM.webp';
+import Logo7 from '../assets/Homepage (1920x 1080px) – 2/logo/WhatsApp Image 2026-07-25 at 5.23.28 PM.webp';
+import Logo8 from '../assets/Homepage (1920x 1080px) – 2/logo/logo.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -95,7 +95,7 @@ export default function HomeTrusted() {
         .ht-section {
           width: 100%;
           position: relative;
-          background: url(/landing/trusted-bg.png) 0% 0% / cover no-repeat;
+          background: url(/landing/trusted-bg.webp) 0% 0% / cover no-repeat;
           font-family: 'Poppins', sans-serif;
           padding: clamp(28px,3vw,50px) clamp(20px,4vw,80px) clamp(28px,3vw,50px);
           box-sizing: border-box;
@@ -293,7 +293,7 @@ export default function HomeTrusted() {
 
       <section className="ht-section" ref={sectionRef}>
         <div style={{ position: 'absolute', top: 0, right: 0, width: 'clamp(400px, 52vw, 1005px)', height: '100%', pointerEvents: 'none' }}>
-          <img src="/landing/world-map.png" alt="" className="ht-map" style={{ position: 'relative', width: '100%' }} />
+          <img src="/landing/world-map.webp" alt="" className="ht-map" style={{ position: 'relative', width: '100%' }} />
           {/* Fake Pins for visual animation */}
           <div className="ht-pin" style={{ top: '35%', left: '20%' }} />
           <div className="ht-pin" style={{ top: '25%', left: '45%' }} />

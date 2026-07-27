@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import LeftImg from '../../assets/AI playground/Mask Group 42.png';
+import LeftImg from '../../assets/AI playground/Mask Group 42.webp';
 import Icon1 from '../../assets/AI playground/Group 27533.svg';
 import Icon2 from '../../assets/AI playground/Group 27633.svg';
 import Icon3 from '../../assets/AI playground/Group 27634.svg';

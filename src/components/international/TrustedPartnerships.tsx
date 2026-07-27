@@ -5,7 +5,7 @@ import {
   Building2, Landmark, Share2, 
   Globe, Lightbulb, ArrowRight, Play 
 } from 'lucide-react';
-import bannerImg from '../../assets/International Studio/banner.png';
+import bannerImg from '../../assets/International Studio/banner.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -170,11 +170,11 @@ export default function TrustedPartnerships() {
           
           {/* Buttons Overlay */}
           <div className="relative z-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-5 px-4">
-            <button className="flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-3 bg-[#7C3AED] text-white rounded-[8px] font-bold text-[13px] sm:text-[14px] hover:bg-[#6D28D9] hover:shadow-[0_10px_20px_-10px_rgba(124,58,237,0.6)] transition-all duration-300 tracking-wide uppercase">
+            <button onClick={() => window.location.href = '/contact'} className="flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-3 bg-[#7C3AED] text-white rounded-[8px] font-bold text-[13px] sm:text-[14px] hover:bg-[#6D28D9] hover:shadow-[0_10px_20px_-10px_rgba(124,58,237,0.6)] transition-all duration-300 tracking-wide uppercase">
               Partner with Skillzza
               <ArrowRight size={18} strokeWidth={2.5} />
             </button>
-            <button className="flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-3 bg-[#7C3AED] text-white rounded-[8px] font-bold text-[13px] sm:text-[14px] hover:bg-[#6D28D9] hover:shadow-[0_10px_20px_-10px_rgba(124,58,237,0.6)] transition-all duration-300 tracking-wide uppercase">
+            <button onClick={(e) => e.preventDefault()} className="flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-3 bg-[#7C3AED] text-white rounded-[8px] font-bold text-[13px] sm:text-[14px] hover:bg-[#6D28D9] hover:shadow-[0_10px_20px_-10px_rgba(124,58,237,0.6)] transition-all duration-300 tracking-wide uppercase">
               Request School Presentation
               <Play size={14} fill="currentColor" />
             </button>
@@ -183,7 +183,7 @@ export default function TrustedPartnerships() {
 
         {/* Mobile-Only Button */}
         <div className="flex md:hidden w-full justify-center mt-8">
-          <button className="flex items-center justify-center gap-2 px-6 py-3.5 w-full max-w-[300px] bg-white border-2 border-[#3B82F6] text-[#3B82F6] rounded-[12px] font-bold text-[14px] shadow-[0_4px_14px_rgba(59,130,246,0.15)] active:scale-95 transition-all duration-200 tracking-wide uppercase">
+          <button onClick={(e) => e.preventDefault()} className="flex items-center justify-center gap-2 px-6 py-3.5 w-full max-w-[300px] bg-white border-2 border-[#3B82F6] text-[#3B82F6] rounded-[12px] font-bold text-[14px] shadow-[0_4px_14px_rgba(59,130,246,0.15)] active:scale-95 transition-all duration-200 tracking-wide uppercase">
             Request School Presentation
             <Play size={14} fill="currentColor" />
           </button>

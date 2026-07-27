@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ArrowRight, Play, CheckCircle2, Rocket, Award, CheckSquare } from 'lucide-react';
-import rightImage from '../assets/virtual internship/ChatGPT Image May 4, 2026, 10_58_30 PM.png';
+import rightImage from '../assets/virtual internship/ChatGPT Image May 4, 2026, 10_58_30 PM.webp';
 import ScrollReveal from './ScrollReveal';
 
 export default function Hero() {
@@ -112,7 +112,7 @@ export default function Hero() {
             {/* CTAs */}
             <ScrollReveal delay={0.6} direction="up" distance={30}>
               <div className="flex flex-wrap items-center gap-6">
-                <button className="bg-[#4114d4] hover:bg-[#340eb0] text-white rounded-full px-8 py-4 font-bold flex items-center gap-3 transition-colors shadow-lg shadow-[#4114d4]/30 hover:shadow-[#4114d4]/50 hover:-translate-y-1 transition-all duration-300">
+                <button onClick={() => document.getElementById('explore-career-tracks')?.scrollIntoView({ behavior: 'smooth' })} className="bg-[#4114d4] hover:bg-[#340eb0] text-white rounded-full px-8 py-4 font-bold flex items-center gap-3 transition-colors shadow-lg shadow-[#4114d4]/30 hover:shadow-[#4114d4]/50 hover:-translate-y-1 transition-all duration-300">
                   EXPLORE INTERNSHIPS
                   <ArrowRight size={20} />
                 </button>

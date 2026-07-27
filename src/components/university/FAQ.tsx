@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-import faqImg from '../../assets/university/faq.png';
+import faqImg from '../../assets/university/faq.webp';
 
 const faqs = [
   {

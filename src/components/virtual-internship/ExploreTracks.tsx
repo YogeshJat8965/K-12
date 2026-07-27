@@ -2,14 +2,14 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import imgAI from '../../assets/virtual internship/ai.PNG';
-import imgBusiness from '../../assets/virtual internship/bussiness.PNG';
-import imgCreative from '../../assets/virtual internship/creative.PNG';
-import imgSpace from '../../assets/virtual internship/space.PNG';
-import imgClimate from '../../assets/virtual internship/climate.PNG';
-import imgMindfulness from '../../assets/virtual internship/mindfullness.PNG';
-import imgPublic from '../../assets/virtual internship/public.PNG';
-import imgLeadership from '../../assets/virtual internship/leadership.PNG';
+import imgAI from '../../assets/virtual internship/ai.webp';
+import imgBusiness from '../../assets/virtual internship/bussiness.webp';
+import imgCreative from '../../assets/virtual internship/creative.webp';
+import imgSpace from '../../assets/virtual internship/space.webp';
+import imgClimate from '../../assets/virtual internship/climate.webp';
+import imgMindfulness from '../../assets/virtual internship/mindfullness.webp';
+import imgPublic from '../../assets/virtual internship/public.webp';
+import imgLeadership from '../../assets/virtual internship/leadership.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -224,7 +224,7 @@ export default function ExploreTracks() {
         }
       `}</style>
 
-      <section className="et-section" ref={sectionRef}>
+      <section id="explore-career-tracks" className="et-section" ref={sectionRef}>
         <div className="et-container">
 
           <div className="et-header">
