@@ -76,7 +76,7 @@ export default function HomeEcosystem() {
 
         tl.from('.he-title-base', { opacity: 0, duration: 0.6 })
           .from('.he-type-char', { opacity: 0, duration: 0.1, stagger: 0.05, ease: 'none' }, '+=0.2');
-          
+
         const subtitle = document.querySelector('.he-subtitle');
         if (subtitle) {
           tl.from(subtitle, { y: 20, opacity: 0, duration: 0.6 }, '-=0.2');

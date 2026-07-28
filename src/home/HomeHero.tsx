@@ -188,9 +188,10 @@ export default function HomeHero() {
           border: none; cursor: pointer;
           font-family: 'Poppins', sans-serif;
           font-weight: 600;
-          font-size: clamp(13px, 1vw, 17px);
+          font-size: clamp(12px, 0.9vw, 15px);
           border-radius: 10px;
-          padding: clamp(12px, 1vw, 18px) clamp(20px, 2vw, 36px);
+          padding: clamp(10px, 1vw, 16px) clamp(16px, 1.5vw, 26px);
+          white-space: nowrap;
           transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
         }
         .hh-btn:hover { transform: translateY(-3px); }

@@ -1,4 +1,4 @@
-import logoImg from './assets/skillzza-k12-horizontal copy.webp';
+const logoImg = '/landing/WhatsApp_Image_2026-07-28_at_8.46.35_AM-removebg-preview.png';
 
 export default function PageLoader() {
   return (
@@ -36,7 +36,7 @@ export default function PageLoader() {
         src={logoImg}
         alt="Skillzza K-12"
         style={{
-          height: '56px',
+          height: '100px',
           width: 'auto',
           objectFit: 'contain',
           animation: 'pl-pulse 2s ease-in-out infinite',

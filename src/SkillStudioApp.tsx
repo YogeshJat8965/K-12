@@ -105,14 +105,14 @@ export default function SkillStudioApp() {
               <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
                 <MagneticButton>
                   <button onClick={() => window.location.href = '/login'} className="group px-8 py-3.5 bg-white text-[#340D7E] rounded-xl font-bold text-[15px] flex items-center justify-center gap-2 hover:bg-gray-100 transition-all shadow-lg shadow-black/10">
-                    Join the club
+                    Join the Studio
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </MagneticButton>
 
                 <MagneticButton>
                   <button onClick={() => { document.getElementById('our-skill-studios')?.scrollIntoView({ behavior: 'smooth' }); }} className="group px-8 py-3.5 bg-transparent border border-white/40 text-white rounded-xl font-bold text-[15px] flex items-center justify-center gap-2 hover:bg-white/10 transition-all">
-                    Explore programmes
+                    Explore More
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </MagneticButton>
@@ -447,12 +447,12 @@ export default function SkillStudioApp() {
                     letterSpacing: '0%'
                   }}
                 >
-                  Our <span className="bg-gradient-to-r from-[#4200FF] via-[#E82194] to-[#FF6644] text-transparent bg-clip-text">Skill Studios</span>
+                  Our <span className="bg-gradient-to-r from-[#4200FF] via-[#E82194] to-[#FF6644] text-transparent bg-clip-text">Skill Studio</span>
                 </h2>
               </ScrollRevealHeadline>
               <div className="max-w-[1150px] text-center">
                 <span className="block text-[14px] italic text-[#6B7280] leading-[1.6] mb-1">
-                  A curated portfolio of 7 future-forward Skill Studios
+                  A curated portfolio of 7 future-forward Skill Studio
                 </span>
                 <p className="text-[16px] text-[#6B7280] leading-[1.8] font-medium max-w-none lg:whitespace-nowrap">
                   Each designed as an immersive learning pod where students build Capability, Confidence, and a portfolio that travels with them.
@@ -489,6 +489,22 @@ export default function SkillStudioApp() {
                     <div className="border-l-[3.5px] border-[#4200FF] pl-3 py-1">
                       <h3 className="font-bold text-[#1A1A2E] text-[19px] leading-[1.3] tracking-tight">
                         Gen AI & Deep<br />Tech
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </TiltCard>
+              {/* Card 3 */}
+              <TiltCard className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.5rem)] min-w-[280px]">
+                <div className="w-full h-full bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] overflow-hidden transition-transform">
+                  <div className="h-[180px] sm:h-[220px] w-full relative overflow-hidden">
+                    <img src={img6} alt="Digital creativity & AI skills by ADOBE" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="p-6 relative z-10 bg-white">
+                    <div className="border-l-[3.5px] border-[#4200FF] pl-3 py-1">
+                      <h3 className="font-bold text-[#1A1A2E] text-[19px] leading-[1.3] tracking-tight">
+                        Digital creativity &<br />
+                        AI skills by ADOBE <span className="text-[14px] text-red-500 font-semibold ml-1">(Free)</span>
                       </h3>
                     </div>
                   </div>
@@ -543,22 +559,7 @@ export default function SkillStudioApp() {
                 </div>
               </TiltCard>
 
-              {/* Card 6 */}
-              <TiltCard className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.5rem)] min-w-[280px]">
-                <div className="w-full h-full bg-white rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.08)] overflow-hidden transition-transform">
-                  <div className="h-[180px] sm:h-[220px] w-full relative overflow-hidden">
-                    <img src={img6} alt="Digital creativity & AI skills by ADOBE" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="p-6 relative z-10 bg-white">
-                    <div className="border-l-[3.5px] border-[#4200FF] pl-3 py-1">
-                      <h3 className="font-bold text-[#1A1A2E] text-[19px] leading-[1.3] tracking-tight">
-                        Digital creativity &<br />
-                        AI skills by ADOBE <span className="text-[14px] text-red-500 font-semibold ml-1">(Free)</span>
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </TiltCard>
+
 
               {/* Card 7 */}
               <TiltCard className="w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(25%-1.5rem)] min-w-[280px]">

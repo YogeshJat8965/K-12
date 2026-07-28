@@ -336,28 +336,29 @@ export default function HomeTrusted() {
                 {[1, 2].map((half) => (
                   <div key={half} className="flex items-center gap-10 md:gap-16 shrink-0 pr-10 md:pr-16">
                     {[
-                      "https://cognifyai.skillzza.com/assets/img/part/1.png",
-                      "https://cognifyai.skillzza.com/assets/img/part/2.png",
-                      "https://cognifyai.skillzza.com/assets/img/part/3.png",
-                      "https://cognifyai.skillzza.com/assets/img/part/4.png",
-                      "https://cognifyai.skillzza.com/assets/img/part/5.png",
-                      "https://cognifyai.skillzza.com/assets/img/part/6.png",
-                      "https://cognifyai.skillzza.com/assets/img/part/7.png",
-                      Logo1,
-                      Logo2,
-                      Logo3,
-                      Logo4,
-                      Logo5,
-                      Logo6,
-                      Logo7,
-                      Logo8
-                    ].map((imgSrc, index) => (
+                      { src: "https://cognifyai.skillzza.com/assets/img/part/1.png", name: "Alexander Public School, Meerut" },
+                      { src: "https://cognifyai.skillzza.com/assets/img/part/2.png", name: "The Gurukulam International School" },
+                      { src: "https://cognifyai.skillzza.com/assets/img/part/3.png", name: "Swami Vivekanand Rajkiya Mahila Mahavidyalaya" },
+                      { src: "https://cognifyai.skillzza.com/assets/img/part/4.png", name: "St. Soldier Public School, Banga" },
+                      { src: "https://cognifyai.skillzza.com/assets/img/part/5.png", name: "St. Joseph's English Medium School, Rampur" },
+                      { src: "https://cognifyai.skillzza.com/assets/img/part/6.png", name: "Saraswati Vidya Mandir, Dhariyela" },
+                      { src: "https://cognifyai.skillzza.com/assets/img/part/7.png", name: "Sanfort World School" },
+                      { src: Logo1, name: "Nirmala High School, Machilipatnam" },
+                      { src: Logo2, name: "N.St. Mathew's Public School, Vijayawada" },
+                      { src: Logo3, name: "Paradise Higher Secondary School, Kanker" },
+                      { src: Logo4, name: "Narayana E.M. School, Neeladripuram" },
+                      { src: Logo5, name: "Shri Balaji Vidya Mandir, Raipur" },
+                      { src: Logo6, name: "Sarvodaya Public School" },
+                      { src: Logo7, name: "Chandrahasini Vidyapeeth" },
+                      { src: Logo8, name: "Joy Senior Secondary School, Jabalpur" }
+                    ].map((partner, index) => (
                       <div key={index} className="ht-partner-item">
                         <img
-                          src={imgSrc}
-                          alt="Academic Partner"
+                          src={partner.src}
+                          alt={partner.name}
                           className="ht-partner-img"
                         />
+                        <span className="ht-partner-text">{partner.name}</span>
                       </div>
                     ))}
                   </div>

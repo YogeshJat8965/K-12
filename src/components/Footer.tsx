@@ -1,5 +1,5 @@
 import { Instagram, Linkedin, Twitter, Youtube } from 'lucide-react';
-import logoImg from '../assets/skillzza-k12-horizontal copy.webp';
+const logoImg = '/landing/WhatsApp_Image_2026-07-28_at_8.46.35_AM-removebg-preview.png';
 
 export default function Footer() {
   return (
@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Column 1: Brand, Presence & Social */}
           <div className="flex flex-col gap-4 pr-8">
             <div className="flex items-center gap-2">
-              <img src={logoImg} alt="Skill Studio" className="h-14 w-auto object-contain" />
+              <img src={logoImg} alt="Skill Studio" style={{ height: '100px', width: 'auto', objectFit: 'contain' }} />
             </div>
 
             <div className="flex flex-col gap-4">
@@ -70,8 +70,8 @@ export default function Footer() {
           <div className="flex flex-col gap-4 lg:mt-[72px]">
             <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">Skill Studio</h3>
             <ul className="flex flex-col gap-3">
-              <li><a href="/skill-studio" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">National</a></li>
-              <li><a href="/international-studio" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">International</a></li>
+              <li><a href="/skill-studio" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">For schools</a></li>
+              <li><a href="/international-studio" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">For Students</a></li>
             </ul>
           </div>
 
@@ -107,7 +107,7 @@ export default function Footer() {
             <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">Quick Links</h3>
             <ul className="flex flex-col gap-3">
               <li><a href="/ccmm" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">CCMM</a></li>
-              <li><a href="/educator" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Educator Circle</a></li>
+              <li><a href="/educator" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">The Educator Circle</a></li>
               <li><a href="/ai-playground" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">AI Playground</a></li>
             </ul>
           </div>

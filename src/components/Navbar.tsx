@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import logoImg from '../assets/skillzza-k12-horizontal copy.webp';
+const logoImg = '/landing/WhatsApp_Image_2026-07-28_at_8.46.35_AM-removebg-preview.png';
 
 /* ─── Nav link data for Level 3 ─── */
 const NAV_LINKS = [
+  { label: "Adobe's Programme", href: '/digital-creativity' },
   {
     label: 'Skill Studio',
     href: '/skill-studio',
     dropdown: [
-      { label: 'National', href: '/skill-studio' },
-      { label: 'International', href: '/international-studio' },
+      { label: 'For Schools', href: '/skill-studio' },
+      { label: 'For Students', href: '/international-studio' },
     ],
   },
   {
@@ -52,7 +53,7 @@ const NAV_LINKS = [
         title: 'Other Programs',
         links: [
           { label: 'CCMM', href: '/ccmm' },
-          { label: 'Educator Circle', href: '/educator' },
+          { label: 'The Educator Circle', href: '/educator' },
         ]
       }
     ],
@@ -82,19 +83,12 @@ export default function Navbar() {
         /* ═══ Announcement Strip ═══ */
         .nav-announcement {
           width: 100%;
-          background: linear-gradient(90deg, #6C3CF7, #EC4899, #FF007A);
-          background-size: 200% auto;
+          background: #6C3CF7;
           color: #fff;
           height: 48px;
           display: flex;
           align-items: center;
           overflow: hidden;
-          animation: gradient-shift 5s ease infinite;
-        }
-        @keyframes gradient-shift {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
         }
         .nav-announcement-inner {
           width: 100%;
@@ -147,10 +141,10 @@ export default function Navbar() {
           align-items: center;
           gap: 12px;
           padding-left: 20px;
-          background: #FF007A; /* hide marquee text going behind it */
+          background: #6C3CF7;
           height: 48px;
           z-index: 10;
-          box-shadow: -15px 0 15px #FF007A;
+          box-shadow: -15px 0 15px #6C3CF7;
         }
         .nav-btn-hackathon {
           background: #fff;
@@ -676,9 +670,8 @@ export default function Navbar() {
               <div className="nav-marquee-content">
                 {[1, 2, 3, 4].map((i) => (
                   <div key={i} className="nav-announcement-text" style={{ paddingRight: '60px', display: 'flex', alignItems: 'center', gap: '10px', color: '#fff' }}>
-                    <span style={{ background: '#FFE600', color: '#111', padding: '2px 8px', borderRadius: '4px', fontWeight: 700, fontSize: '11px' }}>🚀 NEW</span>
                     <span style={{ fontSize: '15px', fontWeight: 600 }}>Be Part of Creative Hackathon 2026!</span>
-                    <span style={{ background: 'rgba(255,255,255,0.2)', color: '#fff', fontSize: '12px', fontWeight: 600, padding: '4px 10px', borderRadius: '20px', letterSpacing: '0' }}>Starts from 1st - 28th Aug, 2026</span>
+                    <span style={{ fontSize: '13px', fontWeight: 500, opacity: 0.85 }}>Starts from 1st - 28th Aug, 2026</span>
                   </div>
                 ))}
               </div>
@@ -695,7 +688,7 @@ export default function Navbar() {
 
             {/* Logo */}
             <a href="/" className="nav-logo">
-              <img src={logoImg} alt="Skill Studio" style={{ height: '36px', width: 'auto', objectFit: 'contain' }} />
+              <img src={logoImg} alt="Skill Studio" style={{ height: '75px', width: 'auto', objectFit: 'contain' }} />
             </a>
 
             {/* Desktop nav links */}
@@ -795,7 +788,7 @@ export default function Navbar() {
                       <div className="mobile-sub-menu" style={{ maxHeight: 'none' }}>
                         <a href="/learners" className="mobile-sub-link" onClick={() => setOpen(false)}>For Schools</a>
                         <a href="/ccmm" className="mobile-sub-link" onClick={() => setOpen(false)}>CCMM</a>
-                        <a href="/educator" className="mobile-sub-link" onClick={() => setOpen(false)}>Educator Circle</a>
+                        <a href="/educator" className="mobile-sub-link" onClick={() => setOpen(false)}>The Educator Circle</a>
                       </div>
                     </div>
                   );

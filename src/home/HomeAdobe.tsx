@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger);
 const adobeFeatures = [
   {
     id: 1,
-    text: 'Industry standard tools learn on the same platform used by professional creators worldwide.'
+    text: 'Learn Industry standard tools on the same platform used by professional creators worldwide.'
   },
   {
     id: 2,
@@ -239,15 +239,16 @@ export default function HomeAdobe() {
             <img src="/landing/partner-pills.svg" alt="Skillzza x Adobe" className="ha-partner-img" /> */}
 
             <h2 className="ha-title" style={{ perspective: '800px' }}>
-              {"Digital Creativity & AI Skills Programme".split(' ').map((word, i) => (
+              {"Adobe Digital Creativity & AI Skills Programme".split(' ').map((word, i) => (
                 <span key={i} className="ha-word" style={{ display: 'inline-block', marginRight: '8px' }}>{word}</span>
               ))}
+              <span className="ha-word" style={{ display: 'inline-block', color: '#E82194', fontSize: '0.6em', fontWeight: 700 }}>(Free)</span>
             </h2>
 
             <p className="ha-subheadline">Turn Students into Future Creators</p>
 
             <p className="ha-desc">
-              A NEP-aligned programme for Grades 5-10 that builds real world skills in design, content creation, and AI through hands on, project based learning on Adobe Express.
+              A NEP-aligned programme for Grades 6-12 that builds real world skills in design, content creation, and AI through hands on, project based learning on Adobe Express.
             </p>
 
             <div className="ha-btn-wrap">

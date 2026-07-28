@@ -4,49 +4,19 @@ import img1 from '../../assets/digital creativity/img1.webp';
 import img2 from '../../assets/digital creativity/img2.webp';
 import img3 from '../../assets/digital creativity/img3.webp';
 
-const aiCapabilities = [
-  {
-    number: "01",
-    title: "Creativity",
-    desc: "Creativity defines the future of teaching, together with research about critical to create-to a straight line... Empowering students to express their unique ideas through digital art and design, fostering an environment where imagination knows no bounds.",
-    color: "purple",
-    bgClass: "bg-purple-500",
-    textClass: "text-purple-600",
-    borderClass: "border-purple-200",
-    icon: Lightbulb,
-    img: img1
-  },
-  {
-    number: "02",
-    title: "Generative AI",
-    desc: "Generative AI is estimated to generative and explore modern... Utilizing cutting-edge AI tools to assist in the creative process, allowing students to iterate faster and explore complex concepts with ease and precision.",
-    color: "orange",
-    bgClass: "bg-orange-500",
-    textClass: "text-orange-500",
-    borderClass: "border-orange-200",
-    icon: Network,
-    img: img2
-  },
-  {
-    number: "03",
-    title: "AI Literacy",
-    desc: "AI Literacy is comprises reflecting AI education across for... Building a foundational understanding of how AI works, its ethical implications, and how to leverage it responsibly as a powerful creative partner.",
-    color: "blue",
-    bgClass: "bg-blue-500",
-    textClass: "text-blue-500",
-    borderClass: "border-blue-200",
-    icon: BookOpen,
-    img: img3
-  }
+const aiImages = [
+  '/landing/1image.png',
+  '/landing/2image.png',
+  '/landing/3image.png'
 ];
 
 export default function CreativeAI() {
   return (
-    <section className="py-12 md:py-16 bg-[#FAFCFD] overflow-hidden">
+    <section className="py-12 md:py-16 bg-[#fafbfd] overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6">
 
         {/* Header */}
-        <div className="mb-16 max-w-3xl">
+        <div className="mb-8 max-w-3xl">
           <ScrollReveal>
             <h2 className="text-4xl md:text-[3.5rem] font-extrabold mb-4 font-display leading-tight tracking-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-fuchsia-500">Creative </span>
@@ -60,13 +30,18 @@ export default function CreativeAI() {
           </ScrollReveal>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-          {aiCapabilities.map((item, index) => (
-            <ScrollReveal key={index} delay={index * 0.1} direction="up" className="h-full">
-              <div className="relative w-full h-full bg-white rounded-3xl overflow-hidden border-[1.5px] border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-                <img src={item.img} alt={item.title} className="w-full h-full object-cover object-top" />
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 max-w-6xl mx-auto items-center justify-center">
+          {aiImages.map((imgSrc, index) => (
+            <ScrollReveal key={index} delay={index * 0.1} direction="up" className="w-full flex justify-center h-auto">
+              <img 
+                src={imgSrc} 
+                alt={`Creative AI feature ${index + 1}`} 
+                className={`w-full h-auto object-contain object-top transition-all duration-400 ease-in-out cursor-pointer ${
+                  index === 0 
+                    ? 'scale-[1.08] hover:scale-[1.12] hover:-translate-y-2' 
+                    : 'scale-100 hover:scale-[1.04] hover:-translate-y-2'
+                }`} 
+              />
             </ScrollReveal>
           ))}
         </div>
