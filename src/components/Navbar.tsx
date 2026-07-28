@@ -666,7 +666,7 @@ export default function Navbar() {
         {/* ═══ LEVEL 1 - Announcement Bar ═══ */}
         <div className="nav-announcement">
           <div className="nav-announcement-inner">
-            <div className="nav-marquee-wrapper" onClick={() => window.location.href = '/digital-creativity'} style={{ cursor: 'pointer' }}>
+            <div className="nav-marquee-wrapper" onClick={() => window.location.href = 'https://skillzza-hackathon.services.ailifebot.com'} style={{ cursor: 'pointer' }}>
               <div className="nav-marquee-content">
                 {[1, 2, 3, 4].map((i) => (
                   <div key={i} className="nav-announcement-text" style={{ paddingRight: '60px', display: 'flex', alignItems: 'center', gap: '10px', color: '#fff' }}>
@@ -677,7 +677,7 @@ export default function Navbar() {
               </div>
             </div>
             <div className="nav-announcement-actions">
-              <a href="/login" className="nav-btn-hackathon">Register Your School Today!</a>
+              <a href="https://skillzza-hackathon.services.ailifebot.com/register" className="nav-btn-hackathon">Register Your School Today!</a>
             </div>
           </div>
         </div>
