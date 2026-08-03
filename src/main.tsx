@@ -9,6 +9,7 @@ const AiPlaygroundApp = lazy(() => import('./AiPlaygroundApp.tsx'));
 const SkillStudioApp = lazy(() => import('./SkillStudioApp.tsx'));
 const DigitalCreativityApp = lazy(() => import('./DigitalCreativityApp.tsx'));
 const InternationalStudioApp = lazy(() => import('./InternationalStudioApp.tsx'));
+const StudentsApp = lazy(() => import('./StudentsApp.tsx'));
 const LearnersApp = lazy(() => import('./LearnersApp.tsx'));
 const App = lazy(() => import('./App.tsx'));
 const LoginApp = lazy(() => import('./LoginApp.tsx'));
@@ -27,6 +28,7 @@ function AppRouter() {
     path === '/skill-studio' ? <SkillStudioApp /> :
     path === '/digital-creativity' ? <DigitalCreativityApp /> :
     path === '/international-studio' ? <InternationalStudioApp /> :
+    path === '/students' ? <StudentsApp /> :
     path === '/learners' ? <LearnersApp /> :
     path === '/virtual-internship' ? <App /> :
     path === '/login' ? <LoginApp /> :

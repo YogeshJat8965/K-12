@@ -10,7 +10,7 @@ const NAV_LINKS = [
     href: '/skill-studio',
     dropdown: [
       { label: 'For Schools', href: '/skill-studio' },
-      { label: 'For Students', href: '/international-studio' },
+      { label: 'For Students', href: '/students' },
     ],
   },
   {
@@ -44,7 +44,7 @@ const NAV_LINKS = [
       {
         title: 'Learners Segment',
         links: [
-          { label: 'For Students', href: '#' },
+          { label: 'For Students', href: '/students' },
           { label: 'For Schools', href: '/learners' },
           { label: 'For Educator', href: '#' },
         ]
