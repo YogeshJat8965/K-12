@@ -1,5 +1,5 @@
 import React from 'react';
-import stepsImg from '../../assets/for students/steps.png';
+import stepsImg from '../../assets/for students/steps.webp';
 
 export default function StudentJourney() {
   return (

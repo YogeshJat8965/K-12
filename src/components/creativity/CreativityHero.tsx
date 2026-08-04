@@ -25,8 +25,8 @@ export default function CreativityHero() {
           <div className="w-full lg:w-3/5 relative z-20">
             <ScrollReveal>
               <h1 className="text-4xl sm:text-5xl lg:text-[3.8rem] font-extrabold text-[#0B192C] leading-[1.1] mb-6 tracking-tight">
-                Digital Creativity & <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6C3CF7] to-[#F97316]">AI Skills for K-12</span>
+                Creativity and AI, <br />
+                built for the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6C3CF7] to-[#F97316]">K-12 classroom</span>
               </h1>
             </ScrollReveal>
 
@@ -39,7 +39,7 @@ export default function CreativityHero() {
 
             <ScrollReveal delay={0.2}>
               <p className="text-slate-600 text-sm sm:text-base font-medium leading-relaxed max-w-lg mb-10">
-                Empowering students and educators with future-ready digital skills through AI-powered learning using Adobe Express. Aligned with the vision of the National Education Policy 2020, the programme fosters creativity, design thinking, digital literacy, and experiential learning.
+                Skillzza helps students imagine, design and build with confidence and gives teachers the tools and training to lead the way. Running on Adobe Express for Education, the programme weaves creativity, design thinking, digital literacy and real AI skills into everyday learning.
               </p>
             </ScrollReveal>
 
@@ -65,9 +65,14 @@ export default function CreativityHero() {
 
             {/* Buttons */}
             <ScrollReveal delay={0.4}>
-              <button className="px-8 py-3.5 bg-gradient-to-r from-[#6C3CF7] to-[#F97316] text-white rounded-full font-bold text-sm sm:text-base hover:shadow-lg transition-all hover:scale-[1.02] active:scale-95 uppercase tracking-wide">
-                REGISTER YOUR SCHOOL NOW
-              </button>
+              <div className="flex flex-col sm:flex-row items-center gap-4">
+                <button className="px-8 py-3.5 bg-gradient-to-r from-[#6C3CF7] to-[#F97316] text-white rounded-full font-bold text-sm sm:text-base hover:shadow-lg transition-all hover:scale-[1.02] active:scale-95 uppercase tracking-wide w-full sm:w-auto">
+                  REGISTER YOUR SCHOOL
+                </button>
+                <button className="px-8 py-3.5 bg-white text-slate-900 border-2 border-slate-200 rounded-full font-bold text-sm sm:text-base hover:border-slate-300 hover:shadow-md transition-all hover:scale-[1.02] active:scale-95 uppercase tracking-wide w-full sm:w-auto">
+                  REGISTER AS A TEACHER
+                </button>
+              </div>
             </ScrollReveal>
           </div>
 

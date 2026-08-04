@@ -140,17 +140,13 @@ export default function HomeEcosystem() {
         }
 
         .he-badge {
-          display: inline-block;
-          border: 1px solid #D6E0FF;
-          background: #F0F4FF;
-          color: #4B5563;
-          font-weight: 600;
-          font-size: 12px;
-          padding: 6px 20px;
-          border-radius: 30px;
+          color: #6C3CF7;
+          font-weight: 700;
+          font-size: 16px;
           text-transform: uppercase;
-          letter-spacing: 0.5px;
-          margin-bottom: 24px;
+          letter-spacing: 1.5px;
+          margin-bottom: 16px;
+          display: inline-block;
         }
 
         .he-title {

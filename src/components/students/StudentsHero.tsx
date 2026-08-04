@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight, HelpCircle } from 'lucide-react';
-import heroImg from '../../assets/for students/heroImg.png';
+import heroImg from '../../assets/for students/heroImg.webp';
 
 export default function StudentsHero() {
   return (

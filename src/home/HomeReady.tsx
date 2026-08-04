@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import bgImage from '../assets/Image 19.webp';
 import studentImg from '../assets/Image 18.webp';
 import icon1 from '../assets/mental_18558397.svg';
@@ -6,6 +6,7 @@ import icon2 from '../assets/workshop_11933372.svg';
 import icon3 from '../assets/g2157.svg';
 import icon4 from '../assets/rocket_3064028.svg';
 import icon5 from '../assets/11-Leadership.svg';
+import CCMMQuizModal from '../components/CCMMQuizModal';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -52,6 +53,7 @@ const stepsData = [
 export default function HomeReady() {
   const sectionRef = useRef<HTMLElement>(null);
   const leftImgRef = useRef<HTMLImageElement>(null);
+  const [isQuizOpen, setIsQuizOpen] = useState(false);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -473,12 +475,14 @@ export default function HomeReady() {
           </div>
 
           <div className="hr-cta-area">
-            <button onClick={() => window.location.href = '/ccmm'} className="hr-cta-btn">Take the CCMM Assessment →</button>
+            <button onClick={() => setIsQuizOpen(true)} className="hr-cta-btn">Take the CCMM Assessment →</button>
             <p className="hr-cta-helper">Become an AI-Ready
               Institution</p>
           </div>
         </div>
       </section>
+
+      <CCMMQuizModal isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
     </>
   );
 }

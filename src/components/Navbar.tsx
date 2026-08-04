@@ -46,7 +46,7 @@ const NAV_LINKS = [
         links: [
           { label: 'For Students', href: '/students' },
           { label: 'For Schools', href: '/learners' },
-          { label: 'For Educator', href: '#' },
+          { label: 'For Educator', href: '/educator' },
         ]
       },
       {
@@ -365,7 +365,6 @@ export default function Navbar() {
           color: #1A1A2E;
         }
 
-        /* Dropdown */
         .nav-dropdown {
           position: absolute;
           top: 100%;
@@ -381,6 +380,14 @@ export default function Navbar() {
           visibility: hidden;
           transition: all 0.2s ease;
           pointer-events: none;
+        }
+        .nav-dropdown::before {
+          content: '';
+          position: absolute;
+          top: -15px;
+          left: 0;
+          right: 0;
+          height: 15px;
         }
         .nav-item:hover .nav-dropdown {
           opacity: 1;
@@ -421,6 +428,14 @@ export default function Navbar() {
           transition: all 0.2s ease;
           pointer-events: none;
           transform: translateY(10px);
+        }
+        .nav-mega-menu::before {
+          content: '';
+          position: absolute;
+          top: -15px;
+          left: 0;
+          right: 0;
+          height: 15px;
         }
         .nav-item:hover .nav-mega-menu {
           opacity: 1;

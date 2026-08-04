@@ -261,26 +261,6 @@ export default function WhySkillzzaVI() {
           color: #4B5563;
         }
 
-        /* Dot pattern at bottom */
-        .wsvi-dots {
-          display: grid;
-          grid-template-columns: repeat(5, 6px);
-          grid-template-rows: repeat(3, 6px);
-          gap: 5px;
-          position: relative;
-          z-index: 1;
-        }
-        .wsvi-dot {
-          width: 5px;
-          height: 5px;
-          border-radius: 50%;
-          opacity: 0.4;
-          transition: opacity 0.3s ease;
-        }
-        .wsvi-card:hover .wsvi-dot {
-          opacity: 0.7;
-        }
-
         /* Responsive */
         @media (max-width: 1200px) {
           .wsvi-grid { grid-template-columns: repeat(3, 1fr); }
@@ -339,16 +319,6 @@ export default function WhySkillzzaVI() {
                 {/* Description */}
                 <p className="wsvi-card-desc">{card.desc}</p>
 
-                {/* Dot pattern */}
-                <div className="wsvi-dots">
-                  {Array.from({ length: 15 }).map((_, i) => (
-                    <div
-                      key={i}
-                      className="wsvi-dot"
-                      style={{ backgroundColor: card.color }}
-                    />
-                  ))}
-                </div>
               </div>
             ))}
           </div>

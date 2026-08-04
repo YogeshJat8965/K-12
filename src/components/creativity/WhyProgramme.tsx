@@ -1,48 +1,48 @@
-import { Zap, Cpu, BookOpenCheck, Users2, Award, Palette } from 'lucide-react';
+import { Layout, Sparkles, Mic, Rocket, Palette, Users } from 'lucide-react';
 import ScrollReveal from '../ScrollReveal';
 
 const benefits = [
   {
-    icon: Zap,
-    title: "Future-Ready Skills",
-    desc: "Equipping students with essential digital skills that prepare them for the future workforce and creative economy.",
+    icon: Layout,
+    title: "One studio for every project",
+    desc: "A single editor that does it all - students can turn a written biography into a short film, or build a narrated science explainer with music, in just a few steps.",
     gradient: "from-amber-400 to-orange-600",
-    shape: "rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%]", // Blob
+    shape: "rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%]",
   },
   {
-    icon: Cpu,
-    title: "Classroom Innovation",
-    desc: "Integrating cutting-edge AI tools and creative methodologies to transform traditional classroom learning.",
+    icon: Sparkles,
+    title: "AI that sparks ideas",
+    desc: "Built-in generative AI helps students break through a blank page and create original, high-quality images ready to drop straight into a project.",
     gradient: "from-blue-400 to-indigo-600",
-    shape: "rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%]", // Organic
+    shape: "rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%]",
   },
   {
-    icon: BookOpenCheck,
-    title: "Curriculum Aligned",
-    desc: "Ensuring all learning modules are perfectly aligned with educational standards and the vision of NEP 2020.",
+    icon: Mic,
+    title: "Give lessons a voice",
+    desc: "Students record their own narration and use it to bring animated characters to life - a fresh way to practise communication while they create.",
     gradient: "from-emerald-400 to-teal-600",
-    shape: "rounded-[40%_60%_70%_30%_/_40%_50%_50%_60%]", // Squircle
+    shape: "rounded-[40%_60%_70%_30%_/_40%_50%_50%_60%]",
   },
   {
-    icon: Users2,
-    title: "Collaborative Learning",
-    desc: "Fostering a collaborative environment where students and educators can learn, create, and share together.",
+    icon: Rocket,
+    title: "A head start for every project",
+    desc: "Thousands of education-focused templates, graphics, photos and videos mean students never have to begin from scratch.",
     gradient: "from-purple-400 to-pink-600",
-    shape: "rounded-[70%_30%_50%_50%_/_30%_30%_70%_70%]", // Shield-like
-  },
-  {
-    icon: Award,
-    title: "Recognition & Certification",
-    desc: "Providing industry-recognized digital certificates and school-wide recognition for creative excellence.",
-    gradient: "from-red-400 to-rose-600",
-    shape: "rounded-[50%_50%_20%_80%_/_20%_80%_50%_50%]", // Teardrop
+    shape: "rounded-[70%_30%_50%_50%_/_30%_30%_70%_70%]",
   },
   {
     icon: Palette,
-    title: "Creative Tools",
-    desc: "Access to professional-grade creative tools like Adobe Express and a wealth of educational resources.",
+    title: "Draw, paint and explore",
+    desc: "A full set of digital art tools - more than fifty brushes from charcoal to watercolour, plus drawing templates and effects to play with.",
+    gradient: "from-red-400 to-rose-600",
+    shape: "rounded-[50%_50%_20%_80%_/_20%_80%_50%_50%]",
+  },
+  {
+    icon: Users,
+    title: "Better together",
+    desc: "Students build the same project as a team inside Adobe Express, sharing feedback and following each other’s progress as the work takes shape.",
     gradient: "from-fuchsia-400 to-purple-600",
-    shape: "rounded-[30%_70%_40%_60%_/_50%_30%_70%_50%]", // Star-ish
+    shape: "rounded-[30%_70%_40%_60%_/_50%_30%_70%_50%]",
   }
 ];
 
@@ -54,11 +54,11 @@ export default function WhyProgramme() {
         {/* Heading */}
         <div className="text-center mb-24">
           <ScrollReveal>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 font-display tracking-tight leading-tight">
-              Why This Programme?
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 font-display tracking-tight leading-tight px-4">
+              What students can create with Adobe Express
             </h2>
-            <p className="mt-6 text-slate-500 max-w-2xl mx-auto text-lg font-medium">
-              A comprehensive educational journey designed to empower the next generation of digital creators.
+            <p className="mt-6 text-slate-500 max-w-3xl mx-auto text-lg font-medium px-4">
+              The whole programme runs on Adobe Express - a professional-grade creative studio, simplified for the classroom. Here’s what that puts in students’ hands.
             </p>
           </ScrollReveal>
         </div>

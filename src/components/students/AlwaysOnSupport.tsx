@@ -1,5 +1,5 @@
 import React from 'react';
-import cardsImg from '../../assets/for students/cards.png';
+import cardsImg from '../../assets/for students/cards.webp';
 
 const shimmerStyle = `
   @keyframes shimmer-sweep {

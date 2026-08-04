@@ -141,10 +141,10 @@ export default function HomeLearningEcosystem() {
         .hle-badge {
           color: #6C3CF7;
           font-weight: 700;
-          font-size: 13px;
+          font-size: 16px;
           text-transform: uppercase;
-          letter-spacing: 1px;
-          margin-bottom: 12px;
+          letter-spacing: 1.5px;
+          margin-bottom: 16px;
           display: block;
         }
 
@@ -382,7 +382,7 @@ export default function HomeLearningEcosystem() {
 
           <div className="hle-grid" ref={gridRef} style={{ marginTop: '-40px' }}>
             {pillarsData.map((item, idx) => ( 
-              <a href={item.link} className="hle-card" key={idx} style={{ textDecoration: 'none', cursor: item.link === '#' ? 'default' : 'pointer', display: 'block' }} onClick={(e) => { if(item.link === '#') e.preventDefault(); }}>
+              <a href={item.link} className="hle-card" key={idx} style={{ textDecoration: 'none', cursor: item.link === '#' ? 'default' : 'pointer', display: 'flex' }} onClick={(e) => { if(item.link === '#') e.preventDefault(); }}>
                 <div className="hle-img-wrap">
                   <img src={item.img} alt={item.title} />
                 </div>

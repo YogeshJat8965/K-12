@@ -1,9 +1,7 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, Suspense, lazy } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from '@studio-freight/lenis';
-import Particles from '@tsparticles/react';
-import { loadSlim } from '@tsparticles/slim';
 
 import Navbar from './components/Navbar';
 import HomeHero from './home/HomeHero';
@@ -21,6 +19,8 @@ import HomeCTA from './home/HomeCTA';
 import './home/HomeResponsive.css';
 import HomeLearningEcosystem from './home/HomeLearningEcosystem';
 import Footer from './components/Footer';
+
+const ParticlesBackground = lazy(() => import('./home/ParticlesBackground'));
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -74,10 +74,6 @@ export default function HomeApp() {
     };
   }, []);
 
-  const particlesInit = async (engine: any) => {
-    await loadSlim(engine);
-  };
-
   return (
     <div style={{ minHeight: '100vh', background: '#fff', fontFamily: "'Poppins', sans-serif" }}>
       
@@ -99,32 +95,9 @@ export default function HomeApp() {
 
       {/* Global Subtle Particles Background */}
       <div style={{ position: 'fixed', inset: 0, pointerEvents: 'none', zIndex: 0, opacity: 0.2 }}>
-        <Particles
-          id="tsparticles"
-          init={particlesInit}
-          options={{
-            background: { color: { value: "transparent" } },
-            fpsLimit: 60,
-            interactivity: { events: { onHover: { enable: false }, resize: true } },
-            particles: {
-              color: { value: "#6C2BD9" },
-              links: { enable: false },
-              move: {
-                direction: "none",
-                enable: true,
-                outModes: { default: "bounce" },
-                random: true,
-                speed: 0.3,
-                straight: false,
-              },
-              number: { density: { enable: true, area: 800 }, value: 40 },
-              opacity: { value: 0.3, animation: { enable: true, speed: 0.5, minimumValue: 0.1 } },
-              shape: { type: "circle" },
-              size: { value: { min: 1, max: 3 }, random: true },
-            },
-            detectRetina: true,
-          }}
-        />
+        <Suspense fallback={null}>
+          <ParticlesBackground />
+        </Suspense>
       </div>
 
       {/* Main Content */}

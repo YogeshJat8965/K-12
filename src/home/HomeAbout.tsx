@@ -114,7 +114,7 @@ export default function HomeAbout() {
         .ha-label {
           color: #6C3CF7;
           font-weight: 700;
-          font-size: 18px;
+          font-size: 16px;
           letter-spacing: 1.5px;
           text-transform: uppercase;
           margin-bottom: 16px;

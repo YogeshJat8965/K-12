@@ -1,0 +1,219 @@
+import React, { useState, useEffect } from 'react';
+import { X, ChevronRight, CheckCircle2, ArrowRight } from 'lucide-react';
+
+interface CCMMQuizModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const QUIZ_DATA = [
+  {
+    question: "Beyond a computer class, how far has AI & emerging-tech learning spread across your grades?",
+    options: [
+      { text: "Not yet — it’s on our radar", score: 0 },
+      { text: "A pilot in a few grades", score: 1 },
+      { text: "Across most grades", score: 2 },
+      { text: "It’s core to how we teach", score: 3 }
+    ]
+  },
+  {
+    question: "How many of your teachers — across all subjects — are trained in AI literacy?",
+    options: [
+      { text: "None yet", score: 0 },
+      { text: "A few champions", score: 1 },
+      { text: "Most of them", score: 2 },
+      { text: "All, with ongoing development", score: 3 }
+    ]
+  },
+  {
+    question: "Do you have a dedicated AI / innovation lab or Centre of Excellence on campus?",
+    options: [
+      { text: "No", score: 0 },
+      { text: "We’re planning one", score: 1 },
+      { text: "A basic lab is running", score: 2 },
+      { text: "A full CoE with student projects", score: 3 }
+    ]
+  },
+  {
+    question: "Is your curriculum mapped to NEP 2020 and global frameworks with real-world projects?",
+    options: [
+      { text: "Not yet", score: 0 },
+      { text: "Partly", score: 1 },
+      { text: "Mostly aligned", score: 2 },
+      { text: "Fully — with industry capstones", score: 3 }
+    ]
+  },
+  {
+    question: "Do your students build and showcase their own AI / innovation projects?",
+    options: [
+      { text: "Not really", score: 0 },
+      { text: "Occasionally", score: 1 },
+      { text: "Regularly", score: 2 },
+      { text: "We host events & mentor other schools", score: 3 }
+    ]
+  },
+  {
+    question: "How ready is your leadership team with a clear AI vision and roadmap?",
+    options: [
+      { text: "Just exploring", score: 0 },
+      { text: "Interested, no plan yet", score: 1 },
+      { text: "A plan is in progress", score: 2 },
+      { text: "Vision & roadmap are live", score: 3 }
+    ]
+  }
+];
+
+const STAGES = [
+  { max: 2, name: 'Stage 1 · Aware', color: 'from-slate-400 to-slate-600', message: "You recognise AI as a future imperative. CCMM sets your baseline and shows the fastest first moves." },
+  { max: 6, name: 'Stage 2 · Emerging', color: 'from-blue-400 to-blue-600', message: "Foundations are forming — pilots and early training. The path to schoolwide integration is clear." },
+  { max: 10, name: 'Stage 3 · Integrated', color: 'from-indigo-400 to-indigo-600', message: "AI is embedded across grades and most educators are AI-literate. Your Centre of Excellence is next." },
+  { max: 14, name: 'Stage 4 · Advanced', color: 'from-purple-400 to-purple-600', message: "A functional CoE and industry-aligned curriculum are live. You’re close to cognitive leadership." },
+  { max: 18, name: 'Stage 5 · Cognitive', color: 'from-emerald-400 to-emerald-600', message: "You’re a benchmark hub. CCMM helps you formalise, certify, and mentor the wider ecosystem." }
+];
+
+export default function CCMMQuizModal({ isOpen, onClose }: CCMMQuizModalProps) {
+  const [currentStep, setCurrentStep] = useState(0);
+  const [scores, setScores] = useState<number[]>([]);
+  const [showResult, setShowResult] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      setCurrentStep(0);
+      setScores([]);
+      setShowResult(false);
+      setIsClosing(false);
+      document.body.style.overflow = 'hidden';
+    } else {
+      setIsClosing(false);
+      document.body.style.overflow = '';
+    }
+  }, [isOpen]);
+
+  const handleClose = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      onClose();
+    }, 300);
+  };
+
+  if (!isOpen && !isClosing) return null;
+
+  const handleSelect = (score: number) => {
+    const newScores = [...scores, score];
+    setScores(newScores);
+    
+    if (currentStep < QUIZ_DATA.length - 1) {
+      setCurrentStep(prev => prev + 1);
+    } else {
+      setShowResult(true);
+    }
+  };
+
+  const totalScore = scores.reduce((a, b) => a + b, 0);
+  const resultStage = STAGES.find(s => totalScore <= s.max) || STAGES[STAGES.length - 1];
+
+  return (
+    <div className={`fixed inset-0 z-[9999] flex items-center justify-center font-poppins transition-all duration-300 ${isClosing ? 'opacity-0' : 'opacity-100'}`}>
+      
+      {/* Backdrop */}
+      <div 
+        className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity duration-300"
+        onClick={handleClose}
+      />
+
+      {/* Modal Container */}
+      <div className={`relative bg-white w-full max-w-2xl mx-4 rounded-3xl shadow-2xl overflow-hidden flex flex-col transition-all duration-500 transform ${isClosing ? 'scale-95 translate-y-4' : 'scale-100 translate-y-0'}`}>
+        
+        {/* Header */}
+        <div className="relative p-6 md:p-8 bg-slate-50 border-b border-slate-100 flex items-center justify-between">
+          <div>
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-1">
+              {showResult ? "Your CCMM Assessment Result" : "CCMM Assessment"}
+            </h2>
+            {!showResult && (
+              <p className="text-sm font-medium text-slate-500">
+                Question {currentStep + 1} of {QUIZ_DATA.length}
+              </p>
+            )}
+          </div>
+          <button 
+            onClick={handleClose}
+            className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-slate-400 hover:text-slate-700 shadow-sm border border-slate-100 transition-colors"
+          >
+            <X size={20} />
+          </button>
+
+          {/* Progress Bar */}
+          {!showResult && (
+            <div className="absolute bottom-0 left-0 h-1 bg-slate-100 w-full">
+              <div 
+                className="h-full bg-gradient-to-r from-blue-500 to-indigo-600 transition-all duration-500 ease-out"
+                style={{ width: `${((currentStep) / QUIZ_DATA.length) * 100}%` }}
+              />
+            </div>
+          )}
+        </div>
+
+        {/* Content Body */}
+        <div className="p-6 md:p-10 relative bg-white min-h-[400px] flex flex-col justify-center">
+          
+          {!showResult ? (
+            <div className="animate-in fade-in slide-in-from-right-8 duration-500">
+              <h3 className="text-2xl font-bold text-slate-800 leading-snug mb-8">
+                {QUIZ_DATA[currentStep].question}
+              </h3>
+              
+              <div className="flex flex-col gap-3">
+                {QUIZ_DATA[currentStep].options.map((option, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => handleSelect(option.score)}
+                    className="w-full text-left p-4 md:p-5 rounded-2xl border-2 border-slate-100 hover:border-indigo-500 hover:bg-indigo-50 transition-all duration-200 group flex items-center justify-between"
+                  >
+                    <span className="text-lg font-medium text-slate-700 group-hover:text-indigo-900 transition-colors">
+                      {option.text}
+                    </span>
+                    <div className="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-indigo-500 flex items-center justify-center transition-colors">
+                      <ChevronRight size={18} className="text-slate-400 group-hover:text-white transition-colors" />
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="animate-in fade-in zoom-in-95 duration-700 flex flex-col items-center text-center">
+              
+              <div className="w-24 h-24 mb-6 rounded-full bg-indigo-50 flex items-center justify-center">
+                <CheckCircle2 size={48} className="text-indigo-500" />
+              </div>
+
+              <span className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-3">
+                Total Score: {totalScore}/18
+              </span>
+              
+              <h3 className={`text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r ${resultStage.color} mb-6`}>
+                {resultStage.name}
+              </h3>
+              
+              <p className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed max-w-lg mx-auto mb-10">
+                {resultStage.message}
+              </p>
+              
+              <button 
+                onClick={handleClose}
+                className="bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-2"
+              >
+                Close & Explore Solutions
+                <ArrowRight size={18} />
+              </button>
+
+            </div>
+          )}
+
+        </div>
+
+      </div>
+    </div>
+  );
+}

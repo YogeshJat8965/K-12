@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 import ScrollReveal from '../ScrollReveal';
 import bgImg from '../../assets/Homepage (1920x 1080px) – 2/logo/background img.webp';
 
@@ -41,55 +43,101 @@ const cardsData = [
 ];
 
 export default function EcosystemTransformation() {
+  const [openIdx, setOpenIdx] = useState<number | null>(0);
+
+  const toggleAccordion = (idx: number) => {
+    setOpenIdx(openIdx === idx ? null : idx);
+  };
+
   return (
-    <section 
-      className="py-12 md:py-16 bg-[#F8F9FA] overflow-hidden bg-cover bg-center bg-no-repeat relative"
-      style={{ backgroundImage: `url("${bgImg}")` }}
-    >
-      <div className="absolute inset-0 bg-white/60 backdrop-blur-[2px]"></div>
-      <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+    <section className="py-16 md:py-24 bg-white font-poppins overflow-hidden">
+      <div className="max-w-[1300px] mx-auto px-6">
 
-        {/* Header */}
-        <div className="text-center mb-10 md:mb-12 w-full mx-auto">
-          <ScrollReveal>
-            <h2 className="text-[32px] md:text-[46px] font-extrabold text-[#1A1A2E] font-poppins mb-4 tracking-tight leading-tight md:whitespace-nowrap">
-              Transforming the Education Ecosystem
-            </h2>
-            <p className="text-[17px] md:text-[20px] text-[#4B5563] font-medium">
-              Through Digital Creativity & AI Learning.
-            </p>
-          </ScrollReveal>
-        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+          
+          {/* Left Column: Heading and Image */}
+          <div className="flex flex-col h-full">
+            <ScrollReveal>
+              <h2 className="text-[36px] md:text-[44px] lg:text-[48px] font-extrabold text-[#1A1A2E] leading-[1.2] tracking-tight mb-4">
+                Transforming the Education Ecosystem
+              </h2>
+              <p className="text-[18px] md:text-[20px] text-gray-500 font-medium mb-8">
+                Through Digital Creativity & AI Learning.
+              </p>
+            </ScrollReveal>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
-          {cardsData.map((card, idx) => (
-            <ScrollReveal key={idx} delay={0.2 * idx} direction="up">
-              <div className="bg-white rounded-[24px] p-8 md:p-10 shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)] border border-[#E5E7EB] hover:shadow-[0_20px_50px_-15px_rgba(108,60,247,0.15)] hover:border-[#6C3CF7]/30 transition-all duration-300 h-full flex flex-col group">
-                
-                {/* Card Title */}
-                <h3 className="text-[20px] md:text-[22px] font-bold text-[#E53E3E] mb-6 leading-tight group-hover:text-[#6C3CF7] transition-colors duration-300">
-                  {card.title}
-                </h3>
-                
-                {/* Divider */}
-                <div className="w-12 h-1 bg-[#E53E3E] rounded-full mb-8 group-hover:bg-[#6C3CF7] transition-colors duration-300"></div>
-                
-                {/* Bullet Points */}
-                <ul className="flex flex-col gap-4 flex-1">
-                  {card.items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <div className="mt-1.5 min-w-[6px] w-[6px] h-[6px] rounded-full bg-[#E53E3E] group-hover:bg-[#6C3CF7] transition-colors duration-300 shadow-[0_0_8px_rgba(229,62,62,0.5)] group-hover:shadow-[0_0_8px_rgba(108,60,247,0.5)]"></div>
-                      <span className="text-[14px] md:text-[15px] leading-relaxed text-[#4B5563] font-medium group-hover:text-[#1A1A2E] transition-colors duration-300">
-                        {item}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                
+            <ScrollReveal delay={0.2} className="flex-1 mt-auto">
+              <div className="w-full h-full min-h-[400px] lg:min-h-[500px] rounded-[16px] overflow-hidden shadow-lg border border-gray-100">
+                <img 
+                  src={bgImg} 
+                  alt="Transforming Education" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </ScrollReveal>
-          ))}
+          </div>
+
+          {/* Right Column: Text and Accordion */}
+          <div className="flex flex-col mt-4 lg:mt-0">
+            <ScrollReveal delay={0.1}>
+              <p className="text-[17px] text-gray-600 font-medium leading-[1.6] mb-8">
+                Our collaborative model is designed to offer exclusive access, high-value insights, and deep creative transformation for schools, teachers, and students alike.
+              </p>
+              
+              <h3 className="text-[15px] font-bold text-gray-800 uppercase tracking-wide mb-6 pb-2 border-b-2 border-gray-100">
+                Key Member Benefits
+              </h3>
+            </ScrollReveal>
+
+            <div className="flex flex-col gap-3">
+              {cardsData.map((card, idx) => {
+                const isOpen = openIdx === idx;
+                
+                return (
+                  <ScrollReveal key={idx} delay={0.2 + (idx * 0.1)}>
+                    <div 
+                      className={`border rounded-[12px] overflow-hidden transition-all duration-300 ${isOpen ? 'bg-[#FAFAFA] border-gray-300 shadow-sm' : 'bg-white border-gray-100 hover:border-gray-200'}`}
+                    >
+                      <button 
+                        onClick={() => toggleAccordion(idx)}
+                        className="w-full flex items-center justify-between p-5 lg:p-6 text-left focus:outline-none"
+                      >
+                        <div className="flex items-center gap-4">
+                          <div className={`w-2 h-2 rotate-45 transform transition-colors duration-300 ${isOpen ? 'bg-[#6C3CF7]' : 'bg-gray-400'}`}></div>
+                          <span className={`text-[17px] font-bold transition-colors duration-300 ${isOpen ? 'text-[#1A1A2E]' : 'text-gray-700'}`}>
+                            {card.title}
+                          </span>
+                        </div>
+                        <ChevronDown 
+                          className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#6C3CF7]' : ''}`} 
+                        />
+                      </button>
+
+                      <div 
+                        className={`transition-all duration-400 ease-in-out overflow-hidden ${isOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}
+                      >
+                        <div className="p-5 lg:p-6 pt-0 border-t border-gray-100/50">
+                          <ul className="flex flex-col gap-3 mt-4">
+                            {card.items.map((item, i) => (
+                              <li key={i} className="flex items-start gap-3">
+                                <div className="mt-2 min-w-[5px] w-[5px] h-[5px] rounded-full bg-[#F97316]"></div>
+                                <span className="text-[15px] text-gray-600 leading-relaxed font-medium">
+                                  {item}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+
+                    </div>
+                  </ScrollReveal>
+                );
+              })}
+            </div>
+
+          </div>
+
         </div>
 
       </div>
