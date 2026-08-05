@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { X, ChevronRight, CheckCircle2, ArrowRight } from 'lucide-react';
+import { X, ChevronRight, ArrowRight } from 'lucide-react';
+import imgStage1 from '../assets/CCMM/5 stages/1.webp';
+import imgStage2 from '../assets/CCMM/5 stages/2.webp';
+import imgStage3 from '../assets/CCMM/5 stages/3.webp';
+import imgStage4 from '../assets/CCMM/5 stages/4.webp';
+import imgStage5 from '../assets/CCMM/5 stages/5.webp';
 
 interface CCMMQuizModalProps {
   isOpen: boolean;
@@ -10,14 +15,14 @@ const QUIZ_DATA = [
   {
     question: "Beyond a computer class, how far has AI & emerging-tech learning spread across your grades?",
     options: [
-      { text: "Not yet — it’s on our radar", score: 0 },
+      { text: "Not yet - it’s on our radar", score: 0 },
       { text: "A pilot in a few grades", score: 1 },
       { text: "Across most grades", score: 2 },
       { text: "It’s core to how we teach", score: 3 }
     ]
   },
   {
-    question: "How many of your teachers — across all subjects — are trained in AI literacy?",
+    question: "How many of your teachers - across all subjects - are trained in AI literacy?",
     options: [
       { text: "None yet", score: 0 },
       { text: "A few champions", score: 1 },
@@ -40,7 +45,7 @@ const QUIZ_DATA = [
       { text: "Not yet", score: 0 },
       { text: "Partly", score: 1 },
       { text: "Mostly aligned", score: 2 },
-      { text: "Fully — with industry capstones", score: 3 }
+      { text: "Fully - with industry capstones", score: 3 }
     ]
   },
   {
@@ -64,11 +69,11 @@ const QUIZ_DATA = [
 ];
 
 const STAGES = [
-  { max: 2, name: 'Stage 1 · Aware', color: 'from-slate-400 to-slate-600', message: "You recognise AI as a future imperative. CCMM sets your baseline and shows the fastest first moves." },
-  { max: 6, name: 'Stage 2 · Emerging', color: 'from-blue-400 to-blue-600', message: "Foundations are forming — pilots and early training. The path to schoolwide integration is clear." },
-  { max: 10, name: 'Stage 3 · Integrated', color: 'from-indigo-400 to-indigo-600', message: "AI is embedded across grades and most educators are AI-literate. Your Centre of Excellence is next." },
-  { max: 14, name: 'Stage 4 · Advanced', color: 'from-purple-400 to-purple-600', message: "A functional CoE and industry-aligned curriculum are live. You’re close to cognitive leadership." },
-  { max: 18, name: 'Stage 5 · Cognitive', color: 'from-emerald-400 to-emerald-600', message: "You’re a benchmark hub. CCMM helps you formalise, certify, and mentor the wider ecosystem." }
+  { max: 2, title: 'Aware', img: imgStage1, bgClass: 'bg-green-50/50', textClass: 'text-[#1B9C54]', message: "AI is discussed but not yet structured. Isolated initiatives, no framework, no shared strategy." },
+  { max: 6, title: 'Emerging', img: imgStage2, bgClass: 'bg-blue-50/50', textClass: 'text-[#2563EB]', message: "Foundational programmes begin. Some teacher training, early student exposure, basic infrastructure." },
+  { max: 10, title: 'Integrated', img: imgStage3, bgClass: 'bg-purple-50/50', textClass: 'text-[#8B5CF6]', message: "AI is woven across the curriculum. Confident teachers, active CoE, measurable student outcomes." },
+  { max: 14, title: 'Advanced', img: imgStage4, bgClass: 'bg-orange-50/50', textClass: 'text-[#EA580C]', message: "The school leads in its region. Strong governance, student innovation, industry and community linkages." },
+  { max: 18, title: 'Cognitive', img: imgStage5, bgClass: 'bg-yellow-50/50', textClass: 'text-[#D97706]', message: "A genuinely future-ready institution. AI is part of the school's identity, ethics, and daily culture." }
 ];
 
 export default function CCMMQuizModal({ isOpen, onClose }: CCMMQuizModalProps) {
@@ -102,7 +107,7 @@ export default function CCMMQuizModal({ isOpen, onClose }: CCMMQuizModalProps) {
   const handleSelect = (score: number) => {
     const newScores = [...scores, score];
     setScores(newScores);
-    
+
     if (currentStep < QUIZ_DATA.length - 1) {
       setCurrentStep(prev => prev + 1);
     } else {
@@ -115,21 +120,21 @@ export default function CCMMQuizModal({ isOpen, onClose }: CCMMQuizModalProps) {
 
   return (
     <div className={`fixed inset-0 z-[9999] flex items-center justify-center font-poppins transition-all duration-300 ${isClosing ? 'opacity-0' : 'opacity-100'}`}>
-      
+
       {/* Backdrop */}
-      <div 
-        className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity duration-300"
+      <div
+        className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity duration-300"
         onClick={handleClose}
       />
 
       {/* Modal Container */}
       <div className={`relative bg-white w-full max-w-2xl mx-4 rounded-3xl shadow-2xl overflow-hidden flex flex-col transition-all duration-500 transform ${isClosing ? 'scale-95 translate-y-4' : 'scale-100 translate-y-0'}`}>
-        
+
         {/* Header */}
         <div className="relative p-6 md:p-8 bg-slate-50 border-b border-slate-100 flex items-center justify-between">
           <div>
             <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-1">
-              {showResult ? "Your CCMM Assessment Result" : "CCMM Assessment"}
+              {showResult ? "Your Assessment Result" : "CCMM Assessment"}
             </h2>
             {!showResult && (
               <p className="text-sm font-medium text-slate-500">
@@ -137,7 +142,7 @@ export default function CCMMQuizModal({ isOpen, onClose }: CCMMQuizModalProps) {
               </p>
             )}
           </div>
-          <button 
+          <button
             onClick={handleClose}
             className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-slate-400 hover:text-slate-700 shadow-sm border border-slate-100 transition-colors"
           >
@@ -147,7 +152,7 @@ export default function CCMMQuizModal({ isOpen, onClose }: CCMMQuizModalProps) {
           {/* Progress Bar */}
           {!showResult && (
             <div className="absolute bottom-0 left-0 h-1 bg-slate-100 w-full">
-              <div 
+              <div
                 className="h-full bg-gradient-to-r from-blue-500 to-indigo-600 transition-all duration-500 ease-out"
                 style={{ width: `${((currentStep) / QUIZ_DATA.length) * 100}%` }}
               />
@@ -157,13 +162,13 @@ export default function CCMMQuizModal({ isOpen, onClose }: CCMMQuizModalProps) {
 
         {/* Content Body */}
         <div className="p-6 md:p-10 relative bg-white min-h-[400px] flex flex-col justify-center">
-          
+
           {!showResult ? (
             <div className="animate-in fade-in slide-in-from-right-8 duration-500">
               <h3 className="text-2xl font-bold text-slate-800 leading-snug mb-8">
                 {QUIZ_DATA[currentStep].question}
               </h3>
-              
+
               <div className="flex flex-col gap-3">
                 {QUIZ_DATA[currentStep].options.map((option, idx) => (
                   <button
@@ -182,27 +187,32 @@ export default function CCMMQuizModal({ isOpen, onClose }: CCMMQuizModalProps) {
               </div>
             </div>
           ) : (
-            <div className="animate-in fade-in zoom-in-95 duration-700 flex flex-col items-center text-center">
-              
-              <div className="w-24 h-24 mb-6 rounded-full bg-indigo-50 flex items-center justify-center">
-                <CheckCircle2 size={48} className="text-indigo-500" />
+            <div className="animate-in fade-in zoom-in-95 duration-700 flex flex-col items-center">
+
+              <div className="mb-4 text-center">
+                <span className="text-sm font-bold text-slate-500 uppercase tracking-widest">
+                  Total Score: <span className="text-indigo-600">{totalScore}</span>/18
+                </span>
               </div>
 
-              <span className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-3">
-                Total Score: {totalScore}/18
-              </span>
-              
-              <h3 className={`text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r ${resultStage.color} mb-6`}>
-                {resultStage.name}
-              </h3>
-              
-              <p className="text-lg md:text-xl text-slate-600 font-medium leading-relaxed max-w-lg mx-auto mb-10">
-                {resultStage.message}
-              </p>
-              
-              <button 
+              {/* Result Card Match */}
+              <div className={`w-full max-w-[280px] rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-slate-100 flex flex-col items-center text-center ${resultStage.bgClass} mb-8`}>
+                <div className="w-full h-[160px] bg-white rounded-b-3xl overflow-hidden flex items-center justify-center p-4">
+                  <img src={resultStage.img} alt={resultStage.title} className="max-w-full max-h-full object-contain mix-blend-multiply" />
+                </div>
+                <div className="p-6">
+                  <h3 className={`text-2xl font-black mb-3 ${resultStage.textClass}`}>
+                    {resultStage.title}
+                  </h3>
+                  <p className="text-sm text-slate-600 font-medium leading-relaxed">
+                    {resultStage.message}
+                  </p>
+                </div>
+              </div>
+
+              <button
                 onClick={handleClose}
-                className="bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-2"
+                className="bg-[#111827] hover:bg-[#1f2937] text-white font-bold py-3.5 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2 w-full max-w-sm justify-center"
               >
                 Close & Explore Solutions
                 <ArrowRight size={18} />

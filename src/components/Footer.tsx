@@ -27,15 +27,6 @@ export default function Footer() {
                   <p className="text-black-600 text-[14px] font-semibold">+91 91369 61978</p>
                 </div>
 
-                <div className="flex flex-col gap-1">
-                  <span className="text-gray-800 text-[12px] font-semibold uppercase tracking-wider">UK Office</span>
-                  <p className="text-gray-600 text-[14px] leading-relaxed whitespace-nowrap">
-                    132 Drakes Way,<br />
-                    Swindon, SN3 3EH,<br />
-                    United Kingdom.
-                  </p>
-                  {/* <p className="text-black-600 text-[14px] font-semibold">+44 7500 794772</p> */}
-                </div>
               </div>
             </div>
 
@@ -79,14 +70,14 @@ export default function Footer() {
           <div className="flex flex-col gap-4 lg:mt-[72px]">
             <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">Virtual Internship</h3>
             <ul className="flex flex-col gap-3">
-              <li><span className="text-gray-600 text-[14px] cursor-default">GenAI Innovation Internship</span></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">AI & Data Engineering Professional Internship</span></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">Financial Literacy & Investment Internship</span></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">UX Design & Product Innovation Internship</span></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">Mental Wellness & Mindfulness Internship</span></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">Climate Action & Sustainability Internship</span></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">Entrepreneurship & Startup Innovation Internship</span></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">Digital Storytelling & Media Journalism Internship</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">GenAI Innovation</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">AI & Data Engineering Professional</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">Financial Literacy & Investment</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">UX Design & Product Innovation</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">Mental Wellness & Mindfulness</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">Climate Action & Sustainability</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">Entrepreneurship & Startup Innovation</span></li>
+              <li><span className="text-gray-600 text-[14px] cursor-default">Digital Storytelling & Media Journalism</span></li>
               {/* <li><span className="text-gray-600 text-[14px] cursor-default">Digital Marketing for Youth Start-up's</span></li> */}
               {/* <li><span className="text-gray-600 text-[14px] cursor-default">Deepfake Awareness & AI Media Literacy</span></li> */}
             </ul>

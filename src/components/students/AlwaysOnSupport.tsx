@@ -33,12 +33,12 @@ export default function AlwaysOnSupport() {
 
         {/* Description */}
         <p className="text-gray-600 text-[15px] md:text-[17px] leading-relaxed max-w-2xl mx-auto mb-0">
-          No matter which programme you're in, these capabilities travel with you — powered by the{' '}
+          No matter which programme you're in, these capabilities travel with you - powered by the{' '}
           <span className="text-[#B283FF] font-semibold">Skillzza Xperience Platform.</span>
         </p>
       </div>
 
-      {/* Image — flush against text, with hover animations */}
+      {/* Image - flush against text, with hover animations */}
       <div className="w-full flex justify-center m-0 p-0 leading-none">
         <div
           className="cards-img-wrapper relative w-full max-w-[1200px] overflow-hidden cursor-pointer"

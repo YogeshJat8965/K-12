@@ -49,14 +49,14 @@ export default function CcmmWhyExists() {
       ),
       bg: 'bg-[#EDE9FE]',
       lineColor: 'bg-[#5B45FF]',
-      desc: 'How do we compare to the best schools in India — and the world?'
+      desc: 'How do we compare to the best schools in India - and the world?'
     }
   ];
 
   return (
     <section className="w-full bg-white font-poppins py-16 lg:py-24 overflow-hidden">
       <div className="max-w-[1536px] mx-auto px-6 md:px-12 lg:px-20 relative z-10">
-        
+
         {/* Header Section */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-10 gap-6">
           <div className="flex flex-col">
@@ -65,7 +65,7 @@ export default function CcmmWhyExists() {
             </h2>
             <div className="w-16 h-1 bg-[#5B45FF] rounded-full"></div>
           </div>
-          
+
           {/* Decorative Line on right side */}
           <div className="hidden md:flex items-center flex-1 max-w-sm justify-end ml-auto">
             <div className="w-full h-0.5 bg-[#5B45FF]"></div>
@@ -79,7 +79,7 @@ export default function CcmmWhyExists() {
             The World Is Moving From The Information Age To The <span className="text-[#5B45FF] font-semibold">Cognitive Age.</span>
           </p>
           <p className="text-[#111827] font-bold text-[15px] md:text-[17px] leading-relaxed mb-6">
-            The Children In Classrooms Today Will Graduate Into A Workforce Where Artificial Intelligence, Generative AI, And Autonomous Agents Are Not Specialist Tools But The Basic Grammar Of Every Profession — From Medicine And Law To Design, Manufacturing, And Agriculture.
+            The Children In Classrooms Today Will Graduate Into A Workforce Where Artificial Intelligence, Generative AI, And Autonomous Agents Are Not Specialist Tools But The Basic Grammar Of Every Profession - From Medicine And Law To Design, Manufacturing, And Agriculture.
           </p>
           <p className="text-[#5B45FF] font-bold text-[15px] md:text-[17px] leading-relaxed">
             Yet Most Schools Have No Structured Way To Know:
@@ -89,8 +89,8 @@ export default function CcmmWhyExists() {
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {cards.map((card, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="bg-white border border-gray-200 rounded-2xl p-8 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_15px_40px_rgba(91,69,255,0.12)] hover:-translate-y-2 hover:border-[#5B45FF]/30 transition-all duration-300 ease-out flex flex-col items-center text-center group relative overflow-hidden"
             >
               {/* Subtle hover gradient background */}

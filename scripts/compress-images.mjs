@@ -37,12 +37,12 @@ async function convertFile(filePath) {
   }
 
   const webpPath = filePath.replace(/\.(png|jpg|jpeg)$/i, '.webp');
-  
+
   try {
     const originalStat = await stat(filePath);
     const originalSize = originalStat.size;
 
-    // Skip very small files (< 10KB) — not worth converting
+    // Skip very small files (< 10KB) - not worth converting
     if (originalSize < 10240) {
       skippedCount++;
       return;
@@ -63,7 +63,7 @@ async function convertFile(filePath) {
     const relPath = relative(ASSETS_DIR, filePath);
     console.log(`✅ ${relPath}: ${(originalSize / 1024 / 1024).toFixed(1)}MB → ${(newSize / 1024 / 1024).toFixed(1)}MB (-${savings}%)`);
   } catch (err) {
-    console.error(`❌ Failed: ${filePath} — ${err.message}`);
+    console.error(`❌ Failed: ${filePath} - ${err.message}`);
   }
 }
 
@@ -74,7 +74,7 @@ async function main() {
 
   const files = await getAllFiles(ASSETS_DIR);
   const imageFiles = files.filter(f => /\.(png|jpg|jpeg)$/i.test(f));
-  
+
   console.log(`Found ${imageFiles.length} image files to process.\n`);
 
   // Process in batches of 5 to avoid memory issues

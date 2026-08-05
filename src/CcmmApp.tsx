@@ -2,9 +2,11 @@ import React, { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CcmmHero from './components/ccmm/CcmmHero';
-import CcmmAiReady from './components/ccmm/CcmmAiReady';
-import CcmmWhyExists from './components/ccmm/CcmmWhyExists';
+import CcmmAgeShift from './components/ccmm/CcmmAgeShift';
+import CcmmBanner from './components/ccmm/CcmmBanner';
+import CcmmReportForm from './components/ccmm/CcmmReportForm';
 import CcmmPillars from './components/ccmm/CcmmPillars';
+import CcmmWhyExists from './components/ccmm/CcmmWhyExists';
 import CcmmStages from './components/ccmm/CcmmStages';
 import CcmmMeasures from './components/ccmm/CcmmMeasures';
 import CcmmCertification from './components/ccmm/CcmmCertification';
@@ -12,6 +14,7 @@ import CcmmCarries from './components/ccmm/CcmmCarries';
 import CcmmJourney from './components/ccmm/CcmmJourney';
 import CcmmWhySchool from './components/ccmm/CcmmWhySchool';
 import CcmmBegin from './components/ccmm/CcmmBegin';
+import CcmmCta from './components/ccmm/CcmmCta';
 
 export default function CcmmApp() {
   useEffect(() => {
@@ -24,16 +27,19 @@ export default function CcmmApp() {
       
       <main className="flex-1 w-full bg-white overflow-x-hidden">
         <CcmmHero />
-        <CcmmAiReady />
-        <CcmmWhyExists />
+        <CcmmAgeShift />
+        <CcmmBanner />
+        <CcmmReportForm />
         <CcmmPillars />
+        {/* <CcmmWhyExists /> */}
         <CcmmStages />
-        <CcmmMeasures />
+        {/* <CcmmMeasures /> */}
         <CcmmCertification />
         <CcmmCarries />
-        <CcmmJourney />
-        <CcmmWhySchool />
-        <CcmmBegin />
+        {/* <CcmmJourney /> */}
+        {/* <CcmmWhySchool /> */}
+        {/* <CcmmBegin /> */}
+        <CcmmCta />
       </main>
       
       <Footer />

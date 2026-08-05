@@ -4,16 +4,16 @@ import heroImg from '../../assets/for students/heroImg.webp';
 
 export default function StudentsHero() {
   return (
-    <section 
+    <section
       className="relative w-full min-h-screen flex items-center bg-[#070514] text-white pt-20 sm:pt-24 lg:pt-24 pb-20 lg:pb-28 overflow-hidden font-poppins"
     >
-      {/* Background Image — hidden on mobile, shown on md+ */}
-      <div 
+      {/* Background Image - hidden on mobile, shown on md+ */}
+      <div
         className="absolute inset-x-0 bottom-0 top-16 sm:top-20 lg:top-24 z-0 bg-cover bg-center bg-no-repeat lg:bg-right hidden md:block"
         style={{ backgroundImage: `url(${heroImg})` }}
       />
-      
-      {/* Gradient overlay — md+ only */}
+
+      {/* Gradient overlay - md+ only */}
       <div className="absolute inset-x-0 bottom-0 top-16 sm:top-20 lg:top-24 z-0 bg-gradient-to-r from-[#070514] via-[#070514]/90 to-transparent hidden md:block lg:w-[60%]"></div>
 
       {/* Full dark overlay on mobile so text is always readable */}
@@ -21,7 +21,7 @@ export default function StudentsHero() {
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 w-full relative z-10">
         <div className="w-full lg:w-[55%] flex flex-col items-start text-left pt-4 sm:pt-8 lg:pt-10">
-          
+
           <div className="text-[#B283FF] text-[11px] sm:text-[13px] font-bold tracking-widest uppercase mb-3 sm:mb-4 flex items-center gap-2 font-poppins">
             <span>FOR STUDENTS</span>
             <span className="text-[#B283FF]/50">|</span>
@@ -82,7 +82,7 @@ export default function StudentsHero() {
               <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
             </div>
           </button>
-          
+
         </div>
       </div>
     </section>
