@@ -70,7 +70,7 @@ export default function CcmmCarries() {
   return (
     <section className="w-full bg-white font-poppins py-10 lg:py-14 overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10">
-        
+
         {/* Header Section */}
         <div className="mb-8 text-center flex flex-col items-center">
           <span className="text-[#5B45FF] font-bold text-[13px] uppercase tracking-widest mb-2 block">
@@ -84,8 +84,8 @@ export default function CcmmCarries() {
         {/* List Items */}
         <div className="flex flex-col gap-3 max-w-[700px] mx-auto">
           {items.map((item, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="bg-white border border-gray-200 rounded-[16px] p-4 lg:p-5 flex items-center gap-6 shadow-[0_4px_15px_rgba(0,0,0,0.03)] hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(91,69,255,0.1)] hover:border-[#5B45FF]/30 transition-all duration-300 relative overflow-hidden group cursor-pointer"
             >
               {/* Subtle hover gradient background */}
@@ -104,13 +104,6 @@ export default function CcmmCarries() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Footer Text */}
-        <div className="mt-8 max-w-[700px] mx-auto text-center">
-          <p className="text-[#475569] text-sm md:text-[15px] font-medium leading-relaxed">
-            Primary alignment to <span className="font-bold text-[#111827]">UN Sustainable Development Goals 4, 5, 8, 9, 10 and 17.</span>
-          </p>
         </div>
 
       </div>

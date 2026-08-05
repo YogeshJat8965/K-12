@@ -19,7 +19,7 @@ const adobeFeatures = [
   },
   {
     id: 4,
-    text: 'Structured progression - ACE Level A (Foundation) → B (Advanced) → C (Mastery) → Influencer.'
+    text: 'Structured progression - ACE Level A (Foundation) → B (Advanced) → C (Mastery) → D (Influencer).'
   }
 ];
 
@@ -65,12 +65,26 @@ export default function HomeAdobe() {
           border-radius: 43px;
           padding: 30px clamp(40px, 5vw, 80px);
           display: flex;
-          align-items: flex-start;
+          flex-direction: column;
           gap: 40px;
           color: #1A1A2E;
           position: relative;
           overflow: hidden;
           box-shadow: 0px 10px 30px rgba(91, 50, 234, 0.1);
+        }
+
+        .ha-top-row {
+          display: flex;
+          align-items: flex-start;
+          gap: 40px;
+          width: 100%;
+        }
+
+        .ha-bottom-row {
+          display: grid;
+          grid-template-columns: 1.1fr 1fr;
+          gap: 40px;
+          width: 100%;
         }
 
         @keyframes runningBrightGradient {
@@ -164,6 +178,7 @@ export default function HomeAdobe() {
           flex: 1;
           display: flex;
           flex-direction: column;
+          align-items: center;
           gap: 0px;
           z-index: 2;
           padding-top: 0;
@@ -197,6 +212,7 @@ export default function HomeAdobe() {
           align-items: center;
           gap: 20px;
           box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+          height: 100%;
         }
 
         .ha-feature-bullet {
@@ -205,7 +221,6 @@ export default function HomeAdobe() {
           border-radius: 50%;
           background: #5B32EA;
           flex-shrink: 0;
-          margin-top: 2px; /* Align with first line of text */
         }
 
         .ha-feature-text {
@@ -217,7 +232,9 @@ export default function HomeAdobe() {
         }
 
         @media (max-width: 1200px) {
-          .ha-box { flex-direction: column; align-items: center; padding: 60px 30px; }
+          .ha-top-row { flex-direction: column; align-items: center; }
+          .ha-bottom-row { grid-template-columns: 1fr; gap: 16px; }
+          .ha-box { padding: 60px 30px; }
           .ha-content { width: 100%; text-align: center; }
           .ha-flagship-img, .ha-partner-img, .ha-btn { margin-left: auto; margin-right: auto; }
           .ha-partner-img { object-position: center; }
@@ -234,35 +251,48 @@ export default function HomeAdobe() {
 
       <section className="ha-container" ref={sectionRef}>
         <div className="ha-box" style={{ perspective: '1000px' }}>
-          <div className="ha-content">
-            {/* <img src="/landing/flagship-badge.svg" alt="Flagship Programme" className="ha-flagship-img" />
-            <img src="/landing/partner-pills.svg" alt="Skillzza x Adobe" className="ha-partner-img" /> */}
 
-            <h2 className="ha-title" style={{ perspective: '800px' }}>
-              {"Adobe Digital Creativity & AI Skills Programme".split(' ').map((word, i) => (
-                <span key={i} className="ha-word" style={{ display: 'inline-block', marginRight: '8px' }}>{word}</span>
-              ))}
-              <span className="ha-word" style={{ display: 'inline-block', color: '#E82194', fontSize: '0.6em', fontWeight: 700 }}>(Free)</span>
-            </h2>
+          {/* Top Row for Text and Image */}
+          <div className="ha-top-row">
+            <div className="ha-content">
+              <h2 className="ha-title" style={{ perspective: '800px' }}>
+                {"Adobe Digital Creativity & AI Skills Programme".split(' ').map((word, i) => (
+                  <span key={i} className="ha-word" style={{ display: 'inline-block', marginRight: '8px' }}>{word}</span>
+                ))}
+                <span className="ha-word" style={{ display: 'inline-block', color: '#E82194', fontSize: '0.6em', fontWeight: 700 }}>(Free)</span>
+              </h2>
 
-            <p className="ha-subheadline">Turn Students into Future Creators</p>
+              <p className="ha-subheadline">Turn Students into Future Creators</p>
 
-            <p className="ha-desc">
-              A NEP-aligned programme for Grades 6-12 that builds real world skills in design, content creation, and AI through hands on, project based learning on Adobe Express.
-            </p>
+              <p className="ha-desc">
+                A NEP-aligned programme for Grades 6-12 that builds real world skills in design, content creation, and AI through hands on, project based learning on Adobe Express.
+              </p>
 
-            <div className="ha-btn-wrap">
-              <button onClick={() => window.location.href = '/digital-creativity'} className="ha-btn">
-                Explore the Programme →
-              </button>
+              <div className="ha-btn-wrap">
+                <button onClick={() => window.location.href = '/digital-creativity'} className="ha-btn">
+                  Explore the Programme →
+                </button>
+              </div>
+            </div>
+
+            <div className="ha-visuals">
+              <img src="/landing/adobe-hero.webp" alt="Adobe Creativity" className="ha-main-img" />
             </div>
           </div>
 
-          <div className="ha-visuals">
-            <img src="/landing/adobe-hero.webp" alt="Adobe Creativity" className="ha-main-img" />
+          {/* Bottom Row for Cards */}
+          <div className="ha-bottom-row">
+            <div className="ha-feature-list">
+              {adobeFeatures.slice(2, 4).map((f) => (
+                <div key={f.id} className="ha-feature-card">
+                  <div className="ha-feature-bullet" />
+                  <p className="ha-feature-text">{f.text}</p>
+                </div>
+              ))}
+            </div>
 
             <div className="ha-feature-list">
-              {adobeFeatures.map((f) => (
+              {adobeFeatures.slice(0, 2).map((f) => (
                 <div key={f.id} className="ha-feature-card">
                   <div className="ha-feature-bullet" />
                   <p className="ha-feature-text">{f.text}</p>
@@ -270,6 +300,7 @@ export default function HomeAdobe() {
               ))}
             </div>
           </div>
+
         </div>
       </section>
     </>

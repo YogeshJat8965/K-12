@@ -5,10 +5,10 @@ import bannerImg from '../../assets/educator circle/banner.webp';
 export default function EducatorBanner() {
   return (
     <section className="w-full bg-white py-2 md:py-6 flex justify-center font-poppins">
-      <div className="w-full max-w-[1536px] mx-auto px-4 md:px-12 relative flex items-center justify-center">
+      <div className="w-full relative flex items-center justify-center">
  
         {/* Banner Image Container */}
-        <div className="relative w-full rounded-[32px] overflow-hidden shadow-lg group">
+        <div className="relative w-full overflow-hidden shadow-lg group">
           <img
             src={bannerImg}
             alt="Join the Educator Circle"

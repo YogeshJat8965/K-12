@@ -3,11 +3,11 @@ import { ArrowRight, Sparkles, Compass, Briefcase } from 'lucide-react';
 
 export default function StudentsCTA() {
   return (
-    <section className="w-full bg-white py-12 md:py-16 px-6 font-poppins relative overflow-hidden">
-      <div className="max-w-[1200px] mx-auto relative z-10">
+    <section className="w-full font-poppins relative overflow-hidden">
+      <div className="w-full relative z-10">
 
-        {/* Floating CTA Banner */}
-        <div className="relative w-full rounded-[2rem] overflow-hidden p-8 md:p-10 lg:p-12 shadow-2xl">
+        {/* Full-width CTA Banner */}
+        <div className="relative w-full overflow-hidden p-8 py-16 md:py-20 shadow-2xl">
 
           {/* Animated Background */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#2E1065] via-[#4C1D95] to-[#7C3AED] z-0" />
@@ -26,20 +26,29 @@ export default function StudentsCTA() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 w-full max-w-4xl mx-auto">
 
               {/* Button 1 */}
-              <button className="group w-full md:w-1/3 relative flex items-center justify-center gap-3 px-6 py-4 lg:py-5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(255,255,255,0.15)]">
+              <button 
+                onClick={() => window.location.href = '/login'}
+                className="group w-full md:w-1/3 relative flex items-center justify-center gap-3 px-6 py-4 lg:py-5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(255,255,255,0.15)]"
+              >
                 {/* <Sparkles className="w-5 h-5 text-[#F59E0B]" /> */}
                 <span className="text-white font-semibold text-[15px] lg:text-[16px] tracking-wide">Take the Skill DNA Test</span>
                 <div className="absolute inset-0 rounded-2xl border border-white/0 group-hover:border-white/50 transition-colors duration-300 pointer-events-none" />
               </button>
 
               {/* Button 2 */}
-              <button className="group w-full md:w-1/3 relative flex items-center justify-center gap-3 px-6 py-4 lg:py-5 bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] hover:from-[#F472B6] hover:to-[#A78BFA] shadow-lg rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(236,72,153,0.3)]">
+              <button 
+                onClick={() => window.location.href = '/skill-studio'}
+                className="group w-full md:w-1/3 relative flex items-center justify-center gap-3 px-6 py-4 lg:py-5 bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] hover:from-[#F472B6] hover:to-[#A78BFA] shadow-lg rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(236,72,153,0.3)]"
+              >
                 {/* <Compass className="w-5 h-5 text-white" /> */}
                 <span className="text-white font-bold text-[15px] lg:text-[16px] tracking-wide">Explore Studios</span>
               </button>
 
               {/* Button 3 */}
-              <button className="group w-full md:w-1/3 relative flex items-center justify-center gap-3 px-6 py-4 lg:py-5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(255,255,255,0.15)]">
+              <button 
+                onClick={() => window.location.href = '/virtual-internship'}
+                className="group w-full md:w-1/3 relative flex items-center justify-center gap-3 px-6 py-4 lg:py-5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(255,255,255,0.15)]"
+              >
                 {/* <Briefcase className="w-5 h-5 text-[#06B6D4]" /> */}
                 <span className="text-white font-semibold text-[15px] lg:text-[16px] tracking-wide">Apply for Internship</span>
                 <div className="absolute inset-0 rounded-2xl border border-white/0 group-hover:border-white/50 transition-colors duration-300 pointer-events-none" />

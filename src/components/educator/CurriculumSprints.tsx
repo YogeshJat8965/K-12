@@ -43,7 +43,7 @@ export default function CurriculumSprints() {
   ];
 
   return (
-    <section className="w-full bg-white font-poppins py-10 pb-24 relative overflow-hidden">
+    <section className="w-full bg-white font-poppins py-10 pb-10 relative overflow-hidden">
       <div className="max-w-[1536px] mx-auto px-6 md:px-10 lg:px-16 relative z-10">
         
         {/* Grid Container for Cards */}

@@ -40,30 +40,11 @@ export default function MembershipTiers() {
         bullet: '#4F46E5', // indigo-600
       },
       wavePath: "M0,0 L100,0 L100,18 C70,-2 30,35 0,12 Z"
-    },
-    {
-      badge: 'LEADER',
-      title: 'Champion',
-      features: [
-        'Everything In Practitioner',
-        'School-Level CCMM Audit',
-        'Ascent Leadership Track',
-        'Peer Mentor Certification',
-        'National Yugantar Showcase Eligibility'
-      ],
-      // price: '₹1,499 / Year',
-      colors: {
-        wave: '#EEF2FF', // indigo-50
-        badgeBg: '#E0E7FF', // indigo-100
-        badgeText: '#3730A3', // indigo-800
-        bullet: '#4F46E5', // indigo-600
-      },
-      wavePath: "M0,0 L100,0 L100,12 C75,28 25,2 0,18 Z"
     }
   ];
 
   return (
-    <section className="w-full bg-white font-poppins py-24 relative overflow-hidden">
+    <section className="w-full bg-white font-poppins py-10 relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 relative z-10 flex flex-col items-center">
 
         {/* Header Content */}
@@ -82,7 +63,7 @@ export default function MembershipTiers() {
         </div>
 
         {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 w-full mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12 w-full max-w-[900px] mx-auto mb-12">
           {tiers.map((tier, idx) => (
             <div
               key={idx}

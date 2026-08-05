@@ -136,7 +136,7 @@ export default function WhatAreStudios() {
           <div ref={rightRef} className="flex-1 w-full flex flex-col relative z-10 pt-4">
 
             <h2 className="text-[32px] md:text-[40px] font-bold text-[#1A1A2E] leading-tight mb-6">
-              What Are <span className="text-[#7C3AED]">Skill Studio?</span>
+              What is <span className="text-[#7C3AED]">Skill Studios?</span>
             </h2>
 
             <p className="text-[#4B5563] text-[15.5px] leading-relaxed font-medium mb-4">
@@ -206,7 +206,7 @@ export default function WhatAreStudios() {
         {/* Bottom Banner */}
         <div ref={bottomRef} className="w-full bg-[#F3F6FA] rounded-xl p-8 flex items-center justify-center gap-6 relative z-10 mt-12 mb-0">
           <p className="italic text-[#1A1A2E] text-[16px] font-semibold leading-relaxed text-center">
-            The learning model is designed to help students move from exploration to application. While building confidence and self-direction.
+            The learning model is designed to help students move from exploration to application, while building confidence and self-direction.
           </p>
         </div>
 

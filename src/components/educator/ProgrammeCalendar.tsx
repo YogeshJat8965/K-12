@@ -20,8 +20,8 @@ export default function ProgrammeCalendar() {
 
   const monthsData = [
     {
-      id: 'july',
-      label: 'JULY',
+      id: 'october',
+      label: 'OCTOBER',
       color: '#A855F7',
       lightColor: '#F3E8FF',
       pieIcon: <CalendarDays size={20} />,
@@ -30,25 +30,25 @@ export default function ProgrammeCalendar() {
           iconBg: 'bg-purple-100', iconColor: 'text-purple-600',
           icon: <PenTool size={18} />,
           title: 'AI LESSON DESIGN SPRINT - 3-DAY INTENSIVE',
-          date: '7-9 JULY', badge: 'LIVE, ONLINE', badgeColor: 'text-purple-600'
+          date: '7-9 OCT', badge: 'LIVE, ONLINE', badgeColor: 'text-purple-600'
         },
         {
           iconBg: 'bg-purple-100', iconColor: 'text-purple-600',
           icon: <Shield size={18} />,
           title: 'WORLD YOUTH SKILLS DAY - EDUCATOR ROUNDTABLE',
-          date: '15 JULY', badge: 'LIVE', badgeColor: 'text-purple-600'
+          date: '15 OCT', badge: 'LIVE', badgeColor: 'text-purple-600'
         },
         {
           iconBg: 'bg-purple-100', iconColor: 'text-purple-600',
           icon: <Palette size={18} />,
           title: 'ADOBE × SKILLZZA DIGITAL CREATIVITY WORKSHOP',
-          date: '18 JULY', badge: 'WORKSHOP', badgeColor: 'text-purple-600'
+          date: '18 OCT', badge: 'WORKSHOP', badgeColor: 'text-purple-600'
         }
       ]
     },
     {
-      id: 'august',
-      label: 'AUGUST',
+      id: 'november',
+      label: 'NOVEMBER',
       color: '#4F46E5',
       lightColor: '#E0E7FF',
       pieIcon: <CalendarCheck size={20} />,
@@ -57,25 +57,25 @@ export default function ProgrammeCalendar() {
           iconBg: 'bg-blue-100', iconColor: 'text-blue-600',
           icon: <Play size={18} />,
           title: 'VEDYA AI FOR EDUCATORS - DEEP DIVE MASTERCLASS',
-          date: '6 AUG', badge: null
+          date: '6 NOV', badge: null
         },
         {
           iconBg: 'bg-blue-100', iconColor: 'text-blue-600',
           icon: <Users size={18} />,
           title: 'AI EDUCATOR SHOWCASE - COHORT 1 DEMO DAY',
-          date: '22 AUG', badge: null
+          date: '22 NOV', badge: null
         },
         {
           iconBg: 'bg-blue-100', iconColor: 'text-blue-600',
           icon: <Award size={18} />,
           title: 'CCMM CERTIFICATION ROUND 1 OPENS',
-          date: '28 AUG', badge: null
+          date: '28 NOV', badge: null
         }
       ]
     },
     {
-      id: 'september',
-      label: 'SEPTEMBER',
+      id: 'december',
+      label: 'DECEMBER',
       color: '#F97316',
       lightColor: '#FFEDD5',
       pieIcon: <CalendarClock size={20} />,
@@ -84,25 +84,25 @@ export default function ProgrammeCalendar() {
           iconBg: 'bg-orange-100', iconColor: 'text-orange-600',
           icon: <TrendingUp size={18} />,
           title: 'AI SCHOOL LEADERSHIP BOOTCAMP - ASCENT TRACK',
-          date: '4-6 SEP', badge: null
+          date: '4-6 DEC', badge: null
         },
         {
           iconBg: 'bg-orange-100', iconColor: 'text-orange-600',
           icon: <Users size={18} />,
           title: 'ROUNDTABLE: AI IN RURAL INDIA CLASSROOMS',
-          date: '19 SEP', badge: null
+          date: '19 DEC', badge: null
         },
         {
           iconBg: 'bg-orange-100', iconColor: 'text-orange-600',
           icon: <Compass size={18} />,
           title: 'COHORT 2 AI ORIENTATION SPRINT - OPENS',
-          date: '29 SEP', badge: null
+          date: '29 DEC', badge: null
         }
       ]
     },
     {
-      id: 'oct-dec',
-      label: 'OCT-DEC',
+      id: 'january',
+      label: 'JANUARY',
       color: '#E11D48',
       lightColor: '#FCE7F3',
       pieIcon: <CalendarRange size={20} />,
@@ -111,19 +111,19 @@ export default function ProgrammeCalendar() {
           iconBg: 'bg-rose-100', iconColor: 'text-rose-600',
           icon: <Star size={18} />,
           title: 'ANNUAL SKILLZZA EDUCATORS SUMMIT',
-          date: 'OCT', badge: 'VENUE TBC', badgeColor: 'text-rose-600'
+          date: 'JAN', badge: 'VENUE TBC', badgeColor: 'text-rose-600'
         },
         {
           iconBg: 'bg-rose-100', iconColor: 'text-rose-600',
           icon: <Triangle size={18} />,
           title: 'ADOBE DIGITAL CREATIVITY MASTERCLASS SERIES',
-          date: 'NOV', badge: '4 SESSIONS', badgeColor: 'text-rose-600'
+          date: 'JAN', badge: '4 SESSIONS', badgeColor: 'text-rose-600'
         },
         {
           iconBg: 'bg-rose-100', iconColor: 'text-rose-600',
           icon: <Trophy size={18} />,
           title: 'YUGANTAR - NATIONAL AI EDUCATOR AWARDS',
-          date: 'DECEMBER', badge: null
+          date: 'JANUARY', badge: null
         }
       ]
     }
@@ -221,7 +221,7 @@ export default function ProgrammeCalendar() {
   );
 
   return (
-    <section className="w-full bg-white font-poppins py-16 lg:py-24 relative overflow-hidden min-h-[700px] flex items-center">
+    <section className="w-full bg-white font-poppins py-10 lg:py-10 relative overflow-hidden min-h-[700px] flex items-center">
       
       {/* Desktop Dial - Absolutely positioned with a tiny gap on the left, slightly lower */}
       <div className="absolute left-8 top-1/2 -translate-y-1/2 mt-12 z-0 hidden lg:block">

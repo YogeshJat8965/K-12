@@ -4,6 +4,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Running Modern Gradient ── */
+@keyframes runningGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.bg-running-gradient {
+  background: linear-gradient(-45deg, #c7d2fe, #e9d5ff, #fbcfe8, #bfdbfe);
+  background-size: 400% 400%;
+  animation: runningGradient 8s ease infinite;
+}
+
 html {
   /* scroll-behavior: smooth removed to prevent conflict with Lenis smooth scrolling */
 }

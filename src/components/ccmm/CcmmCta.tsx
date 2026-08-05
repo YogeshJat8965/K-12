@@ -41,12 +41,25 @@ export default function CcmmCta() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 shrink-0 items-center justify-center">
-            <button className="bg-white text-[#5B45FF] font-bold text-[14px] px-6 py-3 rounded-full flex items-center justify-center gap-2 hover:scale-105 hover:shadow-lg transition-all duration-300 whitespace-nowrap">
+            <button 
+              onClick={(e) => {
+                e.preventDefault();
+                const banner = document.getElementById('ccmm-banner-section');
+                if (banner) {
+                  banner.scrollIntoView({ behavior: 'smooth' });
+                  setTimeout(() => banner.click(), 600);
+                }
+              }}
+              className="bg-white text-[#5B45FF] font-bold text-[14px] px-6 py-3 rounded-full flex items-center justify-center gap-2 hover:scale-105 hover:shadow-lg transition-all duration-300 whitespace-nowrap"
+            >
               Check your school now
               <ArrowRight className="w-4 h-4" />
             </button>
 
-            <button className="bg-transparent text-white border border-white/40 font-bold text-[14px] px-6 py-3 rounded-full flex items-center justify-center gap-2 hover:bg-white/10 hover:border-white transition-all duration-300 whitespace-nowrap">
+            <button 
+              onClick={() => window.location.href = '/contact'}
+              className="bg-transparent text-white border border-white/40 font-bold text-[14px] px-6 py-3 rounded-full flex items-center justify-center gap-2 hover:bg-white/10 hover:border-white transition-all duration-300 whitespace-nowrap"
+            >
               <Phone className="w-4 h-4" />
               Request a discovery call
             </button>

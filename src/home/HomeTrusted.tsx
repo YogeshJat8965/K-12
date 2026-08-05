@@ -15,9 +15,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const statsData = [
   { icon: '/landing/stat-icon-1.svg', target: 200000, suffix: '+', label: 'Students Impacted', fmt: true },
-  { icon: '/landing/stat-icon-2.svg', target: 450, suffix: '+', label: 'Partner School', fmt: false },
+  { icon: '/landing/stat-icon-2.svg', target: 450, suffix: '+', label: 'Schools', fmt: false },
   { icon: '/landing/stat-icon-3.svg', target: 500, suffix: '+', label: 'AI Projects', fmt: false },
-  { icon: '/landing/stat-icon-4.svg', target: 700, suffix: '+', label: 'Educators Unskilled', fmt: false },
+  { icon: '/landing/stat-icon-4.svg', target: 700, suffix: '+', label: 'Educators Upskilled', fmt: false },
 ];
 
 const regions = ['INDIA', 'UAE', 'USA', 'UK', 'SINGAPORE', 'AFRICA'];
@@ -179,7 +179,7 @@ export default function HomeTrusted() {
         .ht-stats {
           display: flex;
           gap: 24px;
-          margin-top: clamp(28px, 4vw, 50px);
+          margin-top: clamp(60px, 8vw, 100px);
           margin-bottom: clamp(24px, 3vw, 40px);
         }
         .ht-card {
@@ -292,7 +292,7 @@ export default function HomeTrusted() {
       `}</style>
 
       <section className="ht-section" ref={sectionRef}>
-        <div style={{ position: 'absolute', top: 0, right: 0, width: 'clamp(400px, 52vw, 1005px)', height: '100%', pointerEvents: 'none' }}>
+        <div style={{ position: 'absolute', top: '-10%', right: 0, width: 'clamp(400px, 52vw, 1005px)', height: '100%', pointerEvents: 'none' }}>
           <img src="/landing/world-map.webp" alt="" className="ht-map" style={{ position: 'relative', width: '100%' }} />
           {/* Fake Pins for visual animation */}
           <div className="ht-pin" style={{ top: '35%', left: '20%' }} />
@@ -344,7 +344,7 @@ export default function HomeTrusted() {
                       { src: "https://cognifyai.skillzza.com/assets/img/part/6.png", name: "Saraswati Vidya Mandir, Dhariyela" },
                       { src: "https://cognifyai.skillzza.com/assets/img/part/7.png", name: "Sanfort World School" },
                       { src: Logo1, name: "Nirmala High School, Machilipatnam" },
-                      { src: Logo2, name: "N.St. Mathew's Public School, Vijayawada" },
+                      { src: Logo2, name: "NST. Mathew's Public School, Vijayawada" },
                       { src: Logo3, name: "Paradise Higher Secondary School, Kanker" },
                       { src: Logo4, name: "Narayana E.M. School, Neeladripuram" },
                       { src: Logo5, name: "Shri Balaji Vidya Mandir, Raipur" },

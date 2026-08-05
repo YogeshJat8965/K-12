@@ -11,45 +11,50 @@ export default function CcmmStages() {
       img: img1,
       title: 'Aware',
       badge: 'Baseline',
-      titleColor: 'text-[#64748B]',
-      bgTint: 'bg-[#F8FAFC]',
-      borderColor: 'border-[#64748B]/30', // Slate border
+      titleColor: 'text-[#16A34A]', // Green
+      bgTint: 'bg-[#F0FDF4]',
+      borderColor: 'border-[#16A34A]/30',
+      badgeColor: 'text-[#64748B]', // Baseline (Slate)
       desc: 'AI is recognised as a future imperative. The assessment sets your baseline.'
     },
     {
       img: img2,
       title: 'Emerging',
-      badge: 'CCMM Bronze',
-      titleColor: 'text-[#B08D57]',
-      bgTint: 'bg-[#FDF8F3]',
-      borderColor: 'border-[#B08D57]/40', // Bronze border
+      badge: 'Bronze',
+      titleColor: 'text-[#2563EB]', // Blue
+      bgTint: 'bg-[#EFF6FF]',
+      borderColor: 'border-[#2563EB]/30',
+      badgeColor: 'text-[#A97142]', // Bronze
       desc: 'Basic AI & digital literacy begins. Select teachers trained; pilots run.'
     },
     {
       img: img3,
       title: 'Integrated',
-      badge: 'CCMM Silver',
-      titleColor: 'text-[#71717A]',
-      bgTint: 'bg-[#F4F4F5]',
-      borderColor: 'border-[#71717A]/30', // Silver border
+      badge: 'Silver',
+      titleColor: 'text-[#9333EA]', // Purple
+      bgTint: 'bg-[#FAF5FF]',
+      borderColor: 'border-[#9333EA]/30',
+      badgeColor: 'text-[#8492A6]', // Silver
       desc: 'AI & emerging tech embedded across grades. Most educators AI-literate. CoE begun.'
     },
     {
       img: img4,
       title: 'Advanced',
-      badge: 'CCMM Gold',
-      titleColor: 'text-[#D4AF37]',
-      bgTint: 'bg-[#FDFBF2]',
-      borderColor: 'border-[#D4AF37]/50', // Gold border
+      badge: 'Gold',
+      titleColor: 'text-[#EA580C]', // Orange
+      bgTint: 'bg-[#FFF7ED]',
+      borderColor: 'border-[#EA580C]/30',
+      badgeColor: 'text-[#D99F16]', // Gold
       desc: 'A functional CoE runs. Curriculum is industry-aligned. Students lead innovation.'
     },
     {
       img: img5,
       title: 'Cognitive',
-      badge: 'CCMM Platinum',
-      titleColor: 'text-[#5E6C7D]',
-      bgTint: 'bg-[#F2F4F7]',
-      borderColor: 'border-[#5E6C7D]/40', // Platinum border
+      badge: 'Platinum',
+      titleColor: 'text-[#CA8A04]', // Gold/Yellow
+      bgTint: 'bg-[#FEFCE8]',
+      borderColor: 'border-[#CA8A04]/30',
+      badgeColor: 'text-[#708090]', // Platinum
       desc: 'A recognised hub - contributing research, hosting programmes, mentoring schools.'
     }
   ];
@@ -97,7 +102,7 @@ export default function CcmmStages() {
                 </p>
 
                 {/* Badge at the bottom */}
-                <div className={`mt-auto px-4 py-1.5 rounded-full text-[12px] font-bold border ${stage.titleColor} border-opacity-30 bg-white shadow-sm`}>
+                <div className={`mt-auto px-4 py-1.5 rounded-full text-[12px] font-bold border ${stage.badgeColor} border-opacity-30 bg-white shadow-sm`}>
                   {stage.badge}
                 </div>
 

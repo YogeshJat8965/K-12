@@ -28,8 +28,8 @@ import { FadeIn3D, WordReveal, StaggerContainer, StaggerItem } from '../animatio
 
 export default function LearnersCTA() {
   return (
-    <section className="w-full bg-[#F5F7FA] pb-24 font-poppins pt-4">
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-12 flex flex-col gap-10">
+    <section className="w-full bg-[#F5F7FA] font-poppins pb-12 pt-0">
+      <div className="w-full flex flex-col gap-0">
 
         {/* Top Banner */}
         {/* <FadeIn3D delay={0.1} y={40}>
@@ -50,7 +50,7 @@ export default function LearnersCTA() {
 
         {/* Bottom CTA Banner */}
         <FadeIn3D delay={0.2} y={40}>
-          <div className="bg-gradient-to-r from-[#6731EA] via-[#9146EA] to-[#C95DEB] rounded-[24px] px-8 py-10 lg:px-12 lg:py-10 flex flex-col lg:flex-row justify-between items-center gap-8 shadow-[0_12px_40px_rgba(103,49,234,0.3)] hover:shadow-[0_16px_50px_rgba(103,49,234,0.4)] transition-shadow duration-300 relative overflow-hidden">
+          <div className="bg-gradient-to-r from-[#6731EA] via-[#9146EA] to-[#C95DEB] w-full px-8 py-10 md:px-16 lg:px-24 flex flex-col lg:flex-row justify-between items-center gap-8 shadow-[0_12px_40px_rgba(103,49,234,0.3)] hover:shadow-[0_16px_50px_rgba(103,49,234,0.4)] transition-shadow duration-300 relative overflow-hidden">
 
             {/* Very subtle glow effect overlay */}
             <div className="absolute inset-0 bg-white/5 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -69,7 +69,7 @@ export default function LearnersCTA() {
                 <TriangleIcon className="w-2.5 h-3" /> REQUEST A DEMO
               </button>
               <button onClick={() => window.location.href = '/contact'} className="border-[2px] border-white/80 text-white font-extrabold text-[13px] md:text-[14px] px-6 py-3.5 md:py-4 rounded-[12px] flex items-center justify-center gap-2.5 hover:bg-white/10 hover:border-white hover:scale-105 active:scale-95 transition-all">
-                <TriangleIcon className="w-2.5 h-3 opacity-90" /> PARTNER WITH Skill Studio
+                <TriangleIcon className="w-2.5 h-3 opacity-90" /> PARTNER WITH SKILL STUDIO
               </button>
             </div>
 

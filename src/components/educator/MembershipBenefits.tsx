@@ -48,7 +48,7 @@ export default function MembershipBenefits() {
   ];
 
   return (
-    <section className="w-full bg-[#FAFAFC] font-poppins pt-24 pb-32 relative overflow-hidden">
+    <section className="w-full bg-[#FAFAFC] font-poppins pt-10 pb-10 relative overflow-hidden">
       
       {/* Background Dots Pattern (Center) */}
       <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[600px] pointer-events-none z-0 opacity-[0.3]" style={{ backgroundImage: 'radial-gradient(#C7D2FE 2px, transparent 2px)', backgroundSize: '40px 40px' }}></div>

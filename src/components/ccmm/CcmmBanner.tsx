@@ -8,18 +8,19 @@ export default function CcmmBanner() {
   return (
     <>
       <section
-        className="w-full bg-[#0690D7] text-white overflow-hidden relative cursor-pointer group"
+        id="ccmm-banner-section"
+        className="w-full bg-[#6C3CF7] text-white overflow-hidden relative cursor-pointer group"
         onClick={() => setIsQuizOpen(true)}
       >
         <div className="max-w-[1536px] mx-auto px-6 md:px-12 lg:px-20 min-h-[220px] md:min-h-[280px] flex flex-col-reverse md:flex-row items-stretch justify-between relative">
 
           {/* Left Text Content */}
           <div className="w-full md:w-[65%] py-10 md:py-12 relative z-10 flex flex-col justify-center items-start">
-            <h2 className="text-[28px] sm:text-[32px] md:text-[38px] lg:text-[42px] font-bold leading-tight mb-4 md:mb-5">
+            <h2 className="text-white text-[28px] sm:text-[32px] md:text-[38px] lg:text-[42px] font-bold leading-tight mb-4 md:mb-5">
               Find your school’s maturity stage
             </h2>
             <p className="text-white/95 text-[15px] sm:text-base md:text-lg leading-relaxed max-w-2xl font-medium mb-6">
-              <span className="font-bold text-[#FFD100]">Free · 2 minutes · 6 questions.</span> Answer six quick questions to see your estimated CCMM stage - the same axes our assessors score against on campus. Each option carries a score of 0–3.
+              <span className="font-bold text-[#FFD100]"></span> Quick questions to see your estimated CCMM stage - the same axes our assessors score against on campus. Each option carries a score of 0–3.
             </p>
             <button
               onClick={(e) => {

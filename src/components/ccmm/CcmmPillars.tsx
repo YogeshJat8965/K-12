@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import img1 from '../../assets/landing page/1ChatGPT Image Jun 20, 2026, 01_16_52 AM.webp';
-import img2 from '../../assets/landing page/2ChatGPT Image Jun 20, 2026, 01_17_58 AM.webp';
-import img3 from '../../assets/landing page/3ChatGPT Image Jun 20, 2026, 01_18_16 AM.webp';
-import img4 from '../../assets/landing page/4ChatGPT Image Jun 20, 2026, 01_19_23 AM.webp';
+import img1 from '../../assets/CCMM/universal algorithm .png';
+import img2 from '../../assets/CCMM/better tomorrow.png';
+import img3 from '../../assets/CCMM/AI Centre of Excellence.png';
+import img4 from '../../assets/CCMM/Industry-relevant curriculum.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -458,12 +458,6 @@ export default function CcmmPillars() {
 
                         <p className="hle-card-footer">{item.footer}</p>
 
-                        <div className="hle-card-btn btn-expanded" style={{ marginTop: '24px' }}>
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                            <line x1="18" y1="6" x2="6" y2="18"></line>
-                            <line x1="6" y1="6" x2="18" y2="18"></line>
-                          </svg>
-                        </div>
                       </div>
                     </div>
 

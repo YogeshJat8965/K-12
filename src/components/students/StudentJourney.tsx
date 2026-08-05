@@ -3,7 +3,7 @@ import stepsImg from '../../assets/for students/steps.webp';
 
 export default function StudentJourney() {
   return (
-    <section className="w-full bg-[#030425] text-white flex flex-col items-center overflow-hidden font-poppins">
+    <section id="student-journey-section" className="w-full bg-[#030425] text-white flex flex-col items-center overflow-hidden font-poppins">
       
       {/* Top Content */}
       <div className="text-center px-4 sm:px-6 pt-12 sm:pt-16 pb-0 flex flex-col items-center">

@@ -132,7 +132,7 @@ export default function NationalNetwork() {
   ];
 
   return (
-    <section className="w-full bg-white font-poppins py-24 relative overflow-hidden">
+    <section className="w-full bg-white font-poppins py-10 relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10 flex flex-col items-center">
 
         {/* Header Content */}

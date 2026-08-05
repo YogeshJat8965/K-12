@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useScrollReveal } from './hooks/useScrollReveal';
 import Navbar from './components/Navbar';
+import CreativityPreHero from './components/creativity/CreativityPreHero';
 import CreativityHero from './components/creativity/CreativityHero';
 import CreativeAI from './components/creativity/CreativeAI';
 import WhyProgramme from './components/creativity/WhyProgramme';
 import EcosystemTransformation from './components/creativity/EcosystemTransformation';
+import StakeholderValue from './components/creativity/StakeholderValue';
 import LevelsSection from './components/creativity/LevelsSection';
 import FlagshipSection from './components/creativity/FlagshipSection';
 import WhyAdobeSkillzza from './components/creativity/WhyAdobeSkillzza';
@@ -41,13 +43,15 @@ export default function DigitalCreativityApp() {
       <Navbar />
 
       <main>
+        <CreativityPreHero />
         <CreativityHero />
-        <CreativeAI />
+        {/* <CreativeAI /> */}
         <WhyProgramme />
         <EcosystemTransformation />
+        <StakeholderValue />
         <LevelsSection />
         <FlagshipSection />
-        <WhyAdobeSkillzza />
+        {/* <WhyAdobeSkillzza /> */}
         <DigitalFutureCTA />
         {/* Future sections will be added here */}
         <Footer />

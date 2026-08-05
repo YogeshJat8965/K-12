@@ -27,7 +27,17 @@ export default function CcmmHero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10 w-full sm:w-auto">
-              <button onClick={() => window.location.href = '#'} className="bg-[#5B45FF] hover:bg-[#4a35ea] text-white font-bold py-3.5 px-8 md:py-4 md:px-10 rounded-lg shadow-[0_8px_20px_rgba(91,69,255,0.3)] hover:-translate-y-1 transition-all duration-300 flex items-center justify-center w-full sm:w-auto">
+              <button 
+                onClick={(e) => {
+                  e.preventDefault();
+                  const banner = document.getElementById('ccmm-banner-section');
+                  if (banner) {
+                    banner.scrollIntoView({ behavior: 'smooth' });
+                    setTimeout(() => banner.click(), 600);
+                  }
+                }} 
+                className="bg-[#5B45FF] hover:bg-[#4a35ea] text-white font-bold py-3.5 px-8 md:py-4 md:px-10 rounded-lg shadow-[0_8px_20px_rgba(91,69,255,0.3)] hover:-translate-y-1 transition-all duration-300 flex items-center justify-center w-full sm:w-auto"
+              >
                 Take the 2-minute check
               </button>
               <button onClick={() => window.location.href = '/contact'} className="bg-white hover:bg-gray-50 text-[#111827] border-2 border-gray-200 font-bold py-3.5 px-8 md:py-4 md:px-10 rounded-lg shadow-sm hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto">

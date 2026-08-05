@@ -58,7 +58,7 @@ export default function WhatWeDo() {
   ];
 
   return (
-    <section id="rhythm-of-learning" className="w-full bg-white font-poppins py-20 relative overflow-hidden">
+    <section id="rhythm-of-learning" className="w-full bg-white font-poppins py-10 relative overflow-hidden">
       <div className="max-w-[1536px] mx-auto px-6 md:px-12 lg:px-20 relative z-10">
         
         {/* Header Content */}

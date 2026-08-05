@@ -4,7 +4,7 @@ import ScrollReveal from '../ScrollReveal';
 
 export default function CreativityHero() {
   return (
-    <section className="relative bg-white text-slate-900 pt-40 md:pt-48 pb-6 md:pb-10 overflow-hidden flex items-center">
+    <section className="relative bg-white text-slate-900 pt-16 md:pt-24 pb-12 overflow-hidden flex items-center">
 
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0 flex items-center justify-end overflow-hidden">

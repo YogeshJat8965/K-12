@@ -1,8 +1,8 @@
-import teacherAtCenterImg from '../../assets/educator circle/teacher at center.webp';
+import teacherAtCenterImg from '../../assets/educator circle/teacher at center.png';
 
 export default function TeacherAtCenter() {
   return (
-    <section className="hidden md:block w-full bg-white font-poppins pt-8 lg:pt-10 pb-24 overflow-hidden">
+    <section className="hidden md:block w-full bg-white font-poppins pt-8 lg:pt-10 pb-10 overflow-hidden">
       <div className="max-w-[1536px] mx-auto px-6 md:px-12 lg:px-20">
         
         {/* Header Section */}

@@ -3,7 +3,7 @@ import aiImmersionImg from '../../assets/educator circle/ai immersion.webp';
 
 export default function AiImmersion() {
   return (
-    <section className="w-full bg-white font-poppins pt-24 pb-20 relative overflow-hidden">
+    <section className="w-full bg-white font-poppins pt-10 pb-10 relative overflow-hidden">
       
       {/* Top right light purple gradient */}
       <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] lg:w-[900px] lg:h-[900px] bg-[#E0E7FF] rounded-full blur-[100px] opacity-60 pointer-events-none z-0"></div>

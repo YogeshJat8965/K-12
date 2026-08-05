@@ -32,7 +32,7 @@ const stepsData = [
     color: '#10B981', // Green
     icon: icon3,
     title: 'Integration',
-    desc: 'Ai Curriculum Embedded In Select Grades; Occasional Student Projects And Showcase Events.'
+    desc: 'AI Curriculum Embedded In Select Grades; Occasional Student Projects And Showcase Events.'
   },
   {
     step: 'Step 04',
