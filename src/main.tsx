@@ -17,6 +17,7 @@ const SignupApp = lazy(() => import('./SignupApp.tsx'));
 const ContactApp = lazy(() => import('./ContactApp.tsx'));
 const UniversityApp = lazy(() => import('./UniversityApp.tsx'));
 const EducatorApp = lazy(() => import('./EducatorApp.tsx'));
+const EducatorCircleApp = lazy(() => import('./EducatorCircleApp.tsx'));
 const CcmmApp = lazy(() => import('./CcmmApp.tsx'));
 
 const path = window.location.pathname;
@@ -28,15 +29,16 @@ function AppRouter() {
         path === '/skill-studio' ? <SkillStudioApp /> :
           path === '/digital-creativity' ? <DigitalCreativityApp /> :
             path === '/international-studio' ? <InternationalStudioApp /> :
-              path === '/students' ? <StudentsApp /> :
-                path === '/learners' ? <LearnersApp /> :
+              path === '/students' || path === '/for-students' ? <StudentsApp /> :
+                path === '/learners' || path === '/for-schools' ? <LearnersApp /> :
                   path === '/virtual-internship' ? <App /> :
                     path === '/login' ? <LoginApp /> :
                       path === '/signup' ? <SignupApp /> :
                         path === '/contact' ? <ContactApp /> :
                           path === '/university' ? <UniversityApp /> :
-                            path === '/educator' ? <EducatorApp /> :
-                              path === '/ccmm' ? <CcmmApp /> :
+                            path === '/educator' || path === '/for-educator' ? <EducatorApp /> :
+                              path === '/educator-circle' ? <EducatorCircleApp /> :
+                                path === '/ccmm' ? <CcmmApp /> :
                                 <HomeApp />
   );
 }

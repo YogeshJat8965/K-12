@@ -10,7 +10,7 @@ const NAV_LINKS = [
     href: '/skill-studio',
     dropdown: [
       { label: 'For Schools', href: '/skill-studio' },
-      { label: 'For Students', href: '/students' },
+      { label: 'For Students', href: '/international-studio' },
     ],
   },
   {
@@ -44,16 +44,16 @@ const NAV_LINKS = [
       {
         title: 'Learners Segment',
         links: [
-          { label: 'For Students', href: '/students' },
-          { label: 'For Schools', href: '/learners' },
-          { label: 'For Educator', href: '/educator' },
+          { label: 'For Students', href: '/for-students' },
+          { label: 'For Schools', href: '/for-schools' },
+          { label: 'For Educator', href: '/for-educator' },
         ]
       },
       {
         title: 'Other Programs',
         links: [
           { label: 'CCMM', href: '/ccmm' },
-          { label: 'The Educator Circle', href: '/educator' },
+          { label: 'The Educator Circle', href: '/educator-circle' },
         ]
       }
     ],
