@@ -52,7 +52,7 @@ export default function DigitalCreativityApp() {
         <LevelsSection />
         <FlagshipSection />
         {/* <WhyAdobeSkillzza /> */}
-        <DigitalFutureCTA />
+        <div id="dcais-program"><DigitalFutureCTA /></div>
         {/* Future sections will be added here */}
         <Footer />
       </main>

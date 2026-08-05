@@ -46,14 +46,12 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Vedya AI */}
+          {/* Column 2: Adobe's Programme */}
           <div className="flex flex-col gap-4 lg:mt-[72px]">
-            <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">Vedya AI</h3>
+            <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">Adobe's Programme</h3>
             <ul className="flex flex-col gap-3">
-              <li><span className="text-gray-600 text-[14px] cursor-default">What is Vedya?</span></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">Vedya for Students</span></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">Vedya for Teachers</span></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">Responsible AI</span></li>
+              <li><a href="/digital-creativity" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Digital Creativity</a></li>
+              <li><a href="/digital-creativity#dcais-program" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">DCAIS Programme</a></li>
             </ul>
           </div>
 
@@ -97,6 +95,7 @@ export default function Footer() {
           <div className="flex flex-col gap-4 lg:mt-[72px]">
             <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">Quick Links</h3>
             <ul className="flex flex-col gap-3">
+              <li><span className="text-gray-600 text-[14px] cursor-default">Vedya AI</span></li>
               <li><a href="/ccmm" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">CCMM</a></li>
               <li><a href="/educator" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">The Educator Circle</a></li>
               <li><a href="/ai-playground" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">AI Playground</a></li>
