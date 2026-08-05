@@ -10,10 +10,10 @@ const TriangleIcon = ({ className }: { className?: string }) => (
 export default function EducatorCTA() {
   return (
     <section className="w-full bg-white pb-16 font-poppins pt-4">
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-12 flex flex-col gap-10">
+      <div className="w-full flex flex-col gap-10">
 
         <FadeIn3D delay={0.2} y={40}>
-          <div className="bg-gradient-to-r from-[#6731EA] via-[#9146EA] to-[#C95DEB] rounded-[24px] px-6 py-8 lg:px-12 lg:py-10 flex flex-col items-center text-center gap-8 shadow-[0_12px_40px_rgba(103,49,234,0.3)] hover:shadow-[0_16px_50px_rgba(103,49,234,0.4)] transition-shadow duration-300 relative overflow-hidden">
+          <div className="bg-gradient-to-r from-[#6731EA] via-[#9146EA] to-[#C95DEB] rounded-none px-6 py-8 lg:px-12 lg:py-10 flex flex-col items-center text-center gap-8 shadow-[0_12px_40px_rgba(103,49,234,0.3)] hover:shadow-[0_16px_50px_rgba(103,49,234,0.4)] transition-shadow duration-300 relative overflow-hidden">
 
             {/* Very subtle glow effect overlay */}
             <div className="absolute inset-0 bg-white/5 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none" />

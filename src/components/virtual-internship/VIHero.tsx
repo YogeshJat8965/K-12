@@ -15,13 +15,13 @@ export default function VIHero() {
       gsap.from('.vih-title', { y: 30, opacity: 0, duration: 0.8, ease: 'power3.out', delay: 0.1 });
       gsap.from('.vih-line', { scaleX: 0, transformOrigin: 'left', opacity: 0, duration: 0.8, ease: 'power3.out', delay: 0.3 });
       gsap.from('.vih-desc', { y: 20, opacity: 0, duration: 0.8, ease: 'power3.out', delay: 0.3 });
-      gsap.from('.vih-feature', { 
-        y: 20, 
-        opacity: 0, 
-        duration: 0.6, 
-        stagger: 0.1, 
-        ease: 'power3.out', 
-        delay: 0.4 
+      gsap.from('.vih-feature', {
+        y: 20,
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: 'power3.out',
+        delay: 0.4
       });
       gsap.from('.vih-btn-wrapper', { y: 20, opacity: 0, duration: 0.8, ease: 'power3.out', delay: 0.6 });
 
@@ -33,7 +33,7 @@ export default function VIHero() {
         ease: 'power3.out',
         delay: 0.2
       });
-      
+
     }, sectionRef);
 
     return () => ctx.revert();
@@ -234,21 +234,21 @@ export default function VIHero() {
               <span className="vih-badge vih-badge-purple">VIRTUAL INTERNSHIPS</span>
               <span className="vih-badge vih-badge-gray"> | GRADES 6-12</span>
             </div>
-            
+
             <h1 className="vih-title">
               Give Your Child<br />
-              a Head Start -<br />
+              a Head Start<br />
               <span className="vih-title-purple">Beyond Academics</span>
             </h1>
-            
+
             <div className="vih-line"></div>
-            
+
             <p className="vih-desc">
-              <span className="vih-desc-purple">Virtual</span> Internships are structured, mentor led, project based 
-              learning experiences that give school students their first real world 
+              <span className="vih-desc-purple">Virtual</span> Internships are structured, mentor led, project based
+              learning experiences that give school students their first real world
               work exposure building both clarity and confidence before college.
             </p>
-            
+
             <div className="vih-features">
               <div className="vih-feature">
                 <div className="vih-feature-icon">
@@ -282,7 +282,7 @@ export default function VIHero() {
               </a>
             </div>
           </div>
-          
+
           <div className="vih-right" ref={imgRef}>
             <img src={HeroImg} alt="Virtual Internship" className="vih-image" />
           </div>

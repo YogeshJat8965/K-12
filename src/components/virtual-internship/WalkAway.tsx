@@ -63,42 +63,42 @@ export default function WalkAway() {
       num: "01",
       title: "Verified Certificate",
       desc: "Mentor-approved, portfolio-credible certification for every completed internship.",
-      icon: <Award size={40} strokeWidth={1.5} />,
+      icon: <Award size={32} strokeWidth={1.5} />,
       colorClass: "wa-purple"
     },
     {
       num: "02",
       title: "Portfolio Project",
       desc: "Real, shareable work - a prototype, report, or presentation built for public viewing.",
-      icon: <Briefcase size={40} strokeWidth={1.5} />,
+      icon: <Briefcase size={32} strokeWidth={1.5} />,
       colorClass: "wa-green"
     },
     {
       num: "03",
       title: "Digital Skill Passport",
       desc: "A verifiable digital badge that grows with every internship - shareable via QR code, portfolio link, or later export to LinkedIn.",
-      icon: <BadgeCheck size={40} strokeWidth={1.5} />,
+      icon: <BadgeCheck size={32} strokeWidth={1.5} />,
       colorClass: "wa-orange"
     },
     {
       num: "04",
       title: "Skill-Based Badges",
       desc: "Micro-credentials that document specific competencies gained during the internship.",
-      icon: <CheckSquare size={40} strokeWidth={1.5} />,
+      icon: <CheckSquare size={32} strokeWidth={1.5} />,
       colorClass: "wa-blue"
     },
     {
       num: "05",
       title: "Mentor Feedback",
       desc: "Structured evaluation with qualitative insights from domain experts.",
-      icon: <Sparkles size={40} strokeWidth={1.5} />,
+      icon: <Sparkles size={32} strokeWidth={1.5} />,
       colorClass: "wa-yellow"
     },
     {
       num: "06",
       title: "Career Insight Report",
       desc: "Personalised guidance mapping strengths, aptitudes, and suggested next steps.",
-      icon: <LineChart size={40} strokeWidth={1.5} />,
+      icon: <LineChart size={32} strokeWidth={1.5} />,
       colorClass: "wa-pink"
     }
   ];
@@ -108,12 +108,11 @@ export default function WalkAway() {
       <style>{`
         .wa-section {
           width: 100%;
-          min-height: 800px;
           background: #FAFAFD;
           font-family: 'Poppins', sans-serif;
           position: relative;
           overflow: hidden;
-          padding: 40px 40px;
+          padding: 40px 40px 80px;
         }
 
         .wa-bg-img {
@@ -121,8 +120,8 @@ export default function WalkAway() {
           top: 0;
           right: 0;
           height: auto;
-          width: 60%;
-          max-width: 800px;
+          width: 35%;
+          max-width: 450px;
           object-fit: contain;
           object-position: top right;
           z-index: 1;
@@ -155,7 +154,7 @@ export default function WalkAway() {
           height: 3px;
           background-color: #4F46E5;
           border-radius: 4px;
-          margin-bottom: 60px;
+          margin-bottom: 100px;
         }
 
         .wa-grid {
@@ -167,11 +166,11 @@ export default function WalkAway() {
         .wa-card {
           background: #FFFFFF;
           border-radius: 20px;
-          padding: 32px 24px;
+          padding: 24px 16px;
           box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
           display: flex;
           align-items: flex-start;
-          gap: 20px;
+          gap: 16px;
           transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
                       box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
                       border-color 0.3s ease;
@@ -201,8 +200,8 @@ export default function WalkAway() {
         }
 
         .wa-icon-box {
-          width: 72px;
-          height: 72px;
+          width: 56px;
+          height: 56px;
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -246,16 +245,16 @@ export default function WalkAway() {
         }
 
         .wa-card-title {
-          font-size: 18px;
+          font-size: 16px;
           font-weight: 800;
           color: #1A1A2E;
-          margin: 0 0 12px;
+          margin: 0 0 8px;
           letter-spacing: -0.5px;
         }
 
         .wa-card-desc {
-          font-size: 14px;
-          line-height: 1.6;
+          font-size: 13px;
+          line-height: 1.5;
           color: #6B7280;
           margin: 0;
           font-weight: 500;

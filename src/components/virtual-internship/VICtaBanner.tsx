@@ -25,15 +25,13 @@ export default function VICtaBanner() {
       <style>{`
         .vi-cta-wrap {
           width: 100%;
-          padding: 60px 40px;
+          padding: 60px 0;
           font-family: 'Poppins', sans-serif;
         }
         .vi-cta-banner {
-          max-width: 1360px;
-          margin: 0 auto;
+          width: 100%;
           background: linear-gradient(105deg, #0B0F2E 0%, #1A1E6E 25%, #3B2FAA 50%, #6C3CF7 75%, #8B5CF6 100%);
-          border-radius: 24px;
-          padding: 48px 56px;
+          padding: 60px 5%;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -151,13 +149,13 @@ export default function VICtaBanner() {
         }
 
         @media (max-width: 1024px) {
-          .vi-cta-banner { flex-direction: column; text-align: center; padding: 40px 32px; }
+          .vi-cta-banner { flex-direction: column; text-align: center; padding: 40px 5%; }
           .vi-cta-left { flex: none; }
           .vi-cta-buttons { flex-wrap: wrap; justify-content: center; }
         }
         @media (max-width: 600px) {
-          .vi-cta-wrap { padding: 40px 20px; }
-          .vi-cta-banner { padding: 32px 24px; border-radius: 16px; }
+          .vi-cta-wrap { padding: 40px 0; }
+          .vi-cta-banner { padding: 32px 5%; }
           .vi-cta-btn { padding: 12px 20px; font-size: 13px; }
         }
       `}</style>

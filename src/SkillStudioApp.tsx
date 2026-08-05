@@ -606,16 +606,12 @@ export default function SkillStudioApp() {
               </div>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
-                <MagneticButton className="w-full sm:w-auto">
-                  <button onClick={(e) => e.preventDefault()} className="w-full px-6 py-3 bg-[#6A3EEA] hover:bg-[#5B32EA] text-white text-[12px] font-bold tracking-wide rounded-md transition-colors flex items-center justify-center gap-2 uppercase">
-                    Design Your Studio Mix <ArrowRight className="w-4 h-4" />
-                  </button>
-                </MagneticButton>
-                <MagneticButton className="w-full sm:w-auto">
-                  <button onClick={() => window.location.href = '/contact'} className="w-full px-6 py-3 bg-transparent border-[1.5px] border-[#6A3EEA] text-[#6A3EEA] hover:bg-[#F3EFFF] text-[12px] font-bold tracking-wide rounded-md transition-colors flex items-center justify-center gap-2 uppercase">
-                    Schedule Discovery Session <ArrowRight className="w-4 h-4" />
-                  </button>
-                </MagneticButton>
+                <button onClick={(e) => e.preventDefault()} className="w-full sm:w-auto px-6 py-3 bg-[#6A3EEA] hover:bg-[#5B32EA] text-white text-[12px] font-bold tracking-wide rounded-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 uppercase">
+                  Design Your Studio Mix <ArrowRight className="w-4 h-4" />
+                </button>
+                <button onClick={() => window.location.href = '/contact'} className="w-full sm:w-auto px-6 py-3 bg-transparent border-[1.5px] border-[#6A3EEA] text-[#6A3EEA] hover:bg-[#F3EFFF] text-[12px] font-bold tracking-wide rounded-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 uppercase">
+                  Schedule Discovery Session <ArrowRight className="w-4 h-4" />
+                </button>
               </div>
             </div>
 
@@ -1028,7 +1024,7 @@ export default function SkillStudioApp() {
         </section>
         {/* Partnership Banner Section */}
         <section className="pt-12 pb-20 bg-white relative z-20">
-          <div className="w-full max-w-[1500px] mx-auto px-4 lg:px-8">
+          <div className="w-full">
 
             <div
               className="w-full relative shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex flex-col lg:flex-row items-center justify-between overflow-hidden py-8 lg:py-0"
@@ -1036,7 +1032,7 @@ export default function SkillStudioApp() {
                 background: 'linear-gradient(90deg, #3B6CFF 23.47%, #FF00FF 59.9%, #FF9A00 96.32%)',
                 minHeight: '232px',
                 height: 'auto',
-                borderRadius: '12px',
+                borderRadius: '0',
                 margin: '0 auto'
               }}
             >

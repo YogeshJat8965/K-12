@@ -159,8 +159,10 @@ export default function TrustedPartnerships() {
           </div>
         </div>
 
-        {/* Banner with Buttons Overlaid (Desktop/Tablet Only) */}
-        <div className="hidden md:flex w-full max-w-[1200px] mt-10 relative rounded-[24px] overflow-hidden items-end justify-end pb-[6%] md:pb-[4%] pr-[5%] lg:pr-[1%] shadow-lg border border-gray-100" style={{ aspectRatio: '16/4.2' }}>
+      </div>
+
+      {/* Banner with Buttons Overlaid (Desktop/Tablet Only) */}
+      <div className="hidden md:flex w-full mt-10 relative overflow-hidden items-end justify-end pb-[6%] md:pb-[4%] pr-[5%] lg:pr-[1%] shadow-lg" style={{ aspectRatio: '16/4.2' }}>
           {/* Background Banner Image */}
           <img 
             src={bannerImg} 
@@ -188,8 +190,6 @@ export default function TrustedPartnerships() {
             <Play size={14} fill="currentColor" />
           </button>
         </div>
-
-      </div>
     </section>
   );
 }

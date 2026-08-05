@@ -22,7 +22,7 @@ export default function DigitalFutureCTA() {
             {/* Left Button */}
             <div className="relative group w-full sm:w-auto">
               <div className="absolute inset-0 bg-[#8E1111]/40 blur-lg rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <a href="/contact-us" className="relative w-full sm:w-auto bg-gradient-to-b from-[#8E1111] to-[#5C0A0A] border border-[#4A0808] text-white/90 text-sm md:text-base font-bold px-8 py-4 rounded-xl flex items-center justify-center gap-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_4px_10px_rgba(0,0,0,0.15)] hover:-translate-y-1 transition-all duration-300">
+              <a href="/contact" className="relative w-full sm:w-auto bg-gradient-to-b from-[#8E1111] to-[#5C0A0A] border border-[#4A0808] text-white/90 text-sm md:text-base font-bold px-8 py-4 rounded-xl flex items-center justify-center gap-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_4px_10px_rgba(0,0,0,0.15)] hover:-translate-y-1 transition-all duration-300">
                 <span className="text-[10px] leading-none text-red-300">▶</span>
                 BECOME A CHANGE EDUCATOR
               </a>
@@ -31,7 +31,7 @@ export default function DigitalFutureCTA() {
             {/* Right Button */}
             <div className="relative group w-full sm:w-auto">
               <div className="absolute inset-0 bg-[#E61E1E]/40 blur-xl rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <a href="/sign-up" className="relative w-full sm:w-auto bg-gradient-to-b from-[#E61E1E] to-[#BD1313] border border-[#9A0F0F] text-white text-sm md:text-base font-bold px-8 py-4 rounded-xl flex items-center justify-center gap-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_4px_15px_rgba(230,30,30,0.2)] hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+              <a href="/signup" className="relative w-full sm:w-auto bg-gradient-to-b from-[#E61E1E] to-[#BD1313] border border-[#9A0F0F] text-white text-sm md:text-base font-bold px-8 py-4 rounded-xl flex items-center justify-center gap-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_4px_15px_rgba(230,30,30,0.2)] hover:-translate-y-1 transition-all duration-300 overflow-hidden">
                 <span className="text-[10px] leading-none relative z-10 text-red-200">▶</span>
                 <span className="relative z-10 uppercase">REGISTER YOUR SCHOOL</span>
 

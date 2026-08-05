@@ -1,4 +1,5 @@
 import React from 'react';
+import girlStudentImg from '../../assets/CCMM/girl student.png';
 
 export default function CcmmCarries() {
   const items = [
@@ -81,29 +82,43 @@ export default function CcmmCarries() {
           </h2>
         </div>
 
-        {/* List Items */}
-        <div className="flex flex-col gap-3 max-w-[700px] mx-auto">
-          {items.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white border border-gray-200 rounded-[16px] p-4 lg:p-5 flex items-center gap-6 shadow-[0_4px_15px_rgba(0,0,0,0.03)] hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(91,69,255,0.1)] hover:border-[#5B45FF]/30 transition-all duration-300 relative overflow-hidden group cursor-pointer"
-            >
-              {/* Subtle hover gradient background */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#5B45FF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+        {/* Content Wrapper */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 mt-10 max-w-[1000px] mx-auto">
+          
+          {/* List Items (Left) */}
+          <div className="flex flex-col gap-3 w-full lg:w-[55%]">
+            {items.map((item, index) => (
+              <div
+                key={index}
+                className="bg-white border border-gray-200 rounded-[16px] p-4 lg:p-5 flex items-center gap-6 shadow-[0_4px_15px_rgba(0,0,0,0.03)] hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(91,69,255,0.1)] hover:border-[#5B45FF]/30 transition-all duration-300 relative overflow-hidden group cursor-pointer"
+              >
+                {/* Subtle hover gradient background */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#5B45FF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
-              {/* Icon */}
-              <div className={`w-14 h-14 rounded-full flex items-center justify-center shrink-0 relative z-10 ${item.iconBg} group-hover:scale-110 group-hover:shadow-sm transition-all duration-500`}>
-                <div className="scale-75 origin-center">{item.icon}</div>
-              </div>
+                {/* Icon */}
+                <div className={`w-14 h-14 rounded-full flex items-center justify-center shrink-0 relative z-10 ${item.iconBg} group-hover:scale-110 group-hover:shadow-sm transition-all duration-500`}>
+                  <div className="scale-75 origin-center">{item.icon}</div>
+                </div>
 
-              {/* Separator & Text */}
-              <div className={`flex-1 border-l-2 ${item.lineColor} pl-5 py-1 relative z-10 border-opacity-70 group-hover:border-opacity-100 transition-all duration-300 text-left`}>
-                <p className="text-[#374151] font-medium text-[15px] md:text-[17px] leading-relaxed group-hover:text-[#111827] transition-colors duration-300">
-                  {item.text}
-                </p>
+                {/* Separator & Text */}
+                <div className={`flex-1 border-l-2 ${item.lineColor} pl-5 py-1 relative z-10 border-opacity-70 group-hover:border-opacity-100 transition-all duration-300 text-left`}>
+                  <p className="text-[#374151] font-medium text-[15px] md:text-[17px] leading-relaxed group-hover:text-[#111827] transition-colors duration-300">
+                    {item.text}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Image (Right) */}
+          <div className="w-full lg:w-[45%] flex justify-center lg:justify-end">
+            <img 
+              src={girlStudentImg} 
+              alt="Girl Student" 
+              className="w-full max-w-[400px] object-contain" 
+            />
+          </div>
+
         </div>
 
       </div>

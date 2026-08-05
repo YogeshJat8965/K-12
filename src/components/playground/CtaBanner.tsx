@@ -83,16 +83,14 @@ export default function CtaBanner() {
       <style>{`
         .cta-section {
           width: 100%;
-          padding: 0 40px 80px 40px;
+          padding: 0 0 80px 0;
           margin-top: -88px;
           background: #FFFFFF;
           font-family: 'Poppins', sans-serif;
         }
 
         .cta-container {
-          max-width: 1360px;
-          margin: 0 auto;
-          border-radius: 20px;
+          width: 100%;
           background: #09023B url('${BgImage}') center center no-repeat;
           background-size: cover;
           padding: 32px 40px 24px 40px;
@@ -189,13 +187,12 @@ export default function CtaBanner() {
 
         @media (max-width: 768px) {
           .cta-section {
-            padding: 0 20px 60px;
+            padding: 0 0 60px 0;
             margin-top: -10px;
           }
 
           .cta-container {
             padding: 32px 20px;
-            border-radius: 16px;
             background: linear-gradient(rgba(9, 2, 59, 0.65), rgba(9, 2, 59, 0.65)), url('${BgImage}') center left no-repeat;
             background-color: #09023B;
             background-size: cover;

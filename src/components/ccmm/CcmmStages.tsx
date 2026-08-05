@@ -101,10 +101,7 @@ export default function CcmmStages() {
                   {stage.desc}
                 </p>
 
-                {/* Badge at the bottom */}
-                <div className={`mt-auto px-4 py-1.5 rounded-full text-[12px] font-bold border ${stage.badgeColor} border-opacity-30 bg-white shadow-sm`}>
-                  {stage.badge}
-                </div>
+
 
               </div>
             </div>
