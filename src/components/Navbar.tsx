@@ -4,7 +4,7 @@ const logoImg = '/landing/WhatsApp_Image_2026-07-28_at_8.46.35_AM-removebg-previ
 
 /* ─── Nav link data for Level 3 ─── */
 const NAV_LINKS = [
-  { label: "Adobe's Programme", href: '/digital-creativity' },
+  { label: "Adobe Program", href: '/digital-creativity' },
   {
     label: 'Skill Studio',
     href: '/skill-studio',

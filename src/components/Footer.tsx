@@ -46,9 +46,9 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Adobe's Programme */}
+          {/* Column 2: Adobe Program */}
           <div className="flex flex-col gap-4 lg:mt-[72px]">
-            <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">Adobe's Programme</h3>
+            <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">Adobe Program</h3>
             <ul className="flex flex-col gap-3">
               <li><a href="/digital-creativity" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Digital Creativity</a></li>
               <li><a href="/digital-creativity#dcais-program" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">DCAIS Programme</a></li>
