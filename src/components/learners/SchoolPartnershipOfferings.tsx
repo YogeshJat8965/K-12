@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Lock, X } from 'lucide-react';
 import { WordReveal, StaggerContainer, StaggerItem, FadeIn3D } from '../animations/ScrollAnimations';
 import img1 from '../../assets/learners/1img.webp';
 import img2 from '../../assets/learners/2img.webp';
@@ -144,6 +144,17 @@ export default function SchoolPartnershipOfferings() {
   const [isAnimating, setIsAnimating] = useState(false);
   const [direction, setDirection] = useState<'left' | 'right'>('right');
 
+  // Lock and Login states
+  const [isUnlocked, setIsUnlocked] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [isSignup, setIsSignup] = useState(false);
+
+  const handleLoginSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsUnlocked(true);
+    setShowLoginModal(false);
+  };
+
   const goTo = useCallback((idx: number, dir: 'left' | 'right' = 'right') => {
     if (isAnimating) return;
     setDirection(dir);
@@ -212,8 +223,10 @@ export default function SchoolPartnershipOfferings() {
           </StaggerItem>
         </StaggerContainer>
 
-        {/* Single Carousel Card */}
-        <FadeIn3D delay={0.2} y={50} rotateX={5} className="bg-white rounded-[40px] pl-6 pr-4 py-8 md:pl-10 md:pr-6 md:py-10 lg:pl-12 lg:pr-6 lg:py-12 border border-gray-100 shadow-[0_12px_60px_rgba(0,0,0,0.06)] overflow-hidden">
+        {/* Single Carousel Card Wrapper */}
+        <div className="relative">
+          <div className={!isUnlocked ? "filter blur-[6px] opacity-60 pointer-events-none select-none transition-all duration-500" : "transition-all duration-500"}>
+            <FadeIn3D delay={0.2} y={50} rotateX={5} className="bg-white rounded-[40px] pl-6 pr-4 py-8 md:pl-10 md:pr-6 md:py-10 lg:pl-12 lg:pr-6 lg:py-12 border border-gray-100 shadow-[0_12px_60px_rgba(0,0,0,0.06)] overflow-hidden">
 
           <div key={current} className="grid grid-cols-1 xl:grid-cols-[1fr_1.25fr] gap-8 xl:gap-5 items-center">
 
@@ -313,8 +326,82 @@ export default function SchoolPartnershipOfferings() {
             ))}
           </div>
         </FadeIn3D>
+        </div>
+        
+        {/* The Lock Overlay */}
+        {!isUnlocked && (
+          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center pt-24 md:pt-16">
+            <div className="bg-white/95 backdrop-blur-xl p-8 rounded-3xl shadow-[0_20px_60px_rgba(0,0,0,0.15)] flex flex-col items-center max-w-sm text-center border border-gray-100/50 transform transition-all hover:scale-105">
+              <div className="w-16 h-16 bg-[#F4EFFF] rounded-full flex items-center justify-center text-[#5B32EA] mb-5 shadow-inner">
+                <Lock size={28} strokeWidth={2.5} />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3 tracking-tight">Exclusive Offerings</h3>
+              <p className="text-gray-500 text-sm mb-8 leading-relaxed">Log in or create a free account to explore our complete partnership ecosystem and offerings.</p>
+              <button 
+                onClick={() => setShowLoginModal(true)}
+                className="w-full py-3.5 bg-[#5B32EA] text-white rounded-xl font-bold hover:bg-[#4A25C7] transition-colors shadow-lg shadow-[#5B32EA]/30 active:scale-95"
+              >
+                Log In to View
+              </button>
+            </div>
+          </div>
+        )}
+        </div>
 
       </div>
+
+      {/* Login / Signup Modal */}
+      {showLoginModal && (
+        <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/60 backdrop-blur-md p-4 transition-opacity">
+          <div className="bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden relative transform transition-all">
+            <button 
+              onClick={() => setShowLoginModal(false)} 
+              className="absolute top-5 right-5 text-gray-400 hover:text-gray-900 transition-colors"
+            >
+              <X size={24} />
+            </button>
+            <div className="p-10">
+              <h3 className="text-3xl font-extrabold text-gray-900 mb-3 tracking-tight">
+                {isSignup ? 'Create Account' : 'Welcome Back'}
+              </h3>
+              <p className="text-gray-500 text-sm mb-8">
+                {isSignup ? 'Sign up to unlock exclusive partnership resources.' : 'Log in to unlock exclusive partnership resources.'}
+              </p>
+              
+              <form onSubmit={handleLoginSubmit} className="flex flex-col gap-5">
+                {isSignup && (
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+                    <input type="text" required className="w-full px-5 py-3.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#5B32EA] focus:ring-2 focus:ring-[#5B32EA]/20 transition-all text-sm" placeholder="John Doe" />
+                  </div>
+                )}
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
+                  <input type="email" required className="w-full px-5 py-3.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#5B32EA] focus:ring-2 focus:ring-[#5B32EA]/20 transition-all text-sm" placeholder="you@school.edu" />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Password</label>
+                  <input type="password" required className="w-full px-5 py-3.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#5B32EA] focus:ring-2 focus:ring-[#5B32EA]/20 transition-all text-sm" placeholder="••••••••" />
+                </div>
+                
+                <button type="submit" className="w-full py-4 mt-4 bg-[#5B32EA] text-white rounded-xl font-bold hover:bg-[#4A25C7] transition-all shadow-lg shadow-[#5B32EA]/30 active:scale-95 text-base">
+                  {isSignup ? 'Create Account' : 'Log In'}
+                </button>
+              </form>
+              
+              <div className="mt-8 text-center text-sm text-gray-500 font-medium">
+                {isSignup ? 'Already have an account?' : 'Don\'t have an account?'}
+                <button 
+                  onClick={() => setIsSignup(!isSignup)} 
+                  className="ml-2 text-[#5B32EA] font-bold hover:underline"
+                >
+                  {isSignup ? 'Log in' : 'Sign up'}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
