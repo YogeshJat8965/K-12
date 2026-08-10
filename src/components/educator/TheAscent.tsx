@@ -54,11 +54,17 @@ const stages = [
 
 export default function TheAscent() {
   return (
-    <section className="w-full bg-[#FAFAFF] py-24 font-poppins relative overflow-hidden border-t border-gray-100">
+    <section className="w-full relative py-16 lg:py-24 overflow-hidden font-poppins bg-slate-50 border-t border-gray-100">
       
-      {/* Subtle Background Elements */}
-      <div className="absolute top-40 left-[-10%] w-[500px] h-[500px] bg-indigo-100/50 rounded-full blur-[100px] pointer-events-none"></div>
-      <div className="absolute bottom-20 right-[-5%] w-[400px] h-[400px] bg-purple-100/50 rounded-full blur-[100px] pointer-events-none"></div>
+      {/* Modern Tech Background (Grid + Gradient Mesh) */}
+      <div className="absolute inset-0 z-0" style={{ backgroundImage: "linear-gradient(to right, #E2E8F0 1px, transparent 1px), linear-gradient(to bottom, #E2E8F0 1px, transparent 1px)", backgroundSize: "40px 40px", opacity: 0.5 }}></div>
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-gradient-to-br from-[#5B45FF]/10 to-[#EC4899]/10 rounded-full blur-[100px] -translate-y-1/2 pointer-events-none mix-blend-multiply z-0"></div>
+      <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-gradient-to-tl from-[#38BDF8]/10 to-[#818CF8]/10 rounded-full blur-[120px] translate-y-1/3 pointer-events-none mix-blend-multiply z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-50/50 to-slate-50 z-0 pointer-events-none"></div>
+
+      {/* Decorative Semi-circles in Corners */}
+      <div className="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 bg-gradient-to-bl from-[#5B45FF]/20 to-transparent rounded-bl-full z-0 opacity-80 border-b border-l border-[#5B45FF]/10"></div>
+      <div className="absolute bottom-0 left-0 w-56 h-56 sm:w-72 sm:h-72 bg-gradient-to-tr from-[#EC4899]/10 to-transparent rounded-tr-full z-0 opacity-80 border-t border-r border-[#EC4899]/10"></div>
 
       <div className="max-w-[1000px] mx-auto px-6 lg:px-12 relative z-10">
         

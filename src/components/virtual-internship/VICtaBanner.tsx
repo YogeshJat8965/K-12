@@ -1,12 +1,14 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Play } from 'lucide-react';
+import VIQuizModal from './VIQuizModal';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function VICtaBanner() {
   const bannerRef = useRef<HTMLDivElement>(null);
+  const [isQuizOpen, setIsQuizOpen] = useState(false);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -179,7 +181,7 @@ export default function VICtaBanner() {
 
           {/* Right buttons */}
           <div className="vi-cta-buttons">
-            <button onClick={(e) => e.preventDefault()} className="vi-cta-btn vi-cta-btn-primary">
+            <button onClick={(e) => { e.preventDefault(); setIsQuizOpen(true); }} className="vi-cta-btn vi-cta-btn-primary">
               <span className="vi-cta-btn-icon"><Play size={16} fill="currentColor" /></span>
               Take a free quiz
             </button>
@@ -194,6 +196,8 @@ export default function VICtaBanner() {
           </div>
         </div>
       </div>
+      
+      <VIQuizModal isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
     </>
   );
 }

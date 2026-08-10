@@ -1,5 +1,5 @@
 import { Play } from 'lucide-react';
-import learnersHeroImg from '../../assets/learners/hero-img.webp';
+import teacherImg from '../../assets/teacher.png';
 import { FadeIn3D, WordReveal, StaggerContainer, StaggerItem } from '../animations/ScrollAnimations';
 
 export default function EducatorHero() {
@@ -14,8 +14,8 @@ export default function EducatorHero() {
 
             <h1 className="text-[32px] sm:text-[40px] md:text-[46px] lg:text-[46px] xl:text-[50px] font-extrabold text-[#1A1A2E] leading-[1.15] tracking-tight mb-6">
               <span className="whitespace-normal md:whitespace-nowrap"><WordReveal text="Future-Ready Teaching," delay={0.1} /></span><br className="hidden md:block" />
-              <span className="text-[#5B32EA] whitespace-normal md:whitespace-nowrap"><WordReveal text="Powered by AI and" delay={0.2} /></span><br className="hidden md:block" />
-              <span className="whitespace-normal md:whitespace-nowrap"><WordReveal text="Human Insight" delay={0.3} /></span>
+              <span className="text-[#5B32EA] whitespace-normal md:whitespace-nowrap"><WordReveal text="Powered by AI" delay={0.2} /></span><br className="hidden md:block" />
+              {/* <span className="whitespace-normal md:whitespace-nowrap"><WordReveal text="Human Insight" delay={0.3} /></span> */}
             </h1>
 
             <StaggerItem className="text-[#6B7280] text-base md:text-lg leading-[1.8] mb-4 font-medium">
@@ -47,7 +47,7 @@ export default function EducatorHero() {
           <FadeIn3D delay={0.3} rotateY={-10} rotateX={5} className="relative w-full flex justify-center lg:justify-end items-end mb-[-40px] lg:mb-[-60px]">
             <div className="relative w-[112%] lg:w-[118%]">
               <img
-                src={learnersHeroImg}
+                src={teacherImg}
                 alt="Educators working together"
                 className="w-full h-auto object-cover rounded-[40px] relative z-10"
               />

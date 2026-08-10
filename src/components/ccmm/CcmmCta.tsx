@@ -74,7 +74,7 @@ export default function CcmmCta() {
         </div>
 
         {/* Footer Text Lines */}
-        <div className="max-w-[1000px] mx-auto mt-8 pt-4 border-t border-white/15 relative z-10 text-center flex flex-col items-center gap-1.5">
+        {/* <div className="max-w-[1000px] mx-auto mt-8 pt-4 border-t border-white/15 relative z-10 text-center flex flex-col items-center gap-1.5">
           <p className="text-white font-bold text-[13px] tracking-wide">
             Skillzza Learning Technologies
           </p>
@@ -84,7 +84,7 @@ export default function CcmmCta() {
           <p className="text-white/60 font-medium text-[11px] mt-0.5">
             CCMM - The Cognitive Computing Maturity Model. A Skillzza Nova Signature Programme.
           </p>
-        </div>
+        </div> */}
 
       </section>
     </>

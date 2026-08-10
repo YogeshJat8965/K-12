@@ -51,15 +51,15 @@ export default function EducatorCircleApp() {
         <EducatorCircleHero />
         <EducatorPassport />
         <AiImmersion />
-        <NationalNetwork />
-        <TeacherAtCenter />
-        <WhatWeDo />
+        {/* <NationalNetwork /> */}
+        {/* <TeacherAtCenter /> */}
+        {/* <WhatWeDo /> */}
         <TheAscent />
         <MembershipTiers />
-        <MembershipBenefits />
+        {/* <MembershipBenefits /> */}
         <CommunityCircles />
-        <CurriculumSprints />
-        <ProgrammeCalendar />
+        {/* <CurriculumSprints /> */}
+        {/* <ProgrammeCalendar /> */}
         <EducatorBanner />
       </main>
 

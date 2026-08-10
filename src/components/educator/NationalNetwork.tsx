@@ -142,8 +142,8 @@ export default function NationalNetwork() {
           </p>
 
           <h2 className="text-[32px] md:text-[40px] lg:text-[44px] font-extrabold text-[#111827] leading-[1.2] tracking-tight">
-            <span className="text-[#4F46E5]">A National Network,</span> Not Another
-            <br className="hidden md:block" /> Training Portal
+            <span className="text-[#4F46E5]">A National Network <br /></span> Not Another
+            Training Portal
           </h2>
         </div>
 

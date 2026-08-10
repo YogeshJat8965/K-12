@@ -99,34 +99,34 @@ export default function CcmmCertification() {
           <span className="text-gray-500 font-bold text-[11px] text-center uppercase tracking-[0.15em] mb-8 block">
             EVERY CERTIFICATION INCLUDES
           </span>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
-            <div className="flex items-start gap-3">
+          <div className="flex flex-wrap justify-center gap-4">
+            <div className="w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.75rem)] bg-white border border-gray-100 rounded-xl p-4 shadow-[0_4px_20px_rgba(0,0,0,0.03)] flex items-start gap-3 hover:-translate-y-1 transition-transform">
               <div className="w-1.5 h-1.5 rounded-full bg-[#5B45FF] mt-2 shrink-0"></div>
-              <p className="text-[#334155] font-medium text-[15px] leading-relaxed">
+              <p className="text-[#334155] font-medium text-[13px] leading-relaxed">
                 An official CCMM certificate signed by Skillzza Learning Technologies
               </p>
             </div>
-            <div className="flex items-start gap-3">
+            <div className="w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.75rem)] bg-white border border-gray-100 rounded-xl p-4 shadow-[0_4px_20px_rgba(0,0,0,0.03)] flex items-start gap-3 hover:-translate-y-1 transition-transform">
               <div className="w-1.5 h-1.5 rounded-full bg-[#5B45FF] mt-2 shrink-0"></div>
-              <p className="text-[#334155] font-medium text-[15px] leading-relaxed">
+              <p className="text-[#334155] font-medium text-[13px] leading-relaxed">
                 A digital badge for your website, communications, and admissions material
               </p>
             </div>
-            <div className="flex items-start gap-3">
+            <div className="w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.75rem)] bg-white border border-gray-100 rounded-xl p-4 shadow-[0_4px_20px_rgba(0,0,0,0.03)] flex items-start gap-3 hover:-translate-y-1 transition-transform">
               <div className="w-1.5 h-1.5 rounded-full bg-[#5B45FF] mt-2 shrink-0"></div>
-              <p className="text-[#334155] font-medium text-[15px] leading-relaxed">
+              <p className="text-[#334155] font-medium text-[13px] leading-relaxed">
                 Inclusion in the annual CCMM Index of AI-Ready Schools
               </p>
             </div>
-            <div className="flex items-start gap-3">
+            <div className="w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.75rem)] bg-white border border-gray-100 rounded-xl p-4 shadow-[0_4px_20px_rgba(0,0,0,0.03)] flex items-start gap-3 hover:-translate-y-1 transition-transform">
               <div className="w-1.5 h-1.5 rounded-full bg-[#5B45FF] mt-2 shrink-0"></div>
-              <p className="text-[#334155] font-medium text-[15px] leading-relaxed">
+              <p className="text-[#334155] font-medium text-[13px] leading-relaxed">
                 Recognition at the Skillzza Nova Education Leadership Summit
               </p>
             </div>
-            <div className="flex items-start gap-3">
+            <div className="w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.75rem)] bg-white border border-gray-100 rounded-xl p-4 shadow-[0_4px_20px_rgba(0,0,0,0.03)] flex items-start gap-3 hover:-translate-y-1 transition-transform">
               <div className="w-1.5 h-1.5 rounded-full bg-[#5B45FF] mt-2 shrink-0"></div>
-              <p className="text-[#334155] font-medium text-[15px] leading-relaxed">
+              <p className="text-[#334155] font-medium text-[13px] leading-relaxed">
                 A formal media announcement across Skillzza and CXO TechBOT platforms
               </p>
             </div>

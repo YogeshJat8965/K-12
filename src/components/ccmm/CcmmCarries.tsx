@@ -1,12 +1,12 @@
 import React from 'react';
-import girlStudentImg from '../../assets/CCMM/girl student.png';
+import girlStudentImg from '../../assets/CCMM/image.png';
 
 export default function CcmmCarries() {
   const items = [
     {
       content: (
         <div className="flex flex-col">
-          <span className="text-[#D97706] font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase">SDG 4</span>
+          <span className="text-red-400 font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase">SDG 4</span>
           <span className="text-[#111827] font-bold text-[16px] mb-1.5">Quality Education</span>
           <span className="text-[#4B5563] text-[14px] leading-relaxed font-normal">Inclusive, equitable, lifelong learning for every child.</span>
         </div>
@@ -15,7 +15,7 @@ export default function CcmmCarries() {
     {
       content: (
         <div className="flex flex-col">
-          <span className="text-[#D97706] font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase">SDG 5</span>
+          <span className="text-orange-400 font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase">SDG 5</span>
           <span className="text-[#111827] font-bold text-[16px] mb-1.5">Gender Equality</span>
           <span className="text-[#4B5563] text-[14px] leading-relaxed font-normal">Closing the AI gender gap from the classroom upward.</span>
         </div>
@@ -24,7 +24,7 @@ export default function CcmmCarries() {
     {
       content: (
         <div className="flex flex-col">
-          <span className="text-[#D97706] font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase">SDG 8</span>
+          <span className="text-[#A7475C] font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase">SDG 8</span>
           <span className="text-[#111827] font-bold text-[16px] mb-1.5">Decent Work & Growth</span>
           <span className="text-[#4B5563] text-[14px] leading-relaxed font-normal">Preparing students for the cognitive economy.</span>
         </div>
@@ -33,7 +33,7 @@ export default function CcmmCarries() {
     {
       content: (
         <div className="flex flex-col">
-          <span className="text-[#D97706] font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase">SDG 9</span>
+          <span className="text-[#ED662F] font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase">SDG 9</span>
           <span className="text-[#111827] font-bold text-[16px] mb-1.5">Industry & Innovation</span>
           <span className="text-[#4B5563] text-[14px] leading-relaxed font-normal">Building school-level innovation infrastructure.</span>
         </div>
@@ -42,7 +42,7 @@ export default function CcmmCarries() {
     {
       content: (
         <div className="flex flex-col">
-          <span className="text-[#D97706] font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase">SDG 10</span>
+          <span className="text-[#DF1567] font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase">SDG 10</span>
           <span className="text-[#111827] font-bold text-[16px] mb-1.5">Reduced Inequalities</span>
           <span className="text-[#4B5563] text-[14px] leading-relaxed font-normal">Democratising AI access across Tier-1, 2, 3, and rural schools.</span>
         </div>
@@ -51,7 +51,7 @@ export default function CcmmCarries() {
     {
       content: (
         <div className="flex flex-col">
-          <span className="text-[#D97706] font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase">SDG 17</span>
+          <span className="text-[#124767] font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase">SDG 17</span>
           <span className="text-[#111827] font-bold text-[16px] mb-1.5">Partnerships for Goals</span>
           <span className="text-[#4B5563] text-[14px] leading-relaxed font-normal">Connecting schools to industry, government, and global ecosystems.</span>
         </div>
@@ -103,9 +103,9 @@ export default function CcmmCarries() {
         </div>
 
         {/* Bottom Footer Text */}
-        <div className="mt-16 text-left max-w-4xl border-t border-gray-200 pt-8">
-          <p className="text-[20px] md:text-[24px] font-bold text-[#111827] leading-[1.4]">
-            CCMM-certified schools graduate students who don't just understand AI - <span className="text-[#D97706]">they understand why it must serve humanity.</span>
+        <div className="mt-16 border-t border-gray-200 pt-8 flex justify-center text-center w-full">
+          <p className="text-[#64748B] text-[14px] font-medium italic leading-relaxed w-full lg:whitespace-nowrap">
+            CCMM-certified schools graduate students who don't just understand AI - they understand why it must serve humanity.
           </p>
         </div>
 

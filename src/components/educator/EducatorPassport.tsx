@@ -25,7 +25,7 @@ export default function EducatorPassport() {
   ];
 
   return (
-    <section className="w-full bg-[#FAFAFF] py-20 lg:py-28 font-poppins relative overflow-hidden border-t border-gray-100">
+    <section className="w-full bg-[#FAFAFF] py-2 lg:py-4 font-poppins relative overflow-hidden border-t border-gray-100">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
 
         {/* Top Centered Header */}
@@ -151,9 +151,6 @@ export default function EducatorPassport() {
                   <h5 className="text-[#64748B] font-bold text-[13px] uppercase tracking-wider mb-0.5">Total this year</h5>
                   <div className="text-[#1A1A2E] font-black text-[32px] leading-none">8.0 <span className="text-[16px] text-[#64748B] font-bold">hrs</span></div>
                 </div>
-                <button className="bg-[#5B32EA] text-white p-3 rounded-full hover:scale-105 hover:bg-[#4A25C7] transition-all shadow-md shadow-indigo-500/30">
-                  <Download className="w-5 h-5" />
-                </button>
               </div>
 
             </div>

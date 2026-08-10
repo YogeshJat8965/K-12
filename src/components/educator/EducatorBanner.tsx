@@ -12,7 +12,7 @@ export default function EducatorBanner() {
           <img
             src={bannerImg}
             alt="Join the Educator Circle"
-            className="w-full h-[180px] md:h-[220px] lg:h-[260px] object-cover object-left md:object-center"
+            className="w-full h-[140px] md:h-[180px] lg:h-[210px] object-cover object-left md:object-center"
           />
 
           {/* Absolute Overlay Button on Right Side */}

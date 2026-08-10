@@ -37,7 +37,7 @@ export default function StudentsHero() {
           </h1>
 
           <p className="text-gray-700 text-[14px] sm:text-[16px] md:text-[17px] leading-[1.7] mb-6 sm:mb-8 max-w-full font-medium">
-            School teaches you formulas and facts. But what about the skills the real <br /> world actually demands? What if you want to launch a project,<br /> solve a global problem, or use AI to tell your story?
+            School teaches you formulas and facts. But what about the skills the real <br /> world actually demands? <br /> What if you want to launch a project,<br /> solve a global problem, or use AI to tell your story?
           </p>
 
           <div className="mb-4 w-full">

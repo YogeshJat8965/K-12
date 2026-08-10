@@ -1,4 +1,5 @@
 import React from 'react';
+import bgImage from '../../assets/CCMM/why schools.png';
 
 export default function CcmmWhySchool() {
   const points = [
@@ -25,7 +26,11 @@ export default function CcmmWhySchool() {
   ];
 
   return (
-    <section className="w-full bg-[#FAFAFA] font-poppins py-16 overflow-hidden">
+    <section 
+      className="w-full font-poppins pt-6 pb-16 overflow-hidden relative bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${bgImage})` }}
+    >
+      <div className="absolute inset-0 bg-white/70"></div>
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10">
 
         {/* Header Section */}
@@ -47,7 +52,7 @@ export default function CcmmWhySchool() {
             >
               {/* Subtle gradient overlay on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#5B45FF]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-              
+
               <p className="text-[#334155] font-medium text-[14px] md:text-[15px] leading-relaxed relative z-10 group-hover:text-[#111827] transition-colors duration-300">
                 {pt.desc}
               </p>

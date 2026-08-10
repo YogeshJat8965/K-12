@@ -1,8 +1,8 @@
 import { useEffect, useRef, Fragment } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import RIGHT_IMG from '../assets/landing page/Homepage (1920x 1080px) – 2/ChatGPT Image Jun 20, 2026, 12_40_39 AM.webp';
 import { GraduationCap, Code2, Briefcase, Rocket } from 'lucide-react';
+import RIGHT_IMG from '../assets/landing page/Homepage (1920x 1080px) – 2/ChatGPT Image Jun 20, 2026, 12_40_39 AM.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,25 +49,18 @@ export default function HomeHero() {
         });
       }
 
+      // 2. Right Image animation
+      if (imgRef.current) {
+        gsap.set(imgRef.current, { yPercent: -50, y: 0 });
+        gsap.from(imgRef.current, {
+          x: 100,
+          opacity: 0,
+          duration: 1.2,
+          ease: 'power3.out',
+          delay: 0.3
+        });
+      }
 
-      // 2. Parallax float for right image (Desktop Only)
-      const mm = gsap.matchMedia();
-      mm.add("(min-width: 861px)", () => {
-        if (imgRef.current) {
-          // Tell GSAP about the existing CSS transform (-50%) so it doesn't overwrite it with 0
-          gsap.set(imgRef.current, { yPercent: -50, y: 0 });
-          gsap.to(imgRef.current, {
-            y: -100,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: heroRef.current,
-              start: 'top top',
-              end: 'bottom top',
-              scrub: true,
-            }
-          });
-        }
-      });
 
       // 3. Feature cards (bottom bar) 3D flip + stagger
       if (featBarRef.current) {
@@ -100,11 +93,32 @@ export default function HomeHero() {
         /* ─── hero outer ─── */
         .hh-section {
           width: 100%;
-          background: #ffffff;
+          background: transparent;
           padding-top: 140px; /* Increased gap to prevent navbar overlap */
           font-family: 'Poppins', sans-serif;
           position: relative;
           overflow: hidden;
+        }
+
+        .hh-video-bg {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          z-index: 0;
+        }
+
+        .hh-video-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(255, 255, 255, 0.85);
+          z-index: 1;
+          pointer-events: none;
         }
 
         /* ─── two-column content area ─── */
@@ -115,16 +129,18 @@ export default function HomeHero() {
           display: flex;
           align-items: center;
           gap: 0;
+          position: relative;
+          z-index: 10;
         }
 
         /* ─── LEFT ─── */
         .hh-left {
-          flex: 0 0 50%;
-          max-width: 50%;
+          flex: 1;
+          max-width: 700px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          padding-top: 20px; /* Shifted up per user request */
+          padding-top: 20px;
           padding-right: 40px;
           z-index: 10;
         }
@@ -242,10 +258,10 @@ export default function HomeHero() {
         .hh-right img {
           position: absolute;
           right: 0;
-          top: 50%;
+          top: 53%; /* Shifted slightly lower */
           transform: translateY(-50%);
-          width: 48vw;
-          max-width: 900px;
+          width: 44vw; /* Slightly smaller */
+          max-width: 800px; /* Slightly smaller max width */
           height: auto;
           display: block;
           object-fit: contain;
@@ -325,13 +341,13 @@ export default function HomeHero() {
             padding-right: 0;
           }
           .hh-right { justify-content: center; }
-          .hh-right img { 
-            position: relative !important; 
-            top: auto !important; 
-            right: auto !important; 
-            transform: scale(1.15) !important; 
-            width: 100% !important; 
-            max-width: 100% !important; 
+          .hh-right img {
+            position: relative !important;
+            top: auto !important;
+            right: auto !important;
+            transform: scale(1.15) !important;
+            width: 100% !important;
+            max-width: 100% !important;
             margin: 0 auto;
           }
           .hh-feature-bar {
@@ -350,6 +366,16 @@ export default function HomeHero() {
       `}</style>
 
       <section className="hh-section" ref={heroRef}>
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className="hh-video-bg"
+        >
+          <source src="/heroVideo.mp4" type="video/mp4" />
+        </video>
+        <div className="hh-video-overlay"></div>
 
         {/* ── Two-column content ── */}
         <div className="hh-content">

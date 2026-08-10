@@ -22,7 +22,7 @@ const practitionerFeatures = [
 
 export default function MembershipTiers() {
   return (
-    <section className="w-full bg-[#FAFAFF] py-24 font-poppins relative overflow-hidden border-t border-gray-100">
+    <section className="w-full bg-[#FAFAFF] py-2 lg:py-4 font-poppins relative overflow-hidden border-t border-gray-100">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10">
 
         {/* Header */}
@@ -42,7 +42,10 @@ export default function MembershipTiers() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto mb-12">
 
           {/* Explorer Tier */}
-          <div className="bg-white rounded-3xl p-8 lg:p-10 border border-gray-200 shadow-sm flex flex-col relative group hover:border-gray-300 transition-colors">
+          <div 
+            onClick={() => window.location.href = '/login'}
+            className="bg-white rounded-3xl p-8 lg:p-10 border border-gray-200 shadow-sm flex flex-col relative group hover:border-gray-300 transition-all hover:-translate-y-1 hover:shadow-md cursor-pointer"
+          >
             <span className="text-[#64748B] font-bold text-[11px] uppercase tracking-widest mb-2 block">
               COMMUNITY · FREE FOREVER
             </span>
@@ -69,7 +72,10 @@ export default function MembershipTiers() {
           </div>
 
           {/* Practitioner Tier */}
-          <div className="bg-[#1A1A2E] rounded-3xl p-8 lg:p-10 border border-[#2A2A4A] shadow-[0_20px_60px_rgba(91,50,234,0.15)] flex flex-col relative group transform md:-translate-y-4 hover:-translate-y-5 transition-transform duration-300 overflow-hidden">
+          <div 
+            onClick={() => window.location.href = '/login'}
+            className="bg-[#1A1A2E] rounded-3xl p-8 lg:p-10 border border-[#2A2A4A] shadow-[0_20px_60px_rgba(91,50,234,0.15)] flex flex-col relative group transform md:-translate-y-4 hover:-translate-y-5 transition-all duration-300 overflow-hidden cursor-pointer hover:shadow-[0_30px_70px_rgba(91,50,234,0.25)]"
+          >
 
             {/* Glowing accents */}
             <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[#5B32EA]/20 rounded-full blur-[80px] pointer-events-none"></div>
@@ -89,7 +95,7 @@ export default function MembershipTiers() {
             <ul className="flex flex-col gap-4 flex-grow mb-10 relative z-10">
               {practitionerFeatures.map((feat, idx) => (
                 <li key={idx} className="flex items-start gap-3">
-                  <span className={`w-1.5 h-1.5 rounded-full shrink-0 mt-2 ${idx === 0 ? 'bg-[#A78BFA]' : 'bg-emerald-400'}`}></span>
+                  <span className="w-1.5 h-1.5 rounded-full shrink-0 mt-2 bg-emerald-400"></span>
                   <span className={`font-medium text-[15px] ${idx === 0 ? 'text-white font-semibold' : 'text-gray-300'}`}>{feat}</span>
                 </li>
               ))}

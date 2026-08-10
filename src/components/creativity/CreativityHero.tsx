@@ -39,7 +39,7 @@ export default function CreativityHero() {
 
             <ScrollReveal delay={0.2}>
               <p className="text-slate-600 text-sm sm:text-base font-medium leading-relaxed max-w-lg mb-10">
-                Skillzza helps students imagine, design and build with confidence and gives teachers the tools and training to lead the way. <br /> Running on Adobe Express for Education, the programme weaves creativity, design thinking, digital literacy and real AI skills into everyday learning.
+                We helps students imagine, design and build with confidence and gives teachers the tools and training to lead the way. <br /> Running on Adobe Express for Education, the programme weaves creativity, design thinking, digital literacy and real AI skills into everyday learning.
               </p>
             </ScrollReveal>
 
