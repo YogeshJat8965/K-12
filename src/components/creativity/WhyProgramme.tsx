@@ -50,16 +50,14 @@ export default function WhyProgramme() {
   return (
     <section className="py-12 md:py-16 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        
+
         {/* Heading */}
         <div className="text-center mb-24">
           <ScrollReveal>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 font-display tracking-tight leading-tight px-4">
               What students can create with Adobe Express
             </h2>
-            <p className="mt-6 text-slate-500 max-w-3xl mx-auto text-lg font-medium px-4">
-              The whole programme runs on Adobe Express - a professional-grade creative studio, simplified for the classroom. Here’s what that puts in students’ hands.
-            </p>
+
           </ScrollReveal>
         </div>
 
@@ -68,11 +66,11 @@ export default function WhyProgramme() {
           {benefits.map((benefit, index) => (
             <ScrollReveal key={index} delay={index * 0.1} direction="up">
               <div className="p-8 rounded-3xl bg-[#FAFCFD] border border-slate-100 hover:border-[#FA0F00]/20 transition-all duration-500 group hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:-translate-y-2 flex flex-col h-full">
-                
+
                 {/* Abstract Geometric Icon */}
                 <div className="mb-8 relative w-16 h-16">
                   {/* Background Shape */}
-                  <div 
+                  <div
                     className={`absolute inset-0 bg-gradient-to-br ${benefit.gradient} opacity-20 ${benefit.shape} transition-transform duration-700 group-hover:rotate-[30deg] group-hover:scale-125`}
                   />
                   {/* Floating Icon */}
@@ -80,11 +78,11 @@ export default function WhyProgramme() {
                     <benefit.icon className={`w-8 h-8 text-slate-900 group-hover:text-white transition-colors duration-500 z-10`} strokeWidth={2} />
                   </div>
                   {/* Hover Background Fill */}
-                  <div 
+                  <div
                     className={`absolute inset-0 bg-gradient-to-br ${benefit.gradient} opacity-0 group-hover:opacity-100 ${benefit.shape} transition-all duration-500 -z-0 scale-75 group-hover:scale-100`}
                   />
                 </div>
-                
+
                 {/* Text Content */}
                 <h3 className="text-xl font-bold text-slate-900 mb-4 font-display tracking-tight group-hover:text-[#FA0F00] transition-colors duration-300">
                   {benefit.title}

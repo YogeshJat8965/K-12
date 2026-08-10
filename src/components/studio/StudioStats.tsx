@@ -14,7 +14,7 @@ const stats = [
     icon: <School className="w-10 h-10 text-purple-600" />,
     value: 150,
     suffix: "+",
-    label: "Partner Schools",
+    label: "Schools",
     delay: 0.1
   },
   {
@@ -39,18 +39,17 @@ export default function StudioStats() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 items-center">
           {stats.map((stat, index) => (
-            <div 
-              key={index} 
-              className={`flex items-center gap-5 px-4 ${
-                index !== stats.length - 1 ? 'lg:border-r border-slate-100' : ''
-              }`}
+            <div
+              key={index}
+              className={`flex items-center gap-5 px-4 ${index !== stats.length - 1 ? 'lg:border-r border-slate-100' : ''
+                }`}
             >
               <ScrollReveal delay={stat.delay} direction="up">
                 <div className="p-3 bg-purple-50 rounded-2xl">
                   {stat.icon}
                 </div>
               </ScrollReveal>
-              
+
               <div className="flex flex-col">
                 <div className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
                   <CountUp to={stat.value} suffix={stat.suffix} delay={stat.delay} />

@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 
 // The new Hero we will build soon
 import EducatorCircleHero from './components/educator/EducatorCircleHero'; 
+import EducatorPassport from './components/educator/EducatorPassport'; 
 
 import WhatWeDo from './components/educator/WhatWeDo';
 import TeacherAtCenter from './components/educator/TeacherAtCenter';
@@ -48,6 +49,8 @@ export default function EducatorCircleApp() {
 
       <main className="min-h-screen">
         <EducatorCircleHero />
+        <EducatorPassport />
+        <AiImmersion />
         <NationalNetwork />
         <TeacherAtCenter />
         <WhatWeDo />
@@ -56,7 +59,6 @@ export default function EducatorCircleApp() {
         <MembershipBenefits />
         <CommunityCircles />
         <CurriculumSprints />
-        <AiImmersion />
         <ProgrammeCalendar />
         <EducatorBanner />
       </main>

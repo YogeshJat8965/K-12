@@ -36,7 +36,7 @@ export default function PageLoader() {
         src={logoImg}
         alt="Skillzza K-12"
         style={{
-          height: '100px',
+          height: '120px',
           width: 'auto',
           objectFit: 'contain',
           animation: 'pl-pulse 2s ease-in-out infinite',

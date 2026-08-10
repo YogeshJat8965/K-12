@@ -106,7 +106,7 @@ export default function VIHero() {
         }
 
         .vih-desc {
-          font-size: 16px;
+          font-size: 15px;
           line-height: 1.6;
           color: #4B5563;
           margin: 0 0 48px; /* Increased gap */

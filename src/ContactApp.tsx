@@ -126,10 +126,10 @@ export default function ContactApp() {
                 </h3>
                 <div className="flex flex-col gap-5 text-gray-700 pl-1 relative z-10">
                   <p className="leading-relaxed font-medium text-[15px]">
-                    WeWork India, Chromium,<br/>
-                    CTS No. 106/1-5, JVLR Road,<br/>
-                    Milind Nagar, Powai,<br/>
-                    Mumbai - 400076.
+                    We Work, Zenia Building, 4th Floor.<br/>
+                    Hiranandani Business Park, Arcadia Circle,<br/>
+                    Hiranandani Estate,<br/>
+                    Thane (west) Thane-400607
                   </p>
                   <div className="w-full h-px bg-[#7C3AED]/20 my-1"></div>
                   <div className="flex items-center gap-3 font-semibold text-[#1A1A2E]">

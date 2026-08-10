@@ -228,9 +228,7 @@ export default function CtaBanner() {
               <div className="cta-btn-wrapper"><button onClick={() => window.location.href = '/contact'} className="cta-btn">BOOK A SCHOOL DEMO</button></div>
             </div>
 
-            <p className="cta-footer">
-              <span className="cta-link">playground@skillzza.com</span> &nbsp;|&nbsp; <span className="cta-link">www.skillzzak12.com/ai-playground</span>
-            </p>
+
 
           </div>
         </div>

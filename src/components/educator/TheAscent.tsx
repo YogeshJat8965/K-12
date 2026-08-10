@@ -1,66 +1,140 @@
 import React from 'react';
-import { Star } from 'lucide-react';
-import onePathImg from '../../assets/educator circle/one path.png';
+import { UserCheck, Activity, Lightbulb, MessageSquare, Globe, Mic, ArrowDown } from 'lucide-react';
+
+const stages = [
+  {
+    id: '01',
+    title: 'Member',
+    desc: 'Join free, verify, get your educator card.',
+    reward: '0 pts',
+    icon: UserCheck,
+    color: 'bg-slate-100 text-slate-600 border-slate-200'
+  },
+  {
+    id: '02',
+    title: 'Active Educator',
+    desc: 'Finish the 30-day challenge.',
+    reward: '+220 pts · badge',
+    icon: Activity,
+    color: 'bg-blue-50 text-blue-600 border-blue-200'
+  },
+  {
+    id: '03',
+    title: 'Creative Educator',
+    desc: 'Share lessons, enter AI Lab challenges.',
+    reward: 'badges + CPD',
+    icon: Lightbulb,
+    color: 'bg-emerald-50 text-emerald-600 border-emerald-200'
+  },
+  {
+    id: '04',
+    title: 'Peer Mentor',
+    desc: 'Answer forums, guide newcomers.',
+    reward: 'recognition',
+    icon: MessageSquare,
+    color: 'bg-orange-50 text-orange-600 border-orange-200'
+  },
+  {
+    id: '05',
+    title: 'Ambassador',
+    desc: 'Host circles, run local meetups.',
+    reward: '1,000+ pts',
+    icon: Globe,
+    color: 'bg-indigo-50 text-indigo-600 border-indigo-200'
+  },
+  {
+    id: '06',
+    title: 'Fellow & Speaker',
+    desc: 'Lead workshops, take the Yugantar national stage.',
+    reward: 'top tier',
+    icon: Mic,
+    color: 'bg-purple-50 text-purple-600 border-purple-200 shadow-[0_0_20px_rgba(168,85,247,0.3)]'
+  }
+];
 
 export default function TheAscent() {
   return (
-    <section className="w-full bg-[#E6E6E6] font-poppins pt-10 pb-10 relative overflow-hidden">
-      <div className="max-w-[1536px] mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+    <section className="w-full bg-[#FAFAFF] py-24 font-poppins relative overflow-hidden border-t border-gray-100">
+      
+      {/* Subtle Background Elements */}
+      <div className="absolute top-40 left-[-10%] w-[500px] h-[500px] bg-indigo-100/50 rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute bottom-20 right-[-5%] w-[400px] h-[400px] bg-purple-100/50 rounded-full blur-[100px] pointer-events-none"></div>
 
-        {/* Header Content */}
-        <div className="flex flex-col items-start text-left max-w-4xl mb-[-5px]">
-          <p className="text-[#4F46E5] font-bold text-[10px] md:text-[11px] tracking-widest uppercase mb-4 leading-loose">
-            THE ASCENT<br />
-            EARN CIRCLEPOINTS, CLIMB THE RANKS
-          </p>
-
-          <h2 className="text-[34px] md:text-[42px] lg:text-[46px] font-extrabold text-[#111827] leading-[1.2] tracking-tight mb-6">
-            One Path, From First Login To The <br className="hidden md:block" />
-            <span className="text-[#4F46E5]">National Stage.</span>
+      <div className="max-w-[1000px] mx-auto px-6 lg:px-12 relative z-10">
+        
+        {/* Header */}
+        <div className="flex flex-col items-center text-center mb-20">
+          <span className="text-[#5B32EA] font-bold text-[12px] uppercase tracking-widest mb-4 block">
+            THE ASCENT
+          </span>
+          <h2 className="text-[36px] sm:text-[42px] md:text-[48px] font-extrabold text-[#1A1A2E] leading-[1.15] tracking-tight mb-6">
+            One path, from first login<br className="hidden md:block" /> to the national stage.
           </h2>
-
-          <p className="text-[#4B5563] font-medium text-[15px] md:text-[16px] leading-relaxed max-w-3xl">
-            Every Masterclass Attended, Lesson Shared, And Question Answered Moves You Up. This Isn't A Course You Finish - It's A Standing You Build With Your Community.
+          <p className="text-[#4B5563] font-medium text-[16px] md:text-[18px] leading-relaxed max-w-3xl">
+            Every masterclass attended, lesson shared and question answered earns CirclePoints and CPD. This is a standing you build with your community, not a course you finish.
           </p>
         </div>
 
-        {/* Content Image */}
-        <div className="w-full flex justify-center lg:justify-start my-4 md:my-0">
-          <img
-            src={onePathImg}
-            alt="One path from first login to the national stage"
-            className="w-full max-w-full lg:max-w-[1300px] xl:max-w-[1400px] h-auto object-contain transform scale-[1.08] md:scale-100 transition-transform origin-center"
-          />
-        </div>
+        {/* Timeline Flow */}
+        <div className="relative w-full max-w-3xl mx-auto">
+          
+          {/* Center Vertical Line */}
+          <div className="absolute top-0 bottom-0 left-[28px] md:left-1/2 md:-translate-x-1/2 w-[2px] bg-gradient-to-b from-slate-200 via-indigo-200 to-purple-400"></div>
 
-        {/* Top Banner migrated from Community Circles */}
-        <div className="w-full bg-[#F8FAFC] border border-[#F1F5F9] rounded-[20px] py-5 px-6 md:px-8 flex flex-col md:flex-row items-start md:items-center justify-center gap-4 md:gap-6 shadow-md -mt-13 lg:-mt-12 relative z-20 mb-4 mx-auto max-w-5xl">
+          <div className="flex flex-col gap-12 relative">
+            {stages.map((stage, idx) => {
+              const Icon = stage.icon;
+              const isEven = idx % 2 === 0;
 
-          <div className="flex items-start md:items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-[#F97316] border border-gray-50 shrink-0 mt-0.5 md:mt-0">
-              <Star className="w-5 h-5" strokeWidth={2.5} />
-            </div>
-            <p className="text-gray-600 text-[14px] md:text-[15px] font-medium leading-snug pt-1 md:pt-0">
-              <span className="text-[#F97316] font-bold">100 pts</span> for a complete Skill DNA profile
-            </p>
+              return (
+                <div key={stage.id} className={`flex flex-col md:flex-row items-start md:items-center w-full relative ${isEven ? 'md:flex-row-reverse' : ''}`}>
+                  
+                  {/* Timeline Node */}
+                  <div className="absolute left-[28px] md:left-1/2 transform -translate-x-1/2 w-[48px] h-[48px] bg-white border-[3px] border-[#FAFAFF] rounded-full flex items-center justify-center z-10 shadow-sm">
+                    <div className={`w-full h-full rounded-full flex items-center justify-center ${stage.color} border`}>
+                      <Icon className="w-5 h-5" />
+                    </div>
+                  </div>
+
+                  {/* Spacer for alternating layout (Desktop only) */}
+                  <div className="hidden md:block md:w-1/2"></div>
+
+                  {/* Card Content */}
+                  <div className={`w-full pl-[70px] md:pl-0 md:w-1/2 ${isEven ? 'md:pr-12 lg:pr-16 md:text-right' : 'md:pl-12 lg:pl-16 md:text-left'}`}>
+                    <div className="bg-white p-6 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 hover:border-indigo-200 hover:-translate-y-1 transition-all duration-300 relative group overflow-hidden">
+                      
+                      {/* Subtle hover gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-transparent to-indigo-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      
+                      <div className="relative z-10">
+                        <div className={`flex flex-wrap items-center gap-3 mb-3 ${isEven ? 'md:justify-end' : 'md:justify-start'}`}>
+                          <span className="text-[#64748B] font-bold text-[12px] uppercase tracking-widest">
+                            Stage {stage.id}
+                          </span>
+                          <span className={`px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider ${stage.color}`}>
+                            {stage.reward}
+                          </span>
+                        </div>
+                        
+                        <h3 className="text-[#1A1A2E] font-extrabold text-[20px] mb-2">
+                          {stage.title}
+                        </h3>
+                        
+                        <p className="text-[#4B5563] font-medium text-[14px] leading-relaxed">
+                          {stage.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              );
+            })}
           </div>
 
-          <div className="hidden md:block w-[1px] h-6 bg-gray-200"></div>
-
-          <div className="flex items-center gap-3 pl-14 md:pl-0">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#4F46E5] shrink-0"></div>
-            <p className="text-gray-600 text-[14px] md:text-[15px] font-medium">
-              <span className="text-[#4F46E5] font-bold">50 pts</span> per masterclass
-            </p>
-          </div>
-
-          <div className="hidden md:block w-[1px] h-6 bg-gray-200"></div>
-
-          <div className="flex items-center gap-3 pl-14 md:pl-0">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#4F46E5] shrink-0"></div>
-            <p className="text-gray-600 text-[14px] md:text-[15px] font-medium">
-              Points for every contribution
-            </p>
+          {/* Bottom Arrow Indicator */}
+          <div className="absolute bottom-[-40px] left-[28px] md:left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-purple-500 bg-[#FAFAFF] p-2 rounded-full">
+             <ArrowDown className="w-6 h-6 animate-bounce" />
           </div>
 
         </div>

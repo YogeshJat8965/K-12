@@ -31,7 +31,7 @@ export default function LearningStages() {
   const tabs = [
     "Discovery & Exploration",
     "Skill Building",
-    "Advanced Application"
+    "Immersive Learning"
   ];
 
   // Animate card content on tab change

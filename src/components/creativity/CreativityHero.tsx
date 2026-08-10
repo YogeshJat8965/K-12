@@ -30,16 +30,16 @@ export default function CreativityHero() {
               </h1>
             </ScrollReveal>
 
-            <ScrollReveal delay={0.1}>
+            {/* <ScrollReveal delay={0.1}>
               <div className="flex items-center gap-2 mb-4 font-bold text-sm tracking-wide">
                 <span className="text-slate-900 text-lg">SKILLZZA <span className="text-slate-400 font-normal">×</span></span>
                 <span className="text-[#FA0F00] text-lg">POWERED BY ADOBE</span>
               </div>
-            </ScrollReveal>
+            </ScrollReveal> */}
 
             <ScrollReveal delay={0.2}>
               <p className="text-slate-600 text-sm sm:text-base font-medium leading-relaxed max-w-lg mb-10">
-                Skillzza helps students imagine, design and build with confidence and gives teachers the tools and training to lead the way. Running on Adobe Express for Education, the programme weaves creativity, design thinking, digital literacy and real AI skills into everyday learning.
+                Skillzza helps students imagine, design and build with confidence and gives teachers the tools and training to lead the way. <br /> Running on Adobe Express for Education, the programme weaves creativity, design thinking, digital literacy and real AI skills into everyday learning.
               </p>
             </ScrollReveal>
 
@@ -66,10 +66,10 @@ export default function CreativityHero() {
             {/* Buttons */}
             <ScrollReveal delay={0.4}>
               <div className="flex flex-col sm:flex-row items-center gap-4">
-                <button className="px-8 py-3.5 bg-gradient-to-r from-[#6C3CF7] to-[#F97316] text-white rounded-full font-bold text-sm sm:text-base hover:shadow-lg transition-all hover:scale-[1.02] active:scale-95 uppercase tracking-wide w-full sm:w-auto">
+                <button onClick={() => window.open('https://registration.skillzza.com/forms', '_blank')} className="px-8 py-3.5 bg-gradient-to-r from-[#6C3CF7] to-[#F97316] text-white rounded-full font-bold text-sm sm:text-base hover:shadow-lg transition-all hover:scale-[1.02] active:scale-95 uppercase tracking-wide w-full sm:w-auto">
                   REGISTER YOUR SCHOOL
                 </button>
-                <button className="px-8 py-3.5 bg-white text-slate-900 border-2 border-slate-200 rounded-full font-bold text-sm sm:text-base hover:border-slate-300 hover:shadow-md transition-all hover:scale-[1.02] active:scale-95 uppercase tracking-wide w-full sm:w-auto">
+                <button onClick={() => window.open('https://registration.skillzza.com/forms', '_blank')} className="px-8 py-3.5 bg-white text-slate-900 border-2 border-slate-200 rounded-full font-bold text-sm sm:text-base hover:border-slate-300 hover:shadow-md transition-all hover:scale-[1.02] active:scale-95 uppercase tracking-wide w-full sm:w-auto">
                   REGISTER AS A TEACHER
                 </button>
               </div>

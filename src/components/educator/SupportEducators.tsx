@@ -330,10 +330,28 @@ export default function SupportEducators() {
               
               <form onSubmit={handleLoginSubmit} className="flex flex-col gap-5">
                 {isSignup && (
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
-                    <input type="text" required className="w-full px-5 py-3.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#5B32EA] focus:ring-2 focus:ring-[#5B32EA]/20 transition-all text-sm" placeholder="John Doe" />
-                  </div>
+                  <>
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name</label>
+                      <input type="text" required className="w-full px-5 py-3.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#5B32EA] focus:ring-2 focus:ring-[#5B32EA]/20 transition-all text-sm" placeholder="John Doe" />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">School Name</label>
+                      <input type="text" required className="w-full px-5 py-3.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#5B32EA] focus:ring-2 focus:ring-[#5B32EA]/20 transition-all text-sm" placeholder="Enter your school name" />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">School Board</label>
+                      <select required className="w-full px-5 py-3.5 rounded-xl border border-gray-200 focus:outline-none focus:border-[#5B32EA] focus:ring-2 focus:ring-[#5B32EA]/20 transition-all text-sm bg-white text-gray-700 appearance-none">
+                        <option value="" disabled selected>Select Board</option>
+                        <option value="CBSE">CBSE</option>
+                        <option value="ICSE">ICSE</option>
+                        <option value="State Board">State Board</option>
+                        <option value="IB">IB</option>
+                        <option value="IGCSE">IGCSE</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                  </>
                 )}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>

@@ -155,7 +155,7 @@ export default function HomeReady() {
           line-height: 1.6;
           color: #6B7280;
           margin: 0 auto;
-          max-width: 700px;
+          max-width: 900px;
         }
 
         /* Layout */
@@ -425,12 +425,11 @@ export default function HomeReady() {
         <div className="hr-inner">
           <div className="hr-header">
             <h2 className="hr-title">
-              Is Your School <span className="hr-title-highlight" style={{ display: 'inline-block' }}>AI-Ready?</span>
+              Is Your School <br /> <span className="hr-title-highlight" style={{ display: 'inline-block' }}>AI-Ready?</span>
             </h2>
             <p className="hr-subtitle">
-              Check your school's readiness across the CCMM Framework -<br />
-              Curriculum, Culture, Mindset & Methodology. Evaluate where you stand<br />
-              and receive a tailored growth path to move up the ladder.
+              Check your school's readiness across the CCMM Framework - Curriculum, Culture, Mindset & Methodology.<br />
+              Evaluate where you stand and receive a tailored growth path to move up the ladder.
             </p>
           </div>
 

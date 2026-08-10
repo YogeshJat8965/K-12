@@ -29,7 +29,7 @@ const ecosystemData = [
     iconBg: '#F5F3FF',
     img: img2,
     label: 'FOR EDUCATORS',
-    title: 'Upskill. Co-Create. Lead\nAI Classrooms',
+    title: 'Upskill. Co-Create. \nLead AI Classrooms',
     desc: 'Empower your teaching with hands-on AI tools, real-world simulations, and a global community of innovators.',
     bullets: [
       { b: 'AI Immersive Learning', text: ' - become an AI-confident educator through hands-on training.' },
@@ -37,7 +37,7 @@ const ecosystemData = [
       { b: 'Curriculum Co-Design Studio', text: ' - co-create future-ready, interdisciplinary curricula.' },
       { b: 'Access to free tools', text: ', resource libraries, and mentorship communities.' }
     ],
-    buttonText: 'Join Educator Cohort →',
+    buttonText: 'Join Educator Circle →',
     link: '/educator'
   },
   {
@@ -45,7 +45,7 @@ const ecosystemData = [
     iconBg: '#ECFDF5',
     img: img3,
     label: 'FOR SCHOOLS',
-    title: 'Transform Into an AI-\nPowered Learning Hub',
+    title: 'Transform Into an \nAI-Powered Learning Hub',
     desc: 'End-to-end school transformation - from AI readiness diagnostics to labs, curriculum integration, and recognition.',
     bullets: [
       { b: 'AI Readiness Audit via the CCMM framework', text: ' - Curriculum, Culture, Mindset & Methodology.' },

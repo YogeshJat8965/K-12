@@ -27,7 +27,7 @@ export default function StudentsCTA() {
 
               {/* Button 1 */}
               <button 
-                onClick={() => window.location.href = '/login'}
+                onClick={(e) => e.preventDefault()}
                 className="group w-full md:w-1/3 relative flex items-center justify-center gap-3 px-6 py-4 lg:py-5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(255,255,255,0.15)]"
               >
                 {/* <Sparkles className="w-5 h-5 text-[#F59E0B]" /> */}

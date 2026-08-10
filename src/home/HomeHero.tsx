@@ -168,7 +168,7 @@ export default function HomeHero() {
         /* Subtext */
         .hh-sub {
           font-weight: 400;
-          font-size: clamp(14px, 1.2vw, 20px);
+          font-size: clamp(13px, 1.1vw, 19px);
           line-height: 1.65;
           letter-spacing: 0.3px;
           color: #84888B;

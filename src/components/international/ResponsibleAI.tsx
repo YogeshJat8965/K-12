@@ -41,11 +41,11 @@ export default function ResponsibleAI() {
           {/* Blue Line Divider */}
           <div className="w-[80px] h-[4px] bg-[#3B82F6] mb-8 md:mb-14 rounded-full"></div>
 
-          <p className="text-[#6B7280] text-[16px] leading-relaxed mb-6 font-medium pr-0 md:pr-10">
+          <p className="text-white text-[16px] leading-relaxed mb-6 font-medium pr-0 md:pr-10">
             Skill Studio integrates ethical technology practices, responsible AI usage, digital wellbeing, cyber awareness, and safe online behavior across all studio experiences.
           </p>
 
-          <p className="text-[#6B7280] text-[16px] leading-relaxed font-medium pr-0 md:pr-10">
+          <p className="text-white text-[16px] leading-relaxed font-medium pr-0 md:pr-10">
             Students are encouraged to become not only technology users - but thoughtful, responsible, and ethical innovators.
           </p>
         </div>

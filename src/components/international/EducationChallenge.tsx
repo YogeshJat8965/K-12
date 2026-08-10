@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { 
-  BarChart, 
-  Link, 
-  Folder, 
-  User, 
-  Monitor, 
+import {
+  BarChart,
+  Link,
+  Folder,
+  User,
+  Monitor,
   TrendingUp,
   Bot,
   Settings,
@@ -66,7 +66,7 @@ export default function EducationChallenge() {
           overflow: hidden;
         }
         .ec-container {
-          max-width: 1200px;
+          max-width: 1350px;
           width: 100%;
           margin: 0 auto;
         }
@@ -224,7 +224,7 @@ export default function EducationChallenge() {
 
       <section className="ec-section" ref={sectionRef}>
         <div className="ec-container">
-          
+
           <div className="text-center mb-8 md:mb-8 ec-header-elem">
             <h2 className="text-[32px] md:text-[40px] font-bold text-[#1A1A2E] leading-tight mb-4">
               The Educational Challenge
@@ -233,17 +233,17 @@ export default function EducationChallenge() {
           </div>
 
           <div className="ec-tabs-box ec-header-elem">
-            
+
             {/* Header Tabs */}
             <div className="ec-tab-header">
-              <button 
+              <button
                 className={`ec-tab-btn traditional ${activeTab === 'traditional' ? 'active' : ''}`}
                 onClick={() => setActiveTab('traditional')}
               >
                 Traditional Enrichment
               </button>
               <div className="ec-tab-divider"></div>
-              <button 
+              <button
                 className={`ec-tab-btn future ${activeTab === 'future' ? 'active' : ''}`}
                 onClick={() => setActiveTab('future')}
               >
@@ -259,7 +259,7 @@ export default function EducationChallenge() {
                 <div className="ec-content-grid traditional">
                   <div className="ec-left-col">
                     <h3 className="ec-title">Many traditional enrichment activities lack</h3>
-                    
+
                     <div className="ec-list">
                       {traditionalItems.map((item, idx) => (
                         <div key={idx} className="ec-list-item">
@@ -279,7 +279,7 @@ export default function EducationChallenge() {
                 <div className="ec-content-grid future">
                   <div className="ec-left-col">
                     <h3 className="ec-title">At the same time, students are entering a world shaped by</h3>
-                    
+
                     <div className="ec-list">
                       {futureItems.map((item, idx) => (
                         <div key={idx} className="ec-list-item">
@@ -300,10 +300,8 @@ export default function EducationChallenge() {
 
           {/* Bottom Banner */}
           <div className="w-full bg-[#F8FAFC] rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-center gap-6 mt-8 shadow-sm border border-blue-50 relative z-10 ec-header-elem">
-            <div className="shrink-0">
-              <BarChart3 className="w-10 h-10 text-[#3B82F6]" strokeWidth={1.5} />
-            </div>
-            <p className="text-[#1A1A2E] text-[15px] font-semibold leading-relaxed md:text-left text-center max-w-[900px]">
+
+            <p className="text-[#1A1A2E] text-[14px] font-semibold leading-relaxed text-center w-full italic md:whitespace-nowrap">
               Skillzza Studios Are Designed To Help Schools Prepare Students For This Rapidly Evolving Future Through Applied Learning Experiences Aligned With Global Education Trends.
             </p>
           </div>

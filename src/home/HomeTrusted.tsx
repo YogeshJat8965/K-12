@@ -344,7 +344,7 @@ export default function HomeTrusted() {
                       { src: "https://cognifyai.skillzza.com/assets/img/part/6.png", name: "Saraswati Vidya Mandir, Dhariyela" },
                       { src: "https://cognifyai.skillzza.com/assets/img/part/7.png", name: "Sanfort World School" },
                       { src: Logo1, name: "Nirmala High School, Machilipatnam" },
-                      { src: Logo2, name: "NST. Mathew's Public School, Vijayawada" },
+                      { src: Logo2, name: "NST Mathew's Public School, Vijayawada" },
                       { src: Logo3, name: "Paradise Higher Secondary School, Kanker" },
                       { src: Logo4, name: "Narayana E.M. School, Neeladripuram" },
                       { src: Logo5, name: "Shri Balaji Vidya Mandir, Raipur" },

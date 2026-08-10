@@ -294,7 +294,7 @@ export default function SkillStudioApp() {
               </div>
               <div>
                 <h3 className="text-xl md:text-2xl font-bold text-slate-900 leading-tight"><AnimatedCounter end={150} suffix="+" /></h3>
-                <p className="text-[12px] md:text-sm font-medium text-gray-500 mt-0.5 md:mt-1">Partner Schools</p>
+                <p className="text-[12px] md:text-sm font-medium text-gray-500 mt-0.5 md:mt-1">Schools</p>
               </div>
             </div>
 

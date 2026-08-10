@@ -1,131 +1,117 @@
 import React from 'react';
-import { ShieldCheck } from 'lucide-react';
+import { CheckCircle, Zap, ShieldCheck } from 'lucide-react';
+
+const explorerFeatures = [
+  'Full community & circle access',
+  'Weekly peer circles by subject & state',
+  'Monthly live masterclasses',
+  'Auto CPD from every event',
+  'AI Lab challenges & lesson library',
+  'Digital educator card'
+];
+
+const practitionerFeatures = [
+  'Everything in Explorer',
+  'Full 12-week AI Immersion Programme',
+  'CCMM certification & digital badge',
+  'Vedya AI priority access',
+  'Full Skill Passport & appraisal-ready CPD report',
+  'Leadership track & peer-mentor certification',
+  'National Yugantar showcase eligibility'
+];
 
 export default function MembershipTiers() {
-  const tiers = [
-    {
-      badge: 'Community - Free',
-      title: 'Explorer',
-      features: [
-        'Full Community & Circle Access',
-        'Weekly Peer Circles',
-        'Monthly Masterclasses',
-        'AI Lab Challenges & Lesson Library',
-        'Digital Educator Card'
-      ],
-      // price: '₹0 - Forever',
-      colors: {
-        wave: '#EEF2FF', // indigo-50
-        badgeBg: '#E0E7FF', // indigo-100
-        badgeText: '#3730A3', // indigo-800
-        bullet: '#4F46E5', // indigo-600
-      },
-      wavePath: "M0,0 L100,0 L100,12 C75,30 25,5 0,18 Z"
-    },
-    {
-      badge: 'PRO - MOST POPULAR',
-      title: 'Practitioner',
-      features: [
-        'Everything In Explorer',
-        'Full 13-Week AI Immersion Programme',
-        'CCMM Certification',
-        'Vedya AI Priority Access',
-        'Digital Skill Passport & CPD Report'
-      ],
-      // price: '₹499 / Year',
-      colors: {
-        wave: '#EEF2FF', // indigo-50
-        badgeBg: '#E0E7FF', // indigo-100
-        badgeText: '#3730A3', // indigo-800
-        bullet: '#4F46E5', // indigo-600
-      },
-      wavePath: "M0,0 L100,0 L100,18 C70,-2 30,35 0,12 Z"
-    }
-  ];
-
   return (
-    <section className="w-full bg-white font-poppins py-10 relative overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16 relative z-10 flex flex-col items-center">
+    <section className="w-full bg-[#FAFAFF] py-24 font-poppins relative overflow-hidden border-t border-gray-100">
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative z-10">
 
-        {/* Header Content */}
-        <div className="flex flex-col items-center text-center max-w-5xl mb-16">
-          <p className="text-[#4F46E5] font-bold text-[10px] md:text-[11px] tracking-widest uppercase mb-4">
-            MEMBERSHIP TIERS
-          </p>
-
-          <h2 className="text-[34px] md:text-[42px] lg:text-[46px] font-extrabold text-[#111827] leading-[1.2] tracking-tight mb-6">
-            Free To Join. Built To <span className="text-[#4F46E5]">Grow</span> With You
+        {/* Header */}
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16">
+          <span className="text-[#5B32EA] font-bold text-[12px] uppercase tracking-widest mb-4 block">
+            MEMBERSHIP
+          </span>
+          <h2 className="text-[36px] sm:text-[42px] md:text-[46px] font-extrabold text-[#1A1A2E] leading-[1.15] tracking-tight mb-6">
+            Two simple layers. Free to join.
           </h2>
-
-          <p className="text-[#4B5563] font-medium text-[15px] md:text-[16px] leading-relaxed">
-            Every Educator Gets Full Community Access At No Cost. Premium Tiers Unlock Deeper Certification, Mentoring, And Institutional Tools.
+          <p className="text-[#4B5563] font-medium text-[16px] md:text-[18px] leading-relaxed">
+            Every educator gets full community access free, forever. One paid membership unlocks the complete AI Immersion Programme, certification and the full CPD passport.
           </p>
         </div>
 
-        {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-12 w-full max-w-[900px] mx-auto mb-12">
-          {tiers.map((tier, idx) => (
-            <div
-              key={idx}
-              className="relative group bg-white border border-gray-200 rounded-[32px] overflow-hidden flex flex-col items-center pt-[90px] pb-10 px-6 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(79,70,229,0.08)] hover:-translate-y-2 hover:border-[#4F46E5]/30 transition-all duration-300 cursor-pointer"
-            >
-              {/* SVG Wavy Background Top */}
-              <svg
-                viewBox="0 0 100 30"
-                preserveAspectRatio="none"
-                className="absolute top-0 left-0 w-full h-[140px] z-0"
-              >
-                <path fill={tier.colors.wave} d={tier.wavePath} />
-              </svg>
+        {/* Pricing Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto mb-12">
 
-              {/* Badge */}
-              <div
-                className="relative z-10 px-5 py-1.5 rounded-full text-[10px] md:text-[11px] font-bold tracking-widest uppercase mb-6"
-                style={{ backgroundColor: tier.colors.badgeBg, color: tier.colors.badgeText }}
-              >
-                {tier.badge}
-              </div>
-
-              {/* Title */}
-              <h3 className="relative z-10 text-[24px] md:text-[28px] font-bold text-[#111827] mb-10">
-                {tier.title}
-              </h3>
-
-              {/* Features List */}
-              <ul className="relative z-10 w-full flex flex-col gap-4 mb-10 px-2 lg:px-4 flex-1">
-                {tier.features.map((feature, fIdx) => (
-                  <li key={fIdx} className="flex items-start gap-3">
-                    <span
-                      className="w-1.5 h-1.5 rounded-full shrink-0 mt-[7px]"
-                      style={{ backgroundColor: tier.colors.bullet }}
-                    />
-                    <span
-                      className="text-[13.5px] md:text-[14px] font-bold leading-relaxed"
-                      style={{ color: tier.colors.bullet }} // The screenshot text matches the bullet color
-                    >
-                      {feature}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Price Button/Badge */}
-              {/* <div
-                className="relative z-10 px-6 py-2 rounded-full text-[13px] md:text-[14px] font-bold tracking-wide mt-auto"
-                style={{ backgroundColor: tier.colors.badgeBg, color: tier.colors.badgeText }}
-              >
-                {tier.price}
-              </div> */}
+          {/* Explorer Tier */}
+          <div className="bg-white rounded-3xl p-8 lg:p-10 border border-gray-200 shadow-sm flex flex-col relative group hover:border-gray-300 transition-colors">
+            <span className="text-[#64748B] font-bold text-[11px] uppercase tracking-widest mb-2 block">
+              COMMUNITY · FREE FOREVER
+            </span>
+            <h3 className="text-[#1A1A2E] font-extrabold text-[32px] mb-2">Explorer</h3>
+            <div className="flex flex-col mb-8 pb-8 border-b border-gray-100">
+              <span className="text-[#1A1A2E] font-black text-[40px] leading-none mb-2">₹0</span>
+              <span className="text-[#64748B] font-medium text-[14px]">no card needed</span>
             </div>
-          ))}
+
+            <ul className="flex flex-col gap-4 flex-grow mb-10">
+              {explorerFeatures.map((feat, idx) => (
+                <li key={idx} className="flex items-start gap-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 mt-2"></span>
+                  <span className="text-[#4B5563] font-medium text-[15px]">{feat}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="bg-[#F8F9FA] p-4 rounded-xl text-center">
+              <p className="text-[#4B5563] font-semibold text-[13px] leading-relaxed">
+                Perfect for getting started and earning CPD from live sessions.
+              </p>
+            </div>
+          </div>
+
+          {/* Practitioner Tier */}
+          <div className="bg-[#1A1A2E] rounded-3xl p-8 lg:p-10 border border-[#2A2A4A] shadow-[0_20px_60px_rgba(91,50,234,0.15)] flex flex-col relative group transform md:-translate-y-4 hover:-translate-y-5 transition-transform duration-300 overflow-hidden">
+
+            {/* Glowing accents */}
+            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[#5B32EA]/20 rounded-full blur-[80px] pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-[200px] h-[200px] bg-[#EC4899]/10 rounded-full blur-[60px] pointer-events-none"></div>
+
+            <div className="absolute top-0 left-0 w-full h-[4px] bg-gradient-to-r from-[#5B32EA] to-[#EC4899]"></div>
+
+            <span className="text-[#A78BFA] font-bold text-[11px] uppercase tracking-widest mb-2 block flex items-center gap-2">
+              <Zap className="w-3.5 h-3.5" /> PRO · CERTIFIED · EVERYTHING, ONE PRICE
+            </span>
+            <h3 className="text-white font-extrabold text-[32px] mb-2">Practitioner</h3>
+            <div className="flex flex-col mb-8 pb-8 border-b border-[#2A2A4A]">
+              <span className="text-white font-black text-[40px] leading-none mb-2">₹899 <span className="text-[20px] text-gray-400 font-bold">/ year</span></span>
+              <span className="text-gray-400 font-medium text-[14px]">Billed annually</span>
+            </div>
+
+            <ul className="flex flex-col gap-4 flex-grow mb-10 relative z-10">
+              {practitionerFeatures.map((feat, idx) => (
+                <li key={idx} className="flex items-start gap-3">
+                  <span className={`w-1.5 h-1.5 rounded-full shrink-0 mt-2 ${idx === 0 ? 'bg-[#A78BFA]' : 'bg-emerald-400'}`}></span>
+                  <span className={`font-medium text-[15px] ${idx === 0 ? 'text-white font-semibold' : 'text-gray-300'}`}>{feat}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="bg-[#5B32EA] p-4 rounded-xl text-center shadow-lg shadow-indigo-500/20 relative z-10">
+              <p className="text-white font-semibold text-[13px] leading-relaxed">
+                Everything to get certified, save time and lead - under ₹75 a month.
+              </p>
+            </div>
+          </div>
+
         </div>
 
-        {/* Bottom Info Banner */}
-        <div className="w-full max-w-5xl xl:max-w-[1200px] bg-[#F8FAFC] border border-[#F1F5F9] rounded-[16px] p-5 flex flex-col md:flex-row items-center justify-center gap-4 text-center">
-
-          <p className="text-[#334155] text-[14px] md:text-[15px] font-bold leading-relaxed xl:whitespace-nowrap text-center">
-            Government School Teachers And Rural Educators Receive Free Pro Access - Apply Via Your District Education Office Partner.
-          </p>
+        {/* Govt/Rural Banner */}
+        <div className="w-full bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100 rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center text-center shadow-sm">
+          <div className="w-full">
+            <h4 className="text-[#1A1A2E] font-bold text-[16px] mb-2">Government & rural school teachers</h4>
+            <p className="text-[#4B5563] text-[14px] leading-relaxed font-medium lg:whitespace-nowrap">
+              You are eligible for <strong className="text-emerald-700">free Practitioner access</strong>. Apply through your District Education Office partner to get your account upgraded automatically.
+            </p>
+          </div>
         </div>
 
       </div>

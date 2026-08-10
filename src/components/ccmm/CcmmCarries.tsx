@@ -4,121 +4,109 @@ import girlStudentImg from '../../assets/CCMM/girl student.png';
 export default function CcmmCarries() {
   const items = [
     {
-      icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#5B45FF]">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="2" y1="12" x2="22" y2="12"></line>
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-        </svg>
-      ),
-      iconBg: 'bg-[#F5F3FF]',
-      lineColor: 'border-[#5B45FF]',
-      text: (
-        <>
-          <span className="text-[#5B45FF] font-bold">UNESCO AI Competency Frameworks</span>
-        </>
+      content: (
+        <div className="flex flex-col">
+          <span className="text-[#D97706] font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase">SDG 4</span>
+          <span className="text-[#111827] font-bold text-[16px] mb-1.5">Quality Education</span>
+          <span className="text-[#4B5563] text-[14px] leading-relaxed font-normal">Inclusive, equitable, lifelong learning for every child.</span>
+        </div>
       )
     },
     {
-      icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#5B45FF]">
-          <circle cx="12" cy="12" r="10"></circle>
-          <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
-        </svg>
-      ),
-      iconBg: 'bg-[#F5F3FF]',
-      lineColor: 'border-[#5B45FF]',
-      text: (
-        <>
-          <span className="text-[#5B45FF] font-bold">OECD Learning Compass 2030</span>
-        </>
+      content: (
+        <div className="flex flex-col">
+          <span className="text-[#D97706] font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase">SDG 5</span>
+          <span className="text-[#111827] font-bold text-[16px] mb-1.5">Gender Equality</span>
+          <span className="text-[#4B5563] text-[14px] leading-relaxed font-normal">Closing the AI gender gap from the classroom upward.</span>
+        </div>
       )
     },
     {
-      icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#5B45FF]">
-          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-        </svg>
-      ),
-      iconBg: 'bg-[#F5F3FF]',
-      lineColor: 'border-[#5B45FF]',
-      text: (
-        <>
-          <span className="text-[#5B45FF] font-bold">NEP 2020</span>
-        </>
+      content: (
+        <div className="flex flex-col">
+          <span className="text-[#D97706] font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase">SDG 8</span>
+          <span className="text-[#111827] font-bold text-[16px] mb-1.5">Decent Work & Growth</span>
+          <span className="text-[#4B5563] text-[14px] leading-relaxed font-normal">Preparing students for the cognitive economy.</span>
+        </div>
       )
     },
     {
-      icon: (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#5B45FF]">
-          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-          <path d="M12 10v4"></path>
-          <path d="M10 12h4"></path>
-        </svg>
-      ),
-      iconBg: 'bg-[#F5F3FF]',
-      lineColor: 'border-[#5B45FF]',
-      text: (
-        <>
-          <span className="text-[#5B45FF] font-bold">CBSE · ICSE · IB · Cambridge alignment</span>
-        </>
+      content: (
+        <div className="flex flex-col">
+          <span className="text-[#D97706] font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase">SDG 9</span>
+          <span className="text-[#111827] font-bold text-[16px] mb-1.5">Industry & Innovation</span>
+          <span className="text-[#4B5563] text-[14px] leading-relaxed font-normal">Building school-level innovation infrastructure.</span>
+        </div>
+      )
+    },
+    {
+      content: (
+        <div className="flex flex-col">
+          <span className="text-[#D97706] font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase">SDG 10</span>
+          <span className="text-[#111827] font-bold text-[16px] mb-1.5">Reduced Inequalities</span>
+          <span className="text-[#4B5563] text-[14px] leading-relaxed font-normal">Democratising AI access across Tier-1, 2, 3, and rural schools.</span>
+        </div>
+      )
+    },
+    {
+      content: (
+        <div className="flex flex-col">
+          <span className="text-[#D97706] font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase">SDG 17</span>
+          <span className="text-[#111827] font-bold text-[16px] mb-1.5">Partnerships for Goals</span>
+          <span className="text-[#4B5563] text-[14px] leading-relaxed font-normal">Connecting schools to industry, government, and global ecosystems.</span>
+        </div>
       )
     }
   ];
 
   return (
-    <section className="w-full bg-white font-poppins py-10 lg:py-14 overflow-hidden">
+    <section className="w-full bg-[#FAFAFA] font-poppins py-16 lg:py-20 overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10">
 
         {/* Header Section */}
-        <div className="mb-8 text-center flex flex-col items-center">
-          <span className="text-[#5B45FF] font-bold text-[13px] uppercase tracking-widest mb-2 block">
-            CREDIBILITY
+        <div className="mb-12 text-left flex flex-col items-start w-full">
+          <span className="text-[#5B45FF] font-bold text-[13px] uppercase tracking-widest mb-3 block">
+            PURPOSE
           </span>
-          <h2 className="text-[26px] md:text-[34px] lg:text-[40px] font-extrabold text-[#111827] leading-tight mb-2 lg:whitespace-nowrap">
-            Built on global standards, grounded in Indian realities
+          <h2 className="text-[32px] md:text-[42px] lg:text-[48px] font-extrabold text-[#111827] leading-[1.15] mb-4 lg:whitespace-nowrap">
+            Aligned to the UN Sustainable Development Goals
           </h2>
+          <p className="text-[#4B5563] font-medium text-[15px] md:text-[17px] leading-relaxed lg:whitespace-nowrap">
+            CCMM is built on a conviction: AI in schools must serve a higher purpose than productivity. Every element maps to a relevant SDG.
+          </p>
         </div>
 
         {/* Content Wrapper */}
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 mt-10 max-w-[1000px] mx-auto">
-          
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-8 mt-10">
+
           {/* List Items (Left) */}
-          <div className="flex flex-col gap-3 w-full lg:w-[55%]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8 w-full lg:w-[55%]">
             {items.map((item, index) => (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-[16px] p-4 lg:p-5 flex items-center gap-6 shadow-[0_4px_15px_rgba(0,0,0,0.03)] hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(91,69,255,0.1)] hover:border-[#5B45FF]/30 transition-all duration-300 relative overflow-hidden group cursor-pointer"
+                className="flex flex-col text-left border-t-2 border-gray-100 pt-4"
               >
-                {/* Subtle hover gradient background */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#5B45FF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-
-                {/* Icon */}
-                <div className={`w-14 h-14 rounded-full flex items-center justify-center shrink-0 relative z-10 ${item.iconBg} group-hover:scale-110 group-hover:shadow-sm transition-all duration-500`}>
-                  <div className="scale-75 origin-center">{item.icon}</div>
-                </div>
-
-                {/* Separator & Text */}
-                <div className={`flex-1 border-l-2 ${item.lineColor} pl-5 py-1 relative z-10 border-opacity-70 group-hover:border-opacity-100 transition-all duration-300 text-left`}>
-                  <p className="text-[#374151] font-medium text-[15px] md:text-[17px] leading-relaxed group-hover:text-[#111827] transition-colors duration-300">
-                    {item.text}
-                  </p>
-                </div>
+                {item.content}
               </div>
             ))}
           </div>
 
           {/* Image (Right) */}
-          <div className="w-full lg:w-[45%] flex justify-center lg:justify-end">
-            <img 
-              src={girlStudentImg} 
-              alt="Girl Student" 
-              className="w-full max-w-[400px] object-contain" 
+          <div className="w-full lg:w-[45%] flex justify-center lg:justify-end lg:-mt-4">
+            <img
+              src={girlStudentImg}
+              alt="Girl Student"
+              className="w-full max-w-[360px] object-contain"
             />
           </div>
 
+        </div>
+
+        {/* Bottom Footer Text */}
+        <div className="mt-16 text-left max-w-4xl border-t border-gray-200 pt-8">
+          <p className="text-[20px] md:text-[24px] font-bold text-[#111827] leading-[1.4]">
+            CCMM-certified schools graduate students who don't just understand AI - <span className="text-[#D97706]">they understand why it must serve humanity.</span>
+          </p>
         </div>
 
       </div>

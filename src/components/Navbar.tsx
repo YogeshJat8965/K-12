@@ -703,7 +703,7 @@ export default function Navbar() {
 
             {/* Logo */}
             <a href="/" className="nav-logo">
-              <img src={logoImg} alt="Skill Studio" style={{ height: '75px', width: 'auto', objectFit: 'contain' }} />
+              <img src={logoImg} alt="Skill Studio" style={{ height: '85px', width: 'auto', objectFit: 'contain' }} />
             </a>
 
             {/* Desktop nav links */}

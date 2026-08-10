@@ -11,6 +11,7 @@ import CcmmStages from './components/ccmm/CcmmStages';
 import CcmmMeasures from './components/ccmm/CcmmMeasures';
 import CcmmCertification from './components/ccmm/CcmmCertification';
 import CcmmCarries from './components/ccmm/CcmmCarries';
+import CcmmWhoItsFor from './components/ccmm/CcmmWhoItsFor';
 import CcmmJourney from './components/ccmm/CcmmJourney';
 import CcmmWhySchool from './components/ccmm/CcmmWhySchool';
 import CcmmBegin from './components/ccmm/CcmmBegin';
@@ -24,7 +25,7 @@ export default function CcmmApp() {
   return (
     <div className="flex flex-col min-h-screen overflow-x-hidden">
       <Navbar />
-      
+
       <main className="flex-1 w-full bg-white overflow-x-hidden">
         <CcmmHero />
         <CcmmAgeShift />
@@ -36,12 +37,13 @@ export default function CcmmApp() {
         {/* <CcmmMeasures /> */}
         <CcmmCertification />
         <CcmmCarries />
-        {/* <CcmmJourney /> */}
-        {/* <CcmmWhySchool /> */}
+        <CcmmWhoItsFor />
+        <CcmmJourney />
+        <CcmmWhySchool />
         {/* <CcmmBegin /> */}
         <CcmmCta />
       </main>
-      
+
       <Footer />
     </div>
   );

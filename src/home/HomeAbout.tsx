@@ -132,7 +132,7 @@ export default function HomeAbout() {
 
         .ha-content {
           font-weight: 400;
-          font-size: 16px;
+          font-size: 15px;
           line-height: 1.6;
           color: #374151;
         }
@@ -192,7 +192,7 @@ export default function HomeAbout() {
             <span className="ha-label" ref={labelRef} style={{ display: 'inline-block' }}>ABOUT US</span>
 
             <h2 className="ha-h2">
-              A <span style={{ margin: '0 6px', display: 'inline-block' }}>K-12</span> Platform Built For An AI-First World
+              A <span style={{ margin: '0 6px', display: 'inline-block' }}>K-12</span> Platform Built For <br /> An AI-First World
             </h2>
 
             <div className="ha-content" ref={textRef}>

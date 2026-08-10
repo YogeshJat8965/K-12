@@ -59,9 +59,10 @@ export default function StakeholderValue() {
       <div className="max-w-[1400px] mx-auto px-6">
         {/* Header */}
         <ScrollReveal>
-          <div className="text-center max-w-4xl mx-auto mb-8">
+          <div className="text-center max-w-[1100px] mx-auto mb-8">
             <h2 className="text-[36px] md:text-[44px] lg:text-[48px] font-extrabold text-[#1A1A2E] leading-[1.2] tracking-tight mb-6">
-              One programme. Value for schools, teachers and students.
+              One programme.<br />
+              Value for Schools, Teachers and Students.
             </h2>
             <p className="text-[18px] md:text-[20px] text-gray-600 font-medium leading-relaxed">
               Through digital creativity and AI learning, every stakeholder gains something lasting.
@@ -77,8 +78,8 @@ export default function StakeholderValue() {
                 key={tab.id}
                 onClick={() => setActiveTab(idx)}
                 className={`px-8 py-4 rounded-full font-bold text-[16px] md:text-[18px] transition-all duration-300 shadow-sm
-                  ${activeTab === idx 
-                    ? 'bg-[#6C3CF7] text-white shadow-md transform scale-105' 
+                  ${activeTab === idx
+                    ? 'bg-[#6C3CF7] text-white shadow-md transform scale-105'
                     : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200 hover:border-[#6C3CF7] hover:text-[#6C3CF7]'
                   }`}
               >
@@ -93,8 +94,8 @@ export default function StakeholderValue() {
           <div className="flex flex-col lg:flex-row min-h-[600px]">
             {/* Left side: Image */}
             <div className="w-full lg:w-1/2 flex items-center justify-center p-8 transition-opacity duration-500">
-              <img 
-                src={tabsData[activeTab].image} 
+              <img
+                src={tabsData[activeTab].image}
                 alt={`${tabsData[activeTab].label} Visual`}
                 className="w-full h-auto max-h-[500px] object-contain rounded-[16px]"
               />

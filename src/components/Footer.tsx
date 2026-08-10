@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Column 1: Brand, Presence & Social */}
           <div className="flex flex-col gap-4 pr-8">
             <div className="flex items-center gap-2">
-              <img src={logoImg} alt="Skill Studio" style={{ height: '100px', width: 'auto', objectFit: 'contain' }} />
+              <img src={logoImg} alt="Skill Studio" style={{ height: '120px', width: 'auto', objectFit: 'contain' }} />
             </div>
 
             <div className="flex flex-col gap-4">
@@ -19,13 +19,15 @@ export default function Footer() {
                 <div className="flex flex-col gap-1">
                   <span className="text-gray-800 text-[12px] font-semibold uppercase tracking-wider">India Office</span>
                   <p className="text-gray-600 text-[14px] leading-relaxed whitespace-nowrap">
-                    WeWork India, Chromium,<br />
-                    CTS No. 106/1-5,JVLR Road,<br />
-                    Milind Nagar, Powai,<br />
-                    Mumbai -400076.
+                    We Work, Zenia Building, 4th Floor.<br />
+                    Hiranandani Business Park, Arcadia Circle,<br />
+                    Hiranandani Estate,<br />
+                    Thane (west) Thane-400607
                   </p>
                   <p className="text-black-600 text-[14px] font-semibold">+91 91369 61978</p>
+
                 </div>
+
 
               </div>
             </div>
