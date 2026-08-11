@@ -67,7 +67,7 @@ export default function WhatWeDo() {
             WHAT WE DO TOGETHER
           </p>
           
-          <h2 className="text-[34px] md:text-[42px] lg:text-[46px] font-extrabold text-[#111827] leading-[1.2] tracking-tight mb-6">
+          <h2 className="text-[32px] md:text-[40px] lg:text-[44px] font-extrabold text-[#111827] leading-[1.2] tracking-tight mb-6">
             A Rhythm Of <span className="text-[#4F46E5]">Learning, Sharing</span> & <br className="hidden md:block"/>
             <span className="text-[#4F46E5]">Celebration.</span>
           </h2>
@@ -97,7 +97,7 @@ export default function WhatWeDo() {
               
               {/* Right Content Area */}
               <div className="p-4 md:p-6 flex flex-col justify-center">
-                <h3 className="font-bold text-[#111827] text-[15px] lg:text-[16px] leading-snug mb-2">
+                <h3 className="font-bold text-[#111827] text-[13px] lg:text-[14px] leading-snug mb-2">
                   {card.title}
                 </h3>
                 <p className="text-[#4B5563] text-[12px] lg:text-[13px] leading-[1.6] line-clamp-3 md:line-clamp-4">

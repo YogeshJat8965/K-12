@@ -28,7 +28,7 @@ export default function StudentsHero() {
             <span>AGES 13-22</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-bold leading-[1.25] tracking-tight mb-5 sm:mb-6 font-poppins text-gray-900">
+          <h1 className="text-[32px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-bold leading-[1.25] tracking-tight mb-5 sm:mb-6 font-poppins text-gray-900">
             You're not just<br />
             learning about the future.<br />
             <span className="bg-gradient-to-r from-[#A78BFA] via-[#D946EF] to-[#FF6644] text-transparent bg-clip-text">
@@ -41,7 +41,7 @@ export default function StudentsHero() {
           </p>
 
           <div className="mb-4 w-full">
-            <h3 className="text-[#8B5CF6] text-lg sm:text-xl font-semibold mb-4 sm:mb-6 font-poppins">
+            <h3 className="text-[#8B5CF6] text-[16px] sm:text-[18px] font-semibold mb-4 sm:mb-6 font-poppins">
               If you've ever asked yourself...
             </h3>
             <ul className="flex flex-col gap-4 sm:gap-5 mb-6 sm:mb-8">

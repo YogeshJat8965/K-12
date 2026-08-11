@@ -31,7 +31,7 @@ export default function WhoItsFor() {
     <section className="w-full bg-white py-20 lg:py-24 font-poppins">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="text-center mb-16">
-          <h2 className="text-[36px] md:text-[44px] lg:text-[48px] font-extrabold text-[#111827] mb-4 tracking-tight">
+          <h2 className="text-[34px] md:text-[42px] lg:text-[46px] font-extrabold text-[#111827] mb-4 tracking-tight">
             Who It's For
           </h2>
           <div className="text-[#4B5563] text-[16px] md:text-[18px] font-medium">
@@ -53,7 +53,7 @@ export default function WhoItsFor() {
                   />
                 </div>
 
-                <h3 className="text-[22px] md:text-[24px] font-extrabold text-[#111827] leading-[1.3] mb-5 whitespace-pre-line">
+                <h3 className="text-[20px] md:text-[22px] font-extrabold text-[#111827] leading-[1.3] mb-5 whitespace-pre-line">
                   {c.title}
                 </h3>
 

@@ -103,7 +103,7 @@ export default function MembershipBenefits() {
         
         {/* Header */}
         <div className="mb-14">
-          <h2 className="text-[32px] md:text-[40px] lg:text-[46px] font-extrabold text-[#111827] leading-[1.2] tracking-tight mb-3">
+          <h2 className="text-[30px] md:text-[38px] lg:text-[44px] font-extrabold text-[#111827] leading-[1.2] tracking-tight mb-3">
             What <span className="text-[#4F46E5]">Membership</span> Gives You
           </h2>
           <p className="text-[#4F46E5] font-bold text-[10px] md:text-[11px] tracking-widest uppercase">
@@ -126,7 +126,7 @@ export default function MembershipBenefits() {
               
               {/* Content Container */}
               <div className="flex flex-col flex-1 mt-1 sm:mt-0">
-                <h3 className="text-[#4F46E5] text-[21px] md:text-[23px] font-bold mb-1.5 leading-tight">
+                <h3 className="text-[#4F46E5] text-[19px] md:text-[21px] font-bold mb-1.5 leading-tight">
                   {card.title}
                 </h3>
                 

@@ -7,10 +7,10 @@ export default function StudentJourney() {
       
       {/* Top Content */}
       <div className="text-center px-4 sm:px-6 pt-12 sm:pt-16 pb-0 flex flex-col items-center">
-        <h4 className="text-[#8B5CF6] text-[11px] sm:text-[12px] md:text-[13px] font-bold tracking-[0.2em] uppercase mb-3 font-poppins">
+        <h4 className="text-[#8B5CF6] text-[9px] sm:text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase mb-3 font-poppins">
           THE STUDENT JOURNEY
         </h4>
-        <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold mb-3 sm:mb-4 font-poppins tracking-tight px-2">
+        <h2 className="text-white text-[22px] sm:text-[28px] md:text-[34px] lg:text-[40px] font-bold mb-3 sm:mb-4 font-poppins tracking-tight px-2">
           From First Spark to Future-Ready
         </h2>
         <p className="text-[#D1D5DB] text-[13px] sm:text-[15px] md:text-[16px] max-w-xl sm:max-w-2xl mx-auto leading-snug px-2">

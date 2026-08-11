@@ -31,7 +31,7 @@ export default function EducatorWhyItMatters() {
               Why It Matters
             </StaggerItem>
 
-            <h2 className="text-[40px] md:text-[48px] lg:text-[48px] font-extrabold text-[#1A1A2E] leading-[1.1] mb-8 tracking-tight">
+            <h2 className="text-[38px] md:text-[46px] lg:text-[46px] font-extrabold text-[#1A1A2E] leading-[1.1] mb-8 tracking-tight">
               <WordReveal text="You don't have to navigate the future alone." />
             </h2>
 
@@ -65,7 +65,7 @@ export default function EducatorWhyItMatters() {
                 </div>
 
                 <div>
-                  <h3 className="text-[22px] md:text-[26px] lg:text-[30px] font-extrabold text-[#111827] leading-[1.2] tracking-tight mb-1 transition-colors duration-300 group-hover:text-[#5B32EA]">
+                  <h3 className="text-[20px] md:text-[24px] lg:text-[28px] font-extrabold text-[#111827] leading-[1.2] tracking-tight mb-1 transition-colors duration-300 group-hover:text-[#5B32EA]">
                     {point.bold}
                   </h3>
                   <p className="text-[16px] md:text-[18px] lg:text-[20px] font-medium text-[#6B7280] italic leading-[1.2]">

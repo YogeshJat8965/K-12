@@ -12,7 +12,7 @@ export default function EducatorHero() {
           {/* Left Content */}
           <StaggerContainer className="max-w-2xl lg:max-w-[650px]">
 
-            <h1 className="text-[32px] sm:text-[40px] md:text-[46px] lg:text-[46px] xl:text-[50px] font-extrabold text-[#1A1A2E] leading-[1.15] tracking-tight mb-6">
+            <h1 className="text-[36px] sm:text-[40px] md:text-[46px] lg:text-[46px] font-extrabold text-[#1A1A2E] leading-[1.15] tracking-tight mb-6">
               <span className="whitespace-normal md:whitespace-nowrap"><WordReveal text="Future-Ready Teaching," delay={0.1} /></span><br className="hidden md:block" />
               <span className="text-[#5B32EA] whitespace-normal md:whitespace-nowrap"><WordReveal text="Powered by AI" delay={0.2} /></span><br className="hidden md:block" />
               {/* <span className="whitespace-normal md:whitespace-nowrap"><WordReveal text="Human Insight" delay={0.3} /></span> */}

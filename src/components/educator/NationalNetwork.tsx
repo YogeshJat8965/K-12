@@ -141,7 +141,7 @@ export default function NationalNetwork() {
             WHERE WE'RE HEADED IN YEAR ONE
           </p>
 
-          <h2 className="text-[32px] md:text-[40px] lg:text-[44px] font-extrabold text-[#111827] leading-[1.2] tracking-tight">
+          <h2 className="text-[30px] md:text-[38px] lg:text-[42px] font-extrabold text-[#111827] leading-[1.2] tracking-tight">
             <span className="text-[#4F46E5]">A National Network <br /></span> Not Another
             Training Portal
           </h2>
@@ -164,7 +164,7 @@ export default function NationalNetwork() {
 
                 {/* Text Content */}
                 <div className="flex flex-col">
-                  <h3 className="text-[#4F46E5] text-[28px] md:text-[32px] font-bold leading-none mb-1">
+                  <h3 className="text-[#4F46E5] text-[26px] md:text-[30px] font-bold leading-none mb-1">
                     <AnimatedCounter endValue={stat.value} suffix={stat.suffix} />
                   </h3>
                   <p className="text-[#4B5563] text-[13px] md:text-[14px] font-medium leading-snug">

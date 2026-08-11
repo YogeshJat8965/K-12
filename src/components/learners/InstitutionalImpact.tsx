@@ -42,7 +42,7 @@ export default function InstitutionalImpact() {
           }
         `}</style>
 
-        <h2 className="text-[36px] md:text-[44px] lg:text-[48px] font-extrabold text-[#1A1A2E] leading-[1.2] mb-16 tracking-tight text-center">
+        <h2 className="text-[34px] md:text-[42px] lg:text-[46px] font-extrabold text-[#1A1A2E] leading-[1.2] mb-16 tracking-tight text-center">
           <WordReveal text="Institutional Impact" />
         </h2>
 
@@ -56,7 +56,7 @@ export default function InstitutionalImpact() {
                   <img src={card.icon} alt={card.title} className="impact-icon h-[72px] object-contain transition-transform duration-500 ease-out group-hover:scale-[1.15] group-hover:-translate-y-1" />
                 </div>
 
-                <h3 className="text-[20px] md:text-[22px] font-extrabold text-[#111827] mb-4 leading-[1.2] whitespace-pre-line">
+                <h3 className="text-[18px] md:text-[20px] font-extrabold text-[#111827] mb-4 leading-[1.2] whitespace-pre-line">
                   {card.title}
                 </h3>
 

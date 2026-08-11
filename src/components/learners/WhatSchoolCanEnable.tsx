@@ -66,7 +66,7 @@ export default function WhatSchoolCanEnable() {
       <div className="max-w-[1200px] mx-auto px-6 lg:px-8 relative z-10 override-what-school-layout">
 
         <div className="text-center mb-16">
-          <h2 className="text-[32px] md:text-[42px] lg:text-[46px] font-bold text-white tracking-wide">
+          <h2 className="text-[30px] md:text-[40px] lg:text-[44px] font-bold text-white tracking-wide">
             What Your School Can Enable
           </h2>
         </div>
@@ -89,7 +89,7 @@ export default function WhatSchoolCanEnable() {
               <div className="w-6 h-[3px] bg-white/30 rounded-full mb-8"></div>
 
               {/* Heading */}
-              <h3 className="text-white text-[18px] lg:text-[20px] font-bold leading-snug mb-5 whitespace-pre-line">
+              <h3 className="text-white text-[16px] lg:text-[18px] font-bold leading-snug mb-5 whitespace-pre-line">
                 {card.title}
               </h3>
 

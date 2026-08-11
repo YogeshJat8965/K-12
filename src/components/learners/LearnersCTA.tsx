@@ -36,7 +36,7 @@ export default function LearnersCTA() {
           <div className="bg-white rounded-[24px] p-6 lg:p-8 flex flex-col items-center justify-center relative overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.03)] border border-gray-100 transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(91,50,234,0.08)] group">
             
             <div className="z-10 text-center max-w-3xl mx-auto">
-              <h3 className="text-[20px] md:text-[22px] lg:text-[24px] font-extrabold text-[#1A1A2E] mb-2 leading-[1.2]">
+              <h3 className="text-[18px] md:text-[20px] lg:text-[22px] font-extrabold text-[#1A1A2E] mb-2 leading-[1.2]">
                 Deliver Measurable, Portfolio-Backed Outcomes
               </h3>
               <p className="text-[#6B7280] text-[15px] md:text-[16px]">
@@ -56,7 +56,7 @@ export default function LearnersCTA() {
             <div className="absolute inset-0 bg-white/5 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
             <div className="flex-1 max-w-[600px] text-center lg:text-left z-10">
-              <h2 className="text-[32px] md:text-[38px] lg:text-[40px] font-extrabold text-white leading-[1.2] mb-3 tracking-tight max-w-[500px] lg:max-w-none mx-auto lg:mx-0">
+              <h2 className="text-[30px] md:text-[36px] lg:text-[38px] font-extrabold text-white leading-[1.2] mb-3 tracking-tight max-w-[500px] lg:max-w-none mx-auto lg:mx-0">
                 Transform Learning Into Measurable Impact
               </h2>
               <p className="text-white/95 text-[14px] md:text-[15px] font-semibold leading-[1.6] max-w-[500px] lg:max-w-[90%] mx-auto lg:mx-0">

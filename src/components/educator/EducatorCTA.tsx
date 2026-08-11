@@ -19,7 +19,7 @@ export default function EducatorCTA() {
             <div className="absolute inset-0 bg-white/5 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
             <div className="max-w-[800px] z-10">
-              <h2 className="text-[32px] md:text-[38px] lg:text-[42px] font-extrabold text-white leading-[1.2] mb-3 tracking-tight">
+              <h2 className="text-[30px] md:text-[36px] lg:text-[40px] font-extrabold text-white leading-[1.2] mb-3 tracking-tight">
                 Join the Educator Movement
               </h2>
               <p className="text-white/95 text-[15px] md:text-[17px] font-medium leading-[1.6]">

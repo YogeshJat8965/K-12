@@ -65,7 +65,7 @@ export default function CurriculumSprints() {
                   
                   {/* Front Content */}
                   <div className="p-6 flex flex-col flex-1 justify-center">
-                    <h3 className="text-[20px] md:text-[22px] font-bold text-[#111827] leading-[1.3] mb-2">
+                    <h3 className="text-[18px] md:text-[20px] font-bold text-[#111827] leading-[1.3] mb-2">
                       {card.title}
                     </h3>
                     <p className="text-[#4F46E5] font-semibold text-[13px] md:text-[14px] tracking-wide">
@@ -79,7 +79,7 @@ export default function CurriculumSprints() {
                   
                   {/* Title & Week */}
                   <div className="mb-3 pb-3 border-b border-gray-100">
-                    <h4 className="text-[#111827] font-bold text-[15px] leading-snug">
+                    <h4 className="text-[#111827] font-bold text-[13px] leading-snug">
                       {card.title} <span className="text-gray-400 font-normal mx-1">·</span> <span className="text-[#4F46E5] font-semibold">{card.weeks}</span>
                     </h4>
                   </div>

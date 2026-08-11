@@ -30,7 +30,7 @@ export default function MembershipTiers() {
           <span className="text-[#5B32EA] font-bold text-[12px] uppercase tracking-widest mb-4 block">
             MEMBERSHIP
           </span>
-          <h2 className="text-[36px] sm:text-[42px] md:text-[46px] font-extrabold text-[#1A1A2E] leading-[1.15] tracking-tight mb-6">
+          <h2 className="text-[34px] sm:text-[40px] md:text-[44px] font-extrabold text-[#1A1A2E] leading-[1.15] tracking-tight mb-6">
             Two simple layers. Free to join.
           </h2>
           <p className="text-[#4B5563] font-medium text-[16px] md:text-[18px] leading-relaxed">
@@ -49,7 +49,7 @@ export default function MembershipTiers() {
             <span className="text-[#64748B] font-bold text-[11px] uppercase tracking-widest mb-2 block">
               COMMUNITY · FREE FOREVER
             </span>
-            <h3 className="text-[#1A1A2E] font-extrabold text-[32px] mb-2">Explorer</h3>
+            <h3 className="text-[#1A1A2E] font-extrabold text-[30px] mb-2">Explorer</h3>
             <div className="flex flex-col mb-8 pb-8 border-b border-gray-100">
               <span className="text-[#1A1A2E] font-black text-[40px] leading-none mb-2">₹0</span>
               <span className="text-[#64748B] font-medium text-[14px]">no card needed</span>
@@ -86,7 +86,7 @@ export default function MembershipTiers() {
             <span className="text-[#A78BFA] font-bold text-[11px] uppercase tracking-widest mb-2 block flex items-center gap-2">
               <Zap className="w-3.5 h-3.5" /> PRO · CERTIFIED · EVERYTHING, ONE PRICE
             </span>
-            <h3 className="text-white font-extrabold text-[32px] mb-2">Practitioner</h3>
+            <h3 className="text-white font-extrabold text-[30px] mb-2">Practitioner</h3>
             <div className="flex flex-col mb-8 pb-8 border-b border-[#2A2A4A]">
               <span className="text-white font-black text-[40px] leading-none mb-2">₹899 <span className="text-[20px] text-gray-400 font-bold">/ year</span></span>
               <span className="text-gray-400 font-medium text-[14px]">Billed annually</span>
@@ -113,7 +113,7 @@ export default function MembershipTiers() {
         {/* Govt/Rural Banner */}
         <div className="w-full bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100 rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center text-center shadow-sm">
           <div className="w-full">
-            <h4 className="text-[#1A1A2E] font-bold text-[16px] mb-2">Government & rural school teachers</h4>
+            <h4 className="text-[#1A1A2E] font-bold text-[14px] mb-2">Government & rural school teachers</h4>
             <p className="text-[#4B5563] text-[14px] leading-relaxed font-medium lg:whitespace-nowrap">
               You are eligible for <strong className="text-emerald-700">free Practitioner access</strong>. Apply through your District Education Office partner to get your account upgraded automatically.
             </p>

@@ -17,7 +17,7 @@ export default function EducatorCircleHero() {
               </span>
             </StaggerItem>
 
-            <h1 className="text-[36px] sm:text-[40px] md:text-[42px] lg:text-[46px] font-extrabold text-[#1A1A2E] leading-[1.15] tracking-tight mb-6 font-poppins">
+            <h1 className="text-[34px] sm:text-[38px] md:text-[40px] lg:text-[44px] font-extrabold text-[#1A1A2E] leading-[1.15] tracking-tight mb-6 font-poppins">
               <div className="block flex-wrap items-baseline gap-2 lg:whitespace-nowrap">
                 <span className="inline-block"><WordReveal text="Every" delay={0.1} /></span> <span className="inline-block"><WordReveal text="hour" delay={0.1} /></span> <span className="inline-block"><WordReveal text="you" delay={0.1} /></span> <span className="inline-block"><WordReveal text="learn," delay={0.1} /></span> <span className="inline-block"><WordReveal text="logged" delay={0.2} /></span> <span className="inline-block"><WordReveal text="as" delay={0.2} /></span>
               </div>

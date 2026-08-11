@@ -13,7 +13,7 @@ export default function CreativityPreHero() {
 
       {/* Content */}
       <div className="relative z-20 max-w-[1000px] mx-auto px-6 text-center flex flex-col items-center justify-center">
-        <h1 className="text-[32px] md:text-[46px] lg:text-[56px] font-bold text-white leading-[1.2] mb-6 uppercase tracking-wider">
+        <h1 className="text-[32px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-bold text-white leading-[1.2] mb-6 uppercase tracking-wider">
           Digital Creativity & <br className="hidden md:block" /> AI Skills for K–12
         </h1>
 

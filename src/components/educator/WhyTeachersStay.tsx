@@ -54,7 +54,7 @@ export default function WhyTeachersStay() {
           <span className="text-[#5B32EA] font-bold text-[12px] uppercase tracking-widest mb-4 block">
             WHY TEACHERS STAY
           </span>
-          <h2 className="text-[36px] sm:text-[42px] md:text-[46px] font-extrabold text-[#1A1A2E] leading-[1.15] tracking-tight mb-6">
+          <h2 className="text-[34px] sm:text-[40px] md:text-[44px] font-extrabold text-[#1A1A2E] leading-[1.15] tracking-tight mb-6">
             Four things, working together for your growth.
           </h2>
         </div>
@@ -76,7 +76,7 @@ export default function WhyTeachersStay() {
                     <Icon className="w-7 h-7" />
                   </div>
 
-                  <h3 className="text-[#1A1A2E] font-extrabold text-[24px] mb-4">
+                  <h3 className="text-[#1A1A2E] font-extrabold text-[22px] mb-4">
                     {pillar.title}
                   </h3>
 

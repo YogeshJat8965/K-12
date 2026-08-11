@@ -65,7 +65,7 @@ export default function IsThisYou() {
               </span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-bold tracking-tight text-gray-900 mb-4 font-poppins leading-[1.2]">
+            <h2 className="text-[28px] sm:text-[34px] lg:text-[44px] font-bold tracking-tight text-gray-900 mb-4 font-poppins leading-[1.2]">
               Who Skillzza k-12 Is For
             </h2>
 

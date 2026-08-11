@@ -251,7 +251,7 @@ export default function ProgrammeCalendar() {
               <p className="text-[#4F46E5] font-bold text-[10px] md:text-[11px] tracking-widest uppercase mb-4">
                 COMING UP
               </p>
-              <h2 className="text-[34px] md:text-[42px] lg:text-[46px] font-extrabold text-[#111827] leading-[1.2] tracking-tight mb-4">
+              <h2 className="text-[32px] md:text-[40px] lg:text-[44px] font-extrabold text-[#111827] leading-[1.2] tracking-tight mb-4">
                 Programme Calendar <span className="text-gray-300 font-normal mx-1">·</span> <span className="text-[#4F46E5]">2026</span>
               </h2>
               <p className="text-[#4B5563] font-medium text-[15px] md:text-[16px] leading-relaxed max-w-2xl">
@@ -274,7 +274,7 @@ export default function ProgrammeCalendar() {
                   
                   {/* Title */}
                   <div className="flex-1">
-                    <h4 className="text-[13px] md:text-[14px] lg:text-[15px] font-bold text-[#111827] uppercase tracking-wide leading-relaxed">
+                    <h4 className="text-[11px] md:text-[12px] lg:text-[13px] font-bold text-[#111827] uppercase tracking-wide leading-relaxed">
                       {event.title}
                     </h4>
                   </div>

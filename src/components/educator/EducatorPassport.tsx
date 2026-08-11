@@ -33,7 +33,7 @@ export default function EducatorPassport() {
           <span className="text-[#5B32EA] font-bold text-[12px] uppercase tracking-widest mb-4 block">
             THE PASSPORT
           </span>
-          <h2 className="text-[32px] sm:text-[40px] md:text-[44px] font-extrabold text-[#1A1A2E] leading-[1.15] tracking-tight mb-6 lg:whitespace-nowrap">
+          <h2 className="text-[30px] sm:text-[38px] md:text-[42px] font-extrabold text-[#1A1A2E] leading-[1.15] tracking-tight mb-6 lg:whitespace-nowrap">
             Your CPD, tracked and appraisal-ready.
           </h2>
           <p className="text-[#4B5563] font-medium text-[16px] md:text-[18px] leading-relaxed">
@@ -46,13 +46,13 @@ export default function EducatorPassport() {
 
           {/* Column 1: How it adds up */}
           <div className="flex flex-col">
-            <h3 className="text-[#1A1A2E] font-bold text-[20px] mb-6">How your CPD adds up</h3>
+            <h3 className="text-[#1A1A2E] font-bold text-[18px] mb-6">How your CPD adds up</h3>
             <div className="flex flex-col gap-6 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-indigo-100">
               {cpdSteps.map((step, idx) => (
                 <div key={idx} className="flex gap-4 relative z-10">
                   <div className="w-[24px] h-[24px] rounded-full bg-white border-2 border-[#5B32EA] flex-shrink-0 mt-1"></div>
                   <div>
-                    <h4 className="text-[#1A1A2E] font-bold text-[16px] mb-1">{step.title}</h4>
+                    <h4 className="text-[#1A1A2E] font-bold text-[14px] mb-1">{step.title}</h4>
                     <p className="text-[#4B5563] text-[14px] leading-relaxed font-medium">{step.desc}</p>
                   </div>
                 </div>
@@ -62,11 +62,11 @@ export default function EducatorPassport() {
 
           {/* What it does */}
           <div className="flex flex-col">
-            <h3 className="text-[#1A1A2E] font-bold text-[20px] mb-6">What the passport does</h3>
+            <h3 className="text-[#1A1A2E] font-bold text-[18px] mb-6">What the passport does</h3>
             <div className="flex flex-col gap-5">
               {features.map((feature, idx) => (
                 <div key={idx} className="flex flex-col items-start bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:border-[#5B32EA]/30 transition-colors">
-                  <h4 className="text-[#1A1A2E] font-bold text-[14px] mb-1">{feature.title}</h4>
+                  <h4 className="text-[#1A1A2E] font-bold text-[12px] mb-1">{feature.title}</h4>
                   <p className="text-[#64748B] text-[12px] leading-snug font-medium">{feature.desc}</p>
                 </div>
               ))}
@@ -84,8 +84,8 @@ export default function EducatorPassport() {
               {/* Header inside card */}
               <div className="flex items-center justify-between mb-8 border-b border-gray-100 pb-6">
                 <div>
-                  <h4 className="text-[#5B32EA] font-bold text-[11px] tracking-widest uppercase mb-1">YOUR CPD LEDGER</h4>
-                  <h3 className="text-[#1A1A2E] font-extrabold text-[24px]">CPD Hours</h3>
+                  <h4 className="text-[#5B32EA] font-bold text-[9px] tracking-widest uppercase mb-1">YOUR CPD LEDGER</h4>
+                  <h3 className="text-[#1A1A2E] font-extrabold text-[22px]">CPD Hours</h3>
                 </div>
                 <div className="w-12 h-12 rounded-full bg-[#F5F3FF] flex items-center justify-center text-[#5B32EA]">
                   <Award className="w-6 h-6" />
@@ -101,7 +101,7 @@ export default function EducatorPassport() {
                       <ShieldCheck className="w-5 h-5" />
                     </div>
                     <div>
-                      <h5 className="text-[#1A1A2E] font-bold text-[15px]">Skillzza sessions</h5>
+                      <h5 className="text-[#1A1A2E] font-bold text-[13px]">Skillzza sessions</h5>
                       <p className="text-[#64748B] text-[12px] font-medium">Verified automatically</p>
                     </div>
                   </div>
@@ -117,7 +117,7 @@ export default function EducatorPassport() {
                       <FilePlus className="w-5 h-5" />
                     </div>
                     <div>
-                      <h5 className="text-[#1A1A2E] font-bold text-[15px]">External & school</h5>
+                      <h5 className="text-[#1A1A2E] font-bold text-[13px]">External & school</h5>
                       <p className="text-[#64748B] text-[12px] font-medium">Self-reported logs</p>
                     </div>
                   </div>
@@ -133,7 +133,7 @@ export default function EducatorPassport() {
                       <Timer className="w-5 h-5" />
                     </div>
                     <div>
-                      <h5 className="text-[#1A1A2E] font-bold text-[15px]">Pending review</h5>
+                      <h5 className="text-[#1A1A2E] font-bold text-[13px]">Pending review</h5>
                       <p className="text-[#64748B] text-[12px] font-medium">Under verification</p>
                     </div>
                   </div>
@@ -148,7 +148,7 @@ export default function EducatorPassport() {
               {/* Total Footer */}
               <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between">
                 <div>
-                  <h5 className="text-[#64748B] font-bold text-[13px] uppercase tracking-wider mb-0.5">Total this year</h5>
+                  <h5 className="text-[#64748B] font-bold text-[11px] uppercase tracking-wider mb-0.5">Total this year</h5>
                   <div className="text-[#1A1A2E] font-black text-[32px] leading-none">8.0 <span className="text-[16px] text-[#64748B] font-bold">hrs</span></div>
                 </div>
               </div>

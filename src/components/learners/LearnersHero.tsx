@@ -15,7 +15,7 @@ export default function LearnersHero() {
               FOR SCHOOLS | K-12 PARTNERSHIPS
             </StaggerItem> */}
 
-            <h1 className="text-[44px] md:text-[56px] lg:text-[64px] font-extrabold text-[#1A1A2E] leading-[1.1] mb-6">
+            <h1 className="text-[36px] sm:text-[40px] md:text-[46px] lg:text-[46px] font-extrabold text-[#1A1A2E] leading-[1.1] mb-6">
               <WordReveal text="Enabling" delay={0.1} /><br />
               <span className="text-[#5B32EA]"><WordReveal text="Future-Ready" delay={0.2} /></span><br />
               <WordReveal text="Learning at Scale" delay={0.3} />

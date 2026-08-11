@@ -151,7 +151,7 @@ export default function AiImmersion() {
           <span className="text-[#5B32EA] font-bold text-[12px] uppercase tracking-widest mb-4 block">
             THE AI IMMERSION PROGRAMME
           </span>
-          <h2 className="text-[32px] sm:text-[40px] md:text-[44px] font-extrabold text-[#1A1A2E] leading-[1.15] tracking-tight mb-6 lg:whitespace-nowrap">
+          <h2 className="text-[30px] sm:text-[38px] md:text-[42px] font-extrabold text-[#1A1A2E] leading-[1.15] tracking-tight mb-6 lg:whitespace-nowrap">
             12 weeks, three stages, one classroom-ready portfolio.
           </h2>
           <p className="text-[#4B5563] font-medium text-[16px] md:text-[18px] leading-relaxed max-w-[950px]">
@@ -192,7 +192,7 @@ export default function AiImmersion() {
                   <div className="w-12 h-12 shrink-0 rounded-full bg-[#E8E6FF] text-[#5B32EA] flex items-center justify-center font-black text-[16px]">
                     {mod.id}
                   </div>
-                  <h4 className="text-[#1A1A2E] font-bold text-[22px] lg:text-[28px]">{mod.title}</h4>
+                  <h4 className="text-[#1A1A2E] font-bold text-[20px] lg:text-[26px]">{mod.title}</h4>
                 </div>
                 
                 <p className="text-[#4B5563] text-[16px] lg:text-[17px] leading-relaxed font-medium mb-8">

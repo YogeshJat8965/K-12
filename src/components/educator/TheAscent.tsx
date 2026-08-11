@@ -73,7 +73,7 @@ export default function TheAscent() {
           <span className="text-[#5B32EA] font-bold text-[12px] uppercase tracking-widest mb-4 block">
             THE ASCENT
           </span>
-          <h2 className="text-[36px] sm:text-[42px] md:text-[48px] font-extrabold text-[#1A1A2E] leading-[1.15] tracking-tight mb-6">
+          <h2 className="text-[34px] sm:text-[40px] md:text-[46px] font-extrabold text-[#1A1A2E] leading-[1.15] tracking-tight mb-6">
             One path, from first login<br className="hidden md:block" /> to the national stage.
           </h2>
           <p className="text-[#4B5563] font-medium text-[16px] md:text-[18px] leading-relaxed max-w-3xl">
@@ -122,7 +122,7 @@ export default function TheAscent() {
                           </span>
                         </div>
                         
-                        <h3 className="text-[#1A1A2E] font-extrabold text-[20px] mb-2">
+                        <h3 className="text-[#1A1A2E] font-extrabold text-[18px] mb-2">
                           {stage.title}
                         </h3>
                         

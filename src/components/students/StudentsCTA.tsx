@@ -21,7 +21,7 @@ export default function StudentsCTA() {
           {/* Content */}
           <div className="relative z-10 flex flex-col items-center text-center">
 
-            <h2 className="text-3xl md:text-4xl lg:text-[46px] font-bold text-white mb-8 tracking-tight">
+            <h2 className="text-[28px] md:text-[34px] lg:text-[44px] font-bold text-white mb-8 tracking-tight">
               Ready to begin?
             </h2>
 

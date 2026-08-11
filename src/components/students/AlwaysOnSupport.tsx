@@ -27,7 +27,7 @@ export default function AlwaysOnSupport() {
         </span>
 
         {/* Heading */}
-        <h2 className="text-gray-900 text-3xl md:text-4xl lg:text-[42px] font-bold tracking-tight mb-5 font-poppins">
+        <h2 className="text-gray-900 text-[28px] md:text-[34px] lg:text-[40px] font-bold tracking-tight mb-5 font-poppins">
           Running Alongside Every Stage
         </h2>
 

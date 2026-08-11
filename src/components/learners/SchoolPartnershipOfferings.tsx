@@ -200,7 +200,7 @@ export default function SchoolPartnershipOfferings() {
         {/* Header */}
         <StaggerContainer className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-8">
           <div className="max-w-4xl">
-            <h2 className="text-[36px] md:text-[44px] lg:text-[48px] font-extrabold text-[#1A1A2E] leading-[1.2] mb-6 tracking-tight">
+            <h2 className="text-[34px] md:text-[42px] lg:text-[46px] font-extrabold text-[#1A1A2E] leading-[1.2] mb-6 tracking-tight">
               <WordReveal text="Our School Partnership Offerings" />
             </h2>
             <StaggerItem className="text-[#6B7280] text-[15px] md:text-[16px] leading-[1.7] font-medium max-w-3xl">
@@ -233,7 +233,7 @@ export default function SchoolPartnershipOfferings() {
             {/* Left Content */}
             <div className={`flex flex-col justify-center ${slideClass}`}>
               <h3
-                className="text-[30px] md:text-[38px] lg:text-[42px] font-extrabold text-[#0D152E] leading-[1.1] mb-4 tracking-tight whitespace-pre-line anim-rise"
+                className="text-[28px] md:text-[36px] lg:text-[40px] font-extrabold text-[#0D152E] leading-[1.1] mb-4 tracking-tight whitespace-pre-line anim-rise"
                 style={{ animationDelay: '0.05s' }}
               >
                 {s.title}
@@ -268,7 +268,7 @@ export default function SchoolPartnershipOfferings() {
                         {f.icon}
                       </div>
                       <div className="flex-1">
-                        <h4 className="text-[12px] md:text-[13px] font-bold text-[#111827] mb-0.5 leading-snug">{f.title}</h4>
+                        <h4 className="text-[10px] md:text-[11px] font-bold text-[#111827] mb-0.5 leading-snug">{f.title}</h4>
                         <p className="text-[#6B7280] text-[11px] leading-[1.35]">{f.desc}</p>
                       </div>
                     </div>
@@ -286,7 +286,7 @@ export default function SchoolPartnershipOfferings() {
                         {f.icon}
                       </div>
                       <div className="flex-1 pt-0.5">
-                        <h4 className="text-[13px] md:text-[14px] font-bold text-[#111827] leading-snug">{f.title}</h4>
+                        <h4 className="text-[11px] md:text-[12px] font-bold text-[#111827] leading-snug">{f.title}</h4>
                         <p className="text-[#6B7280] text-[11px] md:text-[12px] leading-[1.4]">{f.desc}</p>
                       </div>
                     </div>
@@ -335,7 +335,7 @@ export default function SchoolPartnershipOfferings() {
               <div className="w-16 h-16 bg-[#F4EFFF] rounded-full flex items-center justify-center text-[#5B32EA] mb-5 shadow-inner">
                 <Lock size={28} strokeWidth={2.5} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-3 tracking-tight">Exclusive Offerings</h3>
+              <h3 className="text-[22px] font-bold text-gray-900 mb-3 tracking-tight">Exclusive Offerings</h3>
               <p className="text-gray-500 text-sm mb-8 leading-relaxed">Log in or create a free account to explore our complete partnership ecosystem and offerings.</p>
               <button 
                 onClick={() => setShowLoginModal(true)}
@@ -361,7 +361,7 @@ export default function SchoolPartnershipOfferings() {
               <X size={24} />
             </button>
             <div className="p-10">
-              <h3 className="text-3xl font-extrabold text-gray-900 mb-3 tracking-tight">
+              <h3 className="text-[28px] font-extrabold text-gray-900 mb-3 tracking-tight">
                 {isSignup ? 'Create Account' : 'Welcome Back'}
               </h3>
               <p className="text-gray-500 text-sm mb-8">

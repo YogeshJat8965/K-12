@@ -10,7 +10,7 @@ export default function TeacherAtCenter() {
           <p className="text-[#4F46E5] font-bold text-[10px] md:text-[11px] tracking-widest uppercase mb-4">
             WHY IT'S CALLED THE CIRCLE
           </p>
-          <h2 className="text-[26px] md:text-[34px] lg:text-[46px] font-extrabold text-[#111827] leading-[1.2] tracking-tight mb-6 max-w-4xl">
+          <h2 className="text-[24px] md:text-[32px] lg:text-[44px] font-extrabold text-[#111827] leading-[1.2] tracking-tight mb-6 max-w-4xl">
             One Teacher At The <span className="text-[#4F46E5]">Centre.</span> A Whole<br className="hidden lg:block" /> Nation <span className="text-[#4F46E5]">Around You.</span>
           </h2>
           {/* <p className="text-gray-500 font-medium text-[14px] md:text-[15px] leading-relaxed max-w-3xl">

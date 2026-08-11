@@ -24,7 +24,7 @@ export default function CreativityHero() {
           {/* Content Over the Background */}
           <div className="w-full lg:w-3/5 relative z-20">
             <ScrollReveal>
-              <h1 className="text-4xl sm:text-5xl lg:text-[3.8rem] font-extrabold text-[#0B192C] leading-[1.1] mb-6 tracking-tight">
+              <h1 className="text-[36px] sm:text-[40px] md:text-[46px] lg:text-[46px] font-extrabold text-[#0B192C] leading-[1.1] mb-6 tracking-tight">
                 Creativity and AI, <br />
                 built for the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6C3CF7] to-[#F97316]">K-12 classroom</span>
               </h1>

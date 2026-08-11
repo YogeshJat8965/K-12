@@ -309,7 +309,7 @@ export default function SkillDnaQuizModal({ isOpen, onClose }: SkillDnaQuizModal
         {step === 'welcome' && (
           <div className="p-8 sm:p-12 overflow-y-auto">
             <div className="mb-6">
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1A1A2E] mb-2 leading-tight">
+              <h2 className="text-[28px] sm:text-[34px] font-extrabold text-[#1A1A2E] mb-2 leading-tight">
                 Skill DNA Test
               </h2>
               <p className="text-gray-600 text-lg">
@@ -353,10 +353,10 @@ export default function SkillDnaQuizModal({ isOpen, onClose }: SkillDnaQuizModal
 
             <div className="p-8 sm:p-12 flex-1 overflow-y-auto">
               <div className="mb-8">
-                <h4 className="text-[#64748B] font-bold text-[13px] uppercase tracking-wider mb-2">
+                <h4 className="text-[#64748B] font-bold text-[11px] uppercase tracking-wider mb-2">
                   Question {currentQ.id} of {quizData.length}
                 </h4>
-                <h3 className="text-2xl font-bold text-[#1A1A2E] leading-snug mt-4">
+                <h3 className="text-[22px] font-bold text-[#1A1A2E] leading-snug mt-4">
                   {currentQ.text}
                 </h3>
               </div>
@@ -414,7 +414,7 @@ export default function SkillDnaQuizModal({ isOpen, onClose }: SkillDnaQuizModal
             <div className="w-20 h-20 bg-[#E8E6FF] rounded-full flex items-center justify-center mb-6">
               <CheckCircle2 className="w-10 h-10 text-[#5B32EA]" />
             </div>
-            <h2 className="text-3xl font-extrabold text-[#1A1A2E] mb-2">Quiz Completed!</h2>
+            <h2 className="text-[28px] font-extrabold text-[#1A1A2E] mb-2">Quiz Completed!</h2>
 
             <div className="w-full max-w-lg bg-gray-50 rounded-2xl p-6 my-8 text-left border border-gray-200 shadow-sm">
               <p className="text-lg text-gray-800 mb-4 leading-relaxed">
