@@ -49,7 +49,7 @@ export default function DesignedForStudents() {
   const features = [
     {
       id: 1, title: "Age-Appropriate Pathways",
-      desc: "Curriculum calibrated for Grades 6-12 across cognitive and skill maturity levels.",
+      desc: "Curriculum calibrated for Grades 9-12 across cognitive and skill maturity levels.",
       icon: <GraduationCap size={36} strokeWidth={2} />,
       colorClass: "dfs-purple"
     },
@@ -377,7 +377,7 @@ export default function DesignedForStudents() {
           {/* LEFT: Text + Diagram */}
           <div className="dfs-left">
             <h2 className="dfs-header dfs-text-elem">
-              Designed Specifically<br />
+              Designed <br />
               <span className="purple">for School Students</span>
             </h2>
             <div className="dfs-line dfs-text-elem"></div>

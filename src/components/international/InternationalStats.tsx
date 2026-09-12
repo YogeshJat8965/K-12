@@ -52,7 +52,7 @@ export default function InternationalStats() {
           <h3 className="text-[40px] md:text-[48px] font-bold text-[#7C3AED] leading-none mb-2">
             <AnimatedCounter end={100} suffix="+" />
           </h3>
-          <p className="text-[15px] font-medium text-[#4B5563]">Student Innovation Projects</p>
+          <p className="text-[15px] font-medium text-[#4B5563]">Student Projects Completed</p>
         </div>
 
         {/* Stat 4 */}

@@ -56,18 +56,18 @@ export default function GlobalEducation() {
             {/* Blue Line Divider */}
             <div className="w-[80px] h-[4px] bg-[#3B82F6] mb-4"></div>
 
-            <p className="text-[#6B7280] text-[15px] font-medium">
+            <p className="text-[#6B7280] text-[17px] font-medium">
               Our studios are designed in alignment with
             </p>
           </div>
 
           {/* Right Line Decor */}
-          <div className="hidden md:flex w-full max-w-[350px] justify-end mt-4 opacity-70">
+          {/* <div className="hidden md:flex w-full max-w-[350px] justify-end mt-4 opacity-70">
             <div className="w-[90%] flex items-center">
               <div className="flex-1 h-[1.5px] bg-[#3B82F6]"></div>
               <div className="w-2 h-2 rounded-full bg-[#3B82F6]"></div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Content Row */}

@@ -30,9 +30,7 @@ export default function EducatorPassport() {
 
         {/* Top Centered Header */}
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16">
-          <span className="text-[#5B32EA] font-bold text-[12px] uppercase tracking-widest mb-4 block">
-            THE PASSPORT
-          </span>
+
           <h2 className="text-[30px] sm:text-[38px] md:text-[42px] font-extrabold text-[#1A1A2E] leading-[1.15] tracking-tight mb-6 lg:whitespace-nowrap">
             Your CPD, tracked and appraisal-ready.
           </h2>

@@ -265,7 +265,7 @@ export default function HomeAdobe() {
               <p className="ha-subheadline">Turn Students into Future Creators</p>
 
               <p className="ha-desc">
-                A NEP-aligned programme for Grades 6-12 that builds real world skills in design, content creation, and AI through hands on, project based learning on Adobe Express.
+                A NEP-aligned programme for Grades 9-12 that builds real world skills in design, content creation, and AI through hands on, project based learning on Adobe Express.
               </p>
 
               <div className="ha-btn-wrap">

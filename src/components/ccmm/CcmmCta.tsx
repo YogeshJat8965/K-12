@@ -42,7 +42,7 @@ export default function CcmmCta() {
 
           {/* Description */}
           <p className="text-white/90 font-medium text-[14px] md:text-[15px] max-w-2xl mx-auto leading-relaxed mb-6">
-            The schools that act today will define what learning looks like for the next generation. Take the first measured, confident step - tailored to your institution.
+            The schools that act today will define what learning looks like for the next generation.
           </p>
 
           {/* Buttons */}

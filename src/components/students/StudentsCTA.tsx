@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { ArrowRight, Sparkles, Compass, Briefcase } from 'lucide-react';
 import SkillDnaQuizModal from './SkillDnaQuizModal';
 
 export default function StudentsCTA() {
@@ -25,34 +24,40 @@ export default function StudentsCTA() {
               Ready to begin?
             </h2>
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4 w-full max-w-4xl mx-auto">
+            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 w-full max-w-6xl mx-auto">
 
               {/* Button 1 */}
-              <button 
+              <button
                 onClick={(e) => { e.preventDefault(); setIsQuizOpen(true); }}
-                className="group w-full md:w-1/3 relative flex items-center justify-center gap-3 px-6 py-4 lg:py-5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(255,255,255,0.15)]"
+                className="group flex-1 min-w-[200px] relative flex items-center justify-center gap-3 px-5 py-4 lg:py-5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(255,255,255,0.15)]"
               >
-                {/* <Sparkles className="w-5 h-5 text-[#F59E0B]" /> */}
-                <span className="text-white font-semibold text-[15px] lg:text-[16px] tracking-wide">Take the Skill DNA Test</span>
+                <span className="text-white font-semibold text-[14px] lg:text-[15px] tracking-wide whitespace-nowrap">Take the Skill DNA Test</span>
                 <div className="absolute inset-0 rounded-2xl border border-white/0 group-hover:border-white/50 transition-colors duration-300 pointer-events-none" />
               </button>
 
-              {/* Button 2 */}
-              <button 
-                onClick={() => window.location.href = '/skill-studio'}
-                className="group w-full md:w-1/3 relative flex items-center justify-center gap-3 px-6 py-4 lg:py-5 bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] hover:from-[#F472B6] hover:to-[#A78BFA] shadow-lg rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(236,72,153,0.3)]"
+              {/* Button 2 - Explore AI Playground */}
+              <button
+                onClick={() => window.location.href = '/ai-playground'}
+                className="group flex-1 min-w-[200px] relative flex items-center justify-center gap-3 px-5 py-4 lg:py-5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(255,255,255,0.15)]"
               >
-                {/* <Compass className="w-5 h-5 text-white" /> */}
-                <span className="text-white font-bold text-[15px] lg:text-[16px] tracking-wide">Explore Studios</span>
+                <span className="text-white font-semibold text-[14px] lg:text-[15px] tracking-wide whitespace-nowrap">Explore AI Playground</span>
+                <div className="absolute inset-0 rounded-2xl border border-white/0 group-hover:border-white/50 transition-colors duration-300 pointer-events-none" />
               </button>
 
-              {/* Button 3 */}
-              <button 
-                onClick={() => window.location.href = '/virtual-internship'}
-                className="group w-full md:w-1/3 relative flex items-center justify-center gap-3 px-6 py-4 lg:py-5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(255,255,255,0.15)]"
+              {/* Button 3 - Explore Skill Studios */}
+              <button
+                onClick={() => window.location.href = '/skill-studio'}
+                className="group flex-1 min-w-[200px] relative flex items-center justify-center gap-3 px-5 py-4 lg:py-5 bg-gradient-to-r from-[#EC4899] to-[#8B5CF6] hover:from-[#F472B6] hover:to-[#A78BFA] shadow-lg rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(236,72,153,0.3)]"
               >
-                {/* <Briefcase className="w-5 h-5 text-[#06B6D4]" /> */}
-                <span className="text-white font-semibold text-[15px] lg:text-[16px] tracking-wide">Apply for Internship</span>
+                <span className="text-white font-bold text-[14px] lg:text-[15px] tracking-wide whitespace-nowrap">Discover Skill Studios</span>
+              </button>
+
+              {/* Button 4 - Apply for Internship */}
+              <button
+                onClick={() => window.location.href = '/virtual-internship'}
+                className="group flex-1 min-w-[200px] relative flex items-center justify-center gap-3 px-5 py-4 lg:py-5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(255,255,255,0.15)]"
+              >
+                <span className="text-white font-semibold text-[14px] lg:text-[15px] tracking-wide whitespace-nowrap">Apply for Internship</span>
                 <div className="absolute inset-0 rounded-2xl border border-white/0 group-hover:border-white/50 transition-colors duration-300 pointer-events-none" />
               </button>
 

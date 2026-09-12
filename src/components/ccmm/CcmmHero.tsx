@@ -17,9 +17,6 @@ export default function CcmmHero() {
               <span className="text-[#5B45FF] font-bold text-[12px] md:text-[13px] tracking-[0.15em] uppercase">
                 THE COGNITIVE COMPUTING MATURITY MODEL
               </span>
-              <span className="text-gray-500 font-semibold text-[11px] md:text-[12px] tracking-[0.1em] uppercase">
-                ONE QUESTION DEFINES THE ERA →
-              </span>
             </div>
 
             <h1 className="text-[32px] sm:text-[40px] md:text-[46px] lg:text-[46px] xl:text-[50px] font-extrabold text-[#1A1A2E] leading-[1.15] tracking-tight mb-6">

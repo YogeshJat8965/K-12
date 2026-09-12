@@ -140,7 +140,7 @@ export default function WhatAreStudios() {
             </h2>
 
             <p className="text-[#4B5563] text-[15.5px] leading-relaxed font-medium mb-4">
-              Skill Studio is a structured experiential learning environment that complements academic education with future-ready competencies.
+              Skill Studios are structured experiential learning environment that complements academic education with future-ready competencies.
             </p>
             <p className="text-[#4B5563] text-[15.5px] leading-relaxed font-medium mb-8">
               Rather than focusing only on participation-based activities, Skill Studio enables students to build measurable skills, real-world exposure, digital portfolios, and interdisciplinary thinking through guided learning experiences.

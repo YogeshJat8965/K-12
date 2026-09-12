@@ -2,60 +2,45 @@ import React from 'react';
 import girlStudentImg from '../../assets/CCMM/image.png';
 
 export default function CcmmCarries() {
-  const items = [
+  const leftItems = [
     {
-      content: (
-        <div className="flex flex-col">
-          <span className="text-red-400 font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase">SDG 4</span>
-          <span className="text-[#111827] font-bold text-[16px] mb-1.5">Quality Education</span>
-          <span className="text-[#4B5563] text-[14px] leading-relaxed font-normal">Inclusive, equitable, lifelong learning for every child.</span>
-        </div>
-      )
+      code: 'SDG 4',
+      codeColor: 'text-red-400',
+      title: 'Quality Education',
+      desc: 'Inclusive, equitable, lifelong learning for every child.'
     },
     {
-      content: (
-        <div className="flex flex-col">
-          <span className="text-orange-400 font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase">SDG 5</span>
-          <span className="text-[#111827] font-bold text-[16px] mb-1.5">Gender Equality</span>
-          <span className="text-[#4B5563] text-[14px] leading-relaxed font-normal">Closing the AI gender gap from the classroom upward.</span>
-        </div>
-      )
+      code: 'SDG 8',
+      codeColor: 'text-[#A7475C]',
+      title: 'Decent Work & Growth',
+      desc: 'Preparing students for the cognitive economy.'
     },
     {
-      content: (
-        <div className="flex flex-col">
-          <span className="text-[#A7475C] font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase">SDG 8</span>
-          <span className="text-[#111827] font-bold text-[16px] mb-1.5">Decent Work & Growth</span>
-          <span className="text-[#4B5563] text-[14px] leading-relaxed font-normal">Preparing students for the cognitive economy.</span>
-        </div>
-      )
+      code: 'SDG 10',
+      codeColor: 'text-[#DF1567]',
+      title: 'Reduced Inequalities',
+      desc: 'Democratising AI access across Tier-1, 2, 3, and rural schools.'
+    }
+  ];
+
+  const rightItems = [
+    {
+      code: 'SDG 5',
+      codeColor: 'text-orange-400',
+      title: 'Gender Equality',
+      desc: 'Closing the AI gender gap from the classroom upward.'
     },
     {
-      content: (
-        <div className="flex flex-col">
-          <span className="text-[#ED662F] font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase">SDG 9</span>
-          <span className="text-[#111827] font-bold text-[16px] mb-1.5">Industry & Innovation</span>
-          <span className="text-[#4B5563] text-[14px] leading-relaxed font-normal">Building school-level innovation infrastructure.</span>
-        </div>
-      )
+      code: 'SDG 9',
+      codeColor: 'text-[#ED662F]',
+      title: 'Industry & Innovation',
+      desc: 'Building school-level innovation infrastructure.'
     },
     {
-      content: (
-        <div className="flex flex-col">
-          <span className="text-[#DF1567] font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase">SDG 10</span>
-          <span className="text-[#111827] font-bold text-[16px] mb-1.5">Reduced Inequalities</span>
-          <span className="text-[#4B5563] text-[14px] leading-relaxed font-normal">Democratising AI access across Tier-1, 2, 3, and rural schools.</span>
-        </div>
-      )
-    },
-    {
-      content: (
-        <div className="flex flex-col">
-          <span className="text-[#124767] font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase">SDG 17</span>
-          <span className="text-[#111827] font-bold text-[16px] mb-1.5">Partnerships for Goals</span>
-          <span className="text-[#4B5563] text-[14px] leading-relaxed font-normal">Connecting schools to industry, government, and global ecosystems.</span>
-        </div>
-      )
+      code: 'SDG 17',
+      codeColor: 'text-[#124767]',
+      title: 'Partnerships for Goals',
+      desc: 'Connecting schools to industry, government, and global ecosystems.'
     }
   ];
 
@@ -76,34 +61,62 @@ export default function CcmmCarries() {
           </p>
         </div>
 
-        {/* Content Wrapper */}
-        <div className="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-8 mt-10">
+        {/* Content Wrapper: Left (SDG 4, 8, 10), Center (Image), Right (SDG 5, 9, 17) */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 mt-10">
 
-          {/* List Items (Left) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8 w-full lg:w-[55%]">
-            {items.map((item, index) => (
+          {/* Left Column (SDG 4, 8, 10) */}
+          <div className="w-full lg:w-[32%] flex flex-col gap-6">
+            {leftItems.map((item, index) => (
               <div
                 key={index}
                 className="flex flex-col text-left border-t-2 border-gray-100 pt-4"
               >
-                {item.content}
+                <span className={`${item.codeColor} font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase`}>
+                  {item.code}
+                </span>
+                <span className="text-[#111827] font-bold text-[16px] mb-1.5">
+                  {item.title}
+                </span>
+                <span className="text-[#4B5563] text-[14px] leading-relaxed font-normal">
+                  {item.desc}
+                </span>
               </div>
             ))}
           </div>
 
-          {/* Image (Right) */}
-          <div className="w-full lg:w-[45%] flex justify-center lg:justify-end lg:-mt-4">
+          {/* Center Column (SDG Wheel Image) */}
+          <div className="w-full lg:w-[36%] flex justify-center items-center my-4 lg:my-0">
             <img
               src={girlStudentImg}
-              alt="Girl Student"
-              className="w-full max-w-[360px] object-contain"
+              alt="Sustainable Development Goals"
+              className="w-full max-w-[420px] object-contain"
             />
+          </div>
+
+          {/* Right Column (SDG 5, 9, 17) */}
+          <div className="w-full lg:w-[32%] flex flex-col gap-6">
+            {rightItems.map((item, index) => (
+              <div
+                key={index}
+                className="flex flex-col text-left border-t-2 border-gray-100 pt-4"
+              >
+                <span className={`${item.codeColor} font-bold text-[11px] tracking-[0.15em] mb-1.5 uppercase`}>
+                  {item.code}
+                </span>
+                <span className="text-[#111827] font-bold text-[16px] mb-1.5">
+                  {item.title}
+                </span>
+                <span className="text-[#4B5563] text-[14px] leading-relaxed font-normal">
+                  {item.desc}
+                </span>
+              </div>
+            ))}
           </div>
 
         </div>
 
         {/* Bottom Footer Text */}
-        <div className="mt-16 border-t border-gray-200 pt-8 flex justify-center text-center w-full">
+        <div className="mt-8 flex justify-center text-center w-full">
           <p className="text-[#64748B] text-[14px] font-medium italic leading-relaxed w-full lg:whitespace-nowrap">
             CCMM-certified schools graduate students who don't just understand AI - they understand why it must serve humanity.
           </p>

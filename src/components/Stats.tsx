@@ -83,7 +83,7 @@ export default function Stats() {
               <span className="text-3xl">🎓</span>
             </div>
             <p className="text-slate-700 font-medium leading-relaxed text-center md:text-left">
-              While such experiences have traditionally been available only to university students, <span className="text-purple-700 font-bold">Skillzza</span> brings this powerful model to <span className="bg-purple-100 text-purple-700 px-2 py-0.5 rounded-md font-bold text-sm">Grades 6-12</span> - ensuring early exposure in a safe, age-appropriate environment.
+              While such experiences have traditionally been available only to university students, <span className="text-purple-700 font-bold">Skillzza</span> brings this powerful model to <span className="bg-purple-100 text-purple-700 px-2 py-0.5 rounded-md font-bold text-sm">Grades 9-12</span> - ensuring early exposure in a safe, age-appropriate environment.
             </p>
           </div>
         </div>

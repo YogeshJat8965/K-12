@@ -61,9 +61,9 @@ export default function HowItWorks() {
               <div className="absolute top-12 left-12 right-12 h-[2px] bg-slate-100 -z-10 hidden md:block" />
 
               {steps.map((item, i) => (
-                <ScrollReveal 
-                  key={i} 
-                  delay={i * 0.15} 
+                <ScrollReveal
+                  key={i}
+                  delay={i * 0.15}
                   rotateY={i % 2 === 0 ? 15 : -15}
                   className="flex-1 flex flex-col"
                 >

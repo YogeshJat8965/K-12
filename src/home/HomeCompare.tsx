@@ -97,7 +97,7 @@ export default function HomeCompare() {
       iconColor: '#10B981',
       iconBg: '#ECFDF5',
       othersDesc: 'Forage And Similar Simulators Target University Students. School Students Miss Out',
-      novaDesc: 'First-Of-Its-Kind Virtual Internships Engineered For Grades 6-12 - College-Application Ready.'
+      novaDesc: 'First-Of-Its-Kind Virtual Internships Engineered For Grades 9-12 - College-Application Ready.'
     },
     {
       title: 'Industry Partnerships',

@@ -9,7 +9,7 @@ export default function Footer() {
 
           {/* Column 1: Brand, Presence & Social */}
           <div className="flex flex-col gap-4 pr-8">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 -mt-3 lg:-mt-5">
               <img src={logoImg} alt="Skill Studio" style={{ height: '120px', width: 'auto', objectFit: 'contain' }} />
             </div>
 
@@ -17,7 +17,7 @@ export default function Footer() {
               <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">Our Presence</h3>
               <div className="flex flex-col gap-5">
                 <div className="flex flex-col gap-1">
-                  <span className="text-gray-800 text-[12px] font-semibold uppercase tracking-wider">India Office</span>
+                  {/* <span className="text-gray-800 text-[12px] font-semibold uppercase tracking-wider">India Office</span> */}
                   <p className="text-gray-600 text-[14px] leading-relaxed whitespace-nowrap">
                     We Work, Zenia Building, 4th Floor.<br />
                     Hiranandani Business Park, Arcadia Circle,<br />
@@ -48,59 +48,48 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Adobe Program */}
-          <div className="flex flex-col gap-4 lg:mt-[72px]">
-            <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">Adobe Program</h3>
+          {/* Column 2: Discover */}
+          <div className="flex flex-col gap-4 lg:mt-4">
+            <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">Discover</h3>
             <ul className="flex flex-col gap-3">
-              <li><a href="/digital-creativity" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Digital Creativity</a></li>
-              <li><a href="/digital-creativity#dcais-program" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">DCAIS Programme</a></li>
-            </ul>
-          </div>
-
-          {/* Column 3: Skill Studio */}
-          <div className="flex flex-col gap-4 lg:mt-[72px]">
-            <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">Skill Studio</h3>
-            <ul className="flex flex-col gap-3">
-              <li><a href="/skill-studio" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">For schools</a></li>
-              <li><a href="/international-studio" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">For Students</a></li>
-            </ul>
-          </div>
-
-          {/* Column 4: Virtual Internship */}
-          <div className="flex flex-col gap-4 lg:mt-[72px]">
-            <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">Virtual Internship</h3>
-            <ul className="flex flex-col gap-3">
-              <li><span className="text-gray-600 text-[14px] cursor-default">GenAI Innovation</span></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">AI & Data Engineering Professional</span></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">Financial Literacy & Investment</span></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">UX Design & Product Innovation</span></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">Mental Wellness & Mindfulness</span></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">Climate Action & Sustainability</span></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">Entrepreneurship & Startup Innovation</span></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">Digital Storytelling & Media Journalism</span></li>
-              {/* <li><span className="text-gray-600 text-[14px] cursor-default">Digital Marketing for Youth Start-up's</span></li> */}
-              {/* <li><span className="text-gray-600 text-[14px] cursor-default">Deepfake Awareness & AI Media Literacy</span></li> */}
-            </ul>
-          </div>
-
-          {/* Column 5: Learners Segment */}
-          <div className="flex flex-col gap-4 lg:mt-[72px]">
-            <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">Learners Segment</h3>
-            <ul className="flex flex-col gap-3">
-              <li><span className="text-gray-600 text-[14px] cursor-default">For Students</span></li>
-              <li><a href="/learners" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">For Schools</a></li>
-              <li><span className="text-gray-600 text-[14px] cursor-default">For Educator</span></li>
-            </ul>
-          </div>
-
-          {/* Column 6: Quick Links */}
-          <div className="flex flex-col gap-4 lg:mt-[72px]">
-            <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">Quick Links</h3>
-            <ul className="flex flex-col gap-3">
-              <li><span className="text-gray-600 text-[14px] cursor-default">Vedya AI</span></li>
-              <li><a href="/ccmm" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">CCMM</a></li>
-              <li><a href="/educator" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">The Educator Circle</a></li>
               <li><a href="/ai-playground" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">AI Playground</a></li>
+              <li><a href="/skill-studio" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Skill Studio</a></li>
+              <li><a href="/virtual-internship" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Virtual Internship</a></li>
+              {/* <li><a href="https://hackathon.skillzzak12.com" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Creative Hackathon</a></li> */}
+              <li><a href="" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Future Skills Program</a></li>
+            </ul>
+          </div>
+
+          {/* Column 4: Learners Segment */}
+          <div className="flex flex-col gap-4 lg:mt-4">
+            <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">For You</h3>
+            <ul className="flex flex-col gap-3">
+              <li><a href="/students" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">For Students</a></li>
+              <li><a href="/learners" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">For Schools</a></li>
+              <li><a href="/educator" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">For Educators</a></li>
+              <li><a href="" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">For Parents</a></li>
+            </ul>
+          </div>
+
+          {/* Column 3: Skillzza Ecosystem */}
+          <div className="flex flex-col gap-4 lg:mt-4">
+            <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">Skillzza Ecosystem</h3>
+            <ul className="flex flex-col gap-3">
+              <li><a href="/ai-playground" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Vedya AI</a></li>
+              <li><a href="/ccmm" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">CCMM</a></li>
+              <li><a href="/educator-circle" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">The Educator Circle</a></li>
+              <li><a href="/educator-circle" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Skillzza Community</a></li>
+            </ul>
+          </div>
+
+          {/* Column 5: Quick Links */}
+          <div className="flex flex-col gap-4 lg:mt-4">
+            <h3 className="text-gray-900 font-semibold text-[13px] tracking-[0.1em] uppercase">Learning & Insights</h3>
+            <ul className="flex flex-col gap-3">
+              <li><a href="/skill-studio" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Skill Insights</a></li>
+              <li><a href="/" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">About Skillzza</a></li>
+              <li><a href="https://hackathon.skillzzak12.com" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Partner with us</a></li>
+              <li><a href="/contact" className="text-gray-600 text-[14px] hover:text-[#6C3CF7] transition-colors">Contact Us</a></li>
             </ul>
           </div>
 

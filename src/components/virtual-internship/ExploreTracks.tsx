@@ -229,12 +229,12 @@ export default function ExploreTracks() {
 
           <div className="et-header">
             <h2 className="et-header-text">
-              Explore <span className="purple">Career</span> Tracks
+              Explore <span className="purple">Future</span> Tracks
             </h2>
-            <p className="et-subtitle">
+            {/* <p className="et-subtitle">
               Eight future-ready career tracks, mapped across technology, enterprise, creativity, science, and personal growth. <br />
               Students can explore across tracks before choosing their capstone specialisation.
-            </p>
+            </p> */}
           </div>
 
           <div className="et-grid" ref={gridRef}>

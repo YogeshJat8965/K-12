@@ -15,7 +15,9 @@ const I = ({ children }: { children: React.ReactNode }) => (
   </svg>
 );
 
-const CheckIcon = () => <I><path d="M20 6L9 17l-5-5" /></I>;
+const CheckIcon = () => (
+  <div className="w-[8px] h-[8px] bg-[#4B24EA] rounded-full" />
+);
 
 type Feature = { icon: React.ReactNode; title: string; desc: string };
 type Slide = {
@@ -109,20 +111,6 @@ const slides: Slide[] = [
       { icon: <CheckIcon />, title: "Grow your teaching portfolio, digital presence, and professional brand.", desc: "" },
       { icon: <CheckIcon />, title: "Earn mentoring certification reviewed by our academic advisory board.", desc: "" },
       { icon: <CheckIcon />, title: "Join a vibrant educator-innovator community with monthly peer circles.", desc: "" },
-      { icon: <CheckIcon />, title: "Get published on Education techbot and featured in our annual Educator Spotlight series.", desc: "" },
-    ]
-  },
-  {
-    title: "Research & Publication Fellowship",
-    subtitle: "Co-author whitepapers, case studies, and original research",
-    desc: "For educators with insights worth publishing. Partner with Skillzza's research team to co-author whitepapers on pedagogy, case studies on classroom innovation, and original research on learning outcomes.",
-    image: img1,
-    featuresLayout: 'list',
-    features: [
-      { icon: <CheckIcon />, title: "Quarterly research themes aligned to NEP 2020, AI in education, and learning outcomes.", desc: "" },
-      { icon: <CheckIcon />, title: "Editorial support from Skillzza team, end-to-end, Peer-reviewed publication with attributed co-authorship.", desc: "" },
-      { icon: <CheckIcon />, title: "Distribution to academic institutions, edtech CXOs, and policy bodies.", desc: "" },
-      { icon: <CheckIcon />, title: "Honorarium and speaking opportunities at the annual Skillzza Research Symposium.", desc: "" },
     ]
   },
   {

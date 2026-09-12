@@ -339,7 +339,7 @@ export default function HomeMission() {
                 <span>Globally Aligned</span>
               </div> */}
               <h2>Aligned with global education standards.</h2>
-              <p className="hm-right-sub">NEP 2020, International Baccalaureate, Cambridge, and UN SDG frameworks – our learning architecture meets the world where it is headed.</p>
+              <p className="hm-right-sub">NEP 2020, International Baccalaureate, Cambridge, and UN SDG frameworks, our learning architecture meets the world where it is headed.</p>
               <div className="hm-tags">
                 {['NEP 2020', 'IB Framework', 'Cambridge', 'UN SDGs'].map(t => (
                   <span className="hm-tag" key={t}>{t}</span>

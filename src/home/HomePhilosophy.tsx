@@ -81,14 +81,14 @@ export default function HomePhilosophy() {
           const t1 = gsap.from(cards[0], { x: -100, rotationY: -15, opacity: 0, duration: 1, ease: 'power3.out' });
           const t2 = gsap.from(cards[1], { y: 100, rotationX: 15, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.2 });
           const t3 = gsap.from(cards[2], { x: 100, rotationY: 15, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.4 });
-          
+
           ScrollTrigger.create({
             trigger: gridRef.current,
             start: 'top 80%',
             animation: gsap.timeline().add(t1, 0).add(t2, 0).add(t3, 0)
           });
         }
-        
+
         // Ken Burns image zoom
         gsap.to('.hp-img-wrap img', {
           scale: 1,
@@ -128,7 +128,7 @@ export default function HomePhilosophy() {
         }
         .hp-quote-text {
           font-weight: 700;
-          font-size: 32px;
+          font-size: 22px;
           color: #1A1A2E;
           line-height: 1.4;
           margin: 0;
@@ -256,35 +256,26 @@ export default function HomePhilosophy() {
 
       <section className="hp-section" ref={sectionRef}>
         <div className="hp-inner">
-          
+
           <div className="hp-quote">
             <p className="hp-quote-text" ref={quoteRef}>
-              {"Students Don't Just Learn Future Skills".split(' ').map((w,i) => (
-                <span key={'q1-'+i} className="hp-quote-word" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>{w}</span>
+              {"Our Learning Philosophy".split(' ').map((w, i) => (
+                <span key={'q1-' + i} className="hp-quote-word" style={{ display: 'inline-block', opacity: 0, transform: 'translateY(30px)', marginRight: '8px' }}>{w}</span>
               ))}
               <br />
-              <span className="hp-quote-word" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>They</span>
-              <span className="hp-quote-word hp-quote-highlight" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>Apply</span>
-              <span className="hp-quote-word" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>Them,</span>
-              <span className="hp-quote-word hp-quote-highlight" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>Prove</span>
-              <span className="hp-quote-word" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>Them,</span>
-              <span className="hp-quote-word" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>And</span>
-              <span className="hp-quote-word hp-quote-highlight" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>Grow</span>
-              <span className="hp-quote-word" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>Through</span>
-              <span className="hp-quote-word" style={{display:'inline-block', opacity:0, transform:'translateY(30px)', marginRight:'8px'}}>Them.</span>
+              <span className="hp-quote-word" style={{ display: 'inline-block', opacity: 0, transform: 'translateY(30px)', marginRight: '8px' }}>How</span>
+              <span className="hp-quote-word hp-quote-highlight" style={{ display: 'inline-block', opacity: 0, transform: 'translateY(30px)', marginRight: '8px' }}>Skillzza</span>
+              <span className="hp-quote-word" style={{ display: 'inline-block', opacity: 0, transform: 'translateY(30px)', marginRight: '8px' }}>builds the</span>
+              {/* <span className="hp-quote-word hp-quote-highlight" style={{ display: 'inline-block', opacity: 0, transform: 'translateY(30px)', marginRight: '8px' }}></span> */}
+              <span className="hp-quote-word" style={{ display: 'inline-block', opacity: 0, transform: 'translateY(30px)', marginRight: '8px' }}>future</span>
+              <span className="hp-quote-word" style={{ display: 'inline-block', opacity: 0, transform: 'translateY(30px)', marginRight: '8px' }}>ready Learners</span>
+              {/* <span className="hp-quote-word hp-quote-highlight" style={{ display: 'inline-block', opacity: 0, transform: 'translateY(30px)', marginRight: '8px' }}></span> */}
+              {/* <span className="hp-quote-word" style={{ display: 'inline-block', opacity: 0, transform: 'translateY(30px)', marginRight: '8px' }}>Through</span>
+              <span className="hp-quote-word" style={{ display: 'inline-block', opacity: 0, transform: 'translateY(30px)', marginRight: '8px' }}>Them.</span> */}
             </p>
           </div>
 
-          <div className="hp-header" ref={headerRef} style={{ perspective: '1000px' }}>
-            {/* <div className="hp-badge">HOW WE TEACH</div> */}
-            <h2 className="hp-title">
-              {"Our Learning Philosophy".split('').map((c, i) => (
-                <span key={'t-'+i} className="hp-title-char" style={{display:'inline-block', opacity:0, transform:'translateZ(-200px)', filter:'blur(10px)'}}>
-                  {c === ' ' ? '\u00A0' : c}
-                </span>
-              ))}
-            </h2>
-          </div>
+
 
           <div className="hp-grid" ref={gridRef} style={{ perspective: '1200px' }}>
             {philData.map((item) => (

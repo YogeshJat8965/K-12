@@ -331,23 +331,29 @@ export const AnimatedCounter: React.FC<{ end: number; suffix?: string }> = ({ en
   const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    if (!ref.current) return;
+    const el = ref.current;
+    if (!el) return;
+
     const obj = { val: 0 };
-    
-    gsap.to(obj, {
-      val: end,
-      duration: 2.5,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: ref.current,
-        start: 'top 90%',
-      },
-      onUpdate: () => {
-        if (ref.current) {
-          ref.current.innerText = Math.floor(obj.val).toLocaleString('en-US') + suffix;
+    const ctx = gsap.context(() => {
+      gsap.to(obj, {
+        val: end,
+        duration: 2.2,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 95%',
+          once: true,
+        },
+        onUpdate: () => {
+          if (el) {
+            el.innerText = Math.floor(obj.val).toLocaleString('en-US') + suffix;
+          }
         }
-      }
+      });
     });
+
+    return () => ctx.revert();
   }, [end, suffix]);
 
   return <span ref={ref}>0{suffix}</span>;

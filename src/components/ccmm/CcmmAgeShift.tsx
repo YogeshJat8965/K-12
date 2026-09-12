@@ -58,7 +58,7 @@ export default function CcmmAgeShift() {
         {/* Bottom Text */}
         <div className="shift-content flex flex-col items-center gap-6 mb-12 text-[#4B5563] text-[15px] sm:text-[16px] md:text-[17px] leading-[1.8] font-medium text-center">
           <p className="max-w-3xl">
-            Children entering Grade 1 today will graduate into careers, problems, and creative possibilities that don't yet exist - most of them shaped by intelligent machines, agentic systems, and human-AI collaboration. Yet most schools are still asking: <span className="text-[#1A1A2E] font-bold">Where do we begin? What does an AI-ready classroom even look like? How do we know we're on the right track?</span>
+            Children entering Grade 1 today will graduate into careers, problems, and creative possibilities that don't yet exist, most of them shaped by intelligent machines, agentic systems, and human-AI collaboration. <br /> <br /> Yet most schools are still asking: <span className="text-[#1A1A2E] font-bold">Where do we begin? What does an AI-ready classroom even look like? How do we know we're on the right track?</span>
           </p>
           <p>
             CCMM closes that gap. It distils global standards and India's ground realities into one cohesive maturity model designed exclusively for schools - from Tier-1 metros to aspirational rural classrooms.
@@ -66,19 +66,23 @@ export default function CcmmAgeShift() {
         </div>
 
         {/* BUILT ON Section */}
-        <div className="shift-content">
-          <span className="text-gray-500 font-semibold text-[11px] md:text-[12px] tracking-[0.15em] uppercase mb-4 block">
+        <div className="shift-content flex flex-col items-center text-center mt-4">
+          <span className="text-gray-500 font-bold text-[12px] md:text-[13px] tracking-[0.2em] uppercase mb-5 block">
             BUILT ON
           </span>
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-nowrap items-center justify-center gap-2.5 md:gap-3 lg:gap-4 w-full max-w-[1200px] overflow-x-auto no-scrollbar py-2">
             {[
               "UNESCO AI COMPETENCY FRAMEWORKS",
               "OECD LEARNING COMPASS 2030",
               "NEP 2020",
               "INDIA'S GROUND REALITIES"
             ].map((tag, idx) => (
-              <div key={idx} className="border border-gray-200 text-[#5B45FF] font-semibold text-[10px] md:text-[11px] tracking-[0.1em] px-4 py-2 rounded-sm bg-transparent">
-                {tag}
+              <div
+                key={idx}
+                className="group relative flex items-center gap-2 px-3.5 md:px-4 lg:px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#F4EFFF] via-[#EEF2FF] to-[#F3E8FF] border border-[#5B45FF]/30 text-[#5B45FF] font-extrabold text-[11px] md:text-[12px] lg:text-[13px] tracking-[0.05em] whitespace-nowrap shadow-[0_4px_16px_rgba(91,69,255,0.1)] hover:shadow-[0_8px_25px_rgba(91,69,255,0.25)] hover:border-[#5B45FF] hover:-translate-y-1 transition-all duration-300 cursor-default shrink-0"
+              >
+                <span className="w-2 h-2 rounded-full bg-[#5B45FF] group-hover:bg-[#7C3AED] group-hover:scale-125 transition-all duration-300 shrink-0" />
+                <span>{tag}</span>
               </div>
             ))}
           </div>

@@ -41,7 +41,7 @@ export default function EducatorApp() {
       <main className="min-h-screen">
         <EducatorHero />
         <SupportEducators />
-        <EducatorInstitutionalImpact />
+        {/* <EducatorInstitutionalImpact /> */}
         <EducatorWhyItMatters />
         {/* <WhoItsFor /> */}
         <EducatorCTA />

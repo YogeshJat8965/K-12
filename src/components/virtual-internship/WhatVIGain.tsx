@@ -49,7 +49,7 @@ export default function WhatVIGain() {
   }, []);
 
   const cards = [
-    { img: img1, title: "Career Clarity Before It Matters" },
+    { img: img1, title: "Career Clarity" },
     { img: img2, title: "A Portfolio That Stands Out" },
     { img: img3, title: "Future-Ready Skill Development" },
     { img: img4, title: "Verified Credentials" },
@@ -174,7 +174,7 @@ export default function WhatVIGain() {
 
       <section className="wvg-section" ref={sectionRef}>
         <div className="wvg-container">
-          
+
           <div className="wvg-header">
             <h2 className="wvg-header-text">
               What Students <span className="purple">Gain</span>

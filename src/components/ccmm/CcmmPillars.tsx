@@ -14,28 +14,24 @@ const pillarsData = [
     img: img1,
     title: 'Pillar 01',
     subtitle: 'A universal algorithm to energise young brains',
-    desc: 'A structured, repeatable transformation methodology that adapts to any school - any size, board, or geography - and turns curiosity into a designed outcome rather than an accident.',
     footer: 'Curiosity, engineered.'
   },
   {
     img: img2,
     title: 'Pillar 02',
     subtitle: 'Empowering educators for a better tomorrow',
-    desc: 'Every teacher becomes AI-confident - not just the computer-science faculty - supported by the Vedya AI Co-Pilot and continuous, standards-aligned development.',
     footer: 'Certified schools produce certified educators.'
   },
   {
     img: img3,
     title: 'Pillar 03',
     subtitle: 'A world-class AI Centre of Excellence',
-    desc: 'Every journey culminates in a living innovation hub on campus - the visible heartbeat of your school\'s cognitive transformation, and a signal parents and community recognise.',
     footer: 'Not a room. A movement.'
   },
   {
     img: img4,
     title: 'Pillar 04',
     subtitle: 'Industry-relevant curriculum',
-    desc: 'What students learn is mapped to the boards you teach and the economy they\'ll enter - refreshed as the industry moves, with a Digital Skill Passport to show for it.',
     footer: 'Prepared for the economy, not just the exam.'
   }
 ];
@@ -59,8 +55,6 @@ export default function CcmmPillars() {
           { y: 0, opacity: 1, filter: 'blur(0px)', duration: 1, ease: 'power3.out', delay: 0.1, scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' } }
         );
       }
-
-      // Cards stagger animation removed to ensure stable vertical alignment
     }, sectionRef);
 
     return () => ctx.revert();
@@ -141,7 +135,7 @@ export default function CcmmPillars() {
 
         .hle-img-wrap {
           width: 100%;
-          height: 200px;
+          height: 180px;
           flex-shrink: 0;
           overflow: hidden;
         }
@@ -154,7 +148,7 @@ export default function CcmmPillars() {
         }
 
         .hle-card-content-wrap {
-          padding: 32px 24px;
+          padding: 24px 24px 12px 24px;
           display: flex;
           flex-direction: column;
           flex-grow: 1;
@@ -201,14 +195,11 @@ export default function CcmmPillars() {
                     <img src={item.img} alt={item.title} />
                   </div>
                   <div className="hle-card-content-wrap">
-                    <h3 className="text-[#0F172A] font-extrabold text-[22px] leading-[1.3] mb-4">
+                    <h3 className="text-[#0F172A] font-extrabold text-[20px] leading-[1.3]">
                       {item.subtitle}
                     </h3>
-                    <p className="text-[#64748B] text-[15px] leading-[1.6] font-medium">
-                      {item.desc}
-                    </p>
                   </div>
-                  <div style={{ padding: '0 24px 32px 24px', marginTop: 'auto' }}>
+                  <div style={{ padding: '0 24px 24px 24px', marginTop: 'auto' }}>
                     <p className="text-[#D97706] font-bold text-[14px]">
                       {item.footer}
                     </p>

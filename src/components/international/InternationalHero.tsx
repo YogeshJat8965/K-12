@@ -258,7 +258,7 @@ export default function InternationalHero() {
                 Explore studios <ArrowRight size={18} />
               </button>
               <button onClick={() => window.location.href = '/contact'} className="ih-btn-secondary">
-                Schedule A Discover Session <Calendar size={18} />
+                Book a Discovery Session <Calendar size={18} />
               </button>
             </div>
           </div>

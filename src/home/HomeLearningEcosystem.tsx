@@ -16,33 +16,33 @@ const pillarsData = [
     img: img1,
     title: 'Vedya AI Co-Pilot',
     subtitle: 'Grades 5-12',
-    desc: 'An Adaptive AI Tutor That Personalises Pace, Content, And Feedback For Every Learner Across Academics And AI Skills.',
-    edge: 'Vedya AI Is Purpose-Built For K-12, Multilingual For Indian Classrooms, And Aligned To CBSE, IB, And Cambridge Curricula Out Of The Box',
+    desc: 'An adaptive AI tutor that personalises pace, content, and feedback for every learner across academics and AI skills.',
+    edge: 'Vedya AI is purpose-built for K-12, multilingual for Indian classrooms, and aligned to CBSE, IB, and Cambridge curricula out of the box.',
     link: '#'
+  },
+  {
+    img: img4,
+    title: 'AI Playground',
+    subtitle: 'Open Innovation Sandbox',
+    desc: <>A safe, browser-based environment where students build, test, and ship real AI projects.<br /><br />From chatbots and image classifiers to agents and prompt-engineered apps.</>,
+    edge: 'Most platforms stop at theory. AI Playground is a hands-on lab - students leave with portfolios, not just certificates.',
+    link: '/ai-playground'
   },
   {
     img: img2,
     title: 'Skill Studios',
     subtitle: '15+ Future Domains',
-    desc: <>Structured Learning Studios Spanning Generative AI, Space, Sustainability, Finance, Cybersecurity, Robotics, Public Speaking And More.<br /><br />Schools Select 3 Studios Per Academic Year.</>,
-    edge: 'Where Code.Org Teaches One Skill (Computing) And WhiteHat Jr Teaches One Stack (Coding), Skill Studios Cover 15+ Future Domains - With Capstone Projects, Not Just Tutorials',
+    desc: <>Structured learning studios spanning Generative AI, Space, Sustainability, Finance, Cybersecurity, Robotics, Public Speaking and more.<br /><br />Schools select 3 studios per academic year.</>,
+    edge: 'Where Code.Org teaches one skill (computing) and WhiteHat Jr teaches one stack (coding), Skill Studios cover 15+ future domains - with capstone projects, not just tutorials.',
     link: '/skill-studio'
   },
   {
     img: img3,
     title: 'Virtual Internships',
-    subtitle: 'Grades 6-12',
-    desc: <>Role-Based Job Simulations In AI Product Management, Data Analytics, Digital Marketing, UX Design, Sustainability Consulting, And More.<br /><br />The First True Career-Readiness Layer For School Students.</>,
-    edge: 'Forage Built This For University. We Built It For School. Earlier Exposure, Age-Appropriate Scaffolding, And Certificates That Strengthen College Applications Globally',
+    subtitle: 'Grades 9-12',
+    desc: <>Role-based job simulations in AI Product Management, Data Analytics, Digital Marketing, UX Design, Sustainability Consulting, and more.<br /><br />The first true career-readiness layer for school students.</>,
+    edge: 'Forage built this for university. We built it for school. Earlier exposure, age-appropriate scaffolding, and certificates that strengthen college applications globally',
     link: '/virtual-internship'
-  }, 
-  {
-    img: img4,
-    title: 'AI Playground',
-    subtitle: 'Open Innovation Sandbox',
-    desc: <>A Safe, Browser-Based Environment Where Students Build, Test, And Ship Real AI Projects.<br /><br />From Chatbots And Image Classifiers To Agents And Prompt-Engineered Apps.</>,
-    edge: 'Most Platforms Stop At Theory. AI Playground Is A Hands-On Lab - Students Leave With Portfolios, Not Just Certificates.',
-    link: '/ai-playground'
   }
 ];
 
@@ -373,16 +373,16 @@ export default function HomeLearningEcosystem() {
             <div className="hle-header-left" style={{ maxWidth: '100%' }}>
               <span className="hle-badge" style={{ marginBottom: '8px' }}>OUR LEARNING ECOSYSTEM</span>
               <h2 className="hle-title" style={{ display: 'flex', flexDirection: 'column' }}>
-                <span ref={title1Ref} style={{ display: 'block' }}>Four Pillars.</span>
-                <span ref={title2Ref} style={{ display: 'block' }}>One Future-Ready Learner ..</span>
-                <span ref={title3Ref} style={{ display: 'block' }}>From First AI Lesson to First Internship to First Career...</span>
+                <span ref={title1Ref} style={{ display: 'block' }}>Four Pillars.. one Platform..</span>
+                <span ref={title2Ref} style={{ display: 'block' }}>A future-ready Learner..</span>
+                <span ref={title3Ref} style={{ display: 'block' }}>From AI learning to Career-ready skills… </span>
               </h2>
             </div>
           </div>
 
           <div className="hle-grid" ref={gridRef} style={{ marginTop: '-40px' }}>
-            {pillarsData.map((item, idx) => ( 
-              <a href={item.link} className="hle-card" key={idx} style={{ textDecoration: 'none', cursor: item.link === '#' ? 'default' : 'pointer', display: 'flex' }} onClick={(e) => { if(item.link === '#') e.preventDefault(); }}>
+            {pillarsData.map((item, idx) => (
+              <a href={item.link} className="hle-card" key={idx} style={{ textDecoration: 'none', cursor: item.link === '#' ? 'default' : 'pointer', display: 'flex' }} onClick={(e) => { if (item.link === '#') e.preventDefault(); }}>
                 <div className="hle-img-wrap">
                   <img src={item.img} alt={item.title} />
                 </div>

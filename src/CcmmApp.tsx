@@ -31,15 +31,15 @@ export default function CcmmApp() {
         <CcmmAgeShift />
         <CcmmBanner />
         <CcmmReportForm />
+        <CcmmWhoItsFor />
         <CcmmPillars />
+        <CcmmJourney />
         {/* <CcmmWhyExists /> */}
         <CcmmStages />
         {/* <CcmmMeasures /> */}
         <CcmmCertification />
         <CcmmCarries />
-        <CcmmWhoItsFor />
-        <CcmmJourney />
-        <CcmmWhySchool />
+        {/* <CcmmWhySchool /> */}
         {/* <CcmmBegin /> */}
         <CcmmCta />
       </main>

@@ -1,7 +1,7 @@
 export const hero = {
   headline: "Give Your Child a Head Start - Beyond Academics",
   subline: "Virtual Internships are structured, mentor-led, project-based...",
-  grades: "VIRTUAL INTERNSHIPS | GRADES 6-12",
+  grades: "VIRTUAL INTERNSHIPS | GRADES 9-12",
   badges: ["✓ Explore careers early", "✓ Build real world projects",
     "✓ Develop future-ready skills", "✓ Earn verified credentials"],
   ctas: [
@@ -47,7 +47,7 @@ export const whyMatters = {
 }
 
 export const whatGain = [
-  { num: "01", icon: "🎯", title: "Career Clarity Before It Matters", desc: "Explore multiple domains - AI, space, business, design, sustainability, wellness - before making life-shaping stream and career decisions." },
+  { num: "01", icon: "🎯", title: "Career Clarity ", desc: "Explore multiple domains - AI, space, business, design, sustainability, wellness - before making life-shaping stream and career decisions." },
   { num: "02", icon: "📁", title: "A Portfolio That Stands Out", desc: "Every internship produces a real project - a prototype, report, or presentation - that strengthens college applications." },
   { num: "03", icon: "🛠️", title: "Future-Ready Skill Development", desc: "Exposure to high-demand skills: AI & Data, Product Thinking, Financial Literacy, Digital Creativity, Problem Solving." },
   { num: "04", icon: "🏅", title: "Verified Credentials", desc: "A Digital Skill Passport and certificates that demonstrate initiative and capability beyond academics." },
@@ -90,7 +90,7 @@ export const outcomes = [
 ]
 
 export const designedFor = [
-  "Age-Appropriate Pathways: Curriculum calibrated for Grades 6-12 across cognitive and skill maturity levels.",
+  "Age-Appropriate Pathways: Curriculum calibrated for Grades 9-12 across cognitive and skill maturity levels.",
   "Step-by-Step Structure: Guided modules with clear milestones so students never feel lost or overwhelmed.",
   "Flexible & Self-Paced: Designed to complement - never disrupt - academic schedules.",
   "Safe, Moderated Platform: Every interaction is monitored; parents have complete visibility into their child's journey.",
@@ -122,7 +122,7 @@ export const forSchools = {
 }
 
 export const whySkillzza = [
-  { icon: "🏫", title: "Built Exclusively for School Students", desc: "Not adapted from regular platforms - every element is designed for Grades 6-12." },
+  { icon: "🏫", title: "Built Exclusively for School Students", desc: "Not adapted from regular platforms - every element is designed for Grades 9-12." },
   { icon: "🎯", title: "Outcomes Over Theory", desc: "Every internship ends with a tangible project, not a passive completion certificate." },
   { icon: "🏭", title: "Industry-Aligned Curriculum", desc: "Curated with inputs from working professionals and industry mentors." },
   { icon: "🧑‍🏫", title: "Mentor-Guided Experience", desc: "Students get real human feedback, not just automated reviews." },

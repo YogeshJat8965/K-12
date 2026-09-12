@@ -57,9 +57,7 @@ export default function CcmmCertification() {
           <h2 className="text-[32px] md:text-[42px] lg:text-[48px] font-extrabold text-[#111827] leading-[1.15] tracking-tight mb-6">
             A recognised mark of AI-ready schools
           </h2>
-          <p className="text-[#4B5563] font-medium text-[15px] md:text-[17px] leading-relaxed w-full max-w-[1100px]">
-            Not a participation badge - an audited, evidence-backed credential issued by Skillzza Learning Technologies under its K-12 signature programme.Every completed journey earns a tiered, time-bound certification.
-          </p>
+
         </div>
 
         {/* 5 Grid Cards */}
@@ -96,7 +94,7 @@ export default function CcmmCertification() {
 
         {/* Bottom Checklist Section */}
         <div className="mt-20 max-w-5xl mx-auto">
-          <span className="text-gray-500 font-bold text-[11px] text-center uppercase tracking-[0.15em] mb-8 block">
+          <span className="text-gray-500 font-bold text-[13px] text-center uppercase tracking-[0.15em] mb-8 block">
             EVERY CERTIFICATION INCLUDES
           </span>
           <div className="flex flex-wrap justify-center gap-4">
@@ -121,7 +119,7 @@ export default function CcmmCertification() {
             <div className="w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.75rem)] bg-white border border-gray-100 rounded-xl p-4 shadow-[0_4px_20px_rgba(0,0,0,0.03)] flex items-start gap-3 hover:-translate-y-1 transition-transform">
               <div className="w-1.5 h-1.5 rounded-full bg-[#5B45FF] mt-2 shrink-0"></div>
               <p className="text-[#334155] font-medium text-[13px] leading-relaxed">
-                Recognition at the Skillzza Nova Education Leadership Summit
+                Recognition at the Skillzza Education Leadership Summit
               </p>
             </div>
             <div className="w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.75rem)] bg-white border border-gray-100 rounded-xl p-4 shadow-[0_4px_20px_rgba(0,0,0,0.03)] flex items-start gap-3 hover:-translate-y-1 transition-transform">

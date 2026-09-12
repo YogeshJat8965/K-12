@@ -353,7 +353,7 @@ export default function SkillStudioApp() {
                 </ScrollRevealHeadline>
 
                 <p className="text-[16px] text-[#5C6274] leading-[1.8] mb-6 font-medium">
-                  Skill Studio are <span className="font-semibold text-[#5B32EA]">not just after-school activities.</span> They are structured skill studios designed to help students discover their strengths, build real world skills, and develop a career-ready personality - all while having fun and learning through doing.
+                  Skill Studio are <span className="font-semibold text-[#5B32EA]">not just after-school activities.</span> They are structured programmes designed to help students discover their strengths, build real world skills, and develop a career-ready personality - all while having fun and learning through doing.
                 </p>
 
                 <p className="text-[16px] text-[#5C6274] leading-[1.8] font-medium mb-8 lg:mb-0">
@@ -451,9 +451,9 @@ export default function SkillStudioApp() {
                 </h2>
               </ScrollRevealHeadline>
               <div className="max-w-[1150px] text-center">
-                <span className="block text-[14px] italic text-[#6B7280] leading-[1.6] mb-1">
+                {/* <span className="block text-[14px] italic text-[#6B7280] leading-[1.6] mb-1">
                   A curated portfolio of 7 future-forward Skill Studio
-                </span>
+                </span> */}
                 <p className="text-[16px] text-[#6B7280] leading-[1.8] font-medium max-w-none lg:whitespace-nowrap">
                   Each designed as an immersive learning pod where students build Capability, Confidence, and a portfolio that travels with them.
                 </p>
@@ -504,7 +504,7 @@ export default function SkillStudioApp() {
                     <div className="border-l-[3.5px] border-[#4200FF] pl-3 py-1">
                       <h3 className="font-bold text-[#1A1A2E] text-[19px] leading-[1.3] tracking-tight">
                         Digital creativity &<br />
-                        AI skills by ADOBE <span className="text-[14px] text-red-500 font-semibold ml-1">(Free)</span>
+                        AI skills
                       </h3>
                     </div>
                   </div>
@@ -1023,7 +1023,7 @@ export default function SkillStudioApp() {
           </div>
         </section>
         {/* Partnership Banner Section */}
-        <section className="pt-12 pb-20 bg-white relative z-20">
+        <section className="pt-12 pb-4 bg-white relative z-20">
           <div className="w-full">
 
             <div

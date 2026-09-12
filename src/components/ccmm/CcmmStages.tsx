@@ -70,10 +70,10 @@ export default function CcmmStages() {
             THE MATURITY CLIMB
           </span>
           <h2 className="text-[32px] md:text-[42px] lg:text-[48px] font-extrabold text-[#0F172A] leading-[1.15] tracking-tight mb-6">
-            Five stages of cognitive computing maturity
+            The Five Evaluation Stages for the School
           </h2>
           <p className="text-[#475569] font-medium text-[15px] md:text-[17px] leading-[1.7] max-w-3xl mx-auto">
-            CCMM evaluates every school across five progressive stages. Each carries its own benchmarks, evidence requirements, and certification level - meet your school where it is, and show it exactly where it can go.
+            CCMM evaluates every school across five progressive stages. Each carries its own Benchmarks, Evidence Requirements, and Certification Level.
           </p>
         </div>
 

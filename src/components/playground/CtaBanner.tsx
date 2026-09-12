@@ -83,7 +83,7 @@ export default function CtaBanner() {
       <style>{`
         .cta-section {
           width: 100%;
-          padding: 0 0 80px 0;
+          padding: 0;
           margin-top: -88px;
           background: #FFFFFF;
           font-family: 'Poppins', sans-serif;

@@ -22,37 +22,12 @@ const statsData = [
 
 const regions = ['INDIA', 'UAE', 'USA', 'UK', 'SINGAPORE', 'AFRICA'];
 
-function useCountUp(target: number, started: boolean, duration = 1800) {
-  const [val, setVal] = useState(0);
-  useEffect(() => {
-    if (!started) return;
-    let start = 0;
-    const step = Math.ceil(target / (duration / 16));
-    const id = setInterval(() => {
-      start += step;
-      if (start >= target) { setVal(target); clearInterval(id); }
-      else setVal(start);
-    }, 16);
-    return () => clearInterval(id);
-  }, [started, target, duration]);
-  return val;
-}
-
 export default function HomeTrusted() {
   const ref = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
-  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-
     const ctx = gsap.context(() => {
-      ScrollTrigger.create({
-        trigger: ref.current,
-        start: 'top 80%',
-        onEnter: () => setVisible(true),
-        once: true
-      });
-
       // Stats cards lift
       if (ref.current) {
         gsap.fromTo('.ht-card',
@@ -325,7 +300,7 @@ export default function HomeTrusted() {
           {/* Stat cards with count-up */}
           <div className="ht-stats" ref={ref}>
             {statsData.map(s => (
-              <StatCard key={s.label} data={s} started={visible} />
+              <StatCard key={s.label} data={s} />
             ))}
           </div>
 
@@ -372,13 +347,41 @@ export default function HomeTrusted() {
   );
 }
 
-function StatCard({ data, started }: { data: typeof statsData[0]; started: boolean }) {
-  const count = useCountUp(data.target, started);
-  const display = data.fmt ? count.toLocaleString() : count.toString();
+function StatCard({ data }: { data: typeof statsData[0] }) {
+  const numRef = useRef<HTMLParagraphElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = numRef.current;
+    const container = cardRef.current;
+    if (!el || !container) return;
+
+    const obj = { val: 0 };
+    const ctx = gsap.context(() => {
+      gsap.to(obj, {
+        val: data.target,
+        duration: 2,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: container,
+          start: 'top 85%',
+          once: true,
+        },
+        onUpdate: () => {
+          const currentVal = Math.floor(obj.val);
+          const formatted = data.fmt ? currentVal.toLocaleString() : currentVal.toString();
+          el.innerText = formatted + data.suffix;
+        },
+      });
+    });
+
+    return () => ctx.revert();
+  }, [data]);
+
   return (
-    <div className="ht-card">
+    <div className="ht-card" ref={cardRef}>
       <img src={data.icon} alt={data.label} className="ht-card-icon" />
-      <p className="ht-card-num">{display}{data.suffix}</p>
+      <p className="ht-card-num" ref={numRef}>0{data.suffix}</p>
       <p className="ht-card-label">{data.label}</p>
     </div>
   );

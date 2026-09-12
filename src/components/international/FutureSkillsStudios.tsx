@@ -37,7 +37,7 @@ const studios = [
   {
     title: "Gen AI & Deep Tech Studio",
     tagline: "Think. Build. Disrupt.",
-    grades: "Grades 6-12",
+    grades: "Grades 9-12",
     tags: ["Generative AI", "AI Fundamentals", "Prompt Engineering", "Emerging Technologies", "AI Ethics", "Creative AI Tools"],
     colorHex: "#3B82F6",
     image: img1
@@ -62,7 +62,7 @@ const studios = [
   {
     title: "Future Leaders &\nEntrepreneurship Studio",
     tagline: "Build It. Lead It. Scale It.",
-    grades: "Grades 6-12",
+    grades: "Grades 9-12",
     tags: ["Leadership", "Entrepreneurship", "Team Collaboration", "Design Thinking", "Innovation Mindset", "Communication Skills"],
     colorHex: "#EA580C",
     image: img4
@@ -70,7 +70,7 @@ const studios = [
   {
     title: "Global Ambassador &\nWorld Affairs Studio",
     tagline: "Speak for Nations. Shape the World.",
-    grades: "Grades 6-12",
+    grades: "Grades 9-12",
     tags: ["Global Awareness", "Public Policy", "Sustainable Development", "Diplomacy", "International Perspectives", "Cross-cultural Understanding"],
     colorHex: "#0284C7",
     image: img5
@@ -86,7 +86,7 @@ const studios = [
   {
     title: "Climate Tech &\nGreen Innovation Studio",
     tagline: "Engineer the Solutions. Lead the Transition.",
-    grades: "Grades 6-12",
+    grades: "Grades 9-12",
     tags: ["Climate Science", "Sustainability", "Green Tech", "Renewable Energy", "Environmental Innovation", "Eco-Design"],
     colorHex: "#059669",
     image: imgClimate
@@ -94,7 +94,7 @@ const studios = [
   {
     title: "Data Intelligence\nStudio",
     tagline: "Read the World in Data. Never Be Fooled Again.",
-    grades: "Grades 6-12",
+    grades: "Grades 9-12",
     tags: ["Data Analytics", "Critical Thinking", "Statistics", "Data Visualization", "Information Literacy", "Pattern Recognition"],
     colorHex: "#D97706",
     image: imgData
@@ -126,7 +126,7 @@ const studios = [
   {
     title: "Cybersecurity &\nDigital Safety Studio",
     tagline: "Defend the Digital World. Own Your Online Presence.",
-    grades: "Grades 6-12",
+    grades: "Grades 9-12",
     tags: ["Cyber Safety", "Ethical Hacking", "Digital Footprint", "Data Privacy", "Network Security", "Online Protection"],
     colorHex: "#F59E0B",
     image: imgCyber
@@ -190,12 +190,12 @@ export default function FutureSkillsStudios() {
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
 
         {/* Intro */}
-        <div className="text-center max-w-[800px] mx-auto mb-8 md:mb-16">
+        <div className="text-center w-full mx-auto mb-8 md:mb-16 flex flex-col items-center justify-center">
           <h2 className="fss-intro text-[36px] md:text-[44px] font-extrabold text-[#1A1A2E] leading-[1.15] mb-5 tracking-tight">
-            Our Future <span className="text-[#7C3AED]">Skill Studio</span>
+            Our <span className="text-[#7C3AED]">Skill Studio</span>
           </h2>
-          <p className="fss-intro text-[#6B7280] text-[16px] font-medium max-w-[700px] mx-auto leading-relaxed">
-            A curated portfolio of immersive skill studios designed to build capability, confidence, creativity, and future readiness. Hover over the cards to view the key focus areas.
+          <p className="fss-intro text-[#6B7280] text-[18px] font-medium text-center leading-relaxed md:whitespace-nowrap">
+            A curated portfolio of immersive skill studios designed to build Capability, Confidence, Creativity, and Career Readiness.
           </p>
         </div>
 

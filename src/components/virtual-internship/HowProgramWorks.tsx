@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Compass, Briefcase, BookOpen, Rocket, Trophy, Calendar, Clock, Monitor } from 'lucide-react';
+import { Compass, Briefcase, BookOpen, Rocket, Trophy } from 'lucide-react';
 
 import img1 from '../../assets/virtual internship/IMG_9190.webp';
 import img2 from '../../assets/virtual internship/IMG_9191.webp';
@@ -14,7 +14,6 @@ gsap.registerPlugin(ScrollTrigger);
 export default function HowProgramWorks() {
   const sectionRef = useRef<HTMLElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
-  const bannerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -48,29 +47,17 @@ export default function HowProgramWorks() {
         });
       }
 
-      // Banner animation
-      gsap.from(bannerRef.current, {
-        y: 30,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: bannerRef.current,
-          start: 'top 90%',
-        }
-      });
-
     }, sectionRef);
 
     return () => ctx.revert();
   }, []);
 
   const steps = [
-    { num: 1, title: "Discover", desc: "Students take a short interest and aptitude assessment to identify suitable career paths.", img: img1 },
-    { num: 2, title: "Enroll in a Studio", desc: "They select a domain-specific internship and receive a real-world problem statement.", img: img2 },
-    { num: 3, title: "Learn & Apply", desc: "Through guided modules, students learn relevant concepts and apply them to practical tasks.", img: img3 },
-    { num: 4, title: "Build a Capstone", desc: "Students create a final deliverable - a product prototype, business pitch, or analytical report.", img: img4 },
-    { num: 5, title: "Earn & Showcase", desc: "Upon completion, students receive certification and a portfolio-ready project they can showcase.", img: img5 }
+    { num: 1, title: "Discover", desc: "Explore interests and identify areas of potential.", img: img1 },
+    { num: 2, title: "Choose Your Studio", desc: "Step into a domain and take on a real-world challenge.", img: img2 },
+    { num: 3, title: "Learn & Apply", desc: "Build relevant skills through guided, hands-on learning.", img: img3 },
+    { num: 4, title: "Build & Create", desc: "Turn learning into a project, prototype, or solution.", img: img4 },
+    { num: 5, title: "Showcase Your Work", desc: "Earn recognition and build a portfolio of meaningful work.", img: img5 }
   ];
 
   return (
@@ -326,10 +313,10 @@ export default function HowProgramWorks() {
         <div className="hpw-container">
 
           <h2 className="hpw-header">
-            How the <span className="purple">Program</span> Works
+            From Curiosity to <span className="purple">Real-World Capability</span>
           </h2>
           <p className="hpw-subtitle">
-            A Structured Journey That Mirrors Real Workplace Experiences
+            An experiential learning journey where students explore, learn, build, and showcase their skills.
           </p>
 
           <div className="hpw-timeline-container">
@@ -348,38 +335,6 @@ export default function HowProgramWorks() {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-
-          <div className="hpw-banner" ref={bannerRef}>
-            <div className="hpw-banner-item">
-              <div className="hpw-banner-icon">
-                <Calendar size={28} strokeWidth={2} />
-              </div>
-              <div className="hpw-banner-text">
-                <p className="hpw-banner-label">DURATION</p>
-                <p className="hpw-banner-val">4-6 Weeks</p>
-              </div>
-            </div>
-
-            <div className="hpw-banner-item">
-              <div className="hpw-banner-icon">
-                <Clock size={28} strokeWidth={2} />
-              </div>
-              <div className="hpw-banner-text">
-                <p className="hpw-banner-label">WEEKLY EFFORT</p>
-                <p className="hpw-banner-val">3-5 Hours</p>
-              </div>
-            </div>
-
-            <div className="hpw-banner-item">
-              <div className="hpw-banner-icon">
-                <Monitor size={28} strokeWidth={2} />
-              </div>
-              <div className="hpw-banner-text">
-                <p className="hpw-banner-label">FORMAT</p>
-                <p className="hpw-banner-val">100% Online, Self-Paced, Mentor Led</p>
-              </div>
             </div>
           </div>
 

@@ -48,7 +48,7 @@ function AppContent() {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
-    document.title = 'Skillzza - Virtual Internships for Grades 6-12';
+    document.title = 'Skillzza - Virtual Internships for Grades 9-12';
 
     // Scroll progress handler
     const handleScroll = () => {

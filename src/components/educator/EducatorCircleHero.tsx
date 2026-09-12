@@ -19,29 +19,29 @@ export default function EducatorCircleHero() {
 
             <h1 className="text-[34px] sm:text-[38px] md:text-[40px] lg:text-[44px] font-extrabold text-[#1A1A2E] leading-[1.15] tracking-tight mb-6 font-poppins">
               <div className="block flex-wrap items-baseline gap-2 lg:whitespace-nowrap">
-                <span className="inline-block"><WordReveal text="Every" delay={0.1} /></span> <span className="inline-block"><WordReveal text="hour" delay={0.1} /></span> <span className="inline-block"><WordReveal text="you" delay={0.1} /></span> <span className="inline-block"><WordReveal text="learn," delay={0.1} /></span> <span className="inline-block"><WordReveal text="logged" delay={0.2} /></span> <span className="inline-block"><WordReveal text="as" delay={0.2} /></span>
+                <span className="inline-block"><WordReveal text="The" delay={0.1} /></span> <span className="inline-block"><WordReveal text="community" delay={0.1} /></span> <span className="inline-block"><WordReveal text="for" delay={0.1} /></span>
               </div>
               <div className="block flex-wrap items-baseline gap-2 mt-1 lg:whitespace-nowrap">
-                <span className="inline-block text-[#5B32EA]"><WordReveal text="CPD" delay={0.3} /></span> <span className="inline-block text-[#5B32EA]"><WordReveal text="-" delay={0.4} /></span> <span className="inline-block text-[#5B32EA]"><WordReveal text="automatically." delay={0.4} /></span>
+                <span className="inline-block text-[#5B32EA]"><WordReveal text="future" delay={0.2} /></span> <span className="inline-block text-[#5B32EA]"><WordReveal text="ready" delay={0.2} /></span> <span className="inline-block text-[#5B32EA]"><WordReveal text="K-12" delay={0.3} /></span> <span className="inline-block text-[#5B32EA]"><WordReveal text="teachers" delay={0.3} /></span>
               </div>
             </h1>
 
             <StaggerItem className="text-[#4B5563] text-sm md:text-base leading-[1.7] mb-6 font-medium max-w-[500px]">
-              India's free professional community for K–12 teachers. Learn to teach with AI, earn recognised CPD without the paperwork, and build a professional record that stands up at appraisal.
+              India’s free professional community for K–12 educators designed to help you learn with AI, share ideas, connect with peers, and build your professional growth record.
             </StaggerItem>
 
             <StaggerItem className="flex items-start gap-3 text-[#4B5563] text-sm md:text-[15px] font-semibold mb-10 leading-relaxed max-w-[500px]">
-              <span><span className="text-[#5B32EA]">Join free · No fees.</span> Get your digital educator card in two minutes. Up to 8 sponsored CPD hours per teacher, every year.</span>
+              <span className="text-[#4B5563]">Free to join, always. Your digital educator card is ready in two minutes, with up to 8 sponsored CPD hours every year.</span>
             </StaggerItem>
 
             <StaggerItem className="flex flex-wrap items-center gap-4">
+
               <button onClick={() => window.location.href = '/signup'} className="flex items-center gap-2 bg-[#5B32EA] text-white px-8 py-3.5 rounded-lg font-bold hover:bg-[#4A25C7] hover:scale-105 active:scale-95 transition-all shadow-lg shadow-indigo-500/30">
                 Join for free
                 <ArrowRight className="w-4 h-4" />
               </button>
-
               <button onClick={() => window.location.href = '/contact'} className="flex items-center gap-2 bg-white text-[#5B32EA] border border-gray-200 shadow-sm px-8 py-3.5 rounded-lg font-bold hover:bg-slate-50 hover:scale-105 active:scale-95 transition-all">
-                Explore Community
+                Join the Teacher Community
                 <Users className="w-4 h-4" />
               </button>
             </StaggerItem>

@@ -149,14 +149,11 @@ export default function AiImmersion() {
         {/* Header */}
         <div className="flex flex-col items-center text-center max-w-[1050px] mx-auto mb-16">
           <span className="text-[#5B32EA] font-bold text-[12px] uppercase tracking-widest mb-4 block">
-            THE AI IMMERSION PROGRAMME
+            THE AI IMMERSIVE PROGRAMME
           </span>
           <h2 className="text-[30px] sm:text-[38px] md:text-[42px] font-extrabold text-[#1A1A2E] leading-[1.15] tracking-tight mb-6 lg:whitespace-nowrap">
             12 weeks, three stages, one classroom-ready portfolio.
           </h2>
-          <p className="text-[#4B5563] font-medium text-[16px] md:text-[18px] leading-relaxed max-w-[950px]">
-            A hands-on upskilling journey aligned to NEP 2020 and NCERT. Each stage builds on the last - from confident first steps to leading AI in your school - and every module hands you a tool you can use in class the next morning. The full journey banks around 28 CPD hours, credited straight to your passport.
-          </p>
         </div>
 
         {/* Tabs */}
@@ -181,11 +178,11 @@ export default function AiImmersion() {
         {/* Alternating Module Rows */}
         <div className="flex flex-col gap-16 lg:gap-24 mb-20 max-w-6xl mx-auto">
           {activeStage?.modules.map((mod, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               className={`flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-8 lg:gap-16`}
             >
-              
+
               {/* Content Side */}
               <div className="w-full lg:w-1/2 flex flex-col items-start text-left">
                 <div className="flex items-center gap-3 mb-4">
@@ -194,11 +191,11 @@ export default function AiImmersion() {
                   </div>
                   <h4 className="text-[#1A1A2E] font-bold text-[20px] lg:text-[26px]">{mod.title}</h4>
                 </div>
-                
+
                 <p className="text-[#4B5563] text-[16px] lg:text-[17px] leading-relaxed font-medium mb-8">
                   {mod.desc}
                 </p>
-                
+
                 {/* Meta info stacked */}
                 <div className="flex flex-col gap-4 text-[14px] font-medium w-full">
                   <div className="flex items-center gap-3 bg-gray-50 rounded-lg p-3 w-full">
@@ -223,10 +220,10 @@ export default function AiImmersion() {
               <div className="w-full lg:w-1/2">
                 <div className="rounded-3xl overflow-hidden shadow-2xl shadow-indigo-500/10 border border-gray-100 relative group">
                   <div className="absolute inset-0 bg-[#5B32EA]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none"></div>
-                  <img 
-                    src={mod.image} 
-                    alt={mod.title} 
-                    className="w-full h-auto object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-700 ease-out" 
+                  <img
+                    src={mod.image}
+                    alt={mod.title}
+                    className="w-full h-auto object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
                 </div>
               </div>

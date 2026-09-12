@@ -7,7 +7,7 @@ import img5 from '../assets/virtual internship/Outcome-Focused.webp';
 
 const gains = [
   {
-    title: "Career Clarity Before It Matters",
+    title: "Career Clarity ",
     description: "Explore multiple domains - AI, space, business, design, sustainability, wellness - before making life-shaping stream and career decisions.",
     image: img1,
     color: "#7C3AED",

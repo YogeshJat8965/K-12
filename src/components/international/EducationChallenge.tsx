@@ -299,10 +299,10 @@ export default function EducationChallenge() {
           </div>
 
           {/* Bottom Banner */}
-          <div className="w-full bg-[#F8FAFC] rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-center gap-6 mt-8 shadow-sm border border-blue-50 relative z-10 ec-header-elem">
+          <div className="w-full bg-[#E8D5FF] rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-center gap-6 mt-8 shadow-sm border border-purple-200 relative z-10 ec-header-elem">
 
-            <p className="text-[#1A1A2E] text-[14px] font-semibold leading-relaxed text-center w-full italic md:whitespace-nowrap">
-              Skillzza Studios Are Designed To Help Schools Prepare Students For This Rapidly Evolving Future Through Applied Learning Experiences Aligned With Global Education Trends.
+            <p className="text-[#1A1A2E] text-[15px] font-semibold leading-relaxed text-center w-full md:whitespace-nowrap">
+              Skillzza Studios are designed to prepare students for this rapidly evolving future through applied learning experiences aligned with global education trends.
             </p>
           </div>
 

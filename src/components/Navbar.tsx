@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 const logoImg = '/landing/WhatsApp_Image_2026-07-28_at_8.46.35_AM-removebg-preview.png';
 
-/* ─── Nav link data for Level 3 ─── */
 const NAV_LINKS = [
-  { label: "Adobe Program", href: '/digital-creativity' },
+  { label: 'AI Playground', href: '/ai-playground' },
+  // { label: "Adobe Program", href: '/digital-creativity' },
   {
     label: 'Skill Studio',
     href: '/skill-studio',
@@ -27,7 +27,6 @@ const NAV_LINKS = [
       { label: 'Digital Storytelling & Media Journalism', href: '#' },
     ],
   },
-  { label: 'AI Playground', href: '/ai-playground' },
   {
     label: 'More',
     href: '#',
@@ -304,7 +303,7 @@ export default function Navbar() {
         .nav-level3-inner {
           max-width: 1400px;
           margin: 0 auto;
-          padding: 0 48px;
+          padding: 0 24px;
           height: 64px;
           display: flex;
           align-items: center;
@@ -318,6 +317,7 @@ export default function Navbar() {
           display: flex;
           align-items: center;
           flex-shrink: 0;
+          margin-left: -10px;
         }
         .nav-logo-skillzza {
           font-weight: 800;

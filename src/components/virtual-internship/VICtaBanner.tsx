@@ -14,7 +14,8 @@ export default function VICtaBanner() {
     const ctx = gsap.context(() => {
       gsap.fromTo(bannerRef.current,
         { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out',
+        {
+          y: 0, opacity: 1, duration: 0.8, ease: 'power3.out',
           scrollTrigger: { trigger: bannerRef.current, start: 'top 90%' }
         }
       );
@@ -27,7 +28,7 @@ export default function VICtaBanner() {
       <style>{`
         .vi-cta-wrap {
           width: 100%;
-          padding: 60px 0;
+          padding: 40px 0 0 0;
           font-family: 'Poppins', sans-serif;
         }
         .vi-cta-banner {
@@ -191,12 +192,12 @@ export default function VICtaBanner() {
             </button>
             <button onClick={() => window.location.href = '/contact'} className="vi-cta-btn vi-cta-btn-primary">
               <span className="vi-cta-btn-icon"><Play size={16} fill="currentColor" /></span>
-              Book consultation
+              Book a Session
             </button>
           </div>
         </div>
       </div>
-      
+
       <VIQuizModal isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)} />
     </>
   );

@@ -78,7 +78,5 @@ export default function ImplementationFramework() {
     return () => ctx.revert();
   }, []);
 
-    {/* <section ref={sectionRef} className="relative w-full py-12 md:py-24 bg-[#FAFBFC] overflow-hidden font-poppins"> ... </section> */}
-    null
-  );
+  return null;
 }
