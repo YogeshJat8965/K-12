@@ -686,7 +686,7 @@ export default function Navbar() {
                 {[1, 2, 3, 4].map((i) => (
                   <div key={i} className="nav-announcement-text" style={{ paddingRight: '60px', display: 'flex', alignItems: 'center', gap: '10px', color: '#fff' }}>
                     <span style={{ fontSize: '15px', fontWeight: 600 }}>Be Part of Creative Hackathon 2026!</span>
-                    <span style={{ fontSize: '13px', fontWeight: 500, opacity: 0.85 }}>Starts from 1st - 28th Aug, 2026</span>
+                    <span style={{ fontSize: '13px', fontWeight: 600, letterSpacing: '0.5px', opacity: 0.9 }}>1st OCT – 31st DEC, 2026</span>
                   </div>
                 ))}
               </div>
